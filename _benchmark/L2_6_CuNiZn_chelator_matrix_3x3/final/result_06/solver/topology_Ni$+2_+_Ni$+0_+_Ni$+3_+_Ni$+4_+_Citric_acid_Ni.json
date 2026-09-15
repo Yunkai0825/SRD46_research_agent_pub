@@ -1,0 +1,283 @@
+{
+  "metadata": {
+    "system_name": "Ni$+2 + Ni$+0 + Ni$+3 + Ni$+4 + Citric acid",
+    "element": "Ni",
+    "n_pH": 101,
+    "pH_range": [
+      2.0,
+      12.0
+    ],
+    "ndim": 1,
+    "axis_names": [
+      "pH"
+    ],
+    "axis_ranges": {
+      "pH": [
+        2.0,
+        12.0
+      ]
+    },
+    "topology_settings": {
+      "extraction_method": "bottom_up_nd",
+      "axis_names": [
+        "pH"
+      ],
+      "axis_ranges": {
+        "pH": [
+          2.0,
+          12.0
+        ]
+      },
+      "axis_spacing": {
+        "pH": 0.09999999999999964
+      },
+      "topology_fix": {
+        "applied": false
+      },
+      "region_resolution_merges": 0,
+      "resolution": "coarse_final",
+      "is_final": true
+    }
+  },
+  "label_catalog": {
+    "0": "Ni$+2.z+2",
+    "1": "Ni$+2.L1(2).H.z-3",
+    "2": "Ni$+2.L1(2).z-4",
+    "3": "Ni$+2(2).H-1L1(2).z-4",
+    "4": "[Ni(OH)2](s)"
+  },
+  "features_0d": [
+    {
+      "id": 0,
+      "labels": [
+        0,
+        1
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 3.75
+      },
+      "geometry_compact": {
+        "pH": 3.75
+      }
+    },
+    {
+      "id": 1,
+      "labels": [
+        1,
+        2
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 4.15
+      },
+      "geometry_compact": {
+        "pH": 4.15
+      }
+    },
+    {
+      "id": 2,
+      "labels": [
+        2,
+        3
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 9.35
+      },
+      "geometry_compact": {
+        "pH": 9.35
+      }
+    },
+    {
+      "id": 3,
+      "labels": [
+        3,
+        4
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 9.95
+      },
+      "geometry_compact": {
+        "pH": 9.95
+      }
+    }
+  ],
+  "regions": [
+    {
+      "id": 0,
+      "label": 0,
+      "name": "Ni$+2.z+2",
+      "boundary_ids": [
+        0
+      ],
+      "measure": 1.8,
+      "flags": []
+    },
+    {
+      "id": 1,
+      "label": 1,
+      "name": "Ni$+2.L1(2).H.z-3",
+      "boundary_ids": [
+        0,
+        1
+      ],
+      "measure": 0.4,
+      "flags": []
+    },
+    {
+      "id": 2,
+      "label": 2,
+      "name": "Ni$+2.L1(2).z-4",
+      "boundary_ids": [
+        1,
+        2
+      ],
+      "measure": 5.2,
+      "flags": []
+    },
+    {
+      "id": 3,
+      "label": 3,
+      "name": "Ni$+2(2).H-1L1(2).z-4",
+      "boundary_ids": [
+        2,
+        3
+      ],
+      "measure": 0.6,
+      "flags": []
+    },
+    {
+      "id": 4,
+      "label": 4,
+      "name": "[Ni(OH)2](s)",
+      "boundary_ids": [
+        3
+      ],
+      "measure": 2.1,
+      "flags": []
+    }
+  ],
+  "nodes": [
+    {
+      "id": 0,
+      "coords": {
+        "pH": 3.75
+      },
+      "labels": [
+        0,
+        1
+      ],
+      "domain_edge": false,
+      "pH": 3.75
+    },
+    {
+      "id": 1,
+      "coords": {
+        "pH": 4.15
+      },
+      "labels": [
+        1,
+        2
+      ],
+      "domain_edge": false,
+      "pH": 4.15
+    },
+    {
+      "id": 2,
+      "coords": {
+        "pH": 9.350000000000001
+      },
+      "labels": [
+        2,
+        3
+      ],
+      "domain_edge": false,
+      "pH": 9.35
+    },
+    {
+      "id": 3,
+      "coords": {
+        "pH": 9.95
+      },
+      "labels": [
+        3,
+        4
+      ],
+      "domain_edge": false,
+      "pH": 9.95
+    }
+  ],
+  "edges": [],
+  "faces": [
+    {
+      "id": 0,
+      "label": 0,
+      "name": "Ni$+2.z+2",
+      "edges": [
+        0
+      ],
+      "measure": 1.8
+    },
+    {
+      "id": 1,
+      "label": 1,
+      "name": "Ni$+2.L1(2).H.z-3",
+      "edges": [
+        0,
+        1
+      ],
+      "measure": 0.4
+    },
+    {
+      "id": 2,
+      "label": 2,
+      "name": "Ni$+2.L1(2).z-4",
+      "edges": [
+        1,
+        2
+      ],
+      "measure": 5.2
+    },
+    {
+      "id": 3,
+      "label": 3,
+      "name": "Ni$+2(2).H-1L1(2).z-4",
+      "edges": [
+        2,
+        3
+      ],
+      "measure": 0.6
+    },
+    {
+      "id": 4,
+      "label": 4,
+      "name": "[Ni(OH)2](s)",
+      "edges": [
+        3
+      ],
+      "measure": 2.1
+    }
+  ]
+}

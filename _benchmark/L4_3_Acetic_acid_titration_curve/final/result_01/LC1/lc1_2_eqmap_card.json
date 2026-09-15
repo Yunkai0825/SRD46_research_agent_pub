@@ -1,0 +1,52 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_17024",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 8465,
+      "ligand_name": "Ethanoic acid (Acetic acid)",
+      "ligand_SMILES": "CC(=O)O",
+      "ligand_canonical_HxL": "HL"
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_17043",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 106,
+      "metal_name": "Na^[+]",
+      "ligand_id": 8465,
+      "ligand_name": "Ethanoic acid (Acetic acid)",
+      "ligand_SMILES": "CC(=O)O",
+      "ligand_canonical_HxL": "HL"
+    },
+    {
+      "eq_network": "ref_eq_net_27309",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 106,
+      "metal_name": "Na^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    }
+  ]
+}

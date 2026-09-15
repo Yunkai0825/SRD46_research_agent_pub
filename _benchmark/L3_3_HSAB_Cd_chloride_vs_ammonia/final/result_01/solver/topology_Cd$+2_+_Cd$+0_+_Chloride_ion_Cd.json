@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "system_name": "Cd$+2 + Cd$+0 + Chloride ion",
+    "element": "Cd",
+    "n_pH": 51,
+    "pH_range": [
+      2.0,
+      12.0
+    ],
+    "ndim": 1,
+    "axis_names": [
+      "pH"
+    ],
+    "axis_ranges": {
+      "pH": [
+        2.0,
+        12.0
+      ]
+    },
+    "topology_settings": {
+      "extraction_method": "bottom_up_nd",
+      "axis_names": [
+        "pH"
+      ],
+      "axis_ranges": {
+        "pH": [
+          2.0,
+          12.0
+        ]
+      },
+      "axis_spacing": {
+        "pH": 0.20000000000000018
+      },
+      "topology_fix": {
+        "applied": false
+      },
+      "region_resolution_merges": 0,
+      "resolution": "coarse_final",
+      "is_final": true
+    }
+  },
+  "label_catalog": {
+    "0": "Cd$+2.L1.z+1",
+    "1": "[Cd(OH)2(s,beta)]"
+  },
+  "features_0d": [
+    {
+      "id": 0,
+      "labels": [
+        0,
+        1
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 8.9
+      },
+      "geometry_compact": {
+        "pH": 8.9
+      }
+    }
+  ],
+  "regions": [
+    {
+      "id": 0,
+      "label": 0,
+      "name": "Cd$+2.L1.z+1",
+      "boundary_ids": [
+        0
+      ],
+      "measure": 7.0,
+      "flags": []
+    },
+    {
+      "id": 1,
+      "label": 1,
+      "name": "[Cd(OH)2(s,beta)]",
+      "boundary_ids": [
+        0
+      ],
+      "measure": 3.2,
+      "flags": []
+    }
+  ],
+  "nodes": [
+    {
+      "id": 0,
+      "coords": {
+        "pH": 8.9
+      },
+      "labels": [
+        0,
+        1
+      ],
+      "domain_edge": false,
+      "pH": 8.9
+    }
+  ],
+  "edges": [],
+  "faces": [
+    {
+      "id": 0,
+      "label": 0,
+      "name": "Cd$+2.L1.z+1",
+      "edges": [
+        0
+      ],
+      "measure": 7.0
+    },
+    {
+      "id": 1,
+      "label": 1,
+      "name": "[Cd(OH)2(s,beta)]",
+      "edges": [
+        0
+      ],
+      "measure": 3.2
+    }
+  ]
+}

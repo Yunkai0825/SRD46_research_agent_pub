@@ -1,0 +1,7 @@
+id,source_id,label,dominant_species_id,name,measure,boundary_ids_json,source_boundary_ids_json,flags_json
+DmsReg_1,0,0,Dms_1,Cu,4.6000000000000005,"[""DmsRegEq_9"", ""DmsRegEq_6"", ""DmsRegEq_7""]","[0, 1, 2]",[]
+DmsReg_2,1,1,Dms_2,[(Cu2O)0.5](s),0.32,"[""DmsRegEq_9"", ""DmsRegEq_8""]","[0, 3]",[]
+DmsReg_3,2,2,Dms_3,Cu$+1.L2(2).z-1,0.81,"[""DmsRegEq_6"", ""DmsRegEq_1"", ""DmsRegEq_2"", ""DmsRegEq_3""]","[1, 4, 5, 6]",[]
+DmsReg_4,3,3,Dms_4,Cu$+2(2).H-1L1(2).z-4,6.71,"[""DmsRegEq_7"", ""DmsRegEq_8"", ""DmsRegEq_1"", ""DmsRegEq_4""]","[2, 3, 4, 7]",[]
+DmsReg_5,4,4,Dms_5,Cu$+2(2).H-1L1.L1.z-3,0.72,"[""DmsRegEq_2"", ""DmsRegEq_4"", ""DmsRegEq_5""]","[5, 7, 8]",[]
+DmsReg_6,5,5,Dms_6,Cu$+2.z+2,1.19,"[""DmsRegEq_3"", ""DmsRegEq_5""]","[6, 8]",[]

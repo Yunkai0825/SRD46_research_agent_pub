@@ -1,0 +1,94 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_4907",
+      "node_count": 6,
+      "temperature": 24.0,
+      "ionic_strength": 1.0,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L",
+      "final_adjustments": [
+        {
+          "node_key": "metal68_ligand6277_beta79_net4907",
+          "beta_definition_id": 79,
+          "examined_vlm_id": 108233,
+          "operation": "set_value",
+          "chosen_value": 9.52,
+          "rationale": "examined vlm_108233 K=+8.730 at T=25/I=1.0 is the min of 14 K-siblings (median +9.940, MAD 0.35) and deviates 1.29 log units. vlm_108224 K=+9.520 sits EXACTLY at request (T=25.0C, I=0.1M) and is duplicated by vlm_108226=+9.520; also consistent with vlm_108223=+9.610 (20C/0.1M) and vlm_108225=+9.520 (25C/0.5M). Replacing with at-request value +9.520."
+        },
+        {
+          "node_key": "metal68_ligand6277_beta72_net4907",
+          "beta_definition_id": 72,
+          "examined_vlm_id": 108295,
+          "operation": "set_value",
+          "chosen_value": -0.2,
+          "rationale": "Only 2 K-siblings exist (vlm_108293=-0.400 and vlm_108295=+0.000), both at T=25/I=1.0 (far from request I=0.1, no closer data available). Chosen vlm_108295=+0.000 sits at max of the pair; picking the median -0.200 (mean of vlm_108293 and vlm_108295) as the more defensible central estimate given only 2 K observations from the same source."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_5034",
+      "node_count": 3,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 61,
+      "metal_name": "Fe^[3+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L"
+    },
+    {
+      "eq_network": "ref_eq_net_27465",
+      "node_count": 8,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 61,
+      "metal_name": "Fe^[3+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_5020",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L"
+    },
+    {
+      "eq_network": "ref_eq_net_27433",
+      "node_count": 5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    }
+  ]
+}

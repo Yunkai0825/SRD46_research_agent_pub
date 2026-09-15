@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} — SRD-46 Results{% endblock %}
+{% block content %}
+{% include "_results_tabs.html" %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('results.collection', source=source) }}">{{ sources[source] }}</a></li>
+    <li class="breadcrumb-item active">{{ title }}</li>
+  </ol>
+</nav>
+<div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+  <h3 class="mb-0">{{ title }}</h3>
+  {% if metadata.layer %}<span class="badge bg-dark">{{ metadata.layer }}</span>{% endif %}
+  <span class="badge bg-{{ metadata.badge }}{% if metadata.badge == 'warning' %} text-dark{% endif %}">outcome: {{ metadata.verdict }}</span>
+</div>
+{% if metadata.prompt %}
+<div class="card mb-3">
+  <div class="card-header py-2 small text-muted">Prompt</div>
+  <div class="card-body py-2">{{ metadata.prompt }}</div>
+</div>
+{% endif %}
+{% if metadata.notes %}
+<div class="alert alert-{{ metadata.badge if metadata.badge != 'success' else 'secondary' }} py-2">
+  <strong>Verdict notes:</strong>
+  <ul class="mb-0">{% for note in metadata.notes %}<li><code>{{ note }}</code></li>{% endfor %}</ul>
+</div>
+{% endif %}
+<div class="card mb-4">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <span><i class="bi bi-chat-left-text"></i> Final Answer</span>
+    <span>
+      {% if answer %}<a class="btn btn-sm btn-outline-secondary" href="{{ answer_url }}" target="_blank" rel="noopener">raw</a>{% endif %}
+      {% if verdict_url %}<a class="btn btn-sm btn-outline-secondary" href="{{ verdict_url }}" target="_blank" rel="noopener">verdict</a>{% endif %}
+    </span>
+  </div>
+  <div class="card-body"><div class="md-doc">{% if answer %}{{ answer }}{% else %}<em class="text-muted">No final answer is available.</em>{% endif %}</div></div>
+</div>
+{% if result_groups %}<h4 class="mb-3"><i class="bi bi-diagram-2"></i> Final Results</h4>{% endif %}
+<div class="row g-3 mb-4">
+{% for group in result_groups %}
+<div class="col-lg-6">
+  <div class="card h-100">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <span class="fw-semibold">{{ group.title }}</span>
+      <span><span class="badge bg-{{ group.metadata.badge }}{% if group.metadata.badge == 'warning' %} text-dark{% endif %}">{{ group.metadata.verdict }}</span>
+        {% for item in group.documents %}<a class="btn btn-sm btn-outline-secondary" href="{{ item.url }}" target="_blank" rel="noopener">{{ item.path }}</a>{% endfor %}
+      </span>
+    </div>
+    <div class="card-body l1-panel-body">
+      {% if group.metadata.purpose %}<p class="mb-1"><strong>Purpose:</strong> {{ group.metadata.purpose }}</p>{% endif %}
+      {% if group.metadata.notes %}
+      <div class="alert alert-{{ group.metadata.badge if group.metadata.badge != 'success' else 'secondary' }} py-2 small">
+        <strong>Verdict notes:</strong><ul class="mb-0">{% for note in group.metadata.notes %}<li>{{ note }}</li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+      {% if group.figures %}<h6 class="text-muted mt-2">Final diagram{{ 's' if group.figures|length > 1 else '' }}</h6>{% endif %}
+      {% for item in group.figures %}
+      <div class="mb-3">
+        <a href="{{ item.url }}" target="_blank" rel="noopener"><img src="{{ item.url }}" class="img-fluid border rounded" alt="{{ item.path }}" loading="lazy"></a>
+        <div class="text-muted small text-truncate">{{ item.path }}</div>
+      </div>
+      {% endfor %}
+      {% if group.answer %}<h6 class="text-muted">Final response</h6><div class="md-doc">{{ group.answer }}</div>{% endif %}
+      {% for section in group.sections %}
+      {% if section.files %}
+      <details class="mt-2">
+        <summary class="small text-muted">{{ section.title }} ({{ section.files|length }})</summary>
+        {% if section.answer %}<div class="md-doc mt-2">{{ section.answer }}</div>{% endif %}
+        {% if section.verdict %}<details class="mt-2"><summary class="small text-muted">Verdict</summary><div class="md-doc"><pre>{{ section.verdict }}</pre></div></details>{% endif %}
+        <ul class="small mb-0 mt-1">
+          {% for item in section.files %}<li><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.path }}</a></li>{% endfor %}
+        </ul>
+      </details>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% if cost_plot %}
+<div class="card mb-4">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <span><i class="bi bi-bar-chart-steps"></i> Detailed cost decomposition (USD)</span>
+    {% if cost_data %}<a class="btn btn-sm btn-outline-secondary" href="{{ cost_data }}">CSV</a>{% endif %}
+  </div>
+  <div class="card-body">
+    <a href="{{ cost_plot }}" target="_blank" rel="noopener"><img src="{{ cost_plot }}" class="img-fluid border rounded" alt="Detailed cost decomposition for {{ title }}" loading="lazy"></a>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

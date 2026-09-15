@@ -1,0 +1,12 @@
+{
+  "verdict": "supported",
+  "hints": [
+    "Minor: L1 cites specific log β values (ZnO -9.61",
+    "Zn(OH)2 am -12.25",
+    "Zn(OH)2 aq -15.8",
+    "Zn(OH)3- -28.1) that are not directly listed in thermodynamic_reference_constants.md as inspected; verdict.md only shows Zn(OH)2 (amorphous) in the solids table while the precipitation line names 'ZnO (inactive)'. The qualitative story (precipitation onset pH 7.10",
+    "aqueous ladder collapse",
+    "dinuclear complex dominating residual aqueous Zn",
+    "~0.3% Zn-bound and ~99.6% in solid at pH 8.5) is consistent with envelope_Zn+2.csv (aqueous Zn fractions at pH 8.4 sum to ~0.005) and the verdict's dominance regions/crossovers."
+  ]
+}

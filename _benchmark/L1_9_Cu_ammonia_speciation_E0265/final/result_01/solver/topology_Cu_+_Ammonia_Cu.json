@@ -1,0 +1,375 @@
+{
+  "metadata": {
+    "system_name": "Cu + Ammonia",
+    "element": "Cu",
+    "n_pH": 141,
+    "pH_range": [
+      0.0,
+      14.0
+    ],
+    "ndim": 1,
+    "axis_names": [
+      "pH"
+    ],
+    "axis_ranges": {
+      "pH": [
+        0.0,
+        14.0
+      ]
+    },
+    "topology_settings": {
+      "extraction_method": "bottom_up_nd",
+      "axis_names": [
+        "pH"
+      ],
+      "axis_ranges": {
+        "pH": [
+          0.0,
+          14.0
+        ]
+      },
+      "resolution": "coarse_final",
+      "is_final": true
+    }
+  },
+  "label_catalog": {
+    "0": "Cu$+2.z+2",
+    "1": "Cu2O",
+    "2": "Cu$+1.L1(2).z+1",
+    "3": "Cu$+2.L1(3).z+2",
+    "4": "Cu$+2.L1(4).z+2",
+    "5": "Cu(OH)2",
+    "6": "Cu$+2.OH4.z-2"
+  },
+  "features_0d": [
+    {
+      "id": 0,
+      "labels": [
+        0,
+        1
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 5.55
+      },
+      "geometry_compact": {
+        "pH": 5.55
+      }
+    },
+    {
+      "id": 1,
+      "labels": [
+        1,
+        2
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 6.85
+      },
+      "geometry_compact": {
+        "pH": 6.85
+      }
+    },
+    {
+      "id": 2,
+      "labels": [
+        2,
+        3
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 8.15
+      },
+      "geometry_compact": {
+        "pH": 8.15
+      }
+    },
+    {
+      "id": 3,
+      "labels": [
+        3,
+        4
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 8.25
+      },
+      "geometry_compact": {
+        "pH": 8.25
+      }
+    },
+    {
+      "id": 4,
+      "labels": [
+        4,
+        5
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 10.45
+      },
+      "geometry_compact": {
+        "pH": 10.45
+      }
+    },
+    {
+      "id": 5,
+      "labels": [
+        5,
+        6
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 13.25
+      },
+      "geometry_compact": {
+        "pH": 13.25
+      }
+    }
+  ],
+  "regions": [
+    {
+      "id": 0,
+      "label": 0,
+      "name": "Cu$+2.z+2",
+      "boundary_ids": [
+        0
+      ],
+      "measure": 5.6
+    },
+    {
+      "id": 1,
+      "label": 1,
+      "name": "Cu2O",
+      "boundary_ids": [
+        0,
+        1
+      ],
+      "measure": 1.3
+    },
+    {
+      "id": 2,
+      "label": 2,
+      "name": "Cu$+1.L1(2).z+1",
+      "boundary_ids": [
+        1,
+        2
+      ],
+      "measure": 1.3
+    },
+    {
+      "id": 3,
+      "label": 3,
+      "name": "Cu$+2.L1(3).z+2",
+      "boundary_ids": [
+        2,
+        3
+      ],
+      "measure": 0.1
+    },
+    {
+      "id": 4,
+      "label": 4,
+      "name": "Cu$+2.L1(4).z+2",
+      "boundary_ids": [
+        3,
+        4
+      ],
+      "measure": 2.2
+    },
+    {
+      "id": 5,
+      "label": 5,
+      "name": "Cu(OH)2",
+      "boundary_ids": [
+        4,
+        5
+      ],
+      "measure": 2.8
+    },
+    {
+      "id": 6,
+      "label": 6,
+      "name": "Cu$+2.OH4.z-2",
+      "boundary_ids": [
+        5
+      ],
+      "measure": 0.8
+    }
+  ],
+  "nodes": [
+    {
+      "id": 0,
+      "coords": {
+        "pH": 5.550000000000001
+      },
+      "labels": [
+        0,
+        1
+      ],
+      "domain_edge": false,
+      "pH": 5.55
+    },
+    {
+      "id": 1,
+      "coords": {
+        "pH": 6.8500000000000005
+      },
+      "labels": [
+        1,
+        2
+      ],
+      "domain_edge": false,
+      "pH": 6.85
+    },
+    {
+      "id": 2,
+      "coords": {
+        "pH": 8.15
+      },
+      "labels": [
+        2,
+        3
+      ],
+      "domain_edge": false,
+      "pH": 8.15
+    },
+    {
+      "id": 3,
+      "coords": {
+        "pH": 8.25
+      },
+      "labels": [
+        3,
+        4
+      ],
+      "domain_edge": false,
+      "pH": 8.25
+    },
+    {
+      "id": 4,
+      "coords": {
+        "pH": 10.45
+      },
+      "labels": [
+        4,
+        5
+      ],
+      "domain_edge": false,
+      "pH": 10.45
+    },
+    {
+      "id": 5,
+      "coords": {
+        "pH": 13.25
+      },
+      "labels": [
+        5,
+        6
+      ],
+      "domain_edge": false,
+      "pH": 13.25
+    }
+  ],
+  "edges": [],
+  "faces": [
+    {
+      "id": 0,
+      "label": 0,
+      "name": "Cu$+2.z+2",
+      "edges": [
+        0
+      ],
+      "measure": 5.6
+    },
+    {
+      "id": 1,
+      "label": 1,
+      "name": "Cu2O",
+      "edges": [
+        0,
+        1
+      ],
+      "measure": 1.3
+    },
+    {
+      "id": 2,
+      "label": 2,
+      "name": "Cu$+1.L1(2).z+1",
+      "edges": [
+        1,
+        2
+      ],
+      "measure": 1.3
+    },
+    {
+      "id": 3,
+      "label": 3,
+      "name": "Cu$+2.L1(3).z+2",
+      "edges": [
+        2,
+        3
+      ],
+      "measure": 0.1
+    },
+    {
+      "id": 4,
+      "label": 4,
+      "name": "Cu$+2.L1(4).z+2",
+      "edges": [
+        3,
+        4
+      ],
+      "measure": 2.2
+    },
+    {
+      "id": 5,
+      "label": 5,
+      "name": "Cu(OH)2",
+      "edges": [
+        4,
+        5
+      ],
+      "measure": 2.8
+    },
+    {
+      "id": 6,
+      "label": 6,
+      "name": "Cu$+2.OH4.z-2",
+      "edges": [
+        5
+      ],
+      "measure": 0.8
+    }
+  ]
+}

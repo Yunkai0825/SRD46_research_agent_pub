@@ -1,0 +1,360 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_22067",
+      "node_count": 3,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 9058,
+      "ligand_name": "2-Hydroxypropane-1,2,3-tricarboxylic acid (Citric acid)",
+      "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+      "ligand_canonical_HxL": "H3L"
+    },
+    {
+      "eq_network": "ref_eq_net_1",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 5760,
+      "ligand_name": "Aminoacetic acid (Glycine)",
+      "ligand_SMILES": "NCC(=O)O",
+      "ligand_canonical_HxL": "HL"
+    },
+    {
+      "eq_network": "ref_eq_net_28179",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10103,
+      "ligand_name": "Ammonia",
+      "ligand_SMILES": "N",
+      "ligand_canonical_HxL": "L"
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_22180",
+      "node_count": 5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 41,
+      "metal_name": "Cu^[2+]",
+      "ligand_id": 9058,
+      "ligand_name": "2-Hydroxypropane-1,2,3-tricarboxylic acid (Citric acid)",
+      "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+      "ligand_canonical_HxL": "H3L"
+    },
+    {
+      "eq_network": "ref_eq_net_86",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 41,
+      "metal_name": "Cu^[2+]",
+      "ligand_id": 5760,
+      "ligand_name": "Aminoacetic acid (Glycine)",
+      "ligand_SMILES": "NCC(=O)O",
+      "ligand_canonical_HxL": "HL"
+    },
+    {
+      "eq_network": "ref_eq_net_29839",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 41,
+      "metal_name": "Cu^[2+]",
+      "ligand_id": 10163,
+      "ligand_name": "Chloride ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal41_ligand10163_beta812_net29839",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 177370,
+          "operation": "set_value",
+          "chosen_value": -0.2,
+          "rationale": "examined vlm_177370 K=+0.200 @ (T=25C,I=0.0M) is sign-discordant with the low-I K-siblings: vlm_177362=-0.200 @ I=0.5M, vlm_177363=-0.200 @ I=0.7M, vlm_177364=-0.200 @ I=1.0M, vlm_177365=-0.100 @ I=2.0M. The 8 finite-I K-siblings show a monotonic K(I) trend rising from -0.20 (I=0.5-1.0M) through 0.00 (I=3M) to +0.27 (I=6M), so at the request I=0.1M the value should be near -0.20, not +0.20. Patching to -0.200, matching vlm_177362 which is the closest finite-I sibling to the request I=0.1M and consistent with the three siblings at I=0.5/0.7/1.0M."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_28241",
+      "node_count": 4,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 41,
+      "metal_name": "Cu^[2+]",
+      "ligand_id": 10103,
+      "ligand_name": "Ammonia",
+      "ligand_SMILES": "N",
+      "ligand_canonical_HxL": "L"
+    },
+    {
+      "eq_network": "ref_eq_net_27444",
+      "node_count": 6,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 41,
+      "metal_name": "Cu^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_100",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 42,
+      "metal_name": "Cu^[+]",
+      "ligand_id": 5760,
+      "ligand_name": "Aminoacetic acid (Glycine)",
+      "ligand_SMILES": "NCC(=O)O",
+      "ligand_canonical_HxL": "HL"
+    },
+    {
+      "eq_network": "ref_eq_net_29869",
+      "node_count": 5,
+      "temperature": 24.0,
+      "ionic_strength": 5.0,
+      "metal_id": 42,
+      "metal_name": "Cu^[+]",
+      "ligand_id": 10163,
+      "ligand_name": "Chloride ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal42_ligand10163_beta812_net29869",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 177415,
+          "operation": "set_value",
+          "chosen_value": 3.1,
+          "rationale": "examined vlm_177415 K=+2.700 at I=5.0M is far from request I=0.1M (ΔI=+4.90). Sibling vlm_177416 K=+3.100 sits at I=0.0M (ΔI=-0.10), much closer to request, and is the sibling median. Patching to +3.100."
+        },
+        {
+          "node_key": "metal42_ligand10163_beta888_net29869",
+          "beta_definition_id": 888,
+          "examined_vlm_id": 177422,
+          "operation": "set_value",
+          "chosen_value": -0.67,
+          "rationale": "examined vlm_177422 K=-0.120 at I=5.0M is far from request I=0.1M (ΔI=+4.90). Sibling vlm_177423 K=-0.670 at I=0.0M is nearest to request (ΔI=-0.10). Three K-siblings span -0.670/-0.280/-0.120 monotonically with I; low-I value best represents I=0.1M. Patching to -0.670."
+        },
+        {
+          "node_key": "metal42_ligand10163_beta311_net29869",
+          "beta_definition_id": 311,
+          "examined_vlm_id": 177427,
+          "operation": "set_value",
+          "chosen_value": -6.73,
+          "rationale": "examined vlm_177427 K=-7.380 at I=5.0M is far from request I=0.1M (ΔI=+4.90). Sibling vlm_177428 K=-6.730 at I=0.0M is nearest to request (ΔI=-0.10) and equals the sibling median. Patching to -6.730."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_28256",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 42,
+      "metal_name": "Cu^[+]",
+      "ligand_id": 10103,
+      "ligand_name": "Ammonia",
+      "ligand_SMILES": "N",
+      "ligand_canonical_HxL": "L"
+    },
+    {
+      "eq_network": "ref_eq_net_27492",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 42,
+      "metal_name": "Cu^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_22182",
+      "node_count": 4,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 61,
+      "metal_name": "Fe^[3+]",
+      "ligand_id": 9058,
+      "ligand_name": "2-Hydroxypropane-1,2,3-tricarboxylic acid (Citric acid)",
+      "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+      "ligand_canonical_HxL": "H3L"
+    },
+    {
+      "eq_network": "ref_eq_net_96",
+      "node_count": 3,
+      "temperature": 24.0,
+      "ionic_strength": 3.0,
+      "metal_id": 61,
+      "metal_name": "Fe^[3+]",
+      "ligand_id": 5760,
+      "ligand_name": "Aminoacetic acid (Glycine)",
+      "ligand_SMILES": "NCC(=O)O",
+      "ligand_canonical_HxL": "HL",
+      "final_adjustments": [
+        {
+          "node_key": "metal61_ligand5760_beta812_net96",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 93881,
+          "operation": "set_value",
+          "chosen_value": -8.57,
+          "rationale": "examined vlm_93881 K=-9.250 at I=3.0 M is far from request I=0.1 M (ΔI=+2.90). The only K-sibling vlm_93880=-8.570 sits at I=0.5 M (ΔI=+0.40), much closer to the request. Patching to vlm_93880's value."
+        },
+        {
+          "node_key": "metal61_ligand5760_beta779_net96",
+          "beta_definition_id": 779,
+          "examined_vlm_id": 93884,
+          "operation": "set_value",
+          "chosen_value": 1.77,
+          "rationale": "examined vlm_93884 K=+2.030 at I=3.0 M is far from request I=0.1 M. Two closer siblings exist: vlm_93882=+1.770 at I=0.5 M (ΔI=+0.40) and vlm_93883=+1.760 at I=1.0 M. Picking vlm_93882's +1.770 because I=0.5 M is closest to the request I=0.1 M and matches the sibling median +1.765."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_29854",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 61,
+      "metal_name": "Fe^[3+]",
+      "ligand_id": 10163,
+      "ligand_name": "Chloride ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_27465",
+      "node_count": 8,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 61,
+      "metal_name": "Fe^[3+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal61_ligand10076_beta840_net27465",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 170807,
+          "operation": "set_value",
+          "chosen_value": 21.85,
+          "rationale": "examined vlm_170807 K=+23.400 is a MAD outlier above a tight positive cluster of 4 K-siblings (vlm_170802=+21.800, vlm_170804=+21.900, vlm_170805=+21.870, vlm_170806=+21.830) all at T=25C/I=0M. The 5th sibling vlm_170803=-20.400 is sign-discordant and ignored. Median of the +cluster = +21.850, adopted as chosen_value."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_22169",
+      "node_count": 5,
+      "temperature": 36.0,
+      "ionic_strength": 0.15,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 9058,
+      "ligand_name": "2-Hydroxypropane-1,2,3-tricarboxylic acid (Citric acid)",
+      "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+      "ligand_canonical_HxL": "H3L",
+      "final_adjustments": [
+        {
+          "node_key": "metal62_ligand9058_beta779_net22169",
+          "beta_definition_id": 779,
+          "examined_vlm_id": 157625,
+          "operation": "set_value",
+          "chosen_value": 2.9,
+          "rationale": "examined vlm_157625 K=+3.100 at (37C, 0.15M) is a mad_outlier vs sibling median +2.775 (min +2.600, max +3.100, MAD 0.05). Sibling vlm_157623 sits exactly at the request (T=25C, I=0.1M) with K=+2.900, matching the 3-sibling cluster (+2.600, +2.775, +2.900) within 0.3 logK. Patching to the at-request datum +2.900."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_64",
+      "node_count": 3,
+      "temperature": 24.0,
+      "ionic_strength": 1.0,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 5760,
+      "ligand_name": "Aminoacetic acid (Glycine)",
+      "ligand_SMILES": "NCC(=O)O",
+      "ligand_canonical_HxL": "HL",
+      "final_adjustments": [
+        {
+          "node_key": "metal62_ligand5760_beta812_net64",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 93749,
+          "operation": "set_value",
+          "chosen_value": 4.31,
+          "rationale": "chosen vlm_93749=+3.730 at I=1.0 M was flagged mad_outlier vs sibling median +4.240. K-sibling pool is 6/7 positive and tightly clustered (vlm_93748=+3.830, vlm_93750=+4.200, vlm_93751=+4.360, vlm_93752=+4.310, vlm_93753=+4.280); only vlm_93747=-4.130 at the request (T=25C, I=0.1M) is sign-discordant and is clearly a sign-error outlier. Picking vlm_93752=+4.310 (T=25.0C, I=0.0 M) — same temperature as request and I closest to the requested 0.1 M among positive siblings, and it matches the cluster median +4.240 within 0.07."
+        },
+        {
+          "node_key": "metal62_ligand5760_beta840_net64",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 93759,
+          "operation": "set_value",
+          "chosen_value": 7.65,
+          "rationale": "only 2 K-siblings exist for beta_def=840: vlm_93758=-7.650 at request (25C, 0.1M) and vlm_93759=+6.650 at (25C, 1.0M). Magnitudes are similar (|7.650| vs |6.650|) but signs oppose — the [M]+[L]^2<=>[ML2] complex-formation log K must be positive on chemical grounds (a stable Cu-glycinate ML2), so vlm_93758's negative sign is a data-entry error. Taking the at-request datum's magnitude with the sign corrected: chosen_value=+7.650, which uses the I=0.1M measurement (exact match to request I) rather than the I=1.0M sibling and is consistent with the positive sign of vlm_93759=+6.650."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_29830",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 10163,
+      "ligand_name": "Chloride ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_28225",
+      "node_count": 4,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 10103,
+      "ligand_name": "Ammonia",
+      "ligand_SMILES": "N",
+      "ligand_canonical_HxL": "L"
+    },
+    {
+      "eq_network": "ref_eq_net_27433",
+      "node_count": 5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    }
+  ]
+}

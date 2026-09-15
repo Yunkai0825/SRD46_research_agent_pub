@@ -1,0 +1,142 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_21590",
+      "node_count": 4,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 8997,
+      "ligand_name": "meso-2,3-Dimercaptobutanedioic acid (meso-Dithiotartaric acid)",
+      "ligand_SMILES": "O=C(O)[C@@H](S)[C@@H](S)C(=O)O",
+      "ligand_canonical_HxL": "H4L"
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_21600",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 125,
+      "metal_name": "Pb^[2+]",
+      "ligand_id": 8997,
+      "ligand_name": "meso-2,3-Dimercaptobutanedioic acid (meso-Dithiotartaric acid)",
+      "ligand_SMILES": "O=C(O)[C@@H](S)[C@@H](S)C(=O)O",
+      "ligand_canonical_HxL": "H4L"
+    },
+    {
+      "eq_network": "ref_eq_net_27546",
+      "node_count": 7,
+      "temperature": 24.0,
+      "ionic_strength": 3.0,
+      "metal_id": 125,
+      "metal_name": "Pb^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal125_ligand10076_beta872_net27546",
+          "beta_definition_id": 872,
+          "examined_vlm_id": 171077,
+          "operation": "set_value",
+          "chosen_value": 13.9,
+          "rationale": "examined vlm_171077 logK=+13.700 sits at I=3.0 M (wide_TI_distance vs request I=0.1 M). Nearest-at-request sibling vlm_171079 gives logK=+13.900 at (25.0 C, I=0.0 M), matching median 13.800 of the 4 K-siblings (range 13.300-14.100). Patching to +13.900 to use the ionic-strength-appropriate datum."
+        },
+        {
+          "node_key": "metal125_ligand10076_beta502_net27546",
+          "beta_definition_id": 502,
+          "examined_vlm_id": 171080,
+          "operation": "set_value",
+          "chosen_value": 7.6,
+          "rationale": "examined vlm_171080 logK=+7.800 at I=3.0 M flagged mad_outlier+wide_TI_distance. The only other K-sibling vlm_171081 gives +7.600 at (25.0 C, I=0.0 M), which is essentially at the request I=0.1 M. Patching to +7.600."
+        },
+        {
+          "node_key": "metal125_ligand10076_beta649_net27546",
+          "beta_definition_id": 649,
+          "examined_vlm_id": 171083,
+          "operation": "set_value",
+          "chosen_value": 32.1,
+          "rationale": "examined vlm_171083 logK=+34.000 at I=3.0 M flagged mad_outlier (K-range 31.700-34.000, median 32.100). Nearest-at-request sibling vlm_171084=+32.100 at (25.0 C, I=0.0 M) equals the sibling median. Patching to +32.100."
+        },
+        {
+          "node_key": "metal125_ligand10076_beta812_net27546",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 171071,
+          "operation": "set_value",
+          "chosen_value": 6.0,
+          "rationale": "examined vlm_171071 logK=+6.300 at I=3.0 M flagged mad_outlier vs 5 K-siblings clustering at median +6.000. Nearest-at-request sibling vlm_171068=+6.000 sits exactly at (25.0 C, I=0.1 M) matching the request. Patching to +6.000."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_21597",
+      "node_count": 5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 8997,
+      "ligand_name": "meso-2,3-Dimercaptobutanedioic acid (meso-Dithiotartaric acid)",
+      "ligand_SMILES": "O=C(O)[C@@H](S)[C@@H](S)C(=O)O",
+      "ligand_canonical_HxL": "H4L",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand8997_beta780_net21597",
+          "beta_definition_id": 780,
+          "examined_vlm_id": 156193,
+          "operation": "set_value",
+          "chosen_value": 0.2,
+          "rationale": "examined vlm_156193 K=-1.000 at (25.0C, 0.1M) is sign-discordant with the only other K-sibling vlm_156194=+0.200 at (20.0C, 0.1M). For Pb(II)+DMSA reaction [M]+[H2L]<=>[MHL]+[H], a slightly positive logK is chemically reasonable given DMSA's soft-donor thiol affinity for Pb. With only 2 siblings and a 1.2 log-unit sign split, the positive value (vlm_156194=+0.200) is preferred; ΔT=5C is minor. Setting chosen_value to +0.200."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27522",
+      "node_count": 11,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand10076_beta840_net27522",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 170935,
+          "operation": "set_value",
+          "chosen_value": 12.2,
+          "rationale": "examined vlm_170935 logβ(ML2)=-10.200 at I=0.0 is chemically implausible for a Pb(II)-dithiol chelate and sign-discordant with its only sibling vlm_170934=+12.200 at I=3.0 (Δ=22.4). The +12.200 value is internally consistent with the same-node-set trend logβ3=+13.900 (vlm_170937) and logβ4=+15.500 (vlm_170939) for the ML_n series. Patching to +12.200 (vlm_170934's value) as the only defensible K-sibling despite its I=3.0 offset."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27326",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 25,
+      "metal_name": "Ca^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    }
+  ]
+}

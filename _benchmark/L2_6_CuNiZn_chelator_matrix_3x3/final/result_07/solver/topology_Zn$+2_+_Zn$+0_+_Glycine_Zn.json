@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "system_name": "Zn$+2 + Zn$+0 + Glycine",
+    "element": "Zn",
+    "n_pH": 101,
+    "pH_range": [
+      2.0,
+      12.0
+    ],
+    "ndim": 1,
+    "axis_names": [
+      "pH"
+    ],
+    "axis_ranges": {
+      "pH": [
+        2.0,
+        12.0
+      ]
+    },
+    "topology_settings": {
+      "extraction_method": "bottom_up_nd",
+      "axis_names": [
+        "pH"
+      ],
+      "axis_ranges": {
+        "pH": [
+          2.0,
+          12.0
+        ]
+      },
+      "axis_spacing": {
+        "pH": 0.09999999999999964
+      },
+      "topology_fix": {
+        "applied": false
+      },
+      "region_resolution_merges": 0,
+      "resolution": "coarse_final",
+      "is_final": true
+    }
+  },
+  "label_catalog": {
+    "0": "Zn$+2.z+2",
+    "1": "ZnO (inactive)"
+  },
+  "features_0d": [
+    {
+      "id": 0,
+      "labels": [
+        0,
+        1
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 6.65
+      },
+      "geometry_compact": {
+        "pH": 6.65
+      }
+    }
+  ],
+  "regions": [
+    {
+      "id": 0,
+      "label": 0,
+      "name": "Zn$+2.z+2",
+      "boundary_ids": [
+        0
+      ],
+      "measure": 4.7,
+      "flags": []
+    },
+    {
+      "id": 1,
+      "label": 1,
+      "name": "ZnO (inactive)",
+      "boundary_ids": [
+        0
+      ],
+      "measure": 5.4,
+      "flags": []
+    }
+  ],
+  "nodes": [
+    {
+      "id": 0,
+      "coords": {
+        "pH": 6.65
+      },
+      "labels": [
+        0,
+        1
+      ],
+      "domain_edge": false,
+      "pH": 6.65
+    }
+  ],
+  "edges": [],
+  "faces": [
+    {
+      "id": 0,
+      "label": 0,
+      "name": "Zn$+2.z+2",
+      "edges": [
+        0
+      ],
+      "measure": 4.7
+    },
+    {
+      "id": 1,
+      "label": 1,
+      "name": "ZnO (inactive)",
+      "edges": [
+        0
+      ],
+      "measure": 5.4
+    }
+  ]
+}

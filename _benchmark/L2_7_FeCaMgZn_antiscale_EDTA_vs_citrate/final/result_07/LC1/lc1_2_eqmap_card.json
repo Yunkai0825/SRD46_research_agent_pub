@@ -1,0 +1,98 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_4907",
+      "node_count": 6,
+      "temperature": 24.0,
+      "ionic_strength": 1.0,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L",
+      "final_adjustments": [
+        {
+          "node_key": "metal68_ligand6277_beta79_net4907",
+          "beta_definition_id": 79,
+          "examined_vlm_id": 108233,
+          "operation": "set_value",
+          "chosen_value": 10.19,
+          "rationale": "examined vlm_108233 K=+8.730 at (25C, I=1.0) is a mad_outlier vs sibling median +9.940 (n=14 K-siblings). Three K-siblings sit EXACTLY at request (25C, I=0.1M): vlm_108224=+9.520, vlm_108225=+10.190, vlm_108226=+10.370, cluster within 0.85 logK. Patching to their median +10.190 (vlm_108225), the most defensible at-request value, replacing the chosen I=1.0M outlier."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_5057",
+      "node_count": 4,
+      "temperature": 24.0,
+      "ionic_strength": 1.0,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand6277_beta966_net5057",
+          "beta_definition_id": 966,
+          "examined_vlm_id": 108720,
+          "operation": "set_value",
+          "chosen_value": -11.6,
+          "rationale": "examined vlm_108720 K=-12.000 at I=1.0M was chosen but exact-match K-sibling vlm_108719 K=-11.600 sits at the request conditions (T=25.0C, I=0.1M, ΔT=0, ΔI=0). Screen also flagged mad_outlier: chosen deviates 0.40 from sibling median -11.600. Patching to vlm_108719's value -11.600."
+        },
+        {
+          "node_key": "metal208_ligand6277_beta788_net5057",
+          "beta_definition_id": 788,
+          "examined_vlm_id": 108714,
+          "operation": "set_value",
+          "chosen_value": 3.0,
+          "rationale": "examined vlm_108714 K=+2.800 at I=1.0M was chosen but exact-match K-sibling vlm_108713 K=+3.000 sits at the request conditions (T=25.0C, I=0.1M, ΔT=0, ΔI=0). vlm_108713 also equals the median of the 3 K-siblings (+2.800/+3.000/+3.100). Patching to +3.000."
+        },
+        {
+          "node_key": "metal208_ligand6277_beta812_net5057",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 108709,
+          "operation": "set_value",
+          "chosen_value": 16.5,
+          "rationale": "examined vlm_108709 K=+15.700 at I=1.0M was chosen but exact-match K-sibling vlm_108707 K=+16.500 sits at the request conditions (T=25.0C, I=0.1M, ΔT=0, ΔI=0), consistent with the sibling median +16.100 of 4 K-rows. Patching to vlm_108707's value +16.500."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27522",
+      "node_count": 11,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand10076_beta840_net27522",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 170935,
+          "operation": "set_value",
+          "chosen_value": 12.2,
+          "rationale": "examined vlm_170935 logK=-10.200 (T=25C, I=0.0M) is sign-discordant and chemically implausible for ZnL2 (EDTA) formation: the sibling vlm_170934=+12.200 (T=25C, I=3.0M) has opposite sign, and the neighbouring beta_defs give logK(ZnL)=+4.700 (beta812) and logK(ZnL3)=+13.900 (beta872), so ML2 must sit between them (positive, ~+10 to +13). Patching to +12.200 from vlm_170934, the only positive K-sibling."
+        }
+      ]
+    }
+  ]
+}

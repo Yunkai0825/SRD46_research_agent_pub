@@ -1,0 +1,242 @@
+{
+  "sweep_method": "pH_sweep",
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Ni",
+          "element": "Ni",
+          "internal_id": "Ni$+2",
+          "db_id": "metal_112",
+          "redox_states": [
+            "Ni$+2",
+            "Ni$+0",
+            "Ni$+3",
+            "Ni$+4"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Glycine",
+          "db_id": "ligand_5760",
+          "internal_id": "L1",
+          "smiles": "NCC(=O)O",
+          "inchi_key": ""
+        }
+      ]
+    },
+    "freeform_vars_define": {}
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "excluded",
+    "ionic_strength_mode": "fixed"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "known",
+        "note": "25 C stated in task"
+      },
+      {
+        "id": "I",
+        "handle": "s.ionic_strength",
+        "ref": "ionic_strength",
+        "handle_id": null,
+        "value": 0.1,
+        "basis": "known",
+        "note": "I = 0.1 m stated in task"
+      },
+      {
+        "id": "NiII",
+        "handle": "s.total[\"Ni$+2\"]",
+        "ref": "total",
+        "handle_id": "Ni$+2",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1.00 mM Ni(II) analytical total"
+      },
+      {
+        "id": "Ni0",
+        "handle": "s.total[\"Ni$+0\"]",
+        "ref": "total",
+        "handle_id": "Ni$+0",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "redox excluded; only Ni(II) present"
+      },
+      {
+        "id": "NiIII",
+        "handle": "s.total[\"Ni$+3\"]",
+        "ref": "total",
+        "handle_id": "Ni$+3",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "redox excluded; only Ni(II) present"
+      },
+      {
+        "id": "NiIV",
+        "handle": "s.total[\"Ni$+4\"]",
+        "ref": "total",
+        "handle_id": "Ni$+4",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "redox excluded; only Ni(II) present"
+      },
+      {
+        "id": "L",
+        "handle": "s.total[\"ligand_5760\"]",
+        "ref": "total",
+        "handle_id": "ligand_5760",
+        "value": 0.01,
+        "basis": "known",
+        "note": "10.0 mM glycine analytical total"
+      }
+    ],
+    "deferred": [
+      {
+        "handle": "s.pH",
+        "ref": "pH",
+        "handle_id": null,
+        "role": "swept",
+        "note": "pH is the sweep axis for pH_sweep, narrow window around pH 7"
+      }
+    ],
+    "notes": "T=25 C and I=0.1 M are task-stated. Ni(II)=1 mM and glycine=10 mM are analytical totals from the task. Other Ni oxidation states pinned to 0 since redox is excluded (pH speciation only). pH is the swept axis, deferred to L3_3.",
+    "n_known": 4,
+    "n_assumed": 3
+  },
+  "_deferred_conditions": [
+    {
+      "handle": "s.pH",
+      "ref": "pH",
+      "handle_id": null,
+      "role": "swept",
+      "note": "pH is the sweep axis for pH_sweep, narrow window around pH 7"
+    }
+  ],
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "axes": [
+      "pH_axis"
+    ],
+    "dof": {
+      "K": 8,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "I",
+        "op": "==",
+        "lhs": {
+          "ref": "ionic_strength"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Ni2",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Ni$+2"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Ni0",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Ni$+0"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Ni3",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Ni$+3"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Ni4",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Ni$+4"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_5760"
+        },
+        "rhs": {
+          "const": 0.01
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 6.5,
+      "max": 7.5,
+      "n_points": 21
+    }
+  ],
+  "grid_refine": {
+    "mode": "none"
+  }
+}

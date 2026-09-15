@@ -1,0 +1,172 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_6647",
+      "node_count": 8,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 6356,
+      "ligand_name": "Diethylenetrinitrilopentaacetic acid (DTPA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CCN(CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H5L",
+      "final_adjustments": [
+        {
+          "node_key": "metal68_ligand6356_beta32_net6647",
+          "beta_definition_id": 32,
+          "examined_vlm_id": 112484,
+          "operation": "set_value",
+          "chosen_value": 8.6,
+          "rationale": "examined vlm_112484 logK=-8.400 is sign-flipped vs 8 positive K-siblings (median=+8.290, values 8.09/8.18/8.26/8.29/8.32/8.41/8.60/8.64). Sibling vlm_112486 sits exactly at request (T=25.0C, I=0.1M) with K=+8.600; picking that at-request datum."
+        },
+        {
+          "node_key": "metal68_ligand6356_beta79_net6647",
+          "beta_definition_id": 79,
+          "examined_vlm_id": 112470,
+          "operation": "set_value",
+          "chosen_value": 10.5,
+          "rationale": "examined vlm_112470 logK=-9.900 is sign-flipped vs 8 positive K-siblings (median=+9.900, values 9.42/9.48/9.49/9.90/9.98/10.46/10.50/10.79). Sibling vlm_112472 sits exactly at request (T=25.0C, I=0.1M) with K=+10.500; picking that at-request datum (vlm_112473=+10.790 also at request, consistent)."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_6733",
+      "node_count": 3,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 61,
+      "metal_name": "Fe^[3+]",
+      "ligand_id": 6356,
+      "ligand_name": "Diethylenetrinitrilopentaacetic acid (DTPA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CCN(CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H5L"
+    },
+    {
+      "eq_network": "ref_eq_net_27465",
+      "node_count": 8,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 61,
+      "metal_name": "Fe^[3+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal61_ligand10076_beta840_net27465",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 170807,
+          "operation": "set_value",
+          "chosen_value": 21.85,
+          "rationale": "examined vlm_170807 K=+23.400 (I=0.0M) is 1.60 above the tight positive-sibling cluster (vlm_170802=+21.800@I=0.5, vlm_170804=+21.800@I=1.0, vlm_170805=+21.900@I=2.0, vlm_170806=+22.100@I=3.0; median +21.850, spread only 0.30). vlm_170803=-20.400 is a sign-error outlier that yanks the mean. Patching to the 4-sibling median +21.850, which best represents the K-population near I=0.1M request."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_6724",
+      "node_count": 5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 6356,
+      "ligand_name": "Diethylenetrinitrilopentaacetic acid (DTPA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CCN(CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H5L"
+    },
+    {
+      "eq_network": "ref_eq_net_27433",
+      "node_count": 5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_6662",
+      "node_count": 3,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 25,
+      "metal_name": "Ca^[2+]",
+      "ligand_id": 6356,
+      "ligand_name": "Diethylenetrinitrilopentaacetic acid (DTPA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CCN(CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H5L"
+    },
+    {
+      "eq_network": "ref_eq_net_27326",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 25,
+      "metal_name": "Ca^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_6660",
+      "node_count": 3,
+      "temperature": 36.0,
+      "ionic_strength": 0.15,
+      "metal_id": 92,
+      "metal_name": "Mg^[2+]",
+      "ligand_id": 6356,
+      "ligand_name": "Diethylenetrinitrilopentaacetic acid (DTPA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CCN(CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H5L",
+      "final_adjustments": [
+        {
+          "node_key": "metal92_ligand6356_beta812_net6660",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 112530,
+          "operation": "set_value",
+          "chosen_value": 9.27,
+          "rationale": "examined vlm_112530 logK=-8.560 sign-discordant vs sibling vlm_112529=+9.270 which sits at the exact request conditions (T=25.0°C, I=0.1M, ΔT=0, ΔI=0). Fe(III)-DTPA ML formation is known to be strongly positive (logK~28 range for beta_def variants), so the negative value is clearly erroneous. Patching to vlm_112529 = +9.270."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27322",
+      "node_count": 4,
+      "temperature": 24.0,
+      "ionic_strength": 3.0,
+      "metal_id": 92,
+      "metal_name": "Mg^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal92_ligand10076_beta812_net27322",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 170380,
+          "operation": "set_value",
+          "chosen_value": 2.6,
+          "rationale": "examined vlm_170380 K=+1.700 at (T=25C, I=3.0M) is far from request (T=25C, I=0.1M). Sibling vlm_170382 K=+2.600 sits at (T=25C, I=0.0M) — exact T match and ΔI=-0.10 (much closer than the chosen ΔI=+2.90). Three K-siblings cluster positive (+1.70, +2.20, +2.60); the negative vlm_170379=-1.90 is at T=37C and looks like the outlier flagged by sibling_sign_split. Picking vlm_170382's value (+2.60) because it is the closest sibling to the request in (T,I) and is consistent with the positive cluster."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block title %}{{ lig.ligand_name_SRD }} — SRD-46{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('ligands.ligands_list') }}">Ligands</a></li>
+    <li class="breadcrumb-item active">{{ lig.ligand_name_SRD }}</li>
+  </ol>
+</nav>
+
+<div class="card p-3 mb-4">
+  <h4>{{ lig.ligand_name_SRD }}</h4>
+  <table class="table table-sm w-auto">
+    <tr><th>ID</th><td>{{ lig.ligand_id }}</td></tr>
+    {% if lig.formula %}<tr><th>Formula</th><td class="formula">{{ lig.formula }}</td></tr>{% endif %}
+    {% if lig.ligand_class_name %}<tr><th>Class</th><td>{{ lig.ligand_class_name }}</td></tr>{% endif %}
+    {% if lig.ligand_SMILES %}<tr><th>SMILES</th><td class="smiles-box">{{ lig.ligand_SMILES }}</td></tr>{% endif %}
+    {% if lig.ligand_InChi %}<tr><th>InChI</th><td class="smiles-box">{{ lig.ligand_InChi }}</td></tr>{% endif %}
+    {% if lig.definition_HxL %}<tr><th>H<sub>x</sub>L definition</th><td>{{ lig.definition_HxL }}</td></tr>{% endif %}
+  </table>
+</div>
+
+{# ── Statistics ── #}
+{% if stats and (stats.n_measurements or stats.n_pka) %}
+<div class="row g-3 mb-4">
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.n_metals or 0) }}</div>
+      <div class="stat-label">Metals</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.n_beta_defs or 0) }}</div>
+      <div class="stat-label">Beta defs</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.n_systems or 0) }}</div>
+      <div class="stat-label">Systems (β)</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.n_measurements or 0) }}</div>
+      <div class="stat-label">Measurements</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.n_pka or 0) }}</div>
+      <div class="stat-label">pK<sub>a</sub> values</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ '%.1f'|format(stats.logK_min) if stats.logK_min is not none else '—' }}</div>
+      <div class="stat-label">log K min</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ '%.1f'|format(stats.logK_max) if stats.logK_max is not none else '—' }}</div>
+      <div class="stat-label">log K max</div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{# ── pKa bracket ── #}
+{% if brackets %}
+<div class="card p-3 mb-4">
+  <h5><i class="bi bi-bar-chart-steps"></i> pK<sub>a</sub> Bracket (protonation forms)</h5>
+  <div class="data-scroll">
+    <table class="table table-sm data-table">
+      <thead><tr><th>Charge</th><th>Formula</th><th>H<sub>x</sub>L form</th><th>Bracket</th><th>SMILES</th><th>Source</th></tr></thead>
+      <tbody>
+      {% for b in brackets %}
+        <tr>
+          <td><span class="charge-badge {{ 'positive' if b.charge and b.charge > 0 else 'negative' if b.charge and b.charge < 0 else '' }}">{{ b.charge if b.charge is not none else '—' }}</span></td>
+          <td class="formula">{{ b.formula or '' }}</td>
+          <td>{{ b.HxL_form or '' }}</td>
+          <td>{{ b.bracket_label or '' }}</td>
+          <td class="smiles-box small">{{ b.SMILES or '' }}</td>
+          <td>{{ b.model_name or 'Estimated' if b.is_estimated else 'SRD-derived' }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% for note in brackets|selectattr('is_estimated')|map(attribute='notes')|reject('none')|unique %}
+  {% if note %}<p class="text-muted small mb-1">{{ note }}</p>{% endif %}
+  {% endfor %}
+</div>
+{% endif %}
+
+{# ── measured pKa ── #}
+{% if pkas %}
+<div class="card p-3 mb-4">
+  <h5><i class="bi bi-bar-chart-steps"></i> Measured pK<sub>a</sub> Values ({{ pkas|length }})</h5>
+  <div class="data-scroll">
+    <table class="table table-sm data-table">
+      <thead><tr><th>pK<sub>a</sub></th><th>Type</th><th>T (°C)</th><th>I (mol/L)</th><th>Quality</th></tr></thead>
+      <tbody>
+      {% for p in pkas %}
+        <tr>
+          <td><strong>{{ p.pKa }}</strong></td>
+          <td>{{ p.pKa_type or '' }}</td>
+          <td>{{ p.temperature_c if p.temperature_c is not none else '' }}</td>
+          <td>{{ p.ionic_strength_mol_l if p.ionic_strength_mol_l is not none else '' }}</td>
+          <td>{{ p.quality or '' }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+
+{# ── metals with stability data ── #}
+<h5><i class="bi bi-gem"></i> Metals with stability data ({{ metals|length }})</h5>
+<p class="text-muted small">Log K ranges include K-type records only; measurement counts also include thermodynamic and unspecified records.</p>
+<div class="data-scroll">
+  <table class="table table-sm table-hover data-table">
+    <thead><tr><th>#</th><th>Metal</th><th>Charge</th><th class="text-end">Beta defs</th><th class="text-end">Systems</th><th class="text-end">Entries</th><th class="text-end">log K min</th><th class="text-end">log K max</th><th></th></tr></thead>
+    <tbody>
+    {% for m in metals %}
+      <tr>
+        <td class="row-num">{{ loop.index }}</td>
+        <td><a href="{{ url_for('metals.metal_detail', metal_id=m.metal_id) }}">{{ m.metal_name_SRD }}</a></td>
+        <td><span class="charge-badge {{ 'positive' if m.charge and m.charge > 0 else 'negative' if m.charge and m.charge < 0 else '' }}">{{ m.charge }}</span></td>
+        <td class="text-end">{{ m.n_beta_defs }}</td>
+        <td class="text-end">{{ m.n_systems }}</td>
+        <td class="text-end">{{ m.n_entries }}</td>
+        <td class="text-end">{{ '%.2f'|format(m.logK_min) if m.logK_min is not none else '—' }}</td>
+        <td class="text-end">{{ '%.2f'|format(m.logK_max) if m.logK_max is not none else '—' }}</td>
+        <td><a class="btn btn-sm btn-outline-primary" href="{{ url_for('stability.stability_search', metal_id=m.metal_id, ligand_id=lig.ligand_id) }}">
+          <i class="bi bi-clipboard-data"></i> Measurements</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

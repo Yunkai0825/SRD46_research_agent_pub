@@ -1,0 +1,45 @@
+{
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "H",
+          "element": "H",
+          "redox_states": [
+            {
+              "internal_id": "H$+1",
+              "db_id": "metal_68"
+            }
+          ],
+          "water_species": true
+        },
+        {
+          "name": "Na",
+          "element": "Na",
+          "redox_states": [
+            {
+              "internal_id": "Na$+1",
+              "db_id": "metal_106"
+            }
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Acetic acid",
+          "db_id": "ligand_8465",
+          "internal_id": "L1",
+          "formula": "C2H4O2",
+          "smiles": "CC(=O)O",
+          "inchi": "InChI=1S/C2H4O2/c1-2(3)4/h1H3,(H,3,4)"
+        },
+        {
+          "name": "Hydroxide ion",
+          "db_id": "ligand_10076",
+          "internal_id": "L0",
+          "water_species": true
+        }
+      ]
+    }
+  }
+}

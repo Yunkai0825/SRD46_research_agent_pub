@@ -1,0 +1,17 @@
+{
+  "verdict": "inconclusive",
+  "status": "ok",
+  "notes": [
+    "l1_report.md is only 31 bytes containing just \"## Doability",
+    "Doable — a p…\" — the analysis is truncated/empty. No claims to verify against the Cu/Zn/EDTA envelopes",
+    "fraction tables",
+    "or state metrics. Report needs to be regenerated with the actual speciation analysis: fractions of each metal as EDTA complex vs free/hydrolyzed",
+    "bound-to-free ratios for Cu and Zn",
+    "and identification of the winner with quantitative justification from the solver outputs (envelope_Cu+2.csv",
+    "envelope_Zn+2.csv",
+    "frac_metal.csv",
+    "concentrations.csv",
+    "state_metrics.csv)."
+  ],
+  "purpose": "Determine competitive EDTA partitioning between Cu(II) and Zn(II) in a shared beaker where EDTA is sub-stoichiometric relative to the combined metal load."
+}

@@ -1,0 +1,5 @@
+id,source_id,label,dominant_species_id,name,measure,boundary_ids_json,source_boundary_ids_json,flags_json
+DmsReg_1,0,0,Dms_1,Zn,7.295859375000002,"[""DmsRegEq_1"", ""DmsRegEq_5"", ""DmsRegEq_2""]","[0, 1, 2]",[]
+DmsReg_3,1,1,Dms_2,Zn$+2.OH4.z-2,1.5050390625000003,"[""DmsRegEq_1"", ""DmsRegEq_3""]","[0, 3]",[]
+DmsReg_2,2,2,Dms_3,ZnO (inactive),17.636132812500005,"[""DmsRegEq_5"", ""DmsRegEq_3"", ""DmsRegEq_4""]","[1, 3, 4]",[]
+DmsReg_4,3,3,Dms_4,Zn$+2.z+2,15.562968750000003,"[""DmsRegEq_2"", ""DmsRegEq_4""]","[2, 4]",[]

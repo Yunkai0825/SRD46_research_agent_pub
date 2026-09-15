@@ -1,0 +1,4 @@
+{
+  "status": "failed",
+  "reason": "SRD-46 has no data for the requested metal-ligand system (not in database): ligand(s) with no complexation data against any requested metal: Acetylsalicylic acid; metal(s) with no complexation data against any requested ligand: Pu. Missing metal x ligand pairs: Pu x Acetylsalicylic acid, Pu x Citric acid, Am x Acetylsalicylic acid. The requested speciation cannot be represented from SRD-46; the pipeline stopped before building any card. "
+}

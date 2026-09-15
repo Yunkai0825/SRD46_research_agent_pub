@@ -1,0 +1,193 @@
+{
+  "pairs": [
+    {
+      "metal_id": 68,
+      "ligand_id": 10076,
+      "selected_network_ids": [
+        27283
+      ]
+    },
+    {
+      "metal_id": 61,
+      "ligand_id": 10076,
+      "selected_network_ids": [
+        27465
+      ]
+    },
+    {
+      "metal_id": 62,
+      "ligand_id": 10076,
+      "selected_network_ids": [
+        27433
+      ]
+    },
+    {
+      "metal_id": 61,
+      "ligand_id": 9621,
+      "selected_network_ids": [],
+      "estimated_eq_nodes": [
+        {
+          "node_db_id": -4000001,
+          "vlm_id": -5000001,
+          "constant_type": "K",
+          "log_K": -4.0,
+          "temperature": 25.0,
+          "ionic_strength": 0.1,
+          "equation_python": "[M] + [L] <=> [MH-1L] + [H]",
+          "beta_definition_id": 726,
+          "beta_definition_name": "[MH<sub>-1</sub>L][H]/[M][L]",
+          "metal_id": 61,
+          "ligand_id": 9621,
+          "LHS_species_json": [
+            {
+              "species": "[L]",
+              "power": 1,
+              "phase": "aqueous"
+            },
+            {
+              "species": "[M]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "RHS_species_json": [
+            {
+              "species": "[H]",
+              "power": 1,
+              "phase": "aqueous"
+            },
+            {
+              "species": "[MH-1L]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "_estimated_provenance": {
+            "assumptions": [
+              "empirical Fe/Y offset of +3 to +5 log units seen in matched hydrolysis and α-hydroxycarboxylate chemistry"
+            ],
+            "estimation_method": "Double-difference bracket.",
+            "evidence_citation_ids": [],
+            "evidence_network_ids": [],
+            "evidence_topology_diagnostics": {
+              "analogue_vlm_ids": [
+                147410,
+                147411,
+                147412,
+                155038
+              ],
+              "beta_definition_id": 726,
+              "equilibrium_index": 0,
+              "evidence_citation_ids": [],
+              "evidence_network_ids": [],
+              "evidence_vlm_ids": [
+                147410,
+                147411,
+                147412,
+                155038,
+                166916
+              ],
+              "matching_beta_vlm_ids": [
+                166916
+              ],
+              "topology_grounding": "same_beta_evidence"
+            },
+            "evidence_vlm_ids": [
+              "vlm_166916",
+              "vlm_147410",
+              "vlm_147411",
+              "vlm_147412",
+              "vlm_155038"
+            ],
+            "rationale": "Both routes converge on log K ≈ −3 to −5.",
+            "source": "SRD46 query estimated values",
+            "topology_resolution": null,
+            "topology_source": "beta_def_726",
+            "uncertainty_log10": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "metal_id": 62,
+      "ligand_id": 9621,
+      "selected_network_ids": [],
+      "estimated_eq_nodes": [
+        {
+          "node_db_id": -4000002,
+          "vlm_id": -5000002,
+          "constant_type": "K",
+          "log_K": -12.0,
+          "temperature": 25.0,
+          "ionic_strength": 0.1,
+          "equation_python": "[M] + [L] <=> [MH-1L] + [H]",
+          "beta_definition_id": 726,
+          "beta_definition_name": "[MH<sub>-1</sub>L][H]/[M][L]",
+          "metal_id": 62,
+          "ligand_id": 9621,
+          "LHS_species_json": [
+            {
+              "species": "[L]",
+              "power": 1,
+              "phase": "aqueous"
+            },
+            {
+              "species": "[M]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "RHS_species_json": [
+            {
+              "species": "[H]",
+              "power": 1,
+              "phase": "aqueous"
+            },
+            {
+              "species": "[MH-1L]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "_estimated_provenance": {
+            "assumptions": [
+              "dilute aqueous reference state, 25 °C, I = 0.1 M (NaClO₄/NaCl); values labeled \"estimate\" throughout. Uncertainties are wider than typical SRD‑46 measured constants because they are derived from analog scaling, not direct measurement."
+            ],
+            "estimation_method": "Ln³⁺ series (vlm_166916 – vlm_166930) log K ≈ −6.5 to −8.5; scale by (z=2 vs 3) and by weaker Lewis acidity of Fe²⁺ → ~4–6 log units more negative. Flag: not competitive with Fe(OH)⁺/Fe(OH)₂ hydrolysis; can be omitted from Pourbaix.",
+            "evidence_citation_ids": [
+              "lit_8171"
+            ],
+            "evidence_network_ids": [],
+            "evidence_topology_diagnostics": {
+              "analogue_vlm_ids": [],
+              "beta_definition_id": 726,
+              "equilibrium_index": 0,
+              "evidence_citation_ids": [
+                8171
+              ],
+              "evidence_network_ids": [],
+              "evidence_vlm_ids": [
+                166916,
+                166930
+              ],
+              "matching_beta_vlm_ids": [
+                166916,
+                166930
+              ],
+              "topology_grounding": "same_beta_evidence"
+            },
+            "evidence_vlm_ids": [
+              "vlm_166916",
+              "vlm_166930"
+            ],
+            "rationale": "Ln³⁺ series (vlm_166916 – vlm_166930) log K ≈ −6.5 to −8.5; scale by (z=2 vs 3) and by weaker Lewis acidity of Fe²⁺ → ~4–6 log units more negative. Flag: not competitive with Fe(OH)⁺/Fe(OH)₂ hydrolysis; can be omitted from Pourbaix.",
+            "source": "SRD46 query estimated values",
+            "topology_resolution": null,
+            "topology_source": "beta_def_726",
+            "uncertainty_log10": 2.0
+          }
+        }
+      ]
+    }
+  ]
+}

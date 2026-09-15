@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "system_name": "Ca$+2 + Ca$+0 + EDTA",
+    "element": "Ca",
+    "n_pH": 101,
+    "pH_range": [
+      2.0,
+      12.0
+    ],
+    "ndim": 1,
+    "axis_names": [
+      "pH"
+    ],
+    "axis_ranges": {
+      "pH": [
+        2.0,
+        12.0
+      ]
+    },
+    "topology_settings": {
+      "extraction_method": "bottom_up_nd",
+      "axis_names": [
+        "pH"
+      ],
+      "axis_ranges": {
+        "pH": [
+          2.0,
+          12.0
+        ]
+      },
+      "axis_spacing": {
+        "pH": 0.09999999999999964
+      },
+      "topology_fix": {
+        "applied": false
+      },
+      "region_resolution_merges": 0,
+      "resolution": "coarse_final",
+      "is_final": true
+    }
+  },
+  "label_catalog": {
+    "0": "Ca$+2.z+2",
+    "1": "Ca$+2.L1.z-2"
+  },
+  "features_0d": [
+    {
+      "id": 0,
+      "labels": [
+        0,
+        1
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 4.25
+      },
+      "geometry_compact": {
+        "pH": 4.25
+      }
+    }
+  ],
+  "regions": [
+    {
+      "id": 0,
+      "label": 0,
+      "name": "Ca$+2.z+2",
+      "boundary_ids": [
+        0
+      ],
+      "measure": 2.3,
+      "flags": []
+    },
+    {
+      "id": 1,
+      "label": 1,
+      "name": "Ca$+2.L1.z-2",
+      "boundary_ids": [
+        0
+      ],
+      "measure": 7.8,
+      "flags": []
+    }
+  ],
+  "nodes": [
+    {
+      "id": 0,
+      "coords": {
+        "pH": 4.25
+      },
+      "labels": [
+        0,
+        1
+      ],
+      "domain_edge": false,
+      "pH": 4.25
+    }
+  ],
+  "edges": [],
+  "faces": [
+    {
+      "id": 0,
+      "label": 0,
+      "name": "Ca$+2.z+2",
+      "edges": [
+        0
+      ],
+      "measure": 2.3
+    },
+    {
+      "id": 1,
+      "label": 1,
+      "name": "Ca$+2.L1.z-2",
+      "edges": [
+        0
+      ],
+      "measure": 7.8
+    }
+  ]
+}

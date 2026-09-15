@@ -1,0 +1,52 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_1",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 5760,
+      "ligand_name": "Aminoacetic acid (Glycine)",
+      "ligand_SMILES": "NCC(=O)O",
+      "ligand_canonical_HxL": "HL"
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_77",
+      "node_count": 3,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 112,
+      "metal_name": "Ni^[2+]",
+      "ligand_id": 5760,
+      "ligand_name": "Aminoacetic acid (Glycine)",
+      "ligand_SMILES": "NCC(=O)O",
+      "ligand_canonical_HxL": "HL"
+    },
+    {
+      "eq_network": "ref_eq_net_27439",
+      "node_count": 5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 112,
+      "metal_name": "Ni^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    }
+  ]
+}

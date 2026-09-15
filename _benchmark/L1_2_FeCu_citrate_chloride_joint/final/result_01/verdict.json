@@ -1,0 +1,12 @@
+{
+  "verdict": "supported",
+  "status": "ok",
+  "notes": [
+    "Topology",
+    "region measures",
+    "boundary vertices",
+    "and junction coordinates for both Cu and Fe verdicts match the report. Report has duplicated paragraphs (Cu partitioning and Fe partitioning sections each appear twice) — cosmetic issue only",
+    "not a data contradiction."
+  ],
+  "purpose": "Build a joint E-pH (Pourbaix) speciation picture for a single pot containing Fe(III), Cu(II), citrate, and chloride, and show how Fe and Cu partition between citrate and chloride complexation across pH 2-10."
+}

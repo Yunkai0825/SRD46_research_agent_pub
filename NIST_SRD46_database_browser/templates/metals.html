@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Metals — SRD-46{% endblock %}
+
+{% block content %}
+<h3 class="mb-3"><i class="bi bi-gem"></i> Metal Ions</h3>
+
+<form class="row g-2 mb-3" method="get">
+  <div class="col-auto">
+    <input class="form-control form-control-sm" name="q" placeholder="Search name or symbol…"
+           value="{{ q }}">
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-sm btn-primary" type="submit">Search</button>
+    {% if q %}<a class="btn btn-sm btn-outline-secondary" href="{{ url_for('metals.metals_list') }}">Clear</a>{% endif %}
+  </div>
+  <div class="col-auto text-muted small pt-1">{{ "{:,}".format(total) }} metals found</div>
+</form>
+
+<div class="data-scroll">
+  <table class="table table-sm table-hover data-table">
+    <thead>
+      <tr><th>#</th><th>Name</th><th>Symbol</th><th>Charge</th><th>SMILES</th><th>Entries</th></tr>
+    </thead>
+    <tbody>
+    {% for m in metals %}
+      <tr>
+        <td class="row-num">{{ (page - 1) * 30 + loop.index }}</td>
+        <td><a href="{{ url_for('metals.metal_detail', metal_id=m.metal_id) }}">{{ m.metal_name_SRD }}</a></td>
+        <td>{{ m.symbol_pure }}</td>
+        <td><span class="charge-badge {{ 'positive' if m.charge and m.charge > 0 else 'negative' if m.charge and m.charge < 0 else '' }}">{{ m.charge or '' }}</span></td>
+        <td class="text-mono small">{{ m.SMILES or '' }}</td>
+        <td>{{ "{:,}".format(m.entry_count) }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% if pages > 1 %}
+<nav class="mt-3">
+  <ul class="pagination pagination-sm justify-content-center">
+    {% for p in range(1, pages + 1) %}
+      <li class="page-item {{ 'active' if p == page }}">
+        <a class="page-link" href="?q={{ q|urlencode }}&page={{ p }}">{{ p }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}
+{% endblock %}

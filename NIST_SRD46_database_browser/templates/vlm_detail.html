@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+{% block title %}VLM {{ vlm.vlm_id }} — {{ vlm.metal_name }} / {{ vlm.ligand_name }} — SRD-46{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('stability.stability_search') }}">Stability</a></li>
+    <li class="breadcrumb-item">
+      <a href="{{ url_for('stability.stability_search', metal_id=vlm.metal_id, ligand_id=vlm.ligand_id) }}">
+        {{ vlm.metal_name }} / {{ vlm.ligand_name }}
+      </a>
+    </li>
+    <li class="breadcrumb-item active">VLM {{ vlm.vlm_id }}</li>
+  </ol>
+</nav>
+
+<div class="row g-3 mb-3">
+
+  {# ── Metal ── #}
+  <div class="col-md-6">
+    <div class="card p-3 h-100">
+      <h5 class="card-title"><i class="bi bi-gem"></i>
+        Metal — <a href="{{ url_for('metals.metal_detail', metal_id=vlm.metal_id) }}">{{ vlm.metal_name }}</a>
+      </h5>
+      <table class="table table-sm w-auto mb-0">
+        <tr><th>metal_id</th><td>{{ vlm.metal_id }}</td></tr>
+        {% if vlm.metal_SMILES %}<tr><th>SMILES</th><td class="smiles-box small">{{ vlm.metal_SMILES }}</td></tr>{% endif %}
+        {% if vlm.metal_InChi %}<tr><th>InChI</th><td class="smiles-box small">{{ vlm.metal_InChi }}</td></tr>{% endif %}
+      </table>
+    </div>
+  </div>
+
+  {# ── Ligand ── #}
+  <div class="col-md-6">
+    <div class="card p-3 h-100">
+      <h5 class="card-title"><i class="bi bi-bezier2"></i>
+        Ligand — <a href="{{ url_for('ligands.ligand_detail', ligand_id=vlm.ligand_id) }}">{{ vlm.ligand_name }}</a>
+      </h5>
+      <table class="table table-sm w-auto mb-0">
+        <tr><th>ligand_id</th><td>{{ vlm.ligand_id }}</td></tr>
+        {% if vlm.ligand_class_name %}<tr><th>Class</th><td>{{ vlm.ligand_class_name }}</td></tr>{% endif %}
+        {% if vlm.ligand_HxL_definition %}<tr><th>H<sub>x</sub>L def.</th><td>{{ vlm.ligand_HxL_definition }}</td></tr>{% endif %}
+        {% if vlm.ligand_SMILES %}<tr><th>SMILES</th><td class="smiles-box small">{{ vlm.ligand_SMILES }}</td></tr>{% endif %}
+        {% if vlm.ligand_InChi %}<tr><th>InChI</th><td class="smiles-box small">{{ vlm.ligand_InChi }}</td></tr>{% endif %}
+      </table>
+    </div>
+  </div>
+</div>
+
+{# ── Stability constant ── #}
+<div class="card p-3 mb-3">
+  <h5 class="card-title"><i class="bi bi-clipboard-data"></i> {{ vlm.measurement_title }}</h5>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <table class="table table-sm w-auto mb-0">
+        {% if vlm.vlm_id %}<tr><th>VLM ID</th><td><code>vlm_{{ vlm.vlm_id }}</code></td></tr>{% endif %}
+        <tr><th>stability_id</th><td>{{ vlm.stability_id }}</td></tr>
+        {% if vlm.beta_definition_name %}<tr><th>β&nbsp;definition</th><td>{{ vlm.beta_definition_name }}</td></tr>{% endif %}
+        <tr><th>Type</th><td>{{ vlm.constant_type or '—' }}</td></tr>
+        <tr><th>{{ vlm.measurement_label }}</th><td><strong class="fs-5">{{ vlm.measurement_value if vlm.measurement_value is not none else "—" }}</strong>{% if vlm.units_unrecorded %}<div class="text-muted small">Units are not recorded in this export.</div>{% endif %}</td></tr>
+        {% if vlm.uncertainty %}<tr><th>Uncertainty</th><td>± {{ vlm.uncertainty }}</td></tr>{% endif %}
+      </table>
+    </div>
+    <div class="col-md-6">
+      <table class="table table-sm w-auto mb-0">
+        <tr><th>Temperature</th><td>{{ vlm.temperature if vlm.temperature is not none else '—' }} °C</td></tr>
+        <tr><th>Ionic strength</th><td>{{ vlm.ionic_strength if vlm.ionic_strength is not none else '—' }} mol/L</td></tr>
+        {% if vlm.solvent %}<tr><th>Solvent</th><td>{{ vlm.solvent }}</td></tr>{% endif %}
+        {% if vlm.electrolyte %}<tr><th>Electrolyte</th><td>{{ vlm.electrolyte }}</td></tr>{% endif %}
+        {% if vlm.reaction_type %}<tr><th>Reaction type</th><td>{{ vlm.reaction_type }}</td></tr>{% endif %}
+      </table>
+    </div>
+  </div>
+</div>
+
+{# ── Equation ── #}
+{% if vlm.equation_unresolved or vlm.equation_str or vlm.equation or vlm.raw_definition %}
+<div class="card p-3 mb-3">
+  <h5 class="card-title"><i class="bi bi-calculator"></i> Equation</h5>
+  {% if vlm.source_convention_review %}
+  <div class="alert alert-warning" role="alert"><strong>Source convention requires review.</strong>
+    This equation passes atom-balance checks, but its proton convention has not been reconciled with the cited comparison literature. Review the source-convention note below before using the constant in calculations.</div>
+  {% endif %}
+
+  {% if vlm.equation_unresolved %}
+  <div class="alert alert-warning mb-2" role="alert">
+    <strong>Unresolved equation.</strong> The source equation has not passed balance validation.
+    The reported measurement is retained; review the raw definition and notes before using the reaction.
+  </div>
+  {% endif %}
+
+  {% if not vlm.equation_unresolved and vlm.LHS_species_json and vlm.LHS_species_json is iterable and vlm.LHS_species_json is not string
+     and vlm.RHS_species_json and vlm.RHS_species_json is iterable and vlm.RHS_species_json is not string %}
+  {% set pm = vlm.phase_map or {} %}
+  {% macro render_species(sp) -%}
+    {%- if sp.power is defined and sp.power != 1 %}<span class="text-muted">{{ sp.power|int if sp.power == sp.power|int else sp.power }}</span>{% endif -%}
+    <span class="formula">{{ sp.species }}</span>
+    {%- set ph = pm.get(sp.species, 'aqueous') -%}
+    {%- if ph != 'aqueous' -%}
+      &nbsp;<span class="badge bg-secondary-subtle text-dark border small" title="phase">{{ ph }}</span>
+    {%- endif -%}
+  {%- endmacro %}
+  <p class="mb-2 fs-6">
+    {% for sp in vlm.LHS_species_json %}{{ render_species(sp) }}{% if not loop.last %} + {% endif %}{% endfor %}
+    &nbsp;⇌&nbsp;
+    {% for sp in vlm.RHS_species_json %}{{ render_species(sp) }}{% if not loop.last %} + {% endif %}{% endfor %}
+  </p>
+  {% if pm.values()|reject('equalto','aqueous')|list %}
+  <p class="text-muted small mb-2">
+    Non-aqueous phases:
+    {% for s, ph in pm.items() if ph != 'aqueous' %}
+      <span class="formula">{{ s }}</span>&nbsp;<span class="badge bg-secondary-subtle text-dark border">{{ ph }}</span>{% if not loop.last %}, {% endif %}
+    {% endfor %}
+  </p>
+  {% endif %}
+  {% endif %}
+
+  {% if vlm.equation_str and vlm.equation_str != "*" %}
+  <p class="mb-1"><strong>{{ "Unvalidated expression" if vlm.equation_unresolved else "Equation" }}:</strong> {{ vlm.equation_str }}</p>
+  {% endif %}
+
+  {% if vlm.equation and vlm.equation != "*" and vlm.equation != vlm.equation_str %}
+  <p class="mb-1"><strong>Python:</strong> <code class="small">{{ vlm.equation }}</code></p>
+  {% endif %}
+
+  {% if vlm.raw_definition %}
+  <p class="text-muted small mb-0">
+    Raw: <code>{{ vlm.raw_definition }}</code>
+    {% if vlm.normalized_definition and vlm.normalized_definition != vlm.raw_definition %}
+      → <code>{{ vlm.normalized_definition }}</code>
+    {% endif %}
+  </p>
+  {% endif %}
+</div>
+{% endif %}
+
+{# ── System catalog (all β-definitions for this metal-ligand pair) ── #}
+{% if system_catalog and system_catalog|length > 1 %}
+<div class="card p-3 mb-3">
+  <h5 class="card-title">
+    <i class="bi bi-collection"></i>
+    System Catalog — {{ vlm.metal_name }} / {{ vlm.ligand_name }}
+    <span class="text-muted small">({{ system_catalog|length }} systems for this pair; log K summaries use K measurements)</span>
+  </h5>
+  <div class="data-scroll">
+    <table class="table table-sm table-hover data-table mb-0">
+      <thead>
+        <tr>
+          <th>VLM</th>
+          <th>β definition</th>
+          <th class="text-end" title="All measurement types">N</th>
+          <th class="text-end">log K min</th>
+          <th class="text-end">log K avg</th>
+          <th class="text-end">log K max</th>
+          <th class="text-end">T (°C)</th>
+          <th class="text-end">I (mol/L)</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for sys in system_catalog %}
+        {% set is_current = (sys.vlm_id == vlm.vlm_id) %}
+        <tr class="{{ 'table-warning' if is_current else '' }}">
+          <td><code class="small">vlm_{{ sys.vlm_id }}</code>{% if is_current %} <span class="badge bg-warning text-dark">current</span>{% endif %}</td>
+          <td>{{ sys.beta_definition_name or '—' }}</td>
+          <td class="text-end">{{ sys.n_entries }}</td>
+          <td class="text-end">{{ '%.2f'|format(sys.logK_min) if sys.logK_min is not none else '—' }}</td>
+          <td class="text-end">{{ '%.2f'|format(sys.logK_avg) if sys.logK_avg is not none else '—' }}</td>
+          <td class="text-end">{{ '%.2f'|format(sys.logK_max) if sys.logK_max is not none else '—' }}</td>
+          <td class="text-end small">
+            {% if sys.T_min is not none and sys.T_max is not none and sys.T_min != sys.T_max %}
+              {{ '%g'|format(sys.T_min) }}–{{ '%g'|format(sys.T_max) }}
+            {% elif sys.T_min is not none %}{{ '%g'|format(sys.T_min) }}{% else %}—{% endif %}
+          </td>
+          <td class="text-end small">
+            {% if sys.I_min is not none and sys.I_max is not none and sys.I_min != sys.I_max %}
+              {{ '%g'|format(sys.I_min) }}–{{ '%g'|format(sys.I_max) }}
+            {% elif sys.I_min is not none %}{{ '%g'|format(sys.I_min) }}{% else %}—{% endif %}
+          </td>
+          <td>
+            {% if not is_current and sys.first_stability_id %}
+              <a class="btn btn-sm btn-outline-primary" href="{{ url_for('stability.vlm_detail', stability_id=sys.first_stability_id) }}">open</a>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+
+{# ── Networks ── #}
+{% if networks %}
+<div class="card p-3 mb-3">
+  <h5 class="card-title"><i class="bi bi-diagram-3"></i> Equilibrium Networks ({{ networks|length }})</h5>
+  <div class="data-scroll">
+    <table class="table table-sm table-hover data-table mb-0">
+      <thead><tr><th>Network ID</th><th>Nodes</th><th>Edges</th><th>Duplicate?</th></tr></thead>
+      <tbody>
+      {% for n in networks %}
+        <tr>
+          <td><a href="{{ url_for('eq.network_detail', network_db_id=n.network_id) }}">{{ n.network_id }}</a></td>
+          <td>{{ n.node_count }}</td>
+          <td>{{ n.edge_count }}</td>
+          <td>{{ '✓' if n.is_duplicate else '' }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+
+{# ── Citations ── #}
+{% if citations %}
+<div class="card p-3 mb-3">
+  <h5 class="card-title"><i class="bi bi-book"></i> Citations ({{ citations|length }})</h5>
+  <ul class="list-unstyled mb-0">
+  {% for c in citations %}
+    <li class="mb-1"><strong class="text-nowrap">{{ c.shortcut }}</strong> — {{ c.citation }}</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{# ── Notes ── #}
+{% if vlm.notes %}
+<div class="card p-3 mb-3">
+  <h5 class="card-title"><i class="bi bi-journal-text"></i> Notes</h5>
+  <p class="mb-0">{{ vlm.notes }}</p>
+</div>
+{% endif %}
+
+{% endblock %}

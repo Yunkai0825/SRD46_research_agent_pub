@@ -1,0 +1,8 @@
+id,source_id,label,dominant_species_id,name,measure,boundary_ids_json,source_boundary_ids_json,flags_json
+DmsReg_1,0,0,Dms_1,Fe,5.345429687500001,"[""DmsRegEq_2"", ""DmsRegEq_9"", ""DmsRegEq_3""]","[0, 1, 2]",[]
+DmsReg_4,1,1,Dms_2,Fe$+2.OH3.z-1,0.028203125000000006,"[""DmsRegEq_2"", ""DmsRegEq_7""]","[0, 3]",[]
+DmsReg_2,2,2,Dms_3,Fe3O4 (anh.),2.2657812500000003,"[""DmsRegEq_9"", ""DmsRegEq_7"", ""DmsRegEq_10"", ""DmsRegEq_8""]","[1, 3, 4, 5]",[]
+DmsReg_3,3,3,Dms_4,"[(Fe2O3)0.5(s,alpha)]",13.208007812500002,"[""DmsRegEq_10"", ""DmsRegEq_4"", ""DmsRegEq_5"", ""DmsRegEq_6""]","[4, 6, 7, 8]",[]
+DmsReg_5,4,4,Dms_5,Fe$+2.z+2,6.113281250000001,"[""DmsRegEq_3"", ""DmsRegEq_8"", ""DmsRegEq_4"", ""DmsRegEq_1""]","[2, 5, 6, 9]",[]
+DmsReg_6,5,5,Dms_6,Fe$+6.OH8.z-2,7.226718750000002,"[""DmsRegEq_5""]",[7],[]
+DmsReg_7,6,6,Dms_7,Fe$+3.z+3,0.8125781250000002,"[""DmsRegEq_6"", ""DmsRegEq_1""]","[8, 9]",[]

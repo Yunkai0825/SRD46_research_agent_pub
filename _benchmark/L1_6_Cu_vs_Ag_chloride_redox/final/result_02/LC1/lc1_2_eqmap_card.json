@@ -1,0 +1,68 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_29873",
+      "node_count": 5,
+      "temperature": 20.0,
+      "ionic_strength": 4.0,
+      "metal_id": 2,
+      "metal_name": "Ag^[+]",
+      "ligand_id": 10163,
+      "ligand_name": "Chloride ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal2_ligand10163_beta872_net29873",
+          "beta_definition_id": 872,
+          "examined_vlm_id": 177443,
+          "operation": "set_value",
+          "chosen_value": 5.2,
+          "rationale": "examined vlm_177443 K=+6.000 sits at (T=20C, I=4M), far from request (T=25C, I=0.1M). Sibling vlm_177445 K=+5.200 at (T=25C, I=0M) matches T exactly and I=0 is far closer to request I=0.1M than the chosen I=4M. Third sibling vlm_177444 K=+6.150 is at I=5M and irrelevant to dilute request. Patching to +5.200."
+        },
+        {
+          "node_key": "metal2_ligand10163_beta894_net29873",
+          "beta_definition_id": 894,
+          "examined_vlm_id": 177448,
+          "operation": "set_value",
+          "chosen_value": -5.32,
+          "rationale": "examined vlm_177448 K=-6.040 at (T=20C, I=4M) is flagged mad_outlier (deviates 0.72 from sibling median -5.320). Only other K-sibling vlm_177449 K=-5.320 sits at (T=25C, I=5M) — matches request T=25C exactly. Both siblings are at high I, but vlm_177449 has correct T and is the non-outlier of the pair. Patching to -5.320."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27493",
+      "node_count": 3,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 2,
+      "metal_name": "Ag^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal2_ligand10076_beta301_net27493",
+          "beta_definition_id": 301,
+          "examined_vlm_id": 170880,
+          "operation": "set_value",
+          "chosen_value": -7.37,
+          "rationale": "examined vlm_170880 K=-7.710 @ I=0.0 M is a mad_outlier (0.42 from sibling median -7.290, MAD 0.11). Replacing with vlm_170875 K=-7.370 @ T=25.0 C, I=0.5 M — the sibling whose ionic strength is closest to the request I=0.1 M and whose value sits within the tight K-cluster (-7.15 to -7.43, median -7.290) formed by vlm_170875/170876/170877/170878/170879."
+        }
+      ]
+    }
+  ]
+}

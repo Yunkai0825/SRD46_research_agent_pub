@@ -1,0 +1,3486 @@
+{
+  "schema_name": "srd46.predominance_verdict",
+  "schema_version": 1,
+  "report_kind": "predominance",
+  "sweep_method": "Pourbaix",
+  "system": {
+    "components": [
+      "Cu",
+      "Fe",
+      "Citric acid",
+      "Glycine",
+      "Ammonia",
+      "Chloride ion"
+    ],
+    "constraints": [
+      "component totals (M): Cu=0.001;Fe=0.001;Citric acid=0.01;Glycine=0.01;Ammonia=0.1;Chloride ion=0.1"
+    ],
+    "potential_reference": "SHE",
+    "domain": [
+      {
+        "axis": "pH",
+        "range": [
+          0.0,
+          14.0
+        ]
+      },
+      {
+        "axis": "E_V",
+        "range": [
+          -1.0,
+          1.5
+        ]
+      }
+    ],
+    "coarse_grid_spacing": [
+      null,
+      null
+    ],
+    "final_grid_spacing": [
+      0.20000000000000012,
+      0.050000000000000044
+    ],
+    "final_grid_shape": [
+      71,
+      51
+    ],
+    "classification_basis": "final_classified_label_grid",
+    "semantics": "Each connected region is the dominant calculated entity for the reported classification rule, not the exclusive entity present and not a kinetic prediction.",
+    "sweep_method": "Pourbaix"
+  },
+  "dominant_species_catalog": [
+    {
+      "id": "Dms_1",
+      "label": "Cu"
+    },
+    {
+      "id": "Dms_2",
+      "label": "[(Cu2O)0.5](s)"
+    },
+    {
+      "id": "Dms_3",
+      "label": "CuO(s)"
+    },
+    {
+      "id": "Dms_4",
+      "label": "[Cu(Ammo)2]+"
+    },
+    {
+      "id": "Dms_5",
+      "label": "[Cu2(Citr)2(OH)2]4-"
+    },
+    {
+      "id": "Dms_6",
+      "label": "[Cu(Glyc)2]"
+    },
+    {
+      "id": "Dms_7",
+      "label": "[Cu(Chlo)2]-"
+    },
+    {
+      "id": "Dms_8",
+      "label": "[Cu2(Citr)2(OH)]3-"
+    },
+    {
+      "id": "Dms_9",
+      "label": "Cu2+"
+    }
+  ],
+  "topology_stats": {
+    "ambient_dimension": 2,
+    "dominant_species_labels": 9,
+    "connected_regions": 9,
+    "pairwise_boundary_manifolds": 16,
+    "junction_features_by_intrinsic_dimension": {
+      "0": 16
+    },
+    "internal_junction_features": 8,
+    "sweep_limit_junction_features": 8,
+    "disconnected_species": []
+  },
+  "example_cuts": [
+    {
+      "name": "mid-domain cut along pH",
+      "sweep_axis": "pH",
+      "fixed_coordinates": [
+        null,
+        0.25
+      ],
+      "fixed_sample_indices": [
+        null,
+        25
+      ],
+      "segments": [
+        {
+          "sample_index_interval": [
+            0,
+            20
+          ],
+          "sample_coordinate_interval": [
+            0.0,
+            4.0
+          ],
+          "dominant_species_id": "Dms_7",
+          "dominant_label": "[Cu(Chlo)2]-",
+          "transition_bracket_before": null
+        },
+        {
+          "sample_index_interval": [
+            21,
+            37
+          ],
+          "sample_coordinate_interval": [
+            4.2,
+            7.4
+          ],
+          "dominant_species_id": "Dms_5",
+          "dominant_label": "[Cu2(Citr)2(OH)2]4-",
+          "transition_bracket_before": [
+            4.0,
+            4.2
+          ]
+        },
+        {
+          "sample_index_interval": [
+            38,
+            53
+          ],
+          "sample_coordinate_interval": [
+            7.6000000000000005,
+            10.600000000000001
+          ],
+          "dominant_species_id": "Dms_6",
+          "dominant_label": "[Cu(Glyc)2]",
+          "transition_bracket_before": [
+            7.4,
+            7.6000000000000005
+          ]
+        },
+        {
+          "sample_index_interval": [
+            54,
+            70
+          ],
+          "sample_coordinate_interval": [
+            10.8,
+            14.0
+          ],
+          "dominant_species_id": "Dms_3",
+          "dominant_label": "CuO(s)",
+          "transition_bracket_before": [
+            10.600000000000001,
+            10.8
+          ]
+        }
+      ],
+      "source": "final_classified_label_grid"
+    },
+    {
+      "name": "mid-domain cut along E_V",
+      "sweep_axis": "E_V",
+      "fixed_coordinates": [
+        7.0,
+        null
+      ],
+      "fixed_sample_indices": [
+        35,
+        null
+      ],
+      "segments": [
+        {
+          "sample_index_interval": [
+            0,
+            21
+          ],
+          "sample_coordinate_interval": [
+            -1.0,
+            0.050000000000000044
+          ],
+          "dominant_species_id": "Dms_1",
+          "dominant_label": "Cu",
+          "transition_bracket_before": null
+        },
+        {
+          "sample_index_interval": [
+            22,
+            50
+          ],
+          "sample_coordinate_interval": [
+            0.10000000000000009,
+            1.5
+          ],
+          "dominant_species_id": "Dms_5",
+          "dominant_label": "[Cu2(Citr)2(OH)2]4-",
+          "transition_bracket_before": [
+            0.050000000000000044,
+            0.10000000000000009
+          ]
+        }
+      ],
+      "source": "final_classified_label_grid"
+    }
+  ],
+  "calculation_species_by_principal_element": [
+    {
+      "principal_element": "Cu",
+      "included": [
+        "Cu+",
+        "[Cu(Glyc)2]-",
+        "[Cu(Ammo)2]+",
+        "[Cu2(Chlo)4]2-",
+        "[Cu(Chlo)2]-",
+        "[Cu(Chlo)3]2-",
+        "[Cu(Chlo)]",
+        "Cu2+",
+        "[Cu(OH)]+",
+        "[Cu2(OH)2]2+",
+        "[Cu(OH)2]",
+        "HCuO2-",
+        "[Cu3(OH)4]2+",
+        "CuO22-",
+        "[Cu(Citr)H]",
+        "[Cu2(Citr)2]2-",
+        "[Cu2(Citr)(OH)]",
+        "[Cu2(Citr)2(OH)]3-",
+        "[Cu2(Citr)2(OH)2]4-",
+        "[Cu(Glyc)]+",
+        "[Cu(Glyc)2]",
+        "[Cu(Ammo)4]2+",
+        "[Cu(Ammo)3]2+",
+        "[Cu(Ammo)2]2+",
+        "[Cu(Ammo)]2+",
+        "[Cu(Chlo)]+",
+        "[(Cu2O)0.5](s)",
+        "[Cu(Chloride ion)](s)",
+        "CuO(s)",
+        "[Cu(OH)2](s)",
+        "Cu"
+      ],
+      "excluded": [
+        "Cu2O",
+        "CuO",
+        "Cu(OH)2"
+      ]
+    },
+    {
+      "principal_element": "Fe",
+      "included": [
+        "Fe2+",
+        "[Fe(OH)]+",
+        "[Fe(OH)2]",
+        "[Fe(OH)3]-",
+        "[Fe(OH)4]2-",
+        "[Fe(Citr)H2]+",
+        "[Fe(Citr)H]",
+        "[Fe(Citr)2H]3-",
+        "[Fe(Citr)]-",
+        "[Fe2(Citr)2(OH)2]4-",
+        "[Fe(Glyc)]+",
+        "[Fe(Glyc)2]",
+        "[Fe(Glyc)3]-",
+        "[Fe(Ammo)4]2+",
+        "[Fe(Ammo)3]2+",
+        "[Fe(Ammo)2]2+",
+        "[Fe(Ammo)]2+",
+        "[Fe(Chlo)]+",
+        "Fe3+",
+        "[Fe(OH)]2+",
+        "[Fe2(OH)2]4+",
+        "[Fe(OH)2]+",
+        "[Fe3(OH)4]5+",
+        "[Fe(OH)4]-",
+        "[Fe(Citr)H]+",
+        "[Fe(Citr)]",
+        "[Fe(Citr)(OH)]-",
+        "[Fe2(Citr)2(OH)2]2-",
+        "[Fe(Glyc)2H2]3+",
+        "[Fe(Glyc)H]3+",
+        "[Fe(Glyc)]2+",
+        "[Fe(Chlo)2]+",
+        "[Fe(Chlo)]2+",
+        "FeO42-",
+        "[Fe(OH)2](s)",
+        "Fe3O4 (anh.)",
+        "[(Fe2O3)0.5(s,alpha)]",
+        "Fe"
+      ],
+      "excluded": [
+        "HFeO2-",
+        "FeOH2+",
+        "Fe(OH)2 (hydr.)",
+        "[FeO(OH)(s,alpha)]",
+        "[Fe(OH)3](s)",
+        "Fe(OH)3 (hydr.)",
+        "Fe2O3 (anh.)"
+      ]
+    }
+  ],
+  "topology_details": {
+    "coordinate_order": [
+      "pH",
+      "E_V"
+    ],
+    "regions": [
+      {
+        "id": "DmsReg_1",
+        "dominant_species_id": "Dms_1",
+        "label": "Cu",
+        "name": "Cu",
+        "measure": 13.990000000000002,
+        "boundary_manifolds": [
+          "DmsRegEq_1",
+          "DmsRegEq_2",
+          "DmsRegEq_3",
+          "DmsRegEq_4",
+          "DmsRegEq_5"
+        ],
+        "neighboring_regions": [
+          {
+            "region_id": "DmsReg_2",
+            "region_label": "[(Cu2O)0.5](s)",
+            "boundary_manifold_id": "DmsRegEq_1"
+          },
+          {
+            "region_id": "DmsReg_4",
+            "region_label": "[Cu(Ammo)2]+",
+            "boundary_manifold_id": "DmsRegEq_2"
+          },
+          {
+            "region_id": "DmsReg_5",
+            "region_label": "[Cu2(Citr)2(OH)2]4-",
+            "boundary_manifold_id": "DmsRegEq_3"
+          },
+          {
+            "region_id": "DmsReg_6",
+            "region_label": "[Cu(Glyc)2]",
+            "boundary_manifold_id": "DmsRegEq_4"
+          },
+          {
+            "region_id": "DmsReg_7",
+            "region_label": "[Cu(Chlo)2]-",
+            "boundary_manifold_id": "DmsRegEq_5"
+          }
+        ],
+        "junction_features": [
+          "DmsRegEqJnc_9",
+          "DmsRegEqJnc_1",
+          "DmsRegEqJnc_3",
+          "DmsRegEqJnc_2",
+          "DmsRegEqJnc_6",
+          "DmsRegEqJnc_10"
+        ]
+      },
+      {
+        "id": "DmsReg_2",
+        "dominant_species_id": "Dms_2",
+        "label": "[(Cu2O)0.5](s)",
+        "name": "[(Cu2O)0.5](s)",
+        "measure": 0.6300000000000001,
+        "boundary_manifolds": [
+          "DmsRegEq_1",
+          "DmsRegEq_6",
+          "DmsRegEq_7",
+          "DmsRegEq_8"
+        ],
+        "neighboring_regions": [
+          {
+            "region_id": "DmsReg_1",
+            "region_label": "Cu",
+            "boundary_manifold_id": "DmsRegEq_1"
+          },
+          {
+            "region_id": "DmsReg_3",
+            "region_label": "CuO(s)",
+            "boundary_manifold_id": "DmsRegEq_6"
+          },
+          {
+            "region_id": "DmsReg_4",
+            "region_label": "[Cu(Ammo)2]+",
+            "boundary_manifold_id": "DmsRegEq_7"
+          },
+          {
+            "region_id": "DmsReg_6",
+            "region_label": "[Cu(Glyc)2]",
+            "boundary_manifold_id": "DmsRegEq_8"
+          }
+        ],
+        "junction_features": [
+          "DmsRegEqJnc_9",
+          "DmsRegEqJnc_1",
+          "DmsRegEqJnc_5",
+          "DmsRegEqJnc_11",
+          "DmsRegEqJnc_4"
+        ]
+      },
+      {
+        "id": "DmsReg_3",
+        "dominant_species_id": "Dms_3",
+        "label": "CuO(s)",
+        "name": "CuO(s)",
+        "measure": 5.420000000000001,
+        "boundary_manifolds": [
+          "DmsRegEq_6",
+          "DmsRegEq_9"
+        ],
+        "neighboring_regions": [
+          {
+            "region_id": "DmsReg_2",
+            "region_label": "[(Cu2O)0.5](s)",
+            "boundary_manifold_id": "DmsRegEq_6"
+          },
+          {
+            "region_id": "DmsReg_6",
+            "region_label": "[Cu(Glyc)2]",
+            "boundary_manifold_id": "DmsRegEq_9"
+          }
+        ],
+        "junction_features": [
+          "DmsRegEqJnc_5",
+          "DmsRegEqJnc_11",
+          "DmsRegEqJnc_12"
+        ]
+      },
+      {
+        "id": "DmsReg_4",
+        "dominant_species_id": "Dms_4",
+        "label": "[Cu(Ammo)2]+",
+        "name": "Cu$+1.L3(2).z+1",
+        "measure": 0.31000000000000005,
+        "boundary_manifolds": [
+          "DmsRegEq_2",
+          "DmsRegEq_7",
+          "DmsRegEq_10"
+        ],
+        "neighboring_regions": [
+          {
+            "region_id": "DmsReg_1",
+            "region_label": "Cu",
+            "boundary_manifold_id": "DmsRegEq_2"
+          },
+          {
+            "region_id": "DmsReg_2",
+            "region_label": "[(Cu2O)0.5](s)",
+            "boundary_manifold_id": "DmsRegEq_7"
+          },
+          {
+            "region_id": "DmsReg_6",
+            "region_label": "[Cu(Glyc)2]",
+            "boundary_manifold_id": "DmsRegEq_10"
+          }
+        ],
+        "junction_features": [
+          "DmsRegEqJnc_3",
+          "DmsRegEqJnc_1",
+          "DmsRegEqJnc_4"
+        ]
+      },
+      {
+        "id": "DmsReg_5",
+        "dominant_species_id": "Dms_5",
+        "label": "[Cu2(Citr)2(OH)2]4-",
+        "name": "Cu$+2(2).H-1L1(2).z-4",
+        "measure": 4.800000000000001,
+        "boundary_manifolds": [
+          "DmsRegEq_3",
+          "DmsRegEq_11",
+          "DmsRegEq_12",
+          "DmsRegEq_13"
+        ],
+        "neighboring_regions": [
+          {
+            "region_id": "DmsReg_1",
+            "region_label": "Cu",
+            "boundary_manifold_id": "DmsRegEq_3"
+          },
+          {
+            "region_id": "DmsReg_6",
+            "region_label": "[Cu(Glyc)2]",
+            "boundary_manifold_id": "DmsRegEq_11"
+          },
+          {
+            "region_id": "DmsReg_7",
+            "region_label": "[Cu(Chlo)2]-",
+            "boundary_manifold_id": "DmsRegEq_12"
+          },
+          {
+            "region_id": "DmsReg_8",
+            "region_label": "[Cu2(Citr)2(OH)]3-",
+            "boundary_manifold_id": "DmsRegEq_13"
+          }
+        ],
+        "junction_features": [
+          "DmsRegEqJnc_2",
+          "DmsRegEqJnc_6",
+          "DmsRegEqJnc_13",
+          "DmsRegEqJnc_7",
+          "DmsRegEqJnc_14"
+        ]
+      },
+      {
+        "id": "DmsReg_6",
+        "dominant_species_id": "Dms_6",
+        "label": "[Cu(Glyc)2]",
+        "name": "Cu$+2.L2(2).z+0",
+        "measure": 4.820000000000001,
+        "boundary_manifolds": [
+          "DmsRegEq_4",
+          "DmsRegEq_8",
+          "DmsRegEq_9",
+          "DmsRegEq_10",
+          "DmsRegEq_11"
+        ],
+        "neighboring_regions": [
+          {
+            "region_id": "DmsReg_1",
+            "region_label": "Cu",
+            "boundary_manifold_id": "DmsRegEq_4"
+          },
+          {
+            "region_id": "DmsReg_2",
+            "region_label": "[(Cu2O)0.5](s)",
+            "boundary_manifold_id": "DmsRegEq_8"
+          },
+          {
+            "region_id": "DmsReg_3",
+            "region_label": "CuO(s)",
+            "boundary_manifold_id": "DmsRegEq_9"
+          },
+          {
+            "region_id": "DmsReg_4",
+            "region_label": "[Cu(Ammo)2]+",
+            "boundary_manifold_id": "DmsRegEq_10"
+          },
+          {
+            "region_id": "DmsReg_5",
+            "region_label": "[Cu2(Citr)2(OH)2]4-",
+            "boundary_manifold_id": "DmsRegEq_11"
+          }
+        ],
+        "junction_features": [
+          "DmsRegEqJnc_2",
+          "DmsRegEqJnc_3",
+          "DmsRegEqJnc_4",
+          "DmsRegEqJnc_5",
+          "DmsRegEqJnc_12",
+          "DmsRegEqJnc_13"
+        ]
+      },
+      {
+        "id": "DmsReg_7",
+        "dominant_species_id": "Dms_7",
+        "label": "[Cu(Chlo)2]-",
+        "name": "Cu$+1.L4(2).z-1",
+        "measure": 1.3600000000000003,
+        "boundary_manifolds": [
+          "DmsRegEq_5",
+          "DmsRegEq_12",
+          "DmsRegEq_14",
+          "DmsRegEq_15"
+        ],
+        "neighboring_regions": [
+          {
+            "region_id": "DmsReg_1",
+            "region_label": "Cu",
+            "boundary_manifold_id": "DmsRegEq_5"
+          },
+          {
+            "region_id": "DmsReg_5",
+            "region_label": "[Cu2(Citr)2(OH)2]4-",
+            "boundary_manifold_id": "DmsRegEq_12"
+          },
+          {
+            "region_id": "DmsReg_8",
+            "region_label": "[Cu2(Citr)2(OH)]3-",
+            "boundary_manifold_id": "DmsRegEq_14"
+          },
+          {
+            "region_id": "DmsReg_9",
+            "region_label": "Cu2+",
+            "boundary_manifold_id": "DmsRegEq_15"
+          }
+        ],
+        "junction_features": [
+          "DmsRegEqJnc_10",
+          "DmsRegEqJnc_6",
+          "DmsRegEqJnc_7",
+          "DmsRegEqJnc_8",
+          "DmsRegEqJnc_15"
+        ]
+      },
+      {
+        "id": "DmsReg_8",
+        "dominant_species_id": "Dms_8",
+        "label": "[Cu2(Citr)2(OH)]3-",
+        "name": "Cu$+2(2).H-1L1.L1.z-3",
+        "measure": 0.9700000000000002,
+        "boundary_manifolds": [
+          "DmsRegEq_13",
+          "DmsRegEq_14",
+          "DmsRegEq_16"
+        ],
+        "neighboring_regions": [
+          {
+            "region_id": "DmsReg_5",
+            "region_label": "[Cu2(Citr)2(OH)2]4-",
+            "boundary_manifold_id": "DmsRegEq_13"
+          },
+          {
+            "region_id": "DmsReg_7",
+            "region_label": "[Cu(Chlo)2]-",
+            "boundary_manifold_id": "DmsRegEq_14"
+          },
+          {
+            "region_id": "DmsReg_9",
+            "region_label": "Cu2+",
+            "boundary_manifold_id": "DmsRegEq_16"
+          }
+        ],
+        "junction_features": [
+          "DmsRegEqJnc_14",
+          "DmsRegEqJnc_7",
+          "DmsRegEqJnc_8",
+          "DmsRegEqJnc_16"
+        ]
+      },
+      {
+        "id": "DmsReg_9",
+        "dominant_species_id": "Dms_9",
+        "label": "Cu2+",
+        "name": "Cu$+2.z+2",
+        "measure": 3.9100000000000006,
+        "boundary_manifolds": [
+          "DmsRegEq_15",
+          "DmsRegEq_16"
+        ],
+        "neighboring_regions": [
+          {
+            "region_id": "DmsReg_7",
+            "region_label": "[Cu(Chlo)2]-",
+            "boundary_manifold_id": "DmsRegEq_15"
+          },
+          {
+            "region_id": "DmsReg_8",
+            "region_label": "[Cu2(Citr)2(OH)]3-",
+            "boundary_manifold_id": "DmsRegEq_16"
+          }
+        ],
+        "junction_features": [
+          "DmsRegEqJnc_8",
+          "DmsRegEqJnc_15",
+          "DmsRegEqJnc_16"
+        ]
+      }
+    ],
+    "boundary_manifolds": [
+      {
+        "id": "DmsRegEq_1",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_2"
+        ],
+        "region_pair": [
+          "Cu",
+          "[(Cu2O)0.5](s)"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_2"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_9",
+          "DmsRegEqJnc_1"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            14.0,
+            -0.32499999999999996
+          ],
+          [
+            13.100000000000001,
+            -0.32499999999999996
+          ],
+          [
+            13.100000000000001,
+            -0.27499999999999997
+          ],
+          [
+            12.3,
+            -0.27499999999999997
+          ],
+          [
+            12.3,
+            -0.22499999999999998
+          ],
+          [
+            10.5,
+            -0.12499999999999994
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 23,
+          "compact_n": 6,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            5,
+            6,
+            10,
+            11,
+            22
+          ],
+          "t_params": [
+            0.0,
+            0.2498073958795178,
+            0.26368558453949104,
+            0.48573660309906297,
+            0.4996147917590362,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              14.0,
+              -0.32499999999999996
+            ],
+            [
+              13.100000000000001,
+              -0.32499999999999996
+            ],
+            [
+              13.100000000000001,
+              -0.27499999999999997
+            ],
+            [
+              12.3,
+              -0.27499999999999997
+            ],
+            [
+              12.3,
+              -0.22499999999999998
+            ],
+            [
+              10.5,
+              -0.12499999999999994
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.2498073958795178,
+            0.26368558453949104,
+            0.48573660309906297,
+            0.4996147917590362,
+            1.0
+          ],
+          "adaptive_n": 10,
+          "adaptive_pts": [
+            [
+              14.0,
+              -0.32499999999999996
+            ],
+            [
+              13.100000000000001,
+              -0.32499999999999996
+            ],
+            [
+              13.100000000000001,
+              -0.27499999999999997
+            ],
+            [
+              12.3,
+              -0.27499999999999997
+            ],
+            [
+              12.3,
+              -0.22499999999999998
+            ],
+            [
+              11.5,
+              -0.22499999999999998
+            ],
+            [
+              11.5,
+              -0.17499999999999993
+            ],
+            [
+              10.700000000000001,
+              -0.17499999999999993
+            ],
+            [
+              10.700000000000001,
+              -0.12499999999999994
+            ],
+            [
+              10.5,
+              -0.12499999999999994
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            0.24324324324324284,
+            0.25675675675675635,
+            0.47297297297297275,
+            0.4864864864864863,
+            0.7027027027027027,
+            0.7162162162162162,
+            0.9324324324324322,
+            0.9459459459459456,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_2",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_4"
+        ],
+        "region_pair": [
+          "Cu",
+          "[Cu(Ammo)2]+"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_4"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_1",
+          "DmsRegEqJnc_3"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            10.5,
+            -0.12499999999999994
+          ],
+          [
+            9.100000000000001,
+            -0.12499999999999994
+          ],
+          [
+            9.100000000000001,
+            -0.07499999999999996
+          ],
+          [
+            8.5,
+            -0.07499999999999996
+          ],
+          [
+            8.5,
+            -0.024999999999999967
+          ],
+          [
+            7.9,
+            0.025000000000000022
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 17,
+          "compact_n": 6,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            7,
+            8,
+            11,
+            12,
+            16
+          ],
+          "t_params": [
+            0.0,
+            0.5181194266793175,
+            0.5366236919178646,
+            0.75867487478043,
+            0.777179140018977,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              10.5,
+              -0.12499999999999994
+            ],
+            [
+              9.100000000000001,
+              -0.12499999999999994
+            ],
+            [
+              9.100000000000001,
+              -0.07499999999999996
+            ],
+            [
+              8.5,
+              -0.07499999999999996
+            ],
+            [
+              8.5,
+              -0.024999999999999967
+            ],
+            [
+              7.9,
+              0.025000000000000022
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.5181194266793175,
+            0.5366236919178646,
+            0.75867487478043,
+            0.777179140018977,
+            1.0
+          ],
+          "adaptive_n": 7,
+          "adaptive_pts": [
+            [
+              10.5,
+              -0.12499999999999994
+            ],
+            [
+              9.100000000000001,
+              -0.12499999999999994
+            ],
+            [
+              9.100000000000001,
+              -0.07499999999999996
+            ],
+            [
+              8.5,
+              -0.07499999999999996
+            ],
+            [
+              8.5,
+              -0.024999999999999967
+            ],
+            [
+              7.9,
+              -0.024999999999999967
+            ],
+            [
+              7.9,
+              0.025000000000000022
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            0.5090909090909087,
+            0.5272727272727269,
+            0.7454545454545456,
+            0.7636363636363638,
+            0.9818181818181819,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_3",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_5"
+        ],
+        "region_pair": [
+          "Cu",
+          "[Cu2(Citr)2(OH)2]4-"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_5"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_2",
+          "DmsRegEqJnc_6"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            7.5,
+            0.025000000000000022
+          ],
+          [
+            7.300000000000001,
+            0.025000000000000022
+          ],
+          [
+            7.1,
+            0.025000000000000022
+          ],
+          [
+            7.1,
+            0.07500000000000007
+          ],
+          [
+            6.9,
+            0.07500000000000007
+          ],
+          [
+            5.700000000000001,
+            0.07500000000000007
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 11,
+          "compact_n": 6,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            10
+          ],
+          "t_params": [
+            0.0,
+            0.10810810810810778,
+            0.21621621621621653,
+            0.2432432432432436,
+            0.35135135135135137,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              7.5,
+              0.025000000000000022
+            ],
+            [
+              7.300000000000001,
+              0.025000000000000022
+            ],
+            [
+              7.1,
+              0.025000000000000022
+            ],
+            [
+              7.1,
+              0.07500000000000007
+            ],
+            [
+              6.9,
+              0.07500000000000007
+            ],
+            [
+              5.700000000000001,
+              0.07500000000000007
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.10810810810810778,
+            0.21621621621621653,
+            0.2432432432432436,
+            0.35135135135135137,
+            1.0
+          ],
+          "adaptive_n": 4,
+          "adaptive_pts": [
+            [
+              7.5,
+              0.025000000000000022
+            ],
+            [
+              7.1,
+              0.025000000000000022
+            ],
+            [
+              7.1,
+              0.07500000000000007
+            ],
+            [
+              5.700000000000001,
+              0.07500000000000007
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            0.21621621621621653,
+            0.2432432432432436,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_4",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_6"
+        ],
+        "region_pair": [
+          "Cu",
+          "[Cu(Glyc)2]"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_6"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_2",
+          "DmsRegEqJnc_3"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            7.5,
+            0.025000000000000022
+          ],
+          [
+            7.700000000000001,
+            0.025000000000000022
+          ],
+          [
+            7.9,
+            0.025000000000000022
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 3,
+          "compact_n": 3,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            1,
+            2
+          ],
+          "t_params": [
+            0.0,
+            0.5000000000000022,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              7.5,
+              0.025000000000000022
+            ],
+            [
+              7.700000000000001,
+              0.025000000000000022
+            ],
+            [
+              7.9,
+              0.025000000000000022
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.5000000000000022,
+            1.0
+          ],
+          "adaptive_n": 2,
+          "adaptive_pts": [
+            [
+              7.5,
+              0.025000000000000022
+            ],
+            [
+              7.9,
+              0.025000000000000022
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_5",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_7"
+        ],
+        "region_pair": [
+          "Cu",
+          "[Cu(Chlo)2]-"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_7"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_10",
+          "DmsRegEqJnc_6"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            0.0,
+            0.07500000000000007
+          ],
+          [
+            1.1,
+            0.07500000000000007
+          ],
+          [
+            2.1,
+            0.07500000000000007
+          ],
+          [
+            2.7,
+            0.07500000000000007
+          ],
+          [
+            4.700000000000001,
+            0.07500000000000007
+          ],
+          [
+            5.700000000000001,
+            0.07500000000000007
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 30,
+          "compact_n": 6,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            6,
+            11,
+            14,
+            24,
+            29
+          ],
+          "t_params": [
+            0.0,
+            0.19298245614035087,
+            0.36842105263157887,
+            0.4736842105263157,
+            0.8245614035087719,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              0.0,
+              0.07500000000000007
+            ],
+            [
+              1.1,
+              0.07500000000000007
+            ],
+            [
+              2.1,
+              0.07500000000000007
+            ],
+            [
+              2.7,
+              0.07500000000000007
+            ],
+            [
+              4.700000000000001,
+              0.07500000000000007
+            ],
+            [
+              5.700000000000001,
+              0.07500000000000007
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.19298245614035087,
+            0.36842105263157887,
+            0.4736842105263157,
+            0.8245614035087719,
+            1.0
+          ],
+          "adaptive_n": 2,
+          "adaptive_pts": [
+            [
+              0.0,
+              0.07500000000000007
+            ],
+            [
+              5.700000000000001,
+              0.07500000000000007
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_6",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_2",
+          "Dms_3"
+        ],
+        "region_pair": [
+          "[(Cu2O)0.5](s)",
+          "CuO(s)"
+        ],
+        "neighboring_regions": [
+          "DmsReg_2",
+          "DmsReg_3"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_11",
+          "DmsRegEqJnc_5"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            14.0,
+            -0.17499999999999993
+          ],
+          [
+            13.700000000000001,
+            -0.12499999999999994
+          ],
+          [
+            12.9,
+            -0.12499999999999994
+          ],
+          [
+            12.9,
+            -0.07499999999999996
+          ],
+          [
+            11.100000000000001,
+            -0.024999999999999967
+          ],
+          [
+            10.9,
+            0.025000000000000022
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 21,
+          "compact_n": 6,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            3,
+            7,
+            8,
+            18,
+            20
+          ],
+          "t_params": [
+            0.0,
+            0.09621616836756669,
+            0.3493016186400432,
+            0.36511945928207296,
+            0.934781372263723,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              14.0,
+              -0.17499999999999993
+            ],
+            [
+              13.700000000000001,
+              -0.12499999999999994
+            ],
+            [
+              12.9,
+              -0.12499999999999994
+            ],
+            [
+              12.9,
+              -0.07499999999999996
+            ],
+            [
+              11.100000000000001,
+              -0.024999999999999967
+            ],
+            [
+              10.9,
+              0.025000000000000022
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.09621616836756669,
+            0.3493016186400432,
+            0.36511945928207296,
+            0.934781372263723,
+            1.0
+          ],
+          "adaptive_n": 10,
+          "adaptive_pts": [
+            [
+              14.0,
+              -0.17499999999999993
+            ],
+            [
+              13.700000000000001,
+              -0.17499999999999993
+            ],
+            [
+              13.700000000000001,
+              -0.12499999999999994
+            ],
+            [
+              12.9,
+              -0.12499999999999994
+            ],
+            [
+              12.9,
+              -0.07499999999999996
+            ],
+            [
+              11.9,
+              -0.07499999999999996
+            ],
+            [
+              11.9,
+              -0.024999999999999967
+            ],
+            [
+              11.100000000000001,
+              -0.024999999999999967
+            ],
+            [
+              11.100000000000001,
+              0.025000000000000022
+            ],
+            [
+              10.9,
+              0.025000000000000022
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            0.0909090909090906,
+            0.10606060606060576,
+            0.34848484848484845,
+            0.36363636363636365,
+            0.6666666666666667,
+            0.6818181818181818,
+            0.924242424242424,
+            0.9393939393939391,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_7",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_2",
+          "Dms_4"
+        ],
+        "region_pair": [
+          "[(Cu2O)0.5](s)",
+          "[Cu(Ammo)2]+"
+        ],
+        "neighboring_regions": [
+          "DmsReg_2",
+          "DmsReg_4"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_1",
+          "DmsRegEqJnc_4"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            10.5,
+            -0.12499999999999994
+          ],
+          [
+            10.5,
+            -0.07499999999999996
+          ],
+          [
+            10.5,
+            -0.024999999999999967
+          ],
+          [
+            10.700000000000001,
+            -0.024999999999999967
+          ],
+          [
+            10.700000000000001,
+            0.025000000000000022
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 5,
+          "compact_n": 5,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "t_params": [
+            0.0,
+            0.1428571428571424,
+            0.2857142857142848,
+            0.8571428571428577,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              10.5,
+              -0.12499999999999994
+            ],
+            [
+              10.5,
+              -0.07499999999999996
+            ],
+            [
+              10.5,
+              -0.024999999999999967
+            ],
+            [
+              10.700000000000001,
+              -0.024999999999999967
+            ],
+            [
+              10.700000000000001,
+              0.025000000000000022
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.1428571428571424,
+            0.2857142857142848,
+            0.8571428571428577,
+            1.0
+          ],
+          "adaptive_n": 2,
+          "adaptive_pts": [
+            [
+              10.5,
+              -0.12499999999999994
+            ],
+            [
+              10.700000000000001,
+              0.025000000000000022
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_8",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_2",
+          "Dms_6"
+        ],
+        "region_pair": [
+          "[(Cu2O)0.5](s)",
+          "[Cu(Glyc)2]"
+        ],
+        "neighboring_regions": [
+          "DmsReg_2",
+          "DmsReg_6"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_4",
+          "DmsRegEqJnc_5"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            10.700000000000001,
+            0.025000000000000022
+          ],
+          [
+            10.9,
+            0.025000000000000022
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 2,
+          "compact_n": 2,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            1
+          ],
+          "t_params": [
+            0.0,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              10.700000000000001,
+              0.025000000000000022
+            ],
+            [
+              10.9,
+              0.025000000000000022
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            1.0
+          ],
+          "adaptive_n": 2,
+          "adaptive_pts": [
+            [
+              10.700000000000001,
+              0.025000000000000022
+            ],
+            [
+              10.9,
+              0.025000000000000022
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_9",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_3",
+          "Dms_6"
+        ],
+        "region_pair": [
+          "CuO(s)",
+          "[Cu(Glyc)2]"
+        ],
+        "neighboring_regions": [
+          "DmsReg_3",
+          "DmsReg_6"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_5",
+          "DmsRegEqJnc_12"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            10.9,
+            0.025000000000000022
+          ],
+          [
+            10.9,
+            0.1250000000000001
+          ],
+          [
+            10.700000000000001,
+            0.1250000000000001
+          ],
+          [
+            10.700000000000001,
+            0.8250000000000001
+          ],
+          [
+            10.700000000000001,
+            1.3250000000000002
+          ],
+          [
+            10.700000000000001,
+            1.5
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 32,
+          "compact_n": 6,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            2,
+            3,
+            17,
+            27,
+            31
+          ],
+          "t_params": [
+            0.0,
+            0.05970149253731351,
+            0.17910447761193998,
+            0.5970149253731342,
+            0.8955223880597015,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              10.9,
+              0.025000000000000022
+            ],
+            [
+              10.9,
+              0.1250000000000001
+            ],
+            [
+              10.700000000000001,
+              0.1250000000000001
+            ],
+            [
+              10.700000000000001,
+              0.8250000000000001
+            ],
+            [
+              10.700000000000001,
+              1.3250000000000002
+            ],
+            [
+              10.700000000000001,
+              1.5
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.05970149253731351,
+            0.17910447761193998,
+            0.5970149253731342,
+            0.8955223880597015,
+            1.0
+          ],
+          "adaptive_n": 4,
+          "adaptive_pts": [
+            [
+              10.9,
+              0.025000000000000022
+            ],
+            [
+              10.9,
+              0.1250000000000001
+            ],
+            [
+              10.700000000000001,
+              0.1250000000000001
+            ],
+            [
+              10.700000000000001,
+              1.5
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            0.05970149253731351,
+            0.17910447761193998,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_10",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_4",
+          "Dms_6"
+        ],
+        "region_pair": [
+          "[Cu(Ammo)2]+",
+          "[Cu(Glyc)2]"
+        ],
+        "neighboring_regions": [
+          "DmsReg_4",
+          "DmsReg_6"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_3",
+          "DmsRegEqJnc_4"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            7.9,
+            0.025000000000000022
+          ],
+          [
+            8.100000000000001,
+            0.025000000000000022
+          ],
+          [
+            8.3,
+            0.025000000000000022
+          ],
+          [
+            8.5,
+            0.025000000000000022
+          ],
+          [
+            8.7,
+            0.025000000000000022
+          ],
+          [
+            10.700000000000001,
+            0.025000000000000022
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 15,
+          "compact_n": 6,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            14
+          ],
+          "t_params": [
+            0.0,
+            0.07142857142857179,
+            0.14285714285714296,
+            0.2142857142857141,
+            0.28571428571428525,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              7.9,
+              0.025000000000000022
+            ],
+            [
+              8.100000000000001,
+              0.025000000000000022
+            ],
+            [
+              8.3,
+              0.025000000000000022
+            ],
+            [
+              8.5,
+              0.025000000000000022
+            ],
+            [
+              8.7,
+              0.025000000000000022
+            ],
+            [
+              10.700000000000001,
+              0.025000000000000022
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.07142857142857179,
+            0.14285714285714296,
+            0.2142857142857141,
+            0.28571428571428525,
+            1.0
+          ],
+          "adaptive_n": 2,
+          "adaptive_pts": [
+            [
+              7.9,
+              0.025000000000000022
+            ],
+            [
+              10.700000000000001,
+              0.025000000000000022
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_11",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_5",
+          "Dms_6"
+        ],
+        "region_pair": [
+          "[Cu2(Citr)2(OH)2]4-",
+          "[Cu(Glyc)2]"
+        ],
+        "neighboring_regions": [
+          "DmsReg_5",
+          "DmsReg_6"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_2",
+          "DmsRegEqJnc_13"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            7.5,
+            0.025000000000000022
+          ],
+          [
+            7.5,
+            0.07500000000000007
+          ],
+          [
+            7.5,
+            0.6250000000000001
+          ],
+          [
+            7.5,
+            0.9250000000000002
+          ],
+          [
+            7.5,
+            1.475
+          ],
+          [
+            7.5,
+            1.5
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 31,
+          "compact_n": 6,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            1,
+            12,
+            18,
+            29,
+            30
+          ],
+          "t_params": [
+            0.0,
+            0.03389830508474579,
+            0.4067796610169492,
+            0.6101694915254238,
+            0.9830508474576272,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              7.5,
+              0.025000000000000022
+            ],
+            [
+              7.5,
+              0.07500000000000007
+            ],
+            [
+              7.5,
+              0.6250000000000001
+            ],
+            [
+              7.5,
+              0.9250000000000002
+            ],
+            [
+              7.5,
+              1.475
+            ],
+            [
+              7.5,
+              1.5
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.03389830508474579,
+            0.4067796610169492,
+            0.6101694915254238,
+            0.9830508474576272,
+            1.0
+          ],
+          "adaptive_n": 2,
+          "adaptive_pts": [
+            [
+              7.5,
+              0.025000000000000022
+            ],
+            [
+              7.5,
+              1.5
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_12",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_5",
+          "Dms_7"
+        ],
+        "region_pair": [
+          "[Cu2(Citr)2(OH)2]4-",
+          "[Cu(Chlo)2]-"
+        ],
+        "neighboring_regions": [
+          "DmsReg_5",
+          "DmsReg_7"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_6",
+          "DmsRegEqJnc_7"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            5.700000000000001,
+            0.07500000000000007
+          ],
+          [
+            5.700000000000001,
+            0.1250000000000001
+          ],
+          [
+            5.1,
+            0.1250000000000001
+          ],
+          [
+            5.1,
+            0.17500000000000016
+          ],
+          [
+            4.1,
+            0.2250000000000001
+          ],
+          [
+            4.1,
+            0.275
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 13,
+          "compact_n": 6,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            1,
+            4,
+            5,
+            11,
+            12
+          ],
+          "t_params": [
+            0.0,
+            0.02855104769602719,
+            0.371163620048354,
+            0.3997146677443812,
+            0.9714489523039728,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              5.700000000000001,
+              0.07500000000000007
+            ],
+            [
+              5.700000000000001,
+              0.1250000000000001
+            ],
+            [
+              5.1,
+              0.1250000000000001
+            ],
+            [
+              5.1,
+              0.17500000000000016
+            ],
+            [
+              4.1,
+              0.2250000000000001
+            ],
+            [
+              4.1,
+              0.275
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.02855104769602719,
+            0.371163620048354,
+            0.3997146677443812,
+            0.9714489523039728,
+            1.0
+          ],
+          "adaptive_n": 8,
+          "adaptive_pts": [
+            [
+              5.700000000000001,
+              0.07500000000000007
+            ],
+            [
+              5.700000000000001,
+              0.1250000000000001
+            ],
+            [
+              5.1,
+              0.1250000000000001
+            ],
+            [
+              5.1,
+              0.17500000000000016
+            ],
+            [
+              4.5,
+              0.17500000000000016
+            ],
+            [
+              4.5,
+              0.2250000000000001
+            ],
+            [
+              4.1,
+              0.2250000000000001
+            ],
+            [
+              4.1,
+              0.275
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            0.027777777777777783,
+            0.3611111111111117,
+            0.3888888888888895,
+            0.7222222222222224,
+            0.7500000000000001,
+            0.9722222222222223,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_13",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_5",
+          "Dms_8"
+        ],
+        "region_pair": [
+          "[Cu2(Citr)2(OH)2]4-",
+          "[Cu2(Citr)2(OH)]3-"
+        ],
+        "neighboring_regions": [
+          "DmsReg_5",
+          "DmsReg_8"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_7",
+          "DmsRegEqJnc_14"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            4.1,
+            0.275
+          ],
+          [
+            4.1,
+            0.32500000000000007
+          ],
+          [
+            4.1,
+            0.3750000000000001
+          ],
+          [
+            4.1,
+            0.42500000000000016
+          ],
+          [
+            4.1,
+            0.9250000000000002
+          ],
+          [
+            4.1,
+            1.5
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 26,
+          "compact_n": 6,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            1,
+            2,
+            3,
+            13,
+            25
+          ],
+          "t_params": [
+            0.0,
+            0.040816326530612276,
+            0.08163265306122455,
+            0.12244897959183683,
+            0.5306122448979592,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              4.1,
+              0.275
+            ],
+            [
+              4.1,
+              0.32500000000000007
+            ],
+            [
+              4.1,
+              0.3750000000000001
+            ],
+            [
+              4.1,
+              0.42500000000000016
+            ],
+            [
+              4.1,
+              0.9250000000000002
+            ],
+            [
+              4.1,
+              1.5
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.040816326530612276,
+            0.08163265306122455,
+            0.12244897959183683,
+            0.5306122448979592,
+            1.0
+          ],
+          "adaptive_n": 2,
+          "adaptive_pts": [
+            [
+              4.1,
+              0.275
+            ],
+            [
+              4.1,
+              1.5
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_14",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_7",
+          "Dms_8"
+        ],
+        "region_pair": [
+          "[Cu(Chlo)2]-",
+          "[Cu2(Citr)2(OH)]3-"
+        ],
+        "neighboring_regions": [
+          "DmsReg_7",
+          "DmsReg_8"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_7",
+          "DmsRegEqJnc_8"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            4.1,
+            0.275
+          ],
+          [
+            3.7,
+            0.275
+          ],
+          [
+            3.7,
+            0.32500000000000007
+          ],
+          [
+            3.5,
+            0.32500000000000007
+          ],
+          [
+            3.5,
+            0.3750000000000001
+          ],
+          [
+            3.3000000000000003,
+            0.3750000000000001
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 7,
+          "compact_n": 6,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "t_params": [
+            0.0,
+            0.44444444444444414,
+            0.4999999999999998,
+            0.7222222222222223,
+            0.7777777777777779,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              4.1,
+              0.275
+            ],
+            [
+              3.7,
+              0.275
+            ],
+            [
+              3.7,
+              0.32500000000000007
+            ],
+            [
+              3.5,
+              0.32500000000000007
+            ],
+            [
+              3.5,
+              0.3750000000000001
+            ],
+            [
+              3.3000000000000003,
+              0.3750000000000001
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.44444444444444414,
+            0.4999999999999998,
+            0.7222222222222223,
+            0.7777777777777779,
+            1.0
+          ],
+          "adaptive_n": 4,
+          "adaptive_pts": [
+            [
+              4.1,
+              0.275
+            ],
+            [
+              3.7,
+              0.275
+            ],
+            [
+              3.7,
+              0.32500000000000007
+            ],
+            [
+              3.3000000000000003,
+              0.3750000000000001
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            0.4688711258507248,
+            0.5274800165820656,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_15",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_7",
+          "Dms_9"
+        ],
+        "region_pair": [
+          "[Cu(Chlo)2]-",
+          "Cu2+"
+        ],
+        "neighboring_regions": [
+          "DmsReg_7",
+          "DmsReg_9"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_15",
+          "DmsRegEqJnc_8"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            0.0,
+            0.3750000000000001
+          ],
+          [
+            1.1,
+            0.3750000000000001
+          ],
+          [
+            1.7000000000000002,
+            0.3750000000000001
+          ],
+          [
+            1.9,
+            0.3750000000000001
+          ],
+          [
+            2.5,
+            0.3750000000000001
+          ],
+          [
+            3.3000000000000003,
+            0.3750000000000001
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 18,
+          "compact_n": 6,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            6,
+            9,
+            10,
+            13,
+            17
+          ],
+          "t_params": [
+            0.0,
+            0.3333333333333333,
+            0.5151515151515151,
+            0.5757575757575757,
+            0.7575757575757576,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              0.0,
+              0.3750000000000001
+            ],
+            [
+              1.1,
+              0.3750000000000001
+            ],
+            [
+              1.7000000000000002,
+              0.3750000000000001
+            ],
+            [
+              1.9,
+              0.3750000000000001
+            ],
+            [
+              2.5,
+              0.3750000000000001
+            ],
+            [
+              3.3000000000000003,
+              0.3750000000000001
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.3333333333333333,
+            0.5151515151515151,
+            0.5757575757575757,
+            0.7575757575757576,
+            1.0
+          ],
+          "adaptive_n": 2,
+          "adaptive_pts": [
+            [
+              0.0,
+              0.3750000000000001
+            ],
+            [
+              3.3000000000000003,
+              0.3750000000000001
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      {
+        "id": "DmsRegEq_16",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_8",
+          "Dms_9"
+        ],
+        "region_pair": [
+          "[Cu2(Citr)2(OH)]3-",
+          "Cu2+"
+        ],
+        "neighboring_regions": [
+          "DmsReg_8",
+          "DmsReg_9"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_8",
+          "DmsRegEqJnc_16"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            3.3000000000000003,
+            0.3750000000000001
+          ],
+          [
+            3.3000000000000003,
+            0.42500000000000016
+          ],
+          [
+            3.3000000000000003,
+            0.4750000000000001
+          ],
+          [
+            3.3000000000000003,
+            0.525
+          ],
+          [
+            3.3000000000000003,
+            1.0250000000000001
+          ],
+          [
+            3.3000000000000003,
+            1.5
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "raw_n": 24,
+          "compact_n": 6,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            1,
+            2,
+            3,
+            13,
+            23
+          ],
+          "t_params": [
+            0.0,
+            0.04444444444444448,
+            0.08888888888888886,
+            0.13333333333333325,
+            0.5777777777777778,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              3.3000000000000003,
+              0.3750000000000001
+            ],
+            [
+              3.3000000000000003,
+              0.42500000000000016
+            ],
+            [
+              3.3000000000000003,
+              0.4750000000000001
+            ],
+            [
+              3.3000000000000003,
+              0.525
+            ],
+            [
+              3.3000000000000003,
+              1.0250000000000001
+            ],
+            [
+              3.3000000000000003,
+              1.5
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            0.04444444444444448,
+            0.08888888888888886,
+            0.13333333333333325,
+            0.5777777777777778,
+            1.0
+          ],
+          "adaptive_n": 2,
+          "adaptive_pts": [
+            [
+              3.3000000000000003,
+              0.3750000000000001
+            ],
+            [
+              3.3000000000000003,
+              1.5
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            1.0
+          ]
+        }
+      }
+    ],
+    "junction_features": [
+      {
+        "id": "DmsRegEqJnc_1",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_2",
+          "Dms_4"
+        ],
+        "dominant_species": [
+          "Cu",
+          "[(Cu2O)0.5](s)",
+          "[Cu(Ammo)2]+"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_2",
+          "DmsReg_4"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_1",
+          "DmsRegEq_2",
+          "DmsRegEq_7"
+        ],
+        "at_sweep_limit": false,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 10.5,
+          "E_V": -0.12499999999999994
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_2",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_5",
+          "Dms_6"
+        ],
+        "dominant_species": [
+          "Cu",
+          "[Cu2(Citr)2(OH)2]4-",
+          "[Cu(Glyc)2]"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_5",
+          "DmsReg_6"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_3",
+          "DmsRegEq_4",
+          "DmsRegEq_11"
+        ],
+        "at_sweep_limit": false,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 7.5,
+          "E_V": 0.025000000000000022
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_3",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_4",
+          "Dms_6"
+        ],
+        "dominant_species": [
+          "Cu",
+          "[Cu(Ammo)2]+",
+          "[Cu(Glyc)2]"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_4",
+          "DmsReg_6"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_2",
+          "DmsRegEq_4",
+          "DmsRegEq_10"
+        ],
+        "at_sweep_limit": false,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 7.9,
+          "E_V": 0.025000000000000022
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_4",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_2",
+          "Dms_4",
+          "Dms_6"
+        ],
+        "dominant_species": [
+          "[(Cu2O)0.5](s)",
+          "[Cu(Ammo)2]+",
+          "[Cu(Glyc)2]"
+        ],
+        "neighboring_regions": [
+          "DmsReg_2",
+          "DmsReg_4",
+          "DmsReg_6"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_7",
+          "DmsRegEq_8",
+          "DmsRegEq_10"
+        ],
+        "at_sweep_limit": false,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 10.700000000000001,
+          "E_V": 0.025000000000000022
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_5",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_2",
+          "Dms_3",
+          "Dms_6"
+        ],
+        "dominant_species": [
+          "[(Cu2O)0.5](s)",
+          "CuO(s)",
+          "[Cu(Glyc)2]"
+        ],
+        "neighboring_regions": [
+          "DmsReg_2",
+          "DmsReg_3",
+          "DmsReg_6"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_6",
+          "DmsRegEq_8",
+          "DmsRegEq_9"
+        ],
+        "at_sweep_limit": false,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 10.9,
+          "E_V": 0.025000000000000022
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_6",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_5",
+          "Dms_7"
+        ],
+        "dominant_species": [
+          "Cu",
+          "[Cu2(Citr)2(OH)2]4-",
+          "[Cu(Chlo)2]-"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_5",
+          "DmsReg_7"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_3",
+          "DmsRegEq_5",
+          "DmsRegEq_12"
+        ],
+        "at_sweep_limit": false,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 5.700000000000001,
+          "E_V": 0.07500000000000007
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_7",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_5",
+          "Dms_7",
+          "Dms_8"
+        ],
+        "dominant_species": [
+          "[Cu2(Citr)2(OH)2]4-",
+          "[Cu(Chlo)2]-",
+          "[Cu2(Citr)2(OH)]3-"
+        ],
+        "neighboring_regions": [
+          "DmsReg_5",
+          "DmsReg_7",
+          "DmsReg_8"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_12",
+          "DmsRegEq_13",
+          "DmsRegEq_14"
+        ],
+        "at_sweep_limit": false,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 4.1,
+          "E_V": 0.275
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_8",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_7",
+          "Dms_8",
+          "Dms_9"
+        ],
+        "dominant_species": [
+          "[Cu(Chlo)2]-",
+          "[Cu2(Citr)2(OH)]3-",
+          "Cu2+"
+        ],
+        "neighboring_regions": [
+          "DmsReg_7",
+          "DmsReg_8",
+          "DmsReg_9"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_14",
+          "DmsRegEq_15",
+          "DmsRegEq_16"
+        ],
+        "at_sweep_limit": false,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 3.3000000000000003,
+          "E_V": 0.3750000000000001
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_9",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_2"
+        ],
+        "dominant_species": [
+          "Cu",
+          "[(Cu2O)0.5](s)"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_2"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_1"
+        ],
+        "at_sweep_limit": true,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 14.0,
+          "E_V": -0.32499999999999996
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_10",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_7"
+        ],
+        "dominant_species": [
+          "Cu",
+          "[Cu(Chlo)2]-"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_7"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_5"
+        ],
+        "at_sweep_limit": true,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 0.0,
+          "E_V": 0.07500000000000007
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_11",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_2",
+          "Dms_3"
+        ],
+        "dominant_species": [
+          "[(Cu2O)0.5](s)",
+          "CuO(s)"
+        ],
+        "neighboring_regions": [
+          "DmsReg_2",
+          "DmsReg_3"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_6"
+        ],
+        "at_sweep_limit": true,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 14.0,
+          "E_V": -0.17499999999999993
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_12",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_3",
+          "Dms_6"
+        ],
+        "dominant_species": [
+          "CuO(s)",
+          "[Cu(Glyc)2]"
+        ],
+        "neighboring_regions": [
+          "DmsReg_3",
+          "DmsReg_6"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_9"
+        ],
+        "at_sweep_limit": true,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 10.700000000000001,
+          "E_V": 1.5
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_13",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_5",
+          "Dms_6"
+        ],
+        "dominant_species": [
+          "[Cu2(Citr)2(OH)2]4-",
+          "[Cu(Glyc)2]"
+        ],
+        "neighboring_regions": [
+          "DmsReg_5",
+          "DmsReg_6"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_11"
+        ],
+        "at_sweep_limit": true,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 7.5,
+          "E_V": 1.5
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_14",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_5",
+          "Dms_8"
+        ],
+        "dominant_species": [
+          "[Cu2(Citr)2(OH)2]4-",
+          "[Cu2(Citr)2(OH)]3-"
+        ],
+        "neighboring_regions": [
+          "DmsReg_5",
+          "DmsReg_8"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_13"
+        ],
+        "at_sweep_limit": true,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 4.1,
+          "E_V": 1.5
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_15",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_7",
+          "Dms_9"
+        ],
+        "dominant_species": [
+          "[Cu(Chlo)2]-",
+          "Cu2+"
+        ],
+        "neighboring_regions": [
+          "DmsReg_7",
+          "DmsReg_9"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_15"
+        ],
+        "at_sweep_limit": true,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 0.0,
+          "E_V": 0.3750000000000001
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_16",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_8",
+          "Dms_9"
+        ],
+        "dominant_species": [
+          "[Cu2(Citr)2(OH)]3-",
+          "Cu2+"
+        ],
+        "neighboring_regions": [
+          "DmsReg_8",
+          "DmsReg_9"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_16"
+        ],
+        "at_sweep_limit": true,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 3.3000000000000003,
+          "E_V": 1.5
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      }
+    ]
+  },
+  "source_mapping": {
+    "dominant_species": {
+      "Dms_1": {
+        "source_label_id": 0,
+        "source_catalog_value": "Cu"
+      },
+      "Dms_2": {
+        "source_label_id": 1,
+        "source_catalog_value": "[(Cu2O)0.5](s)"
+      },
+      "Dms_3": {
+        "source_label_id": 2,
+        "source_catalog_value": "CuO(s)"
+      },
+      "Dms_4": {
+        "source_label_id": 3,
+        "source_catalog_value": "[Cu(Ammo)2]+"
+      },
+      "Dms_5": {
+        "source_label_id": 4,
+        "source_catalog_value": "[Cu2(Citr)2(OH)2]4-"
+      },
+      "Dms_6": {
+        "source_label_id": 5,
+        "source_catalog_value": "[Cu(Glyc)2]"
+      },
+      "Dms_7": {
+        "source_label_id": 6,
+        "source_catalog_value": "[Cu(Chlo)2]-"
+      },
+      "Dms_8": {
+        "source_label_id": 7,
+        "source_catalog_value": "[Cu2(Citr)2(OH)]3-"
+      },
+      "Dms_9": {
+        "source_label_id": 8,
+        "source_catalog_value": "Cu2+"
+      }
+    },
+    "regions": {
+      "DmsReg_1": {
+        "source_id": 0,
+        "source_collection": "regions"
+      },
+      "DmsReg_2": {
+        "source_id": 1,
+        "source_collection": "regions"
+      },
+      "DmsReg_3": {
+        "source_id": 2,
+        "source_collection": "regions"
+      },
+      "DmsReg_4": {
+        "source_id": 3,
+        "source_collection": "regions"
+      },
+      "DmsReg_5": {
+        "source_id": 4,
+        "source_collection": "regions"
+      },
+      "DmsReg_6": {
+        "source_id": 5,
+        "source_collection": "regions"
+      },
+      "DmsReg_7": {
+        "source_id": 6,
+        "source_collection": "regions"
+      },
+      "DmsReg_8": {
+        "source_id": 7,
+        "source_collection": "regions"
+      },
+      "DmsReg_9": {
+        "source_id": 8,
+        "source_collection": "regions"
+      }
+    },
+    "boundary_manifolds": {
+      "DmsRegEq_1": {
+        "source_id": 0,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_2": {
+        "source_id": 1,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_3": {
+        "source_id": 2,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_4": {
+        "source_id": 3,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_5": {
+        "source_id": 4,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_6": {
+        "source_id": 5,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_7": {
+        "source_id": 6,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_8": {
+        "source_id": 7,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_9": {
+        "source_id": 8,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_10": {
+        "source_id": 9,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_11": {
+        "source_id": 10,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_12": {
+        "source_id": 11,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_13": {
+        "source_id": 12,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_14": {
+        "source_id": 13,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_15": {
+        "source_id": 14,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      },
+      "DmsRegEq_16": {
+        "source_id": 15,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      }
+    },
+    "junction_features": {
+      "DmsRegEqJnc_1": {
+        "source_id": 0,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_2": {
+        "source_id": 1,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_3": {
+        "source_id": 2,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_4": {
+        "source_id": 3,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_5": {
+        "source_id": 4,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_6": {
+        "source_id": 5,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_7": {
+        "source_id": 6,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_8": {
+        "source_id": 7,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_9": {
+        "source_id": 8,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_10": {
+        "source_id": 9,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_11": {
+        "source_id": 10,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_12": {
+        "source_id": 11,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_13": {
+        "source_id": 12,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_14": {
+        "source_id": 13,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_15": {
+        "source_id": 14,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_16": {
+        "source_id": 15,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      }
+    }
+  }
+}

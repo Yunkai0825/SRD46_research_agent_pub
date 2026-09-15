@@ -1,0 +1,53 @@
+{
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "H",
+          "element": "H",
+          "redox_states": [
+            {
+              "internal_id": "H$+1",
+              "db_id": "metal_68"
+            }
+          ],
+          "water_species": true
+        },
+        {
+          "name": "Cu",
+          "element": "Cu",
+          "redox_states": [
+            {
+              "internal_id": "Cu$+3",
+              "db_id": "metal_43"
+            },
+            {
+              "internal_id": "Cu$+2",
+              "db_id": "metal_41"
+            },
+            {
+              "internal_id": "Cu$+1",
+              "db_id": "metal_42"
+            }
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "NTA",
+          "db_id": "ligand_6165",
+          "internal_id": "L1",
+          "formula": "C6H9N1O6",
+          "smiles": "O=C(O)CN(CC(=O)O)CC(=O)O",
+          "inchi": "InChI=1S/C6H9NO6/c8-4(9)1-7(2-5(10)11)3-6(12)13/h1-3H2,(H,8,9)(H,10,11)(H,12,13)"
+        },
+        {
+          "name": "Hydroxide ion",
+          "db_id": "ligand_10076",
+          "internal_id": "L0",
+          "water_species": true
+        }
+      ]
+    }
+  }
+}

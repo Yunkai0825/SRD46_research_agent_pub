@@ -1,0 +1,10 @@
+{
+  "verdict": "supported",
+  "status": "ok",
+  "notes": [
+    "Verdict file confirms 61/61 convergence",
+    "single Co(OH)2(s) precipitation at pH 10 (8.18e-6 M)",
+    "and dominant species crossovers matching the L1 narrative (Cu(Hist)2H+↔Cu(Hist)2 at pH 5.76; Ni2+↔Ni(Hist)+ at 4.65; Co(Hist)+↔Co(Hist)2 at 6.92). Log β values quoted from the free-energy table are consistent. Practical/Irving-Williams commentary is qualitative but supported by the ordering of ML2 stabilities shown."
+  ],
+  "purpose": "Compute joint speciation of Co(II), Ni(II), and Cu(II) with L-histidine in a single pot to evaluate discrimination via free [M2+] at pH 6-8."
+}

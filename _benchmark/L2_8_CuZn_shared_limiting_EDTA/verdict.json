@@ -1,0 +1,9 @@
+{
+  "verdict": "fail",
+  "notes": [
+    "The overall answer was incomplete when the execution limit was reached."
+  ],
+  "request": "A single beaker holds 1 mM Cu(II), 1 mM Zn(II) and 1 mM EDTA together (sub-stoichiometric for the two metals combined) at pH 6, 25 C, I=0.1 m. Compute the joint speciation of this shared pot and determine how the one equivalent of EDTA partitions competitively between Cu and Zn; report the bound:free ratio of each metal, identify which metal wins the ligand, and justify it quantitatively from the computed fractions.",
+  "reason": "timed_out",
+  "status": "timed_out"
+}

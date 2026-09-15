@@ -1,0 +1,18 @@
+{
+  "verdict": "inconclusive",
+  "hints": [
+    "The l1_report.md is only 26 bytes and contains just \"## Doability",
+    "Doable: Z…\" — the report is truncated/incomplete and provides no analysis of the Zn(II)-glycine speciation. No dominance ladder",
+    "no pH 7 fractions/concentrations for [Zn2+]",
+    "[Zn(Gly)]+",
+    "[Zn(Gly)2]",
+    "[Zn(Gly)3]-",
+    "no hydroxo species",
+    "no precipitate assessment. Solver outputs (envelope",
+    "frac_metal",
+    "concentrations",
+    "verdict.md",
+    "topology) are all present and could support a full analysis",
+    "but the report itself is missing. Recommend regenerating the calculation from the existing solver artifacts."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "pH_range": [
+    4.0,
+    10.0
+  ],
+  "n_points": 61,
+  "ionic_mode": "fixed",
+  "include_redox": false,
+  "redox_mode": "excluded",
+  "redox_state_subtotals": {
+    "[Co$+0]_total": 0.0,
+    "[Co$+2]_total": 0.001,
+    "[Co$+3]_total": 0.0,
+    "[Co$+4]_total": 0.0,
+    "[Cu$+0]_total": 0.0,
+    "[Cu$+1]_total": 0.0,
+    "[Cu$+2]_total": 0.001,
+    "[Ni$+0]_total": 0.0,
+    "[Ni$+2]_total": 0.001,
+    "[Ni$+3]_total": 0.0,
+    "[Ni$+4]_total": 0.0
+  },
+  "component_totals": {
+    "[ligand_5760]_total": 0.005
+  }
+}

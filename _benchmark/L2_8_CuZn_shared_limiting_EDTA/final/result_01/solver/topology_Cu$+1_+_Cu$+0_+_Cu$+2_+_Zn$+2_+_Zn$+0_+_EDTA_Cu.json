@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "system_name": "Cu$+1 + Cu$+0 + Cu$+2 + Zn$+2 + Zn$+0 + EDTA",
+    "element": "Cu",
+    "n_pH": 31,
+    "pH_range": [
+      3.0,
+      9.0
+    ],
+    "topology_settings": {
+      "extraction_method": "bottom_up_nd",
+      "axis_names": [
+        "pH"
+      ],
+      "axis_ranges": {
+        "pH": [
+          3.0,
+          9.0
+        ]
+      },
+      "axis_spacing": {
+        "pH": 0.20000000000000018
+      },
+      "topology_fix": {
+        "applied": false
+      },
+      "region_resolution_merges": 0,
+      "resolution": "coarse_final",
+      "is_final": true
+    },
+    "ndim": 1
+  },
+  "label_catalog": {
+    "0": "Cu$+2.OH.L1.z-3"
+  },
+  "features_0d": [],
+  "regions": [
+    {
+      "id": 0,
+      "label": 0,
+      "name": "Cu$+2.OH.L1.z-3",
+      "boundary_ids": [],
+      "measure": 6.2,
+      "flags": []
+    }
+  ]
+}

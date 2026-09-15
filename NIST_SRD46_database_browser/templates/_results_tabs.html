@@ -1,0 +1,14 @@
+<ul class="nav nav-tabs mb-3" aria-label="Saved results">
+  <li class="nav-item">
+    <a class="nav-link {% if source == 'benchmark' %}active{% endif %}"
+       href="{{ url_for('results.collection', source='benchmark') }}">
+      <i class="bi bi-list-check"></i> Benchmark
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {% if source == 'output' %}active{% endif %}"
+       href="{{ url_for('results.collection', source='output') }}">
+      <i class="bi bi-chat-square-text"></i> Output
+    </a>
+  </li>
+</ul>

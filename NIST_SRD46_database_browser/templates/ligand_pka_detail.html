@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+{% block title %}pKa — {{ ligand.ligand_name_SRD }} — SRD-46{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('pka.pka_search') }}">pK<sub>a</sub> search</a></li>
+    <li class="breadcrumb-item active">{{ ligand.ligand_name_SRD }}</li>
+  </ol>
+</nav>
+
+{# ---------- ligand header ---------- #}
+<div class="card p-3 mb-3">
+  <h4 class="mb-3">
+    <i class="bi bi-bar-chart-steps"></i>
+    pK<sub>a</sub> profile —
+    <a href="{{ url_for('ligands.ligand_detail', ligand_id=ligand.ligand_id) }}">
+      {{ ligand.ligand_name_SRD }}
+    </a>
+    <span class="text-muted small">#{{ ligand.ligand_id }}</span>
+  </h4>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <table class="table table-sm w-auto mb-0">
+        <tr><th>Formula</th><td class="formula">{{ ligand.formula or '—' }}</td></tr>
+        <tr><th>Class</th><td>{{ ligand.ligand_class_name or '—' }}</td></tr>
+        <tr><th>HxL definition</th><td><code>{{ ligand.definition_HxL or '—' }}</code></td></tr>
+        <tr><th>SMILES</th><td class="small text-break">{{ ligand.ligand_SMILES or '—' }}</td></tr>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <table class="table table-sm w-auto mb-0">
+        <tr><th>Entries</th><td>{{ overall.n_entries }}</td></tr>
+        <tr><th>Transitions</th><td>{{ overall.n_transitions }}</td></tr>
+        <tr><th>pK<sub>a</sub> range</th>
+          <td>
+            {% if overall.pka_min is not none %}
+              {{ '%.2f'|format(overall.pka_min) }} – {{ '%.2f'|format(overall.pka_max) }}
+            {% else %}—{% endif %}
+          </td></tr>
+        <tr><th>T (°C)</th>
+          <td>
+            {% if overall.T_min is not none %}
+              {{ overall.T_min }}{% if overall.T_max != overall.T_min %} – {{ overall.T_max }}{% endif %}
+            {% else %}—{% endif %}
+          </td></tr>
+        <tr><th>I (mol/L)</th>
+          <td>
+            {% if overall.I_min is not none %}
+              {{ overall.I_min }}{% if overall.I_max != overall.I_min %} – {{ overall.I_max }}{% endif %}
+            {% else %}—{% endif %}
+          </td></tr>
+        <tr><th>Sources</th>
+          <td class="small">
+            {% for s, n in overall.sources.items() %}
+              <span class="badge bg-secondary">{{ s }} × {{ n }}</span>
+            {% else %}—{% endfor %}
+          </td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+{# ---------- protonation ladder summary ---------- #}
+<div class="card p-3 mb-3">
+  <h5 class="mb-2"><i class="bi bi-bar-chart-steps"></i> Protonation transitions</h5>
+  <p class="small text-muted mb-2">
+    Known unequal proton counts are displayed acid → base, with the more protonated
+    state on the left. Unknown or equal counts retain the recorded direction.
+    Values and conditions are preserved; group summaries may combine different conditions.
+    Expand a row to inspect the recorded transitions and supporting measurements.
+  </p>
+  <div class="table-responsive">
+    <table class="table table-sm table-hover align-middle mb-0">
+      <thead>
+        <tr>
+          <th>#</th><th>Transition</th>
+          <th class="text-end">N</th>
+          <th class="text-end">pK<sub>a</sub> mean</th>
+          <th class="text-end">median</th>
+          <th class="text-end">range</th>
+          <th>Visual</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for s in summary %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>
+            <a href="#trans-{{ loop.index }}">
+              <code>{{ s.from }}</code> &nbsp;→&nbsp; <code>{{ s.to }}</code>
+              <span class="badge {{ 'bg-secondary' if s.direction == 'acid_to_base' else 'bg-warning text-dark' }}">{{ "acid → base" if s.direction == "acid_to_base" else "recorded direction; proton counts unresolved or equal" }}</span>
+            </a>
+          </td>
+          <td class="text-end">{{ s.count }}</td>
+          <td class="text-end"><strong>
+            {% if s.pka_mean is not none %}{{ '%.2f'|format(s.pka_mean) }}{% endif %}
+          </strong></td>
+          <td class="text-end">
+            {% if s.pka_median is not none %}{{ '%.2f'|format(s.pka_median) }}{% endif %}
+          </td>
+          <td class="text-end small text-muted">
+            {% if s.pka_min is not none and s.pka_max is not none %}
+              {{ '%.2f'|format(s.pka_min) }} – {{ '%.2f'|format(s.pka_max) }}
+            {% endif %}
+          </td>
+          <td style="min-width:180px">
+            {% if s.pka_mean is not none %}
+              {# bar from pKa 0..14, clipped #}
+              {% set pct = ((s.pka_mean if s.pka_mean > 0 else 0) / 14 * 100) %}
+              {% if pct > 100 %}{% set pct = 100 %}{% endif %}
+              <div class="progress" style="height:8px;">
+                <div class="progress-bar bg-info" style="width: {{ pct }}%"></div>
+              </div>
+              <div class="small text-muted">pH 0 ─── 14</div>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{# ---------- per-transition accordion with full measurement table ---------- #}
+<h5 class="mt-4 mb-2">
+  <i class="bi bi-list-ul"></i> Measurements per transition
+</h5>
+
+<div class="accordion" id="pkaAcc">
+{% for g in groups %}
+  {% set tid = loop.index %}
+  <div class="accordion-item" id="trans-{{ tid }}">
+    <h2 class="accordion-header" id="hdr-{{ tid }}">
+      <button class="accordion-button {% if not loop.first %}collapsed{% endif %}"
+              type="button" data-bs-toggle="collapse"
+              data-bs-target="#col-{{ tid }}"
+              aria-expanded="{{ 'true' if loop.first else 'false' }}"
+              aria-controls="col-{{ tid }}">
+        <strong><code>{{ g.from }}</code> → <code>{{ g.to }}</code></strong>
+        <span class="ms-2 badge {{ 'bg-secondary' if g.direction == 'acid_to_base' else 'bg-warning text-dark' }}">{{ "acid → base" if g.direction == "acid_to_base" else "recorded direction; proton counts unresolved or equal" }}</span>
+        <span class="ms-3 text-muted small">
+          {{ g.count }} measurement{{ '' if g.count == 1 else 's' }}
+          {% if g.pka_mean is not none %}
+            · mean pK<sub>a</sub> = {{ '%.2f'|format(g.pka_mean) }}
+          {% endif %}
+          {% if g.pka_min is not none %}
+            · range {{ '%.2f'|format(g.pka_min) }}–{{ '%.2f'|format(g.pka_max) }}
+          {% endif %}
+        </span>
+      </button>
+    </h2>
+    <div id="col-{{ tid }}"
+         class="accordion-collapse collapse {% if loop.first %}show{% endif %}"
+         aria-labelledby="hdr-{{ tid }}" data-bs-parent="#pkaAcc">
+      <div class="accordion-body">
+
+        <div class="table-responsive mb-3">
+          <table class="table table-sm table-hover mb-0">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Recorded transition</th>
+                <th>pK<sub>a</sub></th>
+                <th>T (°C)</th>
+                <th>I (mol/L)</th>
+                <th>Electrolyte</th>
+                <th>Solvent</th>
+                <th>Method</th>
+                <th>Source</th>
+                <th>Quality</th>
+                <th>Linked VLMs</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for e in g.entries %}
+              <tr>
+                <td>{{ loop.index }}</td>
+                <td class="small"><code>{{ e.bracket_from_state or "?" }}</code> → <code>{{ e.bracket_to_state or "?" }}</code></td>
+                <td><strong>{{ '%.2f'|format(e.pKa) if e.pKa is not none else '' }}</strong></td>
+                <td>{{ e.temperature_c if e.temperature_c is not none else '' }}</td>
+                <td>{{ e.ionic_strength_mol_l if e.ionic_strength_mol_l is not none else '' }}</td>
+                <td class="small">{{ e.electrolyte or '' }}</td>
+                <td class="small">{{ e.solvent_name or '' }}</td>
+                <td class="small">{{ e.measurement_method or '' }}</td>
+                <td class="small">{{ e.source or '' }}</td>
+                <td class="small">{{ e.quality or '' }}</td>
+                <td class="small">
+                  {% for v in e.vlm_ids %}vlm_{{ v }}{% if not loop.last %}, {% endif %}{% endfor %}
+                </td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        {% if g.vlm_links %}
+        <div class="small">
+          <span class="text-muted">All linked stability VLMs:</span>
+          {% for vl in g.vlm_links %}
+            {% if vl.stability_id %}
+              <a class="badge bg-light text-primary text-decoration-none border"
+                 href="{{ url_for('stability.vlm_detail', stability_id=vl.stability_id) }}">
+                vlm_{{ vl.vlm_id }}
+              </a>
+            {% else %}
+              <span class="badge bg-light text-muted border">vlm_{{ vl.vlm_id }}</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+{% endblock %}

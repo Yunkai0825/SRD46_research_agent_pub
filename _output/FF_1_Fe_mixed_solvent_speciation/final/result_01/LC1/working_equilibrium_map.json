@@ -1,0 +1,372 @@
+{
+  "pairs": [
+    {
+      "metal_id": 68,
+      "ligand_id": 10076,
+      "selected_network_ids": [
+        27283
+      ]
+    },
+    {
+      "metal_id": 61,
+      "ligand_id": 10076,
+      "selected_network_ids": [
+        27465
+      ]
+    },
+    {
+      "metal_id": 62,
+      "ligand_id": 10076,
+      "selected_network_ids": [
+        27433
+      ]
+    },
+    {
+      "metal_id": 61,
+      "ligand_id": 11422,
+      "selected_network_ids": [],
+      "estimated_eq_nodes": [
+        {
+          "node_db_id": -4000001,
+          "vlm_id": -5000001,
+          "constant_type": "K",
+          "log_K": 0.8,
+          "temperature": 25.0,
+          "ionic_strength": 0.1,
+          "equation_python": "[M] + [L] <=> [ML]",
+          "beta_definition_id": 812,
+          "beta_definition_name": "[ML]/[M][L]",
+          "metal_id": 61,
+          "ligand_id": 11422,
+          "LHS_species_json": [
+            {
+              "species": "[L]",
+              "power": 1,
+              "phase": "aqueous"
+            },
+            {
+              "species": "[M]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "RHS_species_json": [
+            {
+              "species": "[ML]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "_estimated_provenance": {
+            "assumptions": [
+              "Aqueous reference state",
+              "DMF treated as neutral monodentate O-donor (amide carbonyl O)",
+              "no H⁺ or OH⁻ coupling",
+              "ignore DMF-induced medium effects on Fe(III) hydrolysis (must be handled separately in the mixed-solvent Pourbaix module)"
+            ],
+            "estimation_method": "(i) SRD-46 upper bracket: DMF logK₁ must be well below Fe³⁺–HSO₄⁻ and Fe³⁺–acetate (both anionic O-donors give 2.8–3.6). (ii) SRD-46 competing-reaction anchor: Fe³⁺ hydrolysis dominates ternary Fe(III) speciation by pH ≈ 2–3. (iii) Chemistry-based donor-number interpolation between urea (~0.5) and DMSO (~1.4) places DMF at ≈ 0.8",
+            "evidence_citation_ids": [],
+            "evidence_network_ids": [],
+            "evidence_topology_diagnostics": {
+              "analogue_vlm_ids": [],
+              "beta_definition_id": 812,
+              "equilibrium_index": 0,
+              "evidence_citation_ids": [],
+              "evidence_network_ids": [],
+              "evidence_vlm_ids": [
+                144783,
+                172282,
+                173624,
+                176061,
+                176248
+              ],
+              "matching_beta_vlm_ids": [
+                144783,
+                172282,
+                173624,
+                176061,
+                176248
+              ],
+              "topology_grounding": "same_beta_evidence"
+            },
+            "evidence_vlm_ids": [
+              "vlm_176061",
+              "vlm_144783",
+              "vlm_176248",
+              "vlm_172282",
+              "vlm_173624"
+            ],
+            "rationale": "Combining the SRD-46 upper bracket (Fe³⁺ + HSO₄⁻ = 2.80, acetate = 3.60, both anionic and thus ≫ any neutral donor) with donor-number interpolation between urea and DMSO",
+            "source": "SRD46 query estimated values",
+            "topology_resolution": null,
+            "topology_source": "beta_def_812",
+            "uncertainty_log10": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "metal_id": 62,
+      "ligand_id": 11422,
+      "selected_network_ids": [],
+      "estimated_eq_nodes": [
+        {
+          "node_db_id": -4000002,
+          "vlm_id": -5000002,
+          "constant_type": "K",
+          "log_K": 1.0,
+          "temperature": 25.0,
+          "ionic_strength": 0.1,
+          "equation_python": "[M] + [L] <=> [ML]",
+          "beta_definition_id": 812,
+          "beta_definition_name": "[ML]/[M][L]",
+          "metal_id": 62,
+          "ligand_id": 11422,
+          "LHS_species_json": [
+            {
+              "species": "[L]",
+              "power": 1,
+              "phase": "aqueous"
+            },
+            {
+              "species": "[M]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "RHS_species_json": [
+            {
+              "species": "[ML]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "_estimated_provenance": {
+            "assumptions": [
+              "DMF is a neutral, monodentate O-donor (binding through the carbonyl O; the N is amide-N, sp² delocalized, non-basic).",
+              "The transferable analogue is therefore Cd²⁺–urea.",
+              "For weakly bound neutral O‑donors on divalent 3d/4d metals, log K₁ values are typically bunched within ±0.3–0.5 log units, since the electrostatic/dipolar contribution dominates and CFSE differences are minor."
+            ],
+            "estimation_method": "Route: Cd²⁺→Fe²⁺ metal transfer within divalent borderline cations + urea→DMF ligand transfer within neutral C=O amide donors (+~0.15 log units for higher DMF donor number), applied step-by-step on `beta_def_812/840/872/894`.",
+            "evidence_citation_ids": [],
+            "evidence_network_ids": [],
+            "evidence_topology_diagnostics": {
+              "analogue_vlm_ids": [],
+              "beta_definition_id": 812,
+              "equilibrium_index": 0,
+              "evidence_citation_ids": [],
+              "evidence_network_ids": [],
+              "evidence_vlm_ids": [
+                169421
+              ],
+              "matching_beta_vlm_ids": [
+                169421
+              ],
+              "topology_grounding": "same_beta_evidence"
+            },
+            "evidence_vlm_ids": [
+              "vlm_169421"
+            ],
+            "rationale": "Cd²⁺ and Fe²⁺ are both divalent, high-spin, borderline (Fe²⁺ slightly harder), with similar ionic radii (Fe²⁺ HS ~0.78 Å, Cd²⁺ ~0.95 Å in 6-coordinate).",
+            "source": "SRD46 query estimated values",
+            "topology_resolution": null,
+            "topology_source": "beta_def_812",
+            "uncertainty_log10": 0.5
+          }
+        },
+        {
+          "node_db_id": -4000003,
+          "vlm_id": -5000003,
+          "constant_type": "K",
+          "log_K": 1.5,
+          "temperature": 25.0,
+          "ionic_strength": 0.1,
+          "equation_python": "[M] + [L]^2 <=> [ML2]",
+          "beta_definition_id": 840,
+          "beta_definition_name": "[ML<sub>2</sub>]/[M][L]<sup>2</sup>",
+          "metal_id": 62,
+          "ligand_id": 11422,
+          "LHS_species_json": [
+            {
+              "species": "[L]",
+              "power": 2,
+              "phase": "aqueous"
+            },
+            {
+              "species": "[M]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "RHS_species_json": [
+            {
+              "species": "[ML2]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "_estimated_provenance": {
+            "assumptions": [
+              "DMF is a neutral, monodentate O-donor (binding through the carbonyl O; the N is amide-N, sp² delocalized, non-basic).",
+              "The transferable analogue is therefore Cd²⁺–urea.",
+              "For weakly bound neutral O‑donors on divalent 3d/4d metals, log K₁ values are typically bunched within ±0.3–0.5 log units, since the electrostatic/dipolar contribution dominates and CFSE differences are minor."
+            ],
+            "estimation_method": "Route: Cd²⁺→Fe²⁺ metal transfer within divalent borderline cations + urea→DMF ligand transfer within neutral C=O amide donors (+~0.15 log units for higher DMF donor number), applied step-by-step on `beta_def_812/840/872/894`.",
+            "evidence_citation_ids": [],
+            "evidence_network_ids": [],
+            "evidence_topology_diagnostics": {
+              "analogue_vlm_ids": [],
+              "beta_definition_id": 840,
+              "equilibrium_index": 0,
+              "evidence_citation_ids": [],
+              "evidence_network_ids": [],
+              "evidence_vlm_ids": [
+                169422
+              ],
+              "matching_beta_vlm_ids": [
+                169422
+              ],
+              "topology_grounding": "same_beta_evidence"
+            },
+            "evidence_vlm_ids": [
+              "vlm_169422"
+            ],
+            "rationale": "Cd²⁺ and Fe²⁺ are both divalent, high-spin, borderline (Fe²⁺ slightly harder), with similar ionic radii (Fe²⁺ HS ~0.78 Å, Cd²⁺ ~0.95 Å in 6-coordinate).",
+            "source": "SRD46 query estimated values",
+            "topology_resolution": null,
+            "topology_source": "beta_def_840",
+            "uncertainty_log10": 0.6
+          }
+        },
+        {
+          "node_db_id": -4000004,
+          "vlm_id": -5000004,
+          "constant_type": "K",
+          "log_K": 1.8,
+          "temperature": 25.0,
+          "ionic_strength": 0.1,
+          "equation_python": "[M] + [L]^3 <=> [ML3]",
+          "beta_definition_id": 872,
+          "beta_definition_name": "[ML<sub>3</sub>]/[M][L]<sup>3</sup>",
+          "metal_id": 62,
+          "ligand_id": 11422,
+          "LHS_species_json": [
+            {
+              "species": "[L]",
+              "power": 3,
+              "phase": "aqueous"
+            },
+            {
+              "species": "[M]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "RHS_species_json": [
+            {
+              "species": "[ML3]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "_estimated_provenance": {
+            "assumptions": [
+              "DMF is a neutral, monodentate O-donor (binding through the carbonyl O; the N is amide-N, sp² delocalized, non-basic).",
+              "The transferable analogue is therefore Cd²⁺–urea.",
+              "For weakly bound neutral O‑donors on divalent 3d/4d metals, log K₁ values are typically bunched within ±0.3–0.5 log units, since the electrostatic/dipolar contribution dominates and CFSE differences are minor."
+            ],
+            "estimation_method": "Route: Cd²⁺→Fe²⁺ metal transfer within divalent borderline cations + urea→DMF ligand transfer within neutral C=O amide donors (+~0.15 log units for higher DMF donor number), applied step-by-step on `beta_def_812/840/872/894`.",
+            "evidence_citation_ids": [],
+            "evidence_network_ids": [],
+            "evidence_topology_diagnostics": {
+              "analogue_vlm_ids": [],
+              "beta_definition_id": 872,
+              "equilibrium_index": 0,
+              "evidence_citation_ids": [],
+              "evidence_network_ids": [],
+              "evidence_vlm_ids": [
+                169423
+              ],
+              "matching_beta_vlm_ids": [
+                169423
+              ],
+              "topology_grounding": "same_beta_evidence"
+            },
+            "evidence_vlm_ids": [
+              "vlm_169423"
+            ],
+            "rationale": "Cd²⁺ and Fe²⁺ are both divalent, high-spin, borderline (Fe²⁺ slightly harder), with similar ionic radii (Fe²⁺ HS ~0.78 Å, Cd²⁺ ~0.95 Å in 6-coordinate).",
+            "source": "SRD46 query estimated values",
+            "topology_resolution": null,
+            "topology_source": "beta_def_872",
+            "uncertainty_log10": 0.7
+          }
+        },
+        {
+          "node_db_id": -4000005,
+          "vlm_id": -5000005,
+          "constant_type": "K",
+          "log_K": 2.1,
+          "temperature": 25.0,
+          "ionic_strength": 0.1,
+          "equation_python": "[M] + [L]^4 <=> [ML4]",
+          "beta_definition_id": 894,
+          "beta_definition_name": "[ML<sub>4</sub>]/[M][L]<sup>4</sup>",
+          "metal_id": 62,
+          "ligand_id": 11422,
+          "LHS_species_json": [
+            {
+              "species": "[L]",
+              "power": 4,
+              "phase": "aqueous"
+            },
+            {
+              "species": "[M]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "RHS_species_json": [
+            {
+              "species": "[ML4]",
+              "power": 1,
+              "phase": "aqueous"
+            }
+          ],
+          "_estimated_provenance": {
+            "assumptions": [
+              "DMF is a neutral, monodentate O-donor (binding through the carbonyl O; the N is amide-N, sp² delocalized, non-basic).",
+              "The transferable analogue is therefore Cd²⁺–urea.",
+              "For weakly bound neutral O‑donors on divalent 3d/4d metals, log K₁ values are typically bunched within ±0.3–0.5 log units, since the electrostatic/dipolar contribution dominates and CFSE differences are minor."
+            ],
+            "estimation_method": "Route: Cd²⁺→Fe²⁺ metal transfer within divalent borderline cations + urea→DMF ligand transfer within neutral C=O amide donors (+~0.15 log units for higher DMF donor number), applied step-by-step on `beta_def_812/840/872/894`.",
+            "evidence_citation_ids": [],
+            "evidence_network_ids": [],
+            "evidence_topology_diagnostics": {
+              "analogue_vlm_ids": [],
+              "beta_definition_id": 894,
+              "equilibrium_index": 0,
+              "evidence_citation_ids": [],
+              "evidence_network_ids": [],
+              "evidence_vlm_ids": [
+                169424
+              ],
+              "matching_beta_vlm_ids": [
+                169424
+              ],
+              "topology_grounding": "same_beta_evidence"
+            },
+            "evidence_vlm_ids": [
+              "vlm_169424"
+            ],
+            "rationale": "Cd²⁺ and Fe²⁺ are both divalent, high-spin, borderline (Fe²⁺ slightly harder), with similar ionic radii (Fe²⁺ HS ~0.78 Å, Cd²⁺ ~0.95 Å in 6-coordinate).",
+            "source": "SRD46 query estimated values",
+            "topology_resolution": null,
+            "topology_source": "beta_def_894",
+            "uncertainty_log10": 0.8
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}{{ metal.metal_name_SRD }} — SRD-46{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('metals.metals_list') }}">Metals</a></li>
+    <li class="breadcrumb-item active">{{ metal.metal_name_SRD }}</li>
+  </ol>
+</nav>
+
+<div class="card p-3 mb-4">
+  <h4>{{ metal.metal_name_SRD }}</h4>
+  <table class="table table-sm w-auto">
+    <tr><th>ID</th><td>{{ metal.metal_id }}</td></tr>
+    <tr><th>Symbol</th><td>{{ metal.symbol_pure }}</td></tr>
+    <tr><th>Charge</th><td><span class="charge-badge {{ 'positive' if metal.charge and metal.charge > 0 else 'negative' if metal.charge and metal.charge < 0 else '' }}">{{ metal.charge }}</span></td></tr>
+    {% if metal.SMILES %}<tr><th>SMILES</th><td class="smiles-box">{{ metal.SMILES }}</td></tr>{% endif %}
+    {% if metal.InChi %}<tr><th>InChI</th><td class="smiles-box">{{ metal.InChi }}</td></tr>{% endif %}
+  </table>
+</div>
+
+{# ── Statistics ── #}
+<p class="text-muted small">Measurement counts include all types; log K summaries use K measurements.</p>
+{% if stats and stats.n_measurements %}
+<div class="row g-3 mb-4">
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.n_ligands or 0) }}</div>
+      <div class="stat-label">Ligands</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.n_beta_defs or 0) }}</div>
+      <div class="stat-label">Beta defs</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.n_systems or 0) }}</div>
+      <div class="stat-label">Systems (β)</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.n_measurements or 0) }}</div>
+      <div class="stat-label">Measurements</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ '%.1f'|format(stats.logK_min) if stats.logK_min is not none else '—' }}</div>
+      <div class="stat-label">log K min</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ '%.1f'|format(stats.logK_avg) if stats.logK_avg is not none else '—' }}</div>
+      <div class="stat-label">log K avg</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg">
+    <div class="card stat-card">
+      <div class="stat-value">{{ '%.1f'|format(stats.logK_max) if stats.logK_max is not none else '—' }}</div>
+      <div class="stat-label">log K max</div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<h5><i class="bi bi-bezier2"></i> Ligands with stability data ({{ ligands|length }})</h5>
+<div class="data-scroll">
+  <table class="table table-sm table-hover data-table">
+    <thead><tr><th>#</th><th>Ligand</th><th>Formula</th><th class="text-end">Beta defs</th><th class="text-end">Systems</th><th class="text-end">Entries</th><th class="text-end">log K min</th><th class="text-end">log K max</th><th></th></tr></thead>
+    <tbody>
+    {% for l in ligands %}
+      <tr>
+        <td class="row-num">{{ loop.index }}</td>
+        <td><a href="{{ url_for('ligands.ligand_detail', ligand_id=l.ligand_id) }}">{{ l.ligand_name_SRD }}</a></td>
+        <td class="formula">{{ l.formula or '' }}</td>
+        <td class="text-end">{{ l.n_beta_defs }}</td>
+        <td class="text-end">{{ l.n_systems }}</td>
+        <td class="text-end">{{ l.n_entries }}</td>
+        <td class="text-end">{{ '%.2f'|format(l.logK_min) if l.logK_min is not none else '—' }}</td>
+        <td class="text-end">{{ '%.2f'|format(l.logK_max) if l.logK_max is not none else '—' }}</td>
+        <td><a class="btn btn-sm btn-outline-primary" href="{{ url_for('stability.stability_search', metal_id=metal.metal_id, ligand_id=l.ligand_id) }}">
+          <i class="bi bi-clipboard-data"></i> Measurements</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

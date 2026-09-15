@@ -1,0 +1,13 @@
+id,source_id,labels_json,dominant_species_ids_json,btype,boundary_ids_json,source_boundary_ids_json,is_domain_edge,geometry_json
+DmsRegEqJnc_9,0,"[0, 1, 2]","[""Dms_1"", ""Dms_2"", ""Dms_3""]",junction,[],[],False,"{""E_V"": -0.5475000000000001, ""pH"": 11.2375}"
+DmsRegEqJnc_4,1,"[0, 2, 3]","[""Dms_1"", ""Dms_3"", ""Dms_4""]",junction,[],[],False,"{""E_V"": -0.42999999999999994, ""pH"": 7.9125}"
+DmsRegEqJnc_5,2,"[0, 3, 5]","[""Dms_1"", ""Dms_4"", ""Dms_6""]",junction,[],[],False,"{""E_V"": -0.365, ""pH"": 6.762500000000001}"
+DmsRegEqJnc_6,3,"[0, 4, 5]","[""Dms_1"", ""Dms_5"", ""Dms_6""]",junction,[],[],False,"{""E_V"": -0.345, ""pH"": 6.0625}"
+DmsRegEqJnc_10,4,"[0, 1]","[""Dms_1"", ""Dms_2""]",junction,[],[],True,"{""E_V"": -0.7124999999999999, ""pH"": 14.0}"
+DmsRegEqJnc_7,5,"[0, 4]","[""Dms_1"", ""Dms_5""]",junction,[],[],True,"{""E_V"": -0.33499999999999996, ""pH"": 0.0}"
+DmsRegEqJnc_8,6,"[1, 2]","[""Dms_2"", ""Dms_3""]",junction,[],[],True,"{""E_V"": 1.6, ""pH"": 11.2375}"
+DmsRegEqJnc_11,7,"[1, 6]","[""Dms_2"", ""Dms_7""]",junction,[],[],True,"{""E_V"": 1.46, ""pH"": 14.0}"
+DmsRegEqJnc_12,8,"[1, 6]","[""Dms_2"", ""Dms_7""]",junction,[],[],True,"{""E_V"": 1.6, ""pH"": 11.637500000000003}"
+DmsRegEqJnc_1,9,"[2, 3]","[""Dms_3"", ""Dms_4""]",junction,[],[],True,"{""E_V"": 1.6, ""pH"": 7.975}"
+DmsRegEqJnc_2,10,"[3, 5]","[""Dms_4"", ""Dms_6""]",junction,[],[],True,"{""E_V"": 1.6, ""pH"": 6.800000000000001}"
+DmsRegEqJnc_3,11,"[4, 5]","[""Dms_5"", ""Dms_6""]",junction,[],[],True,"{""E_V"": 1.6, ""pH"": 6.075000000000001}"

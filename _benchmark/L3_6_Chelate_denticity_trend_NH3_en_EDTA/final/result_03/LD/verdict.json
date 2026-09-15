@@ -1,0 +1,17 @@
+{
+  "verdict": "inconclusive",
+  "hints": [
+    "l1_report.md contains only a truncated header (\"## Doability",
+    "Doable — Ni(II)/E…\"",
+    "36 bytes) with no actual analysis content. There are no numerical claims",
+    "no dominant-species identification",
+    "no free [Ni2+]/pNi value at pH 7",
+    "no fraction reporting",
+    "and no precipitation assessment to validate against the solver outputs (envelope_Ni+2.csv",
+    "frac_metal.csv",
+    "log_conc.csv",
+    "state_metrics.csv",
+    "topology JSON",
+    "verdict.md). Please have L1 produce the full report so it can be reviewed."
+  ]
+}

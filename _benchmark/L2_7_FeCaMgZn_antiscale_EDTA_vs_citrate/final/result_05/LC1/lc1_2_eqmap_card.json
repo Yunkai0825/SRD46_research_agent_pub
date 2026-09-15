@@ -1,0 +1,72 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_4907",
+      "node_count": 6,
+      "temperature": 24.0,
+      "ionic_strength": 1.0,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L",
+      "final_adjustments": [
+        {
+          "node_key": "metal68_ligand6277_beta79_net4907",
+          "beta_definition_id": 79,
+          "examined_vlm_id": 108233,
+          "operation": "set_value",
+          "chosen_value": 9.52,
+          "rationale": "examined vlm_108233 K=+8.730 at (25C, I=1.0M) is a mad_outlier (1.29 below sibling median +10.020, 3xMAD threshold 0.35) and is the minimum of 14 K-siblings. Three K-siblings sit at the exact request bucket (25C, I=0.1M): vlm_108224=+9.520, vlm_108225=+10.190, vlm_108226=+10.370. Picking vlm_108224=+9.520 as the lowest-value bracket-representative that matches the request conditions exactly (ΔT=0, ΔI=0); this is the deterministic 'nearest@req' pick already surfaced by the screen and avoids the high-I extrapolation."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_4932",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 92,
+      "metal_name": "Mg^[2+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L"
+    },
+    {
+      "eq_network": "ref_eq_net_27322",
+      "node_count": 4,
+      "temperature": 24.0,
+      "ionic_strength": 3.0,
+      "metal_id": 92,
+      "metal_name": "Mg^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal92_ligand10076_beta812_net27322",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 170380,
+          "operation": "set_value",
+          "chosen_value": 2.6,
+          "rationale": "examined vlm_170380 K=+1.700 sits at I=3.0M, far from request I=0.1M (ΔI=+2.90). Sibling vlm_170382 K=+2.600 sits at I=0.0M (ΔI=-0.10), vastly closer to the request ionic strength and consistent in sign/magnitude with vlm_170381 (+2.200 at I=3.0M). Median of the 3 positive K-siblings (+1.700, +2.200, +2.600) is +2.200 but vlm_170382 wins on (T,I) proximity — picking +2.600. Outlier negative vlm_170379 (-1.900 at 37C/0.15M) disregarded."
+        }
+      ]
+    }
+  ]
+}

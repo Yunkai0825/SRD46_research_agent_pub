@@ -1,0 +1,242 @@
+{
+  "sweep_method": "pH_sweep",
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Fe",
+          "element": "Fe",
+          "internal_id": "Fe$+2",
+          "db_id": "metal_62",
+          "redox_states": [
+            "Fe$+2",
+            "Fe$+0",
+            "Fe$+3",
+            "Fe$+6"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Citric acid",
+          "db_id": "ligand_9058",
+          "internal_id": "L1",
+          "smiles": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+          "inchi_key": ""
+        }
+      ]
+    },
+    "freeform_vars_define": {}
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "excluded",
+    "ionic_strength_mode": "fixed"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "known",
+        "note": "25 C from task"
+      },
+      {
+        "id": "I",
+        "handle": "s.ionic_strength",
+        "ref": "ionic_strength",
+        "handle_id": null,
+        "value": 0.1,
+        "basis": "known",
+        "note": "fixed 0.1 M from task"
+      },
+      {
+        "id": "FeIII",
+        "handle": "s.total[\"Fe$+3\"]",
+        "ref": "total",
+        "handle_id": "Fe$+3",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM Fe(III) from task"
+      },
+      {
+        "id": "FeII",
+        "handle": "s.total[\"Fe$+2\"]",
+        "ref": "total",
+        "handle_id": "Fe$+2",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "redox excluded; Fe(III) only"
+      },
+      {
+        "id": "Fe0",
+        "handle": "s.total[\"Fe$+0\"]",
+        "ref": "total",
+        "handle_id": "Fe$+0",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "redox excluded"
+      },
+      {
+        "id": "FeVI",
+        "handle": "s.total[\"Fe$+6\"]",
+        "ref": "total",
+        "handle_id": "Fe$+6",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "redox excluded"
+      },
+      {
+        "id": "L",
+        "handle": "s.total[\"ligand_9058\"]",
+        "ref": "total",
+        "handle_id": "ligand_9058",
+        "value": 0.003,
+        "basis": "known",
+        "note": "3 mM citrate from task"
+      }
+    ],
+    "deferred": [
+      {
+        "handle": "s.pH",
+        "ref": "pH",
+        "handle_id": null,
+        "role": "swept",
+        "note": "pH 2-12 is the sweep axis for the pH_sweep method"
+      }
+    ],
+    "notes": "T=25 C and I=0.1 M pinned as task-stated. Fe(III)=1 mM and citrate=3 mM from task. All other Fe oxidation-state subtotals set to zero because task requires Fe redox excluded (Fe(III) only). pH is the sweep axis and is deferred to L3_3.",
+    "n_known": 4,
+    "n_assumed": 3
+  },
+  "_deferred_conditions": [
+    {
+      "handle": "s.pH",
+      "ref": "pH",
+      "handle_id": null,
+      "role": "swept",
+      "note": "pH 2-12 is the sweep axis for the pH_sweep method"
+    }
+  ],
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "axes": [
+      "pH_axis"
+    ],
+    "dof": {
+      "K": 8,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "I",
+        "op": "==",
+        "lhs": {
+          "ref": "ionic_strength"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Fe3",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Fe$+3"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Fe2",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Fe$+2"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Fe0",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Fe$+0"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Fe6",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Fe$+6"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L1",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_9058"
+        },
+        "rhs": {
+          "const": 0.003
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 2.0,
+      "max": 12.0,
+      "n_points": 101
+    }
+  ],
+  "grid_refine": {
+    "mode": "none"
+  }
+}

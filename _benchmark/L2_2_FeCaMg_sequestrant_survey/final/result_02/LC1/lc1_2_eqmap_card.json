@@ -1,0 +1,168 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_4815",
+      "node_count": 4,
+      "temperature": 24.0,
+      "ionic_strength": 1.0,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 6275,
+      "ligand_name": "N-(2-Hydroxyethyl)ethylenedinitrilotriacetic acid (HEDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCO)CCN(CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H3L",
+      "final_adjustments": [
+        {
+          "node_key": "metal68_ligand6275_beta32_net4815",
+          "beta_definition_id": 32,
+          "examined_vlm_id": 107960,
+          "operation": "set_value",
+          "chosen_value": 5.38,
+          "rationale": "examined vlm_107960 K=+5.480 sits at I=1.0M (ΔI=+0.90); sibling vlm_107958 K=+5.380 is exactly at the request (25.0°C, 0.1M). Patching to the at-request datum +5.380 (consistent with sibling median +5.400 across 3 K-rows)."
+        },
+        {
+          "node_key": "metal68_ligand6275_beta53_net4815",
+          "beta_definition_id": 53,
+          "examined_vlm_id": 107965,
+          "operation": "set_value",
+          "chosen_value": 2.62,
+          "rationale": "examined vlm_107965 K=+2.330 sits at I=1.0M (ΔI=+0.90) and is the low outlier; sibling vlm_107963 K=+2.620 is exactly at the request (25.0°C, 0.1M) and matches the sibling median +2.665 (I=0.5M sibling vlm_107964=+2.710). Patching to the at-request datum +2.620."
+        },
+        {
+          "node_key": "metal68_ligand6275_beta79_net4815",
+          "beta_definition_id": 79,
+          "examined_vlm_id": 107952,
+          "operation": "set_value",
+          "chosen_value": 9.785,
+          "rationale": "examined vlm_107952 K=+9.200 sits at I=1.0M (ΔI=+0.90) and is the low outlier vs 4 other K-siblings clustering at +9.70..+9.87. Two K-siblings exist exactly at the request (25.0°C, 0.1M): vlm_107949=+9.700 and vlm_107950=+9.870; patching to their mean +9.785 (range 0.17, matches sibling median +9.760 and I=0.5M vlm_107951=+9.790)."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_4876",
+      "node_count": 4,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 61,
+      "metal_name": "Fe^[3+]",
+      "ligand_id": 6275,
+      "ligand_name": "N-(2-Hydroxyethyl)ethylenedinitrilotriacetic acid (HEDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCO)CCN(CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H3L"
+    },
+    {
+      "eq_network": "ref_eq_net_27465",
+      "node_count": 8,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 61,
+      "metal_name": "Fe^[3+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_4867",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 6275,
+      "ligand_name": "N-(2-Hydroxyethyl)ethylenedinitrilotriacetic acid (HEDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCO)CCN(CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H3L"
+    },
+    {
+      "eq_network": "ref_eq_net_27433",
+      "node_count": 5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_4820",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 25,
+      "metal_name": "Ca^[2+]",
+      "ligand_id": 6275,
+      "ligand_name": "N-(2-Hydroxyethyl)ethylenedinitrilotriacetic acid (HEDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCO)CCN(CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H3L"
+    },
+    {
+      "eq_network": "ref_eq_net_27326",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 25,
+      "metal_name": "Ca^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_4819",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 92,
+      "metal_name": "Mg^[2+]",
+      "ligand_id": 6275,
+      "ligand_name": "N-(2-Hydroxyethyl)ethylenedinitrilotriacetic acid (HEDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCO)CCN(CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H3L"
+    },
+    {
+      "eq_network": "ref_eq_net_27322",
+      "node_count": 4,
+      "temperature": 24.0,
+      "ionic_strength": 3.0,
+      "metal_id": 92,
+      "metal_name": "Mg^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal92_ligand10076_beta812_net27322",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 170380,
+          "operation": "set_value",
+          "chosen_value": 2.6,
+          "rationale": "examined vlm_170380 K=+1.700 chosen at (T=25C, I=3.0M) is far from request (T=25C, I=0.1M) with ΔI=+2.90. Sibling vlm_170382 K=+2.600 sits at (T=25C, I=0.0M) with ΔI=-0.10 — the closest ionic-strength match to the request. Its value is also consistent with the positive K-cluster (vlm_170381=+2.200, vlm_170380=+1.700, vlm_170382=+2.600); the lone negative sibling vlm_170379=-1.900 at 37C/I=0.15 is a discordant outlier. Adopting vlm_170382 value +2.600."
+        },
+        {
+          "node_key": "metal92_ligand10076_beta342_net27322",
+          "beta_definition_id": 342,
+          "examined_vlm_id": 170390,
+          "operation": "set_value",
+          "chosen_value": -11.15,
+          "rationale": "examined vlm_170390 K=-11.140 chosen at (T=25C, I=3.0M) is far from request (T=25C, I=0.1M) with ΔI=+2.90. Sibling vlm_170391 K=-11.150 sits at (T=25C, I=0.0M) with ΔI=-0.10 — the closest ionic-strength match. Values differ by only 0.01 logK; adopting the closer-condition sibling vlm_170391 value -11.150."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_4907",
+      "node_count": 6,
+      "temperature": 24.0,
+      "ionic_strength": 1.0,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L",
+      "final_adjustments": [
+        {
+          "node_key": "metal68_ligand6277_beta79_net4907",
+          "beta_definition_id": 79,
+          "examined_vlm_id": 108233,
+          "operation": "set_value",
+          "chosen_value": 10.19,
+          "rationale": "examined vlm_108233 K=+8.730 at T=25C/I=1.0M is a MAD outlier (1.29 below sibling median +10.020). Three K-siblings sit at the exact request (T=25C, I=0.1M): vlm_108224=+9.520, vlm_108225=+10.190, vlm_108226=+10.370. Replacing with the median of those 3 at-request siblings, +10.190 (vlm_108225)."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_5025",
+      "node_count": 4,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 41,
+      "metal_name": "Cu^[2+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L"
+    },
+    {
+      "eq_network": "ref_eq_net_27444",
+      "node_count": 6,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 41,
+      "metal_name": "Cu^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_27492",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 42,
+      "metal_name": "Cu^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_5057",
+      "node_count": 4,
+      "temperature": 24.0,
+      "ionic_strength": 1.0,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand6277_beta966_net5057",
+          "beta_definition_id": 966,
+          "examined_vlm_id": 108720,
+          "operation": "set_value",
+          "chosen_value": -11.6,
+          "rationale": "examined vlm_108720 K=-12.000 was picked at I=1.0 M (ΔI=+0.90); K-sibling vlm_108719 sits at exact request conditions T=25.0°C/I=0.1 M with K=-11.600 (also the sibling median of n=2). Patching to the at-request datum."
+        },
+        {
+          "node_key": "metal208_ligand6277_beta812_net5057",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 108709,
+          "operation": "set_value",
+          "chosen_value": 16.5,
+          "rationale": "examined vlm_108709 K=+15.700 was picked at I=1.0 M (ΔI=+0.90); K-sibling vlm_108707 sits at exact request conditions T=25.0°C/I=0.1 M with K=+16.500 (sibling median +16.100 over n=4). Patching to the at-request datum vlm_108707."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27522",
+      "node_count": 11,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand10076_beta840_net27522",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 170935,
+          "operation": "set_value",
+          "chosen_value": 12.2,
+          "rationale": "examined vlm_170935 logK=-10.200 at I=0 is chemically implausible for cumulative ML2 formation [M]+[L]^2<=>[ML2] — a negative logK contradicts the ML/ML3/ML4 progression for this pair (ML beta812=+4.7, ML3 beta872=+13.9, ML4 beta894=+15.5). The only sibling vlm_170934=+12.200 (T=25C, I=3M) fits the monotonic trend between ML(+4.7) and ML3(+13.9). Adopting +12.200 from vlm_170934 as the corrected value; the -10.2 appears to be a sign error or mislabeled Ksp."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_5023",
+      "node_count": 3,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 112,
+      "metal_name": "Ni^[2+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L"
+    },
+    {
+      "eq_network": "ref_eq_net_27439",
+      "node_count": 5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 112,
+      "metal_name": "Ni^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    }
+  ]
+}

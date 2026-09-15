@@ -1,0 +1,253 @@
+{
+  "sweep_method": "pourbaix_sweep",
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Cu",
+          "element": "Cu",
+          "internal_id": "Cu$+1",
+          "db_id": "metal_42",
+          "redox_states": [
+            "Cu$+1",
+            "Cu$+0",
+            "Cu$+2"
+          ]
+        },
+        {
+          "name": "Fe",
+          "element": "Fe",
+          "internal_id": "Fe$+2",
+          "db_id": "metal_62",
+          "redox_states": [
+            "Fe$+2",
+            "Fe$+0",
+            "Fe$+3",
+            "Fe$+6"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Citric acid",
+          "db_id": "ligand_9058",
+          "internal_id": "L1",
+          "smiles": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+          "inchi_key": ""
+        },
+        {
+          "name": "Chloride",
+          "db_id": "ligand_10163",
+          "internal_id": "L2",
+          "smiles": "[Cl-]",
+          "inchi_key": ""
+        }
+      ]
+    },
+    "freeform_vars_define": {}
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "axis",
+    "ionic_strength_mode": "auto"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 523.15,
+        "basis": "known",
+        "note": "250 C hydrothermal condition from task"
+      },
+      {
+        "id": "Fe",
+        "handle": "s.total[\"Fe\"]",
+        "ref": "total",
+        "handle_id": "Fe",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM Fe(III) charged; parent element total for redox-active metal"
+      },
+      {
+        "id": "Cu",
+        "handle": "s.total[\"Cu\"]",
+        "ref": "total",
+        "handle_id": "Cu",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM Cu(II) charged; parent element total for redox-active metal"
+      },
+      {
+        "id": "L1",
+        "handle": "s.total[\"ligand_9058\"]",
+        "ref": "total",
+        "handle_id": "ligand_9058",
+        "value": 0.005,
+        "basis": "known",
+        "note": "5 mM citrate from task"
+      },
+      {
+        "id": "L2",
+        "handle": "s.total[\"ligand_10163\"]",
+        "ref": "total",
+        "handle_id": "ligand_10163",
+        "value": 0.1,
+        "basis": "known",
+        "note": "0.1 M chloride from task"
+      }
+    ],
+    "deferred": [
+      {
+        "handle": "s.pH",
+        "ref": "pH",
+        "handle_id": null,
+        "role": "swept",
+        "note": "pH is the horizontal Pourbaix axis"
+      },
+      {
+        "handle": "s.E_V",
+        "ref": "E_V",
+        "handle_id": null,
+        "role": "swept",
+        "note": "E_V is the vertical Pourbaix axis"
+      }
+    ],
+    "notes": "Hydrothermal Cu-Fe-citrate-chloride Pourbaix at 250 C, 80 bar. T and all four analytical totals are task-stated (known). pH and E_V are the two Pourbaix axes and are deferred to L3_3. Ionic strength is not pinned by the task (dominated by 0.1 M Cl- but perturbed by protonation/complexation), so ionic_strength_mode=auto lets the solver evaluate I self-consistently. Davies activity chosen as the best available correction; solids included so magnetite, hematite, Cu2O, CuO, Cu(s), Fe(s), CuCl(s) etc. can appear in the predominance map. Redox_mode=axis because E_V is a swept coordinate; parent element totals used for both redox-active metals Fe and Cu.",
+    "n_known": 5,
+    "n_assumed": 0
+  },
+  "_deferred_conditions": [
+    {
+      "handle": "s.pH",
+      "ref": "pH",
+      "handle_id": null,
+      "role": "swept",
+      "note": "pH is the horizontal Pourbaix axis"
+    },
+    {
+      "handle": "s.E_V",
+      "ref": "E_V",
+      "handle_id": null,
+      "role": "swept",
+      "note": "E_V is the vertical Pourbaix axis"
+    }
+  ],
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "axes": [
+      "pH_axis",
+      "E_V_axis"
+    ],
+    "dof": {
+      "K": 7,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "E",
+        "op": "==",
+        "lhs": {
+          "ref": "E_V"
+        },
+        "rhs": {
+          "axis": "E_V_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 523.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Fe",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Fe"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Cu",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Cu"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L1",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_9058"
+        },
+        "rhs": {
+          "const": 0.005
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L2",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_10163"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 0.0,
+      "max": 14.0,
+      "n_points": 71
+    },
+    {
+      "name": "E_V",
+      "min": -1.0,
+      "max": 1.2,
+      "n_points": 61
+    }
+  ],
+  "grid_refine": {
+    "mode": "boundary",
+    "factor": 4,
+    "n_layers": 2
+  }
+}

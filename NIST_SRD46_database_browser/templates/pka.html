@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+{% block title %}pKa — SRD-46{% endblock %}
+
+{% block content %}
+<h3 class="mb-3"><i class="bi bi-bar-chart-steps"></i> pK<sub>a</sub> Values</h3>
+<p class="text-muted small mb-3">
+  Search ligand pK<sub>a</sub> values either by <strong>ligand identity</strong>
+  (name / formula / ID) or by a <strong>pH / pK<sub>a</sub> window</strong>
+  (e.g. find ligands that protonate near the pH you care about).
+  You can combine all filters; the protonation transition filter accepts a
+  state like <code>HL</code>, <code>H2L</code>, or <code>L</code>.
+</p>
+
+<form class="card card-body bg-light mb-3 p-3" method="get">
+  <div class="row g-2">
+    <div class="col-md-4">
+      <label class="form-label small mb-1">Ligand name / formula / synonym</label>
+      <input class="form-control form-control-sm" name="q" placeholder="e.g. EDTA, citric acid"
+             value="{{ q }}">
+    </div>
+    <div class="col-md-2">
+      <label class="form-label small mb-1">Ligand ID</label>
+      <input class="form-control form-control-sm" name="ligand_id" placeholder="e.g. 142"
+             value="{{ ligand_id }}">
+    </div>
+    <div class="col-md-2">
+      <label class="form-label small mb-1">Transition state</label>
+      <input class="form-control form-control-sm" name="bracket" placeholder="e.g. HL"
+             value="{{ bracket }}">
+    </div>
+    <div class="col-md-4 d-flex align-items-end gap-1">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="grpchk" name="group"
+               value="ligand" {% if group_by_ligand %}checked{% endif %}>
+        <label class="form-check-label small" for="grpchk">Group by ligand</label>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-2">
+
+  <div class="row g-2 align-items-end">
+    <div class="col-md-2">
+      <label class="form-label small mb-1">pK<sub>a</sub> min</label>
+      <input class="form-control form-control-sm" name="pka_min" type="number" step="0.1"
+             placeholder="e.g. 6.0" value="{{ pka_min }}">
+    </div>
+    <div class="col-md-2">
+      <label class="form-label small mb-1">pK<sub>a</sub> max</label>
+      <input class="form-control form-control-sm" name="pka_max" type="number" step="0.1"
+             placeholder="e.g. 8.0" value="{{ pka_max }}">
+    </div>
+    <div class="col-md-2">
+      <label class="form-label small mb-1">pH (target)</label>
+      <input class="form-control form-control-sm" name="ph_target" type="number" step="0.1"
+             placeholder="e.g. 7.4" value="{{ ph_target }}">
+    </div>
+    <div class="col-md-2">
+      <label class="form-label small mb-1">± tolerance</label>
+      <input class="form-control form-control-sm" name="ph_tol" type="number" step="0.1"
+             placeholder="0.5" value="{{ ph_tol }}">
+    </div>
+    <div class="col-md-4 d-flex gap-1">
+      <button class="btn btn-sm btn-primary" type="submit">
+        <i class="bi bi-search"></i> Search
+      </button>
+      {% if has_search %}
+        <a class="btn btn-sm btn-outline-secondary"
+           href="{{ url_for('pka.pka_search') }}">Clear</a>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if pka_window[0] is not none or pka_window[1] is not none %}
+  <div class="mt-2 small text-muted">
+    Effective pK<sub>a</sub> window:
+    <code>
+      [{{ '%.2f'|format(pka_window[0]) if pka_window[0] is not none else '−∞' }},
+       {{ '%.2f'|format(pka_window[1]) if pka_window[1] is not none else '+∞' }}]
+    </code>
+  </div>
+  {% endif %}
+</form>
+
+{% if has_search %}
+  {% if group_by_ligand %}
+    <p class="text-muted small">{{ "{:,}".format(total) }} ligand{{ '' if total == 1 else 's' }} match</p>
+    {% if grouped %}
+    <div class="data-scroll">
+      <table class="table table-sm table-hover data-table">
+        <thead>
+          <tr>
+            <th>#</th><th>Ligand</th><th>Formula</th><th>Class</th>
+            <th class="text-end">Entries</th>
+            <th class="text-end">Transitions</th>
+            <th class="text-end">pK<sub>a</sub> range</th>
+            <th class="text-end">pK<sub>a</sub> avg</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for g in grouped %}
+          <tr>
+            <td class="row-num">{{ (page - 1) * 50 + loop.index }}</td>
+            <td>
+              <a href="{{ url_for('pka.ligand_pka_detail', ligand_id=g.ligand_id) }}">
+                {{ g.ligand_name_SRD }}
+              </a>
+              <span class="text-muted small">#{{ g.ligand_id }}</span>
+            </td>
+            <td class="formula">{{ g.formula or '' }}</td>
+            <td class="small">{{ g.ligand_class_name or '' }}</td>
+            <td class="text-end">{{ g.n_entries }}</td>
+            <td class="text-end">{{ g.n_transitions }}</td>
+            <td class="text-end">
+              {% if g.pka_min is not none and g.pka_max is not none %}
+                {{ '%.2f'|format(g.pka_min) }} – {{ '%.2f'|format(g.pka_max) }}
+              {% endif %}
+            </td>
+            <td class="text-end">
+              {% if g.pka_avg is not none %}{{ '%.2f'|format(g.pka_avg) }}{% endif %}
+            </td>
+            <td>
+              <a class="btn btn-sm btn-outline-primary"
+                 href="{{ url_for('pka.ligand_pka_detail', ligand_id=g.ligand_id) }}">
+                Open
+              </a>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+      <div class="alert alert-info">No ligands match these criteria.</div>
+    {% endif %}
+
+  {% else %}
+    <p class="text-muted small">{{ "{:,}".format(total) }} entries</p>
+    {% if results %}
+    <div class="data-scroll">
+      <table class="table table-sm table-hover data-table">
+        <thead>
+          <tr>
+            <th>#</th><th>Ligand</th><th>Formula</th>
+            <th>Transition</th><th>pK<sub>a</sub></th>
+            <th>T (°C)</th><th>I (mol/L)</th>
+            <th>Source</th><th>Quality</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for r in results %}
+          <tr>
+            <td class="row-num">{{ (page - 1) * 50 + loop.index }}</td>
+            <td>
+              <a href="{{ url_for('pka.ligand_pka_detail', ligand_id=r.ligand_id) }}">
+                {{ r.ligand_name_SRD }}
+              </a>
+            </td>
+            <td class="formula">{{ r.formula or '' }}</td>
+            <td>
+              <code>{{ r.bracket_from_state or '?' }}</code>
+              &nbsp;→&nbsp;
+              <code>{{ r.bracket_to_state or '?' }}</code>
+            </td>
+            <td><strong>{{ '%.2f'|format(r.pKa) if r.pKa is not none else '' }}</strong></td>
+            <td>{{ r.temperature_c if r.temperature_c is not none else '' }}</td>
+            <td>{{ r.ionic_strength_mol_l if r.ionic_strength_mol_l is not none else '' }}</td>
+            <td class="small">{{ r.source or '' }}</td>
+            <td class="small">{{ r.quality or '' }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+      <div class="alert alert-info">No pK<sub>a</sub> values found.</div>
+    {% endif %}
+  {% endif %}
+
+  {% if pages > 1 %}
+  {% set qs %}q={{ q|urlencode }}&ligand_id={{ ligand_id|urlencode }}&pka_min={{ pka_min|urlencode }}&pka_max={{ pka_max|urlencode }}&ph_target={{ ph_target|urlencode }}&ph_tol={{ ph_tol|urlencode }}&bracket={{ bracket|urlencode }}{% if group_by_ligand %}&group=ligand{% endif %}{% endset %}
+  <nav class="mt-3">
+    <ul class="pagination pagination-sm justify-content-center">
+      {% for p in range(1, pages + 1) %}
+        {% if p <= 3 or p >= pages - 2 or (p >= page - 2 and p <= page + 2) %}
+          <li class="page-item {{ 'active' if p == page }}">
+            <a class="page-link" href="?{{ qs }}&page={{ p }}">{{ p }}</a>
+          </li>
+        {% elif p == 4 or p == pages - 3 %}
+          <li class="page-item disabled"><span class="page-link">…</span></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+  {% endif %}
+
+{% else %}
+  <div class="alert alert-secondary">
+    Enter a ligand query, a pK<sub>a</sub> range, or a target pH to begin.
+    <br>
+    <span class="small text-muted">
+      Tip: setting <em>pH = 7.4 ± 0.5</em> finds ligands whose pK<sub>a</sub> falls
+      in the physiological buffering window.
+    </span>
+  </div>
+{% endif %}
+{% endblock %}

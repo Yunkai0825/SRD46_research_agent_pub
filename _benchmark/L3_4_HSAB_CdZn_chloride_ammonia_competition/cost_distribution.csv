@@ -1,0 +1,15 @@
+stage,step,cost_usd,share_percent
+L0,L0,0.1393,2.136569
+L1,L1,0.8846,13.567901
+LD,LD,0.2397,3.676493
+LC1,LC1_1 · ID alignment,0.1255,1.924906
+LC1,LC1_2 · equilibrium map,2.1623,33.165128
+LC1,LC1_3 · parser,0.0000,0.000000
+LC1,LC1_3 · query,0.0000,0.000000
+LC2,LC2_3 · supervisor,0.9008,13.816375
+LC2,LC2_3 · per-group dedup,0.9818,15.058744
+LC2,LC2_3 · singleton dedup,0.6361,9.756434
+LC3,LC3_1 · method selection,0.0431,0.661063
+LC3,LC3_2 · initial conditions,0.1671,2.562962
+LC3,LC3_3 · constraints,0.1719,2.636584
+LC3,LC3_4 · sweep design,0.0676,1.036842

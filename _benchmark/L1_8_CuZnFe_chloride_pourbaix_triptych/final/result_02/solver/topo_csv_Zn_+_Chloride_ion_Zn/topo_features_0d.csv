@@ -1,0 +1,7 @@
+id,source_id,labels_json,dominant_species_ids_json,btype,boundary_ids_json,source_boundary_ids_json,is_domain_edge,geometry_json
+DmsRegEqJnc_5,0,"[0, 1, 2]","[""Dms_1"", ""Dms_2"", ""Dms_3""]",junction,[],[],False,"{""E_V"": -1.2687499999999998, ""pH"": 13.4625}"
+DmsRegEqJnc_6,1,"[0, 2, 3]","[""Dms_1"", ""Dms_3"", ""Dms_4""]",junction,[],[],False,"{""E_V"": -0.8625, ""pH"": 6.5875}"
+DmsRegEqJnc_1,2,"[0, 1]","[""Dms_1"", ""Dms_2""]",junction,[],[],True,"{""E_V"": -1.3312499999999998, ""pH"": 14.0}"
+DmsRegEqJnc_2,3,"[0, 3]","[""Dms_1"", ""Dms_4""]",junction,[],[],True,"{""E_V"": -0.8625, ""pH"": 0.0}"
+DmsRegEqJnc_3,4,"[1, 2]","[""Dms_2"", ""Dms_3""]",junction,[],[],True,"{""E_V"": 1.5, ""pH"": 13.4625}"
+DmsRegEqJnc_4,5,"[2, 3]","[""Dms_3"", ""Dms_4""]",junction,[],[],True,"{""E_V"": 1.5, ""pH"": 6.5875}"

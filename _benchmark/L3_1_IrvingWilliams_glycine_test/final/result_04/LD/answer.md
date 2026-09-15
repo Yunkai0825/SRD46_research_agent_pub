@@ -1,0 +1,3 @@
+Verdict: **supported**.
+
+The calculation's pH-7 fractions match `frac_metal.csv` row-for-row (Zn²⁺ 33.67 %, [Zn(Glyc)]⁺ 45.99 %, [Zn(Glyc)₂] 19.14 %, [Zn(Glyc)(OH)] 0.579 %, [Zn(OH)₂] 0.326 %, [Zn(OH)]⁺ 0.103 %, [Zn(Glyc)₃]⁻ 0.197 %). The headline free [Zn²⁺] = 3.37 × 10⁻⁴ M is correct, and grouped totals (~65.9 % glycinate, ~0.43 % hydroxide) are consistent. Crossover pHs (6.86, 7.13, 7.41) reproduce the solver verdict exactly. Convergence 21/21 and no Zn(OH)₂(s) precipitation are confirmed in the verdict file. The thermodynamic constants cited (log β values, glycine pKa) are traceable to the free-energy table. No solid precipitates; all Zn stays aqueous, matching the analysis.

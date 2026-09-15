@@ -1,0 +1,62 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_4907",
+      "node_count": 6,
+      "temperature": 24.0,
+      "ionic_strength": 1.0,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L",
+      "final_adjustments": [
+        {
+          "node_key": "metal68_ligand6277_beta79_net4907",
+          "beta_definition_id": 79,
+          "examined_vlm_id": 108233,
+          "operation": "set_value",
+          "chosen_value": 10.19,
+          "rationale": "examined vlm_108233 K=+8.730 at (25C, I=1.0M) is the minimum of 14 K-siblings (median +10.020) and flagged mad_outlier. Three K-siblings sit exactly at request (25C, I=0.1M): vlm_108224=+9.520, vlm_108225=+10.190, vlm_108226=+10.370, median +10.190. Picking vlm_108225's value +10.190 as the at-request cluster median, which also matches the overall sibling median (+9.940) closely."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_5023",
+      "node_count": 3,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 112,
+      "metal_name": "Ni^[2+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L"
+    },
+    {
+      "eq_network": "ref_eq_net_27439",
+      "node_count": 5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 112,
+      "metal_name": "Ni^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    }
+  ]
+}

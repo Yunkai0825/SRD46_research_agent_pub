@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}SRD-46 Dashboard{% endblock %}
+
+{% block content %}
+<h2 class="mb-3">NIST SRD-46 — Stability Constants Database</h2>
+<p class="text-muted">Critically Selected Stability Constants of Metal Complexes</p>
+
+{# ── stat cards ── #}
+<div class="row g-3 mb-4">
+  <div class="col-6 col-md-3 col-lg-2">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.metals) }}</div>
+      <div class="stat-label">Metals</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg-2">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.ligands) }}</div>
+      <div class="stat-label">Ligands</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg-2">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.measurements) }}</div>
+      <div class="stat-label">Measurements</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg-2">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.pka) }}</div>
+      <div class="stat-label">pK<sub>a</sub> values</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg-2">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.citations) }}</div>
+      <div class="stat-label">Citations</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 col-lg-2">
+    <div class="card stat-card">
+      <div class="stat-value">{{ "{:,}".format(stats.pourbaix) }}</div>
+      <div class="stat-label">Pourbaix species</div>
+    </div>
+  </div>
+</div>
+
+{# ── periodic table ── #}
+<div class="card p-3 mb-4">
+  <h5 class="card-title mb-2">
+    <i class="bi bi-grid-3x3-gap"></i> Metal Coverage — Periodic Table
+  </h5>
+  <p class="text-muted small mb-2">
+    Colour intensity = number of metal–ligand entries. Click an element to browse its stability constants.
+  </p>
+  <div id="pt-container"></div>
+</div>
+
+<div class="row g-4">
+  {# ── top metals ── #}
+  <div class="col-md-6">
+    <div class="card p-3">
+      <h5 class="card-title"><i class="bi bi-gem"></i> Top 10 Metals</h5>
+      <div class="data-scroll">
+        <table class="table table-sm data-table">
+          <thead><tr><th>#</th><th>Metal</th><th>Charge</th><th>Entries</th></tr></thead>
+          <tbody>
+          {% for m in top_metals %}
+            <tr>
+              <td class="row-num">{{ loop.index }}</td>
+              <td><a href="{{ url_for('metals.metal_detail', metal_id=m.metal_id) }}">{{ m.metal_name_SRD }}</a></td>
+              <td><span class="charge-badge {{ 'positive' if m.charge > 0 else 'negative' if m.charge < 0 else '' }}">{{ m.charge }}</span></td>
+              <td>{{ "{:,}".format(m.cnt) }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  {# ── top ligand classes ── #}
+  <div class="col-md-6">
+    <div class="card p-3">
+      <h5 class="card-title"><i class="bi bi-bezier2"></i> Top 10 Ligand Classes</h5>
+      <div class="data-scroll">
+        <table class="table table-sm data-table">
+          <thead><tr><th>#</th><th>Class</th><th>Ligands</th></tr></thead>
+          <tbody>
+          {% for c in top_classes %}
+            <tr>
+              <td class="row-num">{{ loop.index }}</td>
+              <td>{{ c.ligand_class_name }}</td>
+              <td>{{ "{:,}".format(c.cnt) }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const PT_DATA = {{ pt_data | tojson }};
+</script>
+<script src="{{ url_for('static', filename='periodic-table.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,198 @@
+{
+  "sweep_method": "pH_sweep",
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Cu",
+          "element": "Cu",
+          "internal_id": "Cu$+1",
+          "db_id": "metal_42",
+          "redox_states": [
+            "Cu$+1",
+            "Cu$+0",
+            "Cu$+2"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ammonia",
+          "db_id": "ligand_10103",
+          "internal_id": "L1",
+          "smiles": "N",
+          "inchi_key": ""
+        }
+      ]
+    },
+    "freeform_vars_define": {}
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "fixed",
+    "ionic_strength_mode": "fixed"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "known",
+        "note": "25 C from task"
+      },
+      {
+        "id": "I",
+        "handle": "s.ionic_strength",
+        "ref": "ionic_strength",
+        "handle_id": null,
+        "value": 0.1,
+        "basis": "known",
+        "note": "I=0.1 m stated in task"
+      },
+      {
+        "id": "E",
+        "handle": "s.E_V",
+        "ref": "E_V",
+        "handle_id": null,
+        "value": 0.265,
+        "basis": "known",
+        "note": "Fixed Eh vs SHE from task"
+      },
+      {
+        "id": "Cu",
+        "handle": "s.total[\"Cu\"]",
+        "ref": "total",
+        "handle_id": "Cu",
+        "value": 0.001,
+        "basis": "known",
+        "note": "Total Cu across all oxidation states"
+      },
+      {
+        "id": "L",
+        "handle": "s.total[\"ligand_10103\"]",
+        "ref": "total",
+        "handle_id": "ligand_10103",
+        "value": 0.1,
+        "basis": "known",
+        "note": "Total ammonia NH3/NH4+ from task"
+      }
+    ],
+    "deferred": [
+      {
+        "handle": "s.pH",
+        "ref": "pH",
+        "handle_id": null,
+        "role": "swept",
+        "note": "pH is the 1-D sweep axis from 0 to 14"
+      }
+    ],
+    "notes": "T, I, Eh, Cu total, and ammonia total all stated by task. pH is swept axis (deferred to L3_3). Redox fixed at E_V=+0.265 V; parent-element Cu total used with redox_mode=fixed so oxidation states repartition per Eh/pH.",
+    "n_known": 5,
+    "n_assumed": 0
+  },
+  "_deferred_conditions": [
+    {
+      "handle": "s.pH",
+      "ref": "pH",
+      "handle_id": null,
+      "role": "swept",
+      "note": "pH is the 1-D sweep axis from 0 to 14"
+    }
+  ],
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "axes": [
+      "pH_axis"
+    ],
+    "dof": {
+      "K": 6,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "I",
+        "op": "==",
+        "lhs": {
+          "ref": "ionic_strength"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "E",
+        "op": "==",
+        "lhs": {
+          "ref": "E_V"
+        },
+        "rhs": {
+          "const": 0.265
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Cu",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Cu"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L1",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_10103"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 0.0,
+      "max": 14.0,
+      "n_points": 141
+    }
+  ],
+  "grid_refine": {
+    "mode": "none"
+  }
+}

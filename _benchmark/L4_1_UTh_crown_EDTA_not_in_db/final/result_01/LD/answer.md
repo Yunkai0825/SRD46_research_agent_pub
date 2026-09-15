@@ -1,0 +1,1 @@
+Verdict: supported. The report's claim of a deterministic LC1 failure with no solver artifacts matches the file listing (only `../answer.md` present), and L1 correctly refrained from quoting fabricated speciation numbers.

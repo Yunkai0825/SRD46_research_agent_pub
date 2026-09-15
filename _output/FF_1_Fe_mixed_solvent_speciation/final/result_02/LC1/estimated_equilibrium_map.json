@@ -1,0 +1,538 @@
+{
+  "eq_map_collection": [
+    {
+      "collection_id": -1000001,
+      "metal_id": 61,
+      "ligand_id": 9825,
+      "metal_name": "Fe^[3+]",
+      "ligand_name": "Cyanomethane (Acetonitrile)",
+      "total_entries": 3,
+      "total_networks": 1,
+      "unassigned_count": 0
+    },
+    {
+      "collection_id": -1000002,
+      "metal_id": 62,
+      "ligand_id": 9825,
+      "metal_name": "Fe^[2+]",
+      "ligand_name": "Cyanomethane (Acetonitrile)",
+      "total_entries": 1,
+      "total_networks": 1,
+      "unassigned_count": 0
+    }
+  ],
+  "eq_map": [
+    {
+      "map_id": -2000001,
+      "collection_id": -1000001,
+      "map_key": "estimated_iter_0_T25_I0.1",
+      "condition_temperature": 25.0,
+      "condition_ionic_strength": 0.1,
+      "condition_temp_min": 25.0,
+      "condition_temp_max": 25.0,
+      "condition_ionic_min": 0.1,
+      "condition_ionic_max": 0.1,
+      "entry_count": 3,
+      "network_count": 1,
+      "stray_count": 0
+    },
+    {
+      "map_id": -2000002,
+      "collection_id": -1000002,
+      "map_key": "estimated_iter_0_T25_I0.1",
+      "condition_temperature": 25.0,
+      "condition_ionic_strength": 0.1,
+      "condition_temp_min": 25.0,
+      "condition_temp_max": 25.0,
+      "condition_ionic_min": 0.1,
+      "condition_ionic_max": 0.1,
+      "entry_count": 1,
+      "network_count": 1,
+      "stray_count": 0
+    }
+  ],
+  "eq_network": [
+    {
+      "network_db_id": -3000001,
+      "map_id": -2000001,
+      "network_id": 0,
+      "node_count": 3,
+      "edge_count": 3
+    },
+    {
+      "network_db_id": -3000002,
+      "map_id": -2000002,
+      "network_id": 0,
+      "node_count": 1,
+      "edge_count": 0
+    }
+  ],
+  "eq_node": [
+    {
+      "node_db_id": -4000001,
+      "network_db_id": -3000001,
+      "vlm_id": -5000001,
+      "entry_index": 0,
+      "metal_id": 61,
+      "ligand_id": 9825,
+      "beta_definition_id": 812,
+      "beta_definition_name": "[ML]/[M][L]",
+      "equation_python": "[M] + [L] <=> [ML]",
+      "constant_type": "K",
+      "constant_value": -0.5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "is_duplicate": 0,
+      "used_in_map": 1
+    },
+    {
+      "node_db_id": -4000002,
+      "network_db_id": -3000001,
+      "vlm_id": -5000002,
+      "entry_index": 1,
+      "metal_id": 61,
+      "ligand_id": 9825,
+      "beta_definition_id": 840,
+      "beta_definition_name": "[ML<sub>2</sub>]/[M][L]<sup>2</sup>",
+      "equation_python": "[M] + [L]^2 <=> [ML2]",
+      "constant_type": "K",
+      "constant_value": -1.5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "is_duplicate": 0,
+      "used_in_map": 1
+    },
+    {
+      "node_db_id": -4000003,
+      "network_db_id": -3000001,
+      "vlm_id": -5000003,
+      "entry_index": 2,
+      "metal_id": 61,
+      "ligand_id": 9825,
+      "beta_definition_id": 872,
+      "beta_definition_name": "[ML<sub>3</sub>]/[M][L]<sup>3</sup>",
+      "equation_python": "[M] + [L]^3 <=> [ML3]",
+      "constant_type": "K",
+      "constant_value": -3.0,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "is_duplicate": 0,
+      "used_in_map": 1
+    },
+    {
+      "node_db_id": -4000004,
+      "network_db_id": -3000002,
+      "vlm_id": -5000004,
+      "entry_index": 0,
+      "metal_id": 62,
+      "ligand_id": 9825,
+      "beta_definition_id": 812,
+      "beta_definition_name": "[ML]/[M][L]",
+      "equation_python": "[M] + [L] <=> [ML]",
+      "constant_type": "K",
+      "constant_value": -0.3,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "is_duplicate": 0,
+      "used_in_map": 1
+    }
+  ],
+  "eq_node_species": [
+    {
+      "node_db_id": -4000001,
+      "species": "[L]",
+      "side": "LHS"
+    },
+    {
+      "node_db_id": -4000001,
+      "species": "[M]",
+      "side": "LHS"
+    },
+    {
+      "node_db_id": -4000001,
+      "species": "[ML]",
+      "side": "RHS"
+    },
+    {
+      "node_db_id": -4000002,
+      "species": "[L]",
+      "side": "LHS"
+    },
+    {
+      "node_db_id": -4000002,
+      "species": "[M]",
+      "side": "LHS"
+    },
+    {
+      "node_db_id": -4000002,
+      "species": "[ML2]",
+      "side": "RHS"
+    },
+    {
+      "node_db_id": -4000003,
+      "species": "[L]",
+      "side": "LHS"
+    },
+    {
+      "node_db_id": -4000003,
+      "species": "[M]",
+      "side": "LHS"
+    },
+    {
+      "node_db_id": -4000003,
+      "species": "[ML3]",
+      "side": "RHS"
+    },
+    {
+      "node_db_id": -4000004,
+      "species": "[L]",
+      "side": "LHS"
+    },
+    {
+      "node_db_id": -4000004,
+      "species": "[M]",
+      "side": "LHS"
+    },
+    {
+      "node_db_id": -4000004,
+      "species": "[ML]",
+      "side": "RHS"
+    }
+  ],
+  "eq_edge": [
+    {
+      "edge_db_id": -6000001,
+      "network_db_id": -3000001,
+      "node1_vlm_id": -5000001,
+      "node2_vlm_id": -5000002
+    },
+    {
+      "edge_db_id": -6000002,
+      "network_db_id": -3000001,
+      "node1_vlm_id": -5000001,
+      "node2_vlm_id": -5000003
+    },
+    {
+      "edge_db_id": -6000003,
+      "network_db_id": -3000001,
+      "node1_vlm_id": -5000002,
+      "node2_vlm_id": -5000003
+    }
+  ],
+  "eq_edge_species": [
+    {
+      "edge_db_id": -6000001,
+      "species": "[L]"
+    },
+    {
+      "edge_db_id": -6000001,
+      "species": "[M]"
+    },
+    {
+      "edge_db_id": -6000002,
+      "species": "[L]"
+    },
+    {
+      "edge_db_id": -6000002,
+      "species": "[M]"
+    },
+    {
+      "edge_db_id": -6000003,
+      "species": "[L]"
+    },
+    {
+      "edge_db_id": -6000003,
+      "species": "[M]"
+    }
+  ],
+  "eq_network_species": [
+    {
+      "network_db_id": -3000001,
+      "species": "[L]"
+    },
+    {
+      "network_db_id": -3000001,
+      "species": "[ML2]"
+    },
+    {
+      "network_db_id": -3000001,
+      "species": "[ML3]"
+    },
+    {
+      "network_db_id": -3000001,
+      "species": "[ML]"
+    },
+    {
+      "network_db_id": -3000001,
+      "species": "[M]"
+    },
+    {
+      "network_db_id": -3000002,
+      "species": "[L]"
+    },
+    {
+      "network_db_id": -3000002,
+      "species": "[ML]"
+    },
+    {
+      "network_db_id": -3000002,
+      "species": "[M]"
+    }
+  ],
+  "eq_map_stray": [],
+  "eq_collection_unassigned": [],
+  "estimated_provenance": {
+    "-4000004": {
+      "assumptions": [
+        "(i) aqueous phase only — in real water–MeCN mixed solvent, apparent stability is much larger because bulk MeCN activity is high and the aqua-ion reference state shifts; the constants above apply to dilute aqueous conditions relevant to the aqueous-side Pourbaix.",
+        "(ii) No hydrolysis coupling.",
+        "(iii) High-spin octahedral [Fe(H2O)6−n(MeCN)n]²⁺; no spin-state change.",
+        "(iv) Ionic-strength adjustment from ammonia I=0 baseline to I=0.1 M is small (≤ 0.1 log unit)."
+      ],
+      "estimation_method": "Chemistry-informed route:\n1. Donor-strength calibration on Fe(II) itself using the two simplest neutral monodentate N donors in SRD-46: pyridine (vlm_38961: log K1 = 0.7; vlm_38962: log β2 = 0.9) and ammonia (vlm_73753: log K1 = 1.4; vlm_73761: log β2 = 2.25; vlm_73769: log β3 = 2.68; vlm_73777: log β4 = 2.75). Both are weak-binding, consistent with Fe(II) being poorly matched to neutral σ-donors in water.\n2. Basicity scaling: MeCN protonation pKa ≈ −10 vs. pyridine 5.24 (from auto-enriched bracket on ligand_7890) and NH3 9.26 (ligand_10103). MeCN is dramatically weaker as a Brønsted/σ base. Empirical σ-donor scaling for first-row M(II) suggests log K1(MeCN) is 0.5–1.5 units below pyridine.\n3. Cross-metal check: For Ag+, log K1(MeCN) = 0.42 (vlm_168275). Fe(II) has stronger aquation but no MeCN-favoring soft/π factor; expected to fall near or below Ag+ value, i.e. ≤ 0.\n4. Successive-K decrement: For weak monodentate binding in water, stepwise Kn typically decreases by ~0.5–0.8 log units per step (statistical + electrostatic), as seen in Fe(II)–NH3 (ΔlogK ≈ 0.5–0.6 per step at I=0).",
+      "evidence_citation_ids": [],
+      "evidence_network_ids": [],
+      "evidence_topology_diagnostics": {
+        "analogue_vlm_ids": [],
+        "beta_definition_id": 812,
+        "equilibrium_index": 0,
+        "evidence_citation_ids": [],
+        "evidence_network_ids": [],
+        "evidence_vlm_ids": [
+          168275
+        ],
+        "matching_beta_vlm_ids": [
+          168275
+        ],
+        "topology_grounding": "same_beta_evidence"
+      },
+      "evidence_vlm_ids": [
+        "vlm_168275"
+      ],
+      "rationale": "Now the key chemistry: Fe(II) is a borderline-hard 3d⁶ divalent cation, and acetonitrile is a very weak σ-donor with essentially no ligand basicity (pKa of CH3CNH+ ≈ –10). It is a much poorer donor to a hard/borderline first-row M(II) than pyridine or NH3. Even for soft d10 ions where MeCN binds reasonably (Ag+, Cu+, Pd2+), the acetonitrile constants are already tiny (Cu+ β2 = 4.35 in vlm_168274 is anomalously large due to soft-soft π-backbonding into the C≡N π*; Ag+ log K1 = 0.42 in vlm_168275; Pd2+ log K1 = 1.19 in vlm_168277 at I=1 M — and these are the *soft* metals that MeCN prefers).",
+      "source": "SRD46 query estimated values",
+      "topology_resolution": null,
+      "topology_source": "beta_def_812",
+      "uncertainty_log10": 0.5
+    },
+    "-4000003": {
+      "assumptions": [
+        "conditions applied to all three entries: temperature_c = 25.0, ionic_strength_mol_l = 0.1, solvent = water (aqueous convention; the ML species is the inner-sphere complex expressed relative to Fe(H2O)6^3+ + L(aq)), electrolyte unspecified (NaClO4 or NaCl typical for SRD-46 Fe3+ records).",
+        "Applying ΔlogK ≈ −1 per step to a nearly non-binding first step gives the ML2, ML3 estimates."
+      ],
+      "estimation_method": "estimates from chemistry judgment anchored on the SRD-46 Fe3+ analogue set",
+      "evidence_citation_ids": [],
+      "evidence_network_ids": [],
+      "evidence_topology_diagnostics": {
+        "analogue_vlm_ids": [
+          139320,
+          139321,
+          168274,
+          168275,
+          168276,
+          168277,
+          168280,
+          171933,
+          172282,
+          172303,
+          173624,
+          173630
+        ],
+        "beta_definition_id": 872,
+        "equilibrium_index": 0,
+        "evidence_citation_ids": [],
+        "evidence_network_ids": [],
+        "evidence_vlm_ids": [
+          139320,
+          139321,
+          139322,
+          168274,
+          168275,
+          168276,
+          168277,
+          168280,
+          171933,
+          172282,
+          172303,
+          173624,
+          173630,
+          173634
+        ],
+        "matching_beta_vlm_ids": [
+          139322,
+          173634
+        ],
+        "topology_grounding": "same_beta_evidence"
+      },
+      "evidence_vlm_ids": [
+        "vlm_139320",
+        "vlm_139321",
+        "vlm_139322",
+        "vlm_172282",
+        "vlm_172303",
+        "vlm_173624",
+        "vlm_173630",
+        "vlm_173634",
+        "vlm_171933",
+        "vlm_168274",
+        "vlm_168275",
+        "vlm_168276",
+        "vlm_168277",
+        "vlm_168280"
+      ],
+      "rationale": "For M3+ hexaaqua ions, second- and third-step logK are typically 0.5–1.5 units below the previous step even for good ligands (see Fe3+/phen: logK1=6.5, logK2=4.9, logK3=2.7 from vlm_139320/321/322). Applying ΔlogK ≈ −1 per step to a nearly non-binding first step gives the ML2, ML3 estimates.",
+      "source": "SRD46 query estimated values",
+      "topology_resolution": null,
+      "topology_source": "beta_def_872",
+      "uncertainty_log10": 1.2
+    },
+    "-4000002": {
+      "assumptions": [
+        "conditions applied to all three entries: temperature_c = 25.0, ionic_strength_mol_l = 0.1, solvent = water (aqueous convention; the ML species is the inner-sphere complex expressed relative to Fe(H2O)6^3+ + L(aq)), electrolyte unspecified (NaClO4 or NaCl typical for SRD-46 Fe3+ records).",
+        "assume ΔlogK per step ≈ −1 (statistical + electrostatic screening + water competition)"
+      ],
+      "estimation_method": "estimates from chemistry judgment anchored on the SRD-46 Fe3+ analogue set",
+      "evidence_citation_ids": [],
+      "evidence_network_ids": [],
+      "evidence_topology_diagnostics": {
+        "analogue_vlm_ids": [
+          139320,
+          139322,
+          168275,
+          168277,
+          171933,
+          172282,
+          173624,
+          173634
+        ],
+        "beta_definition_id": 840,
+        "equilibrium_index": 0,
+        "evidence_citation_ids": [],
+        "evidence_network_ids": [],
+        "evidence_vlm_ids": [
+          139320,
+          139321,
+          139322,
+          168274,
+          168275,
+          168276,
+          168277,
+          168280,
+          171933,
+          172282,
+          172303,
+          173624,
+          173630,
+          173634
+        ],
+        "matching_beta_vlm_ids": [
+          139321,
+          168274,
+          168276,
+          168280,
+          172303,
+          173630
+        ],
+        "topology_grounding": "same_beta_evidence"
+      },
+      "evidence_vlm_ids": [
+        "vlm_139320",
+        "vlm_139321",
+        "vlm_139322",
+        "vlm_172282",
+        "vlm_172303",
+        "vlm_173624",
+        "vlm_173630",
+        "vlm_173634",
+        "vlm_171933",
+        "vlm_168274",
+        "vlm_168275",
+        "vlm_168276",
+        "vlm_168277",
+        "vlm_168280"
+      ],
+      "rationale": "For M3+ hexaaqua ions, second- and third-step logK are typically 0.5–1.5 units below the previous step even for good ligands (see Fe3+/phen: logK1=6.5, logK2=4.9, logK3=2.7 from vlm_139320/321/322). Applying ΔlogK ≈ −1 per step to a nearly non-binding first step gives the ML2, ML3 estimates.",
+      "source": "SRD46 query estimated values",
+      "topology_resolution": null,
+      "topology_source": "beta_def_840",
+      "uncertainty_log10": 1.0
+    },
+    "-4000001": {
+      "assumptions": [
+        "conditions applied to all three entries: temperature_c = 25.0, ionic_strength_mol_l = 0.1, solvent = water (aqueous convention; the ML species is the inner-sphere complex expressed relative to Fe(H2O)6^3+ + L(aq)), electrolyte unspecified (NaClO4 or NaCl typical for SRD-46 Fe3+ records).",
+        "CH3CN cannot outcompete H2O on a per-donor basis. Any inner-sphere occupancy of CH3CN on Fe3+ in aqueous solution is therefore negligible; the ~ logK1 ≈ −0.5 estimate reflects mostly the outer-sphere/statistical association."
+      ],
+      "estimation_method": "estimates from chemistry judgment anchored on the SRD-46 Fe3+ analogue set",
+      "evidence_citation_ids": [],
+      "evidence_network_ids": [],
+      "evidence_topology_diagnostics": {
+        "analogue_vlm_ids": [
+          139321,
+          139322,
+          168274,
+          168276,
+          168280,
+          171933,
+          172303,
+          173630,
+          173634
+        ],
+        "beta_definition_id": 812,
+        "equilibrium_index": 0,
+        "evidence_citation_ids": [],
+        "evidence_network_ids": [],
+        "evidence_vlm_ids": [
+          139320,
+          139321,
+          139322,
+          168274,
+          168275,
+          168276,
+          168277,
+          168280,
+          171933,
+          172282,
+          172303,
+          173624,
+          173630,
+          173634
+        ],
+        "matching_beta_vlm_ids": [
+          139320,
+          168275,
+          168277,
+          172282,
+          173624
+        ],
+        "topology_grounding": "same_beta_evidence"
+      },
+      "evidence_vlm_ids": [
+        "vlm_139320",
+        "vlm_139321",
+        "vlm_139322",
+        "vlm_172282",
+        "vlm_172303",
+        "vlm_173624",
+        "vlm_173630",
+        "vlm_173634",
+        "vlm_171933",
+        "vlm_168274",
+        "vlm_168275",
+        "vlm_168276",
+        "vlm_168277",
+        "vlm_168280"
+      ],
+      "rationale": "In water the effective reaction is Fe(H2O)6^3+ + CH3CN ⇌ Fe(H2O)5(NCCH3)^3+ + H2O. Because H2O is a strong donor to Fe3+ (Fe3+ is highly oxophilic) and CH3CN's proton basicity is ~15 orders of magnitude lower than H2O's O basicity toward H+, CH3CN cannot outcompete H2O on a per-donor basis. Any inner-sphere occupancy of CH3CN on Fe3+ in aqueous solution is therefore negligible; the ~ logK1 ≈ −0.5 estimate reflects mostly the outer-sphere/statistical association.",
+      "source": "SRD46 query estimated values",
+      "topology_resolution": null,
+      "topology_source": "beta_def_812",
+      "uncertainty_log10": 0.7
+    }
+  },
+  "metadata": {
+    "source": "SRD46 query estimated values",
+    "authoritative": false,
+    "request_temperature_C": 25.0,
+    "request_ionic_strength_M": 0.1
+  }
+}

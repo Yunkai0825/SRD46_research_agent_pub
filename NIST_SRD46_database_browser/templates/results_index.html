@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}{{ sources[source] }} — SRD-46 Browser{% endblock %}
+{% block content %}
+{% include "_results_tabs.html" %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3 class="mb-0"><i class="bi bi-graph-up"></i> {{ sources[source] }}</h3>
+  <span class="text-muted small">{{ cases|length }} prompt{{ '' if cases|length == 1 else 's' }}</span>
+</div>
+<p class="text-muted">Select a prompt to view its final answer, verdict, and scientific results.</p>
+{% if not cases %}
+<div class="alert alert-info">No published results are available in this collection.</div>
+{% else %}
+<div class="table-responsive">
+  <table class="table table-hover align-middle">
+    <thead><tr><th>Layer</th><th>Prompt</th><th>Outcome</th><th class="text-end">Results</th><th>Answer preview</th></tr></thead>
+    <tbody>
+    {% for case in cases %}
+      <tr>
+        <td>{% if case.layer %}<span class="badge bg-dark">{{ case.layer }}</span>{% endif %}</td>
+        <td>
+          <a href="{{ url_for('results.detail', source=source, case_id=case.id) }}"
+             class="fw-semibold text-decoration-none">{{ case.id }}</a>
+          {% if case.prompt %}
+          <div class="text-muted small" style="max-width: 32rem;">{{ case.prompt[:140] }}{% if case.prompt|length > 140 %}…{% endif %}</div>
+          {% endif %}
+        </td>
+        <td><span class="badge bg-{{ case.badge }}{% if case.badge == 'warning' %} text-dark{% endif %}">{{ case.verdict }}</span></td>
+        <td class="text-end">{{ case.result_count }}</td>
+        <td><div class="text-muted small" style="max-width: 26rem;">{{ case.answer_head }}{% if case.answer_head|length >= 240 %}…{% endif %}</div></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% if cost_plot %}
+<div class="card mb-4">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <span><i class="bi bi-bar-chart"></i> Cost per prompt (USD)</span>
+    {% if cost_data %}<a class="btn btn-sm btn-outline-secondary" href="{{ cost_data }}">CSV</a>{% endif %}
+  </div>
+  <div class="card-body">
+    <a href="{{ cost_plot }}" target="_blank" rel="noopener"><img src="{{ cost_plot }}" class="img-fluid border rounded" alt="Cost per prompt for {{ sources[source] }}" loading="lazy"></a>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

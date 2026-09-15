@@ -1,0 +1,272 @@
+{
+  "sweep_method": "pH_sweep",
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Cu",
+          "element": "Cu",
+          "internal_id": "Cu$+1",
+          "db_id": "metal_42",
+          "redox_states": [
+            "Cu$+1",
+            "Cu$+0",
+            "Cu$+2"
+          ]
+        },
+        {
+          "name": "Zn",
+          "element": "Zn",
+          "internal_id": "Zn$+2",
+          "db_id": "metal_208",
+          "redox_states": [
+            "Zn$+2",
+            "Zn$+0"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "EDTA",
+          "db_id": "ligand_6277",
+          "internal_id": "L1",
+          "smiles": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+          "inchi_key": ""
+        }
+      ]
+    },
+    "freeform_vars_define": {}
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "excluded",
+    "ionic_strength_mode": "fixed"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "known",
+        "note": "25 C stated by task"
+      },
+      {
+        "id": "I",
+        "handle": "s.ionic_strength",
+        "ref": "ionic_strength",
+        "handle_id": null,
+        "value": 0.1,
+        "basis": "known",
+        "note": "Task specifies I = 0.1 m"
+      },
+      {
+        "id": "CuII",
+        "handle": "s.total[\"Cu$+2\"]",
+        "ref": "total",
+        "handle_id": "Cu$+2",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM Cu(II) from task"
+      },
+      {
+        "id": "CuI",
+        "handle": "s.total[\"Cu$+1\"]",
+        "ref": "total",
+        "handle_id": "Cu$+1",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "No Cu(I) added; redox excluded"
+      },
+      {
+        "id": "Cu0",
+        "handle": "s.total[\"Cu$+0\"]",
+        "ref": "total",
+        "handle_id": "Cu$+0",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "No metallic Cu; redox excluded"
+      },
+      {
+        "id": "ZnII",
+        "handle": "s.total[\"Zn$+2\"]",
+        "ref": "total",
+        "handle_id": "Zn$+2",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM Zn(II) from task"
+      },
+      {
+        "id": "Zn0",
+        "handle": "s.total[\"Zn$+0\"]",
+        "ref": "total",
+        "handle_id": "Zn$+0",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "No metallic Zn; redox excluded"
+      },
+      {
+        "id": "L",
+        "handle": "s.total[\"ligand_6277\"]",
+        "ref": "total",
+        "handle_id": "ligand_6277",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM EDTA from task"
+      }
+    ],
+    "deferred": [
+      {
+        "handle": "s.pH",
+        "ref": "pH",
+        "handle_id": null,
+        "role": "swept",
+        "note": "pH is the sweep axis chosen by L3_1 (pH_sweep, dof=1); task point of interest is pH 6 but full sweep provides context"
+      }
+    ],
+    "notes": "T, I, Cu(II)=Zn(II)=EDTA=1 mM are all task-stated (known). Cu(I), Cu(0), Zn(0) pinned to 0 because task specifies only divalent Cu and Zn and redox is excluded. pH deferred as swept axis (L3_1 chose pH_sweep, dof=1). Davies for I=0.1, solids included to allow possible hydroxide precipitation, fixed I.",
+    "n_known": 5,
+    "n_assumed": 3
+  },
+  "_deferred_conditions": [
+    {
+      "handle": "s.pH",
+      "ref": "pH",
+      "handle_id": null,
+      "role": "swept",
+      "note": "pH is the sweep axis chosen by L3_1 (pH_sweep, dof=1); task point of interest is pH 6 but full sweep provides context"
+    }
+  ],
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "axes": [
+      "pH_axis"
+    ],
+    "dof": {
+      "K": 9,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "I",
+        "op": "==",
+        "lhs": {
+          "ref": "ionic_strength"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "CuII",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Cu$+2"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "CuI",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Cu$+1"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Cu0",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Cu$+0"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "ZnII",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Zn$+2"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Zn0",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Zn$+0"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_6277"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 3.0,
+      "max": 9.0,
+      "n_points": 31
+    }
+  ],
+  "grid_refine": {
+    "mode": "none"
+  }
+}

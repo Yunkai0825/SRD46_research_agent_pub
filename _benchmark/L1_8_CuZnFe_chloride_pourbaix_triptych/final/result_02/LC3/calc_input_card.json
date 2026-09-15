@@ -1,0 +1,211 @@
+{
+  "sweep_method": "pourbaix_sweep",
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Zn",
+          "element": "Zn",
+          "internal_id": "Zn$+2",
+          "db_id": "metal_208",
+          "redox_states": [
+            "Zn$+2",
+            "Zn$+0"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Chloride ion",
+          "db_id": "ligand_10163",
+          "internal_id": "L1",
+          "smiles": "",
+          "inchi_key": ""
+        }
+      ]
+    },
+    "freeform_vars_define": {}
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "axis",
+    "ionic_strength_mode": "fixed"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "known",
+        "note": "25 C stated in task"
+      },
+      {
+        "id": "I",
+        "handle": "s.ionic_strength",
+        "ref": "ionic_strength",
+        "handle_id": null,
+        "value": 0.1,
+        "basis": "known",
+        "note": "Ionic strength 0.1 m stated in task"
+      },
+      {
+        "id": "Zn",
+        "handle": "s.total[\"Zn\"]",
+        "ref": "total",
+        "handle_id": "Zn",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM total zinc from task"
+      },
+      {
+        "id": "Cl",
+        "handle": "s.total[\"ligand_10163\"]",
+        "ref": "total",
+        "handle_id": "ligand_10163",
+        "value": 0.1,
+        "basis": "known",
+        "note": "0.1 M total chloride from task"
+      }
+    ],
+    "deferred": [
+      {
+        "handle": "s.pH",
+        "ref": "pH",
+        "handle_id": null,
+        "role": "swept",
+        "note": "pH axis 0 to 14 for Pourbaix map"
+      },
+      {
+        "handle": "s.E_V",
+        "ref": "E_V",
+        "handle_id": null,
+        "role": "swept",
+        "note": "E axis -1.5 to +1.5 V vs SHE for Pourbaix map"
+      }
+    ],
+    "notes": "T, I, total Zn and total Cl are all fixed by the task. pH and E_V are the two swept axes of the Pourbaix map and are deferred to L3_3.",
+    "n_known": 4,
+    "n_assumed": 0
+  },
+  "_deferred_conditions": [
+    {
+      "handle": "s.pH",
+      "ref": "pH",
+      "handle_id": null,
+      "role": "swept",
+      "note": "pH axis 0 to 14 for Pourbaix map"
+    },
+    {
+      "handle": "s.E_V",
+      "ref": "E_V",
+      "handle_id": null,
+      "role": "swept",
+      "note": "E axis -1.5 to +1.5 V vs SHE for Pourbaix map"
+    }
+  ],
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "axes": [
+      "pH_axis",
+      "E_V_axis"
+    ],
+    "dof": {
+      "K": 6,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "E",
+        "op": "==",
+        "lhs": {
+          "ref": "E_V"
+        },
+        "rhs": {
+          "axis": "E_V_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "I",
+        "op": "==",
+        "lhs": {
+          "ref": "ionic_strength"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Zn",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Zn"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Cl",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_10163"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 0.0,
+      "max": 14.0,
+      "n_points": 71
+    },
+    {
+      "name": "E_V",
+      "min": -1.5,
+      "max": 1.5,
+      "n_points": 61
+    }
+  ],
+  "grid_refine": {
+    "mode": "boundary",
+    "factor": 4,
+    "n_layers": 2
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_28179",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10103,
+      "ligand_name": "Ammonia",
+      "ligand_SMILES": "N",
+      "ligand_canonical_HxL": "L"
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_29910",
+      "node_count": 3,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 26,
+      "metal_name": "Cd^[2+]",
+      "ligand_id": 10163,
+      "ligand_name": "Chloride ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal26_ligand10163_beta840_net29910",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 177558,
+          "operation": "set_value",
+          "chosen_value": 2.05,
+          "rationale": "Chosen vlm_177558 K=+2.60 @ I=0.0 M is flagged mad_outlier (0.70 above sibling median +1.90, MAD=0.20). The closer-in-ionic-strength K-siblings vlm_177553=+1.70 (I=0.5), vlm_177554=+1.70 (I=1.0), vlm_177555=+1.90 (I=2.0) cluster near +1.70-1.90; request I=0.1 M sits between the I=0 outlier (+2.60) and I=0.5 (+1.70). Using the 6-K-sibling median +2.05 as a robust central value that avoids the I=0 outlier while acknowledging the upward trend seen at very low I."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_28286",
+      "node_count": 4,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 26,
+      "metal_name": "Cd^[2+]",
+      "ligand_id": 10103,
+      "ligand_name": "Ammonia",
+      "ligand_SMILES": "N",
+      "ligand_canonical_HxL": "L"
+    },
+    {
+      "eq_network": "ref_eq_net_27527",
+      "node_count": 8,
+      "temperature": 24.0,
+      "ionic_strength": 3.0,
+      "metal_id": 26,
+      "metal_name": "Cd^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal26_ligand10076_beta674_net27527",
+          "beta_definition_id": 674,
+          "examined_vlm_id": 170976,
+          "operation": "set_value",
+          "chosen_value": 23.2,
+          "rationale": "examined vlm_170976 K=+24.900 at I=3.0M is far from request I=0.1M; sibling vlm_170977 K=+23.200 at I=0.0M is only 0.1M from request. Swapping to the sibling that sits at ionic strength closest to the request."
+        },
+        {
+          "node_key": "metal26_ligand10076_beta502_net27527",
+          "beta_definition_id": 502,
+          "examined_vlm_id": 170972,
+          "operation": "set_value",
+          "chosen_value": 4.6,
+          "rationale": "examined vlm_170972 K=+5.060 at I=3.0M is 2.9M from request I=0.1M; sibling vlm_170973 K=+4.600 at I=0.0M is only 0.1M away. Swapping to the sibling closer to request ionic strength."
+        },
+        {
+          "node_key": "metal26_ligand10076_beta339_net27527",
+          "beta_definition_id": 339,
+          "examined_vlm_id": 170980,
+          "operation": "set_value",
+          "chosen_value": -14.35,
+          "rationale": "examined vlm_170980 K=-14.290 at I=3.0M is far from request I=0.1M; sibling vlm_170981 K=-14.350 at I=0.0M is only 0.1M from request. Swapping to the sibling at ionic strength closer to request (values agree to 0.06 logK)."
+        },
+        {
+          "node_key": "metal26_ligand10076_beta894_net27527",
+          "beta_definition_id": 894,
+          "examined_vlm_id": 170970,
+          "operation": "set_value",
+          "chosen_value": -8.7,
+          "rationale": "examined vlm_170970 K=+12.000 at I=3.0M is sign-discordant with sibling vlm_170971 K=-8.700 at I=0.0M (20.7 logK gap). Request I=0.1M is only 0.1M from vlm_170971 but 2.9M from vlm_170970. Swapping to vlm_170971 which sits essentially at the request ionic strength."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_29904",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 10163,
+      "ligand_name": "Chloride ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand10163_beta840_net29904",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 177538,
+          "operation": "set_value",
+          "chosen_value": -0.3,
+          "rationale": "examined vlm_177538 logK=+0.600 at I=0.0 M sign-discordant vs 4 finite-I K-siblings all negative (vlm_177534=-0.300 at I=1.0M, vlm_177535=-0.300 at I=2.0M, vlm_177536=-0.300 at I=3.0M, vlm_177537=-0.100 at I=4.0M). Request is I=0.1 M; finite-I trend is flat at -0.300. Setting to sibling median -0.300."
+        },
+        {
+          "node_key": "metal208_ligand10163_beta812_net29904",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 177531,
+          "operation": "set_value",
+          "chosen_value": -0.3,
+          "rationale": "examined vlm_177531 logK=+0.400 at I=0.0 M sign-discordant vs 4 of 5 finite-I K-siblings (median=-0.250, values include -0.4, -0.3, -0.3, -0.2 per inspect_node). Request is I=0.1 M; setting to sibling median -0.300 which reflects the dominant finite-I cluster."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_28282",
+      "node_count": 4,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 10103,
+      "ligand_name": "Ammonia",
+      "ligand_SMILES": "N",
+      "ligand_canonical_HxL": "L"
+    },
+    {
+      "eq_network": "ref_eq_net_27522",
+      "node_count": 11,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand10076_beta840_net27522",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 170935,
+          "operation": "set_value",
+          "chosen_value": 12.2,
+          "rationale": "examined vlm_170935 K=-10.200 at I=0.0 M is sign-discordant vs sole K-sibling vlm_170934=+12.200 at I=3.0 M for equation [M]+[L]^2<=>[ML2] (Cd+2Cl<=>CdCl2). A negative logK for a cumulative formation constant is chemically implausible for Cd(II) chloro-complex formation, whereas positive log beta2 values are consistent with the ML3 (beta872, +13.9) and ML4 (beta894, +15.5) siblings in the same network. Patching to +12.200 (vlm_170934) — the only chemically sensible K-sibling — even though it is at I=3.0 M."
+        }
+      ]
+    }
+  ]
+}

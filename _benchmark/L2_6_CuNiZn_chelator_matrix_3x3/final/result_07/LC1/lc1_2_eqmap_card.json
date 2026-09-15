@@ -1,0 +1,88 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_1",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 5760,
+      "ligand_name": "Aminoacetic acid (Glycine)",
+      "ligand_SMILES": "NCC(=O)O",
+      "ligand_canonical_HxL": "HL"
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_113",
+      "node_count": 4,
+      "temperature": 36.0,
+      "ionic_strength": 0.15,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 5760,
+      "ligand_name": "Aminoacetic acid (Glycine)",
+      "ligand_SMILES": "NCC(=O)O",
+      "ligand_canonical_HxL": "HL",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand5760_beta840_net113",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 93937,
+          "operation": "set_value",
+          "chosen_value": 9.19,
+          "rationale": "examined vlm_93937 K=+8.970 taken at off-request (T=37.0C, I=0.15M); exact-match K-sibling vlm_93936=+9.190 sits at request (T=25.0C, I=0.10M) and matches the K-sibling median (+9.190, n=7). Patching to the at-request value."
+        },
+        {
+          "node_key": "metal208_ligand5760_beta812_net113",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 93925,
+          "operation": "set_value",
+          "chosen_value": 4.96,
+          "rationale": "examined vlm_93925 K=+4.870 at off-request (T=37.0C, I=0.15M); exact-match K-sibling vlm_93924=+4.960 sits at request (T=25.0C, I=0.10M) and equals the K-sibling median (+4.960, n=7). Patching to the at-request value."
+        },
+        {
+          "node_key": "metal208_ligand5760_beta872_net113",
+          "beta_definition_id": 872,
+          "examined_vlm_id": 93950,
+          "operation": "set_value",
+          "chosen_value": 11.6,
+          "rationale": "examined vlm_93950 K=+11.300 at off-request (T=37.0C, I=0.15M); exact-match K-sibling vlm_93949=+11.600 sits at request (T=25.0C, I=0.10M) and equals the K-sibling median (+11.600, n=7). Patching to the at-request value."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27522",
+      "node_count": 11,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand10076_beta840_net27522",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 170935,
+          "operation": "set_value",
+          "chosen_value": 12.2,
+          "rationale": "examined vlm_170935 K=-10.200 (@T=25C,I=0.0M) is sign-flipped and chemically implausible for Zn-glycine ML2 cumulative formation: ML1 (beta812) has logK=+4.700, so log beta2 must be positive and larger. The only K-sibling vlm_170934=+12.200 (@T=25C,I=3.0M) is consistent with expected cumulative beta2 (~2x stepwise logK of ML1). Patching to vlm_170934's value +12.200."
+        }
+      ]
+    }
+  ]
+}

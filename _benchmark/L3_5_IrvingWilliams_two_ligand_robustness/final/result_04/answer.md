@@ -1,0 +1,30 @@
+## Doability
+Doable: Z…
+
+## Final deliverables
+
+- [LC1/lc1_2_eqmap_card.json](<LC1/lc1_2_eqmap_card.json>)
+- [LC1/lc1_sweep_input.json](<LC1/lc1_sweep_input.json>)
+- [LC1/status.json](<LC1/status.json>)
+- [LC2/free_energy_card.md](<LC2/free_energy_card.md>)
+- [LC2/status.json](<LC2/status.json>)
+- [LC2/thermodynamic_reference_constants.md](<LC2/thermodynamic_reference_constants.md>)
+- [LC3/calc_input_card.json](<LC3/calc_input_card.json>)
+- [LC3/status.json](<LC3/status.json>)
+- [LD/answer.md](<LD/answer.md>)
+- [LD/verdict.json](<LD/verdict.json>)
+- [solver/topology_Zn$+2_+_Zn$+0_+_Glycine_Zn.json](<solver/topology_Zn$+2_+_Zn$+0_+_Glycine_Zn.json>)
+- [solver/Zn$+2_+_Zn$+0_+_Glycine_concentrations.csv](<solver/Zn$+2_+_Zn$+0_+_Glycine_concentrations.csv>)
+- [solver/Zn$+2_+_Zn$+0_+_Glycine_envelope_L1.csv](<solver/Zn$+2_+_Zn$+0_+_Glycine_envelope_L1.csv>)
+- [solver/Zn$+2_+_Zn$+0_+_Glycine_envelope_Zn$+2.csv](<solver/Zn$+2_+_Zn$+0_+_Glycine_envelope_Zn$+2.csv>)
+- [solver/Zn$+2_+_Zn$+0_+_Glycine_frac_L1.png](<solver/Zn$+2_+_Zn$+0_+_Glycine_frac_L1.png>)
+- [solver/Zn$+2_+_Zn$+0_+_Glycine_frac_ligand.csv](<solver/Zn$+2_+_Zn$+0_+_Glycine_frac_ligand.csv>)
+- [solver/Zn$+2_+_Zn$+0_+_Glycine_frac_metal.csv](<solver/Zn$+2_+_Zn$+0_+_Glycine_frac_metal.csv>)
+- [solver/Zn$+2_+_Zn$+0_+_Glycine_frac_Zn.png](<solver/Zn$+2_+_Zn$+0_+_Glycine_frac_Zn.png>)
+- [solver/Zn$+2_+_Zn$+0_+_Glycine_log_conc.csv](<solver/Zn$+2_+_Zn$+0_+_Glycine_log_conc.csv>)
+- [solver/Zn$+2_+_Zn$+0_+_Glycine_log_conc.png](<solver/Zn$+2_+_Zn$+0_+_Glycine_log_conc.png>)
+- [solver/Zn$+2_+_Zn$+0_+_Glycine_phase_balance_Zn.png](<solver/Zn$+2_+_Zn$+0_+_Glycine_phase_balance_Zn.png>)
+- [solver/Zn$+2_+_Zn$+0_+_Glycine_run_params.json](<solver/Zn$+2_+_Zn$+0_+_Glycine_run_params.json>)
+- [solver/Zn$+2_+_Zn$+0_+_Glycine_state_metrics.csv](<solver/Zn$+2_+_Zn$+0_+_Glycine_state_metrics.csv>)
+- [solver/Zn$+2_+_Zn$+0_+_Glycine_verdict.md](<solver/Zn$+2_+_Zn$+0_+_Glycine_verdict.md>)
+- [verdict.json](<verdict.json>)

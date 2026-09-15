@@ -1,0 +1,220 @@
+{
+  "sweep_method": "pH_sweep",
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Cu",
+          "element": "Cu",
+          "internal_id": "Cu$+1",
+          "db_id": "metal_42",
+          "redox_states": [
+            "Cu$+1",
+            "Cu$+0",
+            "Cu$+2"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Citric acid",
+          "db_id": "ligand_9058",
+          "internal_id": "L1",
+          "smiles": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+          "inchi_key": ""
+        }
+      ]
+    },
+    "freeform_vars_define": {}
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "excluded",
+    "ionic_strength_mode": "fixed"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "known",
+        "note": "25 C from task"
+      },
+      {
+        "id": "I",
+        "handle": "s.ionic_strength",
+        "ref": "ionic_strength",
+        "handle_id": null,
+        "value": 0.1,
+        "basis": "known",
+        "note": "Fixed I=0.1 M from task"
+      },
+      {
+        "id": "CuII",
+        "handle": "s.total[\"Cu$+2\"]",
+        "ref": "total",
+        "handle_id": "Cu$+2",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM Cu(II) from task"
+      },
+      {
+        "id": "CuI",
+        "handle": "s.total[\"Cu$+1\"]",
+        "ref": "total",
+        "handle_id": "Cu$+1",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "No Cu(I) present; redox excluded"
+      },
+      {
+        "id": "Cu0",
+        "handle": "s.total[\"Cu$+0\"]",
+        "ref": "total",
+        "handle_id": "Cu$+0",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "No metallic Cu present; redox excluded"
+      },
+      {
+        "id": "L",
+        "handle": "s.total[\"ligand_9058\"]",
+        "ref": "total",
+        "handle_id": "ligand_9058",
+        "value": 0.005,
+        "basis": "known",
+        "note": "5 mM citrate total from task"
+      }
+    ],
+    "deferred": [
+      {
+        "handle": "s.pH",
+        "ref": "pH",
+        "handle_id": null,
+        "role": "swept",
+        "note": "pH is the sweep axis, 2-12"
+      }
+    ],
+    "notes": "Task fixes T=25 C, I=0.1 M, 1 mM Cu(II), 5 mM citrate; pH swept 2-12. Redox excluded so all three Cu valence subtotals declared (only Cu(II) nonzero). Davies activity model at I=0.1 M; solids included to allow Cu(OH)2(s) precipitation to appear if thermodynamically favored.",
+    "n_known": 4,
+    "n_assumed": 2
+  },
+  "_deferred_conditions": [
+    {
+      "handle": "s.pH",
+      "ref": "pH",
+      "handle_id": null,
+      "role": "swept",
+      "note": "pH is the sweep axis, 2-12"
+    }
+  ],
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "axes": [
+      "pH_axis"
+    ],
+    "dof": {
+      "K": 7,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "I",
+        "op": "==",
+        "lhs": {
+          "ref": "ionic_strength"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Cu2",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Cu$+2"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Cu1",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Cu$+1"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Cu0",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Cu$+0"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L1",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_9058"
+        },
+        "rhs": {
+          "const": 0.005
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 2.0,
+      "max": 12.0,
+      "n_points": 101
+    }
+  ],
+  "grid_refine": {
+    "mode": "none"
+  }
+}

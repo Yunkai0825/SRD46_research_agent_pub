@@ -1,0 +1,1 @@
+Verdict recorded: inconclusive — the ../answer.md file contains only 31 bytes ("## Doability\nDoable — a p…") and does not present any analysis, fractions, ratios, or conclusions to validate against the solver outputs.

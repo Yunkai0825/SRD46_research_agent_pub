@@ -1,0 +1,268 @@
+{% extends "base.html" %}
+{% block title %}Collection {{ collection.collection_id }} — {{ collection.metal_name }} / {{ collection.ligand_name }} — SRD-46{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('eq.eq_search') }}">Equilibrium maps</a></li>
+    <li class="breadcrumb-item active">Collection {{ collection.collection_id }}</li>
+  </ol>
+</nav>
+
+{# ---------- collection header ---------- #}
+<div class="card p-3 mb-3">
+  <h4 class="mb-3">
+    <i class="bi bi-collection"></i>
+    Collection {{ collection.collection_id }}
+    &mdash;
+    <a href="{{ url_for('metals.metal_detail', metal_id=collection.metal_id) }}">{{ collection.metal_name }}</a>
+    /
+    <a href="{{ url_for('ligands.ligand_detail', ligand_id=collection.ligand_id) }}">{{ collection.ligand_name }}</a>
+  </h4>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <table class="table table-sm w-auto mb-0">
+        <tr><th>metal_id</th><td>{{ collection.metal_id }}</td></tr>
+        <tr><th>ligand_id</th><td>{{ collection.ligand_id }}</td></tr>
+        <tr><th>Created</th><td>{{ collection.created_at }}</td></tr>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <table class="table table-sm w-auto mb-0">
+        <tr><th>VLM entries</th><td>{{ collection.total_entries }}</td></tr>
+        <tr><th>Networks</th><td>{{ collection.total_networks }}</td></tr>
+        <tr><th>Map iterations</th><td>{{ collection.iterations_count }}</td></tr>
+        <tr><th>Unassigned VLMs</th><td>{{ collection.unassigned_count }}</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="mt-2 small text-muted">
+    Click any <strong>map_id</strong> below to expand its (T, I) bin; click a <strong>network_id</strong>
+    inside to reveal its nodes (VLMs) and edges (shared species).
+  </div>
+</div>
+
+{# ---------- macro: render a node row inside a network ---------- #}
+{% macro vlm_link(vid) -%}
+  {%- set sid = stab_map.get(vid) -%}
+  {%- if sid -%}
+    <a href="{{ url_for('stability.vlm_detail', stability_id=sid) }}">vlm_{{ vid }}</a>
+  {%- else -%}
+    vlm_{{ vid }}
+  {%- endif -%}
+{%- endmacro %}
+
+{# ---------- maps accordion ---------- #}
+<h5 class="mt-4 mb-2">
+  <i class="bi bi-grid-3x3"></i> Maps ({{ maps|length }})
+  <span class="text-muted small fw-normal">— each map = one (T, I) bin</span>
+</h5>
+
+<div class="accordion mb-4" id="mapsAcc">
+  {% for m in maps %}
+    {% set map_anchor = 'map-' ~ m.map_id %}
+    <div class="accordion-item" id="{{ map_anchor }}">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#mapBody-{{ m.map_id }}"
+                aria-expanded="false" aria-controls="mapBody-{{ m.map_id }}">
+          <span class="me-3"><strong>map_{{ m.map_id }}</strong></span>
+          <span class="me-3 text-muted small">iter {{ m.iteration }}</span>
+          <span class="me-3"><i class="bi bi-thermometer-half"></i> {{ m.condition_temperature }} °C
+            <span class="text-muted small">({{ m.condition_temp_min }}–{{ m.condition_temp_max }})</span></span>
+          <span class="me-3"><i class="bi bi-droplet"></i> I = {{ m.condition_ionic_strength }}
+            <span class="text-muted small">({{ m.condition_ionic_min|round(2) }}–{{ m.condition_ionic_max|round(2) }})</span></span>
+          <span class="ms-auto small">
+            <span class="badge bg-primary-subtle text-dark border me-1">{{ m.network_count }} net</span>
+            <span class="badge bg-info-subtle text-dark border me-1">{{ m.entry_count }} entries</span>
+            {% if m.stray_count %}<span class="badge bg-warning-subtle text-dark border me-1">{{ m.stray_count }} stray</span>{% endif %}
+          </span>
+        </button>
+      </h2>
+      <div id="mapBody-{{ m.map_id }}" class="accordion-collapse collapse"
+           data-bs-parent="#mapsAcc">
+        <div class="accordion-body">
+          <p class="small text-muted mb-2">
+            map_key: <code>{{ m.map_key }}</code> &middot;
+            total nodes: {{ m.total_nodes }} &middot;
+            total edges: {{ m.total_edges }}
+          </p>
+
+          {# --- networks accordion (nested) --- #}
+          {% if m.networks %}
+            <div class="accordion" id="netsAcc-{{ m.map_id }}">
+              {% for n in m.networks %}
+                {% set net_anchor = 'network-' ~ n.network_db_id %}
+                <div class="accordion-item" id="{{ net_anchor }}">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#netBody-{{ n.network_db_id }}"
+                            aria-expanded="false" aria-controls="netBody-{{ n.network_db_id }}">
+                      <span class="me-3"><strong>network_{{ n.network_db_id }}</strong></span>
+                      <span class="me-3 text-muted small">#{{ n.network_id }} in map</span>
+                      <span class="me-3">
+                        <span class="badge bg-secondary-subtle text-dark border me-1">{{ n.node_count }} nodes</span>
+                        <span class="badge bg-secondary-subtle text-dark border">{{ n.edge_count }} edges</span>
+                      </span>
+                      <span class="ms-auto small">
+                        {% for s in n.species_list[:6] %}
+                          <span class="badge bg-light text-dark border formula me-1">{{ s }}</span>
+                        {% endfor %}
+                        {% if n.species_list|length > 6 %}
+                          <span class="text-muted">+{{ n.species_list|length - 6 }}</span>
+                        {% endif %}
+                      </span>
+                    </button>
+                  </h2>
+                  <div id="netBody-{{ n.network_db_id }}" class="accordion-collapse collapse"
+                       data-bs-parent="#netsAcc-{{ m.map_id }}">
+                    <div class="accordion-body">
+
+                      {% if n.species_list %}
+                      <div class="mb-2">
+                        <strong class="small">All species ({{ n.species_list|length }}):</strong>
+                        {% for s in n.species_list %}
+                          <span class="badge bg-light text-dark border formula me-1">{{ s }}</span>
+                        {% endfor %}
+                      </div>
+                      {% endif %}
+
+                      <h6 class="mt-3 mb-1"><i class="bi bi-circle-fill"></i> Nodes ({{ n.nodes|length }})</h6>
+                      <div class="data-scroll mb-3">
+                        <table class="table table-sm table-hover data-table mb-0">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>VLM</th>
+                              <th>β-def</th>
+                              <th>Equation</th>
+                              <th>Type</th>
+                              <th>log K</th>
+                              <th>T (°C)</th>
+                              <th>I (M)</th>
+                              <th>used?</th>
+                              <th>dup?</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {% for nd in n.nodes %}
+                            <tr>
+                              <td>{{ loop.index }}</td>
+                              <td>{{ vlm_link(nd.vlm_id) }}</td>
+                              <td>
+                                <span class="text-muted small">{{ nd.beta_definition_id }}</span><br>
+                                {{ nd.beta_definition_name }}
+                              </td>
+                              <td><code class="small">{{ nd.equation_python }}</code></td>
+                              <td>{{ nd.constant_type }}</td>
+                              <td><strong>{{ nd.constant_value }}</strong></td>
+                              <td>{{ nd.temperature if nd.temperature is not none else '' }}</td>
+                              <td>{{ nd.ionic_strength if nd.ionic_strength is not none else '' }}</td>
+                              <td>{{ '✓' if nd.used_in_map else '' }}</td>
+                              <td>{{ '✓' if nd.is_duplicate else '' }}</td>
+                            </tr>
+                          {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <h6 class="mt-3 mb-1"><i class="bi bi-arrow-left-right"></i> Edges ({{ n.edges|length }})</h6>
+                      {% if n.edges %}
+                      <div class="data-scroll">
+                        <table class="table table-sm data-table mb-0">
+                          <thead><tr><th>#</th><th>node 1</th><th>node 2</th><th>Shared species</th></tr></thead>
+                          <tbody>
+                          {% for e in n.edges %}
+                            <tr>
+                              <td>{{ loop.index }}</td>
+                              <td>{{ vlm_link(e.node1_vlm_id) }}</td>
+                              <td>{{ vlm_link(e.node2_vlm_id) }}</td>
+                              <td>
+                                {% for s in e.shared_species %}
+                                  <span class="badge bg-info-subtle text-dark border formula me-1">{{ s }}</span>
+                                {% endfor %}
+                              </td>
+                            </tr>
+                          {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+                      {% else %}
+                        <p class="text-muted small mb-0">Singleton network (no edges).</p>
+                      {% endif %}
+
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+            <p class="text-muted small">No networks in this map.</p>
+          {% endif %}
+
+          {% if m.strays %}
+            <div class="mt-3">
+              <strong class="small"><i class="bi bi-x-circle"></i> Stray VLMs in this map ({{ m.strays|length }}):</strong>
+              <div class="mt-1">
+                {% for v in m.strays %}
+                  <span class="badge bg-warning-subtle text-dark border me-1">{{ vlm_link(v) }}</span>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% if unassigned %}
+<div class="card p-3 mb-3">
+  <h5 class="mb-2"><i class="bi bi-exclamation-triangle"></i> Unassigned VLMs ({{ unassigned|length }})</h5>
+  <p class="text-muted small mb-2">VLM entries with conditions outside any (T, I) bin.</p>
+  <div>
+    {% for v in unassigned %}
+      <span class="badge bg-warning-subtle text-dark border me-1">{{ vlm_link(v) }}</span>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{# Auto-open the accordion item targeted by URL hash (e.g. #network-1588). #}
+<script>
+(function() {
+  function openHash() {
+    var h = window.location.hash;
+    if (!h) return;
+    var el = document.querySelector(h);
+    if (!el) return;
+    // walk up: any .accordion-collapse ancestor needs to be shown
+    var collapses = [];
+    if (el.classList.contains('accordion-collapse')) collapses.push(el);
+    var p = el;
+    while (p) {
+      if (p.classList && p.classList.contains('accordion-item')) {
+        var body = p.querySelector(':scope > .accordion-collapse');
+        if (body) collapses.push(body);
+      }
+      p = p.parentElement;
+    }
+    // also: if hash points to an accordion-item, open its child collapse
+    if (el.classList.contains('accordion-item')) {
+      var body = el.querySelector(':scope > .accordion-collapse');
+      if (body) collapses.push(body);
+    }
+    collapses.forEach(function(c) {
+      try {
+        var inst = bootstrap.Collapse.getOrCreateInstance(c, { toggle: false });
+        inst.show();
+      } catch (e) {}
+    });
+    setTimeout(function() { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 250);
+  }
+  if (window.bootstrap) openHash();
+  else window.addEventListener('load', openHash);
+  window.addEventListener('hashchange', openHash);
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,213 @@
+{
+  "sweep_method": "pourbaix_sweep",
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Ni",
+          "element": "Ni",
+          "internal_id": "Ni$+2",
+          "db_id": "metal_112",
+          "redox_states": [
+            "Ni$+2",
+            "Ni$+0",
+            "Ni$+3",
+            "Ni$+4"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Glycine",
+          "db_id": "ligand_5760",
+          "internal_id": "L1",
+          "smiles": "NCC(=O)O",
+          "inchi_key": ""
+        }
+      ]
+    },
+    "freeform_vars_define": {}
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "axis",
+    "ionic_strength_mode": "fixed"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "known",
+        "note": "25 C stated by task"
+      },
+      {
+        "id": "I",
+        "handle": "s.ionic_strength",
+        "ref": "ionic_strength",
+        "handle_id": null,
+        "value": 0.1,
+        "basis": "known",
+        "note": "ionic strength 0.1 m stated by task"
+      },
+      {
+        "id": "Ni",
+        "handle": "s.total[\"Ni\"]",
+        "ref": "total",
+        "handle_id": "Ni",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM Ni(II) total from task; element-level total under solved redox axis"
+      },
+      {
+        "id": "L",
+        "handle": "s.total[\"ligand_5760\"]",
+        "ref": "total",
+        "handle_id": "ligand_5760",
+        "value": 0.01,
+        "basis": "known",
+        "note": "10 mM glycine total from task"
+      }
+    ],
+    "deferred": [
+      {
+        "handle": "s.pH",
+        "ref": "pH",
+        "handle_id": null,
+        "role": "swept",
+        "note": "pH axis 0-14 for Pourbaix map"
+      },
+      {
+        "handle": "s.E_V",
+        "ref": "E_V",
+        "handle_id": null,
+        "role": "swept",
+        "note": "E vs SHE axis across water stability window"
+      }
+    ],
+    "notes": "T, I, Ni total, and glycine total are all stated by the task. pH and E_V are the two Pourbaix sweep axes and are deferred to L3_3. Ni pinned at element level because redox axis is active (Ni(0)/Ni(II)/Ni(III)/Ni(IV) all in play).",
+    "n_known": 4,
+    "n_assumed": 0
+  },
+  "_deferred_conditions": [
+    {
+      "handle": "s.pH",
+      "ref": "pH",
+      "handle_id": null,
+      "role": "swept",
+      "note": "pH axis 0-14 for Pourbaix map"
+    },
+    {
+      "handle": "s.E_V",
+      "ref": "E_V",
+      "handle_id": null,
+      "role": "swept",
+      "note": "E vs SHE axis across water stability window"
+    }
+  ],
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "axes": [
+      "pH_axis",
+      "E_V_axis"
+    ],
+    "dof": {
+      "K": 6,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "E",
+        "op": "==",
+        "lhs": {
+          "ref": "E_V"
+        },
+        "rhs": {
+          "axis": "E_V_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "I",
+        "op": "==",
+        "lhs": {
+          "ref": "ionic_strength"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Ni",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Ni"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_5760"
+        },
+        "rhs": {
+          "const": 0.01
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 0.0,
+      "max": 14.0,
+      "n_points": 71
+    },
+    {
+      "name": "E_V",
+      "min": -1.0,
+      "max": 1.6,
+      "n_points": 66
+    }
+  ],
+  "grid_refine": {
+    "mode": "boundary",
+    "factor": 4,
+    "n_layers": 2
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "H",
+          "element": "H",
+          "redox_states": [
+            {
+              "internal_id": "H$+1",
+              "db_id": "metal_68"
+            }
+          ],
+          "water_species": true
+        },
+        {
+          "name": "Ca",
+          "element": "Ca",
+          "redox_states": [
+            {
+              "internal_id": "Ca$+2",
+              "db_id": "metal_25"
+            }
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Citric acid",
+          "db_id": "ligand_9058",
+          "internal_id": "L1",
+          "formula": "C6H8O7",
+          "smiles": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+          "inchi": "InChI=1S/C6H8O7/c7-3(8)1-6(13,5(11)12)2-4(9)10/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12)"
+        },
+        {
+          "name": "Hydroxide ion",
+          "db_id": "ligand_10076",
+          "internal_id": "L0",
+          "water_species": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "status": "failed",
+  "reason": "ValueError: included equilibrium graph is unresolved after fixed-point dependency propagation; no reactions were silently dropped:\n  - vlm_108768: missing=['<M1><H>2<L1>', '<M1><H><L1>']; equation=[<H>] + [<M1><H><L1>] <=> [<M1><H>2<L1>]\n  - vlm_108769: missing=['<M1><H>2<L1>', '<M1><H>3<L1>']; equation=[<H>] + [<M1><H>2<L1>] <=> [<M1><H>3<L1>]\n  - vlm_108766_patched: missing=['<M1><H><L1>', '<M1><L1>']; equation=[<H>] + [<M1><L1>] <=> [<M1><H><L1>]"
+}

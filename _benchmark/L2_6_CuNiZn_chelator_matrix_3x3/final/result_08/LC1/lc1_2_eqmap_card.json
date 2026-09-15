@@ -1,0 +1,98 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_4907",
+      "node_count": 6,
+      "temperature": 24.0,
+      "ionic_strength": 1.0,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L",
+      "final_adjustments": [
+        {
+          "node_key": "metal68_ligand6277_beta79_net4907",
+          "beta_definition_id": 79,
+          "examined_vlm_id": 108233,
+          "operation": "set_value",
+          "chosen_value": 10.19,
+          "rationale": "examined vlm_108233 K=+8.730 at (25C, 1.0M) is a low outlier vs 14 K-siblings (median +9.94). Three K-siblings sit at the exact request conditions (25C, 0.1M): vlm_108224=+9.520, vlm_108225=+10.190, vlm_108226=+10.370. Patching to their median +10.190 (the vlm_108225 value at request T,I)."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_5057",
+      "node_count": 4,
+      "temperature": 24.0,
+      "ionic_strength": 1.0,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 6277,
+      "ligand_name": "Ethylenedinitrilotetraacetic acid (EDTA)",
+      "ligand_SMILES": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O",
+      "ligand_canonical_HxL": "H4L",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand6277_beta966_net5057",
+          "beta_definition_id": 966,
+          "examined_vlm_id": 108720,
+          "operation": "set_value",
+          "chosen_value": -11.6,
+          "rationale": "examined vlm_108720 K=-12.000 is at I=1.0 M, far from request I=0.1 M. Sibling vlm_108719 K=-11.600 sits at exact request (T=25.0 C, I=0.1 M, ΔT=0, ΔI=0). Patching to vlm_108719's value -11.600 for exact (T,I) match."
+        },
+        {
+          "node_key": "metal208_ligand6277_beta788_net5057",
+          "beta_definition_id": 788,
+          "examined_vlm_id": 108714,
+          "operation": "set_value",
+          "chosen_value": 3.0,
+          "rationale": "examined vlm_108714 K=+2.800 is at I=1.0 M; sibling vlm_108713 K=+3.000 sits at exact request (T=25.0 C, I=0.1 M). Trend across siblings (I=0.1: +3.000, I=1.0: +2.800, I=3.0: +3.100) supports +3.000 at request I. Patching to vlm_108713's value."
+        },
+        {
+          "node_key": "metal208_ligand6277_beta812_net5057",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 108709,
+          "operation": "set_value",
+          "chosen_value": 16.5,
+          "rationale": "examined vlm_108709 K=+15.700 is at I=1.0 M; sibling vlm_108707 K=+16.500 sits at exact request (T=25.0 C, I=0.1 M, ΔT=0, ΔI=0). Trend (I=0.0: +18.000, I=0.1: +16.500, I=0.5: +15.700, I=1.0: +15.700) is monotonic and vlm_108707 is the correct value at request I. Patching to +16.500."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27522",
+      "node_count": 11,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand10076_beta840_net27522",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 170935,
+          "operation": "set_value",
+          "chosen_value": 12.2,
+          "rationale": "examined vlm_170935 logK=-10.200 (I=0.0M) sign-flipped vs the only other K-sibling vlm_170934=+12.200 (I=3.0M) for beta_def=840 [M]+[L]^2<=>[ML2]. A negative formation constant for Zn(II)+2 EDTA-like L is chemically implausible (ML formation vlm_170929=+4.700, ML3 vlm_170937=+13.900, ML4 vlm_170939=+15.500 all positive). Both siblings are equidistant from request I=0.1M in log terms; picking vlm_170934=+12.200 as the chemically consistent K, matching the monotonic ML/ML3/ML4 trend."
+        }
+      ]
+    }
+  ]
+}

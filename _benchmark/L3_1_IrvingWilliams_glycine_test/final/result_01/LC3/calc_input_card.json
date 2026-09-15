@@ -1,0 +1,242 @@
+{
+  "sweep_method": "pH_sweep",
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Co",
+          "element": "Co",
+          "internal_id": "Co$+2",
+          "db_id": "metal_33",
+          "redox_states": [
+            "Co$+2",
+            "Co$+0",
+            "Co$+3",
+            "Co$+4"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Glycine",
+          "db_id": "ligand_5760",
+          "internal_id": "L1",
+          "smiles": "NCC(=O)O",
+          "inchi_key": ""
+        }
+      ]
+    },
+    "freeform_vars_define": {}
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "excluded",
+    "ionic_strength_mode": "fixed"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "known",
+        "note": "25 C from task"
+      },
+      {
+        "id": "I",
+        "handle": "s.ionic_strength",
+        "ref": "ionic_strength",
+        "handle_id": null,
+        "value": 0.1,
+        "basis": "known",
+        "note": "0.1 m ionic strength from task"
+      },
+      {
+        "id": "CoII",
+        "handle": "s.total[\"Co$+2\"]",
+        "ref": "total",
+        "handle_id": "Co$+2",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM Co(II) from task"
+      },
+      {
+        "id": "Co0",
+        "handle": "s.total[\"Co$+0\"]",
+        "ref": "total",
+        "handle_id": "Co$+0",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "no metallic Co in aqueous test solution"
+      },
+      {
+        "id": "CoIII",
+        "handle": "s.total[\"Co$+3\"]",
+        "ref": "total",
+        "handle_id": "Co$+3",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "redox excluded; no Co(III)"
+      },
+      {
+        "id": "CoIV",
+        "handle": "s.total[\"Co$+4\"]",
+        "ref": "total",
+        "handle_id": "Co$+4",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "redox excluded; no Co(IV)"
+      },
+      {
+        "id": "L",
+        "handle": "s.total[\"ligand_5760\"]",
+        "ref": "total",
+        "handle_id": "ligand_5760",
+        "value": 0.01,
+        "basis": "known",
+        "note": "10 mM glycine from task"
+      }
+    ],
+    "deferred": [
+      {
+        "handle": "s.pH",
+        "ref": "pH",
+        "handle_id": null,
+        "role": "swept",
+        "note": "pH is the primary sweep axis for pH_sweep; task pH=7 lies on this axis"
+      }
+    ],
+    "notes": "T=25 C, I=0.1 M, Co(II)=1 mM, glycine=10 mM all task-stated (known). Other Co valences set to zero (assumed) because redox is excluded and only Co(II) is specified. pH is the swept axis (pH_sweep), so it is deferred; task point pH=7 is a target value on that axis, not a pin.",
+    "n_known": 4,
+    "n_assumed": 3
+  },
+  "_deferred_conditions": [
+    {
+      "handle": "s.pH",
+      "ref": "pH",
+      "handle_id": null,
+      "role": "swept",
+      "note": "pH is the primary sweep axis for pH_sweep; task pH=7 lies on this axis"
+    }
+  ],
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "axes": [
+      "pH_axis"
+    ],
+    "dof": {
+      "K": 8,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "I",
+        "op": "==",
+        "lhs": {
+          "ref": "ionic_strength"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "CoII",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Co$+2"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Co0",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Co$+0"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "CoIII",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Co$+3"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "CoIV",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Co$+4"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_5760"
+        },
+        "rhs": {
+          "const": 0.01
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 6.5,
+      "max": 7.5,
+      "n_points": 11
+    }
+  ],
+  "grid_refine": {
+    "mode": "none"
+  }
+}

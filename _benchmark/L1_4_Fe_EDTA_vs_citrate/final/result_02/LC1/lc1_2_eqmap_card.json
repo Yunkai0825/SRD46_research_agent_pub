@@ -1,0 +1,104 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_22067",
+      "node_count": 3,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 9058,
+      "ligand_name": "2-Hydroxypropane-1,2,3-tricarboxylic acid (Citric acid)",
+      "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+      "ligand_canonical_HxL": "H3L"
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_22182",
+      "node_count": 4,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 61,
+      "metal_name": "Fe^[3+]",
+      "ligand_id": 9058,
+      "ligand_name": "2-Hydroxypropane-1,2,3-tricarboxylic acid (Citric acid)",
+      "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+      "ligand_canonical_HxL": "H3L"
+    },
+    {
+      "eq_network": "ref_eq_net_27465",
+      "node_count": 8,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 61,
+      "metal_name": "Fe^[3+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal61_ligand10076_beta840_net27465",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 170807,
+          "operation": "set_value",
+          "chosen_value": 21.9,
+          "rationale": "examined vlm_170807 logK=+23.400 is the maximum of 5 positive K-siblings at same (T=25, I=0.0): vlm_170798=+21.500, vlm_170802=+21.800, vlm_170805=+21.900, vlm_170806=+22.500 (median +21.900, MAD 0.1). Chosen deviates +1.5 from median (>3xMAD). Patching to the median +21.900 (vlm_170805) which is representative of the tight positive cluster. Ignoring vlm_170803=-20.400 (obvious sign-error outlier that also pulled the mean to +15.1)."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_22169",
+      "node_count": 5,
+      "temperature": 36.0,
+      "ionic_strength": 0.15,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 9058,
+      "ligand_name": "2-Hydroxypropane-1,2,3-tricarboxylic acid (Citric acid)",
+      "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+      "ligand_canonical_HxL": "H3L",
+      "final_adjustments": [
+        {
+          "node_key": "metal62_ligand9058_beta812_net22169",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 157621,
+          "operation": "set_value",
+          "chosen_value": 4.4,
+          "rationale": "Chosen vlm_157621=+4.560 at (37C,0.15M) is off-request. Sibling pool has 3 positive K values clustering near +4.4-4.7 (vlm_157619=+4.400@20C/0.1M, vlm_157621=+4.560@37C/0.15M, vlm_157622=+4.700@37C/0.15M) vs one sign-flipped vlm_157620=-4.800@25C/0.1M treated as a data-entry sign error (Fe(III)+citrate 1:1 is a well-known positive-logK complexation). Setting to vlm_157619=+4.400 which is the closest to request (ΔT=-5C, ΔI=0M) among the physically consistent positive cluster."
+        },
+        {
+          "node_key": "metal62_ligand9058_beta779_net22169",
+          "beta_definition_id": 779,
+          "examined_vlm_id": 157625,
+          "operation": "set_value",
+          "chosen_value": 2.9,
+          "rationale": "Chosen vlm_157625=+3.100 at (37C,0.15M) is off-request and is the MAD outlier (deviates 0.45 vs median 2.650). Sibling vlm_157623=+2.900 sits exactly at request (T=25C,I=0.1M) and is bracketed by vlm_157624=+2.650@20C/0.1M and vlm_157626=+2.600@25C/3.0M. Setting to vlm_157623=+2.900 (exact T/I match)."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27433",
+      "node_count": 5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    }
+  ]
+}

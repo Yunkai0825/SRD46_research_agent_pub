@@ -1,0 +1,354 @@
+# Solver report (Pourbaix)
+
+## System
+- Components: [Cu, Fe, Citric acid, Glycine, Ammonia, Chloride ion]
+- Constraints:
+  -- component totals (M): Cu=0.001;Fe=0.001;Citric acid=0.01;Glycine=0.01;Ammonia=0.1;Chloride ion=0.1
+- Potential reference: SHE
+- Domain: pH [0, 14]; E_V [-1, 1.5]
+- Coarse grid spacing: ΔpH=not reported; ΔE_V=not reported
+- Final classified-grid spacing: ΔpH=0.2; ΔE_V=0.05
+- Semantics: Each connected region is the dominant calculated entity for the reported classification rule, not the exclusive entity present and not a kinetic prediction.
+- Cut basis: Final classified label grid; no cut transition is inferred from compact/RDP geometry.
+
+## Dominant species catalog
+- Dms_1: Cu
+- Dms_2: [(Cu2O)0.5](s)
+- Dms_3: CuO(s)
+- Dms_4: [Cu(Ammo)2]+
+- Dms_5: [Cu2(Citr)2(OH)2]4-
+- Dms_6: [Cu(Glyc)2]
+- Dms_7: [Cu(Chlo)2]-
+- Dms_8: [Cu2(Citr)2(OH)]3-
+- Dms_9: Cu2+
+
+## Topology stats
+- 9 dominant-species labels
+- 9 connected regions
+- 16 pairwise boundary curves
+- 8 internal junction features
+- 8 junction features at a sweep limit
+- Disconnected dominant species:
+  -- none
+
+## Example classified-grid cut along pH
+- Fixed coordinates in domain order: [not reported, 0.25]
+- Fixed sample indices in domain order: [None, 25]
+- samples 0–20, pH [0, 4]: [Cu(Chlo)2]- (Dms_7)
+- samples 21–37, pH [4.2, 7.4]: [Cu2(Citr)2(OH)2]4- (Dms_5)
+  -- preceding label change is bracketed by adjacent samples [4, 4.2]
+- samples 38–53, pH [7.6, 10.6]: [Cu(Glyc)2] (Dms_6)
+  -- preceding label change is bracketed by adjacent samples [7.4, 7.6]
+- samples 54–70, pH [10.8, 14]: CuO(s) (Dms_3)
+  -- preceding label change is bracketed by adjacent samples [10.6, 10.8]
+
+## Example classified-grid cut along E_V
+- Fixed coordinates in domain order: [7, not reported]
+- Fixed sample indices in domain order: [35, None]
+- samples 0–21, E_V [-1, 0.05]: Cu (Dms_1)
+- samples 22–50, E_V [0.1, 1.5]: [Cu2(Citr)2(OH)2]4- (Dms_5)
+  -- preceding label change is bracketed by adjacent samples [0.05, 0.1]
+
+## Topology details
+// Coordinate order: [pH, E_V]
+
+### canonical topology convention
+| Canonical family | Meaning |
+|---|---|
+| `Dms_i` | Dominant-species label |
+| `DmsReg_i` | Connected region |
+| `DmsRegEq_i` | Connected pairwise boundary manifold |
+| `DmsRegEqJnc_i` | Lower-dimensional junction feature |
+
+### regions
+- **DmsReg_1 {Cu}**
+  -- Measure in the solver coordinate frame: 13.99
+  -- Neighboring regions:
+    --- DmsReg_2 {[(Cu2O)0.5](s)} via DmsRegEq_1
+    --- DmsReg_4 {[Cu(Ammo)2]+} via DmsRegEq_2
+    --- DmsReg_5 {[Cu2(Citr)2(OH)2]4-} via DmsRegEq_3
+    --- DmsReg_6 {[Cu(Glyc)2]} via DmsRegEq_4
+    --- DmsReg_7 {[Cu(Chlo)2]-} via DmsRegEq_5
+  -- Junction features: [DmsRegEqJnc_9, DmsRegEqJnc_1, DmsRegEqJnc_3, DmsRegEqJnc_2, DmsRegEqJnc_6, DmsRegEqJnc_10]
+- **DmsReg_2 {[(Cu2O)0.5](s)}**
+  -- Measure in the solver coordinate frame: 0.63
+  -- Neighboring regions:
+    --- DmsReg_1 {Cu} via DmsRegEq_1
+    --- DmsReg_3 {CuO(s)} via DmsRegEq_6
+    --- DmsReg_4 {[Cu(Ammo)2]+} via DmsRegEq_7
+    --- DmsReg_6 {[Cu(Glyc)2]} via DmsRegEq_8
+  -- Junction features: [DmsRegEqJnc_9, DmsRegEqJnc_1, DmsRegEqJnc_5, DmsRegEqJnc_11, DmsRegEqJnc_4]
+- **DmsReg_3 {CuO(s)}**
+  -- Measure in the solver coordinate frame: 5.42
+  -- Neighboring regions:
+    --- DmsReg_2 {[(Cu2O)0.5](s)} via DmsRegEq_6
+    --- DmsReg_6 {[Cu(Glyc)2]} via DmsRegEq_9
+  -- Junction features: [DmsRegEqJnc_5, DmsRegEqJnc_11, DmsRegEqJnc_12]
+- **DmsReg_4 {[Cu(Ammo)2]+}**
+  -- Measure in the solver coordinate frame: 0.31
+  -- Neighboring regions:
+    --- DmsReg_1 {Cu} via DmsRegEq_2
+    --- DmsReg_2 {[(Cu2O)0.5](s)} via DmsRegEq_7
+    --- DmsReg_6 {[Cu(Glyc)2]} via DmsRegEq_10
+  -- Junction features: [DmsRegEqJnc_3, DmsRegEqJnc_1, DmsRegEqJnc_4]
+- **DmsReg_5 {[Cu2(Citr)2(OH)2]4-}**
+  -- Measure in the solver coordinate frame: 4.8
+  -- Neighboring regions:
+    --- DmsReg_1 {Cu} via DmsRegEq_3
+    --- DmsReg_6 {[Cu(Glyc)2]} via DmsRegEq_11
+    --- DmsReg_7 {[Cu(Chlo)2]-} via DmsRegEq_12
+    --- DmsReg_8 {[Cu2(Citr)2(OH)]3-} via DmsRegEq_13
+  -- Junction features: [DmsRegEqJnc_2, DmsRegEqJnc_6, DmsRegEqJnc_13, DmsRegEqJnc_7, DmsRegEqJnc_14]
+- **DmsReg_6 {[Cu(Glyc)2]}**
+  -- Measure in the solver coordinate frame: 4.82
+  -- Neighboring regions:
+    --- DmsReg_1 {Cu} via DmsRegEq_4
+    --- DmsReg_2 {[(Cu2O)0.5](s)} via DmsRegEq_8
+    --- DmsReg_3 {CuO(s)} via DmsRegEq_9
+    --- DmsReg_4 {[Cu(Ammo)2]+} via DmsRegEq_10
+    --- DmsReg_5 {[Cu2(Citr)2(OH)2]4-} via DmsRegEq_11
+  -- Junction features: [DmsRegEqJnc_2, DmsRegEqJnc_3, DmsRegEqJnc_4, DmsRegEqJnc_5, DmsRegEqJnc_12, DmsRegEqJnc_13]
+- **DmsReg_7 {[Cu(Chlo)2]-}**
+  -- Measure in the solver coordinate frame: 1.36
+  -- Neighboring regions:
+    --- DmsReg_1 {Cu} via DmsRegEq_5
+    --- DmsReg_5 {[Cu2(Citr)2(OH)2]4-} via DmsRegEq_12
+    --- DmsReg_8 {[Cu2(Citr)2(OH)]3-} via DmsRegEq_14
+    --- DmsReg_9 {Cu2+} via DmsRegEq_15
+  -- Junction features: [DmsRegEqJnc_10, DmsRegEqJnc_6, DmsRegEqJnc_7, DmsRegEqJnc_8, DmsRegEqJnc_15]
+- **DmsReg_8 {[Cu2(Citr)2(OH)]3-}**
+  -- Measure in the solver coordinate frame: 0.97
+  -- Neighboring regions:
+    --- DmsReg_5 {[Cu2(Citr)2(OH)2]4-} via DmsRegEq_13
+    --- DmsReg_7 {[Cu(Chlo)2]-} via DmsRegEq_14
+    --- DmsReg_9 {Cu2+} via DmsRegEq_16
+  -- Junction features: [DmsRegEqJnc_14, DmsRegEqJnc_7, DmsRegEqJnc_8, DmsRegEqJnc_16]
+- **DmsReg_9 {Cu2+}**
+  -- Measure in the solver coordinate frame: 3.91
+  -- Neighboring regions:
+    --- DmsReg_7 {[Cu(Chlo)2]-} via DmsRegEq_15
+    --- DmsReg_8 {[Cu2(Citr)2(OH)]3-} via DmsRegEq_16
+  -- Junction features: [DmsRegEqJnc_8, DmsRegEqJnc_15, DmsRegEqJnc_16]
+
+### boundary curves/equilibria
+- **DmsRegEq_1: Cu | [(Cu2O)0.5](s)**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_1, DmsReg_2]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[14.0, -0.325], [13.1, -0.325], [13.1, -0.275], [12.3, -0.275], [12.3, -0.225], [10.5, -0.125]]
+  -- Boundary/junction features: [DmsRegEqJnc_9, DmsRegEqJnc_1]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 23, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 5, 6, 10, 11, 22], "t_params": [0.0, 0.25, 0.264, 0.486, 0.5, 1.0], "envelope_n": 6, "envelope_pts": [[14.0, -0.325], [13.1, -0.325], [13.1, -0.275], [12.3, -0.275], [12.3, -0.225], [10.5, -0.125]], "envelope_t": [0.0, 0.25, 0.264, 0.486, 0.5, 1.0], "adaptive_n": 10, "adaptive_pts": [[14.0, -0.325], [13.1, -0.325], [13.1, -0.275], [12.3, -0.275], [12.3, -0.225], [11.5, -0.225], [11.5, -0.175], [10.7, -0.175], [10.7, -0.125], [10.5, -0.125]], "adaptive_t": [0.0, 0.243, 0.257, 0.473, 0.486, 0.703, 0.716, 0.932, 0.946, 1.0]}
+- **DmsRegEq_2: Cu | [Cu(Ammo)2]+**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_1, DmsReg_4]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[10.5, -0.125], [9.1, -0.125], [9.1, -0.075], [8.5, -0.075], [8.5, -0.025], [7.9, 0.025]]
+  -- Boundary/junction features: [DmsRegEqJnc_1, DmsRegEqJnc_3]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 17, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 7, 8, 11, 12, 16], "t_params": [0.0, 0.518, 0.537, 0.759, 0.777, 1.0], "envelope_n": 6, "envelope_pts": [[10.5, -0.125], [9.1, -0.125], [9.1, -0.075], [8.5, -0.075], [8.5, -0.025], [7.9, 0.025]], "envelope_t": [0.0, 0.518, 0.537, 0.759, 0.777, 1.0], "adaptive_n": 7, "adaptive_pts": [[10.5, -0.125], [9.1, -0.125], [9.1, -0.075], [8.5, -0.075], [8.5, -0.025], [7.9, -0.025], [7.9, 0.025]], "adaptive_t": [0.0, 0.509, 0.527, 0.745, 0.764, 0.982, 1.0]}
+- **DmsRegEq_3: Cu | [Cu2(Citr)2(OH)2]4-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_1, DmsReg_5]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[7.5, 0.025], [7.3, 0.025], [7.1, 0.025], [7.1, 0.075], [6.9, 0.075], [5.7, 0.075]]
+  -- Boundary/junction features: [DmsRegEqJnc_2, DmsRegEqJnc_6]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 11, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 1, 2, 3, 4, 10], "t_params": [0.0, 0.108, 0.216, 0.243, 0.351, 1.0], "envelope_n": 6, "envelope_pts": [[7.5, 0.025], [7.3, 0.025], [7.1, 0.025], [7.1, 0.075], [6.9, 0.075], [5.7, 0.075]], "envelope_t": [0.0, 0.108, 0.216, 0.243, 0.351, 1.0], "adaptive_n": 4, "adaptive_pts": [[7.5, 0.025], [7.1, 0.025], [7.1, 0.075], [5.7, 0.075]], "adaptive_t": [0.0, 0.216, 0.243, 1.0]}
+- **DmsRegEq_4: Cu | [Cu(Glyc)2]**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_1, DmsReg_6]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[7.5, 0.025], [7.7, 0.025], [7.9, 0.025]]
+  -- Boundary/junction features: [DmsRegEqJnc_2, DmsRegEqJnc_3]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 3, "compact_n": 3, "compact_target_n": 6, "compact_indices": [0, 1, 2], "t_params": [0.0, 0.5, 1.0], "envelope_n": 6, "envelope_pts": [[7.5, 0.025], [7.7, 0.025], [7.9, 0.025]], "envelope_t": [0.0, 0.5, 1.0], "adaptive_n": 2, "adaptive_pts": [[7.5, 0.025], [7.9, 0.025]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_5: Cu | [Cu(Chlo)2]-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_1, DmsReg_7]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[0.0, 0.075], [1.1, 0.075], [2.1, 0.075], [2.7, 0.075], [4.7, 0.075], [5.7, 0.075]]
+  -- Boundary/junction features: [DmsRegEqJnc_10, DmsRegEqJnc_6]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 30, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 6, 11, 14, 24, 29], "t_params": [0.0, 0.193, 0.368, 0.474, 0.825, 1.0], "envelope_n": 6, "envelope_pts": [[0.0, 0.075], [1.1, 0.075], [2.1, 0.075], [2.7, 0.075], [4.7, 0.075], [5.7, 0.075]], "envelope_t": [0.0, 0.193, 0.368, 0.474, 0.825, 1.0], "adaptive_n": 2, "adaptive_pts": [[0.0, 0.075], [5.7, 0.075]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_6: [(Cu2O)0.5](s) | CuO(s)**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_2, DmsReg_3]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[14.0, -0.175], [13.7, -0.125], [12.9, -0.125], [12.9, -0.075], [11.1, -0.025], [10.9, 0.025]]
+  -- Boundary/junction features: [DmsRegEqJnc_11, DmsRegEqJnc_5]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 21, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 3, 7, 8, 18, 20], "t_params": [0.0, 0.096, 0.349, 0.365, 0.935, 1.0], "envelope_n": 6, "envelope_pts": [[14.0, -0.175], [13.7, -0.125], [12.9, -0.125], [12.9, -0.075], [11.1, -0.025], [10.9, 0.025]], "envelope_t": [0.0, 0.096, 0.349, 0.365, 0.935, 1.0], "adaptive_n": 10, "adaptive_pts": [[14.0, -0.175], [13.7, -0.175], [13.7, -0.125], [12.9, -0.125], [12.9, -0.075], [11.9, -0.075], [11.9, -0.025], [11.1, -0.025], [11.1, 0.025], [10.9, 0.025]], "adaptive_t": [0.0, 0.091, 0.106, 0.348, 0.364, 0.667, 0.682, 0.924, 0.939, 1.0]}
+- **DmsRegEq_7: [(Cu2O)0.5](s) | [Cu(Ammo)2]+**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_2, DmsReg_4]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[10.5, -0.125], [10.5, -0.075], [10.5, -0.025], [10.7, -0.025], [10.7, 0.025]]
+  -- Boundary/junction features: [DmsRegEqJnc_1, DmsRegEqJnc_4]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 5, "compact_n": 5, "compact_target_n": 6, "compact_indices": [0, 1, 2, 3, 4], "t_params": [0.0, 0.143, 0.286, 0.857, 1.0], "envelope_n": 6, "envelope_pts": [[10.5, -0.125], [10.5, -0.075], [10.5, -0.025], [10.7, -0.025], [10.7, 0.025]], "envelope_t": [0.0, 0.143, 0.286, 0.857, 1.0], "adaptive_n": 2, "adaptive_pts": [[10.5, -0.125], [10.7, 0.025]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_8: [(Cu2O)0.5](s) | [Cu(Glyc)2]**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_2, DmsReg_6]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[10.7, 0.025], [10.9, 0.025]]
+  -- Boundary/junction features: [DmsRegEqJnc_4, DmsRegEqJnc_5]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 2, "compact_n": 2, "compact_target_n": 6, "compact_indices": [0, 1], "t_params": [0.0, 1.0], "envelope_n": 6, "envelope_pts": [[10.7, 0.025], [10.9, 0.025]], "envelope_t": [0.0, 1.0], "adaptive_n": 2, "adaptive_pts": [[10.7, 0.025], [10.9, 0.025]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_9: CuO(s) | [Cu(Glyc)2]**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_3, DmsReg_6]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[10.9, 0.025], [10.9, 0.125], [10.7, 0.125], [10.7, 0.825], [10.7, 1.325], [10.7, 1.5]]
+  -- Boundary/junction features: [DmsRegEqJnc_5, DmsRegEqJnc_12]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 32, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 2, 3, 17, 27, 31], "t_params": [0.0, 0.06, 0.179, 0.597, 0.896, 1.0], "envelope_n": 6, "envelope_pts": [[10.9, 0.025], [10.9, 0.125], [10.7, 0.125], [10.7, 0.825], [10.7, 1.325], [10.7, 1.5]], "envelope_t": [0.0, 0.06, 0.179, 0.597, 0.896, 1.0], "adaptive_n": 4, "adaptive_pts": [[10.9, 0.025], [10.9, 0.125], [10.7, 0.125], [10.7, 1.5]], "adaptive_t": [0.0, 0.06, 0.179, 1.0]}
+- **DmsRegEq_10: [Cu(Ammo)2]+ | [Cu(Glyc)2]**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_4, DmsReg_6]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[7.9, 0.025], [8.1, 0.025], [8.3, 0.025], [8.5, 0.025], [8.7, 0.025], [10.7, 0.025]]
+  -- Boundary/junction features: [DmsRegEqJnc_3, DmsRegEqJnc_4]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 15, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 1, 2, 3, 4, 14], "t_params": [0.0, 0.071, 0.143, 0.214, 0.286, 1.0], "envelope_n": 6, "envelope_pts": [[7.9, 0.025], [8.1, 0.025], [8.3, 0.025], [8.5, 0.025], [8.7, 0.025], [10.7, 0.025]], "envelope_t": [0.0, 0.071, 0.143, 0.214, 0.286, 1.0], "adaptive_n": 2, "adaptive_pts": [[7.9, 0.025], [10.7, 0.025]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_11: [Cu2(Citr)2(OH)2]4- | [Cu(Glyc)2]**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_5, DmsReg_6]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[7.5, 0.025], [7.5, 0.075], [7.5, 0.625], [7.5, 0.925], [7.5, 1.475], [7.5, 1.5]]
+  -- Boundary/junction features: [DmsRegEqJnc_2, DmsRegEqJnc_13]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 31, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 1, 12, 18, 29, 30], "t_params": [0.0, 0.034, 0.407, 0.61, 0.983, 1.0], "envelope_n": 6, "envelope_pts": [[7.5, 0.025], [7.5, 0.075], [7.5, 0.625], [7.5, 0.925], [7.5, 1.475], [7.5, 1.5]], "envelope_t": [0.0, 0.034, 0.407, 0.61, 0.983, 1.0], "adaptive_n": 2, "adaptive_pts": [[7.5, 0.025], [7.5, 1.5]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_12: [Cu2(Citr)2(OH)2]4- | [Cu(Chlo)2]-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_5, DmsReg_7]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[5.7, 0.075], [5.7, 0.125], [5.1, 0.125], [5.1, 0.175], [4.1, 0.225], [4.1, 0.275]]
+  -- Boundary/junction features: [DmsRegEqJnc_6, DmsRegEqJnc_7]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 13, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 1, 4, 5, 11, 12], "t_params": [0.0, 0.029, 0.371, 0.4, 0.971, 1.0], "envelope_n": 6, "envelope_pts": [[5.7, 0.075], [5.7, 0.125], [5.1, 0.125], [5.1, 0.175], [4.1, 0.225], [4.1, 0.275]], "envelope_t": [0.0, 0.029, 0.371, 0.4, 0.971, 1.0], "adaptive_n": 8, "adaptive_pts": [[5.7, 0.075], [5.7, 0.125], [5.1, 0.125], [5.1, 0.175], [4.5, 0.175], [4.5, 0.225], [4.1, 0.225], [4.1, 0.275]], "adaptive_t": [0.0, 0.028, 0.361, 0.389, 0.722, 0.75, 0.972, 1.0]}
+- **DmsRegEq_13: [Cu2(Citr)2(OH)2]4- | [Cu2(Citr)2(OH)]3-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_5, DmsReg_8]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[4.1, 0.275], [4.1, 0.325], [4.1, 0.375], [4.1, 0.425], [4.1, 0.925], [4.1, 1.5]]
+  -- Boundary/junction features: [DmsRegEqJnc_7, DmsRegEqJnc_14]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 26, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 1, 2, 3, 13, 25], "t_params": [0.0, 0.041, 0.082, 0.122, 0.531, 1.0], "envelope_n": 6, "envelope_pts": [[4.1, 0.275], [4.1, 0.325], [4.1, 0.375], [4.1, 0.425], [4.1, 0.925], [4.1, 1.5]], "envelope_t": [0.0, 0.041, 0.082, 0.122, 0.531, 1.0], "adaptive_n": 2, "adaptive_pts": [[4.1, 0.275], [4.1, 1.5]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_14: [Cu(Chlo)2]- | [Cu2(Citr)2(OH)]3-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_7, DmsReg_8]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[4.1, 0.275], [3.7, 0.275], [3.7, 0.325], [3.5, 0.325], [3.5, 0.375], [3.3, 0.375]]
+  -- Boundary/junction features: [DmsRegEqJnc_7, DmsRegEqJnc_8]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 7, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 2, 3, 4, 5, 6], "t_params": [0.0, 0.444, 0.5, 0.722, 0.778, 1.0], "envelope_n": 6, "envelope_pts": [[4.1, 0.275], [3.7, 0.275], [3.7, 0.325], [3.5, 0.325], [3.5, 0.375], [3.3, 0.375]], "envelope_t": [0.0, 0.444, 0.5, 0.722, 0.778, 1.0], "adaptive_n": 4, "adaptive_pts": [[4.1, 0.275], [3.7, 0.275], [3.7, 0.325], [3.3, 0.375]], "adaptive_t": [0.0, 0.469, 0.527, 1.0]}
+- **DmsRegEq_15: [Cu(Chlo)2]- | Cu2+**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_7, DmsReg_9]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[0.0, 0.375], [1.1, 0.375], [1.7, 0.375], [1.9, 0.375], [2.5, 0.375], [3.3, 0.375]]
+  -- Boundary/junction features: [DmsRegEqJnc_15, DmsRegEqJnc_8]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 18, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 6, 9, 10, 13, 17], "t_params": [0.0, 0.333, 0.515, 0.576, 0.758, 1.0], "envelope_n": 6, "envelope_pts": [[0.0, 0.375], [1.1, 0.375], [1.7, 0.375], [1.9, 0.375], [2.5, 0.375], [3.3, 0.375]], "envelope_t": [0.0, 0.333, 0.515, 0.576, 0.758, 1.0], "adaptive_n": 2, "adaptive_pts": [[0.0, 0.375], [3.3, 0.375]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_16: [Cu2(Citr)2(OH)]3- | Cu2+**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_8, DmsReg_9]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[3.3, 0.375], [3.3, 0.425], [3.3, 0.475], [3.3, 0.525], [3.3, 1.025], [3.3, 1.5]]
+  -- Boundary/junction features: [DmsRegEqJnc_8, DmsRegEqJnc_16]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 24, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 1, 2, 3, 13, 23], "t_params": [0.0, 0.044, 0.089, 0.133, 0.578, 1.0], "envelope_n": 6, "envelope_pts": [[3.3, 0.375], [3.3, 0.425], [3.3, 0.475], [3.3, 0.525], [3.3, 1.025], [3.3, 1.5]], "envelope_t": [0.0, 0.044, 0.089, 0.133, 0.578, 1.0], "adaptive_n": 2, "adaptive_pts": [[3.3, 0.375], [3.3, 1.5]], "adaptive_t": [0.0, 1.0]}
+
+### junction features
+- **DmsRegEqJnc_1** — intrinsic dimension 0 (point)
+  -- Dominant species: [Cu, [(Cu2O)0.5](s), [Cu(Ammo)2]+]
+  -- Neighboring regions: [DmsReg_1, DmsReg_2, DmsReg_4]
+  -- Connected boundary manifolds: [DmsRegEq_1, DmsRegEq_2, DmsRegEq_7]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 10.5, "E_V": -0.125}
+- **DmsRegEqJnc_2** — intrinsic dimension 0 (point)
+  -- Dominant species: [Cu, [Cu2(Citr)2(OH)2]4-, [Cu(Glyc)2]]
+  -- Neighboring regions: [DmsReg_1, DmsReg_5, DmsReg_6]
+  -- Connected boundary manifolds: [DmsRegEq_3, DmsRegEq_4, DmsRegEq_11]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 7.5, "E_V": 0.025}
+- **DmsRegEqJnc_3** — intrinsic dimension 0 (point)
+  -- Dominant species: [Cu, [Cu(Ammo)2]+, [Cu(Glyc)2]]
+  -- Neighboring regions: [DmsReg_1, DmsReg_4, DmsReg_6]
+  -- Connected boundary manifolds: [DmsRegEq_2, DmsRegEq_4, DmsRegEq_10]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 7.9, "E_V": 0.025}
+- **DmsRegEqJnc_4** — intrinsic dimension 0 (point)
+  -- Dominant species: [[(Cu2O)0.5](s), [Cu(Ammo)2]+, [Cu(Glyc)2]]
+  -- Neighboring regions: [DmsReg_2, DmsReg_4, DmsReg_6]
+  -- Connected boundary manifolds: [DmsRegEq_7, DmsRegEq_8, DmsRegEq_10]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 10.7, "E_V": 0.025}
+- **DmsRegEqJnc_5** — intrinsic dimension 0 (point)
+  -- Dominant species: [[(Cu2O)0.5](s), CuO(s), [Cu(Glyc)2]]
+  -- Neighboring regions: [DmsReg_2, DmsReg_3, DmsReg_6]
+  -- Connected boundary manifolds: [DmsRegEq_6, DmsRegEq_8, DmsRegEq_9]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 10.9, "E_V": 0.025}
+- **DmsRegEqJnc_6** — intrinsic dimension 0 (point)
+  -- Dominant species: [Cu, [Cu2(Citr)2(OH)2]4-, [Cu(Chlo)2]-]
+  -- Neighboring regions: [DmsReg_1, DmsReg_5, DmsReg_7]
+  -- Connected boundary manifolds: [DmsRegEq_3, DmsRegEq_5, DmsRegEq_12]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 5.7, "E_V": 0.075}
+- **DmsRegEqJnc_7** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Cu2(Citr)2(OH)2]4-, [Cu(Chlo)2]-, [Cu2(Citr)2(OH)]3-]
+  -- Neighboring regions: [DmsReg_5, DmsReg_7, DmsReg_8]
+  -- Connected boundary manifolds: [DmsRegEq_12, DmsRegEq_13, DmsRegEq_14]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 4.1, "E_V": 0.275}
+- **DmsRegEqJnc_8** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Cu(Chlo)2]-, [Cu2(Citr)2(OH)]3-, Cu2+]
+  -- Neighboring regions: [DmsReg_7, DmsReg_8, DmsReg_9]
+  -- Connected boundary manifolds: [DmsRegEq_14, DmsRegEq_15, DmsRegEq_16]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 3.3, "E_V": 0.375}
+- **DmsRegEqJnc_9** — intrinsic dimension 0 (point)
+  -- Dominant species: [Cu, [(Cu2O)0.5](s)]
+  -- Neighboring regions: [DmsReg_1, DmsReg_2]
+  -- Connected boundary manifolds: [DmsRegEq_1]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 14.0, "E_V": -0.325}
+- **DmsRegEqJnc_10** — intrinsic dimension 0 (point)
+  -- Dominant species: [Cu, [Cu(Chlo)2]-]
+  -- Neighboring regions: [DmsReg_1, DmsReg_7]
+  -- Connected boundary manifolds: [DmsRegEq_5]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 0.0, "E_V": 0.075}
+- **DmsRegEqJnc_11** — intrinsic dimension 0 (point)
+  -- Dominant species: [[(Cu2O)0.5](s), CuO(s)]
+  -- Neighboring regions: [DmsReg_2, DmsReg_3]
+  -- Connected boundary manifolds: [DmsRegEq_6]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 14.0, "E_V": -0.175}
+- **DmsRegEqJnc_12** — intrinsic dimension 0 (point)
+  -- Dominant species: [CuO(s), [Cu(Glyc)2]]
+  -- Neighboring regions: [DmsReg_3, DmsReg_6]
+  -- Connected boundary manifolds: [DmsRegEq_9]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 10.7, "E_V": 1.5}
+- **DmsRegEqJnc_13** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Cu2(Citr)2(OH)2]4-, [Cu(Glyc)2]]
+  -- Neighboring regions: [DmsReg_5, DmsReg_6]
+  -- Connected boundary manifolds: [DmsRegEq_11]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 7.5, "E_V": 1.5}
+- **DmsRegEqJnc_14** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Cu2(Citr)2(OH)2]4-, [Cu2(Citr)2(OH)]3-]
+  -- Neighboring regions: [DmsReg_5, DmsReg_8]
+  -- Connected boundary manifolds: [DmsRegEq_13]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 4.1, "E_V": 1.5}
+- **DmsRegEqJnc_15** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Cu(Chlo)2]-, Cu2+]
+  -- Neighboring regions: [DmsReg_7, DmsReg_9]
+  -- Connected boundary manifolds: [DmsRegEq_15]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 0.0, "E_V": 0.375}
+- **DmsRegEqJnc_16** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Cu2(Citr)2(OH)]3-, Cu2+]
+  -- Neighboring regions: [DmsReg_8, DmsReg_9]
+  -- Connected boundary manifolds: [DmsRegEq_16]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 3.3, "E_V": 1.5}
+
+## Canonical-to-source lookup
+The normalized JSON sidecar preserves the source collection, source ID, and intrinsic dimension for every canonical topology ID. Use that mapping for ID-scoped topology reads; the raw topology JSON is not part of this verdict text.
+
+## Calculation species by principal element
+- **Cu**
+  -- included: [Cu+, [Cu(Glyc)2]-, [Cu(Ammo)2]+, [Cu2(Chlo)4]2-, [Cu(Chlo)2]-, [Cu(Chlo)3]2-, [Cu(Chlo)], Cu2+, [Cu(OH)]+, [Cu2(OH)2]2+, [Cu(OH)2], HCuO2-, [Cu3(OH)4]2+, CuO22-, [Cu(Citr)H], [Cu2(Citr)2]2-, [Cu2(Citr)(OH)], [Cu2(Citr)2(OH)]3-, [Cu2(Citr)2(OH)2]4-, [Cu(Glyc)]+, [Cu(Glyc)2], [Cu(Ammo)4]2+, [Cu(Ammo)3]2+, [Cu(Ammo)2]2+, [Cu(Ammo)]2+, [Cu(Chlo)]+, [(Cu2O)0.5](s), [Cu(Chloride ion)](s), CuO(s), [Cu(OH)2](s), Cu]
+  -- excluded: [Cu2O, CuO, Cu(OH)2]
+- **Fe**
+  -- included: [Fe2+, [Fe(OH)]+, [Fe(OH)2], [Fe(OH)3]-, [Fe(OH)4]2-, [Fe(Citr)H2]+, [Fe(Citr)H], [Fe(Citr)2H]3-, [Fe(Citr)]-, [Fe2(Citr)2(OH)2]4-, [Fe(Glyc)]+, [Fe(Glyc)2], [Fe(Glyc)3]-, [Fe(Ammo)4]2+, [Fe(Ammo)3]2+, [Fe(Ammo)2]2+, [Fe(Ammo)]2+, [Fe(Chlo)]+, Fe3+, [Fe(OH)]2+, [Fe2(OH)2]4+, [Fe(OH)2]+, [Fe3(OH)4]5+, [Fe(OH)4]-, [Fe(Citr)H]+, [Fe(Citr)], [Fe(Citr)(OH)]-, [Fe2(Citr)2(OH)2]2-, [Fe(Glyc)2H2]3+, [Fe(Glyc)H]3+, [Fe(Glyc)]2+, [Fe(Chlo)2]+, [Fe(Chlo)]2+, FeO42-, [Fe(OH)2](s), Fe3O4 (anh.), [(Fe2O3)0.5(s,alpha)], Fe]
+  -- excluded: [HFeO2-, FeOH2+, Fe(OH)2 (hydr.), [FeO(OH)(s,alpha)], [Fe(OH)3](s), Fe(OH)3 (hydr.), Fe2O3 (anh.)]

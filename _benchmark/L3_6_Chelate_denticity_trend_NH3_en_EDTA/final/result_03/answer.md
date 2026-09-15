@@ -1,0 +1,30 @@
+## Doability
+Doable — Ni(II)/E…
+
+## Final deliverables
+
+- [LC1/lc1_2_eqmap_card.json](<LC1/lc1_2_eqmap_card.json>)
+- [LC1/lc1_sweep_input.json](<LC1/lc1_sweep_input.json>)
+- [LC1/status.json](<LC1/status.json>)
+- [LC2/free_energy_card.md](<LC2/free_energy_card.md>)
+- [LC2/status.json](<LC2/status.json>)
+- [LC2/thermodynamic_reference_constants.md](<LC2/thermodynamic_reference_constants.md>)
+- [LC3/calc_input_card.json](<LC3/calc_input_card.json>)
+- [LC3/status.json](<LC3/status.json>)
+- [LD/answer.md](<LD/answer.md>)
+- [LD/verdict.json](<LD/verdict.json>)
+- [solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_concentrations.csv](<solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_concentrations.csv>)
+- [solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_envelope_L1.csv](<solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_envelope_L1.csv>)
+- [solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_envelope_Ni$+2.csv](<solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_envelope_Ni$+2.csv>)
+- [solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_frac_L1.png](<solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_frac_L1.png>)
+- [solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_frac_ligand.csv](<solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_frac_ligand.csv>)
+- [solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_frac_metal.csv](<solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_frac_metal.csv>)
+- [solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_frac_Ni.png](<solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_frac_Ni.png>)
+- [solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_log_conc.csv](<solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_log_conc.csv>)
+- [solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_log_conc.png](<solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_log_conc.png>)
+- [solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_phase_balance_Ni.png](<solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_phase_balance_Ni.png>)
+- [solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_run_params.json](<solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_run_params.json>)
+- [solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_state_metrics.csv](<solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_state_metrics.csv>)
+- [solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_verdict.md](<solver/Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_verdict.md>)
+- [solver/topology_Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_Ni.json](<solver/topology_Ni$+2_+_Ni$+0_+_Ni$+3_+_Ni$+4_+_EDTA_Ni.json>)
+- [verdict.json](<verdict.json>)

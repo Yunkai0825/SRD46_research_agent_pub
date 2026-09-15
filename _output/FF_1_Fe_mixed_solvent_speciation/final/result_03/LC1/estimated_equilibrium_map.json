@@ -1,0 +1,274 @@
+{
+  "eq_map_collection": [
+    {
+      "collection_id": -1000001,
+      "metal_id": 61,
+      "ligand_id": 9621,
+      "metal_name": "Fe^[3+]",
+      "ligand_name": "Ethane-1,2-diol (Ethylene glycol)",
+      "total_entries": 1,
+      "total_networks": 1,
+      "unassigned_count": 0
+    },
+    {
+      "collection_id": -1000002,
+      "metal_id": 62,
+      "ligand_id": 9621,
+      "metal_name": "Fe^[2+]",
+      "ligand_name": "Ethane-1,2-diol (Ethylene glycol)",
+      "total_entries": 1,
+      "total_networks": 1,
+      "unassigned_count": 0
+    }
+  ],
+  "eq_map": [
+    {
+      "map_id": -2000001,
+      "collection_id": -1000001,
+      "map_key": "estimated_iter_0_T25_I0.1",
+      "condition_temperature": 25.0,
+      "condition_ionic_strength": 0.1,
+      "condition_temp_min": 25.0,
+      "condition_temp_max": 25.0,
+      "condition_ionic_min": 0.1,
+      "condition_ionic_max": 0.1,
+      "entry_count": 1,
+      "network_count": 1,
+      "stray_count": 0
+    },
+    {
+      "map_id": -2000002,
+      "collection_id": -1000002,
+      "map_key": "estimated_iter_0_T25_I0.1",
+      "condition_temperature": 25.0,
+      "condition_ionic_strength": 0.1,
+      "condition_temp_min": 25.0,
+      "condition_temp_max": 25.0,
+      "condition_ionic_min": 0.1,
+      "condition_ionic_max": 0.1,
+      "entry_count": 1,
+      "network_count": 1,
+      "stray_count": 0
+    }
+  ],
+  "eq_network": [
+    {
+      "network_db_id": -3000001,
+      "map_id": -2000001,
+      "network_id": 0,
+      "node_count": 1,
+      "edge_count": 0
+    },
+    {
+      "network_db_id": -3000002,
+      "map_id": -2000002,
+      "network_id": 0,
+      "node_count": 1,
+      "edge_count": 0
+    }
+  ],
+  "eq_node": [
+    {
+      "node_db_id": -4000001,
+      "network_db_id": -3000001,
+      "vlm_id": -5000001,
+      "entry_index": 0,
+      "metal_id": 61,
+      "ligand_id": 9621,
+      "beta_definition_id": 726,
+      "beta_definition_name": "[MH<sub>-1</sub>L][H]/[M][L]",
+      "equation_python": "[M] + [L] <=> [MH-1L] + [H]",
+      "constant_type": "K",
+      "constant_value": -4.0,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "is_duplicate": 0,
+      "used_in_map": 1
+    },
+    {
+      "node_db_id": -4000002,
+      "network_db_id": -3000002,
+      "vlm_id": -5000002,
+      "entry_index": 0,
+      "metal_id": 62,
+      "ligand_id": 9621,
+      "beta_definition_id": 726,
+      "beta_definition_name": "[MH<sub>-1</sub>L][H]/[M][L]",
+      "equation_python": "[M] + [L] <=> [MH-1L] + [H]",
+      "constant_type": "K",
+      "constant_value": -12.0,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "is_duplicate": 0,
+      "used_in_map": 1
+    }
+  ],
+  "eq_node_species": [
+    {
+      "node_db_id": -4000001,
+      "species": "[L]",
+      "side": "LHS"
+    },
+    {
+      "node_db_id": -4000001,
+      "species": "[M]",
+      "side": "LHS"
+    },
+    {
+      "node_db_id": -4000001,
+      "species": "[H]",
+      "side": "RHS"
+    },
+    {
+      "node_db_id": -4000001,
+      "species": "[MH-1L]",
+      "side": "RHS"
+    },
+    {
+      "node_db_id": -4000002,
+      "species": "[L]",
+      "side": "LHS"
+    },
+    {
+      "node_db_id": -4000002,
+      "species": "[M]",
+      "side": "LHS"
+    },
+    {
+      "node_db_id": -4000002,
+      "species": "[H]",
+      "side": "RHS"
+    },
+    {
+      "node_db_id": -4000002,
+      "species": "[MH-1L]",
+      "side": "RHS"
+    }
+  ],
+  "eq_edge": [],
+  "eq_edge_species": [],
+  "eq_network_species": [
+    {
+      "network_db_id": -3000001,
+      "species": "[H]"
+    },
+    {
+      "network_db_id": -3000001,
+      "species": "[L]"
+    },
+    {
+      "network_db_id": -3000001,
+      "species": "[MH-1L]"
+    },
+    {
+      "network_db_id": -3000001,
+      "species": "[M]"
+    },
+    {
+      "network_db_id": -3000002,
+      "species": "[H]"
+    },
+    {
+      "network_db_id": -3000002,
+      "species": "[L]"
+    },
+    {
+      "network_db_id": -3000002,
+      "species": "[MH-1L]"
+    },
+    {
+      "network_db_id": -3000002,
+      "species": "[M]"
+    }
+  ],
+  "eq_map_stray": [],
+  "eq_collection_unassigned": [],
+  "estimated_provenance": {
+    "-4000002": {
+      "assumptions": [
+        "dilute aqueous reference state, 25 °C, I = 0.1 M (NaClO₄/NaCl); values labeled \"estimate\" throughout. Uncertainties are wider than typical SRD‑46 measured constants because they are derived from analog scaling, not direct measurement."
+      ],
+      "estimation_method": "Ln³⁺ series (vlm_166916 – vlm_166930) log K ≈ −6.5 to −8.5; scale by (z=2 vs 3) and by weaker Lewis acidity of Fe²⁺ → ~4–6 log units more negative. Flag: not competitive with Fe(OH)⁺/Fe(OH)₂ hydrolysis; can be omitted from Pourbaix.",
+      "evidence_citation_ids": [
+        "lit_8171"
+      ],
+      "evidence_network_ids": [],
+      "evidence_topology_diagnostics": {
+        "analogue_vlm_ids": [],
+        "beta_definition_id": 726,
+        "equilibrium_index": 0,
+        "evidence_citation_ids": [
+          8171
+        ],
+        "evidence_network_ids": [],
+        "evidence_vlm_ids": [
+          166916,
+          166930
+        ],
+        "matching_beta_vlm_ids": [
+          166916,
+          166930
+        ],
+        "topology_grounding": "same_beta_evidence"
+      },
+      "evidence_vlm_ids": [
+        "vlm_166916",
+        "vlm_166930"
+      ],
+      "rationale": "Ln³⁺ series (vlm_166916 – vlm_166930) log K ≈ −6.5 to −8.5; scale by (z=2 vs 3) and by weaker Lewis acidity of Fe²⁺ → ~4–6 log units more negative. Flag: not competitive with Fe(OH)⁺/Fe(OH)₂ hydrolysis; can be omitted from Pourbaix.",
+      "source": "SRD46 query estimated values",
+      "topology_resolution": null,
+      "topology_source": "beta_def_726",
+      "uncertainty_log10": 2.0
+    },
+    "-4000001": {
+      "assumptions": [
+        "empirical Fe/Y offset of +3 to +5 log units seen in matched hydrolysis and α-hydroxycarboxylate chemistry"
+      ],
+      "estimation_method": "Double-difference bracket.",
+      "evidence_citation_ids": [],
+      "evidence_network_ids": [],
+      "evidence_topology_diagnostics": {
+        "analogue_vlm_ids": [
+          147410,
+          147411,
+          147412,
+          155038
+        ],
+        "beta_definition_id": 726,
+        "equilibrium_index": 0,
+        "evidence_citation_ids": [],
+        "evidence_network_ids": [],
+        "evidence_vlm_ids": [
+          147410,
+          147411,
+          147412,
+          155038,
+          166916
+        ],
+        "matching_beta_vlm_ids": [
+          166916
+        ],
+        "topology_grounding": "same_beta_evidence"
+      },
+      "evidence_vlm_ids": [
+        "vlm_166916",
+        "vlm_147410",
+        "vlm_147411",
+        "vlm_147412",
+        "vlm_155038"
+      ],
+      "rationale": "Both routes converge on log K ≈ −3 to −5.",
+      "source": "SRD46 query estimated values",
+      "topology_resolution": null,
+      "topology_source": "beta_def_726",
+      "uncertainty_log10": 1.0
+    }
+  },
+  "metadata": {
+    "source": "SRD46 query estimated values",
+    "authoritative": false,
+    "request_temperature_C": 25.0,
+    "request_ionic_strength_M": 0.1
+  }
+}

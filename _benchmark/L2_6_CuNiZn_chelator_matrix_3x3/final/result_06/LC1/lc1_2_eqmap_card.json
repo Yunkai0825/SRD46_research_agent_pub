@@ -1,0 +1,70 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_22067",
+      "node_count": 3,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 9058,
+      "ligand_name": "2-Hydroxypropane-1,2,3-tricarboxylic acid (Citric acid)",
+      "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+      "ligand_canonical_HxL": "H3L"
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_22176",
+      "node_count": 6,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 112,
+      "metal_name": "Ni^[2+]",
+      "ligand_id": 9058,
+      "ligand_name": "2-Hydroxypropane-1,2,3-tricarboxylic acid (Citric acid)",
+      "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+      "ligand_canonical_HxL": "H3L",
+      "final_adjustments": [
+        {
+          "node_key": "metal112_ligand9058_beta840_net22176",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 157644,
+          "operation": "set_value",
+          "chosen_value": 8.355,
+          "rationale": "Only 2 K-siblings at request (T=25C, I=0.1M): vlm_157644=+8.130 and vlm_157645=+8.580, range 0.45. No basis to prefer either individually; using their mean/median 8.355 as the consensus estimate for the ML2 formation constant."
+        },
+        {
+          "node_key": "metal112_ligand9058_beta800_net22176",
+          "beta_definition_id": 800,
+          "examined_vlm_id": 157655,
+          "operation": "set_value",
+          "chosen_value": 4.505,
+          "rationale": "Only 2 K-siblings at request (T=25C, I=0.1M): vlm_157655=+4.400 and vlm_157656=+4.610, range 0.21. No basis to prefer either; using their mean/median 4.505 as the consensus estimate for the MHL2 formation."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27439",
+      "node_count": 5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 112,
+      "metal_name": "Ni^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    }
+  ]
+}

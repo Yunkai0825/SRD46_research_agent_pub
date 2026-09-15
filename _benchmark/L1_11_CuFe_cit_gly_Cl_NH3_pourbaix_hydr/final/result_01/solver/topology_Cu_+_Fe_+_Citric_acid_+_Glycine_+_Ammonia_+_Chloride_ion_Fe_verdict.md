@@ -1,0 +1,543 @@
+# Solver report (Pourbaix)
+
+## System
+- Components: [Cu, Fe, Citric acid, Glycine, Ammonia, Chloride ion]
+- Constraints:
+  -- component totals (M): Cu=0.001;Fe=0.001;Citric acid=0.01;Glycine=0.01;Ammonia=0.1;Chloride ion=0.1
+- Potential reference: SHE
+- Domain: pH [0, 14]; E_V [-1, 1.5]
+- Coarse grid spacing: ΔpH=not reported; ΔE_V=not reported
+- Final classified-grid spacing: ΔpH=0.0125; ΔE_V=0.003125
+- Semantics: Each connected region is the dominant calculated entity for the reported classification rule, not the exclusive entity present and not a kinetic prediction.
+- Cut basis: Final classified label grid; no cut transition is inferred from compact/RDP geometry.
+
+## Dominant species catalog
+- Dms_1: Fe
+- Dms_2: [Fe(OH)3]-
+- Dms_3: [Fe(OH)2](s)
+- Dms_4: [Fe2(Citr)2(OH)2]4-
+- Dms_5: Fe2+
+- Dms_6: [Fe(Citr)]-
+- Dms_7: [Fe(OH)3](s)
+- Dms_8: [Fe2(Citr)2(OH)2]2-
+- Dms_9: FeO42-
+- Dms_10: [Fe(Citr)]
+- Dms_11: Fe3+
+
+## Topology stats
+- 11 dominant-species labels
+- 13 connected regions
+- 29 pairwise boundary curves
+- 17 internal junction features
+- 7 junction features at a sweep limit
+- Disconnected dominant species:
+  -- [Fe(Citr)]-: 3 separate regions [DmsReg_5, DmsReg_6, DmsReg_9]
+
+## Example classified-grid cut along pH
+- Fixed coordinates in domain order: [not reported, 0.2484375]
+- Fixed sample indices in domain order: [None, 399]
+- samples 0–324, pH [0.00625, 4.05625]: Fe2+ (Dms_5)
+- samples 325–375, pH [4.06875, 4.69375]: [Fe(Citr)]- (Dms_6)
+  -- preceding label change is bracketed by adjacent samples [4.05625, 4.06875]
+- samples 376–503, pH [4.70625, 6.29375]: [Fe2(Citr)2(OH)2]2- (Dms_8)
+  -- preceding label change is bracketed by adjacent samples [4.69375, 4.70625]
+- samples 504–1103, pH [6.30625, 13.79375]: [Fe(OH)3](s) (Dms_7)
+  -- preceding label change is bracketed by adjacent samples [6.29375, 6.30625]
+- samples 1104–1119, pH [13.80625, 13.99375]: FeO42- (Dms_9)
+  -- preceding label change is bracketed by adjacent samples [13.79375, 13.80625]
+
+## Example classified-grid cut along E_V
+- Fixed coordinates in domain order: [6.99375, not reported]
+- Fixed sample indices in domain order: [559, None]
+- samples 0–135, E_V [-0.9984375, -0.5765625]: Fe (Dms_1)
+- samples 136–328, E_V [-0.5734375, 0.0265625]: [Fe(Citr)]- (Dms_6)
+  -- preceding label change is bracketed by adjacent samples [-0.5765625, -0.5734375]
+- samples 329–613, E_V [0.0296875, 0.9171875]: [Fe(OH)3](s) (Dms_7)
+  -- preceding label change is bracketed by adjacent samples [0.0265625, 0.0296875]
+- samples 614–799, E_V [0.9203125, 1.4984375]: FeO42- (Dms_9)
+  -- preceding label change is bracketed by adjacent samples [0.9171875, 0.9203125]
+
+## Topology details
+// Coordinate order: [pH, E_V]
+
+### canonical topology convention
+| Canonical family | Meaning |
+|---|---|
+| `Dms_i` | Dominant-species label |
+| `DmsReg_i` | Connected region |
+| `DmsRegEq_i` | Connected pairwise boundary manifold |
+| `DmsRegEqJnc_i` | Lower-dimensional junction feature |
+
+### regions
+- **DmsReg_1 {Fe}**
+  -- Measure in the solver coordinate frame: 5.2927734
+  -- Neighboring regions:
+    --- DmsReg_2 {[Fe(OH)3]-} via DmsRegEq_1
+    --- DmsReg_3 {[Fe(OH)2](s)} via DmsRegEq_2
+    --- DmsReg_4 {[Fe2(Citr)2(OH)2]4-} via DmsRegEq_3
+    --- DmsReg_4 {[Fe2(Citr)2(OH)2]4-} via DmsRegEq_4
+    --- DmsReg_7 {Fe2+} via DmsRegEq_5
+    --- DmsReg_5 {[Fe(Citr)]-} via DmsRegEq_6
+    --- DmsReg_6 {[Fe(Citr)]-} via DmsRegEq_7
+  -- Junction features: [DmsRegEqJnc_18, DmsRegEqJnc_1, DmsRegEqJnc_2, DmsRegEqJnc_3, DmsRegEqJnc_4, DmsRegEqJnc_5, DmsRegEqJnc_19, DmsRegEqJnc_6]
+- **DmsReg_2 {[Fe(OH)3]-}**
+  -- Measure in the solver coordinate frame: 0.64332031
+  -- Neighboring regions:
+    --- DmsReg_1 {Fe} via DmsRegEq_1
+    --- DmsReg_3 {[Fe(OH)2](s)} via DmsRegEq_8
+    --- DmsReg_8 {[Fe(OH)3](s)} via DmsRegEq_9
+  -- Junction features: [DmsRegEqJnc_18, DmsRegEqJnc_1, DmsRegEqJnc_7, DmsRegEqJnc_20]
+- **DmsReg_3 {[Fe(OH)2](s)}**
+  -- Measure in the solver coordinate frame: 0.30617188
+  -- Neighboring regions:
+    --- DmsReg_1 {Fe} via DmsRegEq_2
+    --- DmsReg_2 {[Fe(OH)3]-} via DmsRegEq_8
+    --- DmsReg_4 {[Fe2(Citr)2(OH)2]4-} via DmsRegEq_10
+    --- DmsReg_8 {[Fe(OH)3](s)} via DmsRegEq_11
+  -- Junction features: [DmsRegEqJnc_2, DmsRegEqJnc_1, DmsRegEqJnc_7, DmsRegEqJnc_8]
+- **DmsReg_4 {[Fe2(Citr)2(OH)2]4-}**
+  -- Measure in the solver coordinate frame: 0.85136719
+  -- Neighboring regions:
+    --- DmsReg_1 {Fe} via DmsRegEq_3
+    --- DmsReg_1 {Fe} via DmsRegEq_4
+    --- DmsReg_3 {[Fe(OH)2](s)} via DmsRegEq_10
+    --- DmsReg_5 {[Fe(Citr)]-} via DmsRegEq_12
+    --- DmsReg_6 {[Fe(Citr)]-} via DmsRegEq_13
+    --- DmsReg_9 {[Fe(Citr)]-} via DmsRegEq_14
+    --- DmsReg_8 {[Fe(OH)3](s)} via DmsRegEq_15
+    --- DmsReg_8 {[Fe(OH)3](s)} via DmsRegEq_16
+  -- Junction features: [DmsRegEqJnc_2, DmsRegEqJnc_3, DmsRegEqJnc_4, DmsRegEqJnc_5, DmsRegEqJnc_8, DmsRegEqJnc_10, DmsRegEqJnc_9, DmsRegEqJnc_11]
+- **DmsReg_5 {[Fe(Citr)]-}**
+  -- Measure in the solver coordinate frame: 3.90625e-05
+  -- Neighboring regions:
+    --- DmsReg_1 {Fe} via DmsRegEq_6
+    --- DmsReg_4 {[Fe2(Citr)2(OH)2]4-} via DmsRegEq_12
+  -- Junction features: [DmsRegEqJnc_3, DmsRegEqJnc_5]
+- **DmsReg_6 {[Fe(Citr)]-}**
+  -- Measure in the solver coordinate frame: 2.7358203
+  -- Neighboring regions:
+    --- DmsReg_1 {Fe} via DmsRegEq_7
+    --- DmsReg_4 {[Fe2(Citr)2(OH)2]4-} via DmsRegEq_13
+    --- DmsReg_7 {Fe2+} via DmsRegEq_17
+    --- DmsReg_8 {[Fe(OH)3](s)} via DmsRegEq_22
+    --- DmsReg_10 {[Fe2(Citr)2(OH)2]2-} via DmsRegEq_23
+  -- Junction features: [DmsRegEqJnc_4, DmsRegEqJnc_6, DmsRegEqJnc_10, DmsRegEqJnc_13, DmsRegEqJnc_12]
+- **DmsReg_7 {Fe2+}**
+  -- Measure in the solver coordinate frame: 4.6530469
+  -- Neighboring regions:
+    --- DmsReg_1 {Fe} via DmsRegEq_5
+    --- DmsReg_6 {[Fe(Citr)]-} via DmsRegEq_17
+    --- DmsReg_10 {[Fe2(Citr)2(OH)2]2-} via DmsRegEq_18
+    --- DmsReg_12 {[Fe(Citr)]} via DmsRegEq_19
+    --- DmsReg_13 {Fe3+} via DmsRegEq_20
+  -- Junction features: [DmsRegEqJnc_19, DmsRegEqJnc_6, DmsRegEqJnc_13, DmsRegEqJnc_14, DmsRegEqJnc_15, DmsRegEqJnc_21]
+- **DmsReg_8 {[Fe(OH)3](s)}**
+  -- Measure in the solver coordinate frame: 7.1630078
+  -- Neighboring regions:
+    --- DmsReg_2 {[Fe(OH)3]-} via DmsRegEq_9
+    --- DmsReg_3 {[Fe(OH)2](s)} via DmsRegEq_11
+    --- DmsReg_4 {[Fe2(Citr)2(OH)2]4-} via DmsRegEq_15
+    --- DmsReg_4 {[Fe2(Citr)2(OH)2]4-} via DmsRegEq_16
+    --- DmsReg_9 {[Fe(Citr)]-} via DmsRegEq_21
+    --- DmsReg_6 {[Fe(Citr)]-} via DmsRegEq_22
+    --- DmsReg_10 {[Fe2(Citr)2(OH)2]2-} via DmsRegEq_24
+    --- DmsReg_11 {FeO42-} via DmsRegEq_25
+  -- Junction features: [DmsRegEqJnc_20, DmsRegEqJnc_7, DmsRegEqJnc_8, DmsRegEqJnc_9, DmsRegEqJnc_10, DmsRegEqJnc_11, DmsRegEqJnc_12, DmsRegEqJnc_16, DmsRegEqJnc_22]
+- **DmsReg_9 {[Fe(Citr)]-}**
+  -- Measure in the solver coordinate frame: 3.90625e-05
+  -- Neighboring regions:
+    --- DmsReg_4 {[Fe2(Citr)2(OH)2]4-} via DmsRegEq_14
+    --- DmsReg_8 {[Fe(OH)3](s)} via DmsRegEq_21
+  -- Junction features: [DmsRegEqJnc_9, DmsRegEqJnc_11]
+- **DmsReg_10 {[Fe2(Citr)2(OH)2]2-}**
+  -- Measure in the solver coordinate frame: 4.0710547
+  -- Neighboring regions:
+    --- DmsReg_7 {Fe2+} via DmsRegEq_18
+    --- DmsReg_6 {[Fe(Citr)]-} via DmsRegEq_23
+    --- DmsReg_8 {[Fe(OH)3](s)} via DmsRegEq_24
+    --- DmsReg_11 {FeO42-} via DmsRegEq_26
+    --- DmsReg_12 {[Fe(Citr)]} via DmsRegEq_27
+  -- Junction features: [DmsRegEqJnc_13, DmsRegEqJnc_14, DmsRegEqJnc_12, DmsRegEqJnc_16, DmsRegEqJnc_17]
+- **DmsReg_11 {FeO42-}**
+  -- Measure in the solver coordinate frame: 7.9420703
+  -- Neighboring regions:
+    --- DmsReg_8 {[Fe(OH)3](s)} via DmsRegEq_25
+    --- DmsReg_10 {[Fe2(Citr)2(OH)2]2-} via DmsRegEq_26
+    --- DmsReg_12 {[Fe(Citr)]} via DmsRegEq_28
+  -- Junction features: [DmsRegEqJnc_16, DmsRegEqJnc_22, DmsRegEqJnc_17, DmsRegEqJnc_23]
+- **DmsReg_12 {[Fe(Citr)]}**
+  -- Measure in the solver coordinate frame: 0.27640625
+  -- Neighboring regions:
+    --- DmsReg_7 {Fe2+} via DmsRegEq_19
+    --- DmsReg_10 {[Fe2(Citr)2(OH)2]2-} via DmsRegEq_27
+    --- DmsReg_11 {FeO42-} via DmsRegEq_28
+    --- DmsReg_13 {Fe3+} via DmsRegEq_29
+  -- Junction features: [DmsRegEqJnc_14, DmsRegEqJnc_15, DmsRegEqJnc_17, DmsRegEqJnc_23, DmsRegEqJnc_24]
+- **DmsReg_13 {Fe3+}**
+  -- Measure in the solver coordinate frame: 1.0648828
+  -- Neighboring regions:
+    --- DmsReg_7 {Fe2+} via DmsRegEq_20
+    --- DmsReg_12 {[Fe(Citr)]} via DmsRegEq_29
+  -- Junction features: [DmsRegEqJnc_21, DmsRegEqJnc_15, DmsRegEqJnc_24]
+
+### boundary curves/equilibria
+- **DmsRegEq_1: Fe | [Fe(OH)3]-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_1, DmsReg_2]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[14.0, -0.9219], [13.725, -0.9], [13.7, -0.8938], [13.55, -0.8844], [13.525, -0.8781], [11.9125, -0.7375]]
+  -- Boundary/junction features: [DmsRegEqJnc_18, DmsRegEqJnc_1]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 227, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 29, 33, 48, 52, 226], "t_params": [0.0, 0.1316, 0.1439, 0.2156, 0.2279, 1.0], "envelope_n": 6, "envelope_pts": [[14.0, -0.9219], [13.725, -0.9], [13.7, -0.8938], [13.55, -0.8844], [13.525, -0.8781], [11.9125, -0.7375]], "envelope_t": [0.0, 0.1316, 0.1439, 0.2156, 0.2279, 1.0], "adaptive_n": 2, "adaptive_pts": [[14.0, -0.9219], [11.9125, -0.7375]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_2: Fe | [Fe(OH)2](s)**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_1, DmsReg_3]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[11.9125, -0.7375], [11.475, -0.7094], [11.4125, -0.7094], [11.2625, -0.6969], [11.2, -0.6969], [10.4875, -0.6531]]
+  -- Boundary/junction features: [DmsRegEqJnc_1, DmsRegEqJnc_2]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 142, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 44, 49, 65, 70, 141], "t_params": [0.0, 0.3071, 0.3508, 0.4563, 0.5, 1.0], "envelope_n": 6, "envelope_pts": [[11.9125, -0.7375], [11.475, -0.7094], [11.4125, -0.7094], [11.2625, -0.6969], [11.2, -0.6969], [10.4875, -0.6531]], "envelope_t": [0.0, 0.3071, 0.3508, 0.4563, 0.5, 1.0], "adaptive_n": 2, "adaptive_pts": [[11.9125, -0.7375], [10.4875, -0.6531]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_3: Fe | [Fe2(Citr)2(OH)2]4-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_1, DmsReg_4]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[10.4875, -0.6531], [9.3, -0.6219], [8.675, -0.6], [8.3375, -0.5938], [8.3375, -0.5906], [8.0875, -0.5875]]
+  -- Boundary/junction features: [DmsRegEqJnc_2, DmsRegEqJnc_3]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 214, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 105, 162, 191, 192, 213], "t_params": [0.0, 0.4941, 0.7543, 0.8947, 0.896, 1.0], "envelope_n": 6, "envelope_pts": [[10.4875, -0.6531], [9.3, -0.6219], [8.675, -0.6], [8.3375, -0.5938], [8.3375, -0.5906], [8.0875, -0.5875]], "envelope_t": [0.0, 0.4941, 0.7543, 0.8947, 0.896, 1.0], "adaptive_n": 2, "adaptive_pts": [[10.4875, -0.6531], [8.0875, -0.5875]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_4: Fe | [Fe2(Citr)2(OH)2]4-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_1, DmsReg_4]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[8.0375, -0.5844], [8.05, -0.5844], [8.0625, -0.5844], [8.075, -0.5844]]
+  -- Boundary/junction features: [DmsRegEqJnc_4, DmsRegEqJnc_5]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 4, "compact_n": 4, "compact_target_n": 6, "compact_indices": [0, 1, 2, 3], "t_params": [0.0, 0.3333, 0.6667, 1.0], "envelope_n": 6, "envelope_pts": [[8.0375, -0.5844], [8.05, -0.5844], [8.0625, -0.5844], [8.075, -0.5844]], "envelope_t": [0.0, 0.3333, 0.6667, 1.0], "adaptive_n": 2, "adaptive_pts": [[8.0375, -0.5844], [8.075, -0.5844]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_5: Fe | Fe2+**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_1, DmsReg_7]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[4.0375, -0.5531], [3.675, -0.5469], [3.675, -0.5438], [2.825, -0.5406], [2.825, -0.5375], [0.0, -0.5375]]
+  -- Boundary/junction features: [DmsRegEqJnc_6, DmsRegEqJnc_19]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 329, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 31, 32, 101, 102, 328], "t_params": [0.0, 0.0897, 0.0904, 0.3006, 0.3014, 1.0], "envelope_n": 6, "envelope_pts": [[4.0375, -0.5531], [3.675, -0.5469], [3.675, -0.5438], [2.825, -0.5406], [2.825, -0.5375], [0.0, -0.5375]], "envelope_t": [0.0, 0.0897, 0.0904, 0.3006, 0.3014, 1.0], "adaptive_n": 2, "adaptive_pts": [[4.0375, -0.5531], [0.0, -0.5375]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_6: Fe | [Fe(Citr)]-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_1, DmsReg_5]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[8.0875, -0.5875], [8.075, -0.5875], [8.075, -0.5844]]
+  -- Boundary/junction features: [DmsRegEqJnc_3, DmsRegEqJnc_5]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 3, "compact_n": 3, "compact_target_n": 6, "compact_indices": [0, 1, 2], "t_params": [0.0, 0.8, 1.0], "envelope_n": 6, "envelope_pts": [[8.0875, -0.5875], [8.075, -0.5875], [8.075, -0.5844]], "envelope_t": [0.0, 0.8, 1.0], "adaptive_n": 2, "adaptive_pts": [[8.0875, -0.5875], [8.075, -0.5844]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_7: Fe | [Fe(Citr)]-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_1, DmsReg_6]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[8.0375, -0.5844], [7.2375, -0.575], [5.2625, -0.575], [5.2625, -0.5719], [4.7125, -0.5688], [4.0375, -0.5531]]
+  -- Boundary/junction features: [DmsRegEqJnc_4, DmsRegEqJnc_6]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 331, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 67, 225, 226, 271, 330], "t_params": [0.0, 0.1998, 0.6932, 0.694, 0.8313, 1.0], "envelope_n": 6, "envelope_pts": [[8.0375, -0.5844], [7.2375, -0.575], [5.2625, -0.575], [5.2625, -0.5719], [4.7125, -0.5688], [4.0375, -0.5531]], "envelope_t": [0.0, 0.1998, 0.6932, 0.694, 0.8313, 1.0], "adaptive_n": 2, "adaptive_pts": [[8.0375, -0.5844], [4.0375, -0.5531]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_8: [Fe(OH)3]- | [Fe(OH)2](s)**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_2, DmsReg_3]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[11.9125, -0.7375], [11.9125, -0.7344], [11.9125, -0.7312], [11.9125, -0.5688], [11.9125, -0.5656], [11.9125, -0.5219]]
+  -- Boundary/junction features: [DmsRegEqJnc_1, DmsRegEqJnc_7]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 70, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 1, 2, 54, 55, 69], "t_params": [0.0, 0.0145, 0.029, 0.7826, 0.7971, 1.0], "envelope_n": 6, "envelope_pts": [[11.9125, -0.7375], [11.9125, -0.7344], [11.9125, -0.7312], [11.9125, -0.5688], [11.9125, -0.5656], [11.9125, -0.5219]], "envelope_t": [0.0, 0.0145, 0.029, 0.7826, 0.7971, 1.0], "adaptive_n": 2, "adaptive_pts": [[11.9125, -0.7375], [11.9125, -0.5219]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_9: [Fe(OH)3]- | [Fe(OH)3](s)**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_2, DmsReg_8]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[11.9125, -0.5219], [11.925, -0.5219], [11.9375, -0.5219], [13.7875, -0.5219], [13.7875, -0.5188], [14.0, -0.5188]]
+  -- Boundary/junction features: [DmsRegEqJnc_7, DmsRegEqJnc_20]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 169, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 1, 2, 150, 151, 168], "t_params": [0.0, 0.006, 0.012, 0.8969, 0.8984, 1.0], "envelope_n": 6, "envelope_pts": [[11.9125, -0.5219], [11.925, -0.5219], [11.9375, -0.5219], [13.7875, -0.5219], [13.7875, -0.5188], [14.0, -0.5188]], "envelope_t": [0.0, 0.006, 0.012, 0.8969, 0.8984, 1.0], "adaptive_n": 2, "adaptive_pts": [[11.9125, -0.5219], [14.0, -0.5188]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_10: [Fe(OH)2](s) | [Fe2(Citr)2(OH)2]4-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_3, DmsReg_4]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[10.4875, -0.6531], [10.4875, -0.65], [10.4875, -0.6469], [10.4875, -0.4938], [10.4875, -0.4875], [10.4875, -0.4375]]
+  -- Boundary/junction features: [DmsRegEqJnc_2, DmsRegEqJnc_8]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 70, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 1, 2, 51, 53, 69], "t_params": [0.0, 0.0145, 0.029, 0.7391, 0.7681, 1.0], "envelope_n": 6, "envelope_pts": [[10.4875, -0.6531], [10.4875, -0.65], [10.4875, -0.6469], [10.4875, -0.4938], [10.4875, -0.4875], [10.4875, -0.4375]], "envelope_t": [0.0, 0.0145, 0.029, 0.7391, 0.7681, 1.0], "adaptive_n": 2, "adaptive_pts": [[10.4875, -0.6531], [10.4875, -0.4375]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_11: [Fe(OH)2](s) | [Fe(OH)3](s)**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_3, DmsReg_8]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[11.9125, -0.5219], [11.5125, -0.4969], [11.45, -0.4969], [11.25, -0.4813], [11.1875, -0.4813], [10.4875, -0.4375]]
+  -- Boundary/junction features: [DmsRegEqJnc_7, DmsRegEqJnc_8]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 142, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 40, 45, 66, 71, 141], "t_params": [0.0, 0.2807, 0.3245, 0.465, 0.5088, 1.0], "envelope_n": 6, "envelope_pts": [[11.9125, -0.5219], [11.5125, -0.4969], [11.45, -0.4969], [11.25, -0.4813], [11.1875, -0.4813], [10.4875, -0.4375]], "envelope_t": [0.0, 0.2807, 0.3245, 0.465, 0.5088, 1.0], "adaptive_n": 2, "adaptive_pts": [[11.9125, -0.5219], [10.4875, -0.4375]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_12: [Fe2(Citr)2(OH)2]4- | [Fe(Citr)]-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_4, DmsReg_5]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[8.0875, -0.5875], [8.0875, -0.5844], [8.075, -0.5844]]
+  -- Boundary/junction features: [DmsRegEqJnc_3, DmsRegEqJnc_5]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 3, "compact_n": 3, "compact_target_n": 6, "compact_indices": [0, 1, 2], "t_params": [0.0, 0.2, 1.0], "envelope_n": 6, "envelope_pts": [[8.0875, -0.5875], [8.0875, -0.5844], [8.075, -0.5844]], "envelope_t": [0.0, 0.2, 1.0], "adaptive_n": 2, "adaptive_pts": [[8.0875, -0.5875], [8.075, -0.5844]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_13: [Fe2(Citr)2(OH)2]4- | [Fe(Citr)]-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_4, DmsReg_6]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[8.0375, -0.5844], [7.9875, -0.5813], [7.9875, -0.5781], [7.9375, -0.5781], [7.9375, -0.1375], [8.0625, -0.1437]]
+  -- Boundary/junction features: [DmsRegEqJnc_4, DmsRegEqJnc_10]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 164, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 5, 6, 10, 151, 163], "t_params": [0.0, 0.0749, 0.0796, 0.1543, 0.8129, 1.0], "envelope_n": 6, "envelope_pts": [[8.0375, -0.5844], [7.9875, -0.5813], [7.9875, -0.5781], [7.9375, -0.5781], [7.9375, -0.1375], [8.0625, -0.1437]], "envelope_t": [0.0, 0.0749, 0.0796, 0.1543, 0.8129, 1.0], "adaptive_n": 2, "adaptive_pts": [[8.0375, -0.5844], [8.0625, -0.1437]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_14: [Fe2(Citr)2(OH)2]4- | [Fe(Citr)]-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_4, DmsReg_9]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[8.0875, -0.1469], [8.075, -0.1469], [8.075, -0.1437]]
+  -- Boundary/junction features: [DmsRegEqJnc_9, DmsRegEqJnc_11]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 3, "compact_n": 3, "compact_target_n": 6, "compact_indices": [0, 1, 2], "t_params": [0.0, 0.8, 1.0], "envelope_n": 6, "envelope_pts": [[8.0875, -0.1469], [8.075, -0.1469], [8.075, -0.1437]], "envelope_t": [0.0, 0.8, 1.0], "adaptive_n": 2, "adaptive_pts": [[8.0875, -0.1469], [8.075, -0.1437]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_15: [Fe2(Citr)2(OH)2]4- | [Fe(OH)3](s)**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_4, DmsReg_8]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[10.4875, -0.4375], [9.5625, -0.3219], [9.525, -0.3219], [9.225, -0.2812], [8.55, -0.2062], [8.0875, -0.1469]]
+  -- Boundary/junction features: [DmsRegEqJnc_8, DmsRegEqJnc_9]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 286, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 111, 114, 151, 229, 285], "t_params": [0.0, 0.3855, 0.4011, 0.5263, 0.8071, 1.0], "envelope_n": 6, "envelope_pts": [[10.4875, -0.4375], [9.5625, -0.3219], [9.525, -0.3219], [9.225, -0.2812], [8.55, -0.2062], [8.0875, -0.1469]], "envelope_t": [0.0, 0.3855, 0.4011, 0.5263, 0.8071, 1.0], "adaptive_n": 2, "adaptive_pts": [[10.4875, -0.4375], [8.0875, -0.1469]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_16: [Fe2(Citr)2(OH)2]4- | [Fe(OH)3](s)**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_4, DmsReg_8]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[8.0625, -0.1437], [8.075, -0.1437]]
+  -- Boundary/junction features: [DmsRegEqJnc_10, DmsRegEqJnc_11]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 2, "compact_n": 2, "compact_target_n": 6, "compact_indices": [0, 1], "t_params": [0.0, 1.0], "envelope_n": 6, "envelope_pts": [[8.0625, -0.1437], [8.075, -0.1437]], "envelope_t": [0.0, 1.0], "adaptive_n": 2, "adaptive_pts": [[8.0625, -0.1437], [8.075, -0.1437]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_17: Fe2+ | [Fe(Citr)]-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_6, DmsReg_7]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[4.0375, -0.5531], [4.0375, -0.5438], [4.05, -0.5438], [4.05, 0.2375], [4.0625, 0.2375], [4.075, 0.2906]]
+  -- Boundary/junction features: [DmsRegEqJnc_6, DmsRegEqJnc_13]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 274, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 3, 4, 254, 255, 273], "t_params": [0.0, 0.0108, 0.0251, 0.9229, 0.9373, 1.0], "envelope_n": 6, "envelope_pts": [[4.0375, -0.5531], [4.0375, -0.5438], [4.05, -0.5438], [4.05, 0.2375], [4.0625, 0.2375], [4.075, 0.2906]], "envelope_t": [0.0, 0.0108, 0.0251, 0.9229, 0.9373, 1.0], "adaptive_n": 2, "adaptive_pts": [[4.0375, -0.5531], [4.075, 0.2906]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_18: Fe2+ | [Fe2(Citr)2(OH)2]2-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_7, DmsReg_10]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[4.075, 0.2906], [3.6, 0.3531], [3.1, 0.4375], [2.4375, 0.575], [2.4125, 0.575], [1.8875, 0.7]]
+  -- Boundary/junction features: [DmsRegEqJnc_13, DmsRegEqJnc_14]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 307, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 58, 125, 222, 224, 306], "t_params": [0.0, 0.2151, 0.4427, 0.7465, 0.7577, 1.0], "envelope_n": 6, "envelope_pts": [[4.075, 0.2906], [3.6, 0.3531], [3.1, 0.4375], [2.4375, 0.575], [2.4125, 0.575], [1.8875, 0.7]], "envelope_t": [0.0, 0.2151, 0.4427, 0.7465, 0.7577, 1.0], "adaptive_n": 2, "adaptive_pts": [[4.075, 0.2906], [1.8875, 0.7]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_19: Fe2+ | [Fe(Citr)]**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_7, DmsReg_12]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[1.8875, 0.7], [1.65, 0.7406], [1.625, 0.7406], [1.6, 0.75], [1.575, 0.75], [1.4625, 0.7719]]
+  -- Boundary/junction features: [DmsRegEqJnc_14, DmsRegEqJnc_15]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 58, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 32, 34, 39, 41, 57], "t_params": [0.0, 0.5574, 0.6153, 0.677, 0.7349, 1.0], "envelope_n": 6, "envelope_pts": [[1.8875, 0.7], [1.65, 0.7406], [1.625, 0.7406], [1.6, 0.75], [1.575, 0.75], [1.4625, 0.7719]], "envelope_t": [0.0, 0.5574, 0.6153, 0.677, 0.7349, 1.0], "adaptive_n": 2, "adaptive_pts": [[1.8875, 0.7], [1.4625, 0.7719]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_20: Fe2+ | Fe3+**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_7, DmsReg_13]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[0.0, 0.7719], [0.4375, 0.7719], [0.475, 0.7719], [0.9375, 0.7719], [1.0, 0.7719], [1.4625, 0.7719]]
+  -- Boundary/junction features: [DmsRegEqJnc_21, DmsRegEqJnc_15]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 118, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 35, 38, 75, 80, 117], "t_params": [0.0, 0.2991, 0.3248, 0.641, 0.6838, 1.0], "envelope_n": 6, "envelope_pts": [[0.0, 0.7719], [0.4375, 0.7719], [0.475, 0.7719], [0.9375, 0.7719], [1.0, 0.7719], [1.4625, 0.7719]], "envelope_t": [0.0, 0.2991, 0.3248, 0.641, 0.6838, 1.0], "adaptive_n": 2, "adaptive_pts": [[0.0, 0.7719], [1.4625, 0.7719]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_21: [Fe(Citr)]- | [Fe(OH)3](s)**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_8, DmsReg_9]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[8.0875, -0.1469], [8.0875, -0.1437], [8.075, -0.1437]]
+  -- Boundary/junction features: [DmsRegEqJnc_9, DmsRegEqJnc_11]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 3, "compact_n": 3, "compact_target_n": 6, "compact_indices": [0, 1, 2], "t_params": [0.0, 0.2, 1.0], "envelope_n": 6, "envelope_pts": [[8.0875, -0.1469], [8.0875, -0.1437], [8.075, -0.1437]], "envelope_t": [0.0, 0.2, 1.0], "adaptive_n": 2, "adaptive_pts": [[8.0875, -0.1469], [8.075, -0.1437]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_22: [Fe(Citr)]- | [Fe(OH)3](s)**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_6, DmsReg_8]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[8.0625, -0.1437], [7.475, -0.0562], [6.85, 0.0563], [6.7625, 0.0656], [6.4875, 0.1188], [6.3625, 0.1563]]
+  -- Boundary/junction features: [DmsRegEqJnc_10, DmsRegEqJnc_12]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 233, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 75, 161, 171, 210, 232], "t_params": [0.0, 0.3438, 0.7114, 0.7623, 0.9245, 1.0], "envelope_n": 6, "envelope_pts": [[8.0625, -0.1437], [7.475, -0.0562], [6.85, 0.0563], [6.7625, 0.0656], [6.4875, 0.1188], [6.3625, 0.1563]], "envelope_t": [0.0, 0.3438, 0.7114, 0.7623, 0.9245, 1.0], "adaptive_n": 2, "adaptive_pts": [[8.0625, -0.1437], [6.3625, 0.1563]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_23: [Fe(Citr)]- | [Fe2(Citr)2(OH)2]2-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_6, DmsReg_10]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[6.3625, 0.1563], [6.225, 0.1531], [6.125, 0.1625], [6.0625, 0.1625], [4.35, 0.2688], [4.075, 0.2906]]
+  -- Boundary/junction features: [DmsRegEqJnc_12, DmsRegEqJnc_13]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 229, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 12, 23, 28, 199, 228], "t_params": [0.0, 0.06, 0.1038, 0.1311, 0.8796, 1.0], "envelope_n": 6, "envelope_pts": [[6.3625, 0.1563], [6.225, 0.1531], [6.125, 0.1625], [6.0625, 0.1625], [4.35, 0.2688], [4.075, 0.2906]], "envelope_t": [0.0, 0.06, 0.1038, 0.1311, 0.8796, 1.0], "adaptive_n": 2, "adaptive_pts": [[6.3625, 0.1563], [4.075, 0.2906]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_24: [Fe(OH)3](s) | [Fe2(Citr)2(OH)2]2-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_8, DmsReg_10]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[6.3625, 0.1563], [6.3125, 0.2094], [6.3, 0.2094], [6.3, 0.9656], [6.3125, 0.9719], [6.3625, 0.975]]
+  -- Boundary/junction features: [DmsRegEqJnc_12, DmsRegEqJnc_16]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 273, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 21, 22, 264, 267, 272], "t_params": [0.0, 0.0805, 0.0943, 0.9293, 0.9447, 1.0], "envelope_n": 6, "envelope_pts": [[6.3625, 0.1563], [6.3125, 0.2094], [6.3, 0.2094], [6.3, 0.9656], [6.3125, 0.9719], [6.3625, 0.975]], "envelope_t": [0.0, 0.0805, 0.0943, 0.9293, 0.9447, 1.0], "adaptive_n": 2, "adaptive_pts": [[6.3625, 0.1563], [6.3625, 0.975]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_25: [Fe(OH)3](s) | FeO42-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_8, DmsReg_11]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[14.0, 0.2281], [7.1875, 0.9031], [7.1125, 0.9063], [6.8375, 0.9375], [6.5, 0.9688], [6.3625, 0.975]]
+  -- Boundary/junction features: [DmsRegEqJnc_22, DmsRegEqJnc_16]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 851, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 761, 768, 800, 837, 850], "t_params": [0.0, 0.8921, 0.9018, 0.9379, 0.9821, 1.0], "envelope_n": 6, "envelope_pts": [[14.0, 0.2281], [7.1875, 0.9031], [7.1125, 0.9063], [6.8375, 0.9375], [6.5, 0.9688], [6.3625, 0.975]], "envelope_t": [0.0, 0.8921, 0.9018, 0.9379, 0.9821, 1.0], "adaptive_n": 2, "adaptive_pts": [[14.0, 0.2281], [6.3625, 0.975]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_26: [Fe2(Citr)2(OH)2]2- | FeO42-**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_10, DmsReg_11]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[6.3625, 0.975], [6.2, 1.0031], [5.4125, 1.1094], [4.225, 1.2563], [2.825, 1.4], [1.8875, 1.475]]
+  -- Boundary/junction features: [DmsRegEqJnc_16, DmsRegEqJnc_17]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 519, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 22, 119, 261, 419, 518], "t_params": [0.0, 0.0366, 0.213, 0.4787, 0.7912, 1.0], "envelope_n": 6, "envelope_pts": [[6.3625, 0.975], [6.2, 1.0031], [5.4125, 1.1094], [4.225, 1.2563], [2.825, 1.4], [1.8875, 1.475]], "envelope_t": [0.0, 0.0366, 0.213, 0.4787, 0.7912, 1.0], "adaptive_n": 3, "adaptive_pts": [[6.3625, 0.975], [4.225, 1.2563], [1.8875, 1.475]], "adaptive_t": [0.0, 0.4787, 1.0]}
+- **DmsRegEq_27: [Fe2(Citr)2(OH)2]2- | [Fe(Citr)]**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_10, DmsReg_12]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[1.8875, 0.7], [1.85, 0.725], [1.825, 0.7719], [1.825, 1.4625], [1.8625, 1.475], [1.8875, 1.475]]
+  -- Boundary/junction features: [DmsRegEqJnc_14, DmsRegEqJnc_17]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 259, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 11, 28, 249, 256, 258], "t_params": [0.0, 0.0528, 0.1151, 0.9244, 0.9707, 1.0], "envelope_n": 6, "envelope_pts": [[1.8875, 0.7], [1.85, 0.725], [1.825, 0.7719], [1.825, 1.4625], [1.8625, 1.475], [1.8875, 1.475]], "envelope_t": [0.0, 0.0528, 0.1151, 0.9244, 0.9707, 1.0], "adaptive_n": 2, "adaptive_pts": [[1.8875, 0.7], [1.8875, 1.475]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_28: FeO42- | [Fe(Citr)]**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_11, DmsReg_12]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[1.8875, 1.475], [1.8625, 1.4813], [1.825, 1.4813], [1.8, 1.4875], [1.7, 1.4937], [1.675, 1.5]]
+  -- Boundary/junction features: [DmsRegEqJnc_17, DmsRegEqJnc_23]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 26, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 4, 7, 11, 21, 25], "t_params": [0.0, 0.1199, 0.2943, 0.4141, 0.8801, 1.0], "envelope_n": 6, "envelope_pts": [[1.8875, 1.475], [1.8625, 1.4813], [1.825, 1.4813], [1.8, 1.4875], [1.7, 1.4937], [1.675, 1.5]], "envelope_t": [0.0, 0.1199, 0.2943, 0.4141, 0.8801, 1.0], "adaptive_n": 2, "adaptive_pts": [[1.8875, 1.475], [1.675, 1.5]], "adaptive_t": [0.0, 1.0]}
+- **DmsRegEq_29: [Fe(Citr)] | Fe3+**
+  -- Intrinsic dimension: 1 (curve)
+  -- Neighboring regions: [DmsReg_12, DmsReg_13]
+  -- Geometry: compact polyline
+  -- Primary compact boundary vertices: [[1.4625, 0.7719], [1.4625, 0.775], [1.4625, 0.7781], [1.4625, 1.3938], [1.4625, 1.4156], [1.4625, 1.5]]
+  -- Boundary/junction features: [DmsRegEqJnc_15, DmsRegEqJnc_24]
+  -- Simplification metadata: {"method": "farthest_point_1d", "epsilon": 0.01, "raw_n": 234, "compact_n": 6, "compact_target_n": 6, "compact_indices": [0, 1, 2, 199, 206, 233], "t_params": [0.0, 0.0043, 0.0086, 0.8541, 0.8841, 1.0], "envelope_n": 6, "envelope_pts": [[1.4625, 0.7719], [1.4625, 0.775], [1.4625, 0.7781], [1.4625, 1.3938], [1.4625, 1.4156], [1.4625, 1.5]], "envelope_t": [0.0, 0.0043, 0.0086, 0.8541, 0.8841, 1.0], "adaptive_n": 2, "adaptive_pts": [[1.4625, 0.7719], [1.4625, 1.5]], "adaptive_t": [0.0, 1.0]}
+
+### junction features
+- **DmsRegEqJnc_1** — intrinsic dimension 0 (point)
+  -- Dominant species: [Fe, [Fe(OH)3]-, [Fe(OH)2](s)]
+  -- Neighboring regions: [DmsReg_1, DmsReg_2, DmsReg_3]
+  -- Connected boundary manifolds: [DmsRegEq_1, DmsRegEq_2, DmsRegEq_8]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 11.9125, "E_V": -0.7375}
+- **DmsRegEqJnc_2** — intrinsic dimension 0 (point)
+  -- Dominant species: [Fe, [Fe(OH)2](s), [Fe2(Citr)2(OH)2]4-]
+  -- Neighboring regions: [DmsReg_1, DmsReg_3, DmsReg_4]
+  -- Connected boundary manifolds: [DmsRegEq_2, DmsRegEq_3, DmsRegEq_10]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 10.4875, "E_V": -0.6531}
+- **DmsRegEqJnc_3** — intrinsic dimension 0 (point)
+  -- Dominant species: [Fe, [Fe2(Citr)2(OH)2]4-, [Fe(Citr)]-]
+  -- Neighboring regions: [DmsReg_1, DmsReg_4, DmsReg_5]
+  -- Connected boundary manifolds: [DmsRegEq_3, DmsRegEq_6, DmsRegEq_12]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 8.0875, "E_V": -0.5875}
+- **DmsRegEqJnc_4** — intrinsic dimension 0 (point)
+  -- Dominant species: [Fe, [Fe2(Citr)2(OH)2]4-, [Fe(Citr)]-]
+  -- Neighboring regions: [DmsReg_1, DmsReg_4, DmsReg_6]
+  -- Connected boundary manifolds: [DmsRegEq_4, DmsRegEq_7, DmsRegEq_13]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 8.0375, "E_V": -0.5844}
+- **DmsRegEqJnc_5** — intrinsic dimension 0 (point)
+  -- Dominant species: [Fe, [Fe2(Citr)2(OH)2]4-, [Fe(Citr)]-]
+  -- Neighboring regions: [DmsReg_1, DmsReg_4, DmsReg_5]
+  -- Connected boundary manifolds: [DmsRegEq_4, DmsRegEq_6, DmsRegEq_12]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 8.075, "E_V": -0.5844}
+- **DmsRegEqJnc_6** — intrinsic dimension 0 (point)
+  -- Dominant species: [Fe, Fe2+, [Fe(Citr)]-]
+  -- Neighboring regions: [DmsReg_1, DmsReg_7, DmsReg_6]
+  -- Connected boundary manifolds: [DmsRegEq_5, DmsRegEq_7, DmsRegEq_17]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 4.0375, "E_V": -0.5531}
+- **DmsRegEqJnc_7** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Fe(OH)3]-, [Fe(OH)2](s), [Fe(OH)3](s)]
+  -- Neighboring regions: [DmsReg_2, DmsReg_3, DmsReg_8]
+  -- Connected boundary manifolds: [DmsRegEq_8, DmsRegEq_9, DmsRegEq_11]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 11.9125, "E_V": -0.5219}
+- **DmsRegEqJnc_8** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Fe(OH)2](s), [Fe2(Citr)2(OH)2]4-, [Fe(OH)3](s)]
+  -- Neighboring regions: [DmsReg_3, DmsReg_4, DmsReg_8]
+  -- Connected boundary manifolds: [DmsRegEq_10, DmsRegEq_11, DmsRegEq_15]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 10.4875, "E_V": -0.4375}
+- **DmsRegEqJnc_9** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Fe2(Citr)2(OH)2]4-, [Fe(Citr)]-, [Fe(OH)3](s)]
+  -- Neighboring regions: [DmsReg_4, DmsReg_9, DmsReg_8]
+  -- Connected boundary manifolds: [DmsRegEq_14, DmsRegEq_15, DmsRegEq_21]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 8.0875, "E_V": -0.1469}
+- **DmsRegEqJnc_10** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Fe2(Citr)2(OH)2]4-, [Fe(Citr)]-, [Fe(OH)3](s)]
+  -- Neighboring regions: [DmsReg_4, DmsReg_6, DmsReg_8]
+  -- Connected boundary manifolds: [DmsRegEq_13, DmsRegEq_16, DmsRegEq_22]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 8.0625, "E_V": -0.1437}
+- **DmsRegEqJnc_11** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Fe2(Citr)2(OH)2]4-, [Fe(Citr)]-, [Fe(OH)3](s)]
+  -- Neighboring regions: [DmsReg_4, DmsReg_9, DmsReg_8]
+  -- Connected boundary manifolds: [DmsRegEq_14, DmsRegEq_16, DmsRegEq_21]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 8.075, "E_V": -0.1437}
+- **DmsRegEqJnc_12** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Fe(Citr)]-, [Fe(OH)3](s), [Fe2(Citr)2(OH)2]2-]
+  -- Neighboring regions: [DmsReg_6, DmsReg_8, DmsReg_10]
+  -- Connected boundary manifolds: [DmsRegEq_22, DmsRegEq_23, DmsRegEq_24]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 6.3625, "E_V": 0.1563}
+- **DmsRegEqJnc_13** — intrinsic dimension 0 (point)
+  -- Dominant species: [Fe2+, [Fe(Citr)]-, [Fe2(Citr)2(OH)2]2-]
+  -- Neighboring regions: [DmsReg_6, DmsReg_7, DmsReg_10]
+  -- Connected boundary manifolds: [DmsRegEq_17, DmsRegEq_18, DmsRegEq_23]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 4.075, "E_V": 0.2906}
+- **DmsRegEqJnc_14** — intrinsic dimension 0 (point)
+  -- Dominant species: [Fe2+, [Fe2(Citr)2(OH)2]2-, [Fe(Citr)]]
+  -- Neighboring regions: [DmsReg_7, DmsReg_10, DmsReg_12]
+  -- Connected boundary manifolds: [DmsRegEq_18, DmsRegEq_19, DmsRegEq_27]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 1.8875, "E_V": 0.7}
+- **DmsRegEqJnc_15** — intrinsic dimension 0 (point)
+  -- Dominant species: [Fe2+, [Fe(Citr)], Fe3+]
+  -- Neighboring regions: [DmsReg_7, DmsReg_12, DmsReg_13]
+  -- Connected boundary manifolds: [DmsRegEq_19, DmsRegEq_20, DmsRegEq_29]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 1.4625, "E_V": 0.7719}
+- **DmsRegEqJnc_16** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Fe(OH)3](s), [Fe2(Citr)2(OH)2]2-, FeO42-]
+  -- Neighboring regions: [DmsReg_8, DmsReg_10, DmsReg_11]
+  -- Connected boundary manifolds: [DmsRegEq_24, DmsRegEq_25, DmsRegEq_26]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 6.3625, "E_V": 0.975}
+- **DmsRegEqJnc_17** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Fe2(Citr)2(OH)2]2-, FeO42-, [Fe(Citr)]]
+  -- Neighboring regions: [DmsReg_10, DmsReg_11, DmsReg_12]
+  -- Connected boundary manifolds: [DmsRegEq_26, DmsRegEq_27, DmsRegEq_28]
+  -- At sweep limit: false
+  -- Geometry: compact point {"pH": 1.8875, "E_V": 1.475}
+- **DmsRegEqJnc_18** — intrinsic dimension 0 (point)
+  -- Dominant species: [Fe, [Fe(OH)3]-]
+  -- Neighboring regions: [DmsReg_1, DmsReg_2]
+  -- Connected boundary manifolds: [DmsRegEq_1]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 14.0, "E_V": -0.9219}
+- **DmsRegEqJnc_19** — intrinsic dimension 0 (point)
+  -- Dominant species: [Fe, Fe2+]
+  -- Neighboring regions: [DmsReg_1, DmsReg_7]
+  -- Connected boundary manifolds: [DmsRegEq_5]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 0.0, "E_V": -0.5375}
+- **DmsRegEqJnc_20** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Fe(OH)3]-, [Fe(OH)3](s)]
+  -- Neighboring regions: [DmsReg_2, DmsReg_8]
+  -- Connected boundary manifolds: [DmsRegEq_9]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 14.0, "E_V": -0.5188}
+- **DmsRegEqJnc_21** — intrinsic dimension 0 (point)
+  -- Dominant species: [Fe2+, Fe3+]
+  -- Neighboring regions: [DmsReg_7, DmsReg_13]
+  -- Connected boundary manifolds: [DmsRegEq_20]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 0.0, "E_V": 0.7719}
+- **DmsRegEqJnc_22** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Fe(OH)3](s), FeO42-]
+  -- Neighboring regions: [DmsReg_8, DmsReg_11]
+  -- Connected boundary manifolds: [DmsRegEq_25]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 14.0, "E_V": 0.2281}
+- **DmsRegEqJnc_23** — intrinsic dimension 0 (point)
+  -- Dominant species: [FeO42-, [Fe(Citr)]]
+  -- Neighboring regions: [DmsReg_11, DmsReg_12]
+  -- Connected boundary manifolds: [DmsRegEq_28]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 1.675, "E_V": 1.5}
+- **DmsRegEqJnc_24** — intrinsic dimension 0 (point)
+  -- Dominant species: [[Fe(Citr)], Fe3+]
+  -- Neighboring regions: [DmsReg_12, DmsReg_13]
+  -- Connected boundary manifolds: [DmsRegEq_29]
+  -- At sweep limit: true
+  -- Geometry: compact point {"pH": 1.4625, "E_V": 1.5}
+
+## Canonical-to-source lookup
+The normalized JSON sidecar preserves the source collection, source ID, and intrinsic dimension for every canonical topology ID. Use that mapping for ID-scoped topology reads; the raw topology JSON is not part of this verdict text.
+
+## Calculation species by principal element
+- **Cu**
+  -- included: [Cu+, [Cu(Glyc)2]-, [Cu(Ammo)2]+, [Cu2(Chlo)4]2-, [Cu(Chlo)2]-, [Cu(Chlo)3]2-, [Cu(Chlo)], Cu2+, [Cu(OH)]+, [Cu2(OH)2]2+, [Cu(OH)2], HCuO2-, [Cu3(OH)4]2+, CuO22-, [Cu(Citr)H], [Cu2(Citr)2]2-, [Cu2(Citr)(OH)], [Cu2(Citr)2(OH)]3-, [Cu2(Citr)2(OH)2]4-, [Cu(Glyc)]+, [Cu(Glyc)2], [Cu(Ammo)4]2+, [Cu(Ammo)3]2+, [Cu(Ammo)2]2+, [Cu(Ammo)]2+, [Cu(Chlo)]+, [(Cu2O)0.5](s), [Cu(Chloride ion)](s), [Cu(OH)2](s), Cu]
+  -- excluded: [Cu2O, CuO(s), CuO, Cu(OH)2]
+- **Fe**
+  -- included: [Fe2+, [Fe(OH)]+, [Fe(OH)2], [Fe(OH)3]-, [Fe(OH)4]2-, [Fe(Citr)H2]+, [Fe(Citr)H], [Fe(Citr)2H]3-, [Fe(Citr)]-, [Fe2(Citr)2(OH)2]4-, [Fe(Glyc)]+, [Fe(Glyc)2], [Fe(Glyc)3]-, [Fe(Ammo)4]2+, [Fe(Ammo)3]2+, [Fe(Ammo)2]2+, [Fe(Ammo)]2+, [Fe(Chlo)]+, Fe3+, [Fe(OH)]2+, [Fe2(OH)2]4+, [Fe(OH)2]+, [Fe3(OH)4]5+, [Fe(OH)4]-, [Fe(Citr)H]+, [Fe(Citr)], [Fe(Citr)(OH)]-, [Fe2(Citr)2(OH)2]2-, [Fe(Glyc)2H2]3+, [Fe(Glyc)H]3+, [Fe(Glyc)]2+, [Fe(Chlo)2]+, [Fe(Chlo)]2+, FeO42-, [Fe(OH)2](s), [Fe(OH)3](s), Fe]
+  -- excluded: [HFeO2-, FeOH2+, Fe(OH)2 (hydr.), Fe3O4 (anh.), [(Fe2O3)0.5(s,alpha)], [FeO(OH)(s,alpha)], Fe(OH)3 (hydr.), Fe2O3 (anh.)]

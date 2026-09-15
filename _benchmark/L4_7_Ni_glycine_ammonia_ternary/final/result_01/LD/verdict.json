@@ -1,0 +1,15 @@
+{
+  "verdict": "inconclusive",
+  "hints": [
+    "Downstream synthesis recommendation: L1's cited literature log K = 3-4 for Ni2+ + Gly- + NH3 ⇌ Ni(Gly)(NH3)+ (Sigel/Martell) and the estimated 'few-percent ternary population near pH 8' are outside the artifact evidence — the SRD-46 card genuinely contains no mixed Ni-Gly-NH3 species (verified in the Free-Energy Species Table)",
+    "so the solver cannot corroborate or refute this quantitative extrapolation. Recommend either removing the specific log K range and percentage estimate",
+    "qualifying them explicitly as external literature not covered by this run",
+    "or checking an external source downstream. All solver-grounded fractions at pH 8.0 (Ni(Glyc)2 62.27%",
+    "Ni(Glyc)3- 25.06%",
+    "Ni(Glyc)+ 12.11%",
+    "Ni2+ 0.49%",
+    "ammine ≤0.07%",
+    "no Ni(OH)2(s)) match frac_metal.csv row pH=8.0",
+    "and the Ni(Glyc)2↔Ni(Glyc)3- crossover at pH 8.48 matches the verdict."
+  ]
+}

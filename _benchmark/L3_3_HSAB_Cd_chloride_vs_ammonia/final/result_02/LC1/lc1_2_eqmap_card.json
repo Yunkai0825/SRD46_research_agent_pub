@@ -1,0 +1,86 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_28179",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10103,
+      "ligand_name": "Ammonia",
+      "ligand_SMILES": "N",
+      "ligand_canonical_HxL": "L"
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_28286",
+      "node_count": 4,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 26,
+      "metal_name": "Cd^[2+]",
+      "ligand_id": 10103,
+      "ligand_name": "Ammonia",
+      "ligand_SMILES": "N",
+      "ligand_canonical_HxL": "L"
+    },
+    {
+      "eq_network": "ref_eq_net_27527",
+      "node_count": 8,
+      "temperature": 24.0,
+      "ionic_strength": 3.0,
+      "metal_id": 26,
+      "metal_name": "Cd^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal26_ligand10076_beta812_net27527",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 170962,
+          "operation": "set_value",
+          "chosen_value": 3.9,
+          "rationale": "Chosen vlm_170962 (+4.000) is at I=3.0 M, far from request I=0.1 M. Sibling vlm_170964 sits at I=0.0 M (ΔI=-0.10) with K=+3.900; ΔI is 30x smaller than the chosen row's ΔI=+2.90. Both K-siblings agree in sign and cluster within 0.1 log units, so switching to the near-request sibling is defensible."
+        },
+        {
+          "node_key": "metal26_ligand10076_beta502_net27527",
+          "beta_definition_id": 502,
+          "examined_vlm_id": 170972,
+          "operation": "set_value",
+          "chosen_value": 4.6,
+          "rationale": "Chosen vlm_170972 (+5.060) is at I=3.0 M (ΔI=+2.90). Sibling vlm_170973 at I=0.0 M (ΔI=-0.10) gives K=+4.600, much closer to request I=0.1 M. Both K-siblings positive and within 0.46 log units; picking the I=0.0 M value as the near-request choice."
+        },
+        {
+          "node_key": "metal26_ligand10076_beta674_net27527",
+          "beta_definition_id": 674,
+          "examined_vlm_id": 170976,
+          "operation": "set_value",
+          "chosen_value": 23.2,
+          "rationale": "Chosen vlm_170976 (+24.900) is at I=3.0 M (ΔI=+2.90). Sibling vlm_170977 at I=0.0 M (ΔI=-0.10) with K=+23.200 is closer to request I=0.1 M. Both K-siblings positive and consistent; picking near-request sibling."
+        },
+        {
+          "node_key": "metal26_ligand10076_beta339_net27527",
+          "beta_definition_id": 339,
+          "examined_vlm_id": 170980,
+          "operation": "set_value",
+          "chosen_value": -14.35,
+          "rationale": "Chosen vlm_170980 (-14.290) at I=3.0 M (ΔI=+2.90); sibling vlm_170981 at I=0.0 M (ΔI=-0.10) with K=-14.350 is closer to request I=0.1 M. Both K-siblings agree in sign and are within 0.06 log units; picking the near-request sibling."
+        }
+      ]
+    }
+  ]
+}

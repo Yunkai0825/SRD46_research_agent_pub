@@ -1,0 +1,420 @@
+{
+  "schema_name": "srd46.predominance_verdict",
+  "schema_version": 1,
+  "report_kind": "predominance",
+  "sweep_method": "Pourbaix",
+  "system": {
+    "components": [
+      "Ag",
+      "Chloride ion"
+    ],
+    "constraints": [
+      "component totals (M): Ag=0.001;Chloride ion=0.1"
+    ],
+    "potential_reference": "SHE",
+    "domain": [
+      {
+        "axis": "pH",
+        "range": [
+          0.0,
+          14.0
+        ]
+      },
+      {
+        "axis": "E_V",
+        "range": [
+          -0.5,
+          1.2
+        ]
+      }
+    ],
+    "coarse_grid_spacing": [
+      null,
+      null
+    ],
+    "final_grid_spacing": [
+      0.008000000000000007,
+      0.000800000000000009
+    ],
+    "final_grid_shape": [
+      1751,
+      2126
+    ],
+    "classification_basis": "final_classified_label_grid",
+    "semantics": "Each connected region is the dominant calculated entity for the reported classification rule, not the exclusive entity present and not a kinetic prediction.",
+    "sweep_method": "Pourbaix"
+  },
+  "dominant_species_catalog": [
+    {
+      "id": "Dms_1",
+      "label": "Ag"
+    },
+    {
+      "id": "Dms_2",
+      "label": "[Ag(Chloride ion)](s)"
+    }
+  ],
+  "topology_stats": {
+    "ambient_dimension": 2,
+    "dominant_species_labels": 2,
+    "connected_regions": 2,
+    "pairwise_boundary_manifolds": 1,
+    "junction_features_by_intrinsic_dimension": {
+      "0": 2
+    },
+    "internal_junction_features": 0,
+    "sweep_limit_junction_features": 2,
+    "disconnected_species": []
+  },
+  "example_cuts": [
+    {
+      "name": "reference line (mid-domain classified-grid cut) along pH",
+      "sweep_axis": "pH",
+      "fixed_coordinates": [
+        null,
+        0.34959999999999997
+      ],
+      "fixed_sample_indices": [
+        null,
+        1062
+      ],
+      "segments": [
+        {
+          "sample_index_interval": [
+            0,
+            1750
+          ],
+          "sample_coordinate_interval": [
+            0.0,
+            14.0
+          ],
+          "dominant_species_id": "Dms_2",
+          "dominant_label": "[Ag(Chloride ion)](s)",
+          "transition_bracket_before": null
+        }
+      ],
+      "source": "final_classified_label_grid"
+    },
+    {
+      "name": "reference line (mid-domain classified-grid cut) along E_V",
+      "sweep_axis": "E_V",
+      "fixed_coordinates": [
+        7.0,
+        null
+      ],
+      "fixed_sample_indices": [
+        875,
+        null
+      ],
+      "segments": [
+        {
+          "sample_index_interval": [
+            0,
+            944
+          ],
+          "sample_coordinate_interval": [
+            -0.5,
+            0.2552
+          ],
+          "dominant_species_id": "Dms_1",
+          "dominant_label": "Ag",
+          "transition_bracket_before": null
+        },
+        {
+          "sample_index_interval": [
+            945,
+            2125
+          ],
+          "sample_coordinate_interval": [
+            0.256,
+            1.2
+          ],
+          "dominant_species_id": "Dms_2",
+          "dominant_label": "[Ag(Chloride ion)](s)",
+          "transition_bracket_before": [
+            0.2552,
+            0.256
+          ]
+        }
+      ],
+      "source": "final_classified_label_grid"
+    }
+  ],
+  "calculation_species_by_principal_element": [
+    {
+      "principal_element": "Ag",
+      "included": [
+        "Ag+",
+        "[Ag(OH)] @25C",
+        "[Ag(OH)2]- @25C",
+        "[Ag(Chlo)2]-",
+        "[Ag(Chlo)3]2-",
+        "[Ag(Chlo)]",
+        "[Ag(Chlo)4]3-",
+        "Ag2O",
+        "[Ag(Chloride ion)](s)",
+        "Ag"
+      ],
+      "excluded": [
+        "[Ag(OH)] @20C",
+        "[Ag(OH)2]- @20C",
+        "AgO-",
+        "[(Ag2O)0.5](s) @20C",
+        "[(Ag2O)0.5](s) @25C"
+      ]
+    }
+  ],
+  "topology_details": {
+    "coordinate_order": [
+      "pH",
+      "E_V"
+    ],
+    "grouped": true,
+    "grouping_parser_failure": null,
+    "regions": [
+      {
+        "id": "DmsReg_1",
+        "phase_group": "solid",
+        "dominant_species_id": "Dms_1",
+        "label": "Ag",
+        "name": "Ag",
+        "measure": 10.590048,
+        "flags": [],
+        "boundary_manifolds": [
+          "DmsRegEq_1"
+        ],
+        "neighboring_regions": [
+          {
+            "region_id": "DmsReg_2",
+            "region_label": "[Ag(Chloride ion)](s)",
+            "boundary_manifold_id": "DmsRegEq_1"
+          }
+        ],
+        "junction_features": [
+          "DmsRegEqJnc_2",
+          "DmsRegEqJnc_1"
+        ]
+      },
+      {
+        "id": "DmsReg_2",
+        "phase_group": "solid",
+        "dominant_species_id": "Dms_2",
+        "label": "[Ag(Chloride ion)](s)",
+        "name": "[Ag(Chloride ion)](s)",
+        "measure": 13.234758399999999,
+        "flags": [],
+        "boundary_manifolds": [
+          "DmsRegEq_1"
+        ],
+        "neighboring_regions": [
+          {
+            "region_id": "DmsReg_1",
+            "region_label": "Ag",
+            "boundary_manifold_id": "DmsRegEq_1"
+          }
+        ],
+        "junction_features": [
+          "DmsRegEqJnc_2",
+          "DmsRegEqJnc_1"
+        ]
+      }
+    ],
+    "boundary_manifolds": [
+      {
+        "id": "DmsRegEq_1",
+        "display_group": "solid–solid · redox (by species definition)",
+        "intrinsic_dimension": 1,
+        "ambient_dimension": 2,
+        "boundary_type": "unknown",
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_2"
+        ],
+        "region_pair": [
+          "Ag",
+          "[Ag(Chloride ion)](s)"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_2"
+        ],
+        "boundary_features": [
+          "DmsRegEqJnc_1",
+          "DmsRegEqJnc_2"
+        ],
+        "geometry_basis": "compact",
+        "geometry_kind": "polyline",
+        "geometry": [
+          [
+            0.0,
+            0.2556
+          ],
+          [
+            14.0,
+            0.2556
+          ]
+        ],
+        "simplification": {
+          "method": "farthest_point_1d",
+          "epsilon": 0.01,
+          "epsilon_used": 0.0007476619395294388,
+          "resolution_tau_norm": 0.0007476619395294388,
+          "stop_epsilon": 0.0007476619395294388,
+          "min_points": 2,
+          "loop_closed": false,
+          "loop_protected": false,
+          "stop_reason": "resolution",
+          "planarity_added": 0,
+          "separation_added": 0,
+          "anchor_disabled": 0,
+          "raw_n": 1752,
+          "compact_n": 2,
+          "compact_target_n": 6,
+          "compact_indices": [
+            0,
+            1751
+          ],
+          "t_params": [
+            0.0,
+            1.0
+          ],
+          "envelope_n": 6,
+          "envelope_pts": [
+            [
+              0.0,
+              0.2556
+            ],
+            [
+              14.0,
+              0.2556
+            ]
+          ],
+          "envelope_t": [
+            0.0,
+            1.0
+          ],
+          "adaptive_n": 2,
+          "adaptive_pts": [
+            [
+              0.0,
+              0.2556
+            ],
+            [
+              14.0,
+              0.2556
+            ]
+          ],
+          "adaptive_t": [
+            0.0,
+            1.0
+          ]
+        }
+      }
+    ],
+    "junction_features": [
+      {
+        "id": "DmsRegEqJnc_1",
+        "display_group": "two solids",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_2"
+        ],
+        "dominant_species": [
+          "Ag",
+          "[Ag(Chloride ion)](s)"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_2"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_1"
+        ],
+        "at_sweep_limit": true,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 0.0,
+          "E_V": 0.2556
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      },
+      {
+        "id": "DmsRegEqJnc_2",
+        "display_group": "two solids",
+        "intrinsic_dimension": 0,
+        "ambient_dimension": 2,
+        "dominant_species_ids": [
+          "Dms_1",
+          "Dms_2"
+        ],
+        "dominant_species": [
+          "Ag",
+          "[Ag(Chloride ion)](s)"
+        ],
+        "neighboring_regions": [
+          "DmsReg_1",
+          "DmsReg_2"
+        ],
+        "connected_boundary_manifolds": [
+          "DmsRegEq_1"
+        ],
+        "at_sweep_limit": true,
+        "geometry_basis": "compact",
+        "geometry_kind": "point",
+        "geometry": {
+          "pH": 14.0,
+          "E_V": 0.2556
+        },
+        "simplification": {
+          "method": "exact"
+        }
+      }
+    ]
+  },
+  "source_mapping": {
+    "dominant_species": {
+      "Dms_1": {
+        "source_label_id": 0,
+        "source_catalog_value": "Ag"
+      },
+      "Dms_2": {
+        "source_label_id": 1,
+        "source_catalog_value": "[Ag(Chloride ion)](s)"
+      }
+    },
+    "regions": {
+      "DmsReg_1": {
+        "source_id": 0,
+        "source_collection": "regions"
+      },
+      "DmsReg_2": {
+        "source_id": 1,
+        "source_collection": "regions"
+      }
+    },
+    "boundary_manifolds": {
+      "DmsRegEq_1": {
+        "source_id": 0,
+        "source_collection": "features_1d",
+        "intrinsic_dimension": 1
+      }
+    },
+    "junction_features": {
+      "DmsRegEqJnc_1": {
+        "source_id": 0,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      },
+      "DmsRegEqJnc_2": {
+        "source_id": 1,
+        "source_collection": "features_0d",
+        "intrinsic_dimension": 0
+      }
+    }
+  }
+}

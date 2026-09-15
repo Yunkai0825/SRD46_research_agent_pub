@@ -1,0 +1,50 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_27465",
+      "node_count": 8,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 61,
+      "metal_name": "Fe^[3+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal61_ligand10076_beta840_net27465",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 170807,
+          "operation": "set_value",
+          "chosen_value": 21.8,
+          "rationale": "examined vlm_170807 K=+23.400 at I=0.0M is a mad_outlier (1.60 above sibling median +21.85 with MAD 0.10) and sits farthest from the request I=0.1M. The 5 positive K-siblings cluster tightly at +21.8 to +22.1 (vlm_170802=+21.800@I=0.5, vlm_170804=+21.800@I=1.0, vlm_170805=+21.900@I=2.0, vlm_170806=+22.100@I=3.0). Picking vlm_170802 value +21.800 as it is the closest sibling in ionic strength to request I=0.1M and matches the cluster median. The negative sibling vlm_170803=-20.400 is a separate sign-discordant outlier ignored."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_27433",
+      "node_count": 5,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 62,
+      "metal_name": "Fe^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    }
+  ]
+}

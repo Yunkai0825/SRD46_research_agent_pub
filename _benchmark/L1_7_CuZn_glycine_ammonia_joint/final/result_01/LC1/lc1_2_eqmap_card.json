@@ -1,0 +1,184 @@
+{
+  "equilibrium_networks": [
+    {
+      "eq_network": "ref_eq_net_1",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 5760,
+      "ligand_name": "Aminoacetic acid (Glycine)",
+      "ligand_SMILES": "NCC(=O)O",
+      "ligand_canonical_HxL": "HL"
+    },
+    {
+      "eq_network": "ref_eq_net_28179",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10103,
+      "ligand_name": "Ammonia",
+      "ligand_SMILES": "N",
+      "ligand_canonical_HxL": "L"
+    },
+    {
+      "eq_network": "ref_eq_net_27283",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 68,
+      "metal_name": "H^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_86",
+      "node_count": 2,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 41,
+      "metal_name": "Cu^[2+]",
+      "ligand_id": 5760,
+      "ligand_name": "Aminoacetic acid (Glycine)",
+      "ligand_SMILES": "NCC(=O)O",
+      "ligand_canonical_HxL": "HL"
+    },
+    {
+      "eq_network": "ref_eq_net_28241",
+      "node_count": 4,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 41,
+      "metal_name": "Cu^[2+]",
+      "ligand_id": 10103,
+      "ligand_name": "Ammonia",
+      "ligand_SMILES": "N",
+      "ligand_canonical_HxL": "L"
+    },
+    {
+      "eq_network": "ref_eq_net_27444",
+      "node_count": 6,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 41,
+      "metal_name": "Cu^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_100",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 42,
+      "metal_name": "Cu^[+]",
+      "ligand_id": 5760,
+      "ligand_name": "Aminoacetic acid (Glycine)",
+      "ligand_SMILES": "NCC(=O)O",
+      "ligand_canonical_HxL": "HL"
+    },
+    {
+      "eq_network": "ref_eq_net_28256",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 42,
+      "metal_name": "Cu^[+]",
+      "ligand_id": 10103,
+      "ligand_name": "Ammonia",
+      "ligand_SMILES": "N",
+      "ligand_canonical_HxL": "L"
+    },
+    {
+      "eq_network": "ref_eq_net_27492",
+      "node_count": 1,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 42,
+      "metal_name": "Cu^[+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": ""
+    },
+    {
+      "eq_network": "ref_eq_net_113",
+      "node_count": 4,
+      "temperature": 36.0,
+      "ionic_strength": 0.15,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 5760,
+      "ligand_name": "Aminoacetic acid (Glycine)",
+      "ligand_SMILES": "NCC(=O)O",
+      "ligand_canonical_HxL": "HL",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand5760_beta812_net113",
+          "beta_definition_id": 812,
+          "examined_vlm_id": 93925,
+          "operation": "set_value",
+          "chosen_value": 4.96,
+          "rationale": "Chosen row vlm_93925 (K=+4.870) sits at T=37C/I=0.15M. Sibling vlm_93924 (K=+4.960) sits exactly at request T=25C/I=0.10M (ΔT=0, ΔI=0) and matches the median of the 7 K-siblings (+4.960). Patching to +4.960 to use the at-request datum."
+        },
+        {
+          "node_key": "metal208_ligand5760_beta840_net113",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 93937,
+          "operation": "set_value",
+          "chosen_value": 9.19,
+          "rationale": "Chosen row vlm_93937 (K=+8.970) sits at T=37C/I=0.15M. Sibling vlm_93936 (K=+9.190) sits exactly at request T=25C/I=0.10M (ΔT=0, ΔI=0) and equals the sibling median (+9.190). Patching to +9.190 to use the at-request datum."
+        },
+        {
+          "node_key": "metal208_ligand5760_beta872_net113",
+          "beta_definition_id": 872,
+          "examined_vlm_id": 93950,
+          "operation": "set_value",
+          "chosen_value": 11.6,
+          "rationale": "Chosen row vlm_93950 (K=+11.300) sits at T=37C/I=0.15M. Sibling vlm_93949 (K=+11.600) sits exactly at request T=25C/I=0.10M (ΔT=0, ΔI=0) and equals the sibling median (+11.600). Patching to +11.600 to use the at-request datum."
+        }
+      ]
+    },
+    {
+      "eq_network": "ref_eq_net_28282",
+      "node_count": 4,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 10103,
+      "ligand_name": "Ammonia",
+      "ligand_SMILES": "N",
+      "ligand_canonical_HxL": "L"
+    },
+    {
+      "eq_network": "ref_eq_net_27522",
+      "node_count": 11,
+      "temperature": 25.0,
+      "ionic_strength": 0.1,
+      "metal_id": 208,
+      "metal_name": "Zn^[2+]",
+      "ligand_id": 10076,
+      "ligand_name": "Hydroxide ion",
+      "ligand_SMILES": "",
+      "ligand_canonical_HxL": "",
+      "final_adjustments": [
+        {
+          "node_key": "metal208_ligand10076_beta840_net27522",
+          "beta_definition_id": 840,
+          "examined_vlm_id": 170935,
+          "operation": "set_value",
+          "chosen_value": 12.2,
+          "rationale": "examined vlm_170935 logK=-10.200 (I=0.0 M) is chemically implausible for Zn+2L<=>ML2 (ML2 cumulative beta must be positive and > logK(ML)=+4.70 from beta812). Only other K-sibling vlm_170934=+12.200 at I=3.0 M is the sole physically sensible value and is consistent with the cumulative series ML=+4.70, ML3=+13.90 (beta872), ML4=+15.50 (beta894). Patching to +12.200; the I=3.0->0.1 ionic-strength offset is a smaller error than the ~22 logK sign flip."
+        }
+      ]
+    }
+  ]
+}

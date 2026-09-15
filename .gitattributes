@@ -1,0 +1,18 @@
+# Consistent source/document line endings.
+* text=auto eol=lf
+
+# Preserve scientific files and source terms byte for byte.
+/_output/** -text
+/_benchmark/** -text
+docs/licenses/NIST_SRD46_README.txt -text
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.opju binary
+
+# Large database and final scientific data payloads.
+*.db filter=lfs diff=lfs merge=lfs -text
+*.sqlite3 filter=lfs diff=lfs merge=lfs -text
+**/speciation_full_*.csv filter=lfs diff=lfs merge=lfs -text

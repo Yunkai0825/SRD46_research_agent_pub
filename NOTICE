@@ -1,0 +1,100 @@
+SRD-46 Data and Results: software and third-party data notice
+==================================================
+
+Original project software and documentation are distributed under the MIT
+License in LICENSE, copyright (c) 2026 Yunkai Sun. The underlying data,
+independently obtained literature, and third-party software and model assets
+retain their respective terms.
+
+NIST SRD 46 data
+---------------
+
+The databases contain or derive from NIST Standard Reference Database 46,
+Critically Selected Stability Constants of Metal Complexes, Version 8.0
+(2004), National Institute of Standards and Technology:
+https://doi.org/10.18434/M32154
+https://www.nist.gov/srd/nist46
+
+This project acknowledges NIST as the source of the SRD 46 data. The source
+database credits R. M. Smith and A. E. Martell for data collection and
+selection, and R. J. Motekaitis for the original program. Retain the source
+scientific references when using individual constants.
+
+The official SRD 46 archive README expressly permits modification,
+preparation of derivative works, and distribution of the data, subject to
+its acknowledgment and acceptance terms. It directs derived works to state
+the date and nature of source-data changes. This product-specific notice
+is the basis for reuse of the archived SRD 46 material in this project.
+
+The complete official terms and disclaimers are preserved, with their
+original bytes, in docs/licenses/NIST_SRD46_README.txt.
+
+Official README:
+https://data.nist.gov/od/ds/mds2-2154/SRD%2046%20README.txt
+Retrieved: 2026-09-11
+SHA-256: 069d578fd67930146d83b303057bf15faeffe905c64902da94a321afb2ab52d1
+The checksum matches NIST's published verification file:
+https://data.nist.gov/od/ds/mds2-2154/SRD%2046%20README.txt.sha256
+
+Source-data provenance
+----------------------
+
+Packaged research-database processing date: 2026-09-11.
+The retained database snapshot and its checksums are identified in
+docs/DATA.md and docs/validation/database_snapshot.json. Publication
+packaging preserves the database bytes and retains final scientific results.
+
+The project parses the source SQL/text extraction, applies documented
+chemical interpretation and correction rules, preserves identifiers and
+provenance, and constructs four SQLite databases: srd46_cards.db,
+srd46_equilibrium_maps.db, srd46_literature.db, and
+srd46_ligand_fingerprints.db. The last database contains calculated RDKit
+fingerprints and similarity scores. PubChem enrichment and QupKake pKa
+estimates are separately identified. Predicted values and heuristic
+protonation windows are project calculations, not NIST-selected
+measurements. This processing statement describes the transformation of
+source data for the initial release.
+
+NIST's README identifies the SQL representation as an outside group's
+extraction, whose reliability NIST does not guarantee, and reports known
+errors in its structure database. This independent project is not endorsed
+or certified by NIST. Preserve review flags and consult the scientific
+sources when an unresolved interpretation affects a result.
+
+Other sources and software
+--------------------------
+
+PubChem enrichment retains available identifiers and source provenance.
+Contributor-specific terms apply to the particular material; the PubChem
+API is not a blanket redistribution license for every annotation:
+https://pubchem.ncbi.nlm.nih.gov/docs/downloads
+https://pubchem.ncbi.nlm.nih.gov/docs/data-sources
+
+QupKake predicts microscopic pKa values. Its software is BSD-3-Clause:
+https://github.com/Shualdon/QupKake/blob/main/LICENSE
+Cite the upstream method when using predictions:
+https://github.com/Shualdon/QupKake/blob/main/CITATION.cff
+That software license does not establish the terms of every separately
+obtained model checkpoint, training dataset, or prediction archive.
+
+RDKit supplies molecular parsing, depiction, fingerprints, and similarity
+calculations under its upstream BSD-3-Clause software license:
+https://github.com/rdkit/rdkit/blob/master/license.txt
+Calculated descriptors retain the provenance of their source structures.
+
+Other installed Python dependencies retain the licenses accompanying their
+respective packages, including transitive and bundled components. Browser
+assets Bootstrap 5.3.3 and Bootstrap Icons 1.11.3 use the MIT license:
+https://github.com/twbs/bootstrap/blob/v5.3.3/LICENSE
+https://github.com/twbs/icons/blob/v1.11.3/LICENSE
+Keep complete upstream notices when redistributing dependency packages or
+vendoring browser assets.
+
+Independently downloaded journal articles, scans, figures, supplements,
+and other auxiliary files retain their own rights. Citations and DOI links
+identify supporting literature; this notice does not grant redistribution
+rights for the papers themselves or blanket clearance for auxiliary files.
+
+Keep LICENSE, this NOTICE, and docs/licenses/NIST_SRD46_README.txt with
+distributions to which they apply. Software citation metadata and the NIST
+dataset reference are supplied in CITATION.cff.

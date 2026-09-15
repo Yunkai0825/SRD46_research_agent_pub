@@ -1,0 +1,13 @@
+{
+  "verdict": "supported",
+  "status": "ok",
+  "notes": [
+    "calculation enumerates all 11 connected regions separately (including the duplicated Cu2O and Cu(OH)2 labels)",
+    "matches the topology metadata (E [-1",
+    "1.4]",
+    "pH [0",
+    "14]) and region catalogue",
+    "and correctly identifies the Cu(II)-ammine dominance windows with grounded coordinates from the verdict junctions."
+  ],
+  "purpose": "Compute a 2-D Pourbaix (E-pH) diagram for Cu in the presence of ammonia, and identify the region where soluble Cu-ammine complexes dominate over Cu(OH)2(s) and Cu(s)."
+}

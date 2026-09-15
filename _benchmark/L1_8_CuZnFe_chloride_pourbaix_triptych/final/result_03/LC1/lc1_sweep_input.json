@@ -1,0 +1,50 @@
+{
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "H",
+          "element": "H",
+          "redox_states": [
+            {
+              "internal_id": "H$+1",
+              "db_id": "metal_68"
+            }
+          ],
+          "water_species": true
+        },
+        {
+          "name": "Fe",
+          "element": "Fe",
+          "redox_states": [
+            {
+              "internal_id": "Fe$+3",
+              "db_id": "metal_61"
+            },
+            {
+              "internal_id": "Fe$+2",
+              "db_id": "metal_62"
+            }
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Chloride",
+          "db_id": "ligand_10163",
+          "internal_id": "L1",
+          "formula": "Cl1/-",
+          "smiles": "[Cl-]",
+          "inchi": "InChI=1S/ClH/h1H/p-1",
+          "iupac_name": "chloride"
+        },
+        {
+          "name": "Hydroxide ion",
+          "db_id": "ligand_10076",
+          "internal_id": "L0",
+          "water_species": true
+        }
+      ]
+    }
+  }
+}

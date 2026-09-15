@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "system_name": "Zn$+2 + Zn$+0 + Glycine",
+    "element": "Zn",
+    "n_pH": 21,
+    "pH_range": [
+      6.5,
+      7.5
+    ],
+    "ndim": 1,
+    "axis_names": [
+      "pH"
+    ],
+    "axis_ranges": {
+      "pH": [
+        6.5,
+        7.5
+      ]
+    },
+    "topology_settings": {
+      "extraction_method": "bottom_up_nd",
+      "axis_names": [
+        "pH"
+      ],
+      "axis_ranges": {
+        "pH": [
+          6.5,
+          7.5
+        ]
+      },
+      "axis_spacing": {
+        "pH": 0.04999999999999982
+      },
+      "topology_fix": {
+        "applied": false
+      },
+      "region_resolution_merges": 0,
+      "resolution": "coarse_final",
+      "is_final": true
+    }
+  },
+  "label_catalog": {
+    "0": "Zn$+2.z+2",
+    "1": "Zn$+2.L1.z+1",
+    "2": "Zn$+2.L1(2).z+0"
+  },
+  "features_0d": [
+    {
+      "id": 0,
+      "labels": [
+        0,
+        1
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 6.875
+      },
+      "geometry_compact": {
+        "pH": 6.875
+      }
+    },
+    {
+      "id": 1,
+      "labels": [
+        1,
+        2
+      ],
+      "btype": "aqueous_crossover",
+      "boundary_ids": [],
+      "is_domain_edge": false,
+      "simplification": {
+        "method": "exact"
+      },
+      "geometry_raw": {
+        "pH": 7.425
+      },
+      "geometry_compact": {
+        "pH": 7.425
+      }
+    }
+  ],
+  "regions": [
+    {
+      "id": 0,
+      "label": 0,
+      "name": "Zn$+2.z+2",
+      "boundary_ids": [
+        0
+      ],
+      "measure": 0.4,
+      "flags": []
+    },
+    {
+      "id": 1,
+      "label": 1,
+      "name": "Zn$+2.L1.z+1",
+      "boundary_ids": [
+        0,
+        1
+      ],
+      "measure": 0.55,
+      "flags": []
+    },
+    {
+      "id": 2,
+      "label": 2,
+      "name": "Zn$+2.L1(2).z+0",
+      "boundary_ids": [
+        1
+      ],
+      "measure": 0.1,
+      "flags": []
+    }
+  ],
+  "nodes": [
+    {
+      "id": 0,
+      "coords": {
+        "pH": 6.875
+      },
+      "labels": [
+        0,
+        1
+      ],
+      "domain_edge": false,
+      "pH": 6.875
+    },
+    {
+      "id": 1,
+      "coords": {
+        "pH": 7.425000000000001
+      },
+      "labels": [
+        1,
+        2
+      ],
+      "domain_edge": false,
+      "pH": 7.425
+    }
+  ],
+  "edges": [],
+  "faces": [
+    {
+      "id": 0,
+      "label": 0,
+      "name": "Zn$+2.z+2",
+      "edges": [
+        0
+      ],
+      "measure": 0.4
+    },
+    {
+      "id": 1,
+      "label": 1,
+      "name": "Zn$+2.L1.z+1",
+      "edges": [
+        0,
+        1
+      ],
+      "measure": 0.55
+    },
+    {
+      "id": 2,
+      "label": 2,
+      "name": "Zn$+2.L1(2).z+0",
+      "edges": [
+        1
+      ],
+      "measure": 0.1
+    }
+  ]
+}

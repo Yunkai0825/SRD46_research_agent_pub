@@ -1,0 +1,346 @@
+{
+  "sweep_method": "pH_sweep",
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Ca",
+          "element": "Ca",
+          "internal_id": "Ca$+2",
+          "db_id": "metal_25",
+          "redox_states": [
+            "Ca$+2",
+            "Ca$+0"
+          ]
+        },
+        {
+          "name": "Pb",
+          "element": "Pb",
+          "internal_id": "Pb$+2",
+          "db_id": "metal_125",
+          "redox_states": [
+            "Pb$+2",
+            "Pb$+0",
+            "Pb$+3",
+            "Pb$+4"
+          ]
+        },
+        {
+          "name": "Zn",
+          "element": "Zn",
+          "internal_id": "Zn$+2",
+          "db_id": "metal_208",
+          "redox_states": [
+            "Zn$+2",
+            "Zn$+0"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "DTPA",
+          "db_id": "ligand_6356",
+          "internal_id": "L1",
+          "smiles": "O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CCN(CC(=O)O)CC(=O)O",
+          "inchi_key": ""
+        }
+      ]
+    },
+    "freeform_vars_define": {}
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "excluded",
+    "ionic_strength_mode": "fixed"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "known",
+        "note": "task states 25 C"
+      },
+      {
+        "id": "I",
+        "handle": "s.ionic_strength",
+        "ref": "ionic_strength",
+        "handle_id": null,
+        "value": 0.1,
+        "basis": "known",
+        "note": "task states I=0.1 m"
+      },
+      {
+        "id": "PbII",
+        "handle": "s.total[\"Pb$+2\"]",
+        "ref": "total",
+        "handle_id": "Pb$+2",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM Pb(II)"
+      },
+      {
+        "id": "Pb0",
+        "handle": "s.total[\"Pb$+0\"]",
+        "ref": "total",
+        "handle_id": "Pb$+0",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "redox excluded; no metallic Pb"
+      },
+      {
+        "id": "PbIII",
+        "handle": "s.total[\"Pb$+3\"]",
+        "ref": "total",
+        "handle_id": "Pb$+3",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "redox excluded"
+      },
+      {
+        "id": "PbIV",
+        "handle": "s.total[\"Pb$+4\"]",
+        "ref": "total",
+        "handle_id": "Pb$+4",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "redox excluded"
+      },
+      {
+        "id": "ZnII",
+        "handle": "s.total[\"Zn$+2\"]",
+        "ref": "total",
+        "handle_id": "Zn$+2",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM Zn(II)"
+      },
+      {
+        "id": "Zn0",
+        "handle": "s.total[\"Zn$+0\"]",
+        "ref": "total",
+        "handle_id": "Zn$+0",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "redox excluded"
+      },
+      {
+        "id": "CaII",
+        "handle": "s.total[\"Ca$+2\"]",
+        "ref": "total",
+        "handle_id": "Ca$+2",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM Ca(II)"
+      },
+      {
+        "id": "Ca0",
+        "handle": "s.total[\"Ca$+0\"]",
+        "ref": "total",
+        "handle_id": "Ca$+0",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "redox excluded"
+      },
+      {
+        "id": "DTPA",
+        "handle": "s.total[\"ligand_6356\"]",
+        "ref": "total",
+        "handle_id": "ligand_6356",
+        "value": 0.005,
+        "basis": "known",
+        "note": "5 mM DTPA"
+      }
+    ],
+    "deferred": [
+      {
+        "handle": "s.pH",
+        "ref": "pH",
+        "handle_id": null,
+        "role": "swept",
+        "note": "pH is the 1-D sweep axis from 6 to 8"
+      }
+    ],
+    "notes": "T=25 C, I=0.1, metal totals 1 mM at +2 states (other valences zero because redox is excluded), DTPA total 5 mM -- all task-stated. pH is the swept axis (deferred to L3_3).",
+    "n_known": 6,
+    "n_assumed": 5
+  },
+  "_deferred_conditions": [
+    {
+      "handle": "s.pH",
+      "ref": "pH",
+      "handle_id": null,
+      "role": "swept",
+      "note": "pH is the 1-D sweep axis from 6 to 8"
+    }
+  ],
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "axes": [
+      "pH_axis"
+    ],
+    "dof": {
+      "K": 12,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "I",
+        "op": "==",
+        "lhs": {
+          "ref": "ionic_strength"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Pb2",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Pb$+2"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Pb0",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Pb$+0"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Pb3",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Pb$+3"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Pb4",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Pb$+4"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Zn2",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Zn$+2"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Zn0",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Zn$+0"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Ca2",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Ca$+2"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Ca0",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Ca$+0"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_6356"
+        },
+        "rhs": {
+          "const": 0.005
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 6.0,
+      "max": 8.0,
+      "n_points": 41
+    }
+  ],
+  "grid_refine": {
+    "mode": "none"
+  }
+}

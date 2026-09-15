@@ -1,0 +1,213 @@
+{
+  "sweep_method": "pourbaix_sweep",
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Fe",
+          "element": "Fe",
+          "internal_id": "Fe$+2",
+          "db_id": "metal_62",
+          "redox_states": [
+            "Fe$+2",
+            "Fe$+0",
+            "Fe$+3",
+            "Fe$+6"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Acetonitrile",
+          "db_id": "ligand_9825",
+          "internal_id": "L1",
+          "smiles": "CC#N",
+          "inchi_key": ""
+        }
+      ]
+    },
+    "freeform_vars_define": {}
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "axis",
+    "ionic_strength_mode": "fixed"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "known",
+        "note": "25 C stated by task"
+      },
+      {
+        "id": "I",
+        "handle": "s.ionic_strength",
+        "ref": "ionic_strength",
+        "handle_id": null,
+        "value": 0.1,
+        "basis": "known",
+        "note": "0.1 M ionic strength stated by task"
+      },
+      {
+        "id": "Fe",
+        "handle": "s.total[\"Fe\"]",
+        "ref": "total",
+        "handle_id": "Fe",
+        "value": 0.1,
+        "basis": "known",
+        "note": "0.1 M Fe(II/III) total stated by task; element-level total appropriate for redox axis mode"
+      },
+      {
+        "id": "ACN",
+        "handle": "s.total[\"ligand_9825\"]",
+        "ref": "total",
+        "handle_id": "ligand_9825",
+        "value": 1.0,
+        "basis": "known",
+        "note": "1 M acetonitrile co-solvent/ligand stated by task"
+      }
+    ],
+    "deferred": [
+      {
+        "handle": "s.pH",
+        "ref": "pH",
+        "handle_id": null,
+        "role": "swept",
+        "note": "pH axis of Pourbaix diagram, 0-14"
+      },
+      {
+        "handle": "s.E_V",
+        "ref": "E_V",
+        "handle_id": null,
+        "role": "swept",
+        "note": "potential axis of Pourbaix diagram covering Fe(0)/Fe(II)/Fe(III) window"
+      }
+    ],
+    "notes": "T, I, Fe total, and acetonitrile total are all stated by the task. pH and E_V are the two Pourbaix sweep axes (deferred to L3_3). Ionic strength held fixed at task-specified 0.1 M; Davies activity model appropriate for this ionic strength. Solids included to capture Fe hydroxide/oxide precipitation boundaries. Redox handled as axis (E_V swept).",
+    "n_known": 4,
+    "n_assumed": 0
+  },
+  "_deferred_conditions": [
+    {
+      "handle": "s.pH",
+      "ref": "pH",
+      "handle_id": null,
+      "role": "swept",
+      "note": "pH axis of Pourbaix diagram, 0-14"
+    },
+    {
+      "handle": "s.E_V",
+      "ref": "E_V",
+      "handle_id": null,
+      "role": "swept",
+      "note": "potential axis of Pourbaix diagram covering Fe(0)/Fe(II)/Fe(III) window"
+    }
+  ],
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "axes": [
+      "pH_axis",
+      "E_V_axis"
+    ],
+    "dof": {
+      "K": 6,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "E",
+        "op": "==",
+        "lhs": {
+          "ref": "E_V"
+        },
+        "rhs": {
+          "axis": "E_V_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "I",
+        "op": "==",
+        "lhs": {
+          "ref": "ionic_strength"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Fe",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Fe"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L1",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_9825"
+        },
+        "rhs": {
+          "const": 1.0
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 0.0,
+      "max": 14.0,
+      "n_points": 71
+    },
+    {
+      "name": "E_V",
+      "min": -1.0,
+      "max": 1.5,
+      "n_points": 51
+    }
+  ],
+  "grid_refine": {
+    "mode": "boundary",
+    "factor": 4,
+    "n_layers": 2
+  }
+}

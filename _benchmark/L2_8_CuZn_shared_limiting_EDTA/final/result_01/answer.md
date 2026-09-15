@@ -1,0 +1,33 @@
+## Doability
+Doable — a p…
+
+## Final deliverables
+
+- [LC1/lc1_2_eqmap_card.json](<LC1/lc1_2_eqmap_card.json>)
+- [LC1/lc1_sweep_input.json](<LC1/lc1_sweep_input.json>)
+- [LC1/status.json](<LC1/status.json>)
+- [LC2/free_energy_card.md](<LC2/free_energy_card.md>)
+- [LC2/status.json](<LC2/status.json>)
+- [LC2/thermodynamic_reference_constants.md](<LC2/thermodynamic_reference_constants.md>)
+- [LC3/calc_input_card.json](<LC3/calc_input_card.json>)
+- [LC3/status.json](<LC3/status.json>)
+- [LD/answer.md](<LD/answer.md>)
+- [LD/verdict.json](<LD/verdict.json>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_concentrations.csv](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_concentrations.csv>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_envelope_Cu$+2.csv](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_envelope_Cu$+2.csv>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_envelope_L1.csv](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_envelope_L1.csv>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_envelope_Zn$+2.csv](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_envelope_Zn$+2.csv>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_frac_Cu.png](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_frac_Cu.png>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_frac_L1.png](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_frac_L1.png>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_frac_ligand.csv](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_frac_ligand.csv>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_frac_metal.csv](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_frac_metal.csv>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_frac_Zn.png](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_frac_Zn.png>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_log_conc.csv](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_log_conc.csv>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_log_conc.png](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_log_conc.png>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_phase_balance_Cu.png](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_phase_balance_Cu.png>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_phase_balance_Zn.png](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_phase_balance_Zn.png>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_run_params.json](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_run_params.json>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_state_metrics.csv](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_state_metrics.csv>)
+- [solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_verdict.md](<solver/Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_verdict.md>)
+- [solver/topology_Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_Cu.json](<solver/topology_Cu$+1_+_Cu$+0_+_Cu$+2_+_Zn$+2_+_Zn$+0_+_EDTA_Cu.json>)
+- [verdict.json](<verdict.json>)

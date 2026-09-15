@@ -1,0 +1,211 @@
+{
+  "sweep_method": "pourbaix_sweep",
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Ag",
+          "element": "Ag",
+          "internal_id": "Ag$+1",
+          "db_id": "metal_2",
+          "redox_states": [
+            "Ag$+1",
+            "Ag$+0"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Chloride ion",
+          "db_id": "ligand_10163",
+          "internal_id": "L1",
+          "smiles": "",
+          "inchi_key": ""
+        }
+      ]
+    },
+    "freeform_vars_define": {}
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "axis",
+    "ionic_strength_mode": "fixed"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "known",
+        "note": "25 C stated in task"
+      },
+      {
+        "id": "I",
+        "handle": "s.ionic_strength",
+        "ref": "ionic_strength",
+        "handle_id": null,
+        "value": 0.1,
+        "basis": "assumed",
+        "note": "Set by 0.1 M chloride background electrolyte"
+      },
+      {
+        "id": "Ag",
+        "handle": "s.total[\"Ag\"]",
+        "ref": "total",
+        "handle_id": "Ag",
+        "value": 0.001,
+        "basis": "known",
+        "note": "Total silver 1 mM from task; element-level total because redox is an axis"
+      },
+      {
+        "id": "Cl",
+        "handle": "s.total[\"ligand_10163\"]",
+        "ref": "total",
+        "handle_id": "ligand_10163",
+        "value": 0.1,
+        "basis": "known",
+        "note": "0.1 M chloride background from task"
+      }
+    ],
+    "deferred": [
+      {
+        "handle": "s.pH",
+        "ref": "pH",
+        "handle_id": null,
+        "role": "swept",
+        "note": "pH axis 0-14 for Pourbaix map"
+      },
+      {
+        "handle": "s.E_V",
+        "ref": "E_V",
+        "handle_id": null,
+        "role": "swept",
+        "note": "Potential axis -0.5 to +1.2 V vs SHE for Pourbaix map"
+      }
+    ],
+    "notes": "T known (25 C); I fixed at 0.1 M consistent with the 0.1 M chloride background; Ag element total 1 mM and Cl total 0.1 M from task. pH and E_V are the Pourbaix sweep axes and are deferred to L3_3.",
+    "n_known": 3,
+    "n_assumed": 1
+  },
+  "_deferred_conditions": [
+    {
+      "handle": "s.pH",
+      "ref": "pH",
+      "handle_id": null,
+      "role": "swept",
+      "note": "pH axis 0-14 for Pourbaix map"
+    },
+    {
+      "handle": "s.E_V",
+      "ref": "E_V",
+      "handle_id": null,
+      "role": "swept",
+      "note": "Potential axis -0.5 to +1.2 V vs SHE for Pourbaix map"
+    }
+  ],
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "axes": [
+      "pH_axis",
+      "E_V_axis"
+    ],
+    "dof": {
+      "K": 6,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "E",
+        "op": "==",
+        "lhs": {
+          "ref": "E_V"
+        },
+        "rhs": {
+          "axis": "E_V_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "I",
+        "op": "==",
+        "lhs": {
+          "ref": "ionic_strength"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Ag",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Ag"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Cl",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_10163"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 0.0,
+      "max": 14.0,
+      "n_points": 71
+    },
+    {
+      "name": "E_V",
+      "min": -0.5,
+      "max": 1.2,
+      "n_points": 86
+    }
+  ],
+  "grid_refine": {
+    "mode": "boundary",
+    "factor": 5,
+    "n_layers": 2
+  }
+}

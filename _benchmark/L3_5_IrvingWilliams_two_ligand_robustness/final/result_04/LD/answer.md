@@ -1,0 +1,1 @@
+Verdict: inconclusive. The ../answer.md file contains only 26 bytes ("## Doability\nDoable: Z…") and provides no substantive analysis of the Zn(II)-glycine speciation. There is nothing to validate against the solver outputs (envelopes, fractions, concentrations at pH 7, dominance ladder, precipitation). A retry with a complete written analysis is required.

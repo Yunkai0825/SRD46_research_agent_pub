@@ -1,0 +1,198 @@
+{
+  "sweep_method": "pH_sweep",
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Mg",
+          "element": "Mg",
+          "internal_id": "Mg$+2",
+          "db_id": "metal_92",
+          "redox_states": [
+            "Mg$+2",
+            "Mg$+0"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Citric acid",
+          "db_id": "ligand_9058",
+          "internal_id": "L1",
+          "smiles": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+          "inchi_key": ""
+        }
+      ]
+    },
+    "freeform_vars_define": {}
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "excluded",
+    "ionic_strength_mode": "fixed"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "known",
+        "note": "25 C stated by task"
+      },
+      {
+        "id": "I",
+        "handle": "s.ionic_strength",
+        "ref": "ionic_strength",
+        "handle_id": null,
+        "value": 0.1,
+        "basis": "known",
+        "note": "I = 0.1 M fixed per task"
+      },
+      {
+        "id": "MgII",
+        "handle": "s.total[\"Mg$+2\"]",
+        "ref": "total",
+        "handle_id": "Mg$+2",
+        "value": 0.001,
+        "basis": "known",
+        "note": "1 mM Mg(II) total"
+      },
+      {
+        "id": "Mg0",
+        "handle": "s.total[\"Mg$+0\"]",
+        "ref": "total",
+        "handle_id": "Mg$+0",
+        "value": 0.0,
+        "basis": "assumed",
+        "note": "No metallic Mg in aqueous pot"
+      },
+      {
+        "id": "L",
+        "handle": "s.total[\"ligand_9058\"]",
+        "ref": "total",
+        "handle_id": "ligand_9058",
+        "value": 0.003,
+        "basis": "known",
+        "note": "3 mM citrate (3:1 excess)"
+      }
+    ],
+    "deferred": [
+      {
+        "handle": "s.pH",
+        "ref": "pH",
+        "handle_id": null,
+        "role": "swept",
+        "note": "pH 2-12 sweep axis per task"
+      }
+    ],
+    "notes": "T, I, Mg(II) total and citrate total are task-stated; Mg(0)=0 explicitly (no metallic Mg). pH is the swept axis (deferred to L3_3). Redox excluded per task; solids included to capture brucite precipitation windows; Davies for I=0.1 M.",
+    "n_known": 4,
+    "n_assumed": 1
+  },
+  "_deferred_conditions": [
+    {
+      "handle": "s.pH",
+      "ref": "pH",
+      "handle_id": null,
+      "role": "swept",
+      "note": "pH 2-12 sweep axis per task"
+    }
+  ],
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "axes": [
+      "pH_axis"
+    ],
+    "dof": {
+      "K": 6,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "I",
+        "op": "==",
+        "lhs": {
+          "ref": "ionic_strength"
+        },
+        "rhs": {
+          "const": 0.1
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "MgII",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Mg$+2"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Mg0",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Mg$+0"
+        },
+        "rhs": {
+          "const": 0.0
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_9058"
+        },
+        "rhs": {
+          "const": 0.003
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 2.0,
+      "max": 12.0,
+      "n_points": 101
+    }
+  ],
+  "grid_refine": {
+    "mode": "none"
+  }
+}
