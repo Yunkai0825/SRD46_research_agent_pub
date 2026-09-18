@@ -1,4 +1,5 @@
 {
+  "_notes": "4 metal(s) \u00d7 2 ligand(s) \u2192 4 pair(s) with eq_map data (4 eq_network(s), one per pair).",
   "equilibrium_networks": [
     {
       "eq_network": "ref_eq_net_1",
@@ -10,10 +11,35 @@
       "ligand_id": 5760,
       "ligand_name": "Aminoacetic acid (Glycine)",
       "ligand_SMILES": "NCC(=O)O",
-      "ligand_canonical_HxL": "HL"
+      "ligand_canonical_HxL": "HL",
+      "selection_provenance": {
+        "solver_parseable_node_count": 2,
+        "excluded_non_solver_eq_networks": []
+      },
+      "_notes": "collection_id=1, H+/Glycine, 2 node(s)",
+      "patch_notes": {
+        "validated": true,
+        "validator_attempts": 1,
+        "screen_summary": {
+          "n_nodes": 2,
+          "n_critical": 0,
+          "n_warn": 0,
+          "critical_node_keys": [],
+          "warn_node_keys": []
+        },
+        "patches": [],
+        "error": null,
+        "validation": {
+          "ok": true,
+          "n_patches": 0,
+          "n_set_value": 0,
+          "n_drop_node": 0,
+          "errors": []
+        }
+      }
     },
     {
-      "eq_network": "ref_eq_net_27283",
+      "eq_network": "ref_eq_net_27259",
       "node_count": 1,
       "temperature": 25.0,
       "ionic_strength": 0.1,
@@ -21,8 +47,33 @@
       "metal_name": "H^[+]",
       "ligand_id": 10076,
       "ligand_name": "Hydroxide ion",
-      "ligand_SMILES": "",
-      "ligand_canonical_HxL": ""
+      "ligand_SMILES": "[OH-]",
+      "ligand_canonical_HxL": "L",
+      "selection_provenance": {
+        "solver_parseable_node_count": 1,
+        "excluded_non_solver_eq_networks": []
+      },
+      "_notes": "collection_id=20041, H+/Hydroxide ion, 1 node(s)",
+      "patch_notes": {
+        "validated": true,
+        "validator_attempts": 1,
+        "screen_summary": {
+          "n_nodes": 1,
+          "n_critical": 0,
+          "n_warn": 0,
+          "critical_node_keys": [],
+          "warn_node_keys": []
+        },
+        "patches": [],
+        "error": null,
+        "validation": {
+          "ok": true,
+          "n_patches": 0,
+          "n_set_value": 0,
+          "n_drop_node": 0,
+          "errors": []
+        }
+      }
     },
     {
       "eq_network": "ref_eq_net_77",
@@ -34,10 +85,35 @@
       "ligand_id": 5760,
       "ligand_name": "Aminoacetic acid (Glycine)",
       "ligand_SMILES": "NCC(=O)O",
-      "ligand_canonical_HxL": "HL"
+      "ligand_canonical_HxL": "HL",
+      "selection_provenance": {
+        "solver_parseable_node_count": 3,
+        "excluded_non_solver_eq_networks": []
+      },
+      "_notes": "collection_id=32, Ni2+/Glycine, 3 node(s)",
+      "patch_notes": {
+        "validated": true,
+        "validator_attempts": 1,
+        "screen_summary": {
+          "n_nodes": 3,
+          "n_critical": 0,
+          "n_warn": 0,
+          "critical_node_keys": [],
+          "warn_node_keys": []
+        },
+        "patches": [],
+        "error": null,
+        "validation": {
+          "ok": true,
+          "n_patches": 0,
+          "n_set_value": 0,
+          "n_drop_node": 0,
+          "errors": []
+        }
+      }
     },
     {
-      "eq_network": "ref_eq_net_27439",
+      "eq_network": "ref_eq_net_27414",
       "node_count": 5,
       "temperature": 25.0,
       "ionic_strength": 0.1,
@@ -45,8 +121,38 @@
       "metal_name": "Ni^[2+]",
       "ligand_id": 10076,
       "ligand_name": "Hydroxide ion",
-      "ligand_SMILES": "",
-      "ligand_canonical_HxL": ""
+      "ligand_SMILES": "[OH-]",
+      "ligand_canonical_HxL": "L",
+      "selection_provenance": {
+        "solver_parseable_node_count": 5,
+        "excluded_non_solver_eq_networks": []
+      },
+      "_notes": "collection_id=20089, Ni2+/Hydroxide ion, 5 node(s)",
+      "patch_notes": {
+        "validated": true,
+        "validator_attempts": 1,
+        "screen_summary": {
+          "n_nodes": 5,
+          "n_critical": 0,
+          "n_warn": 4,
+          "critical_node_keys": [],
+          "warn_node_keys": [
+            "metal112_ligand10076_beta840_net27414",
+            "metal112_ligand10076_beta872_net27414",
+            "metal112_ligand10076_beta674_net27414",
+            "metal112_ligand10076_beta334_net27414"
+          ]
+        },
+        "patches": [],
+        "error": null,
+        "validation": {
+          "ok": true,
+          "n_patches": 0,
+          "n_set_value": 0,
+          "n_drop_node": 0,
+          "errors": []
+        }
+      }
     }
   ]
 }

@@ -3,6 +3,7 @@
 **System**: H, Ni / Glycine, Hydroxide ion
 **Metals**: [Ni]2+
 **Ligands**: [Glycine]
+**Generated**: 2026-09-16 20:34:25 UTC
 
 ## 1. Notation Conventions
 
@@ -32,7 +33,7 @@ Species IDs are dot-separated bracket-tokenized component keys:
 - Negative H rendered as OH: `[OH]`, `[OH]2`, `[OH]3`
 - Charge in brackets: `[z+2]`, `[z-1]`, `[z+0]`
 - Solids: `_(s)` suffix
-- Collision disambiguation: `{1}`, `{2}` (log_beta descending)
+- Collision disambiguation: `[1]`, `[2]` (log_beta descending); cross-card SRD-SRD duplicates: `.dup1`, `.dup2` id suffix + label `@<T>C` frame tag + `[srd_<set> r/n frame|data]` note (full trace in srd_srd_duplicates.json)
 
 ### Reference State Rules
 
@@ -109,8 +110,8 @@ Per-atom oxidation-state analysis of organic ligands (via electronegativity assi
 | M0 | [H]+ | proton | [H]+(aq) | +0.0000 | R2 | *** | +1 | *** |
 | Ni$+2 | [Ni]2+ | metal | [Ni]2+(aq) | +0.0000 | R1 | Ni | +2 | true |
 | Ni$+0 | Ni(s) | metal | Ni(s)(aq/s) | +45.6056 | RULE 1 | Ni | +0 | false |
-| Ni$+3 | Ni(+3) | metal | Ni(+3)(aq/s) | +570.2374 | RULE 1 | Ni | +3 | false |
-| Ni$+4 | Ni(+4) | metal | Ni(+4)(aq/s) | +542.0372 | RULE 1 | Ni | +4 | false |
+| Ni$+3 | Ni(+3) | metal | Ni(+3)(aq/s) | +166.5232 | RULE 1 | Ni | +3 | false |
+| Ni$+4 | Ni(+4) | metal | Ni(+4)(aq/s) | +304.8462 | RULE 1 | Ni | +4 | false |
 | L0 | [OH]- | hydroxide | [OH]-(aq) from Kw | +79.9078 | R3 | *** | -1 | *** |
 | L1 | [Glycine] | ligand_canonical | [[H][L1]] | +0.0000 | R4 | *** | -1 | *** |
 
@@ -158,10 +159,10 @@ All values in kJ/mol. Sorted by element (proton/ligand systems first), then vale
 | [[H][L1]].[z+0] | [[H][L1]].[z+0] | [HGlycine] | +0 | aqueous | +9.5700 | -54.6226 | +0.0000 | +0.0000 | [[H][L1]]:+1 | SRD-46 | true | *** |
 | [L1].[z-1] | [L1].[z-1] | [Glycine] | -1 | aqueous | +0.0000 | -0.0000 | +54.6226 | +54.6226 | [L1]:+1 | SRD-46 | true | *** |
 | Ni$+2.z+2 | Atlas | Ni2+ | +2 | aqueous | -0.0000 | +0.0000 | +0.0000 | +0.0000 | Ni$+2:+1 | Atlas | true | [DUPLICATE GROUP: Ni$+2:1] Atlas: Ni2+ |
-| [Ni$+2].[z+2] | [M1].[z+2] | [Ni]2+ | +2 | aqueous | +0.0000 | -0.0000 | +0.0000 | +0.0000 | [Ni$+2]:+1 | SRD-46 | false | [DUPLICATE GROUP: Ni$+2:1] *** |
+| [Ni$+2].[z+2] | [M1].[z+2] | [Ni]2+ | +2 | aqueous | +0.0000 | -0.0000 | +0.0000 | +0.0000 | [Ni$+2]:+1 | SRD-46 | false | [DUPLICATE GROUP: Ni$+2:1] *** LC2 element review: Pure notation duplicate of aqueous Ni2+; kept Atlas per element instructions. |
 | [Ni$+2].[OH].[z+1] | [M1].[OH].[z+1] | [Ni(OH)]+ | +1 | aqueous | -10.4000 | +59.3600 | +59.3600 | +59.3600 | [Ni$+2]:+1, [OH]:+1 | SRD-46 | true | *** |
 | [Ni$+2].[OH]2.[z+0] | [M1].[OH]2.[z+0] | [Ni(OH)2] | +0 | aqueous | -19.0000 | +108.4461 | +108.4461 | +108.4461 | [Ni$+2]:+1, [OH]:+2 | SRD-46 | true | *** |
-| Ni$+2.OH3.z-1 | Atlas | [HNiO2]- | -1 | aqueous | -29.7836 | +169.9959 | +169.9959 | +169.9959 | Ni$+2:+1 H:-3 | Atlas | false | [DUPLICATE GROUP: Ni$+2:1 H:-3] Atlas: [HNiO2]- |
+| Ni$+2.OH3.z-1 | Atlas | [HNiO2]- | -1 | aqueous | -29.7836 | +169.9959 | +169.9959 | +169.9959 | Ni$+2:+1 H:-3 | Atlas | false | [DUPLICATE GROUP: Ni$+2:1 H:-3] Atlas: [HNiO2]- LC2 element review: Same Ni(OH)3- stoichiometry and charge; keep SRD-46 per element instructions. |
 | [Ni$+2].[OH]3.[z-1] | [M1].[OH]3.[z-1] | [Ni(OH)3]- | -1 | aqueous | -30.0000 | +171.2308 | +171.2308 | +171.2308 | [Ni$+2]:+1, [OH]:+3 | SRD-46 | true | [DUPLICATE GROUP: Ni$+2:1 H:-3] *** |
 | [Ni$+2]4.[OH]4.[z+4] | [M1]4.[OH]4.[z+4] | [Ni4(OH)4]4+ | +4 | aqueous | -27.7000 | +158.1031 | +158.1031 | +158.1031 | [Ni$+2]:+4, [OH]:+4 | SRD-46 | true | *** |
 | [Ni$+2].[L1].[z+1] | [M1].[L1].[z+1] | [Ni(Glyc)]+ | +1 | aqueous | +5.7400 | -32.7622 | +21.8605 | +21.8605 | [Ni$+2]:+1, [L1]:+1 | SRD-46 | true | *** |
@@ -173,11 +174,11 @@ All values in kJ/mol. Sorted by element (proton/ligand systems first), then vale
 | species_id | original_id | label | charge | phase | log_beta | mu0_free_kJ | mu0_canon_kJ | mu_aligned_kJ | stoich | source | include | additional_notes |
 |------------|-------------|-------|--------|-------|----------|-------------|--------------|---------------|--------|--------|---------|------------------|
 | Ni$+2.OH2.z+0(s) | Atlas | Ni(OH)2 | +0 | dissolution | -11.7141 | +66.8603 | +66.8603 | +66.8603 | Ni$+2:+1 H:-2 | Atlas | true | [DUPLICATE GROUP: Ni$+2:1 H:-2] Atlas: Ni(OH)2 |
-| Ni$+2.OH2.z+0(s) | Atlas | NiO | +0 | dissolution | -11.9413 | +68.1574 | +68.1574 | +68.1574 | Ni$+2:+1 H:-2 | Atlas | false | [DUPLICATE GROUP: Ni$+2:1 H:-2] Atlas: NiO |
-| [Ni$+2].[OH]2.[z+0]_(s) | [M1].[OH]2.[z+0]_(s) | [Ni(OH)2](s) | +0 | dissolution | -12.8000 | +73.0585 | +73.0585 | +73.0585 | [Ni$+2]:+1, [OH]:+2 | SRD-46 | false | [DUPLICATE GROUP: Ni$+2:1 H:-2] *** |
-| Ni$+2(3).OH8.z+0(s) | Atlas | Ni3O4.2H2O | +0 | dissolution | -151.0072 | +861.9040 | +861.9040 | +861.9040 | Ni$+2:+3 H:-8 | Atlas | true | Atlas: Ni3O4.2H2O |
-| Ni$+3(2).OH6.z+0(s) | Atlas | Ni2O3.H2O | +0 | dissolution | +99.9067 | -570.2374 | -570.2374 | +570.2374 | Ni$+3:+2 H:-6 | Atlas | true | Atlas: Ni2O3.H2O |
-| Ni$+4.OH4.z+0(s) | Atlas | NiO2.2H2O | +0 | dissolution | -0.0000 | +0.0000 | +0.0000 | +542.0372 | Ni$+4:+1 H:-4 | Atlas | true | Atlas: NiO2.2H2O |
+| Ni$+2.OH2.z+0(s) | Atlas | NiO | +0 | dissolution | -11.9413 | +68.1574 | +68.1574 | +68.1574 | Ni$+2:+1 H:-2 | Atlas | false | [DUPLICATE GROUP: Ni$+2:1 H:-2] Atlas: NiO LC2 element review: Keep hydrated Ni(OH)2 (Atlas) as the physical divalent solid; drop anhydrous NiO (non-competing at unit water activity) and SRD-46 [Ni(OH)2](s) as a notation/source duplicate. |
+| [Ni$+2].[OH]2.[z+0]_(s) | [M1].[OH]2.[z+0]_(s) | [Ni(OH)2](s) | +0 | dissolution | -12.8000 | +73.0585 | +73.0585 | +73.0585 | [Ni$+2]:+1, [OH]:+2 | SRD-46 | false | [DUPLICATE GROUP: Ni$+2:1 H:-2] *** LC2 element review: Keep hydrated Ni(OH)2 (Atlas) as the physical divalent solid; drop anhydrous NiO (non-competing at unit water activity) and SRD-46 [Ni(OH)2](s) as a notation/source duplicate. |
+| Ni$+2.Ni$+3(2).OH8.z+0(s) | Atlas | Ni3O4.2H2O | +0 | dissolution | -7.1179 | +40.6266 | +40.6266 | +373.6730 | Ni$+2:+1 Ni$+3:+2 H:-8 | Atlas | true | Atlas: Ni3O4.2H2O |
+| Ni$+3(2).OH6.z+0(s) | Atlas | Ni2O3.H2O | +0 | dissolution | -0.0000 | +0.0000 | +0.0000 | +333.0464 | Ni$+3:+2 H:-6 | Atlas | true | Atlas: Ni2O3.H2O |
+| Ni$+4.OH4.z+0(s) | Atlas | NiO2.2H2O | +0 | dissolution | -0.0000 | +0.0000 | +0.0000 | +304.8462 | Ni$+4:+1 H:-4 | Atlas | true | Atlas: NiO2.2H2O |
 | Ni$+0.z+0(s) | Atlas | Ni | +0 | dissolution | -0.0000 | +0.0000 | +0.0000 | +45.6056 | Ni$+0:+1 | Atlas | true | Atlas: Ni |
 
 ### 5.3 Gas Species

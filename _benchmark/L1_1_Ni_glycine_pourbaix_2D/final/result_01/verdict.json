@@ -1,6 +1,10 @@
 {
   "verdict": "supported",
   "status": "ok",
-  "notes": [],
-  "purpose": "Build a 2-D Pourbaix (E-pH) diagram for Ni in the presence of glycine and identify the pH/E window where soluble Ni-glycinate complexes are the dominant Ni species."
+  "notes": [
+    "Topology regions",
+    "labels",
+    "and measures match L1 report. 9 unique dominant-species regions confirmed with correct assignments to Ni species."
+  ],
+  "purpose": "Build a 2-D Pourbaix diagram (E vs pH) for nickel in the presence of glycine and identify the stability window of soluble Ni-glycinate complexes."
 }

@@ -10,14 +10,14 @@ file,element,sub_element,phase,species,oxidation_state,mu0_cal,mu0_kJ,name
 10_Chromium.md,Chromium,Chromium,Dissolved,CrOH(2+),+3,-103000.0,-430.952,"Chromyl ion, green or violet"
 10_Chromium.md,Chromium,Chromium,Dissolved,Cr(OH)2(+),+3,-148900.0,-622.9976,Chromyl ion
 10_Chromium.md,Chromium,Chromium,Dissolved,CrO2(-),+3,-128090.0,-535.9286,"Chromite ion, green"
-10_Chromium.md,Chromium,Chromium,Dissolved,CrO3(2-),+3,-142200.0,-594.9648,"Chromite ion, green"
+10_Chromium.md,Chromium,Chromium,Dissolved,CrO3(3-),+3,-142200.0,-594.9648,"Chromite ion, green"
 10_Chromium.md,Chromium,Chromium,Dissolved,H2CrO4,+6,-189200.0,-791.6128,"Chromic acid, orange-red"
 10_Chromium.md,Chromium,Chromium,Dissolved,HCrO4(-),+6,-183900.0,-769.4376,"Acid chromate ion, orange"
 10_Chromium.md,Chromium,Chromium,Dissolved,CrO4(2-),+6,-176100.0,-736.8024,"Chromate ion, yellow"
 10_Chromium.md,Chromium,Chromium,Dissolved,Cr2O7(2-),+6,-315400.0,-1319.6336,"Dichromate ion, orange"
 10_Molybdenum.md,Molybdenum,Molybdenum,Solid,Mo,0,0.0,0.0,"Molybdenum, silvery white, b.c.cub."
 10_Molybdenum.md,Molybdenum,Molybdenum,Solid,MoO2,+4,-120000.0,-502.08,"Molybdenum dioxide, brown-purple, quad."
-10_Molybdenum.md,Molybdenum,Molybdenum,Solid,MoO3 hydr. (H2MoO4),+6,-221000.0,-924.664,"Molybdic acid H2MoO4, white or yellowish, hex."
+10_Molybdenum.md,Molybdenum,Molybdenum,Solid,H2MoO4,+6,-221000.0,-924.664,"Molybdic acid (hydrated MoO3), white or yellowish, hex."
 10_Molybdenum.md,Molybdenum,Molybdenum,Dissolved,Mo(3+),+3,-13800.0,-57.7392,"Molybdenous ion, dark olive-green"
 10_Molybdenum.md,Molybdenum,Molybdenum,Dissolved,HMoO4(-),+6,-205420.0,-859.4773,"Acid molybdate ion, colourless"
 10_Tungsten.md,Tungsten,Tungsten,Solid,W,0,0.0,0.0,"Tungsten, grey, b.c.cub. and cub."
@@ -54,10 +54,10 @@ file,element,sub_element,phase,species,oxidation_state,mu0_cal,mu0_kJ,name
 11_Technetium.md,Technetium,Technetium,Dissolved,HTcO4,+7,-150455.0,-629.5037,"Pertechnetic acid, yellow, pink or red"
 11_Technetium.md,Technetium,Technetium,Dissolved,TcO4(-),+7,-100615.0,-420.9732,"Pertechnetate ion, colourless"
 12_Cobalt.md,Cobalt,Cobalt,Solid,Co,0,0.0,0.0,"Cobalt, grey, hex."
-12_Cobalt.md,Cobalt,Cobalt,Solid,CoO hyd. (Co(OH)2),+2,-109000.0,-456.056,"Hydrated cobaltous oxide or cobaltous hydroxide, blue (red), rhomb."
+12_Cobalt.md,Cobalt,Cobalt,Solid,Co(OH)2,+2,-109000.0,-456.056,"Hydrated cobaltous oxide or cobaltous hydroxide, blue (red), rhomb."
 12_Cobalt.md,Cobalt,Cobalt,Solid,CoO,+2,-49000.0,-205.016,"Cobaltous oxide, grey-green, cub."
 12_Cobalt.md,Cobalt,Cobalt,Solid,Co3O4,+2.67,-167835.0,-702.2216,"Cobalto-cobaltic oxide, grey-black, cub."
-12_Cobalt.md,Cobalt,Cobalt,Solid,Co2O3 hyd. (Co(OH)3),+3,-115130.0,-481.7039,"Hydrated cobaltic oxide or cobaltic hydroxide, yellow-brown"
+12_Cobalt.md,Cobalt,Cobalt,Solid,Co2O3.3H2O,+3,-285200.0,-1193.2768,"Hydrated cobaltic oxide or cobaltic hydroxide, equivalent to 2Co(OH)3, yellow-brown"
 12_Cobalt.md,Cobalt,Cobalt,Solid,CoO2,+4,-11840.0,-49.5386,Cobaltic peroxide
 12_Cobalt.md,Cobalt,Cobalt,Dissolved,Co(2+),+2,-12800.0,-53.5552,"Cobaltous ion, pink"
 12_Cobalt.md,Cobalt,Cobalt,Dissolved,HCoO2(-),+2,-82970.0,-347.1465,"Dicobaltite ion, blue"
@@ -76,9 +76,9 @@ file,element,sub_element,phase,species,oxidation_state,mu0_cal,mu0_kJ,name
 12_Nickel.md,Nickel,Nickel,Solid,Ni,0,0.0,0.0,"Nickel, silvery white, f.c.cub."
 12_Nickel.md,Nickel,Nickel,Solid,Ni(OH)2,+2,-108300.0,-453.1272,"Hydrated nickelous oxide or nickelous hydroxide Ni(OH)2, green, rhomb."
 12_Nickel.md,Nickel,Nickel,Solid,NiO,+2,-51300.0,-214.6392,"Nickelous oxide, grey, cub."
-12_Nickel.md,Nickel,Nickel,Solid,Ni3O4.2H2O,+2.67,-110150.0,-460.8676,Dihydrated nickelo-nickelic oxide Ni3O4.2H2O
-12_Nickel.md,Nickel,Nickel,Solid,Ni2O3.H2O,+3,-112270.0,-469.7377,"Monohydrated nickelic oxide Ni2O3.H2O, black"
-12_Nickel.md,Nickel,Nickel,Solid,NiO2.2H2O,+4,-51420.0,-215.1413,"Dihydrated nickel peroxide NiO2.2H2O, black"
+12_Nickel.md,Nickel,Nickel,Solid,Ni3O4.2H2O,+2.67,-283530.0,-1186.2895,Dihydrated nickelo-nickelic oxide Ni3O4.2H2O
+12_Nickel.md,Nickel,Nickel,Solid,Ni2O3.H2O,+3,-168960.0,-706.9286,"Monohydrated nickelic oxide Ni2O3.H2O, black"
+12_Nickel.md,Nickel,Nickel,Solid,NiO2.2H2O,+4,-164800.0,-689.5232,"Dihydrated nickel peroxide NiO2.2H2O, black"
 12_Nickel.md,Nickel,Nickel,Dissolved,Ni2+,+2,-10900.0,-45.6056,"Nickelous ion, green"
 12_Nickel.md,Nickel,Nickel,Dissolved,HNiO2(-),+2,-83650.0,-349.9916,Dinickelite ion
 13_Iridium.md,Iridium,Iridium,Solid,Ir,0,0.0,0.0,"Iridium, shiny white, f.c. cub."
@@ -117,7 +117,7 @@ file,element,sub_element,phase,species,oxidation_state,mu0_cal,mu0_kJ,name
 13_Rhodium.md,Rhodium,Rhodium,Dissolved,Rh(+),+1,-1000.0,-4.184,Hyporhodous ion
 13_Rhodium.md,Rhodium,Rhodium,Dissolved,Rh(2+),+2,28000.0,117.152,Rhodous ion
 13_Rhodium.md,Rhodium,Rhodium,Dissolved,Rh(3+),+3,28000.0,117.152,Rhodic ion
-13_Rhodium.md,Rhodium,Rhodium,Dissolved,RhO4(-),+6,-1000.0,-4.184,"Rhodate ion, dark purple"
+13_Rhodium.md,Rhodium,Rhodium,Dissolved,RhO4(2-),+6,-1000.0,-4.184,"Rhodate ion, dark purple"
 13_Ruthenium.md,Ruthenium,Ruthenium,Solid,Ru,0,0.0,0.0,"Ruthenium, silvery grey, hex."
 13_Ruthenium.md,Ruthenium,Ruthenium,Solid,Ru2O3 hydr.,+3,-9100.0,-38.0744,"Hydrated ruthenium sesquioxide Ru2O3·3H2O or Ru(OH)3, black"
 13_Ruthenium.md,Ruthenium,Ruthenium,Solid,RuO2 hydr.,+4,-101000.0,-422.584,"Hydrated ruthenic oxide RuO2·2H2O or ruthenic hydroxide Ru(OH)4, black"
@@ -179,7 +179,7 @@ file,element,sub_element,phase,species,oxidation_state,mu0_cal,mu0_kJ,name
 16_Gallium.md,Gallium,Gallium,Solid,Ga2O,+1,-75200.0,-314.6368,"Sub-oxide, brown-black"
 16_Gallium.md,Gallium,Gallium,Solid,Ga2O3(anh.alpha),+3,-237200.0,-992.4448,"alpha-Sesquioxide, white, rhomb."
 16_Gallium.md,Gallium,Gallium,Solid,Ga2O3(hydr.),+3,-227930.0,-953.6591,"Trihydrated oxide or hydroxide Ga(OH)3, white"
-16_Gallium.md,Gallium,Gallium,Dissolved,Ga(2+),+1,-21000.0,-87.864,"Gallous ion, colourless"
+16_Gallium.md,Gallium,Gallium,Dissolved,Ga(+),+1,-21000.0,-87.864,"Gallous ion, colourless"
 16_Gallium.md,Gallium,Gallium,Dissolved,Ga(3+),+3,-36600.0,-153.1344,"Gallic ion, colourless"
 16_Gallium.md,Gallium,Gallium,Dissolved,GaOH(2+),+3,-89800.0,-375.7232,"Gallyl ion, colourless"
 16_Gallium.md,Gallium,Gallium,Dissolved,GaO(+),+3,-85400.0,-357.3136,"Gallyl ion, colourless"
@@ -205,14 +205,14 @@ file,element,sub_element,phase,species,oxidation_state,mu0_cal,mu0_kJ,name
 17_Carbon.md,Carbon,Carbon,Solid,C(graphite),0,0.0,0.0,"Graphite, shiny black, hex."
 17_Carbon.md,Carbon,Carbon,Dissolved,CH3OH,-2,-41700.0,-174.4728,"Methanol or methyl alcohol, colourless"
 17_Carbon.md,Carbon,Carbon,Dissolved,HCHO,0,-31000.0,-129.704,"Methanal or formaldehyde, colourless"
-17_Carbon.md,Carbon,Carbon,Dissolved,HCOOH,+1,-85100.0,-356.0584,"Formic acid, colourless"
-17_Carbon.md,Carbon,Carbon,Dissolved,HCOO(-),-1,-80000.0,-334.72,"Formate ion, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,HCOOH,+2,-85100.0,-356.0584,"Formic acid, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,HCOO(-),+2,-80000.0,-334.72,"Formate ion, colourless"
 17_Carbon.md,Carbon,Carbon,Dissolved,C2O4H2,+3,-166800.0,-697.8912,"Oxalic acid, colourless"
-17_Carbon.md,Carbon,Carbon,Dissolved,HC2O4(-),-1,-165120.0,-690.8621,"Acid oxalate ion, colourless"
-17_Carbon.md,Carbon,Carbon,Dissolved,C2O4(2-),-2,-159400.0,-666.9296,"Oxalate ion, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,HC2O4(-),+3,-165120.0,-690.8621,"Acid oxalate ion, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,C2O4(2-),+3,-159400.0,-666.9296,"Oxalate ion, colourless"
 17_Carbon.md,Carbon,Carbon,Dissolved,H2CO3,+4,-149000.0,-623.416,Carbonic acid
-17_Carbon.md,Carbon,Carbon,Dissolved,HCO3(-),-1,-140310.0,-587.057,"Bicarbonate ion, colourless"
-17_Carbon.md,Carbon,Carbon,Dissolved,CO3(2-),-2,-126220.0,-528.1045,"Carbonate ion, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,HCO3(-),+4,-140310.0,-587.057,"Bicarbonate ion, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,CO3(2-),+4,-126220.0,-528.1045,"Carbonate ion, colourless"
 17_Carbon.md,Carbon,Carbon,Gaseous,CH4,-4,-12140.0,-50.7938,"Methane, colourless"
 17_Carbon.md,Carbon,Carbon,Gaseous,CO,+2,-32807.9,-137.2683,"Carbon monoxide, colourless"
 17_Carbon.md,Carbon,Carbon,Gaseous,CO2,+4,-94259.8,-394.383,"Carbon dioxide, colourless"
@@ -231,7 +231,7 @@ file,element,sub_element,phase,species,oxidation_state,mu0_cal,mu0_kJ,name
 17_Lead.md,Lead,Lead,Solid,PbO(anh.red),+2,,,"Plumbous oxide, red, quadratic"
 17_Lead.md,Lead,Lead,Solid,PbO(anh.yellow),+2,,,"Plumbous oxide, yellow, orthorhombic"
 17_Lead.md,Lead,Lead,Solid,PbO(hydr.),+2,,,"Hydrated plumbous oxide or hydroxide, white, hexagonal"
-17_Lead.md,Lead,Lead,Solid,Pb3O4,+2.67,-147000.0,-615.048,"Plumbo-plumbic oxide (minium), red, quadratic"
+17_Lead.md,Lead,Lead,Solid,Pb3O4,"+2, +4",-147000.0,-615.048,"Plumbo-plumbic oxide (minium), red, quadratic"
 17_Lead.md,Lead,Lead,Solid,Pb2O3,+3,-98417.0,-411.7767,"Sesquioxide, yellow-orange, amorphous or quadratic"
 17_Lead.md,Lead,Lead,Solid,PbO2,+4,-52340.0,-218.9906,"Dioxide, brown, quadratic"
 17_Lead.md,Lead,Lead,Dissolved,Pb(2+),+2,-5810.0,-24.309,"Plumbous ion, colourless"
@@ -733,7 +733,7 @@ file,element,sub_element,phase,species,oxidation_state,mu0_cal,mu0_kJ,name
 7_Uranium.md,Uranium,Uranium,Solid,U,0,0.0,0.0,Uranium
 7_Uranium.md,Uranium,Uranium,Solid,U2O3,+3,,,Uranium(III) oxide
 7_Uranium.md,Uranium,Uranium,Solid,UO2,+4,,,Uranium dioxide
-7_Uranium.md,Uranium,Uranium,Solid,U3O8,+8/3 (mixed),,,Triuranium octoxide
+7_Uranium.md,Uranium,Uranium,Solid,U3O8,+16/3 (mixed),,,Triuranium octoxide
 7_Uranium.md,Uranium,Uranium,Solid,UO3,+6,,,Uranium trioxide
 7_Uranium.md,Uranium,Uranium,Dissolved,U+++,+3,,,Uranous ion (trivalent)
 7_Uranium.md,Uranium,Uranium,Dissolved,U++++,+4,,,Uranic ion (tetravalent)
@@ -748,19 +748,19 @@ file,element,sub_element,phase,species,oxidation_state,mu0_cal,mu0_kJ,name
 8_Titanium.md,Titanium,Titanium,Solid,Ti,0,0.0,0.0,"Titanium, silvery grey, hex."
 8_Titanium.md,Titanium,Titanium,Solid,TiO,+2,-116920.0,-489.1933,"Titanium monoxide, black"
 8_Titanium.md,Titanium,Titanium,Solid,Ti2O3 anh.,+3,-342310.0,-1432.225,"Titanium sesquioxide, violet, rhomb."
-8_Titanium.md,Titanium,Titanium,Solid,Ti2O3 hydr. (Ti(OH)3),+3,-331740.0,-1388.0002,"Titanium hydroxide Ti(OH)3, violet-black (3)"
+8_Titanium.md,Titanium,Titanium,Solid,Ti2O3.3H2O,+3,-501940.0,-2100.117,"Hydrated titanium sesquioxide, equivalent to 2Ti(OH)3, violet-black (3)"
 8_Titanium.md,Titanium,Titanium,Solid,Ti3O5,+3.33,-553620.0,-2316.3461,Blue oxide
 8_Titanium.md,Titanium,Titanium,Solid,TiO2 anh.,+4,-212330.0,-888.3887,"Titanium dioxide or rutile, blue, rhomb."
-8_Titanium.md,Titanium,Titanium,Solid,TiO2 hydr. (TiO2.H2O),+4,-196300.0,-821.3192,"Hydrated dioxide TiO2.H2O or metatitanic acid, white (3)"
+8_Titanium.md,Titanium,Titanium,Solid,TiO2.H2O,+4,-252990.0,-1058.5102,"Hydrated dioxide TiO2.H2O or metatitanic acid, white (3)"
 8_Titanium.md,Titanium,Titanium,Solid,TiO3 hydr. (TiO3.2H2O),+6,,,"Hydrated peroxide TiO3.2H2O, yellow"
 8_Titanium.md,Titanium,Titanium,Dissolved,Ti++,+2,-75100.0,-314.2184,"Hypotitanous ion, greenish brown"
 8_Titanium.md,Titanium,Titanium,Dissolved,Ti+++,+3,-83600.0,-349.7824,"Titanous ion, violet"
 8_Titanium.md,Titanium,Titanium,Dissolved,TiO++,+4,-138000.0,-577.392,"Titanyl ion, colourless"
 8_Titanium.md,Titanium,Titanium,Dissolved,HTiO3(-),+4,-228460.0,-955.8766,"Titanate ion, colourless"
-8_Titanium.md,Titanium,Titanium,Dissolved,TiO2(+),+6,-111670.0,-467.2273,"Pertitanyl ion, orange"
+8_Titanium.md,Titanium,Titanium,Dissolved,TiO2(2+),+6,-111670.0,-467.2273,"Pertitanyl ion, orange"
 8_Zirconium.md,Zirconium,Zirconium,Solid,Zr,0,0.0,0.0,"Zirconium, grey-white, cubic"
-8_Zirconium.md,Zirconium,Zirconium,Solid,ZrO2 hydr. (ZrO2.2H2O or Zr(OH)4),+4,-370000.0,-1548.08,"Hydrated oxide ZrO2.2H2O or Zr(OH)4, white, amorphous"
-8_Zirconium.md,Zirconium,Zirconium,Solid,ZrO(OH)2 hydr. (ZrO2.H2O),+4,-311500.0,-1303.316,"Hydrated oxide ZrO2.H2O or ZrO(OH)2, white"
+8_Zirconium.md,Zirconium,Zirconium,Solid,ZrO2.2H2O,+4,-370000.0,-1548.08,"Hydrated oxide, equivalent to Zr(OH)4, white, amorphous"
+8_Zirconium.md,Zirconium,Zirconium,Solid,ZrO2.H2O,+4,-311500.0,-1303.316,"Hydrated oxide, equivalent to ZrO(OH)2, white"
 8_Zirconium.md,Zirconium,Zirconium,Solid,ZrO2 anh.,+4,-247700.0,-1036.3768,"Anhydrous oxide ZrO2 or zirconia, white, monoclinic"
 8_Zirconium.md,Zirconium,Zirconium,Dissolved,Zr4+,+4,-112000.0,-468.608,"Zirconic ion, colourless"
 8_Zirconium.md,Zirconium,Zirconium,Dissolved,ZrO2+,+4,-201500.0,-843.076,"Zirconyl ion, colourless"

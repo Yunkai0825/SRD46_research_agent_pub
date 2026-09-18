@@ -1,34 +1,27 @@
 ## Answer
 
-For 1 mM Ni(II) with 10 mM glycine at 25 °C and I = 0.1 m, the computed 2-D Pourbaix diagram (pH 0–14, E = −1.00 to +1.60 V vs SHE, all 4686 coarse cells converged) shows **seven predominance fields**: metallic Ni° at the bottom, aqueous Ni²⁺ in the acidic block, three stacked soluble Ni-glycinate complexes across the mid-pH strip, Ni(OH)₂(s) at high pH, and a small Ni₂O₃·H₂O(s) sliver in the extreme upper-right corner.
+The 2-D Pourbaix diagram for 1 mM Ni + 10 mM glycine (25 °C, I = 0.1 m, pH 0–14, E = −1 to +1.6 V vs SHE) resolves into **nine dominant-species regions**: metallic Ni⁰(s) along the reducing floor, aqueous Ni²⁺ across the acidic Ni(II) band, three successive Ni-glycinate complexes in a near-neutral–to-alkaline vertical staircase, β-Ni(OH)₂ as a small alkaline wedge, and mixed Ni₃O₄·2H₂O, Ni₂O₃·H₂O, NiO₂·2H₂O solids climbing the upper (oxidising) part of the map.
 
-**Soluble Ni-glycinate stability window.** A dissolved Ni-glycinate complex is the dominant Ni species over a compact but chemically wide band:
+**Soluble Ni-glycinate stability windows** (each spans essentially the full Ni(II) E-band because these are non-redox ligand-exchange complexes):
 
-- **pH ≈ 6.06 → 11.24** (the Ni²⁺|[Ni(Glyc)]⁺ wall on the left, the [Ni(Glyc)₃]⁻|Ni(OH)₂(s) wall on the right)
-- **E from the Ni°/glycinate reductive floor upward to the top of the sweep (+1.6 V)**, where that floor tilts from ≈ −0.345 V at pH 6.06 down to ≈ −0.5475 V at pH 11.24.
+| Complex | pH window | E window (V vs SHE) |
+|---|---|---|
+| [Ni(Glyc)]⁺ | ≈ 6.07 → 6.76 | ≈ −0.35 up to +0.87 |
+| [Ni(Glyc)₂]⁰ | ≈ 6.76 → 7.92 | ≈ −0.37 up to +0.69–0.77 |
+| [Ni(Glyc)₃]⁻ | ≈ 7.92 → 11.24 | ≈ −0.43 up to +0.26–0.69 |
 
-Within this envelope the glycinate speciation ladder is:
+**Chemical meaning.** Below pH ~6, glycine is mostly zwitterionic (HGlycine, pK_a2 ≈ 9.57) so [Glyc⁻] is too low to displace water from the Ni(II) aqua ion — Ni²⁺(aq) dominates. As pH rises, deprotonation feeds free glycinate into solution, and the successive stepwise formation constants (log K₁ = 5.74, log K₂ = 4.84, log K₃ = 3.52) drive the 1:1 → 1:2 → 1:3 crossovers at pH 6.07, 6.76, and 7.92. The bis-glycinate [Ni(Glyc)₂]⁰ is the biologically relevant species near neutral pH; the tris-chelate [Ni(Glyc)₃]⁻ is the widest field and, crucially, **suppresses Ni(OH)₂ precipitation between pH ~8 and 11** — in pure Ni–water Ni(OH)₂ would already deposit near pH 8. This is exactly the chelation service glycine provides: it keeps ~1 mM Ni soluble across almost the entire water-stability potential window up to pH ~11.
 
-- **[Ni(Glyc)]⁺** — pH ≈ 6.06 – 6.78 (narrow strip)
-- **[Ni(Glyc)₂]°** — pH ≈ 6.78 – 7.94 (neutral, most lipophilic member)
-- **[Ni(Glyc)₃]⁻** — pH ≈ 7.94 – 11.24 (widest field; net-negative)
-
-**Chemical meaning.** The boundaries between the three glycinate complexes and between Ni²⁺ and [Ni(Glyc)]⁺ are essentially vertical because they are non-redox ligand-binding switches — the Ni oxidation state does not change, so potential barely enters. What sets them is the competition between glycine protonation (the ammonium pKa is ≈ 9.57, so free Gly⁻ is scarce below pH 6) and the stepwise formation constants (log β₁ = 5.74; log K₂ = 4.84; log K₃ = 3.52). Ignition of complexation at pH ≈ 6 marks the point where β₁·[Gly⁻] first out-competes hydration of Ni²⁺; each further pH unit brings enough additional free glycinate to push on the next stepwise equilibrium. The upper wall at pH 11.24 is where hydroxide activity (log K_sp of Ni(OH)₂ = −11.71) finally beats even the tris-glycinato complex, precipitating Ni(OH)₂(s). The mild upward tilt of the Ni°/Ni(II) reductive floor across the glycinate region reflects the classical Nernstian stabilisation of the metal when the free Ni²⁺ activity is lowered by complexation and hydrolysis.
-
-**Practical impact.** Glycine extends the pH window in which Ni stays fully dissolved by ≈ 4.6 pH units beyond the bare-Ni²⁺ field — at 1 mM Ni without ligand, Ni(OH)₂ would appear near pH 8, whereas with 10 mM glycine soluble Ni-glycinates persist up to pH ≈ 11.2 across the entire water-stability E-range. This is exactly the window relevant to Ni electroplating baths, aqueous Ni(II) catalysis, and Ni recovery from complexing waste streams. Note that above pH ≈ 8 the dominant form [Ni(Glyc)₃]⁻ is anionic, which matters for ion-exchange, membrane, and adsorption behaviour.
+Above pH ≈ 11.24, even the tris-glycinate loses to β-Ni(OH)₂(s), and above E ≈ +0.7 V (near neutral) Ni(II) is oxidised out of solution into the mixed Ni(II,III) oxide Ni₃O₄·2H₂O, then Ni₂O₃·H₂O (Ni(III)) and NiO₂·2H₂O (Ni(IV)) as E climbs further — the classic Nernstian slopes (e.g. the Ni²⁺/Ni₂O₃·H₂O boundary tilting from (pH 5.36, +1.013 V) to (pH 4.13, +1.227 V), a 2 e⁻ / 6 H⁺ couple) match textbook expectations. On the reducing side, the Ni⁰(s) floor sits near E ≈ −0.33 V in acid, sagging to −0.71 V at pH 14 as hydroxide/oxide screening lowers the Ni²⁺ activity.
 
 ## Evidence
-
-- Method: 2-D `pourbaix_sweep`, pH ∈ [0, 14], E ∈ [−1.00, +1.60] V; coarse grid 66×71, all **4686 / 4686 cells converged**; refined classified grid ΔpH = 0.0125, ΔE = 0.0025 V (87 833 points).
-- Ni²⁺ | [Ni(Glyc)]⁺ boundary (`DmsRegEq_3`): near-vertical, pH ≈ 6.0625 – 6.075, spanning E from −0.345 V to +1.6 V.
-- [Ni(Glyc)]⁺ | [Ni(Glyc)₂]° boundary (`DmsRegEq_2`): pH ≈ 6.76 – 6.80.
-- [Ni(Glyc)₂]° | [Ni(Glyc)₃]⁻ boundary (`DmsRegEq_1`): pH ≈ 7.91 – 7.98.
-- [Ni(Glyc)₃]⁻ | Ni(OH)₂(s) boundary (`DmsRegEq_8`): exactly vertical at pH = 11.2375.
-- Reductive floor (Ni°/Ni-glycinate & Ni°/Ni(OH)₂): E = −0.345 V @ pH 6.06, −0.365 V @ pH 6.76, −0.43 V @ pH 7.91, −0.5475 V @ pH 11.24, −0.7125 V @ pH 14.
-- Region sizes (measures): Ni²⁺ = 11.76 (largest); [Ni(Glyc)₃]⁻ = 6.90 (largest glycinate field); [Ni(Glyc)₂]° = 2.35; [Ni(Glyc)]⁺ = 1.42; Ni₂O₃·H₂O(s) sliver = 0.17.
-- Reference cut at E = 0.30125 V traverses Ni²⁺ → [Ni(Glyc)]⁺ (pH 6.07) → [Ni(Glyc)₂]° (pH 6.79) → [Ni(Glyc)₃]⁻ (pH 7.97) → Ni(OH)₂ (pH 11.24), confirming the ladder.
-- Thermodynamic constants used (from the reference table): log β₁,₂,₃(Ni-Gly) = 5.74, 10.58, 14.10; glycine amine pKa ≈ 9.57; log K_sp Ni(OH)₂ = −11.71.
+- 66 450/66 450 refined cells converged (`speciation_full_Ni_+_Glycine.csv` header `n_refined: 66450, n_coarse_unrefined: 0`); topology has 9 labels, 9 connected regions, 18 boundary manifolds, 10 internal + 6 sweep-limit junctions.
+- Aqueous Ni(II) region measures: Ni²⁺ = 10.11, [Ni(Glyc)]⁺ = 0.84, [Ni(Glyc)₂] = 1.31, [Ni(Glyc)₃]⁻ = 3.47.
+- Glycinate crossover junctions: `DmsRegEqJnc_3` at (pH 6.06, −0.345 V), `DmsRegEqJnc_2` at (pH 6.764, −0.365 V), `DmsRegEqJnc_1` at (pH 7.916, −0.429 V), `DmsRegEqJnc_9` at (pH 11.236, −0.549 V).
+- Formation constants used (from reference table): log β₁ = 5.74, log β₂ = 10.58, log β₃ = 14.10; glycine pK_a2 = 9.57.
+- Redox caps of the Ni(II) aqueous band: [Ni(Glyc)]⁺ → Ni₃O₄·2H₂O at +0.87 V; [Ni(Glyc)₂] → +0.69–0.77 V; [Ni(Glyc)₃]⁻ → +0.26–0.69 V.
+- Ni²⁺|Ni₂O₃·H₂O redox line from (pH 5.36, +1.013 V) to (pH 4.13, +1.227 V) — Nernstian 2 e⁻/6 H⁺ slope. Ni⁰|Ni(OH)₂ line from (pH 11.236, −0.549 V) to (pH 14, −0.711 V).
 
 ## Final deliverables
 
-- [Result 01](final/result_01/answer.md): Build a 2-D Pourbaix (E-pH) diagram for Ni in the presence of glycine and identify the pH/E window where soluble Ni-glycinate complexes are the dominant Ni species.
+- [Result 01](final/result_01/answer.md): Build a 2-D Pourbaix diagram (E vs pH) for nickel in the presence of glycine and identify the stability window of soluble Ni-glycinate complexes.

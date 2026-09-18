@@ -20,7 +20,7 @@
 | [Ni$+2].[L1]2.[z+0] | [Ni(Glyc)2] | aqueous | +10.5800 | [Ni$+2]:+1, [L1]:+2 | SRD-46 | true |
 | [Ni$+2].[L1]3.[z-1] | [Ni(Glyc)3]- | aqueous | +14.1000 | [Ni$+2]:+1, [L1]:+3 | SRD-46 | true |
 | Ni$+2.OH2.z+0(s) | Ni(OH)2 | dissolution | -11.7141 | Ni$+2:+1 H:-2 | Atlas | true |
-| Ni$+2(3).OH8.z+0(s) | Ni3O4.2H2O | dissolution | -151.0072 | Ni$+2:+3 H:-8 | Atlas | true |
-| Ni$+3(2).OH6.z+0(s) | Ni2O3.H2O | dissolution | +99.9067 | Ni$+3:+2 H:-6 | Atlas | true |
+| Ni$+2.Ni$+3(2).OH8.z+0(s) | Ni3O4.2H2O | dissolution | -7.1179 | Ni$+2:+1 Ni$+3:+2 H:-8 | Atlas | true |
+| Ni$+3(2).OH6.z+0(s) | Ni2O3.H2O | dissolution | -0.0000 | Ni$+3:+2 H:-6 | Atlas | true |
 | Ni$+4.OH4.z+0(s) | NiO2.2H2O | dissolution | -0.0000 | Ni$+4:+1 H:-4 | Atlas | true |
 | Ni$+0.z+0(s) | Ni | dissolution | -0.0000 | Ni$+0:+1 | Atlas | true |

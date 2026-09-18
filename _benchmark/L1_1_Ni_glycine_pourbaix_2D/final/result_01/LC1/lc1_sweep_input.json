@@ -35,13 +35,15 @@
           "internal_id": "L1",
           "formula": "C2H5N1O2",
           "smiles": "NCC(=O)O",
-          "inchi": "InChI=1S/C2H5NO2/c3-1-2(4)5/h1,3H2,(H,4,5)"
+          "inchi": "InChI=1S/C2H5NO2/c3-1-2(4)5/h1,3H2,(H,4,5)",
+          "iupac_name": "2-aminoacetic acid"
         },
         {
           "name": "Hydroxide ion",
           "db_id": "ligand_10076",
           "internal_id": "L0",
-          "water_species": true
+          "water_species": true,
+          "smiles": "[OH-]"
         }
       ]
     }

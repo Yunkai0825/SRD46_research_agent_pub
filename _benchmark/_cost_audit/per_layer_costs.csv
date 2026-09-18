@@ -1,7 +1,372 @@
-step,cost_usd
-L0,12.8918
-L1,54.8985
-LC1,118.2124
-LC2,145.1989
-LC3,34.8871
-LD,19.3759
+family,id,session,layer,role_group,estimated,calls,input_tokens,output_tokens,cost_usd,cost_cache5m_usd,cost_cache1h_usd,cost_sysonly5m_usd,cost_ideal_usd
+L1,L1_1,L1_1_Ni_glycine_pourbaix_2D,L0 orchestrator,orchestration (L0+L1+LD),False,2,13594,2642,0.134,0.151,0.202,0.151,0.1259
+L1,L1_1,L1_1_Ni_glycine_pourbaix_2D,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,12,353121,15533,2.1539,0.9303,0.9749,2.0608,0.7636
+L1,L1_1,L1_1_Ni_glycine_pourbaix_2D,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,4,13784,348,0.0776,0.0375,0.0518,0.0491,0.0375
+L1,L1_1,L1_1_Ni_glycine_pourbaix_2D,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,9,53338,1445,0.3028,0.2,0.2894,0.3418,0.2
+L1,L1_1,L1_1_Ni_glycine_pourbaix_2D,LC2_3 element-instruction supervisor,LC2_3 dedup,False,13,87917,15507,0.8273,0.5626,0.648,0.7496,0.5626
+L1,L1_1,L1_1_Ni_glycine_pourbaix_2D,LC2_3 per-group dedup,LC2_3 dedup,False,13,46118,2313,0.2884,0.1649,0.2196,0.3067,0.1649
+L1,L1_1,L1_1_Ni_glycine_pourbaix_2D,LC2_3 singleton dedup,LC2_3 dedup,False,9,36561,9424,0.4184,0.3059,0.3399,0.4641,0.3059
+L1,L1_1,L1_1_Ni_glycine_pourbaix_2D,LC3_1 method picker,LC3 solver design,False,2,6950,147,0.0384,0.0274,0.0406,0.032,0.0274
+L1,L1_1,L1_1_Ni_glycine_pourbaix_2D,LC3_2 initial-condition designer,LC3 solver design,False,3,35573,1863,0.2244,0.1339,0.1792,0.1753,0.1339
+L1,L1_1,L1_1_Ni_glycine_pourbaix_2D,LC3_3 constraint designer,LC3 solver design,False,3,37997,1149,0.2187,0.1213,0.1694,0.1677,0.1213
+L1,L1_1,L1_1_Ni_glycine_pourbaix_2D,LC3_4 sweep designer,LC3 solver design,False,2,9786,621,0.0645,0.049,0.0677,0.0521,0.049
+L1,L1_1,L1_1_Ni_glycine_pourbaix_2D,LD validator,orchestration (L0+L1+LD),False,5,45867,1288,0.2615,0.1703,0.2454,0.2644,0.1703
+L1,L1_2,L1_2_FeCu_citrate_chloride_joint,L0 orchestrator,orchestration (L0+L1+LD),True,2,17428,3968,0.1863,0.1816,0.204,0.2025,0.1652
+L1,L1_2,L1_2_FeCu_citrate_chloride_joint,L1 pipeline sub-agent,orchestration (L0+L1+LD),True,11,405857,16852,2.4506,1.2504,1.4376,2.3544,1.1064
+L1,L1_2,L1_2_FeCu_citrate_chloride_joint,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),True,6,23240,527,0.1294,0.0561,0.0558,0.0768,0.0435
+L1,L1_2,L1_2_FeCu_citrate_chloride_joint,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),True,59,442619,13114,2.5409,1.2936,1.3538,2.4236,1.0362
+L1,L1_2,L1_2_FeCu_citrate_chloride_joint,LC2_3 element-instruction supervisor,LC2_3 dedup,True,10,153053,14293,1.1226,0.654,0.742,1.0948,0.62
+L1,L1_2,L1_2_FeCu_citrate_chloride_joint,LC2_3 per-group dedup,LC2_3 dedup,True,74,241794,16220,1.6145,0.9608,1.2441,1.7156,0.9608
+L1,L1_2,L1_2_FeCu_citrate_chloride_joint,LC2_3 singleton dedup,LC2_3 dedup,True,9,50080,27438,0.9364,0.7812,0.827,0.9576,0.7812
+L1,L1_2,L1_2_FeCu_citrate_chloride_joint,LC3_1 method picker,LC3 solver design,True,2,7102,204,0.0406,0.0294,0.0266,0.0337,0.0195
+L1,L1_2,L1_2_FeCu_citrate_chloride_joint,LC3_2 initial-condition designer,LC3 solver design,True,3,42024,2488,0.2723,0.1801,0.1757,0.2246,0.1392
+L1,L1_2,L1_2_FeCu_citrate_chloride_joint,LC3_3 constraint designer,LC3 solver design,True,2,30046,847,0.1714,0.1038,0.1036,0.1399,0.077
+L1,L1_2,L1_2_FeCu_citrate_chloride_joint,LC3_4 sweep designer,LC3 solver design,True,2,9819,416,0.0595,0.0439,0.0367,0.0465,0.0283
+L1,L1_2,L1_2_FeCu_citrate_chloride_joint,LD validator,orchestration (L0+L1+LD),True,5,70371,1291,0.3841,0.2739,0.3571,0.3825,0.242
+L1,L1_3,L1_3_Cu_ammonia_pourbaix_2D,L0 orchestrator,orchestration (L0+L1+LD),True,2,15638,3046,0.1543,0.1501,0.1702,0.1688,0.1354
+L1,L1_3,L1_3_Cu_ammonia_pourbaix_2D,L1 pipeline sub-agent,orchestration (L0+L1+LD),True,3,58727,8665,0.5103,0.3366,0.3637,0.4963,0.3158
+L1,L1_3,L1_3_Cu_ammonia_pourbaix_2D,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),True,3,9931,321,0.0577,0.0264,0.0262,0.0352,0.021
+L1,L1_3,L1_3_Cu_ammonia_pourbaix_2D,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),True,16,111409,5583,0.6966,0.3827,0.3978,0.6671,0.3179
+L1,L1_3,L1_3_Cu_ammonia_pourbaix_2D,LC2_3 element-instruction supervisor,LC2_3 dedup,True,7,58431,6725,0.4603,0.2814,0.315,0.4497,0.2684
+L1,L1_3,L1_3_Cu_ammonia_pourbaix_2D,LC2_3 per-group dedup,LC2_3 dedup,True,12,33665,2604,0.2334,0.1424,0.1819,0.2475,0.1424
+L1,L1_3,L1_3_Cu_ammonia_pourbaix_2D,LC2_3 singleton dedup,LC2_3 dedup,True,3,11059,3137,0.1337,0.0995,0.1096,0.1384,0.0995
+L1,L1_3,L1_3_Cu_ammonia_pourbaix_2D,LC3_1 method picker,LC3 solver design,True,2,6934,171,0.0389,0.028,0.0253,0.0322,0.0184
+L1,L1_3,L1_3_Cu_ammonia_pourbaix_2D,LC3_2 initial-condition designer,LC3 solver design,True,2,23463,958,0.1413,0.0898,0.0873,0.1146,0.0669
+L1,L1_3,L1_3_Cu_ammonia_pourbaix_2D,LC3_3 constraint designer,LC3 solver design,True,2,25302,637,0.1424,0.0855,0.0854,0.1159,0.0629
+L1,L1_3,L1_3_Cu_ammonia_pourbaix_2D,LC3_4 sweep designer,LC3 solver design,True,2,9872,506,0.062,0.0464,0.0391,0.049,0.0306
+L1,L1_3,L1_3_Cu_ammonia_pourbaix_2D,LD validator,orchestration (L0+L1+LD),True,5,45263,1907,0.274,0.2031,0.2566,0.2729,0.1826
+L1,L1_4,L1_4_Fe_EDTA_vs_citrate,L0 orchestrator,orchestration (L0+L1+LD),True,4,41912,3338,0.293,0.2816,0.3354,0.3318,0.2423
+L1,L1_4,L1_4_Fe_EDTA_vs_citrate,L1 pipeline sub-agent,orchestration (L0+L1+LD),True,7,79985,10999,0.6749,0.4384,0.4753,0.6559,0.41
+L1,L1_4,L1_4_Fe_EDTA_vs_citrate,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),True,6,20292,692,0.1188,0.0547,0.0545,0.0729,0.0438
+L1,L1_4,L1_4_Fe_EDTA_vs_citrate,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),True,36,249418,16771,1.6664,0.9635,0.9974,1.6002,0.8184
+L1,L1_4,L1_4_Fe_EDTA_vs_citrate,LC2_3 element-instruction supervisor,LC2_3 dedup,True,39,628934,24672,3.7615,1.836,2.1975,3.6472,1.6961
+L1,L1_4,L1_4_Fe_EDTA_vs_citrate,LC2_3 per-group dedup,LC2_3 dedup,True,50,159750,11790,1.0935,0.6616,0.8488,1.1603,0.6616
+L1,L1_4,L1_4_Fe_EDTA_vs_citrate,LC2_3 singleton dedup,LC2_3 dedup,True,19,92830,31447,1.2503,0.9627,1.0476,1.2898,0.9627
+L1,L1_4,L1_4_Fe_EDTA_vs_citrate,LC3_1 method picker,LC3 solver design,True,4,13310,377,0.076,0.0549,0.0498,0.0631,0.0365
+L1,L1_4,L1_4_Fe_EDTA_vs_citrate,LC3_2 initial-condition designer,LC3 solver design,True,6,73566,4361,0.4769,0.3155,0.3078,0.3934,0.2438
+L1,L1_4,L1_4_Fe_EDTA_vs_citrate,LC3_3 constraint designer,LC3 solver design,True,4,52379,1574,0.3012,0.1834,0.1831,0.2464,0.1367
+L1,L1_4,L1_4_Fe_EDTA_vs_citrate,LC3_4 sweep designer,LC3 solver design,True,4,18389,523,0.105,0.0759,0.0624,0.0808,0.0466
+L1,L1_4,L1_4_Fe_EDTA_vs_citrate,LD validator,orchestration (L0+L1+LD),True,10,85283,3261,0.5079,0.3743,0.4752,0.5059,0.3357
+L1,L1_5,L1_5_Cu_EDTA_vs_NTA,L0 orchestrator,orchestration (L0+L1+LD),True,3,28433,3426,0.2278,0.2201,0.2566,0.2541,0.1934
+L1,L1_5,L1_5_Cu_EDTA_vs_NTA,L1 pipeline sub-agent,orchestration (L0+L1+LD),True,13,198826,15973,1.3935,0.8055,0.8972,1.3463,0.7349
+L1,L1_5,L1_5_Cu_EDTA_vs_NTA,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),True,8,26996,688,0.1522,0.067,0.0667,0.0911,0.0525
+L1,L1_5,L1_5_Cu_EDTA_vs_NTA,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),True,42,305623,8205,1.7332,0.872,0.9135,1.6522,0.6942
+L1,L1_5,L1_5_Cu_EDTA_vs_NTA,LC2_3 element-instruction supervisor,LC2_3 dedup,True,25,192423,30272,1.7189,1.1298,1.2404,1.684,1.087
+L1,L1_5,L1_5_Cu_EDTA_vs_NTA,LC2_3 per-group dedup,LC2_3 dedup,True,36,108665,7409,0.7286,0.4348,0.5621,0.774,0.4348
+L1,L1_5,L1_5_Cu_EDTA_vs_NTA,LC2_3 singleton dedup,LC2_3 dedup,True,12,48757,15606,0.6339,0.4829,0.5275,0.6547,0.4829
+L1,L1_5,L1_5_Cu_EDTA_vs_NTA,LC3_1 method picker,LC3 solver design,True,4,13696,357,0.0774,0.0557,0.0505,0.0641,0.0368
+L1,L1_5,L1_5_Cu_EDTA_vs_NTA,LC3_2 initial-condition designer,LC3 solver design,True,5,60858,3413,0.3896,0.2561,0.2497,0.3206,0.1969
+L1,L1_5,L1_5_Cu_EDTA_vs_NTA,LC3_3 constraint designer,LC3 solver design,True,6,78731,2641,0.4597,0.2825,0.2821,0.3772,0.2123
+L1,L1_5,L1_5_Cu_EDTA_vs_NTA,LC3_4 sweep designer,LC3 solver design,True,4,18417,549,0.1058,0.0766,0.0631,0.0815,0.0473
+L1,L1_5,L1_5_Cu_EDTA_vs_NTA,LD validator,orchestration (L0+L1+LD),True,14,103971,3148,0.5986,0.4357,0.5587,0.5961,0.3885
+L1,L1_6,L1_6_Cu_vs_Ag_chloride_redox,L0 orchestrator,orchestration (L0+L1+LD),False,3,24300,3830,0.2172,0.2476,0.2987,0.2476,0.1982
+L1,L1_6,L1_6_Cu_vs_Ag_chloride_redox,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,14,259232,16062,1.6977,0.9146,1.0619,1.4321,0.7977
+L1,L1_6,L1_6_Cu_vs_Ag_chloride_redox,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,8,28329,760,0.1606,0.079,0.0846,0.1033,0.0643
+L1,L1_6,L1_6_Cu_vs_Ag_chloride_redox,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,38,281829,9560,1.6481,0.9165,1.0855,1.5684,0.807
+L1,L1_6,L1_6_Cu_vs_Ag_chloride_redox,LC2_3 element-instruction supervisor,LC2_3 dedup,False,23,158239,24027,1.3919,0.9272,1.0265,1.2509,0.8897
+L1,L1_6,L1_6_Cu_vs_Ag_chloride_redox,LC2_3 per-group dedup,LC2_3 dedup,False,54,207096,10559,1.2995,0.6442,0.8246,1.114,0.6442
+L1,L1_6,L1_6_Cu_vs_Ag_chloride_redox,LC2_3 singleton dedup,LC2_3 dedup,False,14,55451,12427,0.5879,0.4134,0.4623,0.6572,0.4134
+L1,L1_6,L1_6_Cu_vs_Ag_chloride_redox,LC3_1 method picker,LC3 solver design,False,4,13850,362,0.0783,0.0564,0.0581,0.0653,0.0415
+L1,L1_6,L1_6_Cu_vs_Ag_chloride_redox,LC3_2 initial-condition designer,LC3 solver design,False,4,42914,1983,0.2641,0.1957,0.2019,0.2255,0.1502
+L1,L1_6,L1_6_Cu_vs_Ag_chloride_redox,LC3_3 constraint designer,LC3 solver design,False,4,46486,1281,0.2645,0.1898,0.1975,0.2248,0.1414
+L1,L1_6,L1_6_Cu_vs_Ag_chloride_redox,LC3_4 sweep designer,LC3 solver design,False,4,19432,1559,0.1361,0.1055,0.1023,0.1111,0.0811
+L1,L1_6,L1_6_Cu_vs_Ag_chloride_redox,LD validator,orchestration (L0+L1+LD),False,10,94034,1983,0.5197,0.3661,0.5419,0.5329,0.3332
+L1,L1_7,L1_7_CuZn_glycine_ammonia_joint,L0 orchestrator,orchestration (L0+L1+LD),False,2,13430,3107,0.1448,0.1616,0.168,0.1616,0.135
+L1,L1_7,L1_7_CuZn_glycine_ammonia_joint,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,11,283081,12206,1.7206,0.8564,1.055,1.728,0.8149
+L1,L1_7,L1_7_CuZn_glycine_ammonia_joint,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,6,21758,516,0.1217,0.0471,0.0623,0.0725,0.0471
+L1,L1_7,L1_7_CuZn_glycine_ammonia_joint,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,44,326053,9698,1.8727,1.0181,1.4176,2.0168,1.0181
+L1,L1_7,L1_7_CuZn_glycine_ammonia_joint,LC2_3 element-instruction supervisor,LC2_3 dedup,False,13,181255,19254,1.3876,0.8423,1.0185,1.4003,0.8423
+L1,L1_7,L1_7_CuZn_glycine_ammonia_joint,LC2_3 per-group dedup,LC2_3 dedup,False,28,109535,4985,0.6723,0.4097,0.5599,0.7646,0.4097
+L1,L1_7,L1_7_CuZn_glycine_ammonia_joint,LC2_3 singleton dedup,LC2_3 dedup,False,9,51768,20502,0.7714,0.6108,0.658,0.742,0.6108
+L1,L1_7,L1_7_CuZn_glycine_ammonia_joint,LC3_1 method picker,LC3 solver design,False,2,6983,185,0.0395,0.0284,0.0417,0.0333,0.0284
+L1,L1_7,L1_7_CuZn_glycine_ammonia_joint,LC3_2 initial-condition designer,LC3 solver design,False,3,40866,2603,0.2694,0.1653,0.2173,0.221,0.1653
+L1,L1_7,L1_7_CuZn_glycine_ammonia_joint,LC3_3 constraint designer,LC3 solver design,False,3,43704,1565,0.2576,0.1459,0.2012,0.2089,0.1459
+L1,L1_7,L1_7_CuZn_glycine_ammonia_joint,LC3_4 sweep designer,LC3 solver design,False,2,9330,236,0.0525,0.0377,0.0554,0.0408,0.0377
+L1,L1_7,L1_7_CuZn_glycine_ammonia_joint,LD validator,orchestration (L0+L1+LD),False,9,75802,2063,0.4306,0.2716,0.3905,0.3966,0.2716
+L1,L1_8,L1_8_CuZnFe_chloride_pourbaix_triptych,L0 orchestrator,orchestration (L0+L1+LD),False,4,49386,5582,0.3865,0.4482,0.4994,0.4482,0.3671
+L1,L1_8,L1_8_CuZnFe_chloride_pourbaix_triptych,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,18,372850,30876,2.6362,1.4182,1.4095,2.2635,1.2314
+L1,L1_8,L1_8_CuZnFe_chloride_pourbaix_triptych,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,12,43396,1071,0.2438,0.1184,0.1151,0.1583,0.0888
+L1,L1_8,L1_8_CuZnFe_chloride_pourbaix_triptych,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,52,389364,12630,2.2626,1.2401,1.3079,2.3993,0.9931
+L1,L1_8,L1_8_CuZnFe_chloride_pourbaix_triptych,LC2_3 element-instruction supervisor,LC2_3 dedup,False,34,314670,47216,2.7537,1.8428,2.0363,2.6289,1.7409
+L1,L1_8,L1_8_CuZnFe_chloride_pourbaix_triptych,LC2_3 per-group dedup,LC2_3 dedup,False,75,304084,14845,1.8915,1.04,1.3771,2.0005,1.04
+L1,L1_8,L1_8_CuZnFe_chloride_pourbaix_triptych,LC2_3 singleton dedup,LC2_3 dedup,False,21,86882,17390,0.8692,0.6088,0.694,0.87,0.6088
+L1,L1_8,L1_8_CuZnFe_chloride_pourbaix_triptych,LC3_1 method picker,LC3 solver design,False,6,21181,516,0.1188,0.0851,0.0754,0.0996,0.0549
+L1,L1_8,L1_8_CuZnFe_chloride_pourbaix_triptych,LC3_2 initial-condition designer,LC3 solver design,False,6,65339,2828,0.3974,0.2931,0.2645,0.3399,0.2009
+L1,L1_8,L1_8_CuZnFe_chloride_pourbaix_triptych,LC3_3 constraint designer,LC3 solver design,False,6,70722,1755,0.3975,0.2839,0.2557,0.3386,0.186
+L1,L1_8,L1_8_CuZnFe_chloride_pourbaix_triptych,LC3_4 sweep designer,LC3 solver design,False,6,29573,1905,0.1955,0.1487,0.124,0.1582,0.0997
+L1,L1_8,L1_8_CuZnFe_chloride_pourbaix_triptych,LD validator,orchestration (L0+L1+LD),False,15,146398,2828,0.8027,0.5449,0.6875,0.8205,0.4729
+L1,L1_9,L1_9_Cu_ammonia_speciation_E0265,L0 orchestrator,orchestration (L0+L1+LD),True,2,13606,2301,0.1256,0.1219,0.1393,0.1381,0.1091
+L1,L1_9,L1_9_Cu_ammonia_speciation_E0265,L1 pipeline sub-agent,orchestration (L0+L1+LD),True,3,30066,4887,0.2725,0.1836,0.1975,0.2654,0.1729
+L1,L1_9,L1_9_Cu_ammonia_speciation_E0265,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),True,3,9549,298,0.0552,0.0251,0.0249,0.0336,0.0199
+L1,L1_9,L1_9_Cu_ammonia_speciation_E0265,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),True,19,130829,6045,0.8053,0.4366,0.4544,0.7706,0.3605
+L1,L1_9,L1_9_Cu_ammonia_speciation_E0265,LC2_3 element-instruction supervisor,LC2_3 dedup,True,6,51731,4896,0.3811,0.2227,0.2524,0.3717,0.2112
+L1,L1_9,L1_9_Cu_ammonia_speciation_E0265,LC2_3 per-group dedup,LC2_3 dedup,True,13,37292,2511,0.2492,0.1484,0.1921,0.2648,0.1484
+L1,L1_9,L1_9_Cu_ammonia_speciation_E0265,LC2_3 singleton dedup,LC2_3 dedup,True,9,40155,10876,0.4727,0.3483,0.385,0.4898,0.3483
+L1,L1_9,L1_9_Cu_ammonia_speciation_E0265,LC3_1 method picker,LC3 solver design,True,2,6710,193,0.0384,0.0277,0.0252,0.0319,0.0185
+L1,L1_9,L1_9_Cu_ammonia_speciation_E0265,LC3_2 initial-condition designer,LC3 solver design,True,2,23532,996,0.1426,0.0909,0.0885,0.1159,0.068
+L1,L1_9,L1_9_Cu_ammonia_speciation_E0265,LC3_3 constraint designer,LC3 solver design,True,2,25341,621,0.1422,0.0852,0.0851,0.1157,0.0626
+L1,L1_9,L1_9_Cu_ammonia_speciation_E0265,LC3_4 sweep designer,LC3 solver design,True,2,9241,303,0.0538,0.0391,0.0324,0.0416,0.0244
+L1,L1_9,L1_9_Cu_ammonia_speciation_E0265,LD validator,orchestration (L0+L1+LD),True,5,45188,1643,0.267,0.1962,0.2497,0.266,0.1757
+L1,L1_10,L1_10_CuFe_cit_gly_Cl_NH3_pourbaix,L0 orchestrator,orchestration (L0+L1+LD),True,2,19231,3987,0.1958,0.1906,0.2153,0.2136,0.1726
+L1,L1_10,L1_10_CuFe_cit_gly_Cl_NH3_pourbaix,L1 pipeline sub-agent,orchestration (L0+L1+LD),True,7,266175,13276,1.6628,0.8756,0.9984,1.5997,0.7812
+L1,L1_10,L1_10_CuFe_cit_gly_Cl_NH3_pourbaix,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),True,9,44706,3171,0.3028,0.1618,0.1612,0.2017,0.1377
+L1,L1_10,L1_10_CuFe_cit_gly_Cl_NH3_pourbaix,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),True,64,455346,27138,2.9552,1.6719,1.7339,2.8345,1.4071
+L1,L1_10,L1_10_CuFe_cit_gly_Cl_NH3_pourbaix,LC2_3 element-instruction supervisor,LC2_3 dedup,True,11,157995,18358,1.2489,0.7652,0.856,1.2202,0.7301
+L1,L1_10,L1_10_CuFe_cit_gly_Cl_NH3_pourbaix,LC2_3 per-group dedup,LC2_3 dedup,True,49,165481,10032,1.0782,0.6308,0.8247,1.1474,0.6308
+L1,L1_10,L1_10_CuFe_cit_gly_Cl_NH3_pourbaix,LC2_3 singleton dedup,LC2_3 dedup,True,2,12280,4854,0.1828,0.1447,0.1559,0.188,0.1447
+L1,L1_10,L1_10_CuFe_cit_gly_Cl_NH3_pourbaix,LC3_1 method picker,LC3 solver design,True,2,7197,144,0.0396,0.0282,0.0254,0.0326,0.0182
+L1,L1_10,L1_10_CuFe_cit_gly_Cl_NH3_pourbaix,LC3_2 initial-condition designer,LC3 solver design,True,2,30356,1233,0.1826,0.116,0.1128,0.1482,0.0865
+L1,L1_10,L1_10_CuFe_cit_gly_Cl_NH3_pourbaix,LC3_3 constraint designer,LC3 solver design,True,2,33012,844,0.1862,0.1119,0.1117,0.1516,0.0824
+L1,L1_10,L1_10_CuFe_cit_gly_Cl_NH3_pourbaix,LC3_4 sweep designer,LC3 solver design,True,2,10143,319,0.0587,0.0426,0.0352,0.0453,0.0264
+L1,L1_10,L1_10_CuFe_cit_gly_Cl_NH3_pourbaix,LD validator,orchestration (L0+L1+LD),True,5,68264,1919,0.3893,0.2824,0.3631,0.3877,0.2514
+L1,L1_11,L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr,L0 orchestrator,orchestration (L0+L1+LD),True,2,18403,4853,0.2133,0.2084,0.232,0.2304,0.1911
+L1,L1_11,L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr,L1 pipeline sub-agent,orchestration (L0+L1+LD),True,5,232281,8940,1.3849,0.698,0.8051,1.3298,0.6156
+L1,L1_11,L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),True,4,17572,908,0.1106,0.0551,0.0549,0.0708,0.0457
+L1,L1_11,L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),True,65,467815,27045,3.0152,1.6968,1.7605,2.8912,1.4248
+L1,L1_11,L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr,LC2_3 element-instruction supervisor,LC2_3 dedup,True,12,168254,21231,1.372,0.857,0.9536,1.3415,0.8195
+L1,L1_11,L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr,LC2_3 per-group dedup,LC2_3 dedup,True,47,151411,9866,1.0037,0.5944,0.7718,1.067,0.5944
+L1,L1_11,L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr,LC2_3 singleton dedup,LC2_3 dedup,True,5,31652,19635,0.6491,0.5511,0.58,0.6626,0.5511
+L1,L1_11,L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr,LC3_1 method picker,LC3 solver design,True,2,7262,165,0.0404,0.0289,0.0261,0.0334,0.0189
+L1,L1_11,L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr,LC3_2 initial-condition designer,LC3 solver design,True,2,30125,2014,0.201,0.1349,0.1317,0.1668,0.1056
+L1,L1_11,L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr,LC3_3 constraint designer,LC3 solver design,True,2,32856,849,0.1855,0.1116,0.1114,0.1511,0.0823
+L1,L1_11,L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr,LC3_4 sweep designer,LC3 solver design,True,2,10178,593,0.0657,0.0496,0.0421,0.0523,0.0334
+L1,L1_11,L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr,LD validator,orchestration (L0+L1+LD),True,5,83470,1702,0.4599,0.3291,0.4279,0.4579,0.2913
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,L0 orchestrator,orchestration (L0+L1+LD),True,4,120619,7447,0.7893,0.7566,0.9113,0.9009,0.6433
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,L1 pipeline sub-agent,orchestration (L0+L1+LD),True,13,269739,32157,2.1526,1.3549,1.4793,2.0887,1.2592
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),True,9,30178,1188,0.1806,0.0854,0.085,0.1123,0.0691
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),True,28,205494,11764,1.3216,0.7425,0.7704,1.2671,0.623
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,LC1_3 query agent,LC1_3 estimation (parser+query),True,80,1566665,310307,15.591,11.4688,12.2768,15.2622,10.7908
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,LC1_3 speciation parser,LC1_3 estimation (parser+query),True,181,3968611,228061,25.5446,15.1024,17.1493,24.7117,13.3849
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,LC2_3 element-instruction supervisor,LC2_3 dedup,True,31,275269,41492,2.4136,1.5709,1.7291,2.3636,1.5097
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,LC2_3 per-group dedup,LC2_3 dedup,True,58,173042,10660,1.1317,0.6639,0.8666,1.2041,0.6639
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,LC2_3 singleton dedup,LC2_3 dedup,True,14,60621,16663,0.7197,0.5319,0.5873,0.7455,0.5319
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,LC3_1 method picker,LC3 solver design,True,6,20918,728,0.1228,0.0896,0.0816,0.1025,0.0607
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,LC3_2 initial-condition designer,LC3 solver design,True,6,69891,3107,0.4271,0.2738,0.2665,0.3478,0.2058
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,LC3_3 constraint designer,LC3 solver design,True,6,75731,2018,0.4291,0.2587,0.2583,0.3498,0.1912
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,LC3_4 sweep designer,LC3 solver design,True,6,29581,1794,0.1928,0.1459,0.1242,0.1537,0.0987
+FF,FF_1,FF_1_Fe_mixed_solvent_speciation,LD validator,orchestration (L0+L1+LD),True,10,99956,2857,0.5712,0.4146,0.5329,0.5689,0.3693
+L2,L2_1,L2_1_CuZnNi_chelator_survey,L0 orchestrator,orchestration (L0+L1+LD),False,4,51910,5074,0.3864,0.4513,0.4948,0.4513,0.3598
+L2,L2_1,L2_1_CuZnNi_chelator_survey,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,12,220239,19732,1.5945,1.0682,1.1734,1.5754,0.9484
+L2,L2_1,L2_1_CuZnNi_chelator_survey,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,18,63002,1759,0.359,0.1452,0.1416,0.2057,0.1155
+L2,L2_1,L2_1_CuZnNi_chelator_survey,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,115,828659,25112,4.7711,2.3182,2.2058,4.2947,1.7464
+L2,L2_1,L2_1_CuZnNi_chelator_survey,LC2_3 element-instruction supervisor,LC2_3 dedup,False,46,782073,74947,5.784,3.4186,3.9543,5.971,3.2874
+L2,L2_1,L2_1_CuZnNi_chelator_survey,LC2_3 per-group dedup,LC2_3 dedup,False,136,514230,26256,3.2276,1.872,2.4971,3.6054,1.872
+L2,L2_1,L2_1_CuZnNi_chelator_survey,LC2_3 singleton dedup,LC2_3 dedup,False,27,153964,57390,2.2046,1.7252,1.8644,2.1378,1.7252
+L2,L2_1,L2_1_CuZnNi_chelator_survey,LC3_1 method picker,LC3 solver design,False,6,20816,570,0.1183,0.0855,0.0753,0.0987,0.0553
+L2,L2_1,L2_1_CuZnNi_chelator_survey,LC3_2 initial-condition designer,LC3 solver design,False,7,97723,8135,0.692,0.4949,0.4881,0.6109,0.395
+L2,L2_1,L2_1_CuZnNi_chelator_survey,LC3_3 constraint designer,LC3 solver design,False,7,105906,4632,0.6453,0.4304,0.4287,0.5662,0.3261
+L2,L2_1,L2_1_CuZnNi_chelator_survey,LC3_4 sweep designer,LC3 solver design,False,6,27869,879,0.1613,0.1171,0.0925,0.1251,0.0702
+L2,L2_1,L2_1_CuZnNi_chelator_survey,LD validator,orchestration (L0+L1+LD),False,15,177803,3635,0.9799,0.7177,0.9402,1.013,0.64
+L2,L2_2,L2_2_FeCaMg_sequestrant_survey,L0 orchestrator,orchestration (L0+L1+LD),False,6,89192,6494,0.6083,0.5322,0.5961,0.6584,0.4425
+L2,L2_2,L2_2_FeCaMg_sequestrant_survey,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,13,278110,23668,1.9822,1.2684,1.4222,1.9909,1.1493
+L2,L2_2,L2_2_FeCaMg_sequestrant_survey,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,18,60386,2009,0.3522,0.1436,0.1357,0.1976,0.1139
+L2,L2_2,L2_2_FeCaMg_sequestrant_survey,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,123,899995,29542,5.2385,2.5417,2.5166,5.1266,1.9923
+L2,L2_2,L2_2_FeCaMg_sequestrant_survey,LC2_3 element-instruction supervisor,LC2_3 dedup,False,34,439744,57396,3.6336,2.3346,2.6001,3.6235,2.227
+L2,L2_2,L2_2_FeCaMg_sequestrant_survey,LC2_3 per-group dedup,LC2_3 dedup,False,120,472610,26670,3.0298,1.6137,2.0772,2.6778,1.6137
+L2,L2_2,L2_2_FeCaMg_sequestrant_survey,LC2_3 singleton dedup,LC2_3 dedup,False,27,161010,69104,2.5326,2.0314,2.177,2.4638,2.0314
+L2,L2_2,L2_2_FeCaMg_sequestrant_survey,LC3_1 method picker,LC3 solver design,False,6,20736,518,0.1166,0.0837,0.0731,0.0969,0.0535
+L2,L2_2,L2_2_FeCaMg_sequestrant_survey,LC3_2 initial-condition designer,LC3 solver design,False,8,113798,7743,0.7626,0.4991,0.4939,0.6483,0.3978
+L2,L2_2,L2_2_FeCaMg_sequestrant_survey,LC3_3 constraint designer,LC3 solver design,False,17,269171,14450,1.7071,0.8705,0.9403,1.3495,0.7649
+L2,L2_2,L2_2_FeCaMg_sequestrant_survey,LC3_4 sweep designer,LC3 solver design,False,6,27829,973,0.1635,0.1193,0.0945,0.1273,0.0723
+L2,L2_2,L2_2_FeCaMg_sequestrant_survey,LD validator,orchestration (L0+L1+LD),False,14,135937,3206,0.7598,0.527,0.6892,0.7507,0.4756
+L2,L2_3,L2_3_PbZnCa_chelation_survey,L0 orchestrator,orchestration (L0+L1+LD),False,4,41479,4876,0.3293,0.3592,0.4052,0.3592,0.3016
+L2,L2_3,L2_3_PbZnCa_chelation_survey,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,13,241988,18854,1.6813,0.9889,1.1056,1.6412,0.903
+L2,L2_3,L2_3_PbZnCa_chelation_survey,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,18,64883,1842,0.3705,0.1308,0.1402,0.1978,0.1159
+L2,L2_3,L2_3_PbZnCa_chelation_survey,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,107,812112,39504,5.0482,2.4189,2.7225,4.5563,2.198
+L2,L2_3,L2_3_PbZnCa_chelation_survey,LC2_3 element-instruction supervisor,LC2_3 dedup,False,14,252764,19626,1.7545,1.0451,1.2524,1.8547,1.0016
+L2,L2_3,L2_3_PbZnCa_chelation_survey,LC2_3 per-group dedup,LC2_3 dedup,False,73,287936,13193,1.7695,1.0122,1.3634,1.8523,1.0122
+L2,L2_3,L2_3_PbZnCa_chelation_survey,LC2_3 singleton dedup,LC2_3 dedup,False,18,107073,42957,1.6093,1.2759,1.3728,1.5589,1.2759
+L2,L2_3,L2_3_PbZnCa_chelation_survey,LC3_1 method picker,LC3 solver design,False,4,13821,340,0.0776,0.0557,0.0568,0.0644,0.0405
+L2,L2_3,L2_3_PbZnCa_chelation_survey,LC3_2 initial-condition designer,LC3 solver design,False,4,55159,3292,0.3581,0.2701,0.2918,0.3257,0.22
+L2,L2_3,L2_3_PbZnCa_chelation_survey,LC3_3 constraint designer,LC3 solver design,False,6,90218,3959,0.5501,0.319,0.3467,0.4515,0.2667
+L2,L2_3,L2_3_PbZnCa_chelation_survey,LC3_4 sweep designer,LC3 solver design,False,4,18558,616,0.1082,0.0787,0.075,0.0839,0.0552
+L2,L2_3,L2_3_PbZnCa_chelation_survey,LD validator,orchestration (L0+L1+LD),False,13,131990,3027,0.7356,0.5203,0.6762,0.7482,0.4652
+L2,L2_4,L2_4_CoNiCu_amino_acid_survey,L0 orchestrator,orchestration (L0+L1+LD),False,4,54500,4556,0.3864,0.4545,0.5075,0.4545,0.3629
+L2,L2_4,L2_4_CoNiCu_amino_acid_survey,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,18,631526,20278,3.6646,1.826,2.2781,3.8935,1.7036
+L2,L2_4,L2_4_CoNiCu_amino_acid_survey,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,21,82224,1954,0.46,0.1734,0.1792,0.2794,0.1439
+L2,L2_4,L2_4_CoNiCu_amino_acid_survey,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,112,815838,24733,4.6975,2.2721,2.5443,3.9806,1.9451
+L2,L2_4,L2_4_CoNiCu_amino_acid_survey,LC2_3 element-instruction supervisor,LC2_3 dedup,False,61,1351163,59463,8.2424,3.8908,4.8729,8.7878,3.8029
+L2,L2_4,L2_4_CoNiCu_amino_acid_survey,LC2_3 per-group dedup,LC2_3 dedup,False,141,521110,27398,3.2905,1.9899,2.671,3.8321,1.9899
+L2,L2_4,L2_4_CoNiCu_amino_acid_survey,LC2_3 singleton dedup,LC2_3 dedup,False,22,133508,58689,2.1348,1.7228,1.8459,2.0871,1.7228
+L2,L2_4,L2_4_CoNiCu_amino_acid_survey,LC3_1 method picker,LC3 solver design,False,6,20428,561,0.1162,0.0838,0.0732,0.0964,0.0539
+L2,L2_4,L2_4_CoNiCu_amino_acid_survey,LC3_2 initial-condition designer,LC3 solver design,False,7,101341,7352,0.6905,0.4867,0.4826,0.6131,0.3846
+L2,L2_4,L2_4_CoNiCu_amino_acid_survey,LC3_3 constraint designer,LC3 solver design,False,8,126139,6100,0.7832,0.4901,0.4935,0.6755,0.3838
+L2,L2_4,L2_4_CoNiCu_amino_acid_survey,LC3_4 sweep designer,LC3 solver design,False,6,27423,874,0.159,0.1153,0.0901,0.1226,0.0685
+L2,L2_4,L2_4_CoNiCu_amino_acid_survey,LD validator,orchestration (L0+L1+LD),False,15,210223,4463,1.1627,0.9142,1.2427,1.2354,0.8377
+L2,L2_5,L2_5_Ni_antiscale_ligand_rank,L0 orchestrator,orchestration (L0+L1+LD),False,4,39545,4025,0.2984,0.3478,0.3614,0.3478,0.2663
+L2,L2_5,L2_5_Ni_antiscale_ligand_rank,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,17,300341,16200,1.9067,0.9858,1.1537,1.7838,0.9175
+L2,L2_5,L2_5_Ni_antiscale_ligand_rank,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,12,38144,1135,0.2191,0.1069,0.0967,0.13,0.0773
+L2,L2_5,L2_5_Ni_antiscale_ligand_rank,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,33,214197,6600,1.236,0.7216,0.6562,1.3586,0.5046
+L2,L2_5,L2_5_Ni_antiscale_ligand_rank,LC2_3 element-instruction supervisor,LC2_3 dedup,False,38,318301,32610,2.4068,1.3989,1.5762,2.1964,1.3387
+L2,L2_5,L2_5_Ni_antiscale_ligand_rank,LC2_3 per-group dedup,LC2_3 dedup,False,31,112361,5600,0.7018,0.4484,0.6129,0.83,0.4484
+L2,L2_5,L2_5_Ni_antiscale_ligand_rank,LC2_3 singleton dedup,LC2_3 dedup,False,17,69518,19257,0.829,0.6177,0.6839,0.8798,0.6177
+L2,L2_5,L2_5_Ni_antiscale_ligand_rank,LC3_1 method picker,LC3 solver design,False,6,20200,531,0.1143,0.0822,0.0708,0.094,0.0521
+L2,L2_5,L2_5_Ni_antiscale_ligand_rank,LC3_2 initial-condition designer,LC3 solver design,False,7,82018,3724,0.5032,0.339,0.315,0.4153,0.2436
+L2,L2_5,L2_5_Ni_antiscale_ligand_rank,LC3_3 constraint designer,LC3 solver design,False,14,185628,8315,1.136,0.612,0.6499,0.8656,0.512
+L2,L2_5,L2_5_Ni_antiscale_ligand_rank,LC3_4 sweep designer,LC3 solver design,False,6,27313,862,0.1581,0.1148,0.0893,0.1214,0.0679
+L2,L2_5,L2_5_Ni_antiscale_ligand_rank,LD validator,orchestration (L0+L1+LD),False,15,164323,3274,0.9035,0.7535,1.0162,0.9377,0.6798
+L2,L2_6,L2_6_CuNiZn_chelator_matrix_3x3,L0 orchestrator,orchestration (L0+L1+LD),False,9,177545,6145,1.0413,1.2633,1.5995,1.2633,1.0638
+L2,L2_6,L2_6_CuNiZn_chelator_matrix_3x3,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,53,1122976,51229,6.8956,3.5071,3.9279,6.7154,3.1046
+L2,L2_6,L2_6_CuNiZn_chelator_matrix_3x3,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,32,103063,2900,0.5878,0.2858,0.2206,0.3499,0.1825
+L2,L2_6,L2_6_CuNiZn_chelator_matrix_3x3,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,127,889191,29822,5.1915,2.801,2.4096,5.4547,1.9282
+L2,L2_6,L2_6_CuNiZn_chelator_matrix_3x3,LC2_3 element-instruction supervisor,LC2_3 dedup,False,99,804296,114624,6.8871,4.409,4.5459,6.4096,4.0414
+L2,L2_6,L2_6_CuNiZn_chelator_matrix_3x3,LC2_3 per-group dedup,LC2_3 dedup,False,141,543762,28659,3.4353,1.9528,2.5818,3.7106,1.9528
+L2,L2_6,L2_6_CuNiZn_chelator_matrix_3x3,LC2_3 singleton dedup,LC2_3 dedup,False,53,221348,62187,2.6614,1.9789,2.1833,2.853,1.9789
+L2,L2_6,L2_6_CuNiZn_chelator_matrix_3x3,LC3_1 method picker,LC3 solver design,False,16,53531,1406,0.3028,0.2179,0.1461,0.2488,0.1129
+L2,L2_6,L2_6_CuNiZn_chelator_matrix_3x3,LC3_2 initial-condition designer,LC3 solver design,False,22,262441,12980,1.6367,1.0111,0.8196,1.2915,0.676
+L2,L2_6,L2_6_CuNiZn_chelator_matrix_3x3,LC3_3 constraint designer,LC3 solver design,False,19,241623,7821,1.4036,0.9044,0.7087,1.1533,0.5538
+L2,L2_6,L2_6_CuNiZn_chelator_matrix_3x3,LC3_4 sweep designer,LC3 solver design,False,16,72431,2361,0.4212,0.3063,0.1738,0.3234,0.1428
+L2,L2_6,L2_6_CuNiZn_chelator_matrix_3x3,LD validator,orchestration (L0+L1+LD),False,40,356751,9490,2.021,1.4969,1.7906,2.0219,1.2479
+L2,L2_7,L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate,L0 orchestrator,orchestration (L0+L1+LD),False,9,179002,7768,1.0892,1.313,1.6614,1.313,1.1176
+L2,L2_7,L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,64,1356220,57253,8.2124,3.9686,4.7346,7.9425,3.6984
+L2,L2_7,L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,32,102446,2802,0.5823,0.2813,0.215,0.3468,0.178
+L2,L2_7,L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,138,1009504,35449,5.9337,3.1314,2.7752,6.0539,2.2288
+L2,L2_7,L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate,LC2_3 element-instruction supervisor,LC2_3 dedup,False,112,1154951,107898,8.4722,4.9034,5.3711,8.1792,4.5437
+L2,L2_7,L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate,LC2_3 per-group dedup,LC2_3 dedup,False,119,446213,25338,2.8645,1.6045,2.0923,2.8027,1.6045
+L2,L2_7,L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate,LC2_3 singleton dedup,LC2_3 dedup,False,64,263493,81031,3.3432,2.5247,2.7642,3.5889,2.5247
+L2,L2_7,L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate,LC3_1 method picker,LC3 solver design,False,16,54252,1436,0.3072,0.2212,0.1507,0.2539,0.1161
+L2,L2_7,L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate,LC3_2 initial-condition designer,LC3 solver design,False,20,236485,11927,1.4806,0.9661,0.7746,1.2006,0.6332
+L2,L2_7,L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate,LC3_3 constraint designer,LC3 solver design,False,18,227092,6831,1.3062,0.8671,0.6718,1.089,0.5189
+L2,L2_7,L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate,LC3_4 sweep designer,LC3 solver design,False,16,73105,2255,0.4219,0.3059,0.1744,0.3246,0.1422
+L2,L2_7,L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate,LD validator,orchestration (L0+L1+LD),False,48,354203,11274,2.0529,1.3836,1.5922,1.9372,1.1448
+L2,L2_8,L2_8_CuZn_shared_limiting_EDTA,L0 orchestrator,orchestration (L0+L1+LD),False,9,250189,4066,1.3526,0.6528,0.8911,1.4737,0.6289
+L2,L2_8,L2_8_CuZn_shared_limiting_EDTA,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,4,57204,3219,0.3665,0.2439,0.2699,0.3627,0.2064
+L2,L2_8,L2_8_CuZn_shared_limiting_EDTA,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,5,16583,455,0.0943,0.0406,0.0543,0.0546,0.0406
+L2,L2_8,L2_8_CuZn_shared_limiting_EDTA,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,31,230626,8552,1.3669,0.6954,0.9342,1.3966,0.6954
+L2,L2_8,L2_8_CuZn_shared_limiting_EDTA,LC2_3 element-instruction supervisor,LC2_3 dedup,False,10,162492,12918,1.1354,0.5997,0.7271,1.168,0.5997
+L2,L2_8,L2_8_CuZn_shared_limiting_EDTA,LC2_3 per-group dedup,LC2_3 dedup,False,27,99132,5200,0.6257,0.3957,0.5367,0.7352,0.3957
+L2,L2_8,L2_8_CuZn_shared_limiting_EDTA,LC2_3 singleton dedup,LC2_3 dedup,False,9,45993,16501,0.6425,0.4999,0.542,0.7,0.4999
+L2,L2_8,L2_8_CuZn_shared_limiting_EDTA,LC3_1 method picker,LC3 solver design,False,2,6879,428,0.0451,0.0342,0.0473,0.0387,0.0342
+L2,L2_8,L2_8_CuZn_shared_limiting_EDTA,LC3_2 initial-condition designer,LC3 solver design,False,3,39724,2626,0.2643,0.163,0.2136,0.2144,0.163
+L2,L2_8,L2_8_CuZn_shared_limiting_EDTA,LC3_3 constraint designer,LC3 solver design,False,2,28136,909,0.1634,0.1182,0.1714,0.1468,0.1182
+L2,L2_8,L2_8_CuZn_shared_limiting_EDTA,LC3_4 sweep designer,LC3 solver design,False,2,9300,634,0.0623,0.0478,0.0656,0.0505,0.0478
+L2,L2_8,L2_8_CuZn_shared_limiting_EDTA,LD validator,orchestration (L0+L1+LD),False,4,15512,576,0.092,0.0441,0.0585,0.0612,0.0441
+L3,L3_1,L3_1_IrvingWilliams_glycine_test,L0 orchestrator,orchestration (L0+L1+LD),False,5,60780,4705,0.4215,0.4975,0.5434,0.4975,0.3873
+L3,L3_1,L3_1_IrvingWilliams_glycine_test,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,16,172795,20101,1.3665,0.9793,0.9582,1.2681,0.8124
+L3,L3_1,L3_1_IrvingWilliams_glycine_test,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,16,53267,1428,0.302,0.1469,0.1292,0.1842,0.1028
+L3,L3_1,L3_1_IrvingWilliams_glycine_test,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,61,420190,13756,2.4448,1.459,1.3301,2.5621,1.0237
+L3,L3_1,L3_1_IrvingWilliams_glycine_test,LC2_3 element-instruction supervisor,LC2_3 dedup,False,33,280465,39711,2.3951,1.6111,1.7288,2.2817,1.4936
+L3,L3_1,L3_1_IrvingWilliams_glycine_test,LC2_3 per-group dedup,LC2_3 dedup,False,74,282760,13410,1.749,0.9611,1.2771,1.874,0.9611
+L3,L3_1,L3_1_IrvingWilliams_glycine_test,LC2_3 singleton dedup,LC2_3 dedup,False,24,98380,24009,1.0921,0.777,0.8602,1.1912,0.777
+L3,L3_1,L3_1_IrvingWilliams_glycine_test,LC3_1 method picker,LC3 solver design,False,8,26809,762,0.1531,0.1106,0.0875,0.1264,0.0658
+L3,L3_1,L3_1_IrvingWilliams_glycine_test,LC3_2 initial-condition designer,LC3 solver design,False,11,127841,7087,0.8164,0.5126,0.4564,0.6455,0.3714
+L3,L3_1,L3_1_IrvingWilliams_glycine_test,LC3_3 constraint designer,LC3 solver design,False,9,111835,3526,0.6473,0.432,0.3753,0.54,0.284
+L3,L3_1,L3_1_IrvingWilliams_glycine_test,LC3_4 sweep designer,LC3 solver design,False,8,36235,1432,0.217,0.1593,0.1126,0.1682,0.0894
+L3,L3_1,L3_1_IrvingWilliams_glycine_test,LD validator,orchestration (L0+L1+LD),False,20,166220,4423,0.9417,0.686,0.8287,0.9277,0.578
+L3,L3_2,L3_2_ChelateEffect_en_vs_ammonia,L0 orchestrator,orchestration (L0+L1+LD),False,3,23081,3189,0.1951,0.224,0.2238,0.224,0.1715
+L3,L3_2,L3_2_ChelateEffect_en_vs_ammonia,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,8,84614,9834,0.6689,0.4643,0.4683,0.6121,0.3972
+L3,L3_2,L3_2_ChelateEffect_en_vs_ammonia,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,8,25414,739,0.1455,0.0709,0.0723,0.0863,0.0561
+L3,L3_2,L3_2_ChelateEffect_en_vs_ammonia,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,26,171135,4950,0.9794,0.5139,0.5342,0.9665,0.406
+L3,L3_2,L3_2_ChelateEffect_en_vs_ammonia,LC2_3 element-instruction supervisor,LC2_3 dedup,False,23,172371,22785,1.4315,0.9011,0.9967,1.3013,0.8621
+L3,L3_2,L3_2_ChelateEffect_en_vs_ammonia,LC2_3 per-group dedup,LC2_3 dedup,False,26,93957,4923,0.5929,0.3397,0.4504,0.5669,0.3397
+L3,L3_2,L3_2_ChelateEffect_en_vs_ammonia,LC2_3 singleton dedup,LC2_3 dedup,False,18,75213,20077,0.878,0.6457,0.715,0.972,0.6457
+L3,L3_2,L3_2_ChelateEffect_en_vs_ammonia,LC3_1 method picker,LC3 solver design,False,4,13400,323,0.0751,0.0539,0.0546,0.0616,0.0389
+L3,L3_2,L3_2_ChelateEffect_en_vs_ammonia,LC3_2 initial-condition designer,LC3 solver design,False,5,57793,3402,0.374,0.2487,0.2586,0.3045,0.2015
+L3,L3_2,L3_2_ChelateEffect_en_vs_ammonia,LC3_3 constraint designer,LC3 solver design,False,4,49593,1584,0.2876,0.2079,0.2196,0.2507,0.1583
+L3,L3_2,L3_2_ChelateEffect_en_vs_ammonia,LC3_4 sweep designer,LC3 solver design,False,4,18169,734,0.1092,0.0806,0.0766,0.0849,0.0572
+L3,L3_2,L3_2_ChelateEffect_en_vs_ammonia,LD validator,orchestration (L0+L1+LD),False,10,79479,2197,0.4523,0.3265,0.4186,0.4406,0.2907
+L3,L3_3,L3_3_HSAB_Cd_chloride_vs_ammonia,L0 orchestrator,orchestration (L0+L1+LD),False,3,22742,2864,0.1853,0.2137,0.2139,0.2137,0.1622
+L3,L3_3,L3_3_HSAB_Cd_chloride_vs_ammonia,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,10,148327,10162,0.9957,0.5809,0.6349,0.9359,0.5139
+L3,L3_3,L3_3_HSAB_Cd_chloride_vs_ammonia,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,8,25584,768,0.1471,0.0722,0.0741,0.0883,0.0575
+L3,L3_3,L3_3_HSAB_Cd_chloride_vs_ammonia,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,31,244813,9356,1.458,0.7923,0.8493,1.263,0.6547
+L3,L3_3,L3_3_HSAB_Cd_chloride_vs_ammonia,LC2_3 element-instruction supervisor,LC2_3 dedup,False,24,157999,26599,1.455,1.0074,1.0851,1.3145,0.9504
+L3,L3_3,L3_3_HSAB_Cd_chloride_vs_ammonia,LC2_3 per-group dedup,LC2_3 dedup,False,23,81762,4020,0.5093,0.3087,0.4178,0.5981,0.3087
+L3,L3_3,L3_3_HSAB_Cd_chloride_vs_ammonia,LC2_3 singleton dedup,LC2_3 dedup,False,16,62579,14121,0.6659,0.4594,0.5084,0.7441,0.4594
+L3,L3_3,L3_3_HSAB_Cd_chloride_vs_ammonia,LC3_1 method picker,LC3 solver design,False,4,13501,509,0.0802,0.0589,0.0599,0.067,0.044
+L3,L3_3,L3_3_HSAB_Cd_chloride_vs_ammonia,LC3_2 initial-condition designer,LC3 solver design,False,4,43252,2304,0.2739,0.2047,0.2098,0.2347,0.1583
+L3,L3_3,L3_3_HSAB_Cd_chloride_vs_ammonia,LC3_3 constraint designer,LC3 solver design,False,5,57989,1676,0.3318,0.2063,0.2141,0.2579,0.1576
+L3,L3_3,L3_3_HSAB_Cd_chloride_vs_ammonia,LC3_4 sweep designer,LC3 solver design,False,4,18246,938,0.1147,0.0858,0.082,0.0904,0.0625
+L3,L3_3,L3_3_HSAB_Cd_chloride_vs_ammonia,LD validator,orchestration (L0+L1+LD),False,10,87714,1948,0.4873,0.3671,0.4873,0.4859,0.3315
+L3,L3_4,L3_4_HSAB_CdZn_chloride_ammonia_competition,L0 orchestrator,orchestration (L0+L1+LD),False,2,12344,3104,0.1393,0.1547,0.1593,0.1547,0.1295
+L3,L3_4,L3_4_HSAB_CdZn_chloride_ammonia_competition,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,9,143342,6715,0.8846,0.3756,0.4053,0.8128,0.3399
+L3,L3_4,L3_4_HSAB_CdZn_chloride_ammonia_competition,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,6,22135,592,0.1255,0.0503,0.0663,0.0753,0.0503
+L3,L3_4,L3_4_HSAB_CdZn_chloride_ammonia_competition,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,45,364029,13688,2.1623,0.9437,1.2172,1.4627,0.9437
+L3,L3_4,L3_4_HSAB_CdZn_chloride_ammonia_competition,LC2_3 element-instruction supervisor,LC2_3 dedup,False,8,127923,10449,0.9008,0.5168,0.6417,0.9308,0.5168
+L3,L3_4,L3_4_HSAB_CdZn_chloride_ammonia_competition,LC2_3 per-group dedup,LC2_3 dedup,False,41,158708,7532,0.9818,0.5103,0.6686,1.1527,0.5103
+L3,L3_4,L3_4_HSAB_CdZn_chloride_ammonia_competition,LC2_3 singleton dedup,LC2_3 dedup,False,9,46328,16180,0.6361,0.4929,0.5355,0.61,0.4929
+L3,L3_4,L3_4_HSAB_CdZn_chloride_ammonia_competition,LC3_1 method picker,LC3 solver design,False,2,7023,319,0.0431,0.0321,0.0455,0.0367,0.0321
+L3,L3_4,L3_4_HSAB_CdZn_chloride_ammonia_competition,LC3_2 initial-condition designer,LC3 solver design,False,2,25367,1609,0.1671,0.1266,0.1746,0.1499,0.1266
+L3,L3_4,L3_4_HSAB_CdZn_chloride_ammonia_competition,LC3_3 constraint designer,LC3 solver design,False,2,28038,1270,0.1719,0.127,0.18,0.1532,0.127
+L3,L3_4,L3_4_HSAB_CdZn_chloride_ammonia_competition,LC3_4 sweep designer,LC3 solver design,False,2,10064,690,0.0676,0.0516,0.0708,0.0545,0.0516
+L3,L3_4,L3_4_HSAB_CdZn_chloride_ammonia_competition,LD validator,orchestration (L0+L1+LD),False,5,40460,1494,0.2397,0.17,0.2434,0.2356,0.17
+L3,L3_5,L3_5_IrvingWilliams_two_ligand_robustness,L0 orchestrator,orchestration (L0+L1+LD),False,9,174125,6930,1.0439,0.8823,1.1083,1.1723,0.7736
+L3,L3_5,L3_5_IrvingWilliams_two_ligand_robustness,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,31,626175,27668,3.8226,1.9094,2.2168,3.7049,1.7384
+L3,L3_5,L3_5_IrvingWilliams_two_ligand_robustness,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,20,68314,1845,0.3877,0.1888,0.1623,0.2423,0.1299
+L3,L3_5,L3_5_IrvingWilliams_two_ligand_robustness,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,69,451150,14807,2.6259,1.5769,1.3282,2.6172,1.0391
+L3,L3_5,L3_5_IrvingWilliams_two_ligand_robustness,LC2_3 element-instruction supervisor,LC2_3 dedup,False,71,724942,64944,5.2483,2.9391,3.2712,5.0171,2.7639
+L3,L3_5,L3_5_IrvingWilliams_two_ligand_robustness,LC2_3 per-group dedup,LC2_3 dedup,False,86,327048,16929,2.0585,1.2182,1.6301,2.2894,1.2182
+L3,L3_5,L3_5_IrvingWilliams_two_ligand_robustness,LC2_3 singleton dedup,LC2_3 dedup,False,45,194018,50374,2.2294,1.6307,1.8096,2.3002,1.6307
+L3,L3_5,L3_5_IrvingWilliams_two_ligand_robustness,LC3_1 method picker,LC3 solver design,False,10,34234,939,0.1946,0.1406,0.1067,0.1619,0.0806
+L3,L3_5,L3_5_IrvingWilliams_two_ligand_robustness,LC3_2 initial-condition designer,LC3 solver design,False,13,151208,7666,0.9477,0.6055,0.5158,0.7591,0.4177
+L3,L3_5,L3_5_IrvingWilliams_two_ligand_robustness,LC3_3 constraint designer,LC3 solver design,False,11,136940,4239,0.7907,0.5347,0.4444,0.6658,0.3379
+L3,L3_5,L3_5_IrvingWilliams_two_ligand_robustness,LC3_4 sweep designer,LC3 solver design,False,10,46022,1531,0.2684,0.1955,0.1286,0.2081,0.102
+L3,L3_5,L3_5_IrvingWilliams_two_ligand_robustness,LD validator,orchestration (L0+L1+LD),False,24,212202,5061,1.1875,0.8828,1.1045,1.1813,0.7603
+L3,L3_6,L3_6_Chelate_denticity_trend_NH3_en_EDTA,L0 orchestrator,orchestration (L0+L1+LD),False,9,290165,4841,1.5718,1.0848,1.4875,1.809,1.0054
+L3,L3_6,L3_6_Chelate_denticity_trend_NH3_en_EDTA,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,12,130390,12604,0.967,0.6954,0.6778,0.9098,0.5604
+L3,L3_6,L3_6_Chelate_denticity_trend_NH3_en_EDTA,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,12,38538,1177,0.2221,0.1087,0.0991,0.1332,0.0792
+L3,L3_6,L3_6_Chelate_denticity_trend_NH3_en_EDTA,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,50,357384,10478,2.0489,1.1197,1.1074,1.9506,0.8442
+L3,L3_6,L3_6_Chelate_denticity_trend_NH3_en_EDTA,LC2_3 element-instruction supervisor,LC2_3 dedup,False,39,276691,43186,2.4631,1.6352,1.7193,2.2359,1.5214
+L3,L3_6,L3_6_Chelate_denticity_trend_NH3_en_EDTA,LC2_3 per-group dedup,LC2_3 dedup,False,43,158928,7873,0.9915,0.5613,0.7472,1.0744,0.5613
+L3,L3_6,L3_6_Chelate_denticity_trend_NH3_en_EDTA,LC2_3 singleton dedup,LC2_3 dedup,False,27,117295,33301,1.419,1.0565,1.1643,1.5656,1.0565
+L3,L3_6,L3_6_Chelate_denticity_trend_NH3_en_EDTA,LC3_1 method picker,LC3 solver design,False,6,20322,644,0.1177,0.0855,0.0744,0.0977,0.0554
+L3,L3_6,L3_6_Chelate_denticity_trend_NH3_en_EDTA,LC3_2 initial-condition designer,LC3 solver design,False,9,106709,5950,0.6823,0.4104,0.3884,0.5293,0.3149
+L3,L3_6,L3_6_Chelate_denticity_trend_NH3_en_EDTA,LC3_3 constraint designer,LC3 solver design,False,7,89024,2969,0.5193,0.3388,0.3171,0.4302,0.2388
+L3,L3_6,L3_6_Chelate_denticity_trend_NH3_en_EDTA,LC3_4 sweep designer,LC3 solver design,False,6,27397,1070,0.1637,0.1202,0.0949,0.1272,0.0734
+L3,L3_6,L3_6_Chelate_denticity_trend_NH3_en_EDTA,LD validator,orchestration (L0+L1+LD),False,14,96101,2457,0.5419,0.3669,0.4533,0.5035,0.3176
+L4,L4_1,L4_1_UTh_crown_EDTA_not_in_db,L0 orchestrator,orchestration (L0+L1+LD),False,2,9008,1484,0.0821,0.0721,0.092,0.0721,0.0721
+L4,L4_1,L4_1_UTh_crown_EDTA_not_in_db,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,4,20451,2814,0.1726,0.1108,0.1305,0.1177,0.1108
+L4,L4_1,L4_1_UTh_crown_EDTA_not_in_db,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,9,35115,766,0.1947,0.0871,0.12,0.1289,0.0871
+L4,L4_1,L4_1_UTh_crown_EDTA_not_in_db,LD validator,orchestration (L0+L1+LD),False,3,11681,246,0.0646,0.0349,0.0499,0.0507,0.0349
+L4,L4_2,L4_2_FeCu_citrate_chloride_hot_out_of_envelope,L0 orchestrator,orchestration (L0+L1+LD),False,2,13822,4435,0.18,0.1973,0.2491,0.1973,0.172
+L4,L4_2,L4_2_FeCu_citrate_chloride_hot_out_of_envelope,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,4,148079,10260,0.9969,0.6505,0.8592,1.0393,0.5773
+L4,L4_2,L4_2_FeCu_citrate_chloride_hot_out_of_envelope,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,6,22902,599,0.1295,0.0532,0.0707,0.0814,0.0532
+L4,L4_2,L4_2_FeCu_citrate_chloride_hot_out_of_envelope,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,56,413877,13234,2.4002,1.0774,1.4293,1.8242,1.0774
+L4,L4_2,L4_2_FeCu_citrate_chloride_hot_out_of_envelope,LC2_3 element-instruction supervisor,LC2_3 dedup,False,7,113742,11541,0.8572,0.5536,0.6893,0.8864,0.5536
+L4,L4_2,L4_2_FeCu_citrate_chloride_hot_out_of_envelope,LC2_3 per-group dedup,LC2_3 dedup,False,39,155050,7203,0.9553,0.5828,0.7949,1.1491,0.5828
+L4,L4_2,L4_2_FeCu_citrate_chloride_hot_out_of_envelope,LC2_3 singleton dedup,LC2_3 dedup,False,9,60959,26242,0.9608,0.7707,0.8256,0.9432,0.7707
+L4,L4_2,L4_2_FeCu_citrate_chloride_hot_out_of_envelope,LC3_1 method picker,LC3 solver design,False,2,6947,223,0.0403,0.0293,0.0425,0.034,0.0293
+L4,L4_2,L4_2_FeCu_citrate_chloride_hot_out_of_envelope,LC3_2 initial-condition designer,LC3 solver design,False,2,29846,2190,0.204,0.1564,0.2129,0.1903,0.1564
+L4,L4_2,L4_2_FeCu_citrate_chloride_hot_out_of_envelope,LC3_3 constraint designer,LC3 solver design,False,3,47872,1377,0.2738,0.1511,0.2116,0.2273,0.1511
+L4,L4_2,L4_2_FeCu_citrate_chloride_hot_out_of_envelope,LC3_4 sweep designer,LC3 solver design,False,2,9740,558,0.0626,0.0473,0.0658,0.0503,0.0473
+L4,L4_2,L4_2_FeCu_citrate_chloride_hot_out_of_envelope,LD validator,orchestration (L0+L1+LD),False,5,71273,1390,0.3911,0.2888,0.4313,0.4237,0.2888
+L4,L4_3,L4_3_Acetic_acid_titration_curve,L0 orchestrator,orchestration (L0+L1+LD),False,2,11116,2147,0.1093,0.1231,0.1258,0.1231,0.0996
+L4,L4_3,L4_3_Acetic_acid_titration_curve,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,4,41106,5638,0.3465,0.2313,0.2768,0.3021,0.2313
+L4,L4_3,L4_3_Acetic_acid_titration_curve,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,7,32323,789,0.1813,0.0667,0.0868,0.1258,0.0667
+L4,L4_3,L4_3_Acetic_acid_titration_curve,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,12,70282,1780,0.3959,0.2172,0.3069,0.4838,0.2172
+L4,L4_3,L4_3_Acetic_acid_titration_curve,LC2_3 element-instruction supervisor,LC2_3 dedup,False,12,63357,7622,0.5073,0.2949,0.3423,0.4131,0.2949
+L4,L4_3,L4_3_Acetic_acid_titration_curve,LC2_3 per-group dedup,LC2_3 dedup,False,5,16244,945,0.1048,0.0701,0.0951,0.1131,0.0701
+L4,L4_3,L4_3_Acetic_acid_titration_curve,LC2_3 singleton dedup,LC2_3 dedup,False,3,9312,1742,0.0901,0.0667,0.0787,0.1018,0.0667
+L4,L4_3,L4_3_Acetic_acid_titration_curve,LC3_1 method picker,LC3 solver design,False,2,6711,139,0.037,0.0264,0.0391,0.0304,0.0264
+L4,L4_3,L4_3_Acetic_acid_titration_curve,LC3_2 initial-condition designer,LC3 solver design,False,3,32951,1826,0.2104,0.1266,0.1687,0.1597,0.1266
+L4,L4_3,L4_3_Acetic_acid_titration_curve,LC3_3 constraint designer,LC3 solver design,False,2,23446,637,0.1332,0.0955,0.1397,0.1143,0.0955
+L4,L4_3,L4_3_Acetic_acid_titration_curve,LC3_4 sweep designer,LC3 solver design,False,2,9093,287,0.0526,0.0382,0.0555,0.0405,0.0382
+L4,L4_3,L4_3_Acetic_acid_titration_curve,LD validator,orchestration (L0+L1+LD),False,5,36442,967,0.2064,0.1449,0.2118,0.2019,0.1449
+L4,L4_4,L4_4_PuAm_aspirin_citrate_not_in_db,L0 orchestrator,orchestration (L0+L1+LD),False,2,9989,1839,0.0959,0.0876,0.1115,0.0876,0.0876
+L4,L4_4,L4_4_PuAm_aspirin_citrate_not_in_db,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,3,15445,3357,0.1611,0.1222,0.1422,0.1272,0.1222
+L4,L4_4,L4_4_PuAm_aspirin_citrate_not_in_db,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,6,21174,547,0.1195,0.0476,0.0628,0.0703,0.0476
+L4,L4_4,L4_4_PuAm_aspirin_citrate_not_in_db,LD validator,orchestration (L0+L1+LD),False,3,13086,568,0.0796,0.0467,0.0637,0.0685,0.0467
+L4,L4_5,L4_5_Cuprium_fake_metal,L0 orchestrator,orchestration (L0+L1+LD),False,2,11253,2141,0.1098,0.1239,0.1252,0.1239,0.0991
+L4,L4_5,L4_5_Cuprium_fake_metal,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,3,27483,5108,0.2651,0.2345,0.2394,0.2667,0.2008
+L4,L4_5,L4_5_Cuprium_fake_metal,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,4,13160,351,0.0746,0.0362,0.0498,0.0449,0.0362
+L4,L4_5,L4_5_Cuprium_fake_metal,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,16,99545,2789,0.5675,0.325,0.459,0.6057,0.325
+L4,L4_5,L4_5_Cuprium_fake_metal,LC2_3 element-instruction supervisor,LC2_3 dedup,False,12,77993,14152,0.7438,0.5234,0.6087,0.6736,0.5234
+L4,L4_5,L4_5_Cuprium_fake_metal,LC2_3 per-group dedup,LC2_3 dedup,False,22,84317,4290,0.5288,0.2871,0.3769,0.578,0.2871
+L4,L4_5,L4_5_Cuprium_fake_metal,LC2_3 singleton dedup,LC2_3 dedup,False,9,37481,9545,0.426,0.3103,0.3449,0.4729,0.3103
+L4,L4_5,L4_5_Cuprium_fake_metal,LC3_1 method picker,LC3 solver design,False,2,6615,163,0.0372,0.0266,0.0392,0.0304,0.0266
+L4,L4_5,L4_5_Cuprium_fake_metal,LC3_2 initial-condition designer,LC3 solver design,False,3,34923,1973,0.2239,0.1347,0.179,0.1727,0.1347
+L4,L4_5,L4_5_Cuprium_fake_metal,LC3_3 constraint designer,LC3 solver design,False,2,24744,662,0.1403,0.1006,0.1473,0.1217,0.1006
+L4,L4_5,L4_5_Cuprium_fake_metal,LC3_4 sweep designer,LC3 solver design,False,2,8966,262,0.0514,0.0371,0.0541,0.0392,0.0371
+L4,L4_5,L4_5_Cuprium_fake_metal,LD validator,orchestration (L0+L1+LD),False,5,39608,1020,0.2235,0.1582,0.2318,0.2189,0.1582
+L4,L4_6,L4_6_CuZn_glycine_EDTA_kinetics,L0 orchestrator,orchestration (L0+L1+LD),False,1,3679,1284,0.0505,0.0551,0.0689,0.0551,0.0551
+L4,L4_7,L4_7_Ni_glycine_ammonia_ternary,L0 orchestrator,orchestration (L0+L1+LD),False,2,12898,2326,0.1226,0.1388,0.1458,0.1388,0.1138
+L4,L4_7,L4_7_Ni_glycine_ammonia_ternary,L1 pipeline sub-agent,orchestration (L0+L1+LD),False,5,77642,6341,0.5467,0.3419,0.3767,0.534,0.3059
+L4,L4_7,L4_7_Ni_glycine_ammonia_ternary,LC1_1 ID alignment,LC1 alignment (LC1_1+LC1_2),False,5,17762,519,0.1018,0.0443,0.0589,0.0622,0.0443
+L4,L4_7,L4_7_Ni_glycine_ammonia_ternary,LC1_2 eq-map node validator,LC1 alignment (LC1_1+LC1_2),False,19,135404,2998,0.752,0.3929,0.5561,0.6076,0.3929
+L4,L4_7,L4_7_Ni_glycine_ammonia_ternary,LC2_3 element-instruction supervisor,LC2_3 dedup,False,12,87973,15284,0.822,0.5721,0.6672,0.7564,0.5721
+L4,L4_7,L4_7_Ni_glycine_ammonia_ternary,LC2_3 per-group dedup,LC2_3 dedup,False,13,49136,2596,0.3106,0.1789,0.2372,0.372,0.1789
+L4,L4_7,L4_7_Ni_glycine_ammonia_ternary,LC2_3 singleton dedup,LC2_3 dedup,False,3,13183,4005,0.166,0.1327,0.1497,0.1581,0.1327
+L4,L4_7,L4_7_Ni_glycine_ammonia_ternary,LC3_1 method picker,LC3 solver design,False,2,6866,161,0.0384,0.0275,0.0405,0.0319,0.0275
+L4,L4_7,L4_7_Ni_glycine_ammonia_ternary,LC3_2 initial-condition designer,LC3 solver design,False,3,37301,2092,0.2388,0.1438,0.1913,0.1888,0.1438
+L4,L4_7,L4_7_Ni_glycine_ammonia_ternary,LC3_3 constraint designer,LC3 solver design,False,3,40015,1658,0.2415,0.139,0.1895,0.1906,0.139
+L4,L4_7,L4_7_Ni_glycine_ammonia_ternary,LC3_4 sweep designer,LC3 solver design,False,2,9235,242,0.0522,0.0375,0.0551,0.0402,0.0375
+L4,L4_7,L4_7_Ni_glycine_ammonia_ternary,LD validator,orchestration (L0+L1+LD),False,5,55663,1683,0.3204,0.2588,0.3821,0.3339,0.2588

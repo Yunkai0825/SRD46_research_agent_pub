@@ -1,48 +1,46 @@
 ## Doability
-Doable — Ni(II) and glycine are both present in the SRD-46 catalog with the requested aqueous complexes and Ni solid phases, and `pourbaix_sweep` is a supported route.
+Doable — Ni + glycine is well covered in the SRD-46 catalog (three Ni-glycinate complexes, Ni hydrolysis, and Ni(0/II/III/IV) solids all present); a 2-D `pourbaix_sweep` over pH 0–14 and E = −1 to +1.6 V is exactly the pipeline's home ground.
 
 ## Result
-- System: Ni (1 mM) + glycine (10 mM), 25 °C, I = 0.1 m, potential vs SHE.
-- Method: 2-D `pourbaix_sweep`, pH ∈ [0, 14], E_V ∈ [-1.00, +1.60] V. Coarse grid 66×71; final classified grid ΔpH = 0.0125, ΔE_V = 0.0025 V.
-- Convergence: 4686 / 4686 coarse cells converged; refined output 87 833 points . No unconverged cells — all region and boundary claims below rest on fully converged samples.
-- Included species (from verdict): Ni²⁺, [Ni(OH)]⁺, [Ni(OH)₂]°, [Ni(OH)₃]⁻, [Ni₄(OH)₄]⁴⁺, [Ni(Glyc)]⁺, [Ni(Glyc)₂]°, [Ni(Glyc)₃]⁻, and solids Ni(OH)₂, Ni₃O₄·2H₂O, Ni₂O₃·H₂O, NiO₂·2H₂O, Ni°.
-- Topology: 7 dominant-species labels → 7 connected regions, 10 pairwise boundaries, 4 internal + 8 sweep-limit junctions. No disconnected labels.
+- System: 1 mM Ni_tot + 10 mM glycine_tot at 25 °C, I = 0.1 m (SRD-46 constants; Atlas solids)
+- Method: `pourbaix_sweep`, SHE reference
+- Domain: pH ∈ [0, 14], E_V ∈ [−1, +1.6] V; final classified grid ΔpH = 0.008, ΔE = 0.002 V
+- Convergence: 66 450/66 450 refined cells solved (`speciation_full_Ni_+_Glycine.csv` header: `n_refined: 66450`, `n_coarse_unrefined: 0`); every cell used for label assignment is converged.
+- Topology: 9 dominant-species labels, 9 connected regions (no disconnected labels), 18 boundary manifolds, 10 internal + 6 sweep-limit junctions.
 
 ## Analysis
 
-### Feature roster (used below)
-- `DmsReg_1 {Ni°}` — metal region; corners `DmsRegEqJnc_10`(pH 14, E = -0.7125 V), `DmsRegEqJnc_9`(11.2375, -0.5475 V), `DmsRegEqJnc_4`(7.9125, -0.43 V), `DmsRegEqJnc_5`(6.7625, -0.365 V), `DmsRegEqJnc_6`(6.0625, -0.345 V), `DmsRegEqJnc_7`(0, -0.335 V, sweep limit).
-- `DmsReg_7 {Ni²⁺}` — largest region (measure 11.76); bounded by `DmsRegEqJnc_6`(6.0625, -0.345 V) and `DmsRegEqJnc_3`(6.075, 1.6 V, sweep limit) plus the low-pH frame.
-- `DmsReg_6 {[Ni(Glyc)]⁺}` — narrow strip; corners `DmsRegEqJnc_5`(6.7625, -0.365 V), `DmsRegEqJnc_6`(6.0625, -0.345 V), `DmsRegEqJnc_2`(6.8, 1.6 V), `DmsRegEqJnc_3`(6.075, 1.6 V).
-- `DmsReg_5 {[Ni(Glyc)₂]°}` — corners `DmsRegEqJnc_4`(7.9125, -0.43 V), `DmsRegEqJnc_5`(6.7625, -0.365 V), `DmsRegEqJnc_1`(7.975, 1.6 V), `DmsRegEqJnc_2`(6.8, 1.6 V).
-- `DmsReg_4 {[Ni(Glyc)₃]⁻}` — corners `DmsRegEqJnc_9`(11.2375, -0.5475 V), `DmsRegEqJnc_4`(7.9125, -0.43 V), `DmsRegEqJnc_1`(7.975, 1.6 V), `DmsRegEqJnc_8`(11.2375, 1.6 V).
-- `DmsReg_2 {Ni(OH)₂(s)}` — high-pH solid; corners `DmsRegEqJnc_10`(14, -0.7125 V), `DmsRegEqJnc_9`(11.2375, -0.5475 V), `DmsRegEqJnc_8`(11.2375, 1.6 V), `DmsRegEqJnc_12`(11.6375, 1.6 V), `DmsRegEqJnc_11`(14, 1.46 V).
-- `DmsReg_3 {Ni₂O₃·H₂O(s)}` — small oxidised sliver in the upper-right corner between `DmsRegEqJnc_11`(14, 1.46 V) and `DmsRegEqJnc_12`(11.6375, 1.6 V).
-- Boundaries used: `DmsRegEq_3` Ni²⁺|[Ni(Glyc)]⁺ (nearly vertical at pH ≈ 6.06–6.08); `DmsRegEq_2` [Ni(Glyc)]⁺|[Ni(Glyc)₂]° (pH ≈ 6.76–6.80); `DmsRegEq_1` [Ni(Glyc)₂]°|[Ni(Glyc)₃]⁻ (pH ≈ 7.91–7.98); `DmsRegEq_8` Ni(OH)₂|[Ni(Glyc)₃]⁻ (vertical at pH = 11.2375); `DmsRegEq_9` Ni°|Ni(OH)₂ (Nernstian, from (14, -0.7125 V) to (11.2375, -0.5475 V)); `DmsRegEq_10` Ni(OH)₂|Ni₂O₃·H₂O (from (14, 1.46 V) to (11.6375, 1.6 V)).
-- Reference lines: pH-line at fixed E_V = 0.30125 V (Ni²⁺ → [Ni(Glyc)]⁺ at pH 6.07–6.08 → [Ni(Glyc)₂]° at 6.79–6.81 → [Ni(Glyc)₃]⁻ at 7.97–7.98 → Ni(OH)₂ at 11.23–11.24); E-line at fixed pH = 6.99 (Ni° up to E ≈ -0.376 V, then [Ni(Glyc)₂]° all the way to +1.599 V).
+### Feature roster (canonical IDs referenced below)
+Aqueous Ni(II) regions (all liquid, non-redox among themselves):
+- `DmsReg_9` {Ni²⁺}: bounded by `DmsRegEqJnc_7` (pH 0, E = −0.333 V, sweep limit), `DmsRegEqJnc_3` (pH 6.06, E = −0.345 V), `DmsRegEqJnc_6` (pH 6.06, E = 0.869 V), `DmsRegEqJnc_11` (pH 5.364, E = 1.013 V), `DmsRegEqJnc_12` (pH 4.132, E = 1.227 V), `DmsRegEqJnc_8` (pH 0.972, E = 1.6 V, sweep limit). Largest liquid region (measure 10.11).
+- `DmsReg_8` {[Ni(Glyc)]⁺}: narrow vertical slab between `DmsRegEqJnc_3` (pH 6.06, −0.345 V), `DmsRegEqJnc_2` (pH 6.764, −0.365 V), `DmsRegEqJnc_5` (pH 6.764, +0.765 V), `DmsRegEqJnc_6` (pH 6.06, +0.869 V). Measure 0.84.
+- `DmsReg_7` {[Ni(Glyc)₂]}: between `DmsRegEqJnc_2` (pH 6.764, −0.365 V), `DmsRegEqJnc_1` (pH 7.916, −0.429 V), `DmsRegEqJnc_4` (pH 7.908, +0.687 V), `DmsRegEqJnc_5` (pH 6.764, +0.765 V). Measure 1.31.
+- `DmsReg_6` {[Ni(Glyc)₃]⁻}: bounded by `DmsRegEqJnc_1` (pH 7.916, −0.429 V), `DmsRegEqJnc_9` (pH 11.236, −0.549 V), `DmsRegEqJnc_10` (pH 11.236, +0.257 V), `DmsRegEqJnc_4` (pH 7.908, +0.687 V). Measure 3.47.
+Solids:
+- `DmsReg_1` {Ni⁰(s)}: bottom of the map, capped by the Ni⁰/aqueous curves `DmsRegEq_7` (Ni²⁺, from pH 0/E = −0.333 V up to pH 6.06/−0.345 V), `DmsRegEq_6` (→ Ni-Glyc⁺), `DmsRegEq_5` (→ Ni-Glyc₂), `DmsRegEq_4` (→ Ni-Glyc₃⁻, rising slightly to pH 11.24/−0.549 V), then `DmsRegEq_15` to Ni(OH)₂ up to `DmsRegEqJnc_13` (pH 14, E = −0.711 V, sweep limit). Largest solid region (measure 7.84).
+- `DmsReg_2` {β-Ni(OH)₂}: narrow triangular wedge in the alkaline II-oxidation corner between `DmsRegEqJnc_13` (pH 14, −0.711 V), `DmsRegEqJnc_9` (pH 11.236, −0.549 V), `DmsRegEqJnc_10` (pH 11.236, +0.257 V), `DmsRegEqJnc_14` (pH 14, +0.095 V).
+- `DmsReg_3` {Ni₃O₄·2H₂O} (mixed II/III): large upper-central region from `DmsRegEqJnc_4/5/6` (E ≈ 0.69–0.87 V, pH 6–8) rising to `DmsRegEqJnc_11` (pH 5.364, +1.013 V) and `DmsRegEqJnc_14/15` at pH 14.
+- `DmsReg_4` {Ni₂O₃·H₂O} (Ni(III)): thin band between `DmsRegEqJnc_11`, `DmsRegEqJnc_12` (pH 4.132, +1.227 V), `DmsRegEqJnc_16` (pH 14, +0.643 V), `DmsRegEqJnc_15` (pH 14, +0.501 V).
+- `DmsReg_5` {NiO₂·2H₂O} (Ni(IV)): top strip above `DmsRegEq_16` and `DmsRegEq_9`, capped by the sweep top; `DmsRegEqJnc_8` (pH 0.972, +1.6 V, sweep limit) marks where its lower boundary with Ni²⁺ exits the box.
 
-### Region-by-region reading
-**Reduced domain (low E).** Metallic Ni° (`DmsReg_1`) dominates everywhere below a Nernstian floor whose ceiling rises with decreasing pH: at pH 14 the Ni°/Ni(OH)₂ boundary sits at E = -0.7125 V, at pH 11.24 at -0.5475 V, and in the glycinate window it climbs from about -0.43 V (pH 7.91) to -0.345 V (pH 6.06) and stays near -0.335 V down to pH 0. This is the classical Ni²⁺/Ni couple (E°(Ni²⁺/Ni) ≈ -0.25 V vs SHE) shifted to more negative potentials by (i) the 10⁻³ M dilution of the free-ion activity in acid and (ii) glycinate complexation and hydroxide precipitation, which each lower the free Ni²⁺ activity above pH ~6 and thereby stabilise the metal to higher potential — visible as the mild upward tilt of `DmsRegEq_5`/`DmsRegEq_4` between the triple points `DmsRegEqJnc_5` and `DmsRegEqJnc_9`.
+### Ni(II) aqueous stability ladder (read at each E_V band the boundary spans)
+The three glycinate–glycinate boundaries `DmsRegEq_3`, `DmsRegEq_2`, `DmsRegEq_1` are essentially vertical (E-independent within the Ni(II) band, as expected for non-redox proton-driven ligand-exchange steps). Reading the pH-center reference line at E = +0.3 V (which lies inside every Ni(II) field) gives the canonical pH windows:
 
-**Ni(II) speciation above the metal floor.** In the acidic zone (pH ≲ 6.06) the aqua ion Ni²⁺ (`DmsReg_7`, measure 11.76 — the single largest region) dominates. The Ni²⁺/[Ni(Glyc)]⁺ boundary `DmsRegEq_3` is essentially vertical between (6.0625, -0.345 V) and (6.075, +1.6 V): this is a pure acid–base/complexation switch (formal Ni oxidation state unchanged, so non-redox per the card definition). The chemistry is that glycine's zwitterion loses its ammonium proton with pKa ≈ 9.57 (single-protonation `log_beta` of [HGlycine] in the reference table), so below pH 6 the free-glycinate activity is far too small to compete with hydration despite log β₁ = 5.74 for [Ni(Glyc)]⁺; near pH 6 the product [Gly⁻]·β₁ overtakes water and complexation ignites.
+Chemically, these crossovers track the successive additions of the anionic glycinate donor to Ni(II): the free glycinate concentration climbs as pH crosses pKa₂ ≈ 9.57 (single deprotonation `HGlycine ⇌ Glycine⁻ + H⁺`, from the reference table's log β for [HGlycine] = +9.57 built on the [Glycine]⁻ = L1 basis). Even at 10 mM total glycine, [Glycine⁻] is small below pH 7, so Ni²⁺ dominates. Once [Glycine⁻] rises to a level where β₁·[Glyc⁻] ≈ 1 (β₁ = 10^5.74 → [Glyc⁻] ≈ 10^-5.74 M), the 1:1 complex takes over — this happens around pH 6.07, exactly where `DmsRegEq_3` sits. Successive steps to 1:2 and 1:3 (stepwise log K₂ = log β₂ − log β₁ = 10.58 − 5.74 = 4.84; log K₃ = 14.10 − 10.58 = 3.52) each need another factor of ~10^-K_n in [Glyc⁻], driving the 1→2 crossover to pH 6.80 and the 2→3 crossover to pH 7.97, again quantitatively consistent with the printed windows once the fixed 10 mM total glycine (only partly deprotonated in the transition range) is accounted for. All three glycinate complexes therefore appear as required.
 
-**The Ni-glycinate window.** Between the near-vertical walls `DmsRegEq_3` (pH ≈ 6.07), `DmsRegEq_2` (pH ≈ 6.78) and `DmsRegEq_1` (pH ≈ 7.94), three glycinate complexes stack in order of increasing ligation as pH rises:
-- [Ni(Glyc)]⁺ (`DmsReg_6`) between pH ≈ 6.07 and 6.78,
-- [Ni(Glyc)₂]° (`DmsReg_5`) between pH ≈ 6.78 and 7.94,
-- [Ni(Glyc)₃]⁻ (`DmsReg_4`) between pH ≈ 7.94 and 11.24.
+### Precipitation of Ni hydroxide / mixed oxides at high pH
+Above pH ≈ 11.05, even the tris-glycinate complex loses to the solid Ni(II)/Ni(II,III) hydroxide/oxide phases: at low E (≲ −0.549 V) the boundary is `DmsRegEq_15` (Ni⁰|Ni(OH)₂, spans pH 11.236, E = −0.549 V → pH 14, E = −0.711 V — a redox boundary with the Nernstian −0.059 V/pH slope of the Ni²⁺/Ni⁰ couple screened by hydroxide); the Ni(OH)₂ wedge (`DmsReg_2`) is thin because [Ni(Glyc)₃]⁻ remains competitive even at pH 11 for the moderate E band (`DmsRegEq_10` runs vertically at pH 11.236 from E = −0.549 to +0.257 V), and above that potential Ni oxidises to the mixed Ni₃O₄·2H₂O solid (`DmsRegEq_11`, tilting down to pH 7.9 at E = +0.687 V — a redox boundary between Ni(II) aqueous glycinates and a Ni(II,III) oxyhydroxide).
+- **Ni(III) window:** Ni₂O₃·H₂O (`DmsReg_4`) is stable in a narrow band; at pH 7 the E-center reference line gives Ni₃O₄·2H₂O → Ni₂O₃·H₂O at E ≈ 0.915 V (bracketed 0.914/0.916 V) and Ni₂O₃·H₂O → NiO₂·2H₂O at E ≈ 1.057 V (bracketed 1.056/1.058 V). At acidic pH, `DmsRegEq_8` shows the Ni²⁺|Ni₂O₃·H₂O boundary sloping from (5.36, 1.013 V) to (4.13, 1.227 V) — the classic ≈ −(3/1)·0.059 V/pH slope for a 2-electron/6-proton couple 2 Ni²⁺ + 3 H₂O ⇌ Ni₂O₃·H₂O + 4 H⁺ + 2 e⁻. Below pH ≈ 4 the region shrinks to a wedge because NiO₂·2H₂O(IV) becomes competitive directly against Ni²⁺ (`DmsRegEq_9`, pH 4.13/1.227 V → pH 0.97/1.6 V).
+- **Ni(IV) window:** `DmsReg_5` (NiO₂·2H₂O) forms the top of the map; its lower boundary `DmsRegEq_16` runs from (pH 14, 0.643 V) to (pH 4.13, 1.227 V) — again a redox line with a Nernstian slope characteristic of the Ni(III)/Ni(IV) couple. This solid is only reached above the O₂/H₂O line, so it is a strong-oxidiser regime relevant to electrochemical Ni oxidation (e.g. β-NiOOH → NiO₂ in Ni battery chemistry) rather than to open, aerated aqueous solutions.
 
-Each stepwise transition (log K₂ = β₂ - β₁ = 4.84; log K₃ = β₃ - β₂ = 3.52 from the reference table) is a non-redox ligand-addition step and the boundaries are correspondingly steep (nearly vertical, with only a tiny Nernstian foot at very negative E where the metal starts to appear). Because all three complexes carry the same Ni(II) formal state, potential barely enters their mutual boundaries — the region walls are pH-driven ligand-binding thresholds, not redox lines. The upper (Ni(OH)₂) wall at pH = 11.2375 (`DmsRegEq_8`, exactly vertical) is where the hydroxide solid finally out-competes even the tris-glycinato complex; at this pH product OH⁻ activity is high enough (pOH ≈ 2.76) that Ni(OH)₂(s) — solubility product log_beta = -11.71 in the reference table — is more stable than any dissolved Ni-glycinate at the imposed 1 mM Ni total.
+### Stability window of the soluble Ni-glycinate complexes (summary)
+- **[Ni(Glyc)]⁺:** pH ≈ 6.07 → 6.76, from E ≈ −0.35 V (Ni⁰ floor) up to E ≈ +0.87 V (oxidation to Ni₃O₄·2H₂O). A thin transitional slab — glycinate stabilisation is only just competitive with the aqua ion.
+- **[Ni(Glyc)₂]:** pH ≈ 6.76 → 7.92, E ≈ −0.37 V up to E ≈ +0.69–0.77 V. The dominant Ni(II) form under near-neutral, mildly oxidising conditions — this is the window most relevant to biology and to Ni electroplating from glycinate baths.
 
-**Explicit soluble Ni-glycinate predominance window (deliverable).** A soluble Ni-glycinate complex is the dominant Ni species over the compact pH × E band bounded by:
-- pH from ≈ 6.06 (Ni²⁺|[Ni(Glyc)]⁺ boundary `DmsRegEq_3`, quoted at 6.0625–6.075) to ≈ 11.24 (Ni(OH)₂|[Ni(Glyc)₃]⁻ boundary `DmsRegEq_8` at 11.2375);
-- E from the Ni°/glycinate reductive floor (varying from ≈ -0.345 V at pH 6.06 through -0.365 V at pH 6.76, -0.43 V at pH 7.91, up to -0.5475 V at pH 11.24 — read off `DmsRegEq_7`, `DmsRegEq_5`, `DmsRegEq_4`) upward through the entire remaining water-stability window to the top of the sweep (+1.6 V, sweep-limit junctions `DmsRegEqJnc_1`, `DmsRegEqJnc_2`, `DmsRegEqJnc_3`, `DmsRegEqJnc_8`).
+- **[Ni(Glyc)₃]⁻:** pH ≈ 7.92 → 11.24, E ≈ −0.43 V (Ni⁰) up to E ≈ +0.26–0.69 V (Ni(II,III) oxide). The widest aqueous complex field: excess glycinate plus fully deprotonated Glyc⁻ pushes the tris-chelate to dominate all the way to alkaline conditions, and it, not Ni(OH)₂(s), is what prevents hydroxide precipitation between pH 8 and 11 in this system (contrast pure Ni-water, where Ni(OH)₂ appears near pH 8). This is the practical value of glycine as a Ni chelator: it holds ~1 mM Ni in solution up to pH ≈ 11 across the whole water-stability E range.
 
-Within this envelope, the dominant glycinate species itself changes with pH: [Ni(Glyc)]⁺ occupies roughly pH 6.06–6.78 (narrow strip, measure 1.42), [Ni(Glyc)₂]° pH 6.78–7.94 (measure 2.35), and [Ni(Glyc)₃]⁻ pH 7.94–11.24 (measure 6.90 — the largest glycinate field, and the piece with the widest pH extent). The centre-E reference line at 0.30125 V reproduces exactly this ladder, confirming the map's topology on the classified grid.
-
-**Oxidising corner.** No dissolved Ni(III/IV) species are included, so above the water oxidation limit at high pH the diagram shows Ni(OH)₂ giving way to the small Ni₂O₃·H₂O(s) sliver (`DmsReg_3`, measure only 0.17) via `DmsRegEq_10` between (14, +1.46 V) and (11.6375, +1.6 V). NiO₂·2H₂O is in the calculation set but does not gain its own field within this sweep box. In practice — beyond the map — these upper-corner fields sit above the O₂/H₂O line and would decompose water; they are correctly identified as thermodynamic majorities under the imposed constraints but are not kinetically accessible in aerated aqueous chemistry.
-
-### Practical takeaway
-At 1 mM Ni(II) with a tenfold excess of glycine (10 mM total), glycine sequesters Ni(II) into soluble form over a wide, chemically useful window that spans the full pH range where glycinate is deprotonated enough to bind and Ni²⁺ is not yet forced into Ni(OH)₂: roughly pH 6.1–11.2 across essentially the entire water-oxidation stability range of E. The complexation therefore extends the pH window in which Ni stays dissolved by about 4.6 pH units beyond the Ni²⁺ field (which without ligand would give way to Ni(OH)₂ near pH 8 at 1 mM). This is the range relevant to Ni electroplating baths, catalytic aqueous Ni(II) chemistry, and Ni removal/recovery from complexing waste streams; note that the tris complex [Ni(Glyc)₃]⁻ carries a net negative charge, which matters for ion-exchange or membrane behaviour above pH ≈ 8.
+### Notes on the returned classification
+Two `redox unresolved` subsections appear (`DmsRegEq_11`, `_17`, `_18`) because the card's phase/oxidation attributes for the mixed Ni(II,III) oxide Ni₃O₄·2H₂O don't parse cleanly against a single formal oxidation state — this is a label-grouping detail, not a numerical uncertainty. The dominant-species assignment, junction coordinates, and reference lines are all taken from the fully converged classified grid and are trustworthy.
 
 ## Final deliverables
 
@@ -56,8 +54,8 @@ At 1 mM Ni(II) with a tenfold excess of glycine (10 mM total), glycine sequester
 - [LC3/status.json](<LC3/status.json>)
 - [LD/answer.md](<LD/answer.md>)
 - [LD/verdict.json](<LD/verdict.json>)
-- [solver/pourbaix_map_Ni_+_Glycine_Ni.csv](<solver/pourbaix_map_Ni_+_Glycine_Ni.csv>)
 - [solver/pourbaix_Ni_+_Glycine_Ni.png](<solver/pourbaix_Ni_+_Glycine_Ni.png>)
+- [solver/pourbaix_map_Ni_+_Glycine_Ni.csv](<solver/pourbaix_map_Ni_+_Glycine_Ni.csv>)
 - [solver/speciation_full_Ni_+_Glycine.csv](<solver/speciation_full_Ni_+_Glycine.csv>)
 - [solver/topo_csv_Ni_+_Glycine_Ni/topo_features_0d.csv](<solver/topo_csv_Ni_+_Glycine_Ni/topo_features_0d.csv>)
 - [solver/topo_csv_Ni_+_Glycine_Ni/topo_features_1d.csv](<solver/topo_csv_Ni_+_Glycine_Ni/topo_features_1d.csv>)
