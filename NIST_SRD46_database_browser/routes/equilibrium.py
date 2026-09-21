@@ -2,8 +2,6 @@
 
 from flask import Blueprint, render_template, request, redirect, url_for
 
-from ._measurement_display import plain_definition
-
 _PARENT_PACKAGE = (__package__ or "").rpartition(".")[0]
 
 if _PARENT_PACKAGE:
@@ -145,7 +143,6 @@ def collection_detail(collection_id):
         ))
         node_index = {}
         for nd in node_rows:
-            nd["beta_definition_name"] = plain_definition(nd.get("beta_definition_name"))
             nd["lhs_species"] = []
             nd["rhs_species"] = []
             net_index[nd["network_db_id"]]["nodes"].append(nd)

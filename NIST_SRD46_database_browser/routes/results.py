@@ -3,14 +3,21 @@ from __future__ import annotations
 
 import html
 import json
+import posixpath
+import unicodedata
 import re
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import unquote, urlsplit
+from urllib.parse import quote, unquote, urlsplit
 
 import markdown
-from flask import Blueprint, abort, redirect, render_template, request, send_file, url_for
+from flask import Blueprint, Response, abort, redirect, render_template, request, send_file, url_for
 from markupsafe import Markup
+
+from archive_io import open_zip
+
+from ._result_catalog import (ArchivePath, KINDS, build_catalog, catalog_runs,
+                              query_results, resolve_run, prompt_from_result, read_json)
 
 results_bp = Blueprint("results", __name__)
 _REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -40,17 +47,35 @@ def _root(source: str) -> Path:
     return ROOTS[source].resolve()
 
 
-def _case_dir(source: str, case_id: str) -> Path:
-    root = _root(source)
-    parts = _parts(case_id)
-    if len(parts) != 1 or parts[0].startswith(".") or parts[0] == "final":
-        abort(404)
-    directory = root.joinpath(*parts).resolve()
-    if directory.parent != root or not directory.is_dir():
-        abort(404)
-    if not any((directory / name).is_file() for name in ("answer.md", "verdict.json")):
+def _case_dir(source: str, case_id: str):
+    _parts(case_id)
+    directory = resolve_run(_root(source), case_id)
+    if directory is None:
         abort(404)
     return directory
+
+
+def _send_artifact(path, mimetype: str, as_attachment: bool = False):
+    if not isinstance(path, ArchivePath):
+        response = send_file(path, mimetype=mimetype, as_attachment=as_attachment)
+    else:
+        def chunks():
+            with open_zip(path.archive) as archive:
+                with archive.open(path.member) as member:
+                    while block := member.read(64 * 1024):
+                        yield block
+        response = Response(chunks(), mimetype=mimetype)
+        response.content_length = path.stat().st_size
+        filename = path.name
+        names = {"filename": filename}
+        try:
+            filename.encode("ascii")
+        except UnicodeEncodeError:
+            names = {"filename": unicodedata.normalize("NFKD", filename).encode("ascii", "ignore").decode("ascii"),
+                     "filename*": "UTF-8''" + quote(filename, safe="!#$&+-.^_`|~")}
+        response.headers.set("Content-Disposition", "attachment" if as_attachment else "inline", **names)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    return response
 
 
 def _read(path: Path, directory: Path) -> str:
@@ -92,8 +117,11 @@ def _metadata(path: Path, directory: Path, identifier: str = "") -> dict:
     if not isinstance(notes, list):
         notes = [str(notes)]
     layer = identifier.split("_", 1)[0]
+    manifest = data.get("manifest") or read_json(directory / "manifest.json")
+    if not isinstance(manifest, dict):
+        manifest = {}
     return {"verdict": verdict, "badge": _VERDICT_BADGES.get(verdict, "secondary"),
-            "notes": notes, "prompt": str(data.get("request") or ""),
+            "notes": notes, "prompt": str(data.get("request") or data.get("user_request") or manifest.get("user_request") or ""),
             "purpose": str(data.get("purpose") or ""),
             "layer": layer if re.fullmatch(r"L\d+", layer) else ""}
 
@@ -108,12 +136,18 @@ def _cost_url(source: str, filename: str, case_id: str | None = None) -> str | N
     return url_for("results.cost_file", source=source, filename=filename, case_id=case_id)
 
 
-def _artifact(directory: Path, relative: str) -> Path:
+def _scientific_relative(parts):
+    return (bool(parts) and (parts[0] == "final" or re.fullmatch(r"L1_call_\d+", parts[0]))
+            and not any(part.startswith((".", "_")) for part in parts)
+            and not any("tool_calls" in part or "run_history" in part for part in parts))
+
+
+def _artifact(directory: Path, relative: str):
     parts = _parts(relative)
-    if parts[0] != "final":
+    if not _scientific_relative(parts):
         abort(404)
     path = directory.joinpath(*parts).resolve()
-    if (not path.is_relative_to(directory / "final") or not path.is_file()
+    if (not path.is_relative_to(directory) or not path.is_file()
             or path.suffix.lower() not in _FILE_SUFFIXES):
         abort(404)
     return path
@@ -146,10 +180,19 @@ class _AnswerHTML(HTMLParser):
             return None
         if not parsed.path:
             return value if not image and value.startswith("#") else None
-        candidate = (self.document.parent / unquote(parsed.path)).resolve()
-        final = self.directory / "final"
-        if (not candidate.is_relative_to(final) or not candidate.is_file()
+        relative_path = unquote(parsed.path)
+        if isinstance(self.document, ArchivePath):
+            normalized = posixpath.normpath(posixpath.join(self.document.parent.member, relative_path))
+            try:
+                candidate = self.document.with_member(normalized)
+            except ValueError:
+                return None
+        else:
+            candidate = (self.document.parent / relative_path).resolve()
+        if (not candidate.is_relative_to(self.directory) or not candidate.is_file()
                 or candidate.suffix.lower() not in _FILE_SUFFIXES):
+            return None
+        if not _scientific_relative(candidate.relative_to(self.directory).parts):
             return None
         if image and candidate.suffix.lower() not in _IMAGE_SUFFIXES:
             return None
@@ -191,37 +234,39 @@ def _answer(path: Path, directory: Path, source: str, case_id: str) -> Markup:
 
 
 def _cases(source: str) -> list[dict]:
-    root = _root(source)
-    directories = set()
-    if root.is_dir():
-        for directory in root.iterdir():
-            if not directory.is_dir() or directory.name.startswith(".") or directory.name == "final":
-                continue
-            if directory.resolve().parent != root:
-                continue
-            if any((directory / name).is_file() for name in ("answer.md", "verdict.json")):
-                directories.add(directory.name)
     cases = []
-    order = lambda name: [int(part) if part.isdigit() else part for part in re.split(r"(\d+)", name)]
-    for identifier in sorted(directories, key=order):
-        directory = root / identifier
-        metadata = _metadata(directory / "verdict.json", directory, identifier)
-        cases.append({"source": source, "id": identifier, "title": identifier,
-                      **metadata, "answer_head": _read(directory / "answer.md", directory).strip()[:240],
-                      "result_count": sum(path.is_dir() for path in directory.glob("final/result_*"))})
+    for run in catalog_runs(_root(source)):
+        directory = run["directory"]
+        metadata = _metadata(directory / "verdict.json", directory, run["title"])
+        cases.append({**run, **metadata, "prompt": run["prompt"], "source": source,
+                      "answer_head": _read(directory / "answer.md", directory).strip()[:240]})
     return cases
-
 
 
 def _index(source: str):
     query = request.args.get("q", "").strip()
-    cases = _cases(source)
+    catalog = build_catalog(_REPO_ROOT, _root(source), include_prompts=source == "benchmark")
+    kind = request.args.get("kind") or next((key for key, value in catalog.items() if value["rows"]), "analysis")
+    if kind not in KINDS:
+        abort(404)
+    selected = catalog[kind]
+    rows = selected["rows"]
     if query:
-        cases = [case for case in cases if query.casefold() in case["title"].casefold()]
-    return render_template("results_index.html", cases=cases, source=source,
-                           sources=SOURCES, query=query,
-                           cost_plot=_cost_url(source, "cost_per_prompt.png"),
-                           cost_data=_cost_url(source, "cost_per_prompt.csv"))
+        needle = query.casefold()
+        rows = [row for row in rows if needle in (row["id"] + " " + row["title"] + " " + row["prompt"]).casefold()]
+    for row in rows:
+        for runs in row["runs"].values():
+            for run in runs:
+                metadata = _metadata(run["directory"] / "verdict.json", run["directory"], run["title"])
+                run.update({"verdict": metadata["verdict"], "badge": metadata["badge"]})
+                if run["batch"] is not None and run["verdict"] == "unknown":
+                    run["verdict"] = "saved"
+                run["url"] = url_for("results.detail", source=source, case_id=run["id"], batch=run["batch"])
+    return render_template("results_index.html", rows=rows, source=source, sources=SOURCES,
+                           query=query, kind=kind, kinds=KINDS, catalog=catalog,
+                           modes=selected["modes"], run_count=selected["run_count"],
+                           cost_plot=_cost_url(source, "cost_per_prompt.png") if kind == "analysis" else None,
+                           cost_data=_cost_url(source, "cost_per_prompt.csv") if kind == "analysis" else None)
 
 
 @results_bp.get("/results/")
@@ -244,10 +289,19 @@ def _result_groups(directory: Path, source: str, case_id: str) -> list[dict]:
     final = directory / "final"
     groups = {}
     if not final.is_dir():
-        return []
-    for path in sorted(final.rglob("*")):
-        if not path.is_file() or path.suffix.lower() not in _FILE_SUFFIXES:
-            continue
+        final = directory
+        roots = [path for path in directory.glob("L1_call_*") if path.is_dir()]
+    else:
+        roots = [final]
+    def files_under(folder):
+        for child in sorted(folder.iterdir()):
+            if not _scientific_relative(child.relative_to(directory).parts):
+                continue
+            if child.is_dir():
+                yield from files_under(child)
+            elif child.suffix.lower() in _FILE_SUFFIXES:
+                yield child
+    for path in (path for root in roots for path in files_under(root)):
         if not path.resolve().is_relative_to(final):
             continue
         parts = path.relative_to(final).parts
@@ -275,9 +329,15 @@ def _result_groups(directory: Path, source: str, case_id: str) -> list[dict]:
     result_groups = []
     for group_name, group in sorted(groups.items()):
         group_dir = group.pop("directory")
-        group["answer"] = _answer(group_dir / "answer.md", directory, source, case_id)
-        group["verdict"] = _verdict(group_dir / "verdict.json", directory)
-        group["metadata"] = _metadata(group_dir / "verdict.json", directory)
+        group_answer = group_dir / "answer.md"
+        if not group_answer.is_file():
+            group_answer = group_dir / "l1_report.md"
+        group_verdict = group_dir / "verdict.json"
+        if not group_verdict.is_file():
+            group_verdict = group_dir / "LD" / "verdict.json"
+        group["answer"] = _answer(group_answer, directory, source, case_id)
+        group["verdict"] = _verdict(group_verdict, directory)
+        group["metadata"] = _metadata(group_verdict, directory)
         sections = []
         for stage, section in sorted(group["sections"].items(), key=lambda item: _STAGE_ORDER[item[0]]):
             section_dir = section.pop("directory")
@@ -300,13 +360,27 @@ def _result_groups(directory: Path, source: str, case_id: str) -> list[dict]:
 @results_bp.get("/results/<source>/view/<path:case_id>")
 def detail(source, case_id):
     directory = _case_dir(source, case_id)
+    metadata = _metadata(directory / "verdict.json", directory, directory.name)
+    query = query_results(directory)
+    answer_path = directory / "answer.md"
+    batch = None
+    if query:
+        batch = request.args.get("batch", default=query[0][1], type=int)
+        selected = next((entry for entry in query if entry[1] == batch), None)
+        if selected is None:
+            abort(404)
+        answer_path = selected[2]
+        metadata["prompt"] = prompt_from_result(answer_path)
+        if metadata["verdict"] == "unknown":
+            metadata["verdict"] = "saved"
     return render_template(
         "result_detail.html", source=source, sources=SOURCES,
-        title=case_id, metadata=_metadata(directory / "verdict.json", directory, case_id),
-        answer=_answer(directory / "answer.md", directory, source, case_id),
+        title=directory.name + (f" · batch {batch}" if batch is not None else ""), metadata=metadata,
+        answer=_answer(answer_path, directory, source, case_id),
         verdict=_verdict(directory / "verdict.json", directory),
         result_groups=_result_groups(directory, source, case_id),
-        answer_url=url_for("results.document", source=source, case_id=case_id, filename="answer.md"),
+        answer_url=url_for("results.document", source=source, case_id=case_id,
+                           filename=answer_path.name),
         verdict_url=(url_for("results.document", source=source, case_id=case_id, filename="verdict.json")
                      if (directory / "verdict.json").is_file() else None),
         cost_plot=_cost_url(source, "cost_distribution.png", case_id),
@@ -319,26 +393,26 @@ def file(source, case_id):
     directory = _case_dir(source, case_id)
     path = _artifact(directory, request.args.get("path", ""))
     suffix = path.suffix.lower()
-    response = send_file(path, mimetype=_MIME_TYPES[suffix], as_attachment=suffix not in _IMAGE_SUFFIXES)
+    response = _send_artifact(path, mimetype=_MIME_TYPES[suffix], as_attachment=suffix not in _IMAGE_SUFFIXES)
     response.headers["X-Content-Type-Options"] = "nosniff"
     return response
 
 
-@results_bp.get("/results/<source>/document/<case_id>/<filename>")
+@results_bp.get("/results/<source>/document/<path:case_id>/<filename>")
 def document(source, case_id, filename):
-    if filename not in {"answer.md", "verdict.json"}:
+    if filename not in {"answer.md", "verdict.json"} and not re.fullmatch(r"Q.+_result_batch\d+\.md", filename):
         abort(404)
     directory = _case_dir(source, case_id)
     path = (directory / filename).resolve()
     if path.parent != directory or not path.is_file():
         abort(404)
-    response = send_file(path, mimetype="text/plain")
+    response = _send_artifact(path, mimetype="text/plain")
     response.headers["X-Content-Type-Options"] = "nosniff"
     return response
 
 
 @results_bp.get("/results/<source>/cost/<filename>")
-@results_bp.get("/results/<source>/cost/<case_id>/<filename>")
+@results_bp.get("/results/<source>/cost/<path:case_id>/<filename>")
 def cost_file(source, filename, case_id=None):
     if case_id is None and source != "benchmark":
         abort(404)
@@ -351,18 +425,7 @@ def cost_file(source, filename, case_id=None):
     if path.parent != directory or not path.is_file():
         abort(404)
     suffix = path.suffix.lower()
-    response = send_file(path, mimetype=_MIME_TYPES[suffix], as_attachment=suffix == ".csv")
+    response = _send_artifact(path, mimetype=_MIME_TYPES[suffix], as_attachment=suffix == ".csv")
     response.headers["X-Content-Type-Options"] = "nosniff"
     return response
 
-
-@results_bp.get("/analysis/")
-@results_bp.get("/eval/")
-def legacy_benchmarks():
-    return redirect(url_for("results.collection", source="benchmark"), code=302)
-
-
-@results_bp.get("/analysis/freeform/")
-@results_bp.get("/eval/freeform/")
-def legacy_output():
-    return redirect(url_for("results.collection", source="output"), code=302)

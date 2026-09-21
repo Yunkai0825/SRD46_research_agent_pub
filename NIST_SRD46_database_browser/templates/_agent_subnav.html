@@ -1,0 +1,24 @@
+{# Shared sub-tab bar for the Agent section (Main / Query / Analysis).
+   Included at the top of every agent sub-page so the three feel like one
+   cohesive tab. Active pill is derived from request.endpoint. #}
+{% set ep = request.endpoint or '' %}
+<ul class="nav nav-pills agent-subnav mb-3">
+  <li class="nav-item">
+    <a class="nav-link {{ 'active' if ep == 'main_agent.main_agent_page' else '' }}"
+       href="{{ url_for('main_agent.main_agent_page') }}">
+      <i class="bi bi-diagram-3"></i> Main Agent
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{ 'active' if ep == 'agent.agent_page' or ep == 'evaluation.freeform_index' else '' }}"
+       href="{{ url_for('agent.agent_page') }}">
+      <i class="bi bi-search"></i> Query Agent
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{ 'active' if ep.startswith('analysis_agent.') else '' }}"
+       href="{{ url_for('analysis_agent.analysis_agent_page') }}">
+      <i class="bi bi-graph-up"></i> Analysis Agent
+    </a>
+  </li>
+</ul>

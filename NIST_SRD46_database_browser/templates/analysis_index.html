@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}Analysis Runs — SRD-46 Browser{% endblock %}
+
+{% block content %}
+{% include "_history_subnav.html" %}
+<ul class="nav nav-tabs mb-3">
+  <li class="nav-item">
+    <a class="nav-link {% if not is_freeform %}active{% endif %}"
+       href="{{ url_for('analysis.analysis_index') }}">
+      <i class="bi bi-list-check"></i> Eval runs
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {% if is_freeform %}active{% endif %}"
+       href="{{ url_for('analysis.analysis_freeform_index') }}">
+      <i class="bi bi-chat-square-text"></i> Freeform runs
+    </a>
+  </li>
+</ul>
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3 class="mb-0"><i class="bi bi-graph-up"></i> Analysis Agent Runs &mdash; {{ 'Freeform' if is_freeform else 'Eval' }}</h3>
+  {% if batch %}
+  <span class="text-muted small">
+    latest batch {{ batch.timestamp }}{% if batch.totals %} —
+    <span class="text-success">{{ batch.totals.pass }} pass</span>,
+    <span class="text-warning">{{ batch.totals.partial }} partial</span>,
+    <span class="text-danger">{{ batch.totals.fail }} fail</span>,
+    <span class="text-warning">{{ batch.totals.stopped }} stopped at limit</span>,
+    {{ batch.totals.error }} error{% if batch.totals.unknown %}, {{ batch.totals.unknown }} unknown{% endif %} / {{ batch.totals.n }}
+    {% endif %}
+  </span>
+  {% endif %}
+</div>
+
+<p class="text-muted">
+  Per-prompt sessions produced by the analysis agent
+  (<code>SRD46_analysis_run</code>). Each run builds at least one card and
+  runs the solver; click a row to see the L0 answer, per-L1-call analyses,
+  and the solver plots.
+</p>
+
+{% if not output_exists %}
+<div class="alert alert-info">
+  {% if is_freeform %}
+  No freeform analysis runs yet. Launch one from the
+  <a href="{{ url_for('analysis_agent.analysis_agent_page') }}">Analysis Agent</a> page.
+  {% else %}
+  No shared Benchmark analysis examples are installed yet. The browser expects
+  them under <code>_benchmark/Analysis/ (or directly under _benchmark/)</code>.
+  {% endif %}
+</div>
+{% elif not sessions %}
+<div class="alert alert-warning">No {{ 'freeform' if is_freeform else 'analysis' }} sessions found yet.</div>
+{% else %}
+<div class="table-responsive">
+  <table class="table table-hover align-middle">
+    <thead>
+      <tr>
+        <th>Layer</th>
+        <th>Run</th>
+        <th>Outcome</th>
+        <th class="text-end">L1 calls</th>
+        <th class="text-end">Iters</th>
+        <th class="text-end">Time</th>
+        <th>Answer preview</th>
+        {% if is_freeform %}<th>Actions</th>{% endif %}
+      </tr>
+    </thead>
+    <tbody>
+    {% for s in sessions %}
+      <tr>
+        <td>{% if s.layer %}<span class="badge bg-dark">{{ s.layer }}</span>{% endif %}</td>
+        <td>
+          <a href="{{ url_for('analysis.analysis_detail', label=s.label) }}"
+             class="fw-semibold text-decoration-none">{{ s.label }}</a>
+          {% if s.prompt %}
+          <div class="text-muted small" style="max-width: 32rem;">{{ s.prompt[:140] }}{% if s.prompt|length > 140 %}…{% endif %}</div>
+          {% endif %}
+        </td>
+        <td><span class="badge bg-{{ s.badge }}{% if s.badge == 'warning' %} text-dark{% endif %}">{{ s.verdict }}</span>
+            {% if s.outcome.limited %}<span class="badge bg-warning text-dark">{{ s.outcome.stop_label }}</span>{% endif %}
+        </td>
+        <td class="text-end">{{ s.n_l1_calls }}</td>
+        <td class="text-end">{{ s.iterations if s.iterations is not none else "—" }}</td>
+        <td class="text-end">{{ "%.0fs"|format(s.elapsed_s) if s.elapsed_s else "—" }}</td>
+        <td><div class="text-muted small" style="max-width: 26rem;">{{ s.answer_head }}{% if s.answer_head|length >= 240 %}…{% endif %}</div></td>
+        {% if is_freeform %}
+        <td>
+          <button type="button" class="btn btn-sm btn-outline-danger delete-analysis-run"
+                  data-label="{{ s.label }}"><i class="bi bi-trash"></i> Remove</button>
+        </td>
+        {% endif %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+{% if is_freeform %}
+<script>
+document.querySelectorAll('.delete-analysis-run').forEach(function (button) {
+  button.addEventListener('click', function () {
+    if (!window.confirm('Remove this freeform analysis run and all saved files?')) return;
+    button.disabled = true;
+    const url = {{ url_for('analysis.analysis_freeform_index')|tojson }} +
+      encodeURIComponent(button.dataset.label) + '/delete';
+    fetch(url, {method: 'POST'}).then(function (response) {
+      return response.json().then(function (data) {
+        if (!response.ok) throw new Error(data.error || 'Unable to remove run.');
+        const row = button.closest('tr');
+        if (row) row.remove();
+      });
+    }).catch(function (error) {
+      window.alert(error.message);
+      button.disabled = false;
+    });
+  });
+});
+</script>
+{% endif %}
+{% endblock %}

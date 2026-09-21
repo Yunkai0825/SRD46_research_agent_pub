@@ -1,0 +1,828 @@
+/* ── Evaluation page styles ─────────────────────────────────── */
+
+/* Score cards */
+.eval-score-card {
+  text-align: center;
+  padding: 0.4rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  background: #f8f9fa;
+}
+.eval-score-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0d6efd;
+}
+.eval-score-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #6c757d;
+  letter-spacing: 0.05em;
+}
+
+/* Layout: panels + side panels + optional sidebar */
+.eval-page {
+  width: 100%;
+}
+.eval-layout {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+.eval-panels {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-width: 320px;
+}
+.eval-splitter {
+  flex: 0 0 0.5rem;
+  width: 0.5rem;
+  align-self: stretch;
+  cursor: col-resize;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(173, 181, 189, 0.22), rgba(108, 117, 125, 0.45), rgba(173, 181, 189, 0.22));
+  position: relative;
+  touch-action: none;
+}
+.eval-splitter::after {
+  content: "";
+  position: absolute;
+  inset: 0.2rem 0.12rem;
+  border-radius: inherit;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.95) 0.18rem,
+    rgba(255, 255, 255, 0) 0.18rem,
+    rgba(255, 255, 255, 0) 0.34rem
+  );
+  opacity: 0.55;
+}
+.eval-splitter:hover,
+.eval-splitter.is-dragging {
+  background: linear-gradient(180deg, rgba(13, 110, 253, 0.28), rgba(13, 110, 253, 0.7), rgba(13, 110, 253, 0.28));
+}
+.eval-layout.sidebar-collapsed .eval-splitter[data-resize-next="evalSidebar"] {
+  display: none;
+}
+body.eval-layout-resizing {
+  cursor: col-resize;
+  user-select: none;
+}
+
+/* Right-side configurable panels (preplan, plan, etc.) */
+.eval-side-panels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: clamp(340px, 24vw, 460px);
+  flex: 0 0 auto;
+  min-width: 320px;
+  max-width: 640px;
+  height: 78vh;
+  max-height: 78vh;
+  overflow: auto;
+}
+.eval-side-panel {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  height: 38vh;
+  min-height: 180px;
+  overflow: hidden;
+  resize: vertical;
+}
+.eval-side-panel .eval-panel-header {
+  padding: 0.35rem 0.6rem;
+  background: #495057;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.eval-side-panel .eval-panel-body {
+  padding: 0.5rem;
+  overflow-y: auto;
+  flex: 1;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+/* Individual panel */
+.eval-panel {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 78vh;
+  min-height: 320px;
+  overflow: hidden;
+  resize: vertical;
+}
+.eval-panel-header {
+  padding: 0.4rem 0.75rem;
+  background: #343a40;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.eval-panel-body {
+  padding: 0.75rem;
+  overflow-y: auto;
+  flex: 1;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.eval-panel-body p {
+  margin-bottom: 0.5rem;
+}
+
+/* Raw markdown mode (no enrichment yet) */
+.plain-doc pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #495057;
+}
+
+/* Sidebar */
+.eval-sidebar {
+  width: clamp(340px, 24vw, 460px);
+  flex: 0 0 auto;
+  min-width: 320px;
+  max-width: 640px;
+  height: 78vh;
+  max-height: 78vh;
+  overflow: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  background: #fafbfc;
+  font-size: 0.82rem;
+  transition: width 0.2s, min-width 0.2s, padding 0.2s, opacity 0.2s;
+}
+.eval-sidebar.collapsed {
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  border: none;
+}
+
+/* Reference cards */
+.ref-group-toggle {
+  font-size: 0.8rem;
+}
+.ref-group-toggle .bi-chevron-right {
+  transition: transform 0.15s;
+}
+.ref-group-toggle[aria-expanded="true"] .bi-chevron-right {
+  transform: rotate(90deg);
+}
+.ref-card {
+  border-left: 3px solid #dee2e6;
+  margin: 0.25rem 0 0.25rem 0.5rem;
+  padding-left: 0.5rem;
+}
+.ref-card-header {
+  cursor: pointer;
+  padding: 0.2rem 0;
+}
+.ref-card-header:hover {
+  background: #e9ecef;
+  border-radius: 0.25rem;
+}
+.ref-card-body {
+  padding: 0.25rem 0;
+  font-size: 0.78rem;
+}
+.ref-card-body table {
+  width: 100%;
+  font-size: 0.75rem;
+}
+.ref-card-body table td {
+  padding: 0.1rem 0.3rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+.ref-card-body table td:first-child {
+  font-weight: 600;
+  color: #6c757d;
+  white-space: nowrap;
+  width: 40%;
+}
+
+/* ── Span highlight classes ──────────────────────────────── */
+
+/* Numeric values — blue */
+.num-match {
+  background-color: rgba(13, 110, 253, 0.12);
+  border-bottom: 2px solid #0d6efd;
+  padding: 0 2px;
+  border-radius: 2px;
+  cursor: help;
+  position: relative;
+}
+.num-match:hover {
+  background-color: rgba(13, 110, 253, 0.25);
+}
+
+/* Chemical names — green */
+.chem-name {
+  background-color: rgba(25, 135, 84, 0.12);
+  border-bottom: 2px solid #198754;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+.chem-name:hover {
+  background-color: rgba(25, 135, 84, 0.25);
+}
+
+/* Canonical IDs — orange hyperlinks */
+a.canon-id {
+  background-color: rgba(255, 153, 0, 0.12);
+  border-bottom: 2px solid #ff9900;
+  padding: 0 2px;
+  border-radius: 2px;
+  color: #cc7a00;
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+a.canon-id:hover {
+  background-color: rgba(255, 153, 0, 0.3);
+  color: #995c00;
+}
+
+/* Generic enriched span */
+.enriched {
+  background-color: rgba(108, 117, 125, 0.08);
+  border-bottom: 1px dashed #6c757d;
+}
+
+/* ── Mermaid container ────────────────────────────────────── */
+.eval-mermaid-container {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+.eval-mermaid-container .mermaid {
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* Claim-based annotation styles                             */
+/* ═══════════════════════════════════════════════════════════ */
+
+/* Wide panel for claims mode (answer takes 2/3 of grid) */
+.eval-panel-wide {
+  grid-column: span 2;
+}
+
+/* Base claim span */
+.claim {
+  padding: 1px 3px;
+  border-radius: 3px;
+  border-bottom: 2px solid transparent;
+  transition: background-color 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.claim:hover {
+  filter: brightness(0.92);
+}
+.claim-active {
+  box-shadow: 0 0 0 2px #000 !important;
+}
+.claim-paragraph {
+  position: relative;
+  padding: 0.2rem 0.35rem;
+  border-radius: 0.5rem;
+}
+.claim-paragraph + .claim-paragraph {
+  margin-top: 0.25rem;
+}
+.annotation-edit-mode .claim-paragraph {
+  outline: 1px dashed rgba(255, 193, 7, 0.6);
+  outline-offset: 0.08rem;
+  background: rgba(255, 248, 225, 0.4);
+}
+.annotation-edit-mode .claim-paragraph:hover {
+  background: rgba(255, 248, 225, 0.72);
+}
+.annotation-edit-mode .claim,
+.annotation-edit-mode .claim-row {
+  cursor: pointer;
+}
+.annotation-edit-mode .claim:hover {
+  filter: none;
+  box-shadow: inset 0 0 0 1px rgba(102, 77, 3, 0.35);
+}
+.annotation-edit-mode .claim-row:hover td {
+  box-shadow: inset 0 0 0 1px rgba(102, 77, 3, 0.35);
+}
+#toggleAnnotationEditMode.is-active {
+  background: #fff3cd;
+  border-color: #ffca2c;
+  color: #664d03;
+}
+
+/* ── Claim type border colors ─────────────────────────── */
+.claim-counting         { border-bottom-color: #0d6efd; }  /* blue */
+.claim-comparison       { border-bottom-color: #7c3aed; }  /* purple */
+.claim-trend            { border-bottom-color: #d63384; }  /* magenta */
+.claim-listing          { border-bottom-color: #0dcaf0; }  /* teal */
+.claim-range            { border-bottom-color: #fd7e14; }  /* orange */
+.claim-exact_value      { border-bottom-color: #198754; }  /* green */
+.claim-property_attribution { border-bottom-color: #6c757d; } /* gray */
+.claim-existence_absence { border-bottom-color: #dc3545; }  /* red */
+.claim-calculation      { border-bottom-color: #6610f2; }  /* indigo */
+.claim-citation         { border-bottom-color: #795548; }  /* brown */
+.claim-filler           { border-bottom-color: #adb5bd; }  /* muted gray */
+
+/* ── Support class backgrounds ────────────────────────── */
+.claim-direct {
+  background-color: rgba(25, 135, 84, 0.15);    /* green */
+}
+.claim-inferred {
+  background-color: rgba(255, 193, 7, 0.20);    /* yellow */
+}
+.claim-unsupported {
+  background-color: rgba(220, 53, 69, 0.15);    /* red */
+}
+.claim-no_tool_data {
+  background-color: rgba(108, 117, 125, 0.15);  /* gray */
+}
+
+.claim-support-tabs {
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  border-bottom: 0;
+}
+.claim-support-tabs .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid #dee2e6;
+  border-radius: 999px;
+  background: #fff;
+  color: #495057;
+  font-size: 0.84rem;
+}
+.claim-support-tabs .nav-link:hover {
+  background: #f8f9fa;
+  border-color: #ced4da;
+}
+.claim-support-tabs .nav-link.active {
+  border-color: currentColor;
+  box-shadow: inset 0 -2px 0 currentColor;
+}
+.claim-support-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(33, 37, 41, 0.08);
+  font-size: 0.75rem;
+}
+.claim-support-tab-all { color: #0d6efd; }
+.claim-support-tab-direct { color: #146c43; }
+.claim-support-tab-inferred { color: #8a6700; }
+.claim-support-tab-domain_knowledge { color: #6d28d9; }
+.claim-support-tab-no_tool_data { color: #495057; }
+.claim-support-tab-unsupported { color: #b02a37; }
+
+.claim-support-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.94);
+  border: 1px solid transparent;
+}
+.claim-support-badge-direct {
+  color: #146c43;
+  border-color: rgba(20, 108, 67, 0.22);
+}
+.claim-support-badge-inferred {
+  color: #8a6700;
+  border-color: rgba(138, 103, 0, 0.26);
+}
+.claim-support-badge-domain_knowledge {
+  color: #6d28d9;
+  border-color: rgba(109, 40, 217, 0.22);
+}
+.claim-support-badge-no_tool_data {
+  color: #495057;
+  border-color: rgba(73, 80, 87, 0.18);
+}
+.claim-support-badge-unsupported {
+  color: #b02a37;
+  border-color: rgba(176, 42, 55, 0.2);
+}
+
+/* ── Claim legend ─────────────────────────────────────── */
+.claim-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+.claim-legend-item {
+  font-size: 0.72rem;
+  padding: 1px 6px;
+  border-radius: 3px;
+  border-bottom: 2px solid transparent;
+  background: #f8f9fa;
+}
+.claim-legend-item.claim-counting         { border-bottom-color: #0d6efd; }
+.claim-legend-item.claim-comparison       { border-bottom-color: #7c3aed; }
+.claim-legend-item.claim-trend            { border-bottom-color: #d63384; }
+.claim-legend-item.claim-listing          { border-bottom-color: #0dcaf0; }
+.claim-legend-item.claim-range            { border-bottom-color: #fd7e14; }
+.claim-legend-item.claim-exact_value      { border-bottom-color: #198754; }
+.claim-legend-item.claim-property_attribution { border-bottom-color: #6c757d; }
+.claim-legend-item.claim-existence_absence { border-bottom-color: #dc3545; }
+.claim-legend-item.claim-calculation      { border-bottom-color: #6610f2; }
+.claim-legend-item.claim-citation         { border-bottom-color: #795548; }
+.claim-legend-item.claim-filler           { border-bottom-color: #adb5bd; }
+
+/* ── Claim document container ────────────────────────── */
+.claim-doc p {
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+.claim-doc h1,
+.claim-doc h2,
+.claim-doc h3,
+.claim-doc h4 {
+  margin-top: 0.9rem;
+  margin-bottom: 0.45rem;
+}
+.claim-doc hr {
+  margin: 0.8rem 0;
+}
+.claim-doc table {
+  margin-bottom: 0.75rem;
+}
+.claim-doc .claim-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 0.75rem;
+}
+.claim-doc .claim-table-wrap > table {
+  width: max-content;
+  min-width: 34rem;
+  margin-bottom: 0;
+}
+.claim-row {
+  cursor: pointer;
+}
+.claim-row td {
+  transition: background-color 0.15s, box-shadow 0.15s;
+}
+.claim-row.claim-direct td {
+  background-color: rgba(25, 135, 84, 0.15);
+}
+.claim-row.claim-inferred td {
+  background-color: rgba(255, 193, 7, 0.20);
+}
+.claim-row.claim-unsupported td {
+  background-color: rgba(220, 53, 69, 0.15);
+}
+.claim-row.claim-no_tool_data td {
+  background-color: rgba(108, 117, 125, 0.15);
+}
+.claim-row.claim-counting td {
+  border-bottom: 2px solid #0d6efd;
+}
+.claim-row.claim-comparison td {
+  border-bottom: 2px solid #7c3aed;
+}
+.claim-row.claim-trend td {
+  border-bottom: 2px solid #d63384;
+}
+.claim-row.claim-listing td {
+  border-bottom: 2px solid #0dcaf0;
+}
+.claim-row.claim-range td {
+  border-bottom: 2px solid #fd7e14;
+}
+.claim-row.claim-exact_value td {
+  border-bottom: 2px solid #198754;
+}
+.claim-row.claim-property_attribution td {
+  border-bottom: 2px solid #6c757d;
+}
+.claim-row.claim-existence_absence td {
+  border-bottom: 2px solid #dc3545;
+}
+.claim-row.claim-calculation td {
+  border-bottom: 2px solid #6610f2;
+}
+.claim-row.claim-citation td {
+  border-bottom: 2px solid #795548;
+}
+.claim-row.claim-filler td {
+  border-bottom: 2px solid #adb5bd;
+}
+.claim-row.claim-active td {
+  box-shadow: inset 0 0 0 2px #000;
+}
+
+.claim.support-filter-dimmed {
+  opacity: 0.26;
+  filter: saturate(0.3);
+}
+.claim-row.support-filter-dimmed td {
+  opacity: 0.42;
+  filter: saturate(0.35);
+}
+
+/* ── domain_reasoning claim_type + domain_knowledge support_class ──── */
+.claim-row.claim-domain_reasoning td {
+  border-bottom: 2px solid #8b5cf6;
+}
+.claim-row.claim-domain_knowledge td {
+  background-color: rgba(139, 92, 246, 0.16);
+}
+.claim.claim-domain_knowledge {
+  background-color: rgba(139, 92, 246, 0.16);
+  border-bottom: 1px dashed #8b5cf6;
+}
+.claim.claim-domain_reasoning {
+  border-bottom: 2px solid #8b5cf6;
+}
+.claim.claim-filler {
+  border-bottom: 2px solid #adb5bd;
+}
+
+/* ── Table-section: heading + table grouped together ──────────────── */
+.claim-doc .claim-table-wrap.table-section {
+  border-left: 3px solid rgba(13, 110, 253, 0.25);
+  padding: 0.25rem 0.5rem 0.5rem 0.6rem;
+  background-color: rgba(13, 110, 253, 0.04);
+  border-radius: 4px;
+}
+.claim-doc .claim-table-wrap.table-section .table-section-heading {
+  margin-top: 0.25rem;
+  margin-bottom: 0.4rem;
+}
+.claim-doc .claim-table-wrap.table-section .table-section-heading.claim {
+  /* Claim styling on heading already provides background; keep readable. */
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+.annotation-paragraph-source {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+/* ── Responsive: stack panels on narrow screens ──────────── */
+@media (max-width: 1200px) {
+  .eval-splitter {
+    display: none;
+  }
+  .eval-panels {
+    grid-template-columns: 1fr;
+  }
+  .eval-panel {
+    height: auto;
+    max-height: 50vh;
+    resize: none;
+  }
+  .eval-layout {
+    flex-direction: column;
+  }
+  .eval-sidebar {
+    width: 100%;
+    min-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    resize: none;
+  }
+  .eval-side-panels {
+    width: 100%;
+    min-width: 100%;
+    max-width: none;
+    max-height: 40vh;
+    height: auto;
+    flex-direction: row;
+    resize: none;
+  }
+  .eval-side-panel {
+    flex: 1;
+    height: auto;
+    max-height: 40vh;
+    resize: none;
+  }
+}
+
+/* ── Panel layout dropdown active state ──────────────── */
+.dropdown-item.panel-toggle.active {
+  background-color: transparent;
+  color: inherit;
+  font-weight: 600;
+}
+
+/* ── Scoring + Markers bar ───────────────────────────── */
+.eval-scoring-bar {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+.eval-resizable-textbox {
+  min-height: calc(1.5em + 0.5rem + 2px);
+  resize: vertical;
+  overflow: auto;
+}
+.eval-marker-textbox {
+  width: 160px;
+}
+#annotationClaimText,
+#annotationCanonicalIds,
+#annotationEvidenceSnippet {
+  font-size: 0.82rem;
+}
+.marker-badge {
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.25em 0.6em;
+  display: inline-flex;
+  align-items: center;
+}
+.marker-badge .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+/* ── Tool snippet panel (sidebar) ────────────────────── */
+.snippet-panel {
+  border: 1px solid #0d6efd;
+  border-radius: 0.5rem;
+  background: #f0f7ff;
+  overflow: hidden;
+}
+.snippet-panel-header {
+  background: #0d6efd;
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+}
+.snippet-evidence {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  color: #495057;
+  border-bottom: 1px solid #d0e0f0;
+  background: #e7f1ff;
+}
+.snippet-card {
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid #d0e0f0;
+  font-size: 0.75rem;
+}
+.snippet-card:last-child {
+  border-bottom: none;
+}
+.snippet-step {
+  margin-bottom: 0.15rem;
+}
+.snippet-step code {
+  font-size: 0.7rem;
+  color: #6f42c1;
+}
+.snippet-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #212529;
+  font-family: 'SFMono-Regular', 'Menlo', monospace;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  background: #fff;
+  padding: 0.25rem 0.4rem;
+  border-radius: 0.25rem;
+  border: 1px solid #e9ecef;
+}
+
+/* ═══════════════════════════════════════════════════════════ */
+/* Full-width Tool Results panel (below main layout)         */
+/* ═══════════════════════════════════════════════════════════ */
+.eval-tool-results-panel {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 3.25rem;
+  height: 18rem;
+  resize: vertical;
+}
+.eval-tool-results-panel > .eval-panel-header {
+  background: #1a5276;
+  color: #fff;
+  padding: 0.4rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.eval-tool-results-body {
+  max-height: none;
+  overflow-y: auto;
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* ── Markdown-rendered tables (tool results) ─────────────── */
+.tool-eval-doc table,
+.md-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+  table-layout: auto;
+}
+.tool-eval-doc table th,
+.md-doc table th {
+  background: #f1f3f5;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #dee2e6;
+  white-space: nowrap;
+}
+.tool-eval-doc table td,
+.md-doc table td {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #dee2e6;
+  vertical-align: top;
+}
+.tool-eval-doc table tr:nth-child(even),
+.md-doc table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+.tool-eval-doc table tr:hover,
+.md-doc table tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Headings inside tool results */
+.tool-eval-doc h1, .tool-eval-doc h2, .tool-eval-doc h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #dee2e6;
+}
+.tool-eval-doc h3 { font-size: 0.88rem; }
+.tool-eval-doc code {
+  background: #f1f3f5;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.2rem;
+  font-size: 0.8em;
+  color: #6f42c1;
+}
+.tool-eval-doc p {
+  margin-bottom: 0.4rem;
+}
+.tool-eval-doc pre {
+  background: #f8f9fa;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.75rem;
+  overflow-x: auto;
+}
+
+/* Step anchor highlight when claim is clicked */
+.tool-step-highlight {
+  background-color: rgba(255, 193, 7, 0.35) !important;
+  border-left: 4px solid #ffc107;
+  padding-left: 0.5rem;
+  transition: background-color 0.3s;
+}
+.tool-step-anchor {
+  scroll-margin-top: 2rem;
+}

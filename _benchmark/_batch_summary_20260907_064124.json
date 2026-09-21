@@ -1,0 +1,138 @@
+{
+  "timestamp": "20260907_064124",
+  "totals": {
+    "pass": 3,
+    "partial": 3,
+    "fail": 0,
+    "error": 0,
+    "n": 6
+  },
+  "results": [
+    {
+      "session_dir": "\\\\Sheldon.cse.anl.gov\\yunkai.sun$\\_Code_Maintenance\\_outputs_user\\Benchmark\\SRD46\\Analysis\\L4_2_FeCu_citrate_chloride_hot_out_of_envelope",
+      "verdict": "pass",
+      "iterations": 2,
+      "elapsed_s": 14296.2,
+      "timed_out": false,
+      "n_l1_calls": 1,
+      "n_l0_tools": 1,
+      "phase_status": {
+        "L1_call_01/pipeline": "ok",
+        "l1_scientific_review": "complete",
+        "l1_execution": "complete"
+      },
+      "first_failure": null,
+      "verdict_notes": [],
+      "answer_head": "## Answer  **Important caveat first.** The SRD-46 catalog only carries 25 \u00b0C / 1 bar formation constants. The joint Fe(III)+Cu(II)+citrate+chloride pot was solved numerically at the requested composit",
+      "label": "L4_2_FeCu_citrate_chloride_hot_out_of_envelope",
+      "layer": "HALL",
+      "argo_api_user": "yunkai.sun"
+    },
+    {
+      "session_dir": "\\\\Sheldon.cse.anl.gov\\yunkai.sun$\\_Code_Maintenance\\_outputs_user\\Benchmark\\SRD46\\Analysis\\L4_3_Acetic_acid_titration_curve",
+      "verdict": "pass",
+      "iterations": 2,
+      "elapsed_s": 422.6,
+      "timed_out": false,
+      "n_l1_calls": 1,
+      "n_l0_tools": 1,
+      "phase_status": {
+        "L1_call_01/pipeline": "ok",
+        "l1_scientific_review": "complete",
+        "l1_execution": "complete"
+      },
+      "first_failure": null,
+      "verdict_notes": [],
+      "answer_head": "## Answer  Titrating 10 mM acetic acid (HAc) with NaOH gives a classic weak-acid/strong-base curve governed by a single equilibrium, H\u207a + Ac\u207b \u21cc HAc, with log \u03b2 = +4.56 (i.e. **pKa(HAc) = 4.56**). Thre",
+      "label": "L4_3_Acetic_acid_titration_curve",
+      "layer": "HALL",
+      "argo_api_user": "yunkai.sun"
+    },
+    {
+      "session_dir": "\\\\Sheldon.cse.anl.gov\\yunkai.sun$\\_Code_Maintenance\\_outputs_user\\Benchmark\\SRD46\\Analysis\\L4_4_PuAm_aspirin_citrate_not_in_db",
+      "verdict": "partial",
+      "iterations": 5,
+      "elapsed_s": 683.5,
+      "timed_out": false,
+      "n_l1_calls": 1,
+      "n_l0_tools": 4,
+      "phase_status": {
+        "L1_call_01/pipeline": "ok",
+        "l1_scientific_review": "incomplete",
+        "l1_execution": "complete"
+      },
+      "first_failure": "l1_scientific_review",
+      "verdict_notes": [
+        "l1_scientific_review:incomplete:one or more L1 reports lack a successful record_analysis commit or a completed supported LD terminal review"
+      ],
+      "answer_head": "# Validation status: incomplete  One or more L1 reports did not receive a completed `supported` LD review. The synthesis below is retained for inspection, but it must not be treated as fully validated",
+      "label": "L4_4_PuAm_aspirin_citrate_not_in_db",
+      "layer": "HALL",
+      "argo_api_user": "yunkai.sun"
+    },
+    {
+      "session_dir": "\\\\Sheldon.cse.anl.gov\\yunkai.sun$\\_Code_Maintenance\\_outputs_user\\Benchmark\\SRD46\\Analysis\\L4_5_Cuprium_fake_metal",
+      "verdict": "pass",
+      "iterations": 2,
+      "elapsed_s": 644.5,
+      "timed_out": false,
+      "n_l1_calls": 1,
+      "n_l0_tools": 1,
+      "phase_status": {
+        "L1_call_01/pipeline": "ok",
+        "l1_scientific_review": "complete",
+        "l1_execution": "complete"
+      },
+      "first_failure": null,
+      "verdict_notes": [],
+      "answer_head": "## Answer  At pH 7, with 1 mM Cu(II) and 10 mM glycine (25 \u00b0C, I = 0.1 M), copper is essentially completely sequestered as the **neutral bis-glycinate chelate [Cu(Glyc)\u2082]**. This species dominates the",
+      "label": "L4_5_Cuprium_fake_metal",
+      "layer": "HALL",
+      "argo_api_user": "yunkai.sun"
+    },
+    {
+      "session_dir": "\\\\Sheldon.cse.anl.gov\\yunkai.sun$\\_Code_Maintenance\\_outputs_user\\Benchmark\\SRD46\\Analysis\\L4_6_CuZn_glycine_EDTA_kinetics",
+      "verdict": "partial",
+      "iterations": 1,
+      "elapsed_s": 21.9,
+      "timed_out": false,
+      "n_l1_calls": 0,
+      "n_l0_tools": 0,
+      "phase_status": {
+        "l1_scientific_review": "incomplete",
+        "l1_execution": "incomplete"
+      },
+      "first_failure": "l1_scientific_review",
+      "verdict_notes": [
+        "l1_scientific_review:incomplete:one or more L1 reports lack a successful record_analysis commit or a completed supported LD terminal review",
+        "l1_execution:incomplete:one or more L1 calls did not complete the deterministic build-and-solve pipeline"
+      ],
+      "answer_head": "# Validation status: incomplete  One or more L1 reports did not receive a completed `supported` LD review. The synthesis below is retained for inspection, but it must not be treated as fully validated",
+      "label": "L4_6_CuZn_glycine_EDTA_kinetics",
+      "layer": "HALL",
+      "argo_api_user": "yunkai.sun"
+    },
+    {
+      "session_dir": "\\\\Sheldon.cse.anl.gov\\yunkai.sun$\\_Code_Maintenance\\_outputs_user\\Benchmark\\SRD46\\Analysis\\L4_7_Ni_glycine_ammonia_ternary",
+      "verdict": "partial",
+      "iterations": 2,
+      "elapsed_s": 586.6,
+      "timed_out": false,
+      "n_l1_calls": 1,
+      "n_l0_tools": 1,
+      "phase_status": {
+        "L1_call_01/pipeline": "ok",
+        "l1_scientific_review": "incomplete",
+        "l1_execution": "complete"
+      },
+      "first_failure": "l1_scientific_review",
+      "verdict_notes": [
+        "l1_scientific_review:incomplete:one or more L1 reports lack a successful record_analysis commit or a completed supported LD terminal review"
+      ],
+      "answer_head": "# Validation status: incomplete  One or more L1 reports did not receive a completed `supported` LD review. The synthesis below is retained for inspection, but it must not be treated as fully validated",
+      "label": "L4_7_Ni_glycine_ammonia_ternary",
+      "layer": "HALL",
+      "argo_api_user": "yunkai.sun"
+    }
+  ]
+}

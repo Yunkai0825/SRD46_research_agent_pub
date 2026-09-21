@@ -1,3 +1,0 @@
-Verdict: **supported**.
-
-Spot checks against `_frac_metal.csv` and the solver verdict file confirm the calculation's numerical claims at pH 7 (Ca: 96.94 % [Ca(DTPA)]3- + 2.85 % [Ca(DTPA)H]2- + 0.20 % Ca2+; Fe(III): 99.04 % [Fe(DTPA)]2- + 0.95 % [Fe(DTPA)(OH)]3-; Mg: 78.59 % [Mg(DTPA)]3- + 16.36 % [Mg(DTPA)H]2- + 5.00 % Mg2+), the FeO(OH)(s,alpha) onset at pH 8.40 with 3.15 % of Fe, the [Fe(DTPA)]2- ↔ FeO(OH)(s) crossover at pH ≈ 8.58, the ligand dominance ladder (H2DTPA3- < pH 7.8 < HDTPA4- < pH 9.5 < DTPA), and the Mg2+ ↔ [Mg(DTPA)]3- crossover at pH ≈ 6.34. Convergence is 41/41. Conclusions about non-selectivity and hydroxide-driven Fe loss above pH ~8.5 follow directly from the data.

@@ -1,0 +1,137 @@
+{
+  "uuid": "fdf123bd-8d36-4e6e-b286-633923d129f4",
+  "name": "L2_8 EDTA competitive binding between copper and zinc",
+  "summary": "",
+  "model": "claude-opus-4-7",
+  "created_at": "2026-09-17T01:58:45.994759Z",
+  "updated_at": "2026-09-17T02:02:32.043496Z",
+  "settings": {
+    "enabled_web_search": true,
+    "paprika_mode": "auto",
+    "enabled_monkeys_in_a_barrel": true,
+    "enabled_saffron": false,
+    "tool_search_mode": "auto",
+    "thinking_mode": "auto",
+    "effort_level": "high",
+    "preview_feature_uses_artifacts": true,
+    "enabled_turmeric": true
+  },
+  "is_starred": false,
+  "is_temporary": false,
+  "project_uuid": "01a0ac0d-20a5-72a5-9b44-bc3c8d3bfde9",
+  "platform": "CLAUDE_AI",
+  "is_wiggle_enabled": true,
+  "effective_thinking_mode": "auto",
+  "current_leaf_message_uuid": "01a0ad16-7759-76cb-98ce-c4cd383fa0ad",
+  "run": "effort-high_run1",
+  "chat_messages": [
+    {
+      "uuid": "01a0ad16-7759-7dbd-b76a-c5eec4eeb7d6",
+      "text": "",
+      "content": [
+        {
+          "start_timestamp": "2026-09-17T01:58:49.599683Z",
+          "stop_timestamp": "2026-09-17T01:58:49.599683Z",
+          "type": "text",
+          "text": "A single beaker holds 1 mM Cu(II), 1 mM Zn(II) and 1 mM EDTA together (sub-stoichiometric for the two metals combined) at pH 6, 25 C, I=0.1 m. Compute the joint speciation of this shared pot and determine how the one equivalent of EDTA partitions competitively between Cu and Zn; report the bound:free ratio of each metal, identify which metal wins the ligand, and justify it quantitatively from the computed fractions.",
+          "citations": []
+        }
+      ],
+      "sender": "human",
+      "index": 0,
+      "created_at": "2026-09-17T01:58:49.599935Z",
+      "updated_at": "2026-09-17T01:58:49.599935Z",
+      "truncated": false,
+      "attachments": [],
+      "files": [],
+      "sync_sources": [],
+      "parent_message_uuid": "00000000-0000-4000-8000-000000000000"
+    },
+    {
+      "uuid": "01a0ad16-7759-76cb-98ce-c4cd383fa0ad",
+      "text": "",
+      "content": [
+        {
+          "start_timestamp": "2026-09-17T01:58:49.612848Z",
+          "stop_timestamp": "2026-09-17T02:01:09.871170Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Working out metal-EDTA equilibrium concentrations in solution."
+            },
+            {
+              "summary": "Calculating EDTA's protonation side-reaction coefficient at this pH."
+            },
+            {
+              "summary": "Setting up competing equilibria for copper and zinc binding."
+            },
+            {
+              "summary": "Estimating how copper dominates the limited EDTA supply."
+            },
+            {
+              "summary": "Tracking leftover EDTA as zinc absorbs the remainder."
+            },
+            {
+              "summary": "Solving for the residual free copper concentration."
+            },
+            {
+              "summary": "Cross-checking bound zinc against bound copper amounts."
+            },
+            {
+              "summary": "Refining the coupled equations for precise free-ion values."
+            },
+            {
+              "summary": "Reassessing the copper-zinc exchange equilibrium directly."
+            },
+            {
+              "summary": "Deriving mass balance equations for both bound metals."
+            },
+            {
+              "summary": "Catching an inconsistent approximation and correcting course."
+            },
+            {
+              "summary": "Rebuilding the mass balance equations from scratch."
+            },
+            {
+              "summary": "Testing an approximation that yields an impossible concentration."
+            },
+            {
+              "summary": "Solving the exchange equilibrium via metal-swap ratios."
+            },
+            {
+              "summary": "Verified the exchange solution satisfies all mass balances."
+            },
+            {
+              "summary": "Deriving the general square-root ratio behind the split."
+            },
+            {
+              "summary": "Recomputing the protonation coefficient with detailed acid steps."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T02:01:09.871226Z",
+          "stop_timestamp": "2026-09-17T02:01:30.569055Z",
+          "type": "text",
+          "text": "## Setup\n\nWith EDTA sub-stoichiometric (1 mM ligand for 2 mM of metal), Cu and Zn compete for a single equivalent of Y. At pH 6, protonation of EDTA lowers the effective [Y⁴⁻], so the appropriate quantities are the **conditional stability constants** K′ = K/α_Y(H).\n\n**α_Y(H) at pH 6** (using pKa's 2.0, 2.67, 6.16, 10.26 at I = 0.1 M):\n\n$$\\alpha_{Y(H)} = 1 + \\tfrac{[H^+]}{K_{a4}} + \\tfrac{[H^+]^2}{K_{a4}K_{a3}} + \\tfrac{[H^+]^3}{K_{a4}K_{a3}K_{a2}} + \\tfrac{[H^+]^4}{K_{a4}K_{a3}K_{a2}K_{a1}} \\approx 4.45\\times10^{4}$$\n\nso log α_Y(H) = 4.65.\n\n**Conditional constants** (log K from Martell–Smith at I = 0.1 M):\n\n| Complex | log K | log K′ (= log K − 4.65) |\n|---|---|---|\n| CuY²⁻ | 18.78 | **14.13** |\n| ZnY²⁻ | 16.44 | **11.79** |\n\nMetal hydrolysis at pH 6 is negligible for both (α_M(OH) ≈ 1.01 for Cu, ~1.00 for Zn).\n\n## The competition reduces to a ligand-exchange equilibrium\n\n$$\\mathrm{Cu^{2+} + ZnY^{2-} \\rightleftharpoons CuY^{2-} + Zn^{2+}} \\qquad K_{ex}=\\frac{K'_{CuY}}{K'_{ZnY}} = \\frac{K_{CuY}}{K_{ZnY}}=10^{2.34}=219$$\n\n(α_Y(H) cancels, so K_ex is pH-independent.)\n\nBecause K′_Cu·C_Cu ≈ 10¹¹ ≫ 1 and K′_Zn·C_Zn ≈ 10⁹ ≫ 1, essentially all the EDTA is complexed ([Y′] ≪ 10⁻⁶ M), and mass balance forces:\n\n$$[CuY]+[ZnY] \\approx 10^{-3}\\ \\text{M},\\quad [Cu^{2+}]=10^{-3}-[CuY],\\quad [Zn^{2+}]=10^{-3}-[ZnY]$$\n\nWith **equal metal totals**, symmetry gives [CuY] = [Zn²⁺] and [ZnY] = [Cu²⁺], so K_ex reduces to:\n\n$$\\frac{[CuY]^2}{[ZnY]^2}=K_{ex}\\quad\\Rightarrow\\quad\\frac{[CuY]}{[ZnY]}=\\sqrt{219}=14.8$$\n\nCombining with the mass balance:\n\n$$[CuY]=\\frac{\\sqrt{K_{ex}}}{1+\\sqrt{K_{ex}}}\\times 10^{-3}=0.937\\ \\text{mM},\\quad [ZnY]=0.063\\ \\text{mM}$$\n\n## Speciation of the shared pot\n\n| Species | Concentration (M) | % of its metal |\n|---|---|---|\n| CuY²⁻ | 9.37 × 10⁻⁴ | 93.7 % of Cu_T |\n| Cu²⁺ (free) | 6.33 × 10⁻⁵ | 6.3 % of Cu_T |\n| ZnY²⁻ | 6.33 × 10⁻⁵ | 6.3 % of Zn_T |\n| Zn²⁺ (free) | 9.37 × 10⁻⁴ | 93.7 % of Zn_T |\n| Y′ (all free EDTA forms) | ≈ 1 × 10⁻¹³ | — |\n\n**Bound : free ratios**\n\n- Cu: [CuY]/[Cu²⁺] = 0.937 / 0.0633 = **14.8**\n- Zn: [ZnY]/[Zn²⁺] = 0.0633 / 0.937 = **0.068** (i.e., 1 : 14.8)\n\nSelf-consistency check on Zn: K′_Zn·[Zn²⁺]·[Y′] = (6.17 × 10¹¹)(9.37 × 10⁻⁴)(1.1 × 10⁻¹³) ≈ 6.4 × 10⁻⁵ M = [ZnY] ✓\n\n## Ligand partition and the winner\n\nOf the 1 mM EDTA dose: **93.7 % is sequestered by Cu(II), 6.3 % by Zn(II), and essentially none is free**.\n\n**Cu(II) wins** — quantitatively by the factor √(K_CuY/K_ZnY) = √219 ≈ 14.8. That the winning margin is the *square root* of the K-ratio (not the ratio itself) is the signature of an equal-total, ligand-limited competition: each metal both provides the substrate and steals from the other's complex, and the exchange equilibrium partitions the ligand accordingly. Note the pH cancels out of K_ex, so this partition — 15:1 in Cu's favor — holds across a wide pH window as long as both K′'s remain large enough for the ligand to be fully bound (roughly pH ≳ 4).",
+          "citations": []
+        }
+      ],
+      "sender": "assistant",
+      "index": 1,
+      "created_at": "2026-09-17T02:01:30.656268Z",
+      "updated_at": "2026-09-17T02:01:30.656268Z",
+      "truncated": false,
+      "stop_reason": "end_turn",
+      "attachments": [],
+      "files": [],
+      "sync_sources": [],
+      "parent_message_uuid": "01a0ad16-7759-7dbd-b76a-c5eec4eeb7d6"
+    }
+  ]
+}

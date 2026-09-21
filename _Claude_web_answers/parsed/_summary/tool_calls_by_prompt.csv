@@ -1,0 +1,147 @@
+export,config,model,effort,level,prompt_id,prompt_number,in_comparison,tool,category,calls,time_s,errors,share_of_run_calls
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_1,1,True,bash_tool,commands,13,228.5,0,0.5
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_1,1,True,view,inspect files/images,6,7.6,0,0.231
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_1,1,True,web_search,literature search,4,7.1,0,0.154
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_1,1,True,web_fetch,literature search,1,2.3,0,0.038
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_1,1,True,visualize:read_me,present results,1,0.9,0,0.038
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_1,1,True,Artifact,present results,1,1.2,0,0.038
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_1,1,True,bash_tool,commands,2,118.0,0,0.5
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_1,1,True,view,inspect files/images,1,1.3,0,0.25
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_1,1,True,present_files,present results,1,0.8,0,0.25
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_3,3,True,bash_tool,commands,5,56.0,0,0.5
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_3,3,True,create_file,build/edit scripts,1,77.6,0,0.1
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_3,3,True,view,inspect files/images,3,4.0,0,0.3
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_3,3,True,present_files,present results,1,0.8,0,0.1
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_3,3,True,bash_tool,commands,3,55.7,0,0.5
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_3,3,True,view,inspect files/images,2,2.5,0,0.333
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_3,3,True,present_files,present results,1,0.8,0,0.167
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_4,4,True,bash_tool,commands,5,143.2,0,0.357
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_4,4,True,web_search,literature search,6,11.2,0,0.429
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_4,4,True,web_fetch,literature search,2,2.4,1,0.143
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_4,4,True,chart_display_v0,present results,1,4.4,0,0.071
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_9,9,True,bash_tool,commands,4,27.1,0,0.444
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_9,9,True,create_file,build/edit scripts,1,70.1,0,0.111
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_9,9,True,view,inspect files/images,3,3.6,0,0.333
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_9,9,True,present_files,present results,1,1.0,0,0.111
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_9,9,True,bash_tool,commands,3,43.9,0,0.6
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_9,9,True,view,inspect files/images,1,1.3,0,0.2
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_9,9,True,present_files,present results,1,0.2,0,0.2
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_10,10,True,bash_tool,commands,32,282.4,0,0.711
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_10,10,True,create_file,build/edit scripts,3,137.2,0,0.067
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_10,10,True,str_replace,build/edit scripts,1,8.5,0,0.022
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_10,10,True,view,inspect files/images,5,5.2,0,0.111
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_10,10,True,web_search,literature search,4,7.1,0,0.089
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_10,10,True,bash_tool,commands,5,172.2,0,0.714
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_10,10,True,view,inspect files/images,1,1.2,0,0.143
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_10,10,True,present_files,present results,1,1.2,0,0.143
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_11,11,True,bash_tool,commands,12,72.8,0,0.462
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_11,11,True,create_file,build/edit scripts,5,301.0,0,0.192
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_11,11,True,view,inspect files/images,3,4.3,0,0.115
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_11,11,True,web_search,literature search,3,5.2,0,0.115
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_11,11,True,web_fetch,literature search,1,0.8,0,0.038
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_11,11,True,present_files,present results,1,1.0,0,0.038
+Fable5_1,Fable5_1_max,claude-fable-5-1,max,L1,L1_11,11,True,Artifact,present results,1,1.3,0,0.038
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_11,11,True,bash_tool,commands,4,122.0,0,0.667
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_11,11,True,view,inspect files/images,1,1.3,0,0.167
+Fable5_1,Fable5_1_medium,claude-fable-5-1,medium,L1,L1_11,11,True,present_files,present results,1,1.1,0,0.167
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_1,1,True,bash_tool,commands,3,7.1,0,0.429
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_1,1,True,create_file,build/edit scripts,1,65.1,0,0.143
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_1,1,True,view,inspect files/images,2,2.6,0,0.286
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_1,1,True,present_files,present results,1,0.6,0,0.143
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_1,1,True,bash_tool,commands,2,9.0,0,0.4
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_1,1,True,create_file,build/edit scripts,1,41.2,0,0.2
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_1,1,True,view,inspect files/images,1,1.7,0,0.2
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_1,1,True,present_files,present results,1,0.7,0,0.2
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_2,2,True,bash_tool,commands,15,256.9,0,0.484
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_2,2,True,create_file,build/edit scripts,2,139.3,0,0.065
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_2,2,True,str_replace,build/edit scripts,4,16.2,0,0.129
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_2,2,True,view,inspect files/images,9,11.8,0,0.29
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_2,2,True,Artifact,present results,1,1.3,0,0.032
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_2,2,True,bash_tool,commands,5,11.6,0,0.5
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_2,2,True,create_file,build/edit scripts,3,129.5,0,0.3
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_2,2,True,view,inspect files/images,1,1.3,0,0.1
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_2,2,True,present_files,present results,1,0.5,0,0.1
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_3,3,True,bash_tool,commands,7,339.9,0,0.778
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_3,3,True,visualize:show_widget,present results,1,56.5,0,0.111
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_3,3,True,visualize:read_me,present results,1,1.0,0,0.111
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_3,3,True,bash_tool,commands,5,15.3,0,0.417
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_3,3,True,create_file,build/edit scripts,1,58.7,0,0.083
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_3,3,True,str_replace,build/edit scripts,3,28.7,0,0.25
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_3,3,True,view,inspect files/images,2,3.1,0,0.167
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_3,3,True,present_files,present results,1,0.7,0,0.083
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_4,4,True,bash_tool,commands,5,38.6,0,0.833
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_4,4,True,chart_display_v0,present results,1,4.2,0,0.167
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_5,5,True,bash_tool,commands,2,32.6,0,0.667
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_5,5,True,chart_display_v0,present results,1,4.8,0,0.333
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_5,5,True,chart_display_v0,present results,1,3.1,0,1.0
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_6,6,True,bash_tool,commands,4,12.2,0,0.364
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_6,6,True,create_file,build/edit scripts,3,125.6,0,0.273
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_6,6,True,view,inspect files/images,3,4.3,0,0.273
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_6,6,True,present_files,present results,1,0.8,0,0.091
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_6,6,True,bash_tool,commands,9,21.0,0,0.409
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_6,6,True,create_file,build/edit scripts,2,144.5,0,0.091
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_6,6,True,str_replace,build/edit scripts,4,26.7,0,0.182
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_6,6,True,view,inspect files/images,6,7.7,0,0.273
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_6,6,True,present_files,present results,1,0.8,0,0.045
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_7,7,True,bash_tool,commands,6,16.2,0,0.4
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_7,7,True,create_file,build/edit scripts,3,119.2,0,0.2
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_7,7,True,view,inspect files/images,5,6.8,0,0.333
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_7,7,True,present_files,present results,1,1.6,0,0.067
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_7,7,True,bash_tool,commands,5,11.4,0,0.455
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_7,7,True,create_file,build/edit scripts,3,198.4,0,0.273
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_7,7,True,view,inspect files/images,2,2.6,0,0.182
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_7,7,True,present_files,present results,1,0.8,0,0.091
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_8,8,True,bash_tool,commands,14,100.6,0,0.483
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_8,8,True,create_file,build/edit scripts,9,227.2,0,0.31
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_8,8,True,str_replace,build/edit scripts,3,18.0,0,0.103
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_8,8,True,view,inspect files/images,2,2.7,0,0.069
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_8,8,True,present_files,present results,1,0.1,0,0.034
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_8,8,True,bash_tool,commands,3,8.2,0,0.429
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_8,8,True,create_file,build/edit scripts,1,79.1,0,0.143
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_8,8,True,view,inspect files/images,2,3.2,0,0.286
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_8,8,True,present_files,present results,1,0.7,0,0.143
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_9,9,True,bash_tool,commands,6,19.0,0,0.429
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_9,9,True,create_file,build/edit scripts,2,69.5,0,0.143
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_9,9,True,str_replace,build/edit scripts,1,17.0,0,0.071
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_9,9,True,view,inspect files/images,4,5.9,0,0.286
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_9,9,True,present_files,present results,1,2.0,0,0.071
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_9,9,True,bash_tool,commands,3,5.6,0,0.333
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_9,9,True,create_file,build/edit scripts,1,53.0,0,0.111
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_9,9,True,str_replace,build/edit scripts,2,24.9,0,0.222
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_9,9,True,view,inspect files/images,2,2.7,0,0.222
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_9,9,True,present_files,present results,1,1.2,0,0.111
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_10,10,True,bash_tool,commands,7,48.7,0,0.438
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_10,10,True,create_file,build/edit scripts,3,187.0,0,0.188
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_10,10,True,str_replace,build/edit scripts,1,51.1,0,0.062
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_10,10,True,view,inspect files/images,4,5.8,0,0.25
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_10,10,True,present_files,present results,1,1.2,0,0.062
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_11,11,True,bash_tool,commands,8,23.5,0,0.296
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_11,11,True,create_file,build/edit scripts,5,437.9,0,0.185
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_11,11,True,str_replace,build/edit scripts,6,359.1,0,0.222
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_11,11,True,view,inspect files/images,6,9.2,0,0.222
+Opus4_7,Opus4_7_max,claude-opus-4-7,max,L1,L1_11,11,True,Artifact,present results,2,1.6,0,0.074
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_11,11,True,bash_tool,commands,10,161.3,0,0.435
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_11,11,True,create_file,build/edit scripts,1,117.1,0,0.043
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_11,11,True,str_replace,build/edit scripts,8,99.3,0,0.348
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_11,11,True,view,inspect files/images,3,4.0,0,0.13
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L1,L1_11,11,True,present_files,present results,1,0.7,0,0.043
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L2,L2_1,1,False,bash_tool,commands,1,37.8,0,0.333
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L2,L2_1,1,False,web_search,literature search,2,3.4,0,0.667
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L2,L2_2,2,False,bash_tool,commands,4,8.8,0,0.444
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L2,L2_2,2,False,create_file,build/edit scripts,3,113.4,0,0.333
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L2,L2_2,2,False,view,inspect files/images,1,1.3,0,0.111
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L2,L2_2,2,False,present_files,present results,1,0.9,0,0.111
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L2,L2_3,3,False,bash_tool,commands,4,7.4,0,0.5
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L2,L2_3,3,False,create_file,build/edit scripts,2,58.2,0,0.25
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L2,L2_3,3,False,str_replace,build/edit scripts,1,2.5,0,0.125
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L2,L2_3,3,False,view,inspect files/images,1,1.5,0,0.125
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L2,L2_4,4,False,bash_tool,commands,2,49.4,0,1.0
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L2,L2_6,6,False,bash_tool,commands,1,1.4,0,0.5
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L2,L2_6,6,False,create_file,build/edit scripts,1,38.5,0,0.5
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L3,L3_2,2,False,bash_tool,commands,1,25.1,0,1.0
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L3,L3_5,5,False,bash_tool,commands,1,24.1,0,1.0
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L4,L4_2,2,False,web_search,literature search,3,5.2,0,1.0
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L4,L4_3,3,False,bash_tool,commands,2,20.2,0,0.667
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L4,L4_3,3,False,chart_display_v0,present results,1,7.8,0,0.333
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L4,L4_5,5,False,bash_tool,commands,2,30.1,0,0.667
+Opus4_7,Opus4_7_high,claude-opus-4-7,high,L4,L4_5,5,False,chart_display_v0,present results,1,5.5,0,0.333

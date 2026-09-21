@@ -1,0 +1,8 @@
+# LC2_3 Dedup Plan
+
+KEEP decisions only, per core-stoichiometry group; never re-merge or edit μ. Dropped rows become `include=false` (audit-preserved). The supervisor's **case-specific recommendations** (in your system prompt) and element instructions override these defaults wherever they speak.
+
+1. **Duplicate = same physical state, different notation** (identical phase, charge, nuclearity/`multiplier`): keep one — prefer SRD-46, else lower `mu_aligned_kJ`. Near-equal μ flags a candidate; it does not prove identity.
+2. **Different state = different species**: any difference in charge, oxidation state, phase, nuclearity, or hydration/polymorph — keep; a shared core ratio proves nothing.
+3. **Never empty a group; when unsure, keep** — a drop is unrecoverable and redox/phase/nuclearity coverage outranks minimality. Polymorph/hydrate tie-breaks belong to the case-specific recommendations.
+4. **SRD-SRD duplicates** (rows whose `notes` carry a compact `[srd_<set> r/n frame|data]` token — emitted deterministically by LC2_1 when pair cards collide; full provenance in `srd_srd_duplicates.json`): rows sharing one `srd_<set>` id are one duplicate set. `frame` = certified twins (one SRD record, identical data, different temperature frames) — keep exactly one, the frame matching the calculation temperature (25C unless the case-specific recommendations say otherwise); the finalize tool rejects two kept copies. `data` = different SRD records sharing a formula (e.g. multinuclear collisions) — no auto-gate; judge by rules 1–3. Rule 3's "when unsure, keep" never applies within a certified `frame` set; all other group members (e.g. Atlas phases) are untouched by this rule.

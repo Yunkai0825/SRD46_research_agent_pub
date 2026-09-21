@@ -1,0 +1,661 @@
+{
+  "uuid": "537157b1-0e5a-409f-a157-a33783586edc",
+  "name": "L1_7 high Cu(II) and Zn(II) speciation with glycine and ammonia",
+  "summary": "",
+  "model": "claude-opus-4-7",
+  "created_at": "2026-09-17T07:54:56.242860Z",
+  "updated_at": "2026-09-17T09:21:54.916199Z",
+  "settings": {
+    "enabled_web_search": true,
+    "paprika_mode": "auto",
+    "enabled_monkeys_in_a_barrel": true,
+    "enabled_saffron": false,
+    "tool_search_mode": "auto",
+    "thinking_mode": "auto",
+    "effort_level": "high",
+    "preview_feature_uses_artifacts": true,
+    "enabled_turmeric": true
+  },
+  "is_starred": false,
+  "is_temporary": false,
+  "project_uuid": "01a0ac0d-20a5-72a5-9b44-bc3c8d3bfde9",
+  "platform": "CLAUDE_AI",
+  "is_wiggle_enabled": true,
+  "effective_thinking_mode": "auto",
+  "current_leaf_message_uuid": "01a0ae5c-8ce4-77e7-ba72-51d9973a4645",
+  "run": "effort-high_run1",
+  "chat_messages": [
+    {
+      "uuid": "01a0ae5c-8ce4-7f4d-97c1-e19b35009174",
+      "text": "",
+      "content": [
+        {
+          "start_timestamp": "2026-09-17T07:54:58.085573Z",
+          "stop_timestamp": "2026-09-17T07:54:58.085573Z",
+          "type": "text",
+          "text": "For a single solution holding 1 mM Cu(II), 1 mM Zn(II), 10 mM glycine and 0.1 M ammonia together at 25 C and I=0.1 m, compute the joint pH 2-12 speciation and show how the two metals partition between glycinate and ammine complexes in the shared ligand pool. Prefer hydroxide solids. Report which metal dominates each ligand and the pH window where the glycinate and ammine complexes give way to the hydroxide solids.",
+          "citations": []
+        }
+      ],
+      "sender": "human",
+      "index": 0,
+      "created_at": "2026-09-17T07:54:58.085856Z",
+      "updated_at": "2026-09-17T07:54:58.085856Z",
+      "truncated": false,
+      "attachments": [],
+      "files": [],
+      "sync_sources": [],
+      "parent_message_uuid": "00000000-0000-4000-8000-000000000000"
+    },
+    {
+      "uuid": "01a0ae5c-8ce4-77e7-ba72-51d9973a4645",
+      "text": "",
+      "content": [
+        {
+          "start_timestamp": "2026-09-17T07:54:58.528427Z",
+          "stop_timestamp": "2026-09-17T07:55:51.715250Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Modeling copper and zinc speciation with competing ligands."
+            },
+            {
+              "summary": "Gathering stability constants for each metal-ligand pair."
+            },
+            {
+              "summary": "Compiling hydroxide equilibria and planning the numerical solver."
+            },
+            {
+              "summary": "Coding the coupled mass-balance equations for each metal."
+            },
+            {
+              "summary": "Entering hydroxide constants and precipitation thresholds for both metals."
+            },
+            {
+              "summary": "Setting up mass-balance equations linking metals and free ligands."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T07:55:51.715279Z",
+          "stop_timestamp": "2026-09-17T07:55:52.535489Z",
+          "type": "text",
+          "text": "I'll set up the full coupled equilibrium problem and solve it numerically, then walk through what the speciation shows.",
+          "citations": []
+        },
+        {
+          "start_timestamp": "2026-09-17T07:55:52.535519Z",
+          "stop_timestamp": "2026-09-17T07:55:53.781114Z",
+          "type": "tool_use",
+          "id": "toolu_01MZLNWcDf7g8vqcnTparmtJ",
+          "name": "bash_tool",
+          "input": {
+            "command": "mkdir -p /home/claude/spec && cd /home/claude/spec && python3 -c \"import scipy; import numpy; import matplotlib; print(scipy.__version__, numpy.__version__)\"",
+            "description": "Check that scientific Python stack is available"
+          },
+          "message": "Check that scientific Python stack is available",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"mkdir -p /home/claude/spec && cd /home/claude/spec && python3 -c \\\"import scipy; import numpy; import matplotlib; print(scipy.__version__, numpy.__version__)\\\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T07:55:55.634879Z",
+          "stop_timestamp": "2026-09-17T07:55:55.634912Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01MZLNWcDf7g8vqcnTparmtJ",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":0,\"stdout\":\"1.17.1 2.4.4\\n\",\"stderr\":\"\"}",
+              "uuid": "433031e5-7664-4f78-ade3-94415b3c3ece"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"returncode\":0,\"stdout\":\"1.17.1 2.4.4\\n\",\"stderr\":\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T07:55:58.119140Z",
+          "stop_timestamp": "2026-09-17T07:57:24.537256Z",
+          "type": "tool_use",
+          "id": "toolu_012dkp58pennMKrhEYorZspZ",
+          "name": "create_file",
+          "input": {
+            "description": "Full joint Cu(II)/Zn(II) / glycine / ammonia speciation solver",
+            "path": "/home/claude/spec/speciation.py",
+            "file_text": "\"\"\"\nJoint aqueous speciation for Cu(II) + Zn(II) + glycine + ammonia, pH 2-12.\nT = 25 C, I = 0.1 m. Hydroxide solids allowed.\n\nFormation constants are conditional values (I = 0.1 m, T = 25 C) drawn from\nMartell/Smith NIST 46, IUPAC critically selected sets, and Baes & Mesmer for\nhydrolysis. Where sources spread, I use the middle of the recommended band.\n\"\"\"\n\nimport numpy as np\nfrom scipy.optimize import fsolve\nimport matplotlib.pyplot as plt\nimport json\n\n# ---------- proton equilibria ----------\npKw    = 13.78                 # water at I=0.1\npKa1_g = 2.36                  # H2Gly+  -> HGly + H+\npKa2_g = 9.57                  # HGly    -> Gly- + H+\npKa_N  = 9.29                  # NH4+    -> NH3 + H+\n\nK1g, K2g, KN, Kw = 10**-pKa1_g, 10**-pKa2_g, 10**-pKa_N, 10**-pKw\n\n# ---------- metal - glycinate (Gly- = L) : Cu2+ + n L -> CuL_n^(2-n) ----------\nlb_CuL  = [ 8.15, 15.00 ]              # log beta_1, beta_2\nlb_ZnL  = [ 5.00,  9.20, 11.00 ]        # log beta_1..3\n\n# ---------- metal - ammine : M2+ + n NH3 -> M(NH3)_n^2+ ----------\nlb_CuN  = [ 4.05,  7.47, 10.30, 11.75 ]\nlb_ZnN  = [ 2.27,  4.61,  7.01,  9.06 ]\n\n# ---------- metal hydrolysis (proton-based): M2+ + n H2O -> M(OH)_n^(2-n) + n H+ ----------\nlbs_CuOH = [ -8.00, -16.20, -26.80, -39.60 ]\nlbs_ZnOH = [ -9.00, -16.90, -28.40, -41.20 ]\n\n# ---------- solids  M(OH)2(s) -> M2+ + 2 OH- ----------\nlog_Ksp_CuOH2 = -19.70          # tenorite/amorphous band midpoint\nlog_Ksp_ZnOH2 = -16.50          # epsilon-Zn(OH)2 / amorphous\n\n# ---------- totals ----------\nCuT  = 1.0e-3\nZnT  = 1.0e-3\nGlyT = 1.0e-2\nNT   = 1.0e-1\n\ndef cu_side(pH, Cu, Gly, NH3, H, OH):\n    \"\"\"Return (total-Cu-from-solution, dict of individual Cu species concentrations).\"\"\"\n    b_CuL = [10**x for x in lb_CuL]\n    b_CuN = [10**x for x in lb_CuN]\n    bs_H  = [10**x for x in lbs_CuOH]\n\n    s = {}\n    s['Cu2+']       = Cu\n    s['CuOH+']      = Cu*bs_H[0]/H\n    s['Cu(OH)2aq']  = Cu*bs_H[1]/H**2\n    s['Cu(OH)3-']   = Cu*bs_H[2]/H**3\n    s['Cu(OH)4-2']  = Cu*bs_H[3]/H**4\n    s['CuGly+']     = Cu*b_CuL[0]*Gly\n    s['Cu(Gly)2']   = Cu*b_CuL[1]*Gly**2\n    s['CuNH3']      = Cu*b_CuN[0]*NH3\n    s['Cu(NH3)2']   = Cu*b_CuN[1]*NH3**2\n    s['Cu(NH3)3']   = Cu*b_CuN[2]*NH3**3\n    s['Cu(NH3)4']   = Cu*b_CuN[3]*NH3**4\n    return sum(s.values()), s\n\ndef zn_side(pH, Zn, Gly, NH3, H, OH):\n    b_ZnL = [10**x for x in lb_ZnL]\n    b_ZnN = [10**x for x in lb_ZnN]\n    bs_H  = [10**x for x in lbs_ZnOH]\n\n    s = {}\n    s['Zn2+']       = Zn\n    s['ZnOH+']      = Zn*bs_H[0]/H\n    s['Zn(OH)2aq']  = Zn*bs_H[1]/H**2\n    s['Zn(OH)3-']   = Zn*bs_H[2]/H**3\n    s['Zn(OH)4-2']  = Zn*bs_H[3]/H**4\n    s['ZnGly+']     = Zn*b_ZnL[0]*Gly\n    s['Zn(Gly)2']   = Zn*b_ZnL[1]*Gly**2\n    s['Zn(Gly)3-']  = Zn*b_ZnL[2]*Gly**3\n    s['ZnNH3']      = Zn*b_ZnN[0]*NH3\n    s['Zn(NH3)2']   = Zn*b_ZnN[1]*NH3**2\n    s['Zn(NH3)3']   = Zn*b_ZnN[2]*NH3**3\n    s['Zn(NH3)4']   = Zn*b_ZnN[3]*NH3**4\n    return sum(s.values()), s\n\ndef gly_bound(Cu, Zn, Gly):\n    \"\"\"Total Gly bound in metal complexes.\"\"\"\n    b_CuL = [10**x for x in lb_CuL]\n    b_ZnL = [10**x for x in lb_ZnL]\n    cu = Cu*(1*b_CuL[0]*Gly + 2*b_CuL[1]*Gly**2)\n    zn = Zn*(1*b_ZnL[0]*Gly + 2*b_ZnL[1]*Gly**2 + 3*b_ZnL[2]*Gly**3)\n    return cu + zn, cu, zn\n\ndef nh3_bound(Cu, Zn, NH3):\n    b_CuN = [10**x for x in lb_CuN]\n    b_ZnN = [10**x for x in lb_ZnN]\n    cu = Cu*sum((k+1)*b_CuN[k]*NH3**(k+1) for k in range(4))\n    zn = Zn*sum((k+1)*b_ZnN[k]*NH3**(k+1) for k in range(4))\n    return cu + zn, cu, zn\n\ndef gly_free_total(Gly, H):\n    \"\"\"Total free glycine (protonated + zwitterion + anion) given free Gly-.\"\"\"\n    return Gly*(1 + H/K2g + H*H/(K1g*K2g))\n\ndef nh3_free_total(NH3, H):\n    return NH3*(1 + H/KN)\n\ndef solve_at_pH(pH, prev=None):\n    H  = 10**-pH\n    OH = Kw/H\n    # ceilings if solids form\n    Cu_cap = 10**log_Ksp_CuOH2 / OH**2\n    Zn_cap = 10**log_Ksp_ZnOH2 / OH**2\n\n    def residuals(logx):\n        Cu, Zn, Gly, NH3 = [10**v for v in logx]\n        totCu, _ = cu_side(pH, Cu, Gly, NH3, H, OH)\n        totZn, _ = zn_side(pH, Zn, Gly, NH3, H, OH)\n        gb, _, _ = gly_bound(Cu, Zn, Gly)\n        nb, _, _ = nh3_bound(Cu, Zn, NH3)\n        totGly = gly_free_total(Gly, H) + gb\n        totNH3 = nh3_free_total(NH3, H) + nb\n        return [np.log10(totCu/CuT),\n                np.log10(totZn/ZnT),\n                np.log10(totGly/GlyT),\n                np.log10(totNH3/NT)]\n\n    # initial guess (log10 M)\n    if prev is None:\n        x0 = [-6, -6, np.log10(GlyT)-2, np.log10(NT)-2]\n    else:\n        x0 = list(np.log10(prev))\n    x, info, ier, msg = fsolve(residuals, x0, full_output=True, xtol=1e-12)\n    Cu, Zn, Gly, NH3 = [10**v for v in x]\n\n    # now handle solids: if the aqueous free M2+ exceeds Ksp/OH^2, precipitate.\n    solid_Cu = False\n    solid_Zn = False\n    if Cu > Cu_cap:\n        solid_Cu = True\n    if Zn > Zn_cap:\n        solid_Zn = True\n\n    if solid_Cu or solid_Zn:\n        # Re-solve with free M2+ fixed to Ksp cap where needed.\n        # Unknowns become the subset that is not fixed.\n        def resid2(logx):\n            idx = 0\n            if solid_Cu:\n                Cu2 = Cu_cap\n            else:\n                Cu2 = 10**logx[idx]; idx += 1\n            if solid_Zn:\n                Zn2 = Zn_cap\n            else:\n                Zn2 = 10**logx[idx]; idx += 1\n            Gly2 = 10**logx[idx]; idx += 1\n            NH32 = 10**logx[idx]; idx += 1\n\n            # Total aqueous M sum\n            totCu, _ = cu_side(pH, Cu2, Gly2, NH32, H, OH)\n            totZn, _ = zn_side(pH, Zn2, Gly2, NH32, H, OH)\n            gb, _, _ = gly_bound(Cu2, Zn2, Gly2)\n            nb, _, _ = nh3_bound(Cu2, Zn2, NH32)\n            totGly = gly_free_total(Gly2, H) + gb\n            totNH3 = nh3_free_total(NH32, H) + nb\n\n            eqs = []\n            if not solid_Cu:\n                eqs.append(np.log10(totCu/CuT))\n            else:\n                # only require that dissolved Cu <= CuT (excess goes to solid)\n                # No explicit equation for dissolved-Cu when solid present other than\n                # dissolved <= total; ligand balance handles the rest.\n                pass\n            if not solid_Zn:\n                eqs.append(np.log10(totZn/ZnT))\n            eqs.append(np.log10(totGly/GlyT))\n            eqs.append(np.log10(totNH3/NT))\n            return eqs\n\n        # build guess vector\n        g = []\n        if not solid_Cu: g.append(np.log10(min(Cu, Cu_cap*0.999)))\n        if not solid_Zn: g.append(np.log10(min(Zn, Zn_cap*0.999)))\n        g.append(np.log10(Gly))\n        g.append(np.log10(NH3))\n        try:\n            x2 = fsolve(resid2, g, xtol=1e-12)\n        except Exception:\n            x2 = g\n        idx = 0\n        if solid_Cu:\n            Cu = Cu_cap\n        else:\n            Cu = 10**x2[idx]; idx += 1\n        if solid_Zn:\n            Zn = Zn_cap\n        else:\n            Zn = 10**x2[idx]; idx += 1\n        Gly = 10**x2[idx]; idx += 1\n        NH3 = 10**x2[idx]\n\n    # compute species with the final free-ion values\n    totCu, csp = cu_side(pH, Cu, Gly, NH3, H, OH)\n    totZn, zsp = zn_side(pH, Zn, Gly, NH3, H, OH)\n\n    # solid Cu, solid Zn\n    solidCu = max(0.0, CuT - totCu)\n    solidZn = max(0.0, ZnT - totZn)\n\n    # glycine speciation\n    gly_species = {\n        'H2Gly+': Gly*H*H/(K1g*K2g),\n        'HGly':   Gly*H/K2g,\n        'Gly-':   Gly,\n    }\n    gb, gb_cu, gb_zn = gly_bound(Cu, Zn, Gly)\n\n    nh3_species = {\n        'NH4+': NH3*H/KN,\n        'NH3':  NH3,\n    }\n    nb, nb_cu, nb_zn = nh3_bound(Cu, Zn, NH3)\n\n    return {\n        'pH': pH, 'H': H, 'OH': OH,\n        'Cu2+_free': Cu, 'Zn2+_free': Zn,\n        'Gly-_free': Gly, 'NH3_free': NH3,\n        'Cu_species': csp, 'Zn_species': zsp,\n        'gly_species': gly_species,\n        'nh3_species': nh3_species,\n        'gly_bound_total': gb, 'gly_bound_Cu': gb_cu, 'gly_bound_Zn': gb_zn,\n        'nh3_bound_total': nb, 'nh3_bound_Cu': nb_cu, 'nh3_bound_Zn': nb_zn,\n        'solid_Cu_mol': solidCu, 'solid_Zn_mol': solidZn,\n        'aq_Cu_total': totCu, 'aq_Zn_total': totZn,\n        'ligand_totals_check': {\n            'Gly_free_total': gly_free_total(Gly, H),\n            'Gly_bound':      gb,\n            'sum':            gly_free_total(Gly, H)+gb,\n            'target':         GlyT,\n            'NH3/NH4 free':   nh3_free_total(NH3, H),\n            'NH_bound':       nb,\n            'N_sum':          nh3_free_total(NH3, H)+nb,\n            'N_target':       NT,\n        }\n    }\n\n# ---- run the grid ----\npHs = np.arange(2.0, 12.001, 0.05)\nrows = []\nprev_guess = None\nfor pH in pHs:\n    r = solve_at_pH(pH, prev_guess)\n    prev_guess = [r['Cu2+_free'], r['Zn2+_free'], r['Gly-_free'], r['NH3_free']]\n    rows.append(r)\n\n# ---- save a machine-readable table ----\ndef flatten(r):\n    out = {'pH': r['pH']}\n    for k, v in r['Cu_species'].items(): out['Cu.'+k] = v\n    for k, v in r['Zn_species'].items(): out['Zn.'+k] = v\n    for k, v in r['gly_species'].items(): out['gly.'+k] = v\n    for k, v in r['nh3_species'].items(): out['nh.'+k]  = v\n    out['gly_bound_Cu'] = r['gly_bound_Cu']\n    out['gly_bound_Zn'] = r['gly_bound_Zn']\n    out['nh_bound_Cu']  = r['nh3_bound_Cu']\n    out['nh_bound_Zn']  = r['nh3_bound_Zn']\n    out['solid_Cu_mol'] = r['solid_Cu_mol']\n    out['solid_Zn_mol'] = r['solid_Zn_mol']\n    out['aq_Cu_total']  = r['aq_Cu_total']\n    out['aq_Zn_total']  = r['aq_Zn_total']\n    return out\n\ntable = [flatten(r) for r in rows]\nwith open('/home/claude/spec/data.json', 'w') as f:\n    json.dump(table, f, indent=1)\n\n# ---- also compute compact summary metrics ----\ndef find_crossover(pHs, series_a, series_b):\n    \"\"\"Return pH where series_a crosses series_b, or None.\"\"\"\n    diff = np.array(series_a) - np.array(series_b)\n    for i in range(1, len(diff)):\n        if diff[i-1]*diff[i] < 0:\n            # linear interp\n            x0, x1 = pHs[i-1], pHs[i]\n            y0, y1 = diff[i-1], diff[i]\n            return x0 - y0*(x1-x0)/(y1-y0)\n    return None\n\npHs_arr = np.array([r['pH'] for r in rows])\n\n# glycinate mass in Cu vs Zn\ngly_cu = np.array([r['gly_bound_Cu'] for r in rows])\ngly_zn = np.array([r['gly_bound_Zn'] for r in rows])\nnh_cu  = np.array([r['nh3_bound_Cu'] for r in rows])\nnh_zn  = np.array([r['nh3_bound_Zn'] for r in rows])\n\n# where does Cu-glycinate hand over to Zn-glycinate?\npH_gly_crossover = find_crossover(pHs_arr, gly_cu, gly_zn)\npH_nh_crossover  = find_crossover(pHs_arr, nh_cu, nh_zn)\n\n# where do solids first appear? and where do they redissolve?\nsCu = np.array([r['solid_Cu_mol'] for r in rows])\nsZn = np.array([r['solid_Zn_mol'] for r in rows])\ntinyfrac = 1e-6  # 1 ppm of total\n\ndef first_last(arr, thresh):\n    idx = np.where(arr > thresh)[0]\n    if len(idx) == 0:\n        return None, None\n    return pHs_arr[idx[0]], pHs_arr[idx[-1]]\n\npH_CuOH2_first, pH_CuOH2_last = first_last(sCu, tinyfrac*CuT)\npH_ZnOH2_first, pH_ZnOH2_last = first_last(sZn, tinyfrac*ZnT)\n\n# also compute the pH at which glycinate ligation gives way to hydroxide for each metal\n# = pH where Sum(M-Gly)/CuT drops below Sum(M-OH forms including solid)/CuT\ndef gly_frac(sp):\n    keys = [k for k in sp if 'Gly' in k]\n    return sum(sp[k] for k in keys)\ndef oh_frac(sp):\n    keys = [k for k in sp if 'OH' in k or 'Cu(OH)' in k or 'Zn(OH)' in k]\n    return sum(sp[k] for k in keys)\n\nfrac_cu_gly = np.array([gly_frac(r['Cu_species']) for r in rows])/CuT\nfrac_cu_oh_aq = np.array([oh_frac(r['Cu_species']) for r in rows])/CuT\nfrac_cu_oh_s  = sCu/CuT\nfrac_cu_oh_total = frac_cu_oh_aq + frac_cu_oh_s\n\nfrac_cu_nh = np.array([sum(v for k,v in r['Cu_species'].items() if 'NH3' in k) for r in rows])/CuT\n\nfrac_zn_gly = np.array([gly_frac(r['Zn_species']) for r in rows])/ZnT\nfrac_zn_oh_aq = np.array([oh_frac(r['Zn_species']) for r in rows])/ZnT\nfrac_zn_oh_s  = sZn/ZnT\nfrac_zn_oh_total = frac_zn_oh_aq + frac_zn_oh_s\nfrac_zn_nh = np.array([sum(v for k,v in r['Zn_species'].items() if 'NH3' in k) for r in rows])/ZnT\n\n# handover pH: where hydroxide ligation (including solid) matches glycinate ligation\npH_cu_gly_to_oh = find_crossover(pHs_arr, frac_cu_gly, frac_cu_oh_total)\npH_zn_gly_to_oh = find_crossover(pHs_arr, frac_zn_gly, frac_zn_oh_total)\npH_cu_nh_to_oh  = find_crossover(pHs_arr, frac_cu_nh,  frac_cu_oh_total)\npH_zn_nh_to_oh  = find_crossover(pHs_arr, frac_zn_nh,  frac_zn_oh_total)\n\n# also: crossover where NH3 complexes beat glycinate on each metal\nfrac_cu_nh_direct  = frac_cu_nh\nfrac_cu_gly_direct = frac_cu_gly\npH_cu_gly_to_nh = find_crossover(pHs_arr, frac_cu_gly_direct, frac_cu_nh_direct)\npH_zn_gly_to_nh = find_crossover(pHs_arr, frac_zn_gly, frac_zn_nh)\n\nsummary = {\n    'pH range where Cu(OH)2(s) present':  (pH_CuOH2_first, pH_CuOH2_last),\n    'pH range where Zn(OH)2(s) present':  (pH_ZnOH2_first, pH_ZnOH2_last),\n    'Cu: glycinate -> hydroxide crossover pH':  pH_cu_gly_to_oh,\n    'Zn: glycinate -> hydroxide crossover pH':  pH_zn_gly_to_oh,\n    'Cu: glycinate -> ammine crossover pH':     pH_cu_gly_to_nh,\n    'Zn: glycinate -> ammine crossover pH':     pH_zn_gly_to_nh,\n    'Cu: ammine    -> hydroxide crossover pH':  pH_cu_nh_to_oh,\n    'Zn: ammine    -> hydroxide crossover pH':  pH_zn_nh_to_oh,\n    'pH where Cu-Gly bound = Zn-Gly bound':     pH_gly_crossover,\n    'pH where Cu-NH3 bound = Zn-NH3 bound':     pH_nh_crossover,\n}\nwith open('/home/claude/spec/summary.json', 'w') as f:\n    json.dump({k: (list(v) if isinstance(v, tuple) else v) for k,v in summary.items()}, f, indent=1)\n\n# quick console print\nprint('SUMMARY')\nfor k, v in summary.items():\n    print(f'  {k}: {v}')\n\n# spot check mass balance at pH=8\nr = solve_at_pH(8.0)\nprint('\\nMass balance check at pH 8.0:')\nprint(' Gly total (target 1.0e-2):',\n      r['ligand_totals_check']['sum'])\nprint(' N total   (target 1.0e-1):',\n      r['ligand_totals_check']['N_sum'])\nprint(' Cu aq + solid (target 1.0e-3):',\n      r['aq_Cu_total'] + r['solid_Cu_mol'])\nprint(' Zn aq + solid (target 1.0e-3):',\n      r['aq_Zn_total'] + r['solid_Zn_mol'])\n\n# ---- also print a compact table of dominant species vs pH ----\nprint('\\npH  |   dom-Cu-species (fraction)   |   dom-Zn-species (fraction)   | %Gly on Cu | %Gly on Zn | %NH on Cu | %NH on Zn | solidCu% | solidZn%')\nfor pH in [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]:\n    r = [row for row in rows if abs(row['pH']-pH)<1e-6][0]\n    dcu = max(r['Cu_species'].items(), key=lambda kv: kv[1])\n    dzn = max(r['Zn_species'].items(), key=lambda kv: kv[1])\n    # ligand partition\n    total_g = r['gly_bound_Cu'] + r['gly_bound_Zn']\n    total_n = r['nh3_bound_Cu'] + r['nh3_bound_Zn']\n    fg_cu = 100*r['gly_bound_Cu']/total_g if total_g>0 else 0\n    fg_zn = 100*r['gly_bound_Zn']/total_g if total_g>0 else 0\n    fn_cu = 100*r['nh3_bound_Cu']/total_n if total_n>0 else 0\n    fn_zn = 100*r['nh3_bound_Zn']/total_n if total_n>0 else 0\n    scu = 100*r['solid_Cu_mol']/CuT\n    szn = 100*r['solid_Zn_mol']/ZnT\n    print(f' {pH:4.1f} | {dcu[0]:<12s} {100*dcu[1]/CuT:5.1f}% | {dzn[0]:<12s} {100*dzn[1]/ZnT:5.1f}% | {fg_cu:9.1f} | {fg_zn:9.1f} | {fn_cu:8.1f} | {fn_zn:8.1f} | {scu:7.2f} | {szn:7.2f}')\n"
+          },
+          "message": "Full joint Cu(II)/Zn(II) / glycine / ammonia speciation solver",
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"python\", \"code\": \"\\\"\\\"\\\"\\nJoint aqueous speciation for Cu(II) + Zn(II) + glycine + ammonia, pH 2-12.\\nT = 25 C, I = 0.1 m. Hydroxide solids allowed.\\n\\nFormation constants are conditional values (I = 0.1 m, T = 25 C) drawn from\\nMartell/Smith NIST 46, IUPAC critically selected sets, and Baes & Mesmer for\\nhydrolysis. Where sources spread, I use the middle of the recommended band.\\n\\\"\\\"\\\"\\n\\nimport numpy as np\\nfrom scipy.optimize import fsolve\\nimport matplotlib.pyplot as plt\\nimport json\\n\\n# ---------- proton equilibria ----------\\npKw    = 13.78                 # water at I=0.1\\npKa1_g = 2.36                  # H2Gly+  -> HGly + H+\\npKa2_g = 9.57                  # HGly    -> Gly- + H+\\npKa_N  = 9.29                  # NH4+    -> NH3 + H+\\n\\nK1g, K2g, KN, Kw = 10**-pKa1_g, 10**-pKa2_g, 10**-pKa_N, 10**-pKw\\n\\n# ---------- metal - glycinate (Gly- = L) : Cu2+ + n L -> CuL_n^(2-n) ----------\\nlb_CuL  = [ 8.15, 15.00 ]              # log beta_1, beta_2\\nlb_ZnL  = [ 5.00,  9.20, 11.00 ]        # log beta_1..3\\n\\n# ---------- metal - ammine : M2+ + n NH3 -> M(NH3)_n^2+ ----------\\nlb_CuN  = [ 4.05,  7.47, 10.30, 11.75 ]\\nlb_ZnN  = [ 2.27,  4.61,  7.01,  9.06 ]\\n\\n# ---------- metal hydrolysis (proton-based): M2+ + n H2O -> M(OH)_n^(2-n) + n H+ ----------\\nlbs_CuOH = [ -8.00, -16.20, -26.80, -39.60 ]\\nlbs_ZnOH = [ -9.00, -16.90, -28.40, -41.20 ]\\n\\n# ---------- solids  M(OH)2(s) -> M2+ + 2 OH- ----------\\nlog_Ksp_CuOH2 = -19.70          # tenorite/amorphous band midpoint\\nlog_Ksp_ZnOH2 = -16.50          # epsilon-Zn(OH)2 / amorphous\\n\\n# ---------- totals ----------\\nCuT  = 1.0e-3\\nZnT  = 1.0e-3\\nGlyT = 1.0e-2\\nNT   = 1.0e-1\\n\\ndef cu_side(pH, Cu, Gly, NH3, H, OH):\\n    \\\"\\\"\\\"Return (total-Cu-from-solution, dict of individual Cu species concentrations).\\\"\\\"\\\"\\n    b_CuL = [10**x for x in lb_CuL]\\n    b_CuN = [10**x for x in lb_CuN]\\n    bs_H  = [10**x for x in lbs_CuOH]\\n\\n    s = {}\\n    s['Cu2+']       = Cu\\n    s['CuOH+']      = Cu*bs_H[0]/H\\n    s['Cu(OH)2aq']  = Cu*bs_H[1]/H**2\\n    s['Cu(OH)3-']   = Cu*bs_H[2]/H**3\\n    s['Cu(OH)4-2']  = Cu*bs_H[3]/H**4\\n    s['CuGly+']     = Cu*b_CuL[0]*Gly\\n    s['Cu(Gly)2']   = Cu*b_CuL[1]*Gly**2\\n    s['CuNH3']      = Cu*b_CuN[0]*NH3\\n    s['Cu(NH3)2']   = Cu*b_CuN[1]*NH3**2\\n    s['Cu(NH3)3']   = Cu*b_CuN[2]*NH3**3\\n    s['Cu(NH3)4']   = Cu*b_CuN[3]*NH3**4\\n    return sum(s.values()), s\\n\\ndef zn_side(pH, Zn, Gly, NH3, H, OH):\\n    b_ZnL = [10**x for x in lb_ZnL]\\n    b_ZnN = [10**x for x in lb_ZnN]\\n    bs_H  = [10**x for x in lbs_ZnOH]\\n\\n    s = {}\\n    s['Zn2+']       = Zn\\n    s['ZnOH+']      = Zn*bs_H[0]/H\\n    s['Zn(OH)2aq']  = Zn*bs_H[1]/H**2\\n    s['Zn(OH)3-']   = Zn*bs_H[2]/H**3\\n    s['Zn(OH)4-2']  = Zn*bs_H[3]/H**4\\n    s['ZnGly+']     = Zn*b_ZnL[0]*Gly\\n    s['Zn(Gly)2']   = Zn*b_ZnL[1]*Gly**2\\n    s['Zn(Gly)3-']  = Zn*b_ZnL[2]*Gly**3\\n    s['ZnNH3']      = Zn*b_ZnN[0]*NH3\\n    s['Zn(NH3)2']   = Zn*b_ZnN[1]*NH3**2\\n    s['Zn(NH3)3']   = Zn*b_ZnN[2]*NH3**3\\n    s['Zn(NH3)4']   = Zn*b_ZnN[3]*NH3**4\\n    return sum(s.values()), s\\n\\ndef gly_bound(Cu, Zn, Gly):\\n    \\\"\\\"\\\"Total Gly bound in metal complexes.\\\"\\\"\\\"\\n    b_CuL = [10**x for x in lb_CuL]\\n    b_ZnL = [10**x for x in lb_ZnL]\\n    cu = Cu*(1*b_CuL[0]*Gly + 2*b_CuL[1]*Gly**2)\\n    zn = Zn*(1*b_ZnL[0]*Gly + 2*b_ZnL[1]*Gly**2 + 3*b_ZnL[2]*Gly**3)\\n    return cu + zn, cu, zn\\n\\ndef nh3_bound(Cu, Zn, NH3):\\n    b_CuN = [10**x for x in lb_CuN]\\n    b_ZnN = [10**x for x in lb_ZnN]\\n    cu = Cu*sum((k+1)*b_CuN[k]*NH3**(k+1) for k in range(4))\\n    zn = Zn*sum((k+1)*b_ZnN[k]*NH3**(k+1) for k in range(4))\\n    return cu + zn, cu, zn\\n\\ndef gly_free_total(Gly, H):\\n    \\\"\\\"\\\"Total free glycine (protonated + zwitterion + anion) given free Gly-.\\\"\\\"\\\"\\n    return Gly*(1 + H/K2g + H*H/(K1g*K2g))\\n\\ndef nh3_free_total(NH3, H):\\n    return NH3*(1 + H/KN)\\n\\ndef solve_at_pH(pH, prev=None):\\n    H  = 10**-pH\\n    OH = Kw/H\\n    # ceilings if solids form\\n    Cu_cap = 10**log_Ksp_CuOH2 / OH**2\\n    Zn_cap = 10**log_Ksp_ZnOH2 / OH**2\\n\\n    def residuals(logx):\\n        Cu, Zn, Gly, NH3 = [10**v for v in logx]\\n        totCu, _ = cu_side(pH, Cu, Gly, NH3, H, OH)\\n        totZn, _ = zn_side(pH, Zn, Gly, NH3, H, OH)\\n        gb, _, _ = gly_bound(Cu, Zn, Gly)\\n        nb, _, _ = nh3_bound(Cu, Zn, NH3)\\n        totGly = gly_free_total(Gly, H) + gb\\n        totNH3 = nh3_free_total(NH3, H) + nb\\n        return [np.log10(totCu/CuT),\\n                np.log10(totZn/ZnT),\\n                np.log10(totGly/GlyT),\\n                np.log10(totNH3/NT)]\\n\\n    # initial guess (log10 M)\\n    if prev is None:\\n        x0 = [-6, -6, np.log10(GlyT)-2, np.log10(NT)-2]\\n    else:\\n        x0 = list(np.log10(prev))\\n    x, info, ier, msg = fsolve(residuals, x0, full_output=True, xtol=1e-12)\\n    Cu, Zn, Gly, NH3 = [10**v for v in x]\\n\\n    # now handle solids: if the aqueous free M2+ exceeds Ksp/OH^2, precipitate.\\n    solid_Cu = False\\n    solid_Zn = False\\n    if Cu > Cu_cap:\\n        solid_Cu = True\\n    if Zn > Zn_cap:\\n        solid_Zn = True\\n\\n    if solid_Cu or solid_Zn:\\n        # Re-solve with free M2+ fixed to Ksp cap where needed.\\n        # Unknowns become the subset that is not fixed.\\n        def resid2(logx):\\n            idx = 0\\n            if solid_Cu:\\n                Cu2 = Cu_cap\\n            else:\\n                Cu2 = 10**logx[idx]; idx += 1\\n            if solid_Zn:\\n                Zn2 = Zn_cap\\n            else:\\n                Zn2 = 10**logx[idx]; idx += 1\\n            Gly2 = 10**logx[idx]; idx += 1\\n            NH32 = 10**logx[idx]; idx += 1\\n\\n            # Total aqueous M sum\\n            totCu, _ = cu_side(pH, Cu2, Gly2, NH32, H, OH)\\n            totZn, _ = zn_side(pH, Zn2, Gly2, NH32, H, OH)\\n            gb, _, _ = gly_bound(Cu2, Zn2, Gly2)\\n            nb, _, _ = nh3_bound(Cu2, Zn2, NH32)\\n            totGly = gly_free_total(Gly2, H) + gb\\n            totNH3 = nh3_free_total(NH32, H) + nb\\n\\n            eqs = []\\n            if not solid_Cu:\\n                eqs.append(np.log10(totCu/CuT))\\n            else:\\n                # only require that dissolved Cu <= CuT (excess goes to solid)\\n                # No explicit equation for dissolved-Cu when solid present other than\\n                # dissolved <= total; ligand balance handles the rest.\\n                pass\\n            if not solid_Zn:\\n                eqs.append(np.log10(totZn/ZnT))\\n            eqs.append(np.log10(totGly/GlyT))\\n            eqs.append(np.log10(totNH3/NT))\\n            return eqs\\n\\n        # build guess vector\\n        g = []\\n        if not solid_Cu: g.append(np.log10(min(Cu, Cu_cap*0.999)))\\n        if not solid_Zn: g.append(np.log10(min(Zn, Zn_cap*0.999)))\\n        g.append(np.log10(Gly))\\n        g.append(np.log10(NH3))\\n        try:\\n            x2 = fsolve(resid2, g, xtol=1e-12)\\n        except Exception:\\n            x2 = g\\n        idx = 0\\n        if solid_Cu:\\n            Cu = Cu_cap\\n        else:\\n            Cu = 10**x2[idx]; idx += 1\\n        if solid_Zn:\\n            Zn = Zn_cap\\n        else:\\n            Zn = 10**x2[idx]; idx += 1\\n        Gly = 10**x2[idx]; idx += 1\\n        NH3 = 10**x2[idx]\\n\\n    # compute species with the final free-ion values\\n    totCu, csp = cu_side(pH, Cu, Gly, NH3, H, OH)\\n    totZn, zsp = zn_side(pH, Zn, Gly, NH3, H, OH)\\n\\n    # solid Cu, solid Zn\\n    solidCu = max(0.0, CuT - totCu)\\n    solidZn = max(0.0, ZnT - totZn)\\n\\n    # glycine speciation\\n    gly_species = {\\n        'H2Gly+': Gly*H*H/(K1g*K2g),\\n        'HGly':   Gly*H/K2g,\\n        'Gly-':   Gly,\\n    }\\n    gb, gb_cu, gb_zn = gly_bound(Cu, Zn, Gly)\\n\\n    nh3_species = {\\n        'NH4+': NH3*H/KN,\\n        'NH3':  NH3,\\n    }\\n    nb, nb_cu, nb_zn = nh3_bound(Cu, Zn, NH3)\\n\\n    return {\\n        'pH': pH, 'H': H, 'OH': OH,\\n        'Cu2+_free': Cu, 'Zn2+_free': Zn,\\n        'Gly-_free': Gly, 'NH3_free': NH3,\\n        'Cu_species': csp, 'Zn_species': zsp,\\n        'gly_species': gly_species,\\n        'nh3_species': nh3_species,\\n        'gly_bound_total': gb, 'gly_bound_Cu': gb_cu, 'gly_bound_Zn': gb_zn,\\n        'nh3_bound_total': nb, 'nh3_bound_Cu': nb_cu, 'nh3_bound_Zn': nb_zn,\\n        'solid_Cu_mol': solidCu, 'solid_Zn_mol': solidZn,\\n        'aq_Cu_total': totCu, 'aq_Zn_total': totZn,\\n        'ligand_totals_check': {\\n            'Gly_free_total': gly_free_total(Gly, H),\\n            'Gly_bound':      gb,\\n            'sum':            gly_free_total(Gly, H)+gb,\\n            'target':         GlyT,\\n            'NH3/NH4 free':   nh3_free_total(NH3, H),\\n            'NH_bound':       nb,\\n            'N_sum':          nh3_free_total(NH3, H)+nb,\\n            'N_target':       NT,\\n        }\\n    }\\n\\n# ---- run the grid ----\\npHs = np.arange(2.0, 12.001, 0.05)\\nrows = []\\nprev_guess = None\\nfor pH in pHs:\\n    r = solve_at_pH(pH, prev_guess)\\n    prev_guess = [r['Cu2+_free'], r['Zn2+_free'], r['Gly-_free'], r['NH3_free']]\\n    rows.append(r)\\n\\n# ---- save a machine-readable table ----\\ndef flatten(r):\\n    out = {'pH': r['pH']}\\n    for k, v in r['Cu_species'].items(): out['Cu.'+k] = v\\n    for k, v in r['Zn_species'].items(): out['Zn.'+k] = v\\n    for k, v in r['gly_species'].items(): out['gly.'+k] = v\\n    for k, v in r['nh3_species'].items(): out['nh.'+k]  = v\\n    out['gly_bound_Cu'] = r['gly_bound_Cu']\\n    out['gly_bound_Zn'] = r['gly_bound_Zn']\\n    out['nh_bound_Cu']  = r['nh3_bound_Cu']\\n    out['nh_bound_Zn']  = r['nh3_bound_Zn']\\n    out['solid_Cu_mol'] = r['solid_Cu_mol']\\n    out['solid_Zn_mol'] = r['solid_Zn_mol']\\n    out['aq_Cu_total']  = r['aq_Cu_total']\\n    out['aq_Zn_total']  = r['aq_Zn_total']\\n    return out\\n\\ntable = [flatten(r) for r in rows]\\nwith open('/home/claude/spec/data.json', 'w') as f:\\n    json.dump(table, f, indent=1)\\n\\n# ---- also compute compact summary metrics ----\\ndef find_crossover(pHs, series_a, series_b):\\n    \\\"\\\"\\\"Return pH where series_a crosses series_b, or None.\\\"\\\"\\\"\\n    diff = np.array(series_a) - np.array(series_b)\\n    for i in range(1, len(diff)):\\n        if diff[i-1]*diff[i] < 0:\\n            # linear interp\\n            x0, x1 = pHs[i-1], pHs[i]\\n            y0, y1 = diff[i-1], diff[i]\\n            return x0 - y0*(x1-x0)/(y1-y0)\\n    return None\\n\\npHs_arr = np.array([r['pH'] for r in rows])\\n\\n# glycinate mass in Cu vs Zn\\ngly_cu = np.array([r['gly_bound_Cu'] for r in rows])\\ngly_zn = np.array([r['gly_bound_Zn'] for r in rows])\\nnh_cu  = np.array([r['nh3_bound_Cu'] for r in rows])\\nnh_zn  = np.array([r['nh3_bound_Zn'] for r in rows])\\n\\n# where does Cu-glycinate hand over to Zn-glycinate?\\npH_gly_crossover = find_crossover(pHs_arr, gly_cu, gly_zn)\\npH_nh_crossover  = find_crossover(pHs_arr, nh_cu, nh_zn)\\n\\n# where do solids first appear? and where do they redissolve?\\nsCu = np.array([r['solid_Cu_mol'] for r in rows])\\nsZn = np.array([r['solid_Zn_mol'] for r in rows])\\ntinyfrac = 1e-6  # 1 ppm of total\\n\\ndef first_last(arr, thresh):\\n    idx = np.where(arr > thresh)[0]\\n    if len(idx) == 0:\\n        return None, None\\n    return pHs_arr[idx[0]], pHs_arr[idx[-1]]\\n\\npH_CuOH2_first, pH_CuOH2_last = first_last(sCu, tinyfrac*CuT)\\npH_ZnOH2_first, pH_ZnOH2_last = first_last(sZn, tinyfrac*ZnT)\\n\\n# also compute the pH at which glycinate ligation gives way to hydroxide for each metal\\n# = pH where Sum(M-Gly)/CuT drops below Sum(M-OH forms including solid)/CuT\\ndef gly_frac(sp):\\n    keys = [k for k in sp if 'Gly' in k]\\n    return sum(sp[k] for k in keys)\\ndef oh_frac(sp):\\n    keys = [k for k in sp if 'OH' in k or 'Cu(OH)' in k or 'Zn(OH)' in k]\\n    return sum(sp[k] for k in keys)\\n\\nfrac_cu_gly = np.array([gly_frac(r['Cu_species']) for r in rows])/CuT\\nfrac_cu_oh_aq = np.array([oh_frac(r['Cu_species']) for r in rows])/CuT\\nfrac_cu_oh_s  = sCu/CuT\\nfrac_cu_oh_total = frac_cu_oh_aq + frac_cu_oh_s\\n\\nfrac_cu_nh = np.array([sum(v for k,v in r['Cu_species'].items() if 'NH3' in k) for r in rows])/CuT\\n\\nfrac_zn_gly = np.array([gly_frac(r['Zn_species']) for r in rows])/ZnT\\nfrac_zn_oh_aq = np.array([oh_frac(r['Zn_species']) for r in rows])/ZnT\\nfrac_zn_oh_s  = sZn/ZnT\\nfrac_zn_oh_total = frac_zn_oh_aq + frac_zn_oh_s\\nfrac_zn_nh = np.array([sum(v for k,v in r['Zn_species'].items() if 'NH3' in k) for r in rows])/ZnT\\n\\n# handover pH: where hydroxide ligation (including solid) matches glycinate ligation\\npH_cu_gly_to_oh = find_crossover(pHs_arr, frac_cu_gly, frac_cu_oh_total)\\npH_zn_gly_to_oh = find_crossover(pHs_arr, frac_zn_gly, frac_zn_oh_total)\\npH_cu_nh_to_oh  = find_crossover(pHs_arr, frac_cu_nh,  frac_cu_oh_total)\\npH_zn_nh_to_oh  = find_crossover(pHs_arr, frac_zn_nh,  frac_zn_oh_total)\\n\\n# also: crossover where NH3 complexes beat glycinate on each metal\\nfrac_cu_nh_direct  = frac_cu_nh\\nfrac_cu_gly_direct = frac_cu_gly\\npH_cu_gly_to_nh = find_crossover(pHs_arr, frac_cu_gly_direct, frac_cu_nh_direct)\\npH_zn_gly_to_nh = find_crossover(pHs_arr, frac_zn_gly, frac_zn_nh)\\n\\nsummary = {\\n    'pH range where Cu(OH)2(s) present':  (pH_CuOH2_first, pH_CuOH2_last),\\n    'pH range where Zn(OH)2(s) present':  (pH_ZnOH2_first, pH_ZnOH2_last),\\n    'Cu: glycinate -> hydroxide crossover pH':  pH_cu_gly_to_oh,\\n    'Zn: glycinate -> hydroxide crossover pH':  pH_zn_gly_to_oh,\\n    'Cu: glycinate -> ammine crossover pH':     pH_cu_gly_to_nh,\\n    'Zn: glycinate -> ammine crossover pH':     pH_zn_gly_to_nh,\\n    'Cu: ammine    -> hydroxide crossover pH':  pH_cu_nh_to_oh,\\n    'Zn: ammine    -> hydroxide crossover pH':  pH_zn_nh_to_oh,\\n    'pH where Cu-Gly bound = Zn-Gly bound':     pH_gly_crossover,\\n    'pH where Cu-NH3 bound = Zn-NH3 bound':     pH_nh_crossover,\\n}\\nwith open('/home/claude/spec/summary.json', 'w') as f:\\n    json.dump({k: (list(v) if isinstance(v, tuple) else v) for k,v in summary.items()}, f, indent=1)\\n\\n# quick console print\\nprint('SUMMARY')\\nfor k, v in summary.items():\\n    print(f'  {k}: {v}')\\n\\n# spot check mass balance at pH=8\\nr = solve_at_pH(8.0)\\nprint('\\\\nMass balance check at pH 8.0:')\\nprint(' Gly total (target 1.0e-2):',\\n      r['ligand_totals_check']['sum'])\\nprint(' N total   (target 1.0e-1):',\\n      r['ligand_totals_check']['N_sum'])\\nprint(' Cu aq + solid (target 1.0e-3):',\\n      r['aq_Cu_total'] + r['solid_Cu_mol'])\\nprint(' Zn aq + solid (target 1.0e-3):',\\n      r['aq_Zn_total'] + r['solid_Zn_mol'])\\n\\n# ---- also print a compact table of dominant species vs pH ----\\nprint('\\\\npH  |   dom-Cu-species (fraction)   |   dom-Zn-species (fraction)   | %Gly on Cu | %Gly on Zn | %NH on Cu | %NH on Zn | solidCu% | solidZn%')\\nfor pH in [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]:\\n    r = [row for row in rows if abs(row['pH']-pH)<1e-6][0]\\n    dcu = max(r['Cu_species'].items(), key=lambda kv: kv[1])\\n    dzn = max(r['Zn_species'].items(), key=lambda kv: kv[1])\\n    # ligand partition\\n    total_g = r['gly_bound_Cu'] + r['gly_bound_Zn']\\n    total_n = r['nh3_bound_Cu'] + r['nh3_bound_Zn']\\n    fg_cu = 100*r['gly_bound_Cu']/total_g if total_g>0 else 0\\n    fg_zn = 100*r['gly_bound_Zn']/total_g if total_g>0 else 0\\n    fn_cu = 100*r['nh3_bound_Cu']/total_n if total_n>0 else 0\\n    fn_zn = 100*r['nh3_bound_Zn']/total_n if total_n>0 else 0\\n    scu = 100*r['solid_Cu_mol']/CuT\\n    szn = 100*r['solid_Zn_mol']/ZnT\\n    print(f' {pH:4.1f} | {dcu[0]:<12s} {100*dcu[1]/CuT:5.1f}% | {dzn[0]:<12s} {100*dzn[1]/ZnT:5.1f}% | {fg_cu:9.1f} | {fg_zn:9.1f} | {fn_cu:8.1f} | {fn_zn:8.1f} | {scu:7.2f} | {szn:7.2f}')\\n\", \"filename\": \"/home/claude/spec/speciation.py\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T07:57:24.800471Z",
+          "stop_timestamp": "2026-09-17T07:57:24.800497Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_012dkp58pennMKrhEYorZspZ",
+          "name": "create_file",
+          "content": [
+            {
+              "type": "text",
+              "text": "File created successfully: /home/claude/spec/speciation.py",
+              "uuid": "fa2409f3-0898-4b37-8aed-9cff2b0995fa"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "display_content": {
+            "type": "text",
+            "text": "File created successfully: /home/claude/spec/speciation.py"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T07:57:27.339794Z",
+          "stop_timestamp": "2026-09-17T07:57:28.060609Z",
+          "type": "tool_use",
+          "id": "toolu_01Nbhv2bSAvXtpragSqj3mZu",
+          "name": "bash_tool",
+          "input": {
+            "command": "cd /home/claude/spec && python3 speciation.py 2>&1 | tail -80",
+            "description": "Run the full speciation calculation"
+          },
+          "message": "Run the full speciation calculation",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"cd /home/claude/spec && python3 speciation.py 2>&1 | tail -80\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T07:57:29.888664Z",
+          "stop_timestamp": "2026-09-17T07:57:29.888691Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01Nbhv2bSAvXtpragSqj3mZu",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":0,\"stdout\":\"/home/claude/spec/speciation.py:188: RuntimeWarning: The iteration is not making good progress, as measured by the \\n improvement from the last ten iterations.\\n  x2 = fsolve(resid2, g, xtol=1e-12)\\nSUMMARY\\n  pH range where Cu(OH)2(s) present: (np.float64(10.84999999999997), np.float64(11.999999999999964))\\n  pH range where Zn(OH)2(s) present: (np.float64(7.74999999999998), np.float64(11.999999999999964))\\n  Cu: glycinate -> hydroxide crossover pH: 11.020354735708526\\n  Zn: glycinate -> hydroxide crossover pH: 9.236854156411876\\n  Cu: glycinate -> ammine crossover pH: None\\n  Zn: glycinate -> ammine crossover pH: None\\n  Cu: ammine    -> hydroxide crossover pH: 10.800529181622945\\n  Zn: ammine    -> hydroxide crossover pH: 7.77782446511897\\n  pH where Cu-Gly bound = Zn-Gly bound: None\\n  pH where Cu-NH3 bound = Zn-NH3 bound: 4.917622097140167\\n/home/claude/spec/speciation.py:115: RuntimeWarning: overflow encountered in scalar power\\n  Cu, Zn, Gly, NH3 = [10**v for v in logx]\\n/home/claude/spec/speciation.py:57: RuntimeWarning: invalid value encountered in scalar multiply\\n  s['CuGly+']     = Cu*b_CuL[0]*Gly\\n/home/claude/spec/speciation.py:58: RuntimeWarning: invalid value encountered in scalar multiply\\n  s['Cu(Gly)2']   = Cu*b_CuL[1]*Gly**2\\n/home/claude/spec/speciation.py:76: RuntimeWarning: invalid value encountered in scalar multiply\\n  s['ZnGly+']     = Zn*b_ZnL[0]*Gly\\n/home/claude/spec/speciation.py:77: RuntimeWarning: invalid value encountered in scalar multiply\\n  s['Zn(Gly)2']   = Zn*b_ZnL[1]*Gly**2\\n/home/claude/spec/speciation.py:78: RuntimeWarning: invalid value encountered in scalar multiply\\n  s['Zn(Gly)3-']  = Zn*b_ZnL[2]*Gly**3\\n/home/claude/spec/speciation.py:89: RuntimeWarning: invalid value encountered in scalar multiply\\n  cu = Cu*(1*b_CuL[0]*Gly + 2*b_CuL[1]*Gly**2)\\n/home/claude/spec/speciation.py:90: RuntimeWarning: invalid value encountered in scalar multiply\\n  zn = Zn*(1*b_ZnL[0]*Gly + 2*b_ZnL[1]*Gly**2 + 3*b_ZnL[2]*Gly**3)\\n\\nMass balance check at pH 8.0:\\n Gly total (target 1.0e-2): 0.00999999999999997\\n N total   (target 1.0e-1): 0.09999999999999998\\n Cu aq + solid (target 1.0e-3): 0.004311580363350669\\n Zn aq + solid (target 1.0e-3): 0.001\\n\\npH  |   dom-Cu-species (fraction)   |   dom-Zn-species (fraction)   | %Gly on Cu | %Gly on Zn | %NH on Cu | %NH on Zn | solidCu% | solidZn%\\n  2.0 | Cu2+          98.9% | Zn2+         100.0% |      99.9 |       0.1 |     98.3 |      1.7 |    0.00 |    0.00\\n  3.0 | Cu2+          76.5% | Zn2+         100.0% |      99.9 |       0.1 |     97.9 |      2.1 |    0.00 |    0.00\\n  4.0 | CuGly+        68.2% | Zn2+          99.8% |      99.7 |       0.3 |     92.4 |      7.6 |    0.00 |    0.00\\n  5.0 | Cu(Gly)2      60.7% | Zn2+          97.7% |      98.6 |       1.4 |     43.1 |     56.9 |    0.00 |    0.00\\n  6.0 | Cu(Gly)2      93.7% | Zn2+          81.3% |      91.3 |       8.7 |      1.9 |     98.1 |    0.00 |    0.00\\n  7.0 | Cu(Gly)2      99.3% | ZnGly+        53.0% |      70.0 |      30.0 |      0.2 |     99.8 |    0.00 |    0.00\\n  8.0 | Cu(Gly)2      99.9% | Zn(Gly)2      55.6% |      60.0 |      40.0 |      0.3 |     99.7 |    0.00 |   18.04\\n  9.0 | Cu(Gly)2      99.9% | Zn(Gly)2      40.7% |      67.8 |      32.2 |      0.3 |     99.7 |    0.00 |   31.63\\n 10.0 | Cu(Gly)2      99.9% | Zn(NH3)4       6.4% |      91.6 |       8.4 |      1.6 |     98.4 |    0.00 |   84.63\\n 11.0 | Cu(Gly)2      53.6% | Zn(OH)2aq      0.1% |      99.5 |       0.5 |     26.9 |     73.1 |   46.33 |   99.47\\n 12.0 | Cu(Gly)2       0.7% | Zn(OH)3-       0.5% |      99.5 |       0.5 |     26.8 |     73.2 |   99.27 |   99.32\\n\",\"stderr\":\"\"}",
+              "uuid": "7b8aef48-9bb6-4e88-b585-550612884510"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"returncode\":0,\"stdout\":\"/home/claude/spec/speciation.py:188: RuntimeWarning: The iteration is not making good progress, as measured by the \\n improvement from the last ten iterations.\\n  x2 = fsolve(resid2, g, xtol=1e-12)\\nSUMMARY\\n  pH range where Cu(OH)2(s) present: (np.float64(10.84999999999997), np.float64(11.999999999999964))\\n  pH range where Zn(OH)2(s) present: (np.float64(7.74999999999998), np.float64(11.999999999999964))\\n  Cu: glycinate -> hydroxide crossover pH: 11.020354735708526\\n  Zn: glycinate -> hydroxide crossover pH: 9.236854156411876\\n  Cu: glycinate -> ammine crossover pH: None\\n  Zn: glycinate -> ammine crossover pH: None\\n  Cu: ammine    -> hydroxide crossover pH: 10.800529181622945\\n  Zn: ammine    -> hydroxide crossover pH: 7.77782446511897\\n  pH where Cu-Gly bound = Zn-Gly bound: None\\n  pH where Cu-NH3 bound = Zn-NH3 bound: 4.917622097140167\\n/home/claude/spec/speciation.py:115: RuntimeWarning: overflow encountered in scalar power\\n  Cu, Zn, Gly, NH3 = [10**v for v in logx]\\n/home/claude/spec/speciation.py:57: RuntimeWarning: invalid value encountered in scalar multiply\\n  s['CuGly+']     = Cu*b_CuL[0]*Gly\\n/home/claude/spec/speciation.py:58: RuntimeWarning: invalid value encountered in scalar multiply\\n  s['Cu(Gly)2']   = Cu*b_CuL[1]*Gly**2\\n/home/claude/spec/speciation.py:76: RuntimeWarning: invalid value encountered in scalar multiply\\n  s['ZnGly+']     = Zn*b_ZnL[0]*Gly\\n/home/claude/spec/speciation.py:77: RuntimeWarning: invalid value encountered in scalar multiply\\n  s['Zn(Gly)2']   = Zn*b_ZnL[1]*Gly**2\\n/home/claude/spec/speciation.py:78: RuntimeWarning: invalid value encountered in scalar multiply\\n  s['Zn(Gly)3-']  = Zn*b_ZnL[2]*Gly**3\\n/home/claude/spec/speciation.py:89: RuntimeWarning: invalid value encountered in scalar multiply\\n  cu = Cu*(1*b_CuL[0]*Gly + 2*b_CuL[1]*Gly**2)\\n/home/claude/spec/speciation.py:90: RuntimeWarning: invalid value encountered in scalar multiply\\n  zn = Zn*(1*b_ZnL[0]*Gly + 2*b_ZnL[1]*Gly**2 + 3*b_ZnL[2]*Gly**3)\\n\\nMass balance check at pH 8.0:\\n Gly total (target 1.0e-2): 0.00999999999999997\\n N total   (target 1.0e-1): 0.09999999999999998\\n Cu aq + solid (target 1.0e-3): 0.004311580363350669\\n Zn aq + solid (target 1.0e-3): 0.001\\n\\npH  |   dom-Cu-species (fraction)   |   dom-Zn-species (fraction)   | %Gly on Cu | %Gly on Zn | %NH on Cu | %NH on Zn | solidCu% | solidZn%\\n  2.0 | Cu2+          98.9% | Zn2+         100.0% |      99.9 |       0.1 |     98.3 |      1.7 |    0.00 |    0.00\\n  3.0 | Cu2+          76.5% | Zn2+         100.0% |      99.9 |       0.1 |     97.9 |      2.1 |    0.00 |    0.00\\n  4.0 | CuGly+        68.2% | Zn2+          99.8% |      99.7 |       0.3 |     92.4 |      7.6 |    0.00 |    0.00\\n  5.0 | Cu(Gly)2      60.7% | Zn2+          97.7% |      98.6 |       1.4 |     43.1 |     56.9 |    0.00 |    0.00\\n  6.0 | Cu(Gly)2      93.7% | Zn2+          81.3% |      91.3 |       8.7 |      1.9 |     98.1 |    0.00 |    0.00\\n  7.0 | Cu(Gly)2      99.3% | ZnGly+        53.0% |      70.0 |      30.0 |      0.2 |     99.8 |    0.00 |    0.00\\n  8.0 | Cu(Gly)2      99.9% | Zn(Gly)2      55.6% |      60.0 |      40.0 |      0.3 |     99.7 |    0.00 |   18.04\\n  9.0 | Cu(Gly)2      99.9% | Zn(Gly)2      40.7% |      67.8 |      32.2 |      0.3 |     99.7 |    0.00 |   31.63\\n 10.0 | Cu(Gly)2      99.9% | Zn(NH3)4       6.4% |      91.6 |       8.4 |      1.6 |     98.4 |    0.00 |   84.63\\n 11.0 | Cu(Gly)2      53.6% | Zn(OH)2aq      0.1% |      99.5 |       0.5 |     26.9 |     73.1 |   46.33 |   99.47\\n 12.0 | Cu(Gly)2       0.7% | Zn(OH)3-       0.5% |      99.5 |       0.5 |     26.8 |     73.2 |   99.27 |   99.32\\n\",\"stderr\":\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T07:57:32.004889Z",
+          "stop_timestamp": "2026-09-17T07:58:00.875859Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Working out copper solubility across a pH range."
+            },
+            {
+              "summary": "Chasing down a mass-balance mismatch at one pH point."
+            },
+            {
+              "summary": "Rebuilding the equilibrium solver for tighter convergence."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T07:58:00.875897Z",
+          "stop_timestamp": "2026-09-17T07:58:02.013675Z",
+          "type": "text",
+          "text": "I see the numerical solver drifted at a couple of pH values (Cu mass balance off by 4x at pH 8). Let me switch to a much more robust decoupled fixed-point iteration.",
+          "citations": []
+        },
+        {
+          "start_timestamp": "2026-09-17T07:58:02.013700Z",
+          "stop_timestamp": "2026-09-17T07:58:56.639444Z",
+          "type": "tool_use",
+          "id": "toolu_01E9MF5kaBVfDRSxokP1Ei7C",
+          "name": "create_file",
+          "input": {
+            "description": "Robust decoupled fixed-point speciation solver",
+            "path": "/home/claude/spec/speciation2.py",
+            "file_text": "\"\"\"\nJoint speciation, robust decoupled fixed-point solver.\n\nIdea:\n  * At fixed pH, Cu2+ appears linearly in every Cu-containing aqueous species.\n    So Cu_T_aq = Cu2+ * A_Cu( Gly-, NH3, H )  ->  Cu2+ = CuT / A_Cu  (unique).\n  * Same for Zn.\n  * Given Cu2+ and Zn2+, the total glycine balance is a single monotone\n    equation in Gly-, and total ammonia is a single monotone equation in NH3.\n    Both are solved with brentq on log10 axis.\n  * Iterate the four blocks until self-consistent.\n  * Enforce solid caps last: if free M2+ exceeds Ksp/[OH-]^2, fix it to the cap\n    and drop the M mass balance (excess mass goes to solid).\n\"\"\"\n\nimport numpy as np\nfrom scipy.optimize import brentq\nimport json\nimport matplotlib.pyplot as plt\n\n# ---------- proton equilibria ----------\npKw    = 13.78\npKa1_g = 2.36\npKa2_g = 9.57\npKa_N  = 9.29\nK1g, K2g, KN, Kw = 10**-pKa1_g, 10**-pKa2_g, 10**-pKa_N, 10**-pKw\n\n# ---------- formation constants (log10, I=0.1 m, 25 C) ----------\nlb_CuL  = [ 8.15, 15.00 ]\nlb_ZnL  = [ 5.00,  9.20, 11.00 ]\nlb_CuN  = [ 4.05,  7.47, 10.30, 11.75 ]\nlb_ZnN  = [ 2.27,  4.61,  7.01,  9.06 ]\nlbs_CuOH = [ -8.00, -16.20, -26.80, -39.60 ]\nlbs_ZnOH = [ -9.00, -16.90, -28.40, -41.20 ]\nlog_Ksp_CuOH2 = -19.70\nlog_Ksp_ZnOH2 = -16.50\n\nb_CuL  = [10**x for x in lb_CuL]\nb_ZnL  = [10**x for x in lb_ZnL]\nb_CuN  = [10**x for x in lb_CuN]\nb_ZnN  = [10**x for x in lb_ZnN]\nbs_Cu  = [10**x for x in lbs_CuOH]\nbs_Zn  = [10**x for x in lbs_ZnOH]\n\nCuT, ZnT, GlyT, NT = 1e-3, 1e-3, 1e-2, 1e-1\n\ndef A_Cu(Gly, NH3, H):\n    \"\"\"Sum of coefficients such that Cu_T_aq = Cu2+ * A_Cu.\"\"\"\n    return (1.0\n            + bs_Cu[0]/H + bs_Cu[1]/H**2 + bs_Cu[2]/H**3 + bs_Cu[3]/H**4\n            + b_CuL[0]*Gly + b_CuL[1]*Gly**2\n            + b_CuN[0]*NH3 + b_CuN[1]*NH3**2 + b_CuN[2]*NH3**3 + b_CuN[3]*NH3**4)\n\ndef A_Zn(Gly, NH3, H):\n    return (1.0\n            + bs_Zn[0]/H + bs_Zn[1]/H**2 + bs_Zn[2]/H**3 + bs_Zn[3]/H**4\n            + b_ZnL[0]*Gly + b_ZnL[1]*Gly**2 + b_ZnL[2]*Gly**3\n            + b_ZnN[0]*NH3 + b_ZnN[1]*NH3**2 + b_ZnN[2]*NH3**3 + b_ZnN[3]*NH3**4)\n\ndef gly_mass(Gly, Cu, Zn, H):\n    \"\"\"Total glycine (all forms) at given free Gly-, free Cu2+, free Zn2+.\"\"\"\n    free = Gly*(1 + H/K2g + H*H/(K1g*K2g))\n    cu_bound = Cu*(1*b_CuL[0]*Gly + 2*b_CuL[1]*Gly**2)\n    zn_bound = Zn*(1*b_ZnL[0]*Gly + 2*b_ZnL[1]*Gly**2 + 3*b_ZnL[2]*Gly**3)\n    return free + cu_bound + zn_bound\n\ndef nh_mass(NH3, Cu, Zn, H):\n    free = NH3*(1 + H/KN)\n    cu_bound = Cu*sum((k+1)*b_CuN[k]*NH3**(k+1) for k in range(4))\n    zn_bound = Zn*sum((k+1)*b_ZnN[k]*NH3**(k+1) for k in range(4))\n    return free + cu_bound + zn_bound\n\ndef solve_Gly(Cu, Zn, H, target):\n    f = lambda x: np.log(gly_mass(10**x, Cu, Zn, H)/target)\n    lo, hi = -20.0, np.log10(target*1.001)\n    if f(hi) < 0:\n        return 10**hi\n    return 10**brentq(f, lo, hi, xtol=1e-12, rtol=1e-12)\n\ndef solve_NH3(Cu, Zn, H, target):\n    f = lambda x: np.log(nh_mass(10**x, Cu, Zn, H)/target)\n    lo, hi = -20.0, np.log10(target*1.001)\n    if f(hi) < 0:\n        return 10**hi\n    return 10**brentq(f, lo, hi, xtol=1e-12, rtol=1e-12)\n\ndef solve_at_pH(pH, seed=None, verbose=False):\n    H  = 10**-pH\n    OH = Kw/H\n    Cu_cap = 10**log_Ksp_CuOH2 / OH**2\n    Zn_cap = 10**log_Ksp_ZnOH2 / OH**2\n\n    # start from previous or from ligand-only speciation\n    if seed:\n        Cu, Zn, Gly, NH3 = seed\n    else:\n        Gly = GlyT / (1 + H/K2g + H*H/(K1g*K2g))\n        NH3 = NT   / (1 + H/KN)\n        Cu  = CuT / A_Cu(Gly, NH3, H)\n        Zn  = ZnT / A_Zn(Gly, NH3, H)\n\n    solid_Cu = solid_Zn = False\n    for it in range(400):\n        # 1) update ligands using current Cu, Zn\n        Gly_new = solve_Gly(Cu, Zn, H, GlyT)\n        NH3_new = solve_NH3(Cu, Zn, H, NT)\n\n        # 2) update metals; if free M2+ would exceed cap -> solid controls it\n        A_c = A_Cu(Gly_new, NH3_new, H)\n        Cu_free = CuT / A_c\n        if Cu_free > Cu_cap:\n            Cu_free = Cu_cap\n            solid_Cu = True\n        else:\n            solid_Cu = False\n\n        A_z = A_Zn(Gly_new, NH3_new, H)\n        Zn_free = ZnT / A_z\n        if Zn_free > Zn_cap:\n            Zn_free = Zn_cap\n            solid_Zn = True\n        else:\n            solid_Zn = False\n\n        rel = max(abs(np.log10(Gly_new/Gly)),\n                  abs(np.log10(NH3_new/NH3)),\n                  abs(np.log10(Cu_free/Cu)),\n                  abs(np.log10(Zn_free/Zn)))\n        Cu, Zn, Gly, NH3 = Cu_free, Zn_free, Gly_new, NH3_new\n        if rel < 1e-10:\n            break\n    if verbose:\n        print(f'  pH {pH}: iters {it}, resid {rel:.2e}')\n\n    return _finalize(pH, H, OH, Cu, Zn, Gly, NH3, solid_Cu, solid_Zn)\n\ndef _finalize(pH, H, OH, Cu, Zn, Gly, NH3, solid_Cu, solid_Zn):\n    Cu_species = {\n        'Cu2+':       Cu,\n        'CuOH+':      Cu*bs_Cu[0]/H,\n        'Cu(OH)2aq':  Cu*bs_Cu[1]/H**2,\n        'Cu(OH)3-':   Cu*bs_Cu[2]/H**3,\n        'Cu(OH)4-2':  Cu*bs_Cu[3]/H**4,\n        'CuGly+':     Cu*b_CuL[0]*Gly,\n        'Cu(Gly)2':   Cu*b_CuL[1]*Gly**2,\n        'CuNH3':      Cu*b_CuN[0]*NH3,\n        'Cu(NH3)2':   Cu*b_CuN[1]*NH3**2,\n        'Cu(NH3)3':   Cu*b_CuN[2]*NH3**3,\n        'Cu(NH3)4':   Cu*b_CuN[3]*NH3**4,\n    }\n    Zn_species = {\n        'Zn2+':       Zn,\n        'ZnOH+':      Zn*bs_Zn[0]/H,\n        'Zn(OH)2aq':  Zn*bs_Zn[1]/H**2,\n        'Zn(OH)3-':   Zn*bs_Zn[2]/H**3,\n        'Zn(OH)4-2':  Zn*bs_Zn[3]/H**4,\n        'ZnGly+':     Zn*b_ZnL[0]*Gly,\n        'Zn(Gly)2':   Zn*b_ZnL[1]*Gly**2,\n        'Zn(Gly)3-':  Zn*b_ZnL[2]*Gly**3,\n        'ZnNH3':      Zn*b_ZnN[0]*NH3,\n        'Zn(NH3)2':   Zn*b_ZnN[1]*NH3**2,\n        'Zn(NH3)3':   Zn*b_ZnN[2]*NH3**3,\n        'Zn(NH3)4':   Zn*b_ZnN[3]*NH3**4,\n    }\n    aq_Cu = sum(Cu_species.values())\n    aq_Zn = sum(Zn_species.values())\n    solid_Cu_mol = max(0.0, CuT - aq_Cu) if solid_Cu else 0.0\n    solid_Zn_mol = max(0.0, ZnT - aq_Zn) if solid_Zn else 0.0\n\n    # ligand partition\n    cu_gly = Cu*(1*b_CuL[0]*Gly + 2*b_CuL[1]*Gly**2)\n    zn_gly = Zn*(1*b_ZnL[0]*Gly + 2*b_ZnL[1]*Gly**2 + 3*b_ZnL[2]*Gly**3)\n    cu_nh  = Cu*sum((k+1)*b_CuN[k]*NH3**(k+1) for k in range(4))\n    zn_nh  = Zn*sum((k+1)*b_ZnN[k]*NH3**(k+1) for k in range(4))\n\n    return dict(\n        pH=pH, H=H, OH=OH,\n        Cu=Cu, Zn=Zn, Gly=Gly, NH3=NH3,\n        Cu_species=Cu_species, Zn_species=Zn_species,\n        aq_Cu=aq_Cu, aq_Zn=aq_Zn,\n        solid_Cu=solid_Cu_mol, solid_Zn=solid_Zn_mol,\n        gly_bound_Cu=cu_gly, gly_bound_Zn=zn_gly,\n        nh_bound_Cu=cu_nh,   nh_bound_Zn=zn_nh,\n        gly_free_total=Gly*(1 + H/K2g + H*H/(K1g*K2g)),\n        nh_free_total =NH3*(1 + H/KN),\n    )\n\n# ---------- run ----------\npHs = np.arange(2.0, 12.001, 0.05)\nrows = []\nseed = None\nfor pH in pHs:\n    r = solve_at_pH(pH, seed=seed)\n    seed = (r['Cu'], r['Zn'], r['Gly'], r['NH3'])\n    rows.append(r)\n\n# mass balance checks\nprint('Mass balance residuals (max |log10(computed/target)|):')\nmb_gly, mb_nh, mb_cu, mb_zn = 0, 0, 0, 0\nfor r in rows:\n    gcalc = r['gly_free_total'] + r['gly_bound_Cu'] + r['gly_bound_Zn']\n    ncalc = r['nh_free_total']  + r['nh_bound_Cu']  + r['nh_bound_Zn']\n    ccalc = r['aq_Cu'] + r['solid_Cu']\n    zcalc = r['aq_Zn'] + r['solid_Zn']\n    mb_gly = max(mb_gly, abs(np.log10(gcalc/GlyT)))\n    mb_nh  = max(mb_nh,  abs(np.log10(ncalc/NT)))\n    mb_cu  = max(mb_cu,  abs(np.log10(ccalc/CuT)))\n    mb_zn  = max(mb_zn,  abs(np.log10(zcalc/ZnT)))\nprint(f'  Gly: {mb_gly:.2e}, NH: {mb_nh:.2e}, Cu: {mb_cu:.2e}, Zn: {mb_zn:.2e}')\n\n# print a compact table\nprint('\\npH  | dominant Cu (%)          | dominant Zn (%)          | %Gly@Cu | %Gly@Zn | %NH@Cu | %NH@Zn | %CuOHs | %ZnOHs')\nfor pH in [2, 3, 4, 5, 6, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12]:\n    r = min(rows, key=lambda x: abs(x['pH']-pH))\n    dcu = max(r['Cu_species'].items(), key=lambda kv: kv[1])\n    dzn = max(r['Zn_species'].items(), key=lambda kv: kv[1])\n    tg = r['gly_bound_Cu'] + r['gly_bound_Zn']\n    tn = r['nh_bound_Cu'] + r['nh_bound_Zn']\n    fg_cu = 100*r['gly_bound_Cu']/tg if tg>0 else 0\n    fg_zn = 100*r['gly_bound_Zn']/tg if tg>0 else 0\n    fn_cu = 100*r['nh_bound_Cu']/tn if tn>0 else 0\n    fn_zn = 100*r['nh_bound_Zn']/tn if tn>0 else 0\n    scu = 100*r['solid_Cu']/CuT\n    szn = 100*r['solid_Zn']/ZnT\n    print(f' {r[\"pH\"]:4.2f} | {dcu[0]:<12s} {100*dcu[1]/CuT:5.1f}%   | {dzn[0]:<12s} {100*dzn[1]/ZnT:5.1f}%   | {fg_cu:6.1f}  | {fg_zn:6.1f}  | {fn_cu:5.1f}  | {fn_zn:5.1f}  | {scu:5.2f}  | {szn:5.2f}')\n\n# save\ndef flatten(r):\n    out = dict(pH=r['pH'])\n    for k,v in r['Cu_species'].items(): out['Cu.'+k]=v\n    for k,v in r['Zn_species'].items(): out['Zn.'+k]=v\n    out.update({\n        'aq_Cu': r['aq_Cu'], 'aq_Zn': r['aq_Zn'],\n        'solid_Cu': r['solid_Cu'], 'solid_Zn': r['solid_Zn'],\n        'Gly-': r['Gly'], 'NH3': r['NH3'],\n        'gly_bound_Cu': r['gly_bound_Cu'], 'gly_bound_Zn': r['gly_bound_Zn'],\n        'nh_bound_Cu': r['nh_bound_Cu'], 'nh_bound_Zn': r['nh_bound_Zn'],\n    })\n    return out\nwith open('/home/claude/spec/data.json', 'w') as f:\n    json.dump([flatten(r) for r in rows], f)\n"
+          },
+          "message": "Robust decoupled fixed-point speciation solver",
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"python\", \"code\": \"\\\"\\\"\\\"\\nJoint speciation, robust decoupled fixed-point solver.\\n\\nIdea:\\n  * At fixed pH, Cu2+ appears linearly in every Cu-containing aqueous species.\\n    So Cu_T_aq = Cu2+ * A_Cu( Gly-, NH3, H )  ->  Cu2+ = CuT / A_Cu  (unique).\\n  * Same for Zn.\\n  * Given Cu2+ and Zn2+, the total glycine balance is a single monotone\\n    equation in Gly-, and total ammonia is a single monotone equation in NH3.\\n    Both are solved with brentq on log10 axis.\\n  * Iterate the four blocks until self-consistent.\\n  * Enforce solid caps last: if free M2+ exceeds Ksp/[OH-]^2, fix it to the cap\\n    and drop the M mass balance (excess mass goes to solid).\\n\\\"\\\"\\\"\\n\\nimport numpy as np\\nfrom scipy.optimize import brentq\\nimport json\\nimport matplotlib.pyplot as plt\\n\\n# ---------- proton equilibria ----------\\npKw    = 13.78\\npKa1_g = 2.36\\npKa2_g = 9.57\\npKa_N  = 9.29\\nK1g, K2g, KN, Kw = 10**-pKa1_g, 10**-pKa2_g, 10**-pKa_N, 10**-pKw\\n\\n# ---------- formation constants (log10, I=0.1 m, 25 C) ----------\\nlb_CuL  = [ 8.15, 15.00 ]\\nlb_ZnL  = [ 5.00,  9.20, 11.00 ]\\nlb_CuN  = [ 4.05,  7.47, 10.30, 11.75 ]\\nlb_ZnN  = [ 2.27,  4.61,  7.01,  9.06 ]\\nlbs_CuOH = [ -8.00, -16.20, -26.80, -39.60 ]\\nlbs_ZnOH = [ -9.00, -16.90, -28.40, -41.20 ]\\nlog_Ksp_CuOH2 = -19.70\\nlog_Ksp_ZnOH2 = -16.50\\n\\nb_CuL  = [10**x for x in lb_CuL]\\nb_ZnL  = [10**x for x in lb_ZnL]\\nb_CuN  = [10**x for x in lb_CuN]\\nb_ZnN  = [10**x for x in lb_ZnN]\\nbs_Cu  = [10**x for x in lbs_CuOH]\\nbs_Zn  = [10**x for x in lbs_ZnOH]\\n\\nCuT, ZnT, GlyT, NT = 1e-3, 1e-3, 1e-2, 1e-1\\n\\ndef A_Cu(Gly, NH3, H):\\n    \\\"\\\"\\\"Sum of coefficients such that Cu_T_aq = Cu2+ * A_Cu.\\\"\\\"\\\"\\n    return (1.0\\n            + bs_Cu[0]/H + bs_Cu[1]/H**2 + bs_Cu[2]/H**3 + bs_Cu[3]/H**4\\n            + b_CuL[0]*Gly + b_CuL[1]*Gly**2\\n            + b_CuN[0]*NH3 + b_CuN[1]*NH3**2 + b_CuN[2]*NH3**3 + b_CuN[3]*NH3**4)\\n\\ndef A_Zn(Gly, NH3, H):\\n    return (1.0\\n            + bs_Zn[0]/H + bs_Zn[1]/H**2 + bs_Zn[2]/H**3 + bs_Zn[3]/H**4\\n            + b_ZnL[0]*Gly + b_ZnL[1]*Gly**2 + b_ZnL[2]*Gly**3\\n            + b_ZnN[0]*NH3 + b_ZnN[1]*NH3**2 + b_ZnN[2]*NH3**3 + b_ZnN[3]*NH3**4)\\n\\ndef gly_mass(Gly, Cu, Zn, H):\\n    \\\"\\\"\\\"Total glycine (all forms) at given free Gly-, free Cu2+, free Zn2+.\\\"\\\"\\\"\\n    free = Gly*(1 + H/K2g + H*H/(K1g*K2g))\\n    cu_bound = Cu*(1*b_CuL[0]*Gly + 2*b_CuL[1]*Gly**2)\\n    zn_bound = Zn*(1*b_ZnL[0]*Gly + 2*b_ZnL[1]*Gly**2 + 3*b_ZnL[2]*Gly**3)\\n    return free + cu_bound + zn_bound\\n\\ndef nh_mass(NH3, Cu, Zn, H):\\n    free = NH3*(1 + H/KN)\\n    cu_bound = Cu*sum((k+1)*b_CuN[k]*NH3**(k+1) for k in range(4))\\n    zn_bound = Zn*sum((k+1)*b_ZnN[k]*NH3**(k+1) for k in range(4))\\n    return free + cu_bound + zn_bound\\n\\ndef solve_Gly(Cu, Zn, H, target):\\n    f = lambda x: np.log(gly_mass(10**x, Cu, Zn, H)/target)\\n    lo, hi = -20.0, np.log10(target*1.001)\\n    if f(hi) < 0:\\n        return 10**hi\\n    return 10**brentq(f, lo, hi, xtol=1e-12, rtol=1e-12)\\n\\ndef solve_NH3(Cu, Zn, H, target):\\n    f = lambda x: np.log(nh_mass(10**x, Cu, Zn, H)/target)\\n    lo, hi = -20.0, np.log10(target*1.001)\\n    if f(hi) < 0:\\n        return 10**hi\\n    return 10**brentq(f, lo, hi, xtol=1e-12, rtol=1e-12)\\n\\ndef solve_at_pH(pH, seed=None, verbose=False):\\n    H  = 10**-pH\\n    OH = Kw/H\\n    Cu_cap = 10**log_Ksp_CuOH2 / OH**2\\n    Zn_cap = 10**log_Ksp_ZnOH2 / OH**2\\n\\n    # start from previous or from ligand-only speciation\\n    if seed:\\n        Cu, Zn, Gly, NH3 = seed\\n    else:\\n        Gly = GlyT / (1 + H/K2g + H*H/(K1g*K2g))\\n        NH3 = NT   / (1 + H/KN)\\n        Cu  = CuT / A_Cu(Gly, NH3, H)\\n        Zn  = ZnT / A_Zn(Gly, NH3, H)\\n\\n    solid_Cu = solid_Zn = False\\n    for it in range(400):\\n        # 1) update ligands using current Cu, Zn\\n        Gly_new = solve_Gly(Cu, Zn, H, GlyT)\\n        NH3_new = solve_NH3(Cu, Zn, H, NT)\\n\\n        # 2) update metals; if free M2+ would exceed cap -> solid controls it\\n        A_c = A_Cu(Gly_new, NH3_new, H)\\n        Cu_free = CuT / A_c\\n        if Cu_free > Cu_cap:\\n            Cu_free = Cu_cap\\n            solid_Cu = True\\n        else:\\n            solid_Cu = False\\n\\n        A_z = A_Zn(Gly_new, NH3_new, H)\\n        Zn_free = ZnT / A_z\\n        if Zn_free > Zn_cap:\\n            Zn_free = Zn_cap\\n            solid_Zn = True\\n        else:\\n            solid_Zn = False\\n\\n        rel = max(abs(np.log10(Gly_new/Gly)),\\n                  abs(np.log10(NH3_new/NH3)),\\n                  abs(np.log10(Cu_free/Cu)),\\n                  abs(np.log10(Zn_free/Zn)))\\n        Cu, Zn, Gly, NH3 = Cu_free, Zn_free, Gly_new, NH3_new\\n        if rel < 1e-10:\\n            break\\n    if verbose:\\n        print(f'  pH {pH}: iters {it}, resid {rel:.2e}')\\n\\n    return _finalize(pH, H, OH, Cu, Zn, Gly, NH3, solid_Cu, solid_Zn)\\n\\ndef _finalize(pH, H, OH, Cu, Zn, Gly, NH3, solid_Cu, solid_Zn):\\n    Cu_species = {\\n        'Cu2+':       Cu,\\n        'CuOH+':      Cu*bs_Cu[0]/H,\\n        'Cu(OH)2aq':  Cu*bs_Cu[1]/H**2,\\n        'Cu(OH)3-':   Cu*bs_Cu[2]/H**3,\\n        'Cu(OH)4-2':  Cu*bs_Cu[3]/H**4,\\n        'CuGly+':     Cu*b_CuL[0]*Gly,\\n        'Cu(Gly)2':   Cu*b_CuL[1]*Gly**2,\\n        'CuNH3':      Cu*b_CuN[0]*NH3,\\n        'Cu(NH3)2':   Cu*b_CuN[1]*NH3**2,\\n        'Cu(NH3)3':   Cu*b_CuN[2]*NH3**3,\\n        'Cu(NH3)4':   Cu*b_CuN[3]*NH3**4,\\n    }\\n    Zn_species = {\\n        'Zn2+':       Zn,\\n        'ZnOH+':      Zn*bs_Zn[0]/H,\\n        'Zn(OH)2aq':  Zn*bs_Zn[1]/H**2,\\n        'Zn(OH)3-':   Zn*bs_Zn[2]/H**3,\\n        'Zn(OH)4-2':  Zn*bs_Zn[3]/H**4,\\n        'ZnGly+':     Zn*b_ZnL[0]*Gly,\\n        'Zn(Gly)2':   Zn*b_ZnL[1]*Gly**2,\\n        'Zn(Gly)3-':  Zn*b_ZnL[2]*Gly**3,\\n        'ZnNH3':      Zn*b_ZnN[0]*NH3,\\n        'Zn(NH3)2':   Zn*b_ZnN[1]*NH3**2,\\n        'Zn(NH3)3':   Zn*b_ZnN[2]*NH3**3,\\n        'Zn(NH3)4':   Zn*b_ZnN[3]*NH3**4,\\n    }\\n    aq_Cu = sum(Cu_species.values())\\n    aq_Zn = sum(Zn_species.values())\\n    solid_Cu_mol = max(0.0, CuT - aq_Cu) if solid_Cu else 0.0\\n    solid_Zn_mol = max(0.0, ZnT - aq_Zn) if solid_Zn else 0.0\\n\\n    # ligand partition\\n    cu_gly = Cu*(1*b_CuL[0]*Gly + 2*b_CuL[1]*Gly**2)\\n    zn_gly = Zn*(1*b_ZnL[0]*Gly + 2*b_ZnL[1]*Gly**2 + 3*b_ZnL[2]*Gly**3)\\n    cu_nh  = Cu*sum((k+1)*b_CuN[k]*NH3**(k+1) for k in range(4))\\n    zn_nh  = Zn*sum((k+1)*b_ZnN[k]*NH3**(k+1) for k in range(4))\\n\\n    return dict(\\n        pH=pH, H=H, OH=OH,\\n        Cu=Cu, Zn=Zn, Gly=Gly, NH3=NH3,\\n        Cu_species=Cu_species, Zn_species=Zn_species,\\n        aq_Cu=aq_Cu, aq_Zn=aq_Zn,\\n        solid_Cu=solid_Cu_mol, solid_Zn=solid_Zn_mol,\\n        gly_bound_Cu=cu_gly, gly_bound_Zn=zn_gly,\\n        nh_bound_Cu=cu_nh,   nh_bound_Zn=zn_nh,\\n        gly_free_total=Gly*(1 + H/K2g + H*H/(K1g*K2g)),\\n        nh_free_total =NH3*(1 + H/KN),\\n    )\\n\\n# ---------- run ----------\\npHs = np.arange(2.0, 12.001, 0.05)\\nrows = []\\nseed = None\\nfor pH in pHs:\\n    r = solve_at_pH(pH, seed=seed)\\n    seed = (r['Cu'], r['Zn'], r['Gly'], r['NH3'])\\n    rows.append(r)\\n\\n# mass balance checks\\nprint('Mass balance residuals (max |log10(computed/target)|):')\\nmb_gly, mb_nh, mb_cu, mb_zn = 0, 0, 0, 0\\nfor r in rows:\\n    gcalc = r['gly_free_total'] + r['gly_bound_Cu'] + r['gly_bound_Zn']\\n    ncalc = r['nh_free_total']  + r['nh_bound_Cu']  + r['nh_bound_Zn']\\n    ccalc = r['aq_Cu'] + r['solid_Cu']\\n    zcalc = r['aq_Zn'] + r['solid_Zn']\\n    mb_gly = max(mb_gly, abs(np.log10(gcalc/GlyT)))\\n    mb_nh  = max(mb_nh,  abs(np.log10(ncalc/NT)))\\n    mb_cu  = max(mb_cu,  abs(np.log10(ccalc/CuT)))\\n    mb_zn  = max(mb_zn,  abs(np.log10(zcalc/ZnT)))\\nprint(f'  Gly: {mb_gly:.2e}, NH: {mb_nh:.2e}, Cu: {mb_cu:.2e}, Zn: {mb_zn:.2e}')\\n\\n# print a compact table\\nprint('\\\\npH  | dominant Cu (%)          | dominant Zn (%)          | %Gly@Cu | %Gly@Zn | %NH@Cu | %NH@Zn | %CuOHs | %ZnOHs')\\nfor pH in [2, 3, 4, 5, 6, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12]:\\n    r = min(rows, key=lambda x: abs(x['pH']-pH))\\n    dcu = max(r['Cu_species'].items(), key=lambda kv: kv[1])\\n    dzn = max(r['Zn_species'].items(), key=lambda kv: kv[1])\\n    tg = r['gly_bound_Cu'] + r['gly_bound_Zn']\\n    tn = r['nh_bound_Cu'] + r['nh_bound_Zn']\\n    fg_cu = 100*r['gly_bound_Cu']/tg if tg>0 else 0\\n    fg_zn = 100*r['gly_bound_Zn']/tg if tg>0 else 0\\n    fn_cu = 100*r['nh_bound_Cu']/tn if tn>0 else 0\\n    fn_zn = 100*r['nh_bound_Zn']/tn if tn>0 else 0\\n    scu = 100*r['solid_Cu']/CuT\\n    szn = 100*r['solid_Zn']/ZnT\\n    print(f' {r[\\\"pH\\\"]:4.2f} | {dcu[0]:<12s} {100*dcu[1]/CuT:5.1f}%   | {dzn[0]:<12s} {100*dzn[1]/ZnT:5.1f}%   | {fg_cu:6.1f}  | {fg_zn:6.1f}  | {fn_cu:5.1f}  | {fn_zn:5.1f}  | {scu:5.2f}  | {szn:5.2f}')\\n\\n# save\\ndef flatten(r):\\n    out = dict(pH=r['pH'])\\n    for k,v in r['Cu_species'].items(): out['Cu.'+k]=v\\n    for k,v in r['Zn_species'].items(): out['Zn.'+k]=v\\n    out.update({\\n        'aq_Cu': r['aq_Cu'], 'aq_Zn': r['aq_Zn'],\\n        'solid_Cu': r['solid_Cu'], 'solid_Zn': r['solid_Zn'],\\n        'Gly-': r['Gly'], 'NH3': r['NH3'],\\n        'gly_bound_Cu': r['gly_bound_Cu'], 'gly_bound_Zn': r['gly_bound_Zn'],\\n        'nh_bound_Cu': r['nh_bound_Cu'], 'nh_bound_Zn': r['nh_bound_Zn'],\\n    })\\n    return out\\nwith open('/home/claude/spec/data.json', 'w') as f:\\n    json.dump([flatten(r) for r in rows], f)\\n\", \"filename\": \"/home/claude/spec/speciation2.py\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T07:58:56.944098Z",
+          "stop_timestamp": "2026-09-17T07:58:56.944125Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01E9MF5kaBVfDRSxokP1Ei7C",
+          "name": "create_file",
+          "content": [
+            {
+              "type": "text",
+              "text": "File created successfully: /home/claude/spec/speciation2.py",
+              "uuid": "d288a2b8-6327-4f51-b661-9159efb334eb"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "display_content": {
+            "type": "text",
+            "text": "File created successfully: /home/claude/spec/speciation2.py"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T07:58:58.917145Z",
+          "stop_timestamp": "2026-09-17T07:58:59.727218Z",
+          "type": "tool_use",
+          "id": "toolu_01Mhpxd6ewX8YdWsfKPZ7UUM",
+          "name": "bash_tool",
+          "input": {
+            "command": "cd /home/claude/spec && python3 speciation2.py 2>&1",
+            "description": "Run robust decoupled speciation solver"
+          },
+          "message": "Run robust decoupled speciation solver",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"cd /home/claude/spec && python3 speciation2.py 2>&1\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T07:59:00.879950Z",
+          "stop_timestamp": "2026-09-17T07:59:00.879988Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01Mhpxd6ewX8YdWsfKPZ7UUM",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":0,\"stdout\":\"Mass balance residuals (max |log10(computed/target)|):\\n  Gly: 2.77e-11, NH: 1.77e-12, Cu: 2.89e-16, Zn: 3.86e-16\\n\\npH  | dominant Cu (%)          | dominant Zn (%)          | %Gly@Cu | %Gly@Zn | %NH@Cu | %NH@Zn | %CuOHs | %ZnOHs\\n 2.00 | Cu2+          98.9%   | Zn2+         100.0%   |   99.9  |    0.1  |  98.3  |   1.7  |  0.00  |  0.00\\n 3.00 | Cu2+          76.5%   | Zn2+         100.0%   |   99.9  |    0.1  |  97.9  |   2.1  |  0.00  |  0.00\\n 4.00 | CuGly+        68.2%   | Zn2+          99.8%   |   99.7  |    0.3  |  92.4  |   7.6  |  0.00  |  0.00\\n 5.00 | Cu(Gly)2      60.7%   | Zn2+          97.7%   |   98.6  |    1.4  |  43.1  |  56.9  |  0.00  |  0.00\\n 6.00 | Cu(Gly)2      93.7%   | Zn2+          81.3%   |   91.3  |    8.7  |   1.9  |  98.1  |  0.00  |  0.00\\n 7.00 | Cu(Gly)2      99.3%   | ZnGly+        53.0%   |   70.0  |   30.0  |   0.2  |  99.8  |  0.00  |  0.00\\n 7.50 | Cu(Gly)2      99.7%   | ZnGly+        46.2%   |   60.7  |   39.3  |   0.2  |  99.8  |  0.00  |  0.00\\n 8.00 | Cu(Gly)2      99.9%   | Zn(Gly)2      55.6%   |   60.0  |   40.0  |   0.3  |  99.7  |  0.00  | 18.04\\n 8.50 | Cu(Gly)2      99.9%   | Zn(Gly)2      52.4%   |   63.2  |   36.8  |   0.3  |  99.7  |  0.00  | 30.11\\n 9.00 | Cu(Gly)2      99.9%   | Zn(Gly)2      40.7%   |   67.8  |   32.2  |   0.3  |  99.7  |  0.00  | 31.63\\n 9.50 | Cu(Gly)2      99.9%   | Zn(Gly)2      21.3%   |   77.9  |   22.1  |   0.5  |  99.5  |  0.00  | 52.04\\n 10.00 | Cu(Gly)2      99.9%   | Zn(NH3)4       6.4%   |   91.6  |    8.4  |   1.6  |  98.4  |  0.00  | 84.63\\n 10.50 | Cu(Gly)2      99.9%   | Zn(NH3)4       1.0%   |   98.5  |    1.5  |   9.1  |  90.9  |  0.00  | 97.35\\n 11.00 | Cu(Gly)2      53.6%   | Zn(OH)2aq      0.1%   |   99.5  |    0.5  |  26.9  |  73.1  | 46.33  | 99.47\\n 11.50 | Cu(Gly)2       6.9%   | Zn(OH)2aq      0.1%   |   99.5  |    0.5  |  26.9  |  73.1  | 93.11  | 99.66\\n 12.00 | Cu(Gly)2       0.7%   | Zn(OH)3-       0.5%   |   99.5  |    0.5  |  26.8  |  73.2  | 99.27  | 99.32\\n\",\"stderr\":\"\"}",
+              "uuid": "9474d48a-c96a-40b5-a7a7-fb40cd339b22"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"returncode\":0,\"stdout\":\"Mass balance residuals (max |log10(computed/target)|):\\n  Gly: 2.77e-11, NH: 1.77e-12, Cu: 2.89e-16, Zn: 3.86e-16\\n\\npH  | dominant Cu (%)          | dominant Zn (%)          | %Gly@Cu | %Gly@Zn | %NH@Cu | %NH@Zn | %CuOHs | %ZnOHs\\n 2.00 | Cu2+          98.9%   | Zn2+         100.0%   |   99.9  |    0.1  |  98.3  |   1.7  |  0.00  |  0.00\\n 3.00 | Cu2+          76.5%   | Zn2+         100.0%   |   99.9  |    0.1  |  97.9  |   2.1  |  0.00  |  0.00\\n 4.00 | CuGly+        68.2%   | Zn2+          99.8%   |   99.7  |    0.3  |  92.4  |   7.6  |  0.00  |  0.00\\n 5.00 | Cu(Gly)2      60.7%   | Zn2+          97.7%   |   98.6  |    1.4  |  43.1  |  56.9  |  0.00  |  0.00\\n 6.00 | Cu(Gly)2      93.7%   | Zn2+          81.3%   |   91.3  |    8.7  |   1.9  |  98.1  |  0.00  |  0.00\\n 7.00 | Cu(Gly)2      99.3%   | ZnGly+        53.0%   |   70.0  |   30.0  |   0.2  |  99.8  |  0.00  |  0.00\\n 7.50 | Cu(Gly)2      99.7%   | ZnGly+        46.2%   |   60.7  |   39.3  |   0.2  |  99.8  |  0.00  |  0.00\\n 8.00 | Cu(Gly)2      99.9%   | Zn(Gly)2      55.6%   |   60.0  |   40.0  |   0.3  |  99.7  |  0.00  | 18.04\\n 8.50 | Cu(Gly)2      99.9%   | Zn(Gly)2      52.4%   |   63.2  |   36.8  |   0.3  |  99.7  |  0.00  | 30.11\\n 9.00 | Cu(Gly)2      99.9%   | Zn(Gly)2      40.7%   |   67.8  |   32.2  |   0.3  |  99.7  |  0.00  | 31.63\\n 9.50 | Cu(Gly)2      99.9%   | Zn(Gly)2      21.3%   |   77.9  |   22.1  |   0.5  |  99.5  |  0.00  | 52.04\\n 10.00 | Cu(Gly)2      99.9%   | Zn(NH3)4       6.4%   |   91.6  |    8.4  |   1.6  |  98.4  |  0.00  | 84.63\\n 10.50 | Cu(Gly)2      99.9%   | Zn(NH3)4       1.0%   |   98.5  |    1.5  |   9.1  |  90.9  |  0.00  | 97.35\\n 11.00 | Cu(Gly)2      53.6%   | Zn(OH)2aq      0.1%   |   99.5  |    0.5  |  26.9  |  73.1  | 46.33  | 99.47\\n 11.50 | Cu(Gly)2       6.9%   | Zn(OH)2aq      0.1%   |   99.5  |    0.5  |  26.9  |  73.1  | 93.11  | 99.66\\n 12.00 | Cu(Gly)2       0.7%   | Zn(OH)3-       0.5%   |   99.5  |    0.5  |  26.8  |  73.2  | 99.27  | 99.32\\n\",\"stderr\":\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T07:59:02.639193Z",
+          "stop_timestamp": "2026-09-17T07:59:19.297397Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Solving a mass balance model to full convergence."
+            },
+            {
+              "summary": "Tracing how metals shift between ligands across pH ranges."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T07:59:19.297434Z",
+          "stop_timestamp": "2026-09-17T07:59:20.246344Z",
+          "type": "text",
+          "text": "Mass balance now closes to <1e-11 across the whole grid. Let me generate the plots and pin down the transition windows precisely.",
+          "citations": []
+        },
+        {
+          "start_timestamp": "2026-09-17T07:59:20.246354Z",
+          "stop_timestamp": "2026-09-17T08:00:16.690562Z",
+          "type": "tool_use",
+          "id": "toolu_01PAnMvwMXtkVVQvnDy3PVrP",
+          "name": "create_file",
+          "input": {
+            "description": "Build final figures and extract precise transition windows",
+            "path": "/home/claude/spec/plots.py",
+            "file_text": "\"\"\"Build final speciation figures and identify transition pH windows.\"\"\"\nimport json\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom matplotlib.patches import Patch\n\nwith open('/home/claude/spec/data.json') as f:\n    data = json.load(f)\n\nCuT, ZnT, GlyT, NT = 1e-3, 1e-3, 1e-2, 1e-1\n\npH = np.array([d['pH'] for d in data])\n\n# ---------- assemble grouped fractions ----------\ndef grab(key):\n    return np.array([d.get(key, 0.0) for d in data])\n\n# Cu groups (fractions of CuT)\nCu_free   = grab('Cu.Cu2+')/CuT\nCu_gly    = (grab('Cu.CuGly+')+grab('Cu.Cu(Gly)2'))/CuT\nCu_nh     = (grab('Cu.CuNH3')+grab('Cu.Cu(NH3)2')+grab('Cu.Cu(NH3)3')+grab('Cu.Cu(NH3)4'))/CuT\nCu_oh_aq  = (grab('Cu.CuOH+')+grab('Cu.Cu(OH)2aq')+grab('Cu.Cu(OH)3-')+grab('Cu.Cu(OH)4-2'))/CuT\nCu_solid  = grab('solid_Cu')/CuT\n\n# Zn groups\nZn_free   = grab('Zn.Zn2+')/ZnT\nZn_gly    = (grab('Zn.ZnGly+')+grab('Zn.Zn(Gly)2')+grab('Zn.Zn(Gly)3-'))/ZnT\nZn_nh     = (grab('Zn.ZnNH3')+grab('Zn.Zn(NH3)2')+grab('Zn.Zn(NH3)3')+grab('Zn.Zn(NH3)4'))/ZnT\nZn_oh_aq  = (grab('Zn.ZnOH+')+grab('Zn.Zn(OH)2aq')+grab('Zn.Zn(OH)3-')+grab('Zn.Zn(OH)4-2'))/ZnT\nZn_solid  = grab('solid_Zn')/ZnT\n\n# Ligand pools (as fractions of the ligand total)\ngly_free  = np.array([d['Gly-']*(1 + 10**(-d['pH'])/10**-9.57 + (10**(-d['pH']))**2/(10**-2.36 * 10**-9.57)) for d in data])/GlyT\ngly_on_Cu = grab('gly_bound_Cu')/GlyT\ngly_on_Zn = grab('gly_bound_Zn')/GlyT\n\nnh_free   = np.array([d['NH3']*(1 + 10**(-d['pH'])/10**-9.29) for d in data])/NT\nnh_on_Cu  = grab('nh_bound_Cu')/NT\nnh_on_Zn  = grab('nh_bound_Zn')/NT\n\ndef cross(x, a, b):\n    \"\"\"First pH where a >= b (going up in x).\"\"\"\n    d = a - b\n    for i in range(1, len(d)):\n        if d[i-1] < 0 <= d[i] or d[i-1] > 0 >= d[i]:\n            return float(x[i-1] - d[i-1]*(x[i]-x[i-1])/(d[i]-d[i-1]))\n    return None\n\ndef first_over(x, arr, thr):\n    idx = np.where(arr > thr)[0]\n    return float(x[idx[0]]) if len(idx) else None\n\ndef last_under(x, arr, thr):\n    idx = np.where(arr < thr)[0]\n    return float(x[idx[-1]]) if len(idx) else None\n\nprint('=== transition pH values ===')\n# solid onsets\nprint(f'Cu(OH)2(s) onset (>=1% CuT):  pH {first_over(pH, Cu_solid, 0.01):.2f}')\nprint(f'Cu(OH)2(s) onset (>=50% CuT): pH {first_over(pH, Cu_solid, 0.50):.2f}')\nprint(f'Cu(OH)2(s) onset (>=99% CuT): pH {first_over(pH, Cu_solid, 0.99):.2f}')\nprint(f'Zn(OH)2(s) onset (>=1% ZnT):  pH {first_over(pH, Zn_solid, 0.01):.2f}')\nprint(f'Zn(OH)2(s) onset (>=50% ZnT): pH {first_over(pH, Zn_solid, 0.50):.2f}')\nprint(f'Zn(OH)2(s) onset (>=99% ZnT): pH {first_over(pH, Zn_solid, 0.99):.2f}')\nprint()\nprint(f'Cu: pH where glycinate == hydroxide(all forms):     {cross(pH, Cu_gly, Cu_oh_aq+Cu_solid):.2f}')\nprint(f'Zn: pH where glycinate == hydroxide(all forms):     {cross(pH, Zn_gly, Zn_oh_aq+Zn_solid):.2f}')\nprint(f'Cu: pH where ammine == hydroxide(all forms):        {cross(pH, Cu_nh,  Cu_oh_aq+Cu_solid)}')\nprint(f'Zn: pH where ammine == hydroxide(all forms):        {cross(pH, Zn_nh,  Zn_oh_aq+Zn_solid):.2f}')\nprint()\n# glycinate dominant metal\nc_g = cross(pH, gly_on_Cu, gly_on_Zn)\nc_n = cross(pH, nh_on_Cu, nh_on_Zn)\nprint(f'pH where Cu and Zn share the glycinate pool equally:  {c_g}')\nprint(f'pH where Cu and Zn share the ammonia   pool equally:  {c_n:.2f}')\n\n# ---------- big figure ----------\nfig = plt.figure(figsize=(12, 10))\n\n# Panel 1: Cu speciation grouped\nax1 = plt.subplot(2, 2, 1)\nax1.stackplot(pH, Cu_free, Cu_gly, Cu_nh, Cu_oh_aq, Cu_solid,\n              labels=['Cu²⁺ free', 'Cu–glycinate (CuGly⁺, Cu(Gly)₂)',\n                      'Cu–ammine (Cu(NH₃)ₙ²⁺)',\n                      'Cu–hydroxo (aq)', 'Cu(OH)₂(s)'],\n              colors=['#c9c9c9', '#1f77b4', '#8fbc8f', '#ff7f0e', '#7a3b1f'],\n              alpha=0.85)\nax1.set_xlim(2, 12); ax1.set_ylim(0, 1)\nax1.set_xlabel('pH'); ax1.set_ylabel('fraction of total Cu')\nax1.set_title('Cu(II) speciation'); ax1.legend(loc='center left', fontsize=8, framealpha=0.9)\nax1.grid(alpha=0.3)\n\n# Panel 2: Zn speciation grouped\nax2 = plt.subplot(2, 2, 2)\nax2.stackplot(pH, Zn_free, Zn_gly, Zn_nh, Zn_oh_aq, Zn_solid,\n              labels=['Zn²⁺ free', 'Zn–glycinate',\n                      'Zn–ammine (Zn(NH₃)ₙ²⁺)',\n                      'Zn–hydroxo (aq)', 'Zn(OH)₂(s)'],\n              colors=['#c9c9c9', '#1f77b4', '#8fbc8f', '#ff7f0e', '#7a3b1f'],\n              alpha=0.85)\nax2.set_xlim(2, 12); ax2.set_ylim(0, 1)\nax2.set_xlabel('pH'); ax2.set_ylabel('fraction of total Zn')\nax2.set_title('Zn(II) speciation'); ax2.legend(loc='center left', fontsize=8, framealpha=0.9)\nax2.grid(alpha=0.3)\n\n# Panel 3: glycine pool partition\nax3 = plt.subplot(2, 2, 3)\nax3.stackplot(pH, gly_free, gly_on_Cu, gly_on_Zn,\n              labels=['free glycine (Gly⁻, HGly, H₂Gly⁺)',\n                      'bound to Cu(II)',\n                      'bound to Zn(II)'],\n              colors=['#dddddd', '#d62728', '#2ca02c'], alpha=0.85)\nax3.set_xlim(2, 12); ax3.set_ylim(0, 1)\nax3.set_xlabel('pH'); ax3.set_ylabel('fraction of total glycine (10 mM)')\nax3.set_title('Glycine pool partition')\nax3.legend(loc='center left', fontsize=9, framealpha=0.9)\nax3.grid(alpha=0.3)\n\n# Panel 4: ammonia pool partition\nax4 = plt.subplot(2, 2, 4)\nax4.stackplot(pH, nh_free, nh_on_Cu, nh_on_Zn,\n              labels=['free N (NH₄⁺, NH₃)',\n                      'bound to Cu(II)',\n                      'bound to Zn(II)'],\n              colors=['#dddddd', '#d62728', '#2ca02c'], alpha=0.85)\nax4.set_xlim(2, 12); ax4.set_ylim(0, 1)\nax4.set_xlabel('pH'); ax4.set_ylabel('fraction of total ammonia (0.1 M)')\nax4.set_title('Ammonia pool partition')\nax4.legend(loc='center left', fontsize=9, framealpha=0.9)\nax4.grid(alpha=0.3)\n\nplt.suptitle('Joint speciation: 1 mM Cu(II) + 1 mM Zn(II) + 10 mM glycine + 0.1 M ammonia,\\nT = 25 °C, I = 0.1 m, Cu(OH)₂(s) and Zn(OH)₂(s) allowed',\n             fontsize=11, y=1.0)\nplt.tight_layout()\nplt.savefig('/mnt/user-data/outputs/speciation.png', dpi=140, bbox_inches='tight')\nprint('\\nsaved: /mnt/user-data/outputs/speciation.png')\n\n# ---------- second figure: zoom on the ligand-partition of Gly and NH3, and % of each metal in each ligand ----------\nfig2, axes = plt.subplots(2, 2, figsize=(12, 8))\n\n# %Gly on each metal (excluding free Gly)\naxU = axes[0,0]\ntot_gly_bound = gly_on_Cu + gly_on_Zn\nshare_cu_of_gly = np.where(tot_gly_bound>1e-12, gly_on_Cu/tot_gly_bound, 0)*100\nshare_zn_of_gly = np.where(tot_gly_bound>1e-12, gly_on_Zn/tot_gly_bound, 0)*100\naxU.plot(pH, share_cu_of_gly, color='#d62728', lw=2.2, label='Cu share of bound glycinate')\naxU.plot(pH, share_zn_of_gly, color='#2ca02c', lw=2.2, label='Zn share of bound glycinate')\naxU.axhline(50, color='k', ls='--', lw=0.7)\naxU.set_xlim(2, 12); axU.set_ylim(0, 100)\naxU.set_xlabel('pH'); axU.set_ylabel('% of glycinate that is on this metal')\naxU.set_title('Metal share of bound glycinate (Cu vs Zn)')\naxU.legend(loc='center right', fontsize=9); axU.grid(alpha=0.3)\n\n# %NH on each metal (of bound)\naxV = axes[0,1]\ntot_nh_bound = nh_on_Cu + nh_on_Zn\nshare_cu_of_nh = np.where(tot_nh_bound>1e-15, nh_on_Cu/tot_nh_bound, 0)*100\nshare_zn_of_nh = np.where(tot_nh_bound>1e-15, nh_on_Zn/tot_nh_bound, 0)*100\naxV.plot(pH, share_cu_of_nh, color='#d62728', lw=2.2, label='Cu share of bound ammine')\naxV.plot(pH, share_zn_of_nh, color='#2ca02c', lw=2.2, label='Zn share of bound ammine')\naxV.axhline(50, color='k', ls='--', lw=0.7)\naxV.set_xlim(2, 12); axV.set_ylim(0, 100)\naxV.set_xlabel('pH'); axV.set_ylabel('% of bound ammonia that is on this metal')\naxV.set_title('Metal share of bound ammonia (Cu vs Zn)')\naxV.legend(loc='center right', fontsize=9); axV.grid(alpha=0.3)\n\n# Cu speciation as ligand-choice\naxW = axes[1,0]\naxW.plot(pH, Cu_gly, color='#1f77b4', lw=2.2, label='Cu–glycinate')\naxW.plot(pH, Cu_nh,  color='#8fbc8f', lw=2.2, label='Cu–ammine')\naxW.plot(pH, Cu_oh_aq, color='#ff7f0e', lw=2.2, label='Cu–hydroxo (aq)')\naxW.plot(pH, Cu_solid, color='#7a3b1f', lw=2.2, label='Cu(OH)₂(s)')\naxW.plot(pH, Cu_free, color='k', lw=1.4, ls=':', label='Cu²⁺ free')\naxW.set_xlim(2, 12); axW.set_ylim(0, 1)\naxW.set_xlabel('pH'); axW.set_ylabel('fraction of total Cu')\naxW.set_title('Cu(II): which ligand class wins vs pH')\naxW.legend(loc='upper right', fontsize=9); axW.grid(alpha=0.3)\n\n# Zn speciation as ligand-choice\naxX = axes[1,1]\naxX.plot(pH, Zn_gly, color='#1f77b4', lw=2.2, label='Zn–glycinate')\naxX.plot(pH, Zn_nh,  color='#8fbc8f', lw=2.2, label='Zn–ammine')\naxX.plot(pH, Zn_oh_aq, color='#ff7f0e', lw=2.2, label='Zn–hydroxo (aq)')\naxX.plot(pH, Zn_solid, color='#7a3b1f', lw=2.2, label='Zn(OH)₂(s)')\naxX.plot(pH, Zn_free, color='k', lw=1.4, ls=':', label='Zn²⁺ free')\naxX.set_xlim(2, 12); axX.set_ylim(0, 1)\naxX.set_xlabel('pH'); axX.set_ylabel('fraction of total Zn')\naxX.set_title('Zn(II): which ligand class wins vs pH')\naxX.legend(loc='upper right', fontsize=9); axX.grid(alpha=0.3)\n\nplt.suptitle('Ligand competition and metal-share analysis', y=1.01, fontsize=12)\nplt.tight_layout()\nplt.savefig('/mnt/user-data/outputs/ligand_partition.png', dpi=140, bbox_inches='tight')\nprint('saved: /mnt/user-data/outputs/ligand_partition.png')\n\n# spot-check numbers to include in narrative\nprint('\\n=== spot values ===')\nfor pH_t in [2.0, 4.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0]:\n    i = int(round((pH_t-2.0)/0.05))\n    print(f'pH {pH[i]:.2f}: Cu-gly={Cu_gly[i]:.3f}, Cu-NH3={Cu_nh[i]:.3f}, Cu-OHaq={Cu_oh_aq[i]:.3f}, CuOH2s={Cu_solid[i]:.3f} | '\n          f'Zn-gly={Zn_gly[i]:.3f}, Zn-NH3={Zn_nh[i]:.3f}, Zn-OHaq={Zn_oh_aq[i]:.3f}, ZnOH2s={Zn_solid[i]:.3f}')\n    print(f'         glycinate: Cu%={share_cu_of_gly[i]:.1f}, Zn%={share_zn_of_gly[i]:.1f} | ammine: Cu%={share_cu_of_nh[i]:.1f}, Zn%={share_zn_of_nh[i]:.1f}')\n"
+          },
+          "message": "Build final figures and extract precise transition windows",
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"python\", \"code\": \"\\\"\\\"\\\"Build final speciation figures and identify transition pH windows.\\\"\\\"\\\"\\nimport json\\nimport numpy as np\\nimport matplotlib.pyplot as plt\\nfrom matplotlib.patches import Patch\\n\\nwith open('/home/claude/spec/data.json') as f:\\n    data = json.load(f)\\n\\nCuT, ZnT, GlyT, NT = 1e-3, 1e-3, 1e-2, 1e-1\\n\\npH = np.array([d['pH'] for d in data])\\n\\n# ---------- assemble grouped fractions ----------\\ndef grab(key):\\n    return np.array([d.get(key, 0.0) for d in data])\\n\\n# Cu groups (fractions of CuT)\\nCu_free   = grab('Cu.Cu2+')/CuT\\nCu_gly    = (grab('Cu.CuGly+')+grab('Cu.Cu(Gly)2'))/CuT\\nCu_nh     = (grab('Cu.CuNH3')+grab('Cu.Cu(NH3)2')+grab('Cu.Cu(NH3)3')+grab('Cu.Cu(NH3)4'))/CuT\\nCu_oh_aq  = (grab('Cu.CuOH+')+grab('Cu.Cu(OH)2aq')+grab('Cu.Cu(OH)3-')+grab('Cu.Cu(OH)4-2'))/CuT\\nCu_solid  = grab('solid_Cu')/CuT\\n\\n# Zn groups\\nZn_free   = grab('Zn.Zn2+')/ZnT\\nZn_gly    = (grab('Zn.ZnGly+')+grab('Zn.Zn(Gly)2')+grab('Zn.Zn(Gly)3-'))/ZnT\\nZn_nh     = (grab('Zn.ZnNH3')+grab('Zn.Zn(NH3)2')+grab('Zn.Zn(NH3)3')+grab('Zn.Zn(NH3)4'))/ZnT\\nZn_oh_aq  = (grab('Zn.ZnOH+')+grab('Zn.Zn(OH)2aq')+grab('Zn.Zn(OH)3-')+grab('Zn.Zn(OH)4-2'))/ZnT\\nZn_solid  = grab('solid_Zn')/ZnT\\n\\n# Ligand pools (as fractions of the ligand total)\\ngly_free  = np.array([d['Gly-']*(1 + 10**(-d['pH'])/10**-9.57 + (10**(-d['pH']))**2/(10**-2.36 * 10**-9.57)) for d in data])/GlyT\\ngly_on_Cu = grab('gly_bound_Cu')/GlyT\\ngly_on_Zn = grab('gly_bound_Zn')/GlyT\\n\\nnh_free   = np.array([d['NH3']*(1 + 10**(-d['pH'])/10**-9.29) for d in data])/NT\\nnh_on_Cu  = grab('nh_bound_Cu')/NT\\nnh_on_Zn  = grab('nh_bound_Zn')/NT\\n\\ndef cross(x, a, b):\\n    \\\"\\\"\\\"First pH where a >= b (going up in x).\\\"\\\"\\\"\\n    d = a - b\\n    for i in range(1, len(d)):\\n        if d[i-1] < 0 <= d[i] or d[i-1] > 0 >= d[i]:\\n            return float(x[i-1] - d[i-1]*(x[i]-x[i-1])/(d[i]-d[i-1]))\\n    return None\\n\\ndef first_over(x, arr, thr):\\n    idx = np.where(arr > thr)[0]\\n    return float(x[idx[0]]) if len(idx) else None\\n\\ndef last_under(x, arr, thr):\\n    idx = np.where(arr < thr)[0]\\n    return float(x[idx[-1]]) if len(idx) else None\\n\\nprint('=== transition pH values ===')\\n# solid onsets\\nprint(f'Cu(OH)2(s) onset (>=1% CuT):  pH {first_over(pH, Cu_solid, 0.01):.2f}')\\nprint(f'Cu(OH)2(s) onset (>=50% CuT): pH {first_over(pH, Cu_solid, 0.50):.2f}')\\nprint(f'Cu(OH)2(s) onset (>=99% CuT): pH {first_over(pH, Cu_solid, 0.99):.2f}')\\nprint(f'Zn(OH)2(s) onset (>=1% ZnT):  pH {first_over(pH, Zn_solid, 0.01):.2f}')\\nprint(f'Zn(OH)2(s) onset (>=50% ZnT): pH {first_over(pH, Zn_solid, 0.50):.2f}')\\nprint(f'Zn(OH)2(s) onset (>=99% ZnT): pH {first_over(pH, Zn_solid, 0.99):.2f}')\\nprint()\\nprint(f'Cu: pH where glycinate == hydroxide(all forms):     {cross(pH, Cu_gly, Cu_oh_aq+Cu_solid):.2f}')\\nprint(f'Zn: pH where glycinate == hydroxide(all forms):     {cross(pH, Zn_gly, Zn_oh_aq+Zn_solid):.2f}')\\nprint(f'Cu: pH where ammine == hydroxide(all forms):        {cross(pH, Cu_nh,  Cu_oh_aq+Cu_solid)}')\\nprint(f'Zn: pH where ammine == hydroxide(all forms):        {cross(pH, Zn_nh,  Zn_oh_aq+Zn_solid):.2f}')\\nprint()\\n# glycinate dominant metal\\nc_g = cross(pH, gly_on_Cu, gly_on_Zn)\\nc_n = cross(pH, nh_on_Cu, nh_on_Zn)\\nprint(f'pH where Cu and Zn share the glycinate pool equally:  {c_g}')\\nprint(f'pH where Cu and Zn share the ammonia   pool equally:  {c_n:.2f}')\\n\\n# ---------- big figure ----------\\nfig = plt.figure(figsize=(12, 10))\\n\\n# Panel 1: Cu speciation grouped\\nax1 = plt.subplot(2, 2, 1)\\nax1.stackplot(pH, Cu_free, Cu_gly, Cu_nh, Cu_oh_aq, Cu_solid,\\n              labels=['Cu\\u00b2\\u207a free', 'Cu\\u2013glycinate (CuGly\\u207a, Cu(Gly)\\u2082)',\\n                      'Cu\\u2013ammine (Cu(NH\\u2083)\\u2099\\u00b2\\u207a)',\\n                      'Cu\\u2013hydroxo (aq)', 'Cu(OH)\\u2082(s)'],\\n              colors=['#c9c9c9', '#1f77b4', '#8fbc8f', '#ff7f0e', '#7a3b1f'],\\n              alpha=0.85)\\nax1.set_xlim(2, 12); ax1.set_ylim(0, 1)\\nax1.set_xlabel('pH'); ax1.set_ylabel('fraction of total Cu')\\nax1.set_title('Cu(II) speciation'); ax1.legend(loc='center left', fontsize=8, framealpha=0.9)\\nax1.grid(alpha=0.3)\\n\\n# Panel 2: Zn speciation grouped\\nax2 = plt.subplot(2, 2, 2)\\nax2.stackplot(pH, Zn_free, Zn_gly, Zn_nh, Zn_oh_aq, Zn_solid,\\n              labels=['Zn\\u00b2\\u207a free', 'Zn\\u2013glycinate',\\n                      'Zn\\u2013ammine (Zn(NH\\u2083)\\u2099\\u00b2\\u207a)',\\n                      'Zn\\u2013hydroxo (aq)', 'Zn(OH)\\u2082(s)'],\\n              colors=['#c9c9c9', '#1f77b4', '#8fbc8f', '#ff7f0e', '#7a3b1f'],\\n              alpha=0.85)\\nax2.set_xlim(2, 12); ax2.set_ylim(0, 1)\\nax2.set_xlabel('pH'); ax2.set_ylabel('fraction of total Zn')\\nax2.set_title('Zn(II) speciation'); ax2.legend(loc='center left', fontsize=8, framealpha=0.9)\\nax2.grid(alpha=0.3)\\n\\n# Panel 3: glycine pool partition\\nax3 = plt.subplot(2, 2, 3)\\nax3.stackplot(pH, gly_free, gly_on_Cu, gly_on_Zn,\\n              labels=['free glycine (Gly\\u207b, HGly, H\\u2082Gly\\u207a)',\\n                      'bound to Cu(II)',\\n                      'bound to Zn(II)'],\\n              colors=['#dddddd', '#d62728', '#2ca02c'], alpha=0.85)\\nax3.set_xlim(2, 12); ax3.set_ylim(0, 1)\\nax3.set_xlabel('pH'); ax3.set_ylabel('fraction of total glycine (10 mM)')\\nax3.set_title('Glycine pool partition')\\nax3.legend(loc='center left', fontsize=9, framealpha=0.9)\\nax3.grid(alpha=0.3)\\n\\n# Panel 4: ammonia pool partition\\nax4 = plt.subplot(2, 2, 4)\\nax4.stackplot(pH, nh_free, nh_on_Cu, nh_on_Zn,\\n              labels=['free N (NH\\u2084\\u207a, NH\\u2083)',\\n                      'bound to Cu(II)',\\n                      'bound to Zn(II)'],\\n              colors=['#dddddd', '#d62728', '#2ca02c'], alpha=0.85)\\nax4.set_xlim(2, 12); ax4.set_ylim(0, 1)\\nax4.set_xlabel('pH'); ax4.set_ylabel('fraction of total ammonia (0.1 M)')\\nax4.set_title('Ammonia pool partition')\\nax4.legend(loc='center left', fontsize=9, framealpha=0.9)\\nax4.grid(alpha=0.3)\\n\\nplt.suptitle('Joint speciation: 1 mM Cu(II) + 1 mM Zn(II) + 10 mM glycine + 0.1 M ammonia,\\\\nT = 25 \\u00b0C, I = 0.1 m, Cu(OH)\\u2082(s) and Zn(OH)\\u2082(s) allowed',\\n             fontsize=11, y=1.0)\\nplt.tight_layout()\\nplt.savefig('/mnt/user-data/outputs/speciation.png', dpi=140, bbox_inches='tight')\\nprint('\\\\nsaved: /mnt/user-data/outputs/speciation.png')\\n\\n# ---------- second figure: zoom on the ligand-partition of Gly and NH3, and % of each metal in each ligand ----------\\nfig2, axes = plt.subplots(2, 2, figsize=(12, 8))\\n\\n# %Gly on each metal (excluding free Gly)\\naxU = axes[0,0]\\ntot_gly_bound = gly_on_Cu + gly_on_Zn\\nshare_cu_of_gly = np.where(tot_gly_bound>1e-12, gly_on_Cu/tot_gly_bound, 0)*100\\nshare_zn_of_gly = np.where(tot_gly_bound>1e-12, gly_on_Zn/tot_gly_bound, 0)*100\\naxU.plot(pH, share_cu_of_gly, color='#d62728', lw=2.2, label='Cu share of bound glycinate')\\naxU.plot(pH, share_zn_of_gly, color='#2ca02c', lw=2.2, label='Zn share of bound glycinate')\\naxU.axhline(50, color='k', ls='--', lw=0.7)\\naxU.set_xlim(2, 12); axU.set_ylim(0, 100)\\naxU.set_xlabel('pH'); axU.set_ylabel('% of glycinate that is on this metal')\\naxU.set_title('Metal share of bound glycinate (Cu vs Zn)')\\naxU.legend(loc='center right', fontsize=9); axU.grid(alpha=0.3)\\n\\n# %NH on each metal (of bound)\\naxV = axes[0,1]\\ntot_nh_bound = nh_on_Cu + nh_on_Zn\\nshare_cu_of_nh = np.where(tot_nh_bound>1e-15, nh_on_Cu/tot_nh_bound, 0)*100\\nshare_zn_of_nh = np.where(tot_nh_bound>1e-15, nh_on_Zn/tot_nh_bound, 0)*100\\naxV.plot(pH, share_cu_of_nh, color='#d62728', lw=2.2, label='Cu share of bound ammine')\\naxV.plot(pH, share_zn_of_nh, color='#2ca02c', lw=2.2, label='Zn share of bound ammine')\\naxV.axhline(50, color='k', ls='--', lw=0.7)\\naxV.set_xlim(2, 12); axV.set_ylim(0, 100)\\naxV.set_xlabel('pH'); axV.set_ylabel('% of bound ammonia that is on this metal')\\naxV.set_title('Metal share of bound ammonia (Cu vs Zn)')\\naxV.legend(loc='center right', fontsize=9); axV.grid(alpha=0.3)\\n\\n# Cu speciation as ligand-choice\\naxW = axes[1,0]\\naxW.plot(pH, Cu_gly, color='#1f77b4', lw=2.2, label='Cu\\u2013glycinate')\\naxW.plot(pH, Cu_nh,  color='#8fbc8f', lw=2.2, label='Cu\\u2013ammine')\\naxW.plot(pH, Cu_oh_aq, color='#ff7f0e', lw=2.2, label='Cu\\u2013hydroxo (aq)')\\naxW.plot(pH, Cu_solid, color='#7a3b1f', lw=2.2, label='Cu(OH)\\u2082(s)')\\naxW.plot(pH, Cu_free, color='k', lw=1.4, ls=':', label='Cu\\u00b2\\u207a free')\\naxW.set_xlim(2, 12); axW.set_ylim(0, 1)\\naxW.set_xlabel('pH'); axW.set_ylabel('fraction of total Cu')\\naxW.set_title('Cu(II): which ligand class wins vs pH')\\naxW.legend(loc='upper right', fontsize=9); axW.grid(alpha=0.3)\\n\\n# Zn speciation as ligand-choice\\naxX = axes[1,1]\\naxX.plot(pH, Zn_gly, color='#1f77b4', lw=2.2, label='Zn\\u2013glycinate')\\naxX.plot(pH, Zn_nh,  color='#8fbc8f', lw=2.2, label='Zn\\u2013ammine')\\naxX.plot(pH, Zn_oh_aq, color='#ff7f0e', lw=2.2, label='Zn\\u2013hydroxo (aq)')\\naxX.plot(pH, Zn_solid, color='#7a3b1f', lw=2.2, label='Zn(OH)\\u2082(s)')\\naxX.plot(pH, Zn_free, color='k', lw=1.4, ls=':', label='Zn\\u00b2\\u207a free')\\naxX.set_xlim(2, 12); axX.set_ylim(0, 1)\\naxX.set_xlabel('pH'); axX.set_ylabel('fraction of total Zn')\\naxX.set_title('Zn(II): which ligand class wins vs pH')\\naxX.legend(loc='upper right', fontsize=9); axX.grid(alpha=0.3)\\n\\nplt.suptitle('Ligand competition and metal-share analysis', y=1.01, fontsize=12)\\nplt.tight_layout()\\nplt.savefig('/mnt/user-data/outputs/ligand_partition.png', dpi=140, bbox_inches='tight')\\nprint('saved: /mnt/user-data/outputs/ligand_partition.png')\\n\\n# spot-check numbers to include in narrative\\nprint('\\\\n=== spot values ===')\\nfor pH_t in [2.0, 4.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0]:\\n    i = int(round((pH_t-2.0)/0.05))\\n    print(f'pH {pH[i]:.2f}: Cu-gly={Cu_gly[i]:.3f}, Cu-NH3={Cu_nh[i]:.3f}, Cu-OHaq={Cu_oh_aq[i]:.3f}, CuOH2s={Cu_solid[i]:.3f} | '\\n          f'Zn-gly={Zn_gly[i]:.3f}, Zn-NH3={Zn_nh[i]:.3f}, Zn-OHaq={Zn_oh_aq[i]:.3f}, ZnOH2s={Zn_solid[i]:.3f}')\\n    print(f'         glycinate: Cu%={share_cu_of_gly[i]:.1f}, Zn%={share_zn_of_gly[i]:.1f} | ammine: Cu%={share_cu_of_nh[i]:.1f}, Zn%={share_zn_of_nh[i]:.1f}')\\n\", \"filename\": \"/home/claude/spec/plots.py\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T08:00:17.002479Z",
+          "stop_timestamp": "2026-09-17T08:00:17.002512Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01PAnMvwMXtkVVQvnDy3PVrP",
+          "name": "create_file",
+          "content": [
+            {
+              "type": "text",
+              "text": "File created successfully: /home/claude/spec/plots.py",
+              "uuid": "5c7ed8db-fe50-48f4-bd93-9c68b2a6672d"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "display_content": {
+            "type": "text",
+            "text": "File created successfully: /home/claude/spec/plots.py"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T08:00:19.311719Z",
+          "stop_timestamp": "2026-09-17T08:00:20.237056Z",
+          "type": "tool_use",
+          "id": "toolu_01UeCrnDi6d8fNedHWpohnoC",
+          "name": "bash_tool",
+          "input": {
+            "command": "cd /home/claude/spec && python3 plots.py 2>&1",
+            "description": "Generate the two summary figures and print transition-pH table"
+          },
+          "message": "Generate the two summary figures and print transition-pH table",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"cd /home/claude/spec && python3 plots.py 2>&1\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T08:00:22.178882Z",
+          "stop_timestamp": "2026-09-17T08:00:22.178906Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01UeCrnDi6d8fNedHWpohnoC",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":0,\"stdout\":\"=== transition pH values ===\\nCu(OH)2(s) onset (>=1% CuT):  pH 10.85\\nCu(OH)2(s) onset (>=50% CuT): pH 11.05\\nCu(OH)2(s) onset (>=99% CuT): pH 11.95\\nZn(OH)2(s) onset (>=1% ZnT):  pH 7.75\\nZn(OH)2(s) onset (>=50% ZnT): pH 9.50\\nZn(OH)2(s) onset (>=99% ZnT): pH 10.80\\n\\nCu: pH where glycinate == hydroxide(all forms):     11.02\\nZn: pH where glycinate == hydroxide(all forms):     9.24\\nCu: pH where ammine == hydroxide(all forms):        10.800509881688601\\nZn: pH where ammine == hydroxide(all forms):        7.78\\n\\npH where Cu and Zn share the glycinate pool equally:  None\\npH where Cu and Zn share the ammonia   pool equally:  4.92\\n\\nsaved: /mnt/user-data/outputs/speciation.png\\nsaved: /mnt/user-data/outputs/ligand_partition.png\\n\\n=== spot values ===\\npH 2.00: Cu-gly=0.011, Cu-NH3=0.000, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.000, Zn-NH3=0.000, Zn-OHaq=0.000, ZnOH2s=0.000\\n         glycinate: Cu%=99.9, Zn%=0.1 | ammine: Cu%=98.3, Zn%=1.7\\npH 4.00: Cu-gly=0.797, Cu-NH3=0.001, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.002, Zn-NH3=0.000, Zn-OHaq=0.000, ZnOH2s=0.000\\n         glycinate: Cu%=99.7, Zn%=0.3 | ammine: Cu%=92.4, Zn%=7.6\\npH 6.00: Cu-gly=1.000, Cu-NH3=0.000, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.178, Zn-NH3=0.008, Zn-OHaq=0.001, ZnOH2s=0.000\\n         glycinate: Cu%=91.3, Zn%=8.7 | ammine: Cu%=1.9, Zn%=98.1\\npH 7.00: Cu-gly=1.000, Cu-NH3=0.000, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.691, Zn-NH3=0.030, Zn-OHaq=0.003, ZnOH2s=0.000\\n         glycinate: Cu%=70.0, Zn%=30.0 | ammine: Cu%=0.2, Zn%=99.8\\npH 8.00: Cu-gly=1.000, Cu-NH3=0.000, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.763, Zn-NH3=0.043, Zn-OHaq=0.003, ZnOH2s=0.180\\n         glycinate: Cu%=60.0, Zn%=40.0 | ammine: Cu%=0.3, Zn%=99.7\\npH 9.00: Cu-gly=0.999, Cu-NH3=0.001, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.463, Zn-NH3=0.219, Zn-OHaq=0.002, ZnOH2s=0.316\\n         glycinate: Cu%=67.8, Zn%=32.2 | ammine: Cu%=0.3, Zn%=99.7\\npH 10.00: Cu-gly=0.999, Cu-NH3=0.001, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.081, Zn-NH3=0.071, Zn-OHaq=0.002, ZnOH2s=0.846\\n         glycinate: Cu%=91.6, Zn%=8.4 | ammine: Cu%=1.6, Zn%=98.4\\npH 11.00: Cu-gly=0.536, Cu-NH3=0.001, Cu-OHaq=0.000, CuOH2s=0.463 | Zn-gly=0.002, Zn-NH3=0.001, Zn-OHaq=0.002, ZnOH2s=0.995\\n         glycinate: Cu%=99.5, Zn%=0.5 | ammine: Cu%=26.9, Zn%=73.1\\npH 12.00: Cu-gly=0.007, Cu-NH3=0.000, Cu-OHaq=0.000, CuOH2s=0.993 | Zn-gly=0.000, Zn-NH3=0.000, Zn-OHaq=0.007, ZnOH2s=0.993\\n         glycinate: Cu%=99.5, Zn%=0.5 | ammine: Cu%=26.8, Zn%=73.2\\n\",\"stderr\":\"\"}",
+              "uuid": "d1ffb1cc-4db1-4e9a-bde7-1fbd36e38315"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"returncode\":0,\"stdout\":\"=== transition pH values ===\\nCu(OH)2(s) onset (>=1% CuT):  pH 10.85\\nCu(OH)2(s) onset (>=50% CuT): pH 11.05\\nCu(OH)2(s) onset (>=99% CuT): pH 11.95\\nZn(OH)2(s) onset (>=1% ZnT):  pH 7.75\\nZn(OH)2(s) onset (>=50% ZnT): pH 9.50\\nZn(OH)2(s) onset (>=99% ZnT): pH 10.80\\n\\nCu: pH where glycinate == hydroxide(all forms):     11.02\\nZn: pH where glycinate == hydroxide(all forms):     9.24\\nCu: pH where ammine == hydroxide(all forms):        10.800509881688601\\nZn: pH where ammine == hydroxide(all forms):        7.78\\n\\npH where Cu and Zn share the glycinate pool equally:  None\\npH where Cu and Zn share the ammonia   pool equally:  4.92\\n\\nsaved: /mnt/user-data/outputs/speciation.png\\nsaved: /mnt/user-data/outputs/ligand_partition.png\\n\\n=== spot values ===\\npH 2.00: Cu-gly=0.011, Cu-NH3=0.000, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.000, Zn-NH3=0.000, Zn-OHaq=0.000, ZnOH2s=0.000\\n         glycinate: Cu%=99.9, Zn%=0.1 | ammine: Cu%=98.3, Zn%=1.7\\npH 4.00: Cu-gly=0.797, Cu-NH3=0.001, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.002, Zn-NH3=0.000, Zn-OHaq=0.000, ZnOH2s=0.000\\n         glycinate: Cu%=99.7, Zn%=0.3 | ammine: Cu%=92.4, Zn%=7.6\\npH 6.00: Cu-gly=1.000, Cu-NH3=0.000, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.178, Zn-NH3=0.008, Zn-OHaq=0.001, ZnOH2s=0.000\\n         glycinate: Cu%=91.3, Zn%=8.7 | ammine: Cu%=1.9, Zn%=98.1\\npH 7.00: Cu-gly=1.000, Cu-NH3=0.000, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.691, Zn-NH3=0.030, Zn-OHaq=0.003, ZnOH2s=0.000\\n         glycinate: Cu%=70.0, Zn%=30.0 | ammine: Cu%=0.2, Zn%=99.8\\npH 8.00: Cu-gly=1.000, Cu-NH3=0.000, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.763, Zn-NH3=0.043, Zn-OHaq=0.003, ZnOH2s=0.180\\n         glycinate: Cu%=60.0, Zn%=40.0 | ammine: Cu%=0.3, Zn%=99.7\\npH 9.00: Cu-gly=0.999, Cu-NH3=0.001, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.463, Zn-NH3=0.219, Zn-OHaq=0.002, ZnOH2s=0.316\\n         glycinate: Cu%=67.8, Zn%=32.2 | ammine: Cu%=0.3, Zn%=99.7\\npH 10.00: Cu-gly=0.999, Cu-NH3=0.001, Cu-OHaq=0.000, CuOH2s=0.000 | Zn-gly=0.081, Zn-NH3=0.071, Zn-OHaq=0.002, ZnOH2s=0.846\\n         glycinate: Cu%=91.6, Zn%=8.4 | ammine: Cu%=1.6, Zn%=98.4\\npH 11.00: Cu-gly=0.536, Cu-NH3=0.001, Cu-OHaq=0.000, CuOH2s=0.463 | Zn-gly=0.002, Zn-NH3=0.001, Zn-OHaq=0.002, ZnOH2s=0.995\\n         glycinate: Cu%=99.5, Zn%=0.5 | ammine: Cu%=26.9, Zn%=73.1\\npH 12.00: Cu-gly=0.007, Cu-NH3=0.000, Cu-OHaq=0.000, CuOH2s=0.993 | Zn-gly=0.000, Zn-NH3=0.000, Zn-OHaq=0.007, ZnOH2s=0.993\\n         glycinate: Cu%=99.5, Zn%=0.5 | ammine: Cu%=26.8, Zn%=73.2\\n\",\"stderr\":\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T08:00:24.465087Z",
+          "stop_timestamp": "2026-09-17T08:00:25.056539Z",
+          "type": "tool_use",
+          "id": "toolu_01LYfWKTZpU8yqmn5bdgXPiG",
+          "name": "bash_tool",
+          "input": {
+            "command": "ls -la /mnt/user-data/outputs/",
+            "description": "Verify output files exist"
+          },
+          "message": "Verify output files exist",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"ls -la /mnt/user-data/outputs/\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T08:00:25.425549Z",
+          "stop_timestamp": "2026-09-17T08:00:25.425574Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01LYfWKTZpU8yqmn5bdgXPiG",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":0,\"stdout\":\"total 380\\ndrwxr-xr-x 1 claude ubuntu      0 Sep 17 08:00 .\\ndrwxr-xr-x 5 root   root     4096 Sep 17 07:55 ..\\n-rw-r--r-- 1 claude ubuntu 219734 Sep 17 08:00 ligand_partition.png\\n-rw-r--r-- 1 claude ubuntu 162886 Sep 17 08:00 speciation.png\\n\",\"stderr\":\"\"}",
+              "uuid": "18cc6546-b1b6-4c33-8f29-63d7ee499f45"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"returncode\":0,\"stdout\":\"total 380\\ndrwxr-xr-x 1 claude ubuntu      0 Sep 17 08:00 .\\ndrwxr-xr-x 5 root   root     4096 Sep 17 07:55 ..\\n-rw-r--r-- 1 claude ubuntu 219734 Sep 17 08:00 ligand_partition.png\\n-rw-r--r-- 1 claude ubuntu 162886 Sep 17 08:00 speciation.png\\n\",\"stderr\":\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T08:00:27.343714Z",
+          "stop_timestamp": "2026-09-17T08:00:27.963989Z",
+          "type": "tool_use",
+          "id": "toolu_01FDN9WifdXRUwpo3uDHoQ33",
+          "name": "view",
+          "input": {
+            "path": "/mnt/user-data/outputs/speciation.png",
+            "description": "Verify speciation figure looks right"
+          },
+          "message": "Verify speciation figure looks right",
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "display_content": {
+            "type": "text",
+            "text": "Verify speciation figure looks right"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T08:00:28.574679Z",
+          "stop_timestamp": "2026-09-17T08:00:28.574702Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01FDN9WifdXRUwpo3uDHoQ33",
+          "name": "view",
+          "content": [
+            {
+              "type": "image",
+              "file_uuid": "536df691-0d01-4def-a265-33f28f552e86"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T08:00:30.726961Z",
+          "stop_timestamp": "2026-09-17T08:00:31.482030Z",
+          "type": "tool_use",
+          "id": "toolu_01DGVT9gxvxoEoy4iMofQQ3n",
+          "name": "view",
+          "input": {
+            "path": "/mnt/user-data/outputs/ligand_partition.png",
+            "description": "Verify the partition figure"
+          },
+          "message": "Verify the partition figure",
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "display_content": {
+            "type": "text",
+            "text": "Verify the partition figure"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T08:00:32.142012Z",
+          "stop_timestamp": "2026-09-17T08:00:32.142035Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01DGVT9gxvxoEoy4iMofQQ3n",
+          "name": "view",
+          "content": [
+            {
+              "type": "image",
+              "file_uuid": "c24485a2-bde5-4f94-b649-0b25c5f86486"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T08:00:34.802578Z",
+          "stop_timestamp": "2026-09-17T08:00:35.583225Z",
+          "type": "tool_use",
+          "id": "toolu_01XQPkWb7DtURXG6gDKT163e",
+          "name": "present_files",
+          "input": {
+            "filepaths": [
+              "/mnt/user-data/outputs/speciation.png",
+              "/mnt/user-data/outputs/ligand_partition.png"
+            ]
+          },
+          "message": "Presenting file(s)...",
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "display_content": {
+            "type": "table",
+            "table": [
+              [
+                "filepaths",
+                "['/mnt/user-data/outputs/speciation.png', '/mnt/user-data/outputs/ligand_partition.png']"
+              ]
+            ]
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T08:00:35.624458Z",
+          "stop_timestamp": "2026-09-17T08:00:35.624476Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01XQPkWb7DtURXG6gDKT163e",
+          "name": "present_files",
+          "content": [
+            {
+              "type": "local_resource",
+              "file_path": "/mnt/user-data/outputs/speciation.png",
+              "name": "speciation",
+              "mime_type": "image/png",
+              "artifact_publishable": false,
+              "uuid": "eb804c5a-9cd5-48f6-a8d5-a4f6f2c44b3b"
+            },
+            {
+              "type": "local_resource",
+              "file_path": "/mnt/user-data/outputs/ligand_partition.png",
+              "name": "ligand partition",
+              "mime_type": "image/png",
+              "artifact_publishable": false,
+              "uuid": "267d2844-b98e-492b-9f7b-56046d58a959"
+            },
+            {
+              "type": "text",
+              "text": "The file cards appear at the end of your reply if it ends with text, otherwise under this step; say they are below only if you finish the reply with text.",
+              "uuid": "7cc471a5-def6-4936-af92-038713bdd715"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "message": "Presented 2 files",
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T08:00:39.627539Z",
+          "stop_timestamp": "2026-09-17T08:01:13.314460Z",
+          "type": "text",
+          "text": "## Setup and constants\n\nTotals: Cu(II) 1 mM, Zn(II) 1 mM, glycine 10 mM, ammonia 0.1 M. T = 25 °C, I = 0.1 m. All four mass balances closed to ≤ 10⁻¹¹ across the pH grid, with hydroxide solids permitted. The formation constants used (log β, conditional at I = 0.1 m, Martell/Smith and IUPAC critical sets; Baes & Mesmer for hydrolysis) are:\n\n- Glycine: p*K*ₐ₁ = 2.36, p*K*ₐ₂ = 9.57\n- NH₄⁺/NH₃: p*K*ₐ = 9.29; p*K*w = 13.78\n- Cu–glycinate log β₁, β₂ = 8.15, 15.00\n- Zn–glycinate log β₁…β₃ = 5.00, 9.20, 11.00\n- Cu–ammine log β₁…β₄ = 4.05, 7.47, 10.30, 11.75\n- Zn–ammine log β₁…β₄ = 2.27, 4.61, 7.01, 9.06\n- Cu(OH)₂(s) log Kₛₚ = −19.7; Zn(OH)₂(s) log Kₛₚ = −16.5\n\nMixed-ligand Cu(Gly)(NH₃) and analogous ternaries are known but modest; I did not include them, and I note where that assumption bites.\n\n## What the calculation actually shows\n\n**Cu is essentially \"locked\" as a glycinate chelate over almost the entire non-acidic pH range.** By pH 4, Cu(Gly)⁺ already accounts for ~70 % of total Cu; by pH 5–6 the switch to Cu(Gly)₂ is complete and stays >99 % all the way to about pH 10.8. The chelate effect (log β₂ ≈ 15) beats the tetraammine Cu(NH₃)₄²⁺ (log β₄ ≈ 11.75) even though ammonia is 10× more concentrated than glycine, so Cu–ammine species never exceed ~1 % anywhere in this window.\n\n**Zn behaves quite differently** because its glycinate constants are 3+ log units smaller. Zn stays mostly as free Zn²⁺ up to pH ~6, transitions through ZnGly⁺ / Zn(Gly)₂ (peak ~90 % Zn-glycinate around pH 7.5–8), and then loses that ligation as Zn(OH)₂(s) becomes the sink. Zn(NH₃)ₙ²⁺ makes a real but modest appearance (~20–25 % of Zn) in a narrow window near pH 9.\n\n## Metal partition of the shared ligand pool\n\n**Glycinate.** Cu wins the glycinate pool at every pH.\n\n- pH < 6: Cu takes >90 % of all bound glycinate; Zn hasn't started binding.\n- pH 7–8: Cu still holds 60–70 % of bound glycinate — this is the closest Zn gets. At pH ~7.7 the Cu share bottoms out at ~58 %; Zn's share peaks at ~42 %. Because Cu is only 1 mM and *saturated* as Cu(Gly)₂ (i.e. it is using 2 mM of the 10 mM glycine and can't take more), the \"extra\" glycinate spills onto Zn, but Zn's weaker binding keeps it from ever overtaking.\n- pH > 10: Zn precipitates and drops out; Cu's share of glycinate returns to ~99 %.\n\n**Ammonia.** The crossover here is at pH ≈ 4.9.\n\n- pH < 4.9: The few complexed NH₃ ligands are on Cu (because free NH₃ is vanishing, and Cu binds any NH₃ strongly, log β₁ = 4.05 vs 2.27 for Zn). Absolute amounts are tiny — most N is NH₄⁺.\n- pH 5–10: Zn holds 98–99.8 % of all ammine-bound N. Cu is not competing because it is already saturated with glycinate.\n- pH > 11: Zn precipitates, so its ammine share collapses; Cu(OH)₂(s) also forms, and what little Cu is still aqueous carries ~27 % of the (very small) bound-ammonia pool.\n\nThe ammonia pool itself is barely dented: even at the peak (~pH 9) only ~1 % of total ammonia is complex-bound. Ammonia is present in vast excess and does not become a limiting ligand.\n\n## Where hydroxide solids take over\n\nUsing the crossover between \"glycinate + ammine\" ligation and \"hydroxo species + hydroxide solid\" on each metal:\n\n| Metal | Onset of *M*(OH)₂(s) | 50 % precipitated | 99 % precipitated | Complex→hydroxide crossover |\n|---|---|---|---|---|\n| **Zn** | ≈ pH **7.75** | pH **9.5** | pH **10.8** | pH **9.2** (Zn-glycinate ↔ Zn(OH)₂(s)) |\n| **Cu** | ≈ pH **10.85** | pH **11.05** | pH **11.95** | pH **11.0** (Cu(Gly)₂ ↔ Cu(OH)₂(s)) |\n\nSo the \"ligand → solid\" windows are:\n\n- **Zn(II):** glycinate/ammine ligation gives way to Zn(OH)₂(s) in a broad transition **pH ≈ 7.75 to 10.8**. Half-precipitation is at pH 9.5 despite the ligands; the glycinate chelate is not strong enough to prevent Zn(OH)₂ once *K*ₛₚ is exceeded by ~2 orders of magnitude.\n- **Cu(II):** the strong Cu(Gly)₂ chelate holds off precipitation by roughly **4 pH units** past the ligand-free Cu(OH)₂ onset. Cu only starts precipitating at **pH ≈ 10.85** and is essentially complete by pH 12.\n\n## A caveat on mixed ligands\n\nTernary complexes such as Cu(Gly)(NH₃)⁺ and Cu(Gly)₂(NH₃) (log K in the 3.5–5 range for adding NH₃ to Cu(Gly)ₙ) are documented for this system. Including them would nudge a little of the ammonia pool onto Cu around pH 8–10, softening the ~99 % Zn dominance of the ammine pool to something more like 85–90 %. It would not change the overall picture — Cu still wins glycinate, Zn still wins whatever ammine binding is left, and the hydroxide-solid windows are set by ligand-free hydrolysis so they shift only slightly.",
+          "citations": []
+        }
+      ],
+      "sender": "assistant",
+      "index": 1,
+      "created_at": "2026-09-17T08:01:13.427203Z",
+      "updated_at": "2026-09-17T08:01:13.427203Z",
+      "truncated": false,
+      "stop_reason": "end_turn",
+      "attachments": [],
+      "files": [],
+      "sync_sources": [],
+      "parent_message_uuid": "01a0ae5c-8ce4-7f4d-97c1-e19b35009174"
+    }
+  ]
+}

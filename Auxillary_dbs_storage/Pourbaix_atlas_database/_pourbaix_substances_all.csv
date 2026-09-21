@@ -1,0 +1,791 @@
+file,element,sub_element,phase,species,oxidation_state,mu0_cal,mu0_kJ,name
+10_Chromium.md,Chromium,Chromium,Solid,Cr,0,0.0,0.0,"Chromium, white, cubic"
+10_Chromium.md,Chromium,Chromium,Solid,Cr(OH)2,+2,-140500.0,-587.852,"Hydroxide of divalent chromium, Cr(OH)2, yellow"
+10_Chromium.md,Chromium,Chromium,Solid,Cr(OH)3,+3,-215300.0,-900.8152,"Chromic hydroxide, Cr(OH)3, green, hexagonal"
+10_Chromium.md,Chromium,Chromium,Solid,Cr2O3,+3,-250200.0,-1046.8368,"Chromic oxide, green, orthorhombic"
+10_Chromium.md,Chromium,Chromium,Solid,Cr(OH)3.nH2O,+3,-205500.0,-859.812,"Chromic hydroxide, Cr(OH)3.nH2O, green"
+10_Chromium.md,Chromium,Chromium,Solid,Cr(OH)4,+4,-242380.0,-1014.1179,"Hydrated chromium dioxide or hydroxide, Cr(OH)4, brown"
+10_Chromium.md,Chromium,Chromium,Dissolved,Cr(2+),+2,-42100.0,-176.1464,"Chromous ion, blue-green"
+10_Chromium.md,Chromium,Chromium,Dissolved,Cr(3+),+3,-51500.0,-215.476,"Chromic ion, green"
+10_Chromium.md,Chromium,Chromium,Dissolved,CrOH(2+),+3,-103000.0,-430.952,"Chromyl ion, green or violet"
+10_Chromium.md,Chromium,Chromium,Dissolved,Cr(OH)2(+),+3,-148900.0,-622.9976,Chromyl ion
+10_Chromium.md,Chromium,Chromium,Dissolved,CrO2(-),+3,-128090.0,-535.9286,"Chromite ion, green"
+10_Chromium.md,Chromium,Chromium,Dissolved,CrO3(3-),+3,-142200.0,-594.9648,"Chromite ion, green"
+10_Chromium.md,Chromium,Chromium,Dissolved,H2CrO4,+6,-189200.0,-791.6128,"Chromic acid, orange-red"
+10_Chromium.md,Chromium,Chromium,Dissolved,HCrO4(-),+6,-183900.0,-769.4376,"Acid chromate ion, orange"
+10_Chromium.md,Chromium,Chromium,Dissolved,CrO4(2-),+6,-176100.0,-736.8024,"Chromate ion, yellow"
+10_Chromium.md,Chromium,Chromium,Dissolved,Cr2O7(2-),+6,-315400.0,-1319.6336,"Dichromate ion, orange"
+10_Molybdenum.md,Molybdenum,Molybdenum,Solid,Mo,0,0.0,0.0,"Molybdenum, silvery white, b.c.cub."
+10_Molybdenum.md,Molybdenum,Molybdenum,Solid,MoO2,+4,-120000.0,-502.08,"Molybdenum dioxide, brown-purple, quad."
+10_Molybdenum.md,Molybdenum,Molybdenum,Solid,H2MoO4,+6,-221000.0,-924.664,"Molybdic acid (hydrated MoO3), white or yellowish, hex."
+10_Molybdenum.md,Molybdenum,Molybdenum,Dissolved,Mo(3+),+3,-13800.0,-57.7392,"Molybdenous ion, dark olive-green"
+10_Molybdenum.md,Molybdenum,Molybdenum,Dissolved,HMoO4(-),+6,-205420.0,-859.4773,"Acid molybdate ion, colourless"
+10_Tungsten.md,Tungsten,Tungsten,Solid,W,0,0.0,0.0,"Tungsten, grey, b.c.cub. and cub."
+10_Tungsten.md,Tungsten,Tungsten,Solid,WO2,+4,,,"Tungsten dioxide, brown, quad."
+10_Tungsten.md,Tungsten,Tungsten,Solid,W2O5,+5,-800000.0,-3347.2,"Pentoxide, blue"
+10_Tungsten.md,Tungsten,Tungsten,Solid,WO3,+6,-182170.0,-762.1993,"Tungstic anhydride or trioxide, yellow, monocl."
+10_Tungsten.md,Tungsten,Tungsten,Dissolved,WO4(2-),+6,,,"Tungstic ion, colourless"
+11_Manganese.md,Manganese,Manganese,Solid,Mn,0,0.0,0.0,"alpha-manganese, light grey, cub."
+11_Manganese.md,Manganese,Manganese,Solid,Mn(OH)2,+2,,,"Manganous hydroxide, light pink, rhomb."
+11_Manganese.md,Manganese,Manganese,Solid,MnO,+2,,,"Manganous oxide, green, cub."
+11_Manganese.md,Manganese,Manganese,Solid,Mn3O4,+2.67,-306000.0,-1280.304,"Mangano-manganic oxide, brown-black, def. quad."
+11_Manganese.md,Manganese,Manganese,Solid,Mn2O3,+3,,,"alpha-manganic oxide, black, cub."
+11_Manganese.md,Manganese,Manganese,Solid,Mn(OH)3,+3,,,"Manganic hydroxide, brown-black, monocl."
+11_Manganese.md,Manganese,Manganese,Solid,MnO2,+4,-111400.0,-466.0976,"beta-manganese dioxide ""pyrolusite"", brown-black, quad."
+11_Manganese.md,Manganese,Manganese,Dissolved,Mn++,+2,-54400.0,-227.6096,"Manganous ion, pale pink"
+11_Manganese.md,Manganese,Manganese,Dissolved,HMnO2-,+2,-120900.0,-505.8456,Dimanganite ion
+11_Manganese.md,Manganese,Manganese,Dissolved,Mn+++,+3,-19600.0,-82.0064,Manganic ion
+11_Manganese.md,Manganese,Manganese,Dissolved,MnO4--,+6,-120400.0,-503.7536,"Manganate ion, green"
+11_Manganese.md,Manganese,Manganese,Dissolved,MnO4-,+7,-107400.0,-449.3616,"Permanganate ion, purple"
+11_Rhenium.md,Rhenium,Rhenium,Solid,Re,0,0.0,0.0,"Rhenium, grey-white, hexagonal"
+11_Rhenium.md,Rhenium,Rhenium,Solid,Re2O3 hydr.,+3,-138610.0,-579.9442,"Hydrated sesquioxide, dark brown to black"
+11_Rhenium.md,Rhenium,Rhenium,Solid,ReO2,+4,-81000.0,-338.904,"Dioxide, grey-black or dark brown"
+11_Rhenium.md,Rhenium,Rhenium,Solid,ReO3,+6,-127300.0,-532.6232,"Trioxide or rhenic anhydride, red or blue, cubic"
+11_Rhenium.md,Rhenium,Rhenium,Solid,Re2O7,+7,-22700.0,-94.9768,"Perrhenic anhydride, yellow, monoclinic"
+11_Rhenium.md,Rhenium,Rhenium,Dissolved,Re(-),-1,200.0,0.8368,"Rhenide ion, colourless"
+11_Rhenium.md,Rhenium,Rhenium,Dissolved,Re(3+),+3,20755.0,86.8389,"Rhenous ion, red"
+11_Rhenium.md,Rhenium,Rhenium,Dissolved,ReO4(-),+7,-167100.0,-699.1464,"Perrhenate ion, colourless"
+11_Technetium.md,Technetium,Technetium,Solid,Tc,0,0.0,0.0,"Technetium, silvery grey, hex."
+11_Technetium.md,Technetium,Technetium,Solid,TcO2,+4,-88290.0,-369.4054,"Technetium dioxide, brown-black"
+11_Technetium.md,Technetium,Technetium,Solid,TcO3,+6,-110070.0,-460.5329,Technetium trioxide
+11_Technetium.md,Technetium,Technetium,Solid,Tc2O7,+7,-222540.0,-931.1074,"Technetium heptoxide, pale yellow"
+11_Technetium.md,Technetium,Technetium,Solid,HTcO4,+7,-282540.0,-1182.1474,"Pertechnetic acid or hydrated heptoxide Tc2O7·H2O, dark red"
+11_Technetium.md,Technetium,Technetium,Dissolved,Tc2+,+2,18410.0,77.0274,Technetous ion
+11_Technetium.md,Technetium,Technetium,Dissolved,HTcO4,+7,-150455.0,-629.5037,"Pertechnetic acid, yellow, pink or red"
+11_Technetium.md,Technetium,Technetium,Dissolved,TcO4(-),+7,-100615.0,-420.9732,"Pertechnetate ion, colourless"
+12_Cobalt.md,Cobalt,Cobalt,Solid,Co,0,0.0,0.0,"Cobalt, grey, hex."
+12_Cobalt.md,Cobalt,Cobalt,Solid,Co(OH)2,+2,-109000.0,-456.056,"Hydrated cobaltous oxide or cobaltous hydroxide, blue (red), rhomb."
+12_Cobalt.md,Cobalt,Cobalt,Solid,CoO,+2,-49000.0,-205.016,"Cobaltous oxide, grey-green, cub."
+12_Cobalt.md,Cobalt,Cobalt,Solid,Co3O4,+2.67,-167835.0,-702.2216,"Cobalto-cobaltic oxide, grey-black, cub."
+12_Cobalt.md,Cobalt,Cobalt,Solid,Co2O3.3H2O,+3,-285200.0,-1193.2768,"Hydrated cobaltic oxide or cobaltic hydroxide, equivalent to 2Co(OH)3, yellow-brown"
+12_Cobalt.md,Cobalt,Cobalt,Solid,CoO2,+4,-11840.0,-49.5386,Cobaltic peroxide
+12_Cobalt.md,Cobalt,Cobalt,Dissolved,Co(2+),+2,-12800.0,-53.5552,"Cobaltous ion, pink"
+12_Cobalt.md,Cobalt,Cobalt,Dissolved,HCoO2(-),+2,-82970.0,-347.1465,"Dicobaltite ion, blue"
+12_Cobalt.md,Cobalt,Cobalt,Dissolved,Co(3+),+3,28900.0,120.9176,Cobaltic ion
+12_Iron.md,Iron,Iron,Solid,Fe,0,0.0,0.0,"alpha-Iron, light grey, f.c.cub."
+12_Iron.md,Iron,Iron,Solid,Fe(OH)2 (hydr.),+2,-115570.0,-483.5449,"Ferrous hydroxide Fe(OH)2, white, rhomb."
+12_Iron.md,Iron,Iron,Solid,Fe3O4 (anh.),"+2, +3",-242400.0,-1014.2016,"Magnetite, black, cub."
+12_Iron.md,Iron,Iron,Solid,Fe2O3 (anh.),+3,-177100.0,-740.9864,"Haematite, red-brown, rhomb. or cub."
+12_Iron.md,Iron,Iron,Solid,Fe(OH)3 (hydr.),+3,-166000.0,-694.544,"Ferric hydroxide Fe(OH)3, red-brown, f.c.cub."
+12_Iron.md,Iron,Iron,Dissolved,Fe2+,+2,-20300.0,-84.9352,"Ferrous ion, green"
+12_Iron.md,Iron,Iron,Dissolved,HFeO2(-),+2,-90627.0,-379.1834,"Dihypoferrite ion, green"
+12_Iron.md,Iron,Iron,Dissolved,Fe3+,+3,-2530.0,-10.5855,"Ferric ion, colourless"
+12_Iron.md,Iron,Iron,Dissolved,FeOH2+,+3,-55910.0,-233.9274,"Ferric hydroxo ion, colourless"
+12_Iron.md,Iron,Iron,Dissolved,Fe(OH)2(+),+3,-106200.0,-444.3408,"Dihydroxo ferric ion, colourless"
+12_Iron.md,Iron,Iron,Dissolved,FeO4(2-),+6,-111685.0,-467.29,"Ferrate ion, violet"
+12_Nickel.md,Nickel,Nickel,Solid,Ni,0,0.0,0.0,"Nickel, silvery white, f.c.cub."
+12_Nickel.md,Nickel,Nickel,Solid,Ni(OH)2,+2,-108300.0,-453.1272,"Hydrated nickelous oxide or nickelous hydroxide Ni(OH)2, green, rhomb."
+12_Nickel.md,Nickel,Nickel,Solid,NiO,+2,-51300.0,-214.6392,"Nickelous oxide, grey, cub."
+12_Nickel.md,Nickel,Nickel,Solid,Ni3O4.2H2O,+2.67,-283530.0,-1186.2895,Dihydrated nickelo-nickelic oxide Ni3O4.2H2O
+12_Nickel.md,Nickel,Nickel,Solid,Ni2O3.H2O,+3,-168960.0,-706.9286,"Monohydrated nickelic oxide Ni2O3.H2O, black"
+12_Nickel.md,Nickel,Nickel,Solid,NiO2.2H2O,+4,-164800.0,-689.5232,"Dihydrated nickel peroxide NiO2.2H2O, black"
+12_Nickel.md,Nickel,Nickel,Dissolved,Ni2+,+2,-10900.0,-45.6056,"Nickelous ion, green"
+12_Nickel.md,Nickel,Nickel,Dissolved,HNiO2(-),+2,-83650.0,-349.9916,Dinickelite ion
+13_Iridium.md,Iridium,Iridium,Solid,Ir,0,0.0,0.0,"Iridium, shiny white, f.c. cub."
+13_Iridium.md,Iridium,Iridium,Solid,Ir2O3 hydr.,+3,-12000.0,-50.208,"Hydrated iridium sesquioxide Ir2O3.xH2O, yellow-green to blue-black"
+13_Iridium.md,Iridium,Iridium,Solid,IrO2 hydr.,+4,-28000.0,-117.152,"Hydrated iridic oxide IrO2.2H2O or iridic hydroxide Ir(OH)4, blue to black"
+13_Iridium.md,Iridium,Iridium,Dissolved,Ir(3+),+3,,,Iridium(III) ion
+13_Iridium.md,Iridium,Iridium,Dissolved,IrO4(2-),+6,-47000.0,-196.648,Iridate ion
+13_Iridium.md,Iridium,Iridium,Dissolved,Ir(4+),+4,80000.0,334.72,Iridic ion
+13_Osmium.md,Osmium,Osmium,Solid,Os,0,0.0,0.0,"Osmium, blue-grey, hex."
+13_Osmium.md,Osmium,Osmium,Solid,OsO2 hydr.,+4,-50000.0,-209.2,"Hydrated osmic oxide OsO2.2H2O or osmic hydroxide Os(OH)4, black"
+13_Osmium.md,Osmium,Osmium,Solid,OsO4,+8,-70700.0,-295.8088,"Osmium tetroxide, yellow, monocl."
+13_Osmium.md,Osmium,Osmium,Dissolved,OsO4(2-),+6,-89250.0,-373.422,"Osmate ion, yellow to red"
+13_Osmium.md,Osmium,Osmium,Dissolved,H2OsO5,+8,-126100.0,-527.6024,"""Hyperosmic"" acid, colourless"
+13_Osmium.md,Osmium,Osmium,Dissolved,HOsO5(-),+8,-113000.0,-472.792,"""Dihyperosmate"" ion, orange-yellow"
+13_Osmium.md,Osmium,Osmium,Dissolved,OsO5(2-),+8,-93250.0,-390.158,"""Hyperosmate"" ion, orange-yellow"
+13_Osmium.md,Osmium,Osmium,Gaseous,OsO4,+8,-67900.0,-284.0936,"Osmium tetroxide, colourless"
+13_Palladium.md,Palladium,Palladium,Solid,Pd2H,-0.5,1097.0,4.5898,Palladium alpha-hydride
+13_Palladium.md,Palladium,Palladium,Solid,Pd,0,0.0,0.0,"Palladium, white, f.c.cub."
+13_Palladium.md,Palladium,Palladium,Solid,PdO hydr. (a),+2,-15310.0,-64.057,"Hydrated palladium oxide or palladous hydroxide Pd(OH)2, brown to yellow"
+13_Palladium.md,Palladium,Palladium,Solid,PdO (b),+2,-14400.0,-60.2496,"Palladous oxide, grey, quad."
+13_Palladium.md,Palladium,Palladium,Solid,PdO2 hydr.,+4,-12820.0,-53.6389,"Hydrated palladic oxide or palladic hydroxide Pd(OH)4, brown"
+13_Palladium.md,Palladium,Palladium,Solid,PdO3,+6,21000.0,87.864,Palladium peroxide
+13_Palladium.md,Palladium,Palladium,Dissolved,Pd(2+),+2,45500.0,190.372,"Palladous ion, red-brown"
+13_Platinum.md,Platinum,Platinum,Solid,Pt,0,0.0,0.0,"Platinum, white, f.c.cub."
+13_Platinum.md,Platinum,Platinum,Solid,PtO hydr.,+2,-31000.0,-129.704,"Hydrated oxide PtO.H2O or platinous hydroxide Pt(OH)2, black"
+13_Platinum.md,Platinum,Platinum,Solid,PtO2 hydr.,+4,-20000.0,-83.68,"Hydrated platinic oxide PtO2.xH2O, brown"
+13_Platinum.md,Platinum,Platinum,Solid,PtO3 hydr.,+6,-16000.0,-66.944,"Hydrated perplatinic oxide PtO3.xH2O, yellow"
+13_Platinum.md,Platinum,Platinum,Dissolved,Pt(2+),+2,-800.0,-3.3472,Platinous ion
+13_Rhodium.md,Rhodium,Rhodium,Solid,Rh,0,0.0,0.0,"Rhodium, grey-white, cubic"
+13_Rhodium.md,Rhodium,Rhodium,Solid,Rh2O,+1,-20000.0,-83.68,"Rhodium sub-oxide, light grey"
+13_Rhodium.md,Rhodium,Rhodium,Solid,RhO,+2,-18000.0,-75.312,"Rhodous oxide, grey"
+13_Rhodium.md,Rhodium,Rhodium,Solid,Rh2O3,+3,-152500.0,-638.06,"Rhodium sesquioxide, grey black, rhombohedral"
+13_Rhodium.md,Rhodium,Rhodium,Solid (hydrated),Rh2O3 · 5H2O,+3,,,"Hydrated rhodium sesquioxide, light yellow"
+13_Rhodium.md,Rhodium,Rhodium,Solid,RhO2,+4,-10000.0,-41.84,"Rhodic oxide, yellow-brown to brown-black"
+13_Rhodium.md,Rhodium,Rhodium,Solid (hydrated),RhO2 · 2H2O,+4,,,"Hydrated rhodic oxide, dark green"
+13_Rhodium.md,Rhodium,Rhodium,Dissolved,Rh(+),+1,-1000.0,-4.184,Hyporhodous ion
+13_Rhodium.md,Rhodium,Rhodium,Dissolved,Rh(2+),+2,28000.0,117.152,Rhodous ion
+13_Rhodium.md,Rhodium,Rhodium,Dissolved,Rh(3+),+3,28000.0,117.152,Rhodic ion
+13_Rhodium.md,Rhodium,Rhodium,Dissolved,RhO4(2-),+6,-1000.0,-4.184,"Rhodate ion, dark purple"
+13_Ruthenium.md,Ruthenium,Ruthenium,Solid,Ru,0,0.0,0.0,"Ruthenium, silvery grey, hex."
+13_Ruthenium.md,Ruthenium,Ruthenium,Solid,Ru2O3 hydr.,+3,-9100.0,-38.0744,"Hydrated ruthenium sesquioxide Ru2O3·3H2O or Ru(OH)3, black"
+13_Ruthenium.md,Ruthenium,Ruthenium,Solid,RuO2 hydr.,+4,-101000.0,-422.584,"Hydrated ruthenic oxide RuO2·2H2O or ruthenic hydroxide Ru(OH)4, black"
+13_Ruthenium.md,Ruthenium,Ruthenium,Solid,RuO4,+8,-26000.0,-108.784,"Ruthenium tetroxide, yellow"
+13_Ruthenium.md,Ruthenium,Ruthenium,Dissolved,RuO4(2-),+6,-61000.0,-255.224,"Ruthenate ion, orange"
+13_Ruthenium.md,Ruthenium,Ruthenium,Dissolved,RuO4(-),+7,-18000.0,-75.312,"Perruthenate ion, green"
+13_Ruthenium.md,Ruthenium,Ruthenium,Dissolved,H2RuO5,+8,-81000.0,-338.904,"Hyperruthenic acid, golden yellow"
+13_Ruthenium.md,Ruthenium,Ruthenium,Dissolved,HRuO5(-),+8,-66300.0,-277.3992,"Dihyperruthenate ion, golden yellow"
+14_Copper.md,Copper,Copper,Solid,Cu,0,0.0,0.0,"Copper, red, cubic"
+14_Copper.md,Copper,Copper,Solid,Cu2O,+1,-31980.0,-133.8043,"Cuprous oxide or oxydule, red, cubic"
+14_Copper.md,Copper,Copper,Solid,CuO,+2,-30400.0,-127.1936,"Cupric oxide, black, monoclinic or cubic"
+14_Copper.md,Copper,Copper,Solid,Cu(OH)2,+2,-85300.0,-356.8952,"Hydrated cupric oxide or cupric hydroxide Cu(OH)2, light blue"
+14_Copper.md,Copper,Copper,Dissolved,Cu(+),+1,12000.0,50.208,"Cuprous ion, colourless"
+14_Copper.md,Copper,Copper,Dissolved,Cu(2+),+2,15530.0,64.9775,"Cupric ion, light blue"
+14_Copper.md,Copper,Copper,Dissolved,HCuO2(-),+2,-61420.0,-256.9813,"Bicuprite ion, blue"
+14_Copper.md,Copper,Copper,Dissolved,CuO2(2-),+2,-43500.0,-182.004,"Cuprite ion, blue"
+14_Copper.md,Copper,Copper,Gaseous,CuH,-1,10000.0,41.84,Hydride
+14_Gold.md,Gold,Gold,Solid,Au,0,0.0,0.0,"Gold, yellow, f.c.cub."
+14_Gold.md,Gold,Gold,Solid,Au2O3·H2O,+III,,,"Hydrated auric oxide or hydroxide Au(OH)3, rust-brown"
+14_Gold.md,Gold,Gold,Solid,Au2O3,+III,39000.0,163.176,"Anhydrous auric oxide, brown-black"
+14_Gold.md,Gold,Gold,Dissolved,Au(+),+I,39000.0,163.176,Aurous ion
+14_Gold.md,Gold,Gold,Dissolved,Au(3+),+III,103000.0,430.952,Auric ion
+14_Gold.md,Gold,Gold,Dissolved,H3AuO3,+III,-61800.0,-258.5712,Auric acid
+14_Gold.md,Gold,Gold,Dissolved,H2AuO3(-),+III,-18500.0,-77.404,Monoaurate ion
+14_Gold.md,Gold,Gold,Dissolved,HAuO3(2-),+III,-27600.0,-115.4784,Diaurate ion
+14_Silver.md,Silver,Silver,Solid,Ag,0,0.0,0.0,"Silver, grey, cub."
+14_Silver.md,Silver,Silver,Solid,Ag2O,+1,-2586.0,-10.8198,"Argentous oxide, brown-black, cub."
+14_Silver.md,Silver,Silver,Dissolved,Ag(+),+1,18430.0,77.1111,"Argentous ion, colourless"
+14_Silver.md,Silver,Silver,Dissolved,AgO(-),+1,-100.0,-0.4184,Argentite ion
+15_Cadmium.md,Cadmium,Cadmium,Solid,Cd,0,0.0,0.0,"alpha-Cadmium, grey, hex."
+15_Cadmium.md,Cadmium,Cadmium,Solid,CdO,+2,-53790.0,-225.0574,"Cadmium oxide, brown, cub."
+15_Cadmium.md,Cadmium,Cadmium,Solid,Cd(OH)2 (inactive),+2,-113130.0,-473.3359,"Inactive cadmium hydroxide, white, rhomb."
+15_Cadmium.md,Cadmium,Cadmium,Solid,Cd(OH)2 (active),+2,-112340.0,-470.0306,"Active cadmium hydroxide, white"
+15_Cadmium.md,Cadmium,Cadmium,Dissolved,Cd2+,+2,-18580.0,-77.7387,"Cadmous ion, colourless"
+15_Cadmium.md,Cadmium,Cadmium,Dissolved,HCdO2(-),+2,-56440.0,-236.145,"Bicadmite ion, colourless"
+15_Cadmium.md,Cadmium,Cadmium,Gaseous,CdH2,-2,,,Cadmium hydride
+15_Mercury.md,Mercury,Mercury,Liquid,Hg,0,0.0,0.0,"Mercury, silvery grey"
+15_Mercury.md,Mercury,Mercury,Solid,HgO (red),+2,-13100.0,-54.8104,"Mercuric oxide, red, orthorhombic"
+15_Mercury.md,Mercury,Mercury,Solid,HgO (yellow),+2,-13959.0,-58.4045,"Mercuric oxide, yellow, orthorhombic"
+15_Mercury.md,Mercury,Mercury,Dissolved,Hg2(2+),+1,36150.0,151.2516,"Mercurous ion, colourless"
+15_Mercury.md,Mercury,Mercury,Dissolved,Hg(2+),+2,31380.0,131.2939,"Mercuric ion, colourless"
+15_Mercury.md,Mercury,Mercury,Dissolved,Hg(OH)2,+2,-67000.0,-280.328,Mercuric hydroxide
+15_Mercury.md,Mercury,Mercury,Dissolved,HgO2(2-),+2,-112120.0,-469.1101,Mercurate ion
+15_Mercury.md,Mercury,Mercury,Gaseous,HgH,-1,-52000.0,-217.568,Mercurous hydride
+15_Zinc.md,Zinc,Zinc,Solid,Zn,0,0.0,0.0,"Zinc, silvery white, hex."
+15_Zinc.md,Zinc,Zinc,Solid,ZnO,+2,-76160.0,-318.6534,"Zinc oxide, white"
+15_Zinc.md,Zinc,Zinc,Solid,ZnO (inactive),+2,-78760.0,-329.5318,"Inactive zinc oxide, white"
+15_Zinc.md,Zinc,Zinc,Solid,Zn(OH)2 (epsilon),+2,-133626.0,-559.0912,"Zinc hydroxide, epsilon-Zn(OH)2, white"
+15_Zinc.md,Zinc,Zinc,Solid,Zn(OH)2 (gamma),+2,-133313.0,-557.7816,"Zinc hydroxide, gamma-Zn(OH)2, white"
+15_Zinc.md,Zinc,Zinc,Solid,Zn(OH)2 (beta),+2,-133135.0,-557.0368,"Zinc hydroxide, beta-Zn(OH)2, white"
+15_Zinc.md,Zinc,Zinc,Solid,Zn(OH)2 (alpha),+2,-133936.0,-560.3882,"Zinc hydroxide, alpha-Zn(OH)2, white, hex."
+15_Zinc.md,Zinc,Zinc,Solid,Zn(OH)2 (amorphous),+2,-131854.0,-551.6771,"Zinc hydroxide, Zn(OH)2, white, amorphous"
+15_Zinc.md,Zinc,Zinc,Solid,ZnO (active),+2,-77500.0,-324.26,"Active zinc oxide, white"
+15_Zinc.md,Zinc,Zinc,Dissolved,Zn(2+),+2,-35184.0,-147.2099,"Zincic ion, colourless"
+15_Zinc.md,Zinc,Zinc,Dissolved,ZnOH(+),+2,-70000.0,-292.88,"Zincyl ion, colourless"
+15_Zinc.md,Zinc,Zinc,Dissolved,HZnO2(-),+2,-109300.0,-457.3112,"Bizincate ion, colourless"
+15_Zinc.md,Zinc,Zinc,Dissolved,ZnO2(2-),+2,-103000.0,-430.952,"Zincate ion, colourless"
+16_Gallium.md,Gallium,Gallium,Solid,Ga,0,0.0,0.0,"Gallium, grey-white, rhomb."
+16_Gallium.md,Gallium,Gallium,Solid,Ga2O,+1,-75200.0,-314.6368,"Sub-oxide, brown-black"
+16_Gallium.md,Gallium,Gallium,Solid,Ga2O3(anh.alpha),+3,-237200.0,-992.4448,"alpha-Sesquioxide, white, rhomb."
+16_Gallium.md,Gallium,Gallium,Solid,Ga2O3(hydr.),+3,-227930.0,-953.6591,"Trihydrated oxide or hydroxide Ga(OH)3, white"
+16_Gallium.md,Gallium,Gallium,Dissolved,Ga(+),+1,-21000.0,-87.864,"Gallous ion, colourless"
+16_Gallium.md,Gallium,Gallium,Dissolved,Ga(3+),+3,-36600.0,-153.1344,"Gallic ion, colourless"
+16_Gallium.md,Gallium,Gallium,Dissolved,GaOH(2+),+3,-89800.0,-375.7232,"Gallyl ion, colourless"
+16_Gallium.md,Gallium,Gallium,Dissolved,GaO(+),+3,-85400.0,-357.3136,"Gallyl ion, colourless"
+16_Gallium.md,Gallium,Gallium,Dissolved,GaO2(-),+3,-121300.0,-507.5192,"Gallate ion, colourless"
+16_Gallium.md,Gallium,Gallium,Dissolved,HGaO3(2-),+3,-164000.0,-686.176,"Bigallate ion, colourless"
+16_Gallium.md,Gallium,Gallium,Dissolved,GaO3(3-),+3,-148000.0,-619.232,"Gallate ion, colourless"
+16_Indium.md,Indium,Indium,Solid,In,0,0.0,0.0,"Indium, silvery white, f.c. quad."
+16_Indium.md,Indium,Indium,Solid,In2O3(anhyd.),+3,-196400.0,-821.7376,"Sesquioxide, pale yellow, cubic, amorphous"
+16_Indium.md,Indium,Indium,Solid,In2O3(hydr.),+3,-193930.0,-811.4031,"Trihydrated oxide or hydroxide In(OH)3, white"
+16_Indium.md,Indium,Indium,Dissolved,In(+),+1,-3200.0,-13.3888,Hypoindous ion
+16_Indium.md,Indium,Indium,Dissolved,In(2+),+2,-12400.0,-51.8816,Indous ion
+16_Indium.md,Indium,Indium,Dissolved,In(3+),+3,-23700.0,-99.1608,"Indic ion, colourless"
+16_Indium.md,Indium,Indium,Dissolved,InO2(-),+3,-104000.0,-435.136,Indate ion
+16_Indium.md,Indium,Indium,Gaseous,InH,-1,45000.0,188.28,Hydride
+16_Thallium.md,Thallium,Thallium,Solid,Tl,0,0.0,0.0,"Thallium, bluish-white, hex."
+16_Thallium.md,Thallium,Thallium,Solid,Tl2O(hydr.),+1,,,"Hydrated oxide or hydroxide TlOH, light yellow, rhomb."
+16_Thallium.md,Thallium,Thallium,Solid,Tl2O(anhydr.),+1,,,"Anhydrous oxide, reddish, cub."
+16_Thallium.md,Thallium,Thallium,Solid,Tl2O3(hydr.),+3,,,"Hydrated sesquioxide or hydroxide Tl(OH)3, brown, hex."
+16_Thallium.md,Thallium,Thallium,Solid,Tl2O3(anhydr.),+3,,,"Anhydrous sesquioxide, brown or black, hex."
+16_Thallium.md,Thallium,Thallium,Dissolved,Tl(+),+1,-7755.0,-32.4469,"Thallous ion, colourless"
+16_Thallium.md,Thallium,Thallium,Dissolved,Tl(3+),+3,50000.0,209.2,Thallic ion
+16_Thallium.md,Thallium,Thallium,Gaseous,TlH,-1,43000.0,179.912,Hydride
+17_Carbon.md,Carbon,Carbon,Solid,C(graphite),0,0.0,0.0,"Graphite, shiny black, hex."
+17_Carbon.md,Carbon,Carbon,Dissolved,CH3OH,-2,-41700.0,-174.4728,"Methanol or methyl alcohol, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,HCHO,0,-31000.0,-129.704,"Methanal or formaldehyde, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,HCOOH,+2,-85100.0,-356.0584,"Formic acid, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,HCOO(-),+2,-80000.0,-334.72,"Formate ion, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,C2O4H2,+3,-166800.0,-697.8912,"Oxalic acid, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,HC2O4(-),+3,-165120.0,-690.8621,"Acid oxalate ion, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,C2O4(2-),+3,-159400.0,-666.9296,"Oxalate ion, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,H2CO3,+4,-149000.0,-623.416,Carbonic acid
+17_Carbon.md,Carbon,Carbon,Dissolved,HCO3(-),+4,-140310.0,-587.057,"Bicarbonate ion, colourless"
+17_Carbon.md,Carbon,Carbon,Dissolved,CO3(2-),+4,-126220.0,-528.1045,"Carbonate ion, colourless"
+17_Carbon.md,Carbon,Carbon,Gaseous,CH4,-4,-12140.0,-50.7938,"Methane, colourless"
+17_Carbon.md,Carbon,Carbon,Gaseous,CO,+2,-32807.9,-137.2683,"Carbon monoxide, colourless"
+17_Carbon.md,Carbon,Carbon,Gaseous,CO2,+4,-94259.8,-394.383,"Carbon dioxide, colourless"
+17_Germanium.md,Germanium,Germanium,Solid,Ge,0,0.0,0.0,"Germanium, grey-white, cubic"
+17_Germanium.md,Germanium,Germanium,Solid,GeO(hyd.brown),+2,,,"Hydrous germanous oxide, brown"
+17_Germanium.md,Germanium,Germanium,Solid,GeO(hyd.yellow),+2,,,"Hydrous germanous oxide, yellow"
+17_Germanium.md,Germanium,Germanium,Solid,GeO2(quadratic),+4,,,"Insoluble germanic oxide, white, quadratic"
+17_Germanium.md,Germanium,Germanium,Solid,GeO2(hexagonal),+4,,,"Precipitated germanic oxide, white, hexagonal"
+17_Germanium.md,Germanium,Germanium,Dissolved,Ge(2+),+2,0.0,0.0,Germanous ion
+17_Germanium.md,Germanium,Germanium,Dissolved,HGeO2(-),+2,-92200.0,-385.7648,"Bigermanite ion, cherry-red"
+17_Germanium.md,Germanium,Germanium,Dissolved,H2GeO3,+4,-186800.0,-781.5712,Germanic acid
+17_Germanium.md,Germanium,Germanium,Dissolved,HGeO3(-),+4,-175200.0,-733.0368,Bigermanate ion
+17_Germanium.md,Germanium,Germanium,Dissolved,GeO3(2-),+4,-157900.0,-660.6536,Germanate ion
+17_Germanium.md,Germanium,Germanium,Gaseous,GeH4,-4,80000.0,334.72,"Germanium hydride, colourless"
+17_Lead.md,Lead,Lead,Solid,Pb,0,0.0,0.0,"Lead, grey, cubic"
+17_Lead.md,Lead,Lead,Solid,PbO(anh.red),+2,,,"Plumbous oxide, red, quadratic"
+17_Lead.md,Lead,Lead,Solid,PbO(anh.yellow),+2,,,"Plumbous oxide, yellow, orthorhombic"
+17_Lead.md,Lead,Lead,Solid,PbO(hydr.),+2,,,"Hydrated plumbous oxide or hydroxide, white, hexagonal"
+17_Lead.md,Lead,Lead,Solid,Pb3O4,"+2, +4",-147000.0,-615.048,"Plumbo-plumbic oxide (minium), red, quadratic"
+17_Lead.md,Lead,Lead,Solid,Pb2O3,+3,-98417.0,-411.7767,"Sesquioxide, yellow-orange, amorphous or quadratic"
+17_Lead.md,Lead,Lead,Solid,PbO2,+4,-52340.0,-218.9906,"Dioxide, brown, quadratic"
+17_Lead.md,Lead,Lead,Dissolved,Pb(2+),+2,-5810.0,-24.309,"Plumbous ion, colourless"
+17_Lead.md,Lead,Lead,Dissolved,HPbO2(-),+2,-81000.0,-338.904,Biplumbite ion
+17_Lead.md,Lead,Lead,Dissolved,PbO2(2-),+2,,,Plumbite ion
+17_Lead.md,Lead,Lead,Dissolved,Pb(4+),+4,72300.0,302.5032,Plumbic ion
+17_Lead.md,Lead,Lead,Dissolved,PbO3(2-),+4,-66340.0,-277.5666,Metaplumbate ion
+17_Lead.md,Lead,Lead,Dissolved,PbO4(4-),+4,-67421.0,-282.0895,Orthoplumbate ion
+17_Lead.md,Lead,Lead,Gaseous,PbH2,-2,69500.0,290.788,"Hydride, colourless"
+17_Silicon.md,Silicon,Silicon,Solid,Si,0,0.0,0.0,"Silicon, steel-grey, cub."
+17_Silicon.md,Silicon,Silicon,Solid,SiO2(anh.Quartz),+4,,,"Quartz silica, colourless, hex."
+17_Silicon.md,Silicon,Silicon,Solid,SiO2(anh.cristobalite),+4,,,"Cristobalite silica, colourless, cub."
+17_Silicon.md,Silicon,Silicon,Solid,SiO2(anh.tridymite),+4,,,"Tridymite silica, colourless, hex."
+17_Silicon.md,Silicon,Silicon,Solid,SiO2(anh.vitreous),+4,,,"Vitreous silica, colourless"
+17_Silicon.md,Silicon,Silicon,Solid,SiO2(hydr.),+4,,,"Hydrated silica or metamonosilicic acid H2SiO3, colourless, am."
+17_Silicon.md,Silicon,Silicon,Dissolved,H2SiO3,+4,-242000.0,-1012.528,"Metamonosilicic acid, colourless"
+17_Silicon.md,Silicon,Silicon,Dissolved,HSiO3(-),+4,-228360.0,-955.4582,"Acid metamonosilicate ion, colourless"
+17_Silicon.md,Silicon,Silicon,Dissolved,SiO3(2-),+4,-212000.0,-887.008,"Metamonosilicate ion, colourless"
+17_Silicon.md,Silicon,Silicon,Gaseous,SiH4,-4,-9400.0,-39.3296,"Silicon hydride, colourless"
+17_Tin.md,Tin,Tin,Solid,Sn,0,0.0,0.0,"Tin, white, quadratic"
+17_Tin.md,Tin,Tin,Solid,SnO(anh.),+2,,,"Stannous oxide, black, quadratic"
+17_Tin.md,Tin,Tin,Solid,SnO(hydr.),+2,,,"Stannous hydroxide, white"
+17_Tin.md,Tin,Tin,Solid,SnO2(anh.),+4,,,"Stannic oxide, white, quadratic"
+17_Tin.md,Tin,Tin,Solid,SnO2(hydr.),+4,,,"Stannic hydroxide, white"
+17_Tin.md,Tin,Tin,Dissolved,Sn(2+),+2,-6275.0,-26.2546,"Stannous ion, colourless"
+17_Tin.md,Tin,Tin,Dissolved,HSnO2(-),+2,-98000.0,-410.032,"Bistannite ion, colourless"
+17_Tin.md,Tin,Tin,Dissolved,SnO3(2-),+4,-137420.0,-574.9653,"Stannate ion, colourless"
+17_Tin.md,Tin,Tin,Dissolved,Sn(4+),+4,650.0,2.7196,"Stannic ion, colourless"
+17_Tin.md,Tin,Tin,Gaseous,SnH4,-4,99000.0,414.216,"Hydride, colourless"
+18_Antimony.md,Antimony,Antimony,Solid,Sb,0,0.0,0.0,"Antimony, grey, rhomb."
+18_Antimony.md,Antimony,Antimony,Solid,Sb2O3(anh.cub.),+3,,,"Antimony trioxide or senarmontite, white, cub."
+18_Antimony.md,Antimony,Antimony,Solid,Sb2O3(anh.orth.),+3,,,"Antimony trioxide or valentinite, white, orthorh."
+18_Antimony.md,Antimony,Antimony,Solid,Sb2O4(anh.),+4,-165900.0,-694.1256,"Antimony tetroxide, white, orthorh."
+18_Antimony.md,Antimony,Antimony,Solid,Sb2O5(anh.),+5,-200500.0,-838.892,"Antimony pentoxide, yellow, cub."
+18_Antimony.md,Antimony,Antimony,Dissolved,SbO(+),+3,-42000.0,-175.728,"Antimonyl ion, colourless"
+18_Antimony.md,Antimony,Antimony,Dissolved,HSbO2,+3,-97500.0,-407.94,"Meta-antimonious acid, white"
+18_Antimony.md,Antimony,Antimony,Dissolved,SbO2(-),+3,-82500.0,-345.18,"Antimonite ion Sb(OH)4(-), colourless"
+18_Antimony.md,Antimony,Antimony,Dissolved,SbO2(+),+5,-65500.0,-274.052,Antimonic ion
+18_Antimony.md,Antimony,Antimony,Dissolved,SbO3(-),+5,-122930.0,-514.3391,"Antimonate ion Sb(OH)6(-), colourless"
+18_Antimony.md,Antimony,Antimony,Gaseous,SbH3,-3,35300.0,147.6952,"Antimonated hydrogen or stibine, colourless"
+18_Arsenic.md,Arsenic,Arsenic,Solid,As,0,0.0,0.0,"Arsenic, steel grey, rhomb."
+18_Arsenic.md,Arsenic,Arsenic,Solid,As2O3,+3,-137680.0,-576.0531,"Arsenious anhydride, white, cubic"
+18_Arsenic.md,Arsenic,Arsenic,Solid,As2O5,+5,-184600.0,-772.3664,"Arsenic anhydride, white, amorphous"
+18_Arsenic.md,Arsenic,Arsenic,Dissolved,AsO(+),+3,-39100.0,-163.5944,"Arsenyl ion, colourless"
+18_Arsenic.md,Arsenic,Arsenic,Dissolved,HAsO2,+3,-96250.0,-402.71,"Meta-arsenious acid, colourless"
+18_Arsenic.md,Arsenic,Arsenic,Dissolved,AsO2(-),+3,-83700.0,-350.2008,"Meta-arsenite ion, colourless"
+18_Arsenic.md,Arsenic,Arsenic,Dissolved,H3AsO3,+3,-152940.0,-639.901,Ortho-arsenious acid
+18_Arsenic.md,Arsenic,Arsenic,Dissolved,H2AsO3(-),+3,-140400.0,-587.4336,"Mono-ortho-arsenite ion, colourless"
+18_Arsenic.md,Arsenic,Arsenic,Dissolved,H3AsO4,+5,-183800.0,-769.0192,"Ortho-arsenic acid, colourless"
+18_Arsenic.md,Arsenic,Arsenic,Dissolved,H2AsO4(-),+5,-178900.0,-748.5176,"Mono-ortho-arsenate ion, colourless"
+18_Arsenic.md,Arsenic,Arsenic,Dissolved,HAsO4(2-),+5,-169000.0,-707.096,"Di-ortho-arsenate ion, colourless"
+18_Arsenic.md,Arsenic,Arsenic,Dissolved,AsO4(3-),+5,-152000.0,-635.968,"Tri-ortho-arsenate ion, colourless"
+18_Arsenic.md,Arsenic,Arsenic,Gaseous,AsH3,-3,42000.0,175.728,"Arsine, colourless"
+18_Bismuth.md,Bismuth,Bismuth,Solid,Bi,0,0.0,0.0,"Bismuth, silvery white or reddish, hex."
+18_Bismuth.md,Bismuth,Bismuth,Solid,Bi2O3(anh.),+3,,,"Bismuth trioxide, pale yellow, rhomb."
+18_Bismuth.md,Bismuth,Bismuth,Solid,Bi2O3(hydr.),+3,,,"Bismuth hydroxide, white, amorphous"
+18_Bismuth.md,Bismuth,Bismuth,Solid,Bi4O7,+3/+4,-232750.0,-973.826,"Oxide Bi4O7, grey-brown"
+18_Bismuth.md,Bismuth,Bismuth,Solid,Bi2O4,+4,-109000.0,-456.056,"Bismuth tetroxide, yellow-brown"
+18_Bismuth.md,Bismuth,Bismuth,Solid,Bi2O5,+5,-91570.0,-383.1289,"Bismuth pentoxide, dark red"
+18_Bismuth.md,Bismuth,Bismuth,Dissolved,Bi(3+),+3,14830.0,62.0487,"Bismuthous ion, colourless"
+18_Bismuth.md,Bismuth,Bismuth,Dissolved,Bi(OH)(2+),+3,-39130.0,-163.7199,"Hydroxybismuthous ion, colourless"
+18_Bismuth.md,Bismuth,Bismuth,Dissolved,BiO(+),+3,-34540.0,-144.5154,"Bismuthyl ion, colourless"
+18_Bismuth.md,Bismuth,Bismuth,Gaseous,BiH3,-3,55340.0,231.5426,"Bismuthine, colourless"
+18_Nitrogen.md,Nitrogen,Nitrogen,Dissolved,NH4OH,-3,-63050.0,-263.8012,"Ammonia, colourless"
+18_Nitrogen.md,Nitrogen,Nitrogen,Dissolved,NH4(+),-3,-19000.0,-79.496,"Ammonium ion, colourless"
+18_Nitrogen.md,Nitrogen,Nitrogen,Dissolved,HNO2,+3,-12820.0,-53.6389,"Nitrous acid, colourless"
+18_Nitrogen.md,Nitrogen,Nitrogen,Dissolved,NO2(-),+3,-8250.0,-34.518,Nitrite ion
+18_Nitrogen.md,Nitrogen,Nitrogen,Dissolved,HNO3,+5,-26430.0,-110.5831,"Nitric acid, colourless"
+18_Nitrogen.md,Nitrogen,Nitrogen,Dissolved,NO3(-),+5,-26130.0,-109.3279,"Nitrate ion, no colour of its own"
+18_Nitrogen.md,Nitrogen,Nitrogen,Gaseous,NH3,-3,-3976.0,-16.6356,"Ammonia, colourless"
+18_Nitrogen.md,Nitrogen,Nitrogen,Gaseous,N2,0,0.0,0.0,"Nitrogen, colourless"
+18_Nitrogen.md,Nitrogen,Nitrogen,Gaseous,N2O,+1,24760.0,103.5958,"Nitrous oxide, colourless"
+18_Nitrogen.md,Nitrogen,Nitrogen,Gaseous,NO,+2,20719.0,86.6883,"Nitric oxide, colourless"
+18_Nitrogen.md,Nitrogen,Nitrogen,Gaseous,NO2,+4,12390.0,51.8398,"Nitrogen peroxide or dioxide, red-brown"
+18_Nitrogen.md,Nitrogen,Nitrogen,Gaseous,N2O4,+4,23491.0,98.2863,"Nitrogen peroxide or tetroxide, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Solid,P4H2,-0.5,16000.0,66.944,Hydrogen tetraphosphide
+18_Phosphorus.md,Phosphorus,Phosphorus,Solid,P(red),0,,,"Phosphorus, red, cub."
+18_Phosphorus.md,Phosphorus,Phosphorus,Solid,P(white),0,,,"Phosphorus, white, cub."
+18_Phosphorus.md,Phosphorus,Phosphorus,Liquid,P2H4,-2,9000.0,37.656,"Hydrogen diphosphide, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,H3PO2,+1,-125100.0,-523.4184,"Hypophosphorous acid, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,H2PO2(-),+1,-122400.0,-512.1216,"Hypophosphite ion, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,H3PO3,+3,-204800.0,-856.8832,"Orthophosphorous acid, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,H2PO3(-),+3,-202350.0,-846.6324,"Monoorthophosphite ion, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,HPO3(2-),+3,-194000.0,-811.696,"Diorthophosphite ion, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,H4P2O6,+4,-392000.0,-1640.128,"Hypophosphoric acid, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,H3P2O6(-),+4,-389000.0,-1627.576,"Monohypophosphate ion, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,H2P2O6(2-),+4,-385200.0,-1611.6768,"Dihypophosphate ion, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,HP2O6(3-),+4,-375300.0,-1570.2552,"Trihypophosphate ion, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,P2O6(4-),+4,-361700.0,-1513.3528,"Tetrahypophosphate ion, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,H3PO4,+5,-274200.0,-1147.2528,"Orthophosphoric acid, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,H2PO4(-),+5,-271300.0,-1135.1192,"Monoorthophosphate ion, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,HPO4(2-),+5,-261500.0,-1094.116,"Diorthophosphate ion, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Dissolved,PO4(3-),+5,-245100.0,-1025.4984,"Triorthophosphate ion, colourless"
+18_Phosphorus.md,Phosphorus,Phosphorus,Gaseous,PH3,-3,4300.0,17.9912,"Phosphine, colourless"
+19_Oxygen.md,Oxygen,Oxygen,Liquid,H2O,-2,-56690.0,-237.191,Water
+19_Oxygen.md,Oxygen,Oxygen,Dissolved,OH(-),-2,-37595.0,-157.2975,Hydroxide ion
+19_Oxygen.md,Oxygen,Oxygen,Dissolved,H2O2,-1,-31470.0,-131.6705,Hydrogen peroxide
+19_Oxygen.md,Oxygen,Oxygen,Dissolved,HO2(-),-1,-15610.0,-65.3122,Hydrogen peroxide ion
+19_Oxygen.md,Oxygen,Oxygen,Dissolved,H(+),-2,0.0,0.0,Hydrogen ion
+19_Oxygen.md,Oxygen,Oxygen,Gaseous,O1,0,54994.0,230.0949,Atomic oxygen or monoxygen
+19_Oxygen.md,Oxygen,Oxygen,Gaseous,O2,0,0.0,0.0,Natural oxygen or dioxygen
+19_Oxygen.md,Oxygen,Oxygen,Gaseous,O3,0,39060.0,163.427,Ozone or trioxygen
+19_Polonium.md,Polonium,Polonium,Solid,Po,0,0.0,0.0,"Polonium, monoclinic"
+19_Polonium.md,Polonium,Polonium,Solid,PoO2(anh.),+4,-46600.0,-194.9744,"Polonium oxide, cubic or quadratic"
+19_Polonium.md,Polonium,Polonium,Solid,PoO3,+6,-33000.0,-138.072,Polonium peroxide
+19_Polonium.md,Polonium,Polonium,Dissolved,Po(2+),+2,30000.0,125.52,Polonous ion
+19_Polonium.md,Polonium,Polonium,Dissolved,PoO3(2-),+4,-101000.0,-422.584,Polonate ion
+19_Polonium.md,Polonium,Polonium,Gaseous,PoH2,-2,46000.0,192.464,"Polonium hydride, colourless"
+19_Selenium.md,Selenium,Selenium,Solid,Se,0,0.0,0.0,"Selenium, grey, rhombic"
+19_Selenium.md,Selenium,Selenium,Dissolved,H2Se,-2,18400.0,76.9856,"Hydrogen selenide, colourless"
+19_Selenium.md,Selenium,Selenium,Dissolved,HSe(-),-2,23500.0,98.324,"Hydrogen selenide ion, colourless"
+19_Selenium.md,Selenium,Selenium,Dissolved,Se(2-),-2,42600.0,178.2384,"Selenide ion, colourless"
+19_Selenium.md,Selenium,Selenium,Dissolved,H2SeO3,+4,-101800.0,-425.9312,"Selenious acid, colourless"
+19_Selenium.md,Selenium,Selenium,Dissolved,HSeO3(-),+4,-98300.0,-411.2872,"Acid selenite ion, colourless"
+19_Selenium.md,Selenium,Selenium,Dissolved,SeO3(2-),+4,-89330.0,-373.7567,"Selenite ion, colourless"
+19_Selenium.md,Selenium,Selenium,Dissolved,H2SeO4,+6,-105420.0,-441.0773,"Selenic acid, colourless"
+19_Selenium.md,Selenium,Selenium,Dissolved,HSeO4(-),+6,-108200.0,-452.7088,"Acid selenate ion, colourless"
+19_Selenium.md,Selenium,Selenium,Dissolved,SeO4(2-),+6,-105420.0,-441.0773,"Selenate ion, colourless"
+19_Selenium.md,Selenium,Selenium,Gaseous,H2Se,-2,17000.0,71.128,"Hydrogen selenide, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Solid,S,0,0.0,0.0,"Sulphur, light yellow, orthorhombic"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,H2S,-2,-6450.0,-26.9868,"Hydrogen sulphide, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,HS-,-2,3010.0,12.5938,"Hydrogensulphide ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,S2-,-2,21958.0,91.8723,"Sulphide ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,S2(2-),-1,19749.0,82.6298,"Disulphide ion, orange"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,S3(2-),-0.67,17968.0,75.1781,"Trisulphide ion, orange"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,S4(2-),-0.50,16615.0,69.5172,"Tetrasulphide ion, orange"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,S5(2-),-0.40,15689.0,65.6428,"Pentasulphide ion, orange"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,H2S2O3,+2,-129900.0,-543.5016,"Thiosulphuric acid, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,HS2O3-,+2,-129500.0,-541.828,"Acid thiosulphate ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,S2O3(2-),+2,-127200.0,-532.2048,"Thiosulphate ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,S5O6(2-),+2,-228500.0,-956.044,"Pentathionate ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,S4O6(2-),+2.50,-244300.0,-1022.1512,"Tetrathionate ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,HS2O4-,+3,-141408.0,-591.6511,"Acid dithionite ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,S2O4(2-),+3,-138000.0,-577.392,"Dithionite ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,S3O6(2-),+3.33,-229000.0,-958.136,"Trithionate ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,H2SO3,+4,-128690.0,-538.439,"Sulphurous acid, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,HSO3-,+4,-126000.0,-527.184,"Bisulphite ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,SO3(2-),+4,-116100.0,-485.7624,"Sulphite ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,S2O6(2-),+5,-231000.0,-966.504,"Dithionate ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,H2SO4,+6,-177340.0,-741.9906,"Sulphuric acid, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,HSO4-,+6,-179940.0,-752.869,"Bisulphate ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,SO4(2-),+6,-177340.0,-741.9906,"Sulphate ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Dissolved,S2O8(2-),+7,-262000.0,-1096.208,"Dipersulphate ion, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Gaseous,H2S,-2,-7892.0,-33.0201,"Hydrogen sulphide, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Gaseous,SO,+2,12180.0,50.9611,"Sulphur monoxide, colourless"
+19_Sulphur.md,Sulphur,Sulphur,Gaseous,SO2,+4,-71790.0,-300.3694,"Sulphur dioxide, colourless"
+19_Tellurium.md,Tellurium,Tellurium,Solid,Te,0,0.0,0.0,Tellurium
+19_Tellurium.md,Tellurium,Tellurium,Solid,TeO2(anhydr.),+4,,,"Tellurous anhydride, white, quad."
+19_Tellurium.md,Tellurium,Tellurium,Solid,TeO2(hydr.),+4,,,"Tellurous acid H2 Te03 or TeO2.H2O, white, amorphous"
+19_Tellurium.md,Tellurium,Tellurium,Solid,TeO3(hydr.),+6,,,"Orthotelluric acid H6TeO6 or TeO3.3H2O, colourless, cub. or monocl."
+19_Tellurium.md,Tellurium,Tellurium,Dissolved,H2Te,-2,34100.0,142.6744,Tellurhydric acid (dissolved)
+19_Tellurium.md,Tellurium,Tellurium,Dissolved,HTe(-),-2,37700.0,157.7368,Hydrogen telluride ion
+19_Tellurium.md,Tellurium,Tellurium,Dissolved,Te(2-),-2,52700.0,220.4968,Telluride ion
+19_Tellurium.md,Tellurium,Tellurium,Dissolved,Te2(2-),-1,38750.0,162.13,Ditelluride ion
+19_Tellurium.md,Tellurium,Tellurium,Dissolved,Te(4+),+4,52380.0,219.1579,Tellurous ion
+19_Tellurium.md,Tellurium,Tellurium,Dissolved,HTeO2(+),+4,-62510.0,-261.5418,Hydrogen tellurite ion
+19_Tellurium.md,Tellurium,Tellurium,Dissolved,HTeO3(-),+4,-104340.0,-436.5586,"Acid tellurite ion, colourless"
+19_Tellurium.md,Tellurium,Tellurium,Dissolved,TeO3(2-),+4,-93790.0,-392.4174,"Tellurite ion, colourless"
+19_Tellurium.md,Tellurium,Tellurium,Dissolved,H2TeO4,+6,-131658.0,-550.8571,"Telluric acid (dissolved), colourless"
+19_Tellurium.md,Tellurium,Tellurium,Dissolved,TeO4(2-),+6,-109088.0,-456.4242,Tellurate ion
+19_Tellurium.md,Tellurium,Tellurium,Gaseous,H2Te,-2,33100.0,138.4904,"Hydrogen telluride, tellurium hydride"
+1_HydrogenPeroxide.md,HydrogenPeroxide,HydrogenPeroxide,Liquid,H2O,"-2 (O), +1 (H)",-56690.0,-237.191,Water
+1_HydrogenPeroxide.md,HydrogenPeroxide,HydrogenPeroxide,Dissolved,H+,+1,0.0,0.0,Hydrogen ion
+1_HydrogenPeroxide.md,HydrogenPeroxide,HydrogenPeroxide,Dissolved,OH-,"-2 (O), +1 (H)",-37595.0,-157.2975,Hydroxide ion
+1_HydrogenPeroxide.md,HydrogenPeroxide,HydrogenPeroxide,Dissolved,H2O2,-1 (O),-31470.0,-131.6705,Hydrogen peroxide
+1_HydrogenPeroxide.md,HydrogenPeroxide,HydrogenPeroxide,Dissolved,HO2-,-1 (O),-15610.0,-65.3122,Hydrogen peroxide ion
+1_HydrogenPeroxide.md,HydrogenPeroxide,HydrogenPeroxide,Gaseous,O2,0,0.0,0.0,Natural oxygen
+1_Water.md,Water,Water,Liquid,H2O,,-56690.0,-237.191,Water
+1_Water.md,Water,Water,Dissolved,H(+),+1,0.0,0.0,Hydrogen ion
+1_Water.md,Water,Water,Dissolved,OH(-),-2,-37595.0,-157.2975,Hydroxide ion
+1_Water.md,Water,Water,Dissolved,H(-),-1,51900.0,217.1496,Hydride ion
+1_Water.md,Water,Water,Dissolved,H2O2,-1,-31470.0,-131.6705,Hydrogen peroxide
+1_Water.md,Water,Water,Dissolved,HO2(-),-1,-15610.0,-65.3122,Hydrogen peroxide ion
+1_Water.md,Water,Water,Gaseous,H1,0,48575.0,203.2378,Atomic hydrogen
+1_Water.md,Water,Water,Gaseous,H2,0,0.0,0.0,Natural hydrogen
+1_Water.md,Water,Water,Gaseous,O2,0,0.0,0.0,Natural oxygen
+1_Water.md,Water,Water,Gaseous,O3,0,39060.0,163.427,Ozone
+1_Water.md,Water,Water,Gaseous,H2O,,-54635.0,-228.5928,Water
+20_Bromine.md,Bromine,Bromine,Liquid substance,Br2,0,0.0,0.0,"Bromine, dark brown"
+20_Bromine.md,Bromine,Bromine,Dissolved,Br(-),-1,-24574.0,-102.8176,"Bromide ion, colourless"
+20_Bromine.md,Bromine,Bromine,Dissolved,Br3(-),-0.33,-25270.0,-105.7297,Tribromide ion
+20_Bromine.md,Bromine,Bromine,Dissolved,Br5(-),-0.20,-24340.0,-101.8386,Pentabromide ion
+20_Bromine.md,Bromine,Bromine,Dissolved,Br2,0,977.0,4.0878,Bromine (dissolved)
+20_Bromine.md,Bromine,Bromine,Dissolved,HBrO,+1,-19900.0,-83.2616,"Hypobromous acid, straw yellow"
+20_Bromine.md,Bromine,Bromine,Dissolved,BrO(-),+1,-8000.0,-33.472,"Hypobromite ion, colourless"
+20_Bromine.md,Bromine,Bromine,Dissolved,HBrO3,+5,1350.0,5.6484,"Bromic acid, colourless"
+20_Bromine.md,Bromine,Bromine,Dissolved,BrO3(-),+5,2300.0,9.6232,"Bromate ion, colourless"
+20_Bromine.md,Bromine,Bromine,Gaseous,HBr,-1,-12720.0,-53.2205,"Hydrobromic acid, colourless"
+20_Bromine.md,Bromine,Bromine,Gaseous,Br2,0,751.0,3.1422,"Bromine, red-brown"
+20_Chlorine.md,Chlorine,Chlorine,Dissolved,Cl(-),-1,-31350.0,-131.1684,"Chloride ion, colourless"
+20_Chlorine.md,Chlorine,Chlorine,Dissolved,Cl2,0,1650.0,6.9036,Dissolved chlorine
+20_Chlorine.md,Chlorine,Chlorine,Dissolved,HClO,+1,-19110.0,-79.9562,"Hypochlorous acid, colourless"
+20_Chlorine.md,Chlorine,Chlorine,Dissolved,ClO(-),+1,-8900.0,-37.2376,"Hypochlorite ion, colourless"
+20_Chlorine.md,Chlorine,Chlorine,Dissolved,HClO2,+3,70.0,0.2929,"Chlorous acid, colourless"
+20_Chlorine.md,Chlorine,Chlorine,Dissolved,ClO2(-),+3,2740.0,11.4642,"Chlorite ion, colourless"
+20_Chlorine.md,Chlorine,Chlorine,Dissolved,ClO3(-),+5,-620.0,-2.5941,"Chlorate ion, colourless"
+20_Chlorine.md,Chlorine,Chlorine,Dissolved,ClO4(-),+7,-2470.0,-10.3345,"Perchlorate ion, colourless"
+20_Chlorine.md,Chlorine,Chlorine,Gaseous,HCl,-1,-22769.0,-95.2655,"Hydrogen chloride, colourless"
+20_Chlorine.md,Chlorine,Chlorine,Gaseous,Cl2,0,0.0,0.0,"Chlorine, greenish-yellow"
+20_Chlorine.md,Chlorine,Chlorine,Gaseous,Cl2O,+1,22400.0,93.7216,"Chlorine monoxide (hypochlorous anhydride), brownish"
+20_Chlorine.md,Chlorine,Chlorine,Gaseous,ClO2,+4,29500.0,123.428,"Chlorine dioxide, orange-yellow"
+20_Fluorine.md,Fluorine,Fluorine,Dissolved,HF,-1,-70410.0,-294.5954,"Hydrofluoric acid, colourless"
+20_Fluorine.md,Fluorine,Fluorine,Dissolved,HF2(-),-1,-137400.0,-574.8816,"Bifluoride ion, colourless"
+20_Fluorine.md,Fluorine,Fluorine,Dissolved,F(-),-1,-66080.0,-276.4787,"Fluoride ion, colourless"
+20_Fluorine.md,Fluorine,Fluorine,Gaseous,HF,-1,-64700.0,-270.7048,"Hydrofluoric acid, colourless"
+20_Fluorine.md,Fluorine,Fluorine,Gaseous,F,0,28190.0,117.947,Atomic fluorine
+20_Fluorine.md,Fluorine,Fluorine,Gaseous,F2,0,0.0,0.0,"Fluorine, greenish yellow"
+20_Fluorine.md,Fluorine,Fluorine,Gaseous,OF2,+1,9700.0,40.5848,"Monoxide, colourless"
+20_Iodine.md,Iodine,Iodine,Solid,I2,0,0.0,0.0,"Iodine, grey-black, orthorhombic"
+20_Iodine.md,Iodine,Iodine,Dissolved,I(-),-1,-12330.0,-51.5887,"Iodide ion, colourless"
+20_Iodine.md,Iodine,Iodine,Dissolved,I3(-),-0.33,-12310.0,-51.505,"Triiodide ion, orange-brown"
+20_Iodine.md,Iodine,Iodine,Dissolved,I5(-),-0.20,-6900.0,-28.8696,Pentaiodide ion
+20_Iodine.md,Iodine,Iodine,Dissolved,I2,0,3926.0,16.4264,"Dissolved iodine, brown"
+20_Iodine.md,Iodine,Iodine,Dissolved,I(+),+1,31290.0,130.9174,Iodine cation (?)
+20_Iodine.md,Iodine,Iodine,Dissolved,HIO,+1,-23500.0,-98.324,"Hypoiodous acid, colourless"
+20_Iodine.md,Iodine,Iodine,Dissolved,IO(-),+1,-8500.0,-35.564,"Hypoiodite ion, colourless"
+20_Iodine.md,Iodine,Iodine,Dissolved,HIO3,+5,-33340.0,-139.4946,"Iodic acid, colourless"
+20_Iodine.md,Iodine,Iodine,Dissolved,IO3(-),+5,-32250.0,-134.934,"Iodate ion, colourless"
+20_Iodine.md,Iodine,Iodine,Dissolved,HIO4,+7,-15020.0,-62.8437,"Periodic acid H5IO6, colourless"
+20_Iodine.md,Iodine,Iodine,Dissolved,IO4(-)(anh.),+7,-12700.0,-53.1368,"Anhydrous periodate ion, colourless"
+20_Iodine.md,Iodine,Iodine,Dissolved,HIO5(2-),+7,-58110.0,-243.1322,"Periodate ion (H3IO6(-)), colourless"
+20_Iodine.md,Iodine,Iodine,Dissolved,IO5(3-),+7,-43110.0,-180.3722,"Periodate ion (H2IO6(2-)), colourless"
+20_Iodine.md,Iodine,Iodine,Gaseous,HI,-1,310.0,1.297,"Hydrogen iodide, colourless"
+20_Iodine.md,Iodine,Iodine,Gaseous,I2,0,4630.0,19.3719,"Iodine, violet"
+2_Hydrogen.md,Hydrogen,Hydrogen,Liquid,H2O,+1,-56690.0,-237.191,Water
+2_Hydrogen.md,Hydrogen,Hydrogen,Dissolved,H(-),-1,51900.0,217.1496,Hydride ion
+2_Hydrogen.md,Hydrogen,Hydrogen,Dissolved,H(+),+1,0.0,0.0,Hydrogen ion
+2_Hydrogen.md,Hydrogen,Hydrogen,Dissolved,OH(-),-1,-37595.0,-157.2975,Hydroxide ion
+2_Hydrogen.md,Hydrogen,Hydrogen,Gaseous,H1,0,48575.0,203.2378,Atomic hydrogen
+2_Hydrogen.md,Hydrogen,Hydrogen,Gaseous,H2,0,0.0,0.0,Natural hydrogen
+3_Caesium.md,Caesium,Caesium,Solid,CsH,-1,-7300.0,-30.5432,"Caesium hydride, white, cubic"
+3_Caesium.md,Caesium,Caesium,Solid,Cs,0,0.0,0.0,"Caesium, pale yellow, b.c. cubic"
+3_Caesium.md,Caesium,Caesium,Solid,Cs2O,+1,-60600.0,-253.5504,"Caesium monoxide, orange, rhombic"
+3_Caesium.md,Caesium,Caesium,Solid,CsOH,+1,-84900.0,-355.2216,"Caesium hydroxide, white"
+3_Caesium.md,Caesium,Caesium,Solid,Cs2O2,+2,-78200.0,-327.1888,"Caesium dioxide, yellowish white"
+3_Caesium.md,Caesium,Caesium,Solid,Cs3O3,+3,-86100.0,-360.2424,"Caesium trioxide, black"
+3_Caesium.md,Caesium,Caesium,Solid,Cs4O4,+4,-92500.0,-387.02,"Caesium tetroxide, brown, quadratic"
+3_Caesium.md,Caesium,Caesium,Dissolved,Cs+,+1,-67410.0,-282.0434,"Caesium cation, colourless"
+3_Lithium.md,Lithium,Lithium,Solid,LiH,-1,-16720.0,-69.9565,"Lithium hydride, grey-white, cubic"
+3_Lithium.md,Lithium,Lithium,Solid,Li,0,0.0,0.0,"Lithium, silvery white, b.c. cubic"
+3_Lithium.md,Lithium,Lithium,Solid,Li2O,+1,-133900.0,-560.2376,"Lithium monoxide, white, cubic"
+3_Lithium.md,Lithium,Lithium,Solid,LiOH,+1,-105900.0,-443.0856,"Lithium hydroxide, white translucent, quadratic"
+3_Lithium.md,Lithium,Lithium,Solid,Li2O2,+2,-135000.0,-564.84,"Lithium dioxide, white"
+3_Lithium.md,Lithium,Lithium,Dissolved,Li(+),+1,-70220.0,-293.8005,"Lithium cation, colourless"
+3_Potassium.md,Potassium,Potassium,Solid,KH,-1,-8900.0,-37.2376,"Potassium hydride, white, cubic"
+3_Potassium.md,Potassium,Potassium,Solid,K,0,0.0,0.0,"Potassium, silvery white, b.c. cubic"
+3_Potassium.md,Potassium,Potassium,Solid,K2O,+1,-76200.0,-318.8208,"Potassium monoxide, light yellow, cubic"
+3_Potassium.md,Potassium,Potassium,Solid,KOH,+1,-89500.0,-374.468,"Potassium hydroxide, white, orthorhombic"
+3_Potassium.md,Potassium,Potassium,Solid,K2O2,+2,-100100.0,-418.8184,"Potassium dioxide, white"
+3_Potassium.md,Potassium,Potassium,Solid,K3O3,+3,-100000.0,-418.4,"Potassium trioxide, red"
+3_Potassium.md,Potassium,Potassium,Solid,K4O4,+4,-99600.0,-416.7264,"Potassium tetroxide, yellow, quadratic"
+3_Potassium.md,Potassium,Potassium,Dissolved,K+,+1,-67460.0,-282.2526,"Potassium cation, colourless"
+3_Rubidium.md,Rubidium,Rubidium,Solid,RbH,-1,-7300.0,-30.5432,"Rubidium hydride, white, cubic"
+3_Rubidium.md,Rubidium,Rubidium,Solid,Rb,0,0.0,0.0,"Rubidium, silvery white, b.c. cubic"
+3_Rubidium.md,Rubidium,Rubidium,Solid,Rb2O,+1,-69500.0,-290.788,"Rubidium monoxide, straw yellow, cubic"
+3_Rubidium.md,Rubidium,Rubidium,Solid,RbOH,+1,-87100.0,-364.4264,"Rubidium hydroxide, white, rhombic"
+3_Rubidium.md,Rubidium,Rubidium,Solid,Rb2O2,+2,-83600.0,-349.7824,"Rubidium dioxide, yellowish white, cubic"
+3_Rubidium.md,Rubidium,Rubidium,Solid,Rb3O3,+3,-92400.0,-386.6016,"Rubidium trioxide, black"
+3_Rubidium.md,Rubidium,Rubidium,Solid,Rb4O4,+4,-94600.0,-395.8064,"Rubidium tetroxide, deep orange, quadratic"
+3_Rubidium.md,Rubidium,Rubidium,Dissolved,Rb(+),+1,-67450.0,-282.2108,"Rubidium cation, colourless"
+3_Sodium.md,Sodium,Sodium,Solid,NaH,-1,-9000.0,-37.656,"Sodium hydride, grey-white, cubic"
+3_Sodium.md,Sodium,Sodium,Solid,Na,0,0.0,0.0,"Sodium, silvery white, b.c. cubic"
+3_Sodium.md,Sodium,Sodium,Solid,Na2O,+1,-90000.0,-376.56,"Sodium monoxide, white, cubic"
+3_Sodium.md,Sodium,Sodium,Solid,NaOH,+1,-90100.0,-376.9784,"Sodium hydroxide, white, cubic"
+3_Sodium.md,Sodium,Sodium,Solid,Na2O2,+2,-102800.0,-430.1152,"Sodium peroxide, light yellow, quadratic"
+3_Sodium.md,Sodium,Sodium,Dissolved,Na(+),+1,-62589.0,-261.8724,"Sodium cation, colourless"
+4_Barium.md,Barium,Barium,Solid,Ba,0,0.0,0.0,Barium
+4_Barium.md,Barium,Barium,Solid,BaH2,-1 (H),,,Barium hydride
+4_Barium.md,Barium,Barium,Solid,Ba(OH)2·8H2O,+2,,,Barium hydroxide octahydrate
+4_Barium.md,Barium,Barium,Solid,BaO2·H2O,"+2 (Ba), -1 (O)",,,Barium peroxide monohydrate
+4_Barium.md,Barium,Barium,Dissolved,Ba++,+2,,,Barium ion
+4_Beryllium.md,Beryllium,Beryllium,Solid,BeH2,-,,,"Beryllium hydride, white"
+4_Beryllium.md,Beryllium,Beryllium,Solid,Be,0,0.0,0.0,"Beryllium, steel grey, hex."
+4_Beryllium.md,Beryllium,Beryllium,Solid,Be2O3H2,+2,-65000.0,-271.96,"Precipitated beryllium hydroxide, white (amorphous)"
+4_Beryllium.md,Beryllium,Beryllium,Solid,Be(OH)2 (beta),+2,-139510.0,-583.7098,"beta-Beryllium hydroxide, white, orthorh."
+4_Beryllium.md,Beryllium,Beryllium,Solid,BeO,+2,-139000.0,-581.576,"Beryllium oxide, white, hex."
+4_Beryllium.md,Beryllium,Beryllium,Solid,Be(OH)2 (alpha),+2,-138810.0,-580.781,"alpha-Beryllium hydroxide, white"
+4_Beryllium.md,Beryllium,Beryllium,Dissolved,Be2+,+2,-85200.0,-356.4768,"Beryllium ion, colourless"
+4_Beryllium.md,Beryllium,Beryllium,Dissolved,Be2O2+,+2,-218000.0,-912.112,"Beryllium oxide ion, colourless"
+4_Beryllium.md,Beryllium,Beryllium,Dissolved,Be2O3(2-),+2,-298000.0,-1246.832,"Diberyllate ion, colourless"
+4_Beryllium.md,Beryllium,Beryllium,Dissolved,BeO2(2-),+2,-155300.0,-649.7752,"Beryllate ion, colourless"
+4_Calcium.md,Calcium,Calcium,Solid,CaH2,-2,-35800.0,-149.7872,"Calcium hydride, grey-white, orthorhombic"
+4_Calcium.md,Calcium,Calcium,Solid,Ca,0,0.0,0.0,"Calcium, silvery white, cubic"
+4_Calcium.md,Calcium,Calcium,Solid,Ca(OH)2,+2,-214330.0,-896.7567,"Hydrated calcium oxide or hydroxide, white, rhombic"
+4_Calcium.md,Calcium,Calcium,Solid,CaO,+2,-144400.0,-604.1696,"Anhydrous calcium oxide, white, cubic"
+4_Calcium.md,Calcium,Calcium,Solid,CaO2,+2,-143000.0,-598.312,"Calcium peroxide, white"
+4_Calcium.md,Calcium,Calcium,Dissolved,Ca(2+),+2,-132180.0,-553.0411,"Divalent calcium ion, colourless"
+4_Magnesium.md,Magnesium,Magnesium,Solid,Mg,0,0.0,0.0,"Magnesium, silvery white, hex."
+4_Magnesium.md,Magnesium,Magnesium,Solid,Mg(OH)2,+2,,,"Magnesium hydroxide, white, rhomb."
+4_Magnesium.md,Magnesium,Magnesium,Solid,MgO,+2,,,"Magnesium oxide, white, cub."
+4_Magnesium.md,Magnesium,Magnesium,Dissolved,Mg2+,+2,-108000.0,-451.872,"Magnesic ion, colourless"
+4_Radium.md,Radium,Radium,Solid,Ra,0,117500.0,491.62,"Radium, shiny white"
+4_Radium.md,Radium,Radium,Solid,RaO,+2,,,Radium oxide
+4_Radium.md,Radium,Radium,Dissolved,Ra(2+),+2,,,"Radium ion, colourless"
+4_Strontium.md,Strontium,Strontium,Solid,SrH2,-2,-13100.0,-54.8104,"Strontium hydride, grey-white, orthorhombic"
+4_Strontium.md,Strontium,Strontium,Solid,Sr,0,0.0,0.0,"Strontium, silvery white, cubic"
+4_Strontium.md,Strontium,Strontium,Solid,Sr(OH)2,+2,-207800.0,-869.4352,"Hydrated strontium oxide or hydroxide, white"
+4_Strontium.md,Strontium,Strontium,Solid,SrO,+2,-133800.0,-559.8192,"Anhydrous strontium oxide, white, cubic"
+4_Strontium.md,Strontium,Strontium,Solid,SrO2,+2,-139000.0,-581.576,"Strontium peroxide, white"
+4_Strontium.md,Strontium,Strontium,Dissolved,Sr2+,+2,-133200.0,-557.3088,"Divalent strontium ion, colourless"
+5_Aluminium.md,Aluminium,Aluminium,Solid,Al,0,0.0,0.0,"Aluminium, tin-white, f.c. cub."
+5_Aluminium.md,Aluminium,Aluminium,Solid,Al2O3·3H2O (hydr.),+3,-554600.0,-2320.4464,"Trihydrated aluminium oxide (hydrargillite), white, monoclinic"
+5_Aluminium.md,Aluminium,Aluminium,Solid,Al2O3 (anh.),+3,,,"Anhydrous aluminium oxide (corundum), white, rhombic"
+5_Aluminium.md,Aluminium,Aluminium,Dissolved,Al3+,+3,,,"Aluminic ion, colourless"
+5_Aluminium.md,Aluminium,Aluminium,Dissolved,AlO2-,+3,,,"Aluminate ion, colourless"
+5_Boron.md,Boron,Boron,Solid,B10H14,-1.4,810.0,3.389,"Decaborane, colourless, orthorhombic"
+5_Boron.md,Boron,Boron,Solid,B,0,0.0,0.0,"Boron, brown-black, tetragonal or orthorhombic"
+5_Boron.md,Boron,Boron,Solid,B2O3 (hydr.),+3,-290000.0,-1213.36,"Orthoboric acid H3BO3, white, triclinic"
+5_Boron.md,Boron,Boron,Solid,B2O3 (anh.),+3,-280000.0,-1171.52,"Boric anhydride, white, cubic"
+5_Boron.md,Boron,Boron,Solid,B2O3 (hydr.),+3,-281000.0,-1175.704,Metaboric acid HBO2
+5_Boron.md,Boron,Boron,Solid,B2O3 (vitr.),+3,-271000.0,-1133.864,"Vitreous boric anhydride, white"
+5_Boron.md,Boron,Boron,Dissolved,H3BO3,+3,-230000.0,-962.32,"Orthoboric acid, colourless"
+5_Boron.md,Boron,Boron,Dissolved,H2BO3(-),+3,-216000.0,-903.744,"Orthoborate, colourless"
+5_Boron.md,Boron,Boron,Dissolved,BO2(-),+3,-169000.0,-707.096,"Metaborate, colourless"
+5_Boron.md,Boron,Boron,Dissolved,HBO3(2-),+3,-200000.0,-836.8,"Orthoborate, colourless"
+5_Boron.md,Boron,Boron,Dissolved,BO3(3-),+3,-181000.0,-757.304,"Orthoborate, colourless"
+5_Boron.md,Boron,Boron,Dissolved,H2B4O7,+3,-633000.0,-2648.472,"Tetraboric acid, colourless"
+5_Boron.md,Boron,Boron,Dissolved,HB4O7(-),+3,-628000.0,-2627.552,"Tetraborate, colourless"
+5_Boron.md,Boron,Boron,Dissolved,B4O7(2-),+3,-616000.0,-2577.344,"Tetraborate, colourless"
+5_Boron.md,Boron,Boron,Gaseous,B5H9,-1.8,39320.0,164.5149,Pentaborane
+5_Boron.md,Boron,Boron,Gaseous,B10H14,-1.4,71000.0,297.064,Decaborane
+5_Boron.md,Boron,Boron,Gaseous,BH,-1,112600.0,471.1184,Monoborane
+5_Boron.md,Boron,Boron,Gaseous,BO,+2,-120.0,-0.5021,Boron oxide
+5_Boron.md,Boron,Boron,Gaseous,B2H6,-3,,,"Diborane, colourless"
+5_Scandium.md,Scandium,Scandium,Solid,Sc,0,0.0,0.0,"Scandium, light grey, hex."
+5_Scandium.md,Scandium,Scandium,Solid,Sc2O3 (hydr.),+3,,,"Scandium hydroxide Sc(OH)3, white, amorphous"
+5_Scandium.md,Scandium,Scandium,Solid,Sc2O3 (anhyd.),+3,,,"Scandium oxide, anhydrous"
+5_Scandium.md,Scandium,Scandium,Dissolved,Sc3+,+3,-143700.0,-601.2408,"Scandic ion, colourless"
+5_Scandium.md,Scandium,Scandium,Dissolved,ScOH2+,+3,-193700.0,-810.4408,"Scandyl ion, colourless"
+5_Yttrium.md,Yttrium,Yttrium,Solid,Y,0,0.0,0.0,Yttrium
+5_Yttrium.md,Yttrium,Yttrium,Solid,Y(OH)3,+3,,,Yttrium hydroxide
+5_Yttrium.md,Yttrium,Yttrium,Solid,Y2O3,+3,,,Yttrium oxide
+5_Yttrium.md,Yttrium,Yttrium,Dissolved,Y3+,+3,,,Yttrium ion
+6_Cerium.md,Cerium,Cerium,Solid,Ce,0,0.0,0.0,Cerium (metal)
+6_Cerium.md,Cerium,Cerium,Solid,Ce2O3,+3,,,Cerous oxide (sesquioxide)
+6_Cerium.md,Cerium,Cerium,Solid,CeO2,+4,,,Ceric oxide (dioxide)
+6_Cerium.md,Cerium,Cerium,Dissolved,Ce3+,+3,,,Cerous ion
+6_Cerium.md,Cerium,Cerium,Dissolved,Ce(OH)2+,+3,,,Cerous monohydroxy ion
+6_Cerium.md,Cerium,Cerium,Dissolved,Ce(OH)3+,+4,,,Ceric monohydroxy ion (Ce(OH) with 3+ from Ce4+)
+6_Cerium.md,Cerium,Cerium,Dissolved,Ce(OH)2(2+),+4,,,Ceric dihydroxy ion
+6_Dysprosium.md,Dysprosium,Dysprosium,Solid,Dy,0,0.0,0.0,Dysprosium
+6_Dysprosium.md,Dysprosium,Dysprosium,Solid,Dy2O3,+3,,,Dysprosium sesquioxide
+6_Dysprosium.md,Dysprosium,Dysprosium,Dissolved,Dy3+ (Dy+++),+3,,,Dysprosic ion
+6_Erbium.md,Erbium,Erbium,Solid,Er,0,0.0,0.0,Erbium
+6_Erbium.md,Erbium,Erbium,Solid,Er2O3,+3,,,Erbium sesquioxide
+6_Erbium.md,Erbium,Erbium,Dissolved,Er3+,+3,,,Erbium ion
+6_Europium.md,Europium,Europium,Solid,Eu,0,0.0,0.0,Europium
+6_Europium.md,Europium,Europium,Solid,Eu2O3,+3,,,Europium sesquioxide
+6_Europium.md,Europium,Europium,Dissolved,Eu++,+2,,,Europous ion
+6_Europium.md,Europium,Europium,Dissolved,Eu+++,+3,,,Europium ion
+6_Gadolinium.md,Gadolinium,Gadolinium,Solid,Gd,0,0.0,0.0,Gadolinium
+6_Gadolinium.md,Gadolinium,Gadolinium,Solid,Gd2O3,+3,-411000.0,-1719.624,Gadolinium oxide
+6_Gadolinium.md,Gadolinium,Gadolinium,Dissolved,Gd+++,+3,-158200.0,-661.9088,Gadolinium ion
+6_Holmium.md,Holmium,Holmium,Solid,Ho,0,0.0,0.0,Holmium
+6_Holmium.md,Holmium,Holmium,Solid,Ho2O3,+3,,,Holmium oxide
+6_Holmium.md,Holmium,Holmium,Dissolved,Ho3+,+3,,,Holmic ion
+6_LanthanidesOverview.md,LanthanidesOverview,Lanthanum,Solid,La,0,0.0,0.0,"Lanthanum, white, hex. or f.c. cub."
+6_LanthanidesOverview.md,LanthanidesOverview,Lanthanum,Solid,La(OH)3,+3,-313200.0,-1310.4288,"Hydroxide, white, amorphous"
+6_LanthanidesOverview.md,LanthanidesOverview,Lanthanum,Solid,La2O3 anh.,+3,-426900.0,-1786.1496,"Oxide, white, rhomb. or cub."
+6_LanthanidesOverview.md,LanthanidesOverview,Lanthanum,Dissolved,La+++,+3,-170700.0,-714.2088,"Lanthanum ion, colourless"
+6_LanthanidesOverview.md,LanthanidesOverview,Cerium,Solid,Ce,0,0.0,0.0,"Cerium, grey, hex. or f.c. cub."
+6_LanthanidesOverview.md,LanthanidesOverview,Cerium,Solid,Ce2O3 hydr.,+3,-453190.0,-1896.147,"Cerous hydroxide, grey-green"
+6_LanthanidesOverview.md,LanthanidesOverview,Cerium,Solid,CeO2,+4,-219000.0,-916.296,"Ceric oxide, light yellow, cub."
+6_LanthanidesOverview.md,LanthanidesOverview,Cerium,Dissolved,Ce+++,+3,-171750.0,-718.602,"Cerous ion, colourless"
+6_LanthanidesOverview.md,LanthanidesOverview,Cerium,Dissolved,Ce(OH)+++,+4,-188900.0,-790.3576,"Ceric ion, yellow"
+6_LanthanidesOverview.md,LanthanidesOverview,Cerium,Dissolved,Ce(OH)4,+4,-245200.0,-1025.9168,"Ceric ion, orange"
+6_LanthanidesOverview.md,LanthanidesOverview,Praseodymium,Solid,Pr,0,0.0,0.0,"Praseodymium, pale yellow, hex. or f.c. cub."
+6_LanthanidesOverview.md,LanthanidesOverview,Praseodymium,Solid,Pr2O3 hydr.,+3,-449330.0,-1879.9967,Hydroxide
+6_LanthanidesOverview.md,LanthanidesOverview,Praseodymium,Solid,Pr2O3 anh.,+3,-423100.0,-1770.2504,"Sesquioxide, yellow-green, rhomb. or cub."
+6_LanthanidesOverview.md,LanthanidesOverview,Praseodymium,Solid,PrO2,+4,-220000.0,-920.48,"Dioxide, black, cub."
+6_LanthanidesOverview.md,LanthanidesOverview,Praseodymium,Dissolved,Pr+++,+3,-170300.0,-712.5352,"Praseodymous ion, green"
+6_LanthanidesOverview.md,LanthanidesOverview,Praseodymium,Dissolved,Pr++++,+4,-104150.0,-435.7636,Praseodymic ion
+6_LanthanidesOverview.md,LanthanidesOverview,Neodymium,Solid,Nd,0,0.0,0.0,"Neodymium, light yellow, hex."
+6_LanthanidesOverview.md,LanthanidesOverview,Neodymium,Solid,Nd2O3 hydr.,+3,-448530.0,-1876.6495,Hydroxide
+6_LanthanidesOverview.md,LanthanidesOverview,Neodymium,Solid,Nd2O3 anh.,+3,-420600.0,-1759.7904,"Oxide, light blue, rhomb. or cub."
+6_LanthanidesOverview.md,LanthanidesOverview,Neodymium,Dissolved,Nd+++,+3,-168200.0,-703.7488,"Neodymium ion, purplish pink"
+6_LanthanidesOverview.md,LanthanidesOverview,Promethium,Solid,Pm,0,0.0,0.0,Promethium
+6_LanthanidesOverview.md,LanthanidesOverview,Promethium,Solid,Pm2O3 hydr.,+3,-447930.0,-1874.1391,Hydroxide
+6_LanthanidesOverview.md,LanthanidesOverview,Promethium,Dissolved,Pm+++,+3,-167600.0,-701.2384,Promethium ion
+6_LanthanidesOverview.md,LanthanidesOverview,Samarium,Solid,Sm,0,0.0,0.0,"Samarium, light grey, rhomb. or hex."
+6_LanthanidesOverview.md,LanthanidesOverview,Samarium,Solid,Sm2O3 hydr.,+3,-447330.0,-1871.6287,"Hydroxide, light yellow"
+6_LanthanidesOverview.md,LanthanidesOverview,Samarium,Dissolved,Sm++,+2,-143940.0,-602.245,Samarous ion
+6_LanthanidesOverview.md,LanthanidesOverview,Samarium,Dissolved,Sm+++,+3,-167000.0,-698.728,Samaric ion
+6_LanthanidesOverview.md,LanthanidesOverview,Europium,Solid,Eu,0,0.0,0.0,"Europium, steel grey, b.c. cub."
+6_LanthanidesOverview.md,LanthanidesOverview,Europium,Solid,Eu2O3 hydr.,+3,-445930.0,-1865.7711,"Hydroxide, pale pink"
+6_LanthanidesOverview.md,LanthanidesOverview,Europium,Dissolved,Eu++,+2,-156600.0,-655.2144,Europous ion
+6_LanthanidesOverview.md,LanthanidesOverview,Europium,Dissolved,Eu+++,+3,-166500.0,-696.636,"Europic ion, pink"
+6_LanthanidesOverview.md,LanthanidesOverview,Gadolinium,Solid,Gd,0,0.0,0.0,"Gadolinium, hex."
+6_LanthanidesOverview.md,LanthanidesOverview,Gadolinium,Solid,Gd2O3 hydr.,+3,-445930.0,-1865.7711,"Hydroxide, white, amorphous"
+6_LanthanidesOverview.md,LanthanidesOverview,Gadolinium,Solid,Gd2O3 anh.,+3,-418000.0,-1748.912,"Oxide, grey, cub."
+6_LanthanidesOverview.md,LanthanidesOverview,Gadolinium,Dissolved,Gd+++,+3,-168800.0,-706.2592,Gadolinium ion
+6_LanthanidesOverview.md,LanthanidesOverview,Terbium,Solid,Tb,0,0.0,0.0,"Terbium, grey-blue, hex."
+6_LanthanidesOverview.md,LanthanidesOverview,Terbium,Solid,Tb2O3 hydr.,+3,-441430.0,-1846.9431,"Hydroxide, white, cub."
+6_LanthanidesOverview.md,LanthanidesOverview,Terbium,Dissolved,Tb+++,+3,-165400.0,-692.0336,Terbium ion
+6_LanthanidesOverview.md,LanthanidesOverview,Dysprosium,Solid,Dy,0,0.0,0.0,"Dysprosium, hex."
+6_LanthanidesOverview.md,LanthanidesOverview,Dysprosium,Solid,Dy2O3 hydr.,+3,-440730.0,-1844.0143,"Hydroxide, white, cub."
+6_LanthanidesOverview.md,LanthanidesOverview,Dysprosium,Dissolved,Dy+++,+3,-162800.0,-681.1552,Dysprosium ion
+6_LanthanidesOverview.md,LanthanidesOverview,Holmium,Solid,Ho,0,0.0,0.0,"Holmium, hex."
+6_LanthanidesOverview.md,LanthanidesOverview,Holmium,Solid,Ho2O3 hydr.,+3,-438130.0,-1833.1359,Hydroxide
+6_LanthanidesOverview.md,LanthanidesOverview,Holmium,Dissolved,Ho+++,+3,-160400.0,-671.1136,"Holmium ion, light yellow"
+6_Lanthanum.md,Lanthanum,Lanthanum,Solid,La,0,0.0,0.0,Lanthanum
+6_Lanthanum.md,Lanthanum,Lanthanum,Solid,La2O3 hydr.,+3,,,Lanthanum hydroxide
+6_Lanthanum.md,Lanthanum,Lanthanum,Dissolved,La3+,+3,,,Lanthanum ion
+6_Lutetium.md,Lutetium,Lutetium,Solid,Lu,0,0.0,0.0,Lutetium
+6_Lutetium.md,Lutetium,Lutetium,Solid,Lu(OH)3,+3,-234800.0,-982.4032,Lutetium hydroxide
+6_Lutetium.md,Lutetium,Lutetium,Dissolved,Lu3+,+3,-163400.0,-683.6656,Lutetium ion
+6_Neodymium.md,Neodymium,Neodymium,Solid,Nd,0,0.0,0.0,Neodymium
+6_Neodymium.md,Neodymium,Neodymium,Solid,Nd2O3,+3,,,Neodymium(III) oxide
+6_Neodymium.md,Neodymium,Neodymium,Dissolved,Nd3+,+3,,,Neodymium ion
+6_Praseodymium.md,Praseodymium,Praseodymium,Solid,Pr,0,0.0,0.0,Praseodymium
+6_Praseodymium.md,Praseodymium,Praseodymium,Dissolved,Pr3+,+3,,,Praseodymous ion
+6_Praseodymium.md,Praseodymium,Praseodymium,Dissolved,Pr4+,+4,,,Praseodymic ion
+6_Promethium.md,Promethium,Promethium,Solid,Pm,0,0.0,0.0,Promethium
+6_Promethium.md,Promethium,Promethium,Solid,Pm2O3,+3,,,Promethium(III) oxide
+6_Promethium.md,Promethium,Promethium,Dissolved,Pm3+,+3,,,Promethium ion
+6_Samarium.md,Samarium,Samarium,Solid,Sm,0,0.0,0.0,Samarium
+6_Samarium.md,Samarium,Samarium,Solid,Sm2O3,+3,,,Samarium sesquioxide
+6_Samarium.md,Samarium,Samarium,Dissolved,Sm++,+2,,,Samarium(II) ion
+6_Samarium.md,Samarium,Samarium,Dissolved,Sm+++,+3,,,Samarium(III) ion
+6_Terbium.md,Terbium,Terbium,Solid,Tb,0,0.0,0.0,Terbium
+6_Terbium.md,Terbium,Terbium,Solid,Tb2O3,+3,,,Terbium sesquioxide
+6_Terbium.md,Terbium,Terbium,Dissolved,Tb+++,+3,,,Terbic ion
+6_Thulium.md,Thulium,Thulium,Solid,Tm,0,0.0,0.0,Thulium
+6_Thulium.md,Thulium,Thulium,Solid,Tm2O3,+3,,,Thulium(III) oxide
+6_Thulium.md,Thulium,Thulium,Dissolved,Tm3+,+3,,,Thulium ion
+6_Ytterbium.md,Ytterbium,Ytterbium,Solid,Yb,0,0.0,0.0,Ytterbium
+6_Ytterbium.md,Ytterbium,Ytterbium,Solid,Yb(OH)3,+3,,,Ytterbium hydroxide
+6_Ytterbium.md,Ytterbium,Ytterbium,Dissolved,Yb3+,+3,,,Ytterbium ion
+7_ActinidesOverview.md,ActinidesOverview,Thorium,Solid,Th,0,0.0,0.0,"Thorium, silvery white, cub."
+7_ActinidesOverview.md,ActinidesOverview,Thorium,Solid,ThO2 (anh.),+4,-278400.0,-1164.8256,"Thorium dioxide, cub."
+7_ActinidesOverview.md,ActinidesOverview,Thorium,Solid,ThO2 (hydr.),+4,-266620.0,-1115.5381,"Thorium hydroxide, Th(OH)4"
+7_ActinidesOverview.md,ActinidesOverview,Thorium,Dissolved,Th4+,+4,-175200.0,-733.0368,Thoric ion
+7_ActinidesOverview.md,ActinidesOverview,Uranium,Solid,UH3,-3,-17100.0,-71.5464,"Uranium hydride, grey-brown, cub."
+7_ActinidesOverview.md,ActinidesOverview,Uranium,Solid,U,0,0.0,0.0,"Uranium, light grey, orthorh."
+7_ActinidesOverview.md,ActinidesOverview,Uranium,Solid,UO,+2,-123000.0,-514.632,"Uranium monoxide, grey, f.c.cub."
+7_ActinidesOverview.md,ActinidesOverview,Uranium,Solid,U2O3 (hydr.),+3,-306330.0,-1281.6847,"Hypouranous hydroxide, U(OH)3, brown"
+7_ActinidesOverview.md,ActinidesOverview,Uranium,Solid,UO2 (anh.),+4,-238220.0,-996.7125,"Uranous oxide, black oxide, orthorhombic"
+7_ActinidesOverview.md,ActinidesOverview,Uranium,Solid,UO2 (hydr.),+4,-236310.0,-988.721,"Uranous hydroxide, U(OH)4, green"
+7_ActinidesOverview.md,ActinidesOverview,Uranium,Solid,UO3 (hydr.),+6,-285460.0,-1194.3646,"Monohydrated uranic oxide, UO3.H2O, yellow-orange, amorphous or orthorhombic"
+7_ActinidesOverview.md,ActinidesOverview,Uranium,Solid,UO3 (anh.),+6,-273000.0,-1142.232,"Uranic oxide, yellow-red, rhombic"
+7_ActinidesOverview.md,ActinidesOverview,Uranium,Dissolved,U3+,+3,,,"Hypouranous ion, pink or purple"
+7_ActinidesOverview.md,ActinidesOverview,Uranium,Dissolved,U4+,+4,-138000.0,-577.392,"Uranous ion, green"
+7_ActinidesOverview.md,ActinidesOverview,Uranium,Dissolved,UOH3+,+4,-3500.0,-14.644,Uranous hydroxo ion
+7_ActinidesOverview.md,ActinidesOverview,Uranium,Dissolved,UO2(+),+5,-237600.0,-994.1184,Hypouranyl ion
+7_ActinidesOverview.md,ActinidesOverview,Uranium,Dissolved,UO2(2+),+6,-236400.0,-989.0976,"Uranyl ion, yellow with green fluorescence"
+7_ActinidesOverview.md,ActinidesOverview,Neptunium,Solid,Np,0,0.0,0.0,"Neptunium, silvery, orthorhombic"
+7_ActinidesOverview.md,ActinidesOverview,Neptunium,Solid,Np2O3 (hydr.),+3,,,"Hyponeptunous hydroxide, Np(OH)3"
+7_ActinidesOverview.md,ActinidesOverview,Neptunium,Solid,NpO2 (anh.),+4,-234000.0,-979.056,"Neptunium dioxide, brown or apple green, f.c.cub."
+7_ActinidesOverview.md,ActinidesOverview,Neptunium,Solid,NpO2 (hydr.),+4,-233220.0,-975.7925,"Neptunous hydroxide, Np(OH)4, light brown to olive green"
+7_ActinidesOverview.md,ActinidesOverview,Neptunium,Solid,Np2O5 (hydr.),+5,-166910.0,-698.3514,"Neptunium dioxyhydroxide, NpO2OH, pale green or grey-blue"
+7_ActinidesOverview.md,ActinidesOverview,Neptunium,Solid,NpO3 (hydr.),+6,-23610.0,-98.7842,"Neptunium dioxydihydroxide, NpO2(OH)2"
+7_ActinidesOverview.md,ActinidesOverview,Neptunium,Dissolved,Np3+,+3,-128400.0,-537.2256,"Hyponeptunous ion, pale purple"
+7_ActinidesOverview.md,ActinidesOverview,Neptunium,Dissolved,Np4+,+4,-121900.0,-510.0296,Neptunous ion
+7_ActinidesOverview.md,ActinidesOverview,Neptunium,Dissolved,NpO2(+),+5,-221000.0,-924.664,"Hyponeptunyl ion, blue-green"
+7_ActinidesOverview.md,ActinidesOverview,Neptunium,Dissolved,NpO2(2+),+6,-194100.0,-812.1144,"Neptunyl ion, pale pink to yellow-green"
+7_ActinidesOverview.md,ActinidesOverview,Plutonium,Solid,Pu,0,0.0,0.0,Plutonium
+7_ActinidesOverview.md,ActinidesOverview,Plutonium,Solid,PuO2 (anh.),+4,-231000.0,-966.504,"Plutonium dioxide, yellow to yellow-green or dark brown, f.c.cub."
+7_ActinidesOverview.md,ActinidesOverview,Plutonium,Solid,PuO2 (hydr.),+4,-226620.0,-948.1781,"Plutonous hydroxide, Pu(OH)4, green"
+7_ActinidesOverview.md,ActinidesOverview,Plutonium,Solid,Pu2O5 (hydr.),+5,-436110.0,-1824.6842,"Plutonium dioxyhydroxide, PuO2OH"
+7_ActinidesOverview.md,ActinidesOverview,Plutonium,Solid,PuO3 (hydr.),+6,-222210.0,-929.7266,"Plutonium dioxydihydroxide, PuO2(OH)2"
+7_ActinidesOverview.md,ActinidesOverview,Plutonium,Dissolved,Pu3+,+3,-140500.0,-587.852,"Hypoplutonous ion, blue (violet in artificial light)"
+7_ActinidesOverview.md,ActinidesOverview,Plutonium,Dissolved,Pu4+,+4,-118200.0,-494.5488,"Plutonous ion, brown"
+7_ActinidesOverview.md,ActinidesOverview,Plutonium,Dissolved,PuO2(+),+5,-200900.0,-840.5656,"Hypoplutonyl ion, almost colourless"
+7_ActinidesOverview.md,ActinidesOverview,Plutonium,Dissolved,PuO2(2+),+6,-183500.0,-767.764,"Plutonyl ion, light brown"
+7_ActinidesOverview.md,ActinidesOverview,Americium,Solid,Am,0,0.0,0.0,"Americium, silvery white"
+7_ActinidesOverview.md,ActinidesOverview,Americium,Solid,Am2O3 (hydr.),+3,-129910.0,-543.5434,"Hypoamericious hydroxide, Am(OH)3"
+7_ActinidesOverview.md,ActinidesOverview,Americium,Solid,Am2O3 (anh.),+3,-402000.0,-1681.968,"Americium sesquioxide, orange-red, cub."
+7_ActinidesOverview.md,ActinidesOverview,Americium,Solid,AmO2 (hydr.),+4,-233620.0,-977.4661,"Americious hydroxide, Am(OH)4"
+7_ActinidesOverview.md,ActinidesOverview,Americium,Solid,AmO2 (anh.),+4,-231000.0,-966.504,"Americium dioxide, black, f.c.cub."
+7_ActinidesOverview.md,ActinidesOverview,Americium,Solid,Am2O5 (hydr.),+5,-453300.0,-1896.6072,"Americium dioxyhydroxide, AmO2OH"
+7_ActinidesOverview.md,ActinidesOverview,Americium,Solid,AmO3 (hydr.),+6,-210510.0,-880.7738,"Americium dioxydihydroxide, AmO2(OH)2"
+7_Americium.md,Americium,Americium,Solid,Am,0,0.0,0.0,Americium
+7_Americium.md,Americium,Americium,Solid,Am2O3,+3,,,Americium sesquioxide
+7_Americium.md,Americium,Americium,Solid,Am(OH)3,+3,,,Americium hydroxide
+7_Americium.md,Americium,Americium,Solid,Am(OH)4,+4,,,Americium tetrahydroxide
+7_Americium.md,Americium,Americium,Solid,AmO2,+4,,,Americium dioxide
+7_Americium.md,Americium,Americium,Solid,Am2O5·H2O,+5,,,Hydrated americium pentoxide
+7_Americium.md,Americium,Americium,Solid,AmO3·H2O,+6,,,Hydrated americium trioxide
+7_Americium.md,Americium,Americium,Dissolved,Am+++,+3,,,Americium trivalent ion
+7_Americium.md,Americium,Americium,Dissolved,Am++++,+4,,,Americium tetravalent ion
+7_Americium.md,Americium,Americium,Dissolved,AmO2+,+5,,,Hypoamericyl ion
+7_Americium.md,Americium,Americium,Dissolved,AmO2++,+6,,,Americyl ion
+7_Neptunium.md,Neptunium,Neptunium,Solid,Np,0,0.0,0.0,Neptunium
+7_Neptunium.md,Neptunium,Neptunium,Solid,Np2O3,+3,,,Neptunium sesquioxide
+7_Neptunium.md,Neptunium,Neptunium,Dissolved,Np3+,+3,,,Neptunium(III) ion
+7_Neptunium.md,Neptunium,Neptunium,Dissolved,Np4+,+4,,,Neptunium(IV) ion
+7_Neptunium.md,Neptunium,Neptunium,Dissolved,NpO2(+),+5,,,Neptunyl(V) ion
+7_Neptunium.md,Neptunium,Neptunium,Dissolved,Np5+,+5,,,Neptunium(V) ion
+7_Plutonium.md,Plutonium,Plutonium,Solid,Pu,0,0.0,0.0,Plutonium
+7_Plutonium.md,Plutonium,Plutonium,Solid,Pu2O3,+3,,,Plutonium(III) oxide
+7_Plutonium.md,Plutonium,Plutonium,Solid,PuO2,+4,,,Plutonium(IV) oxide
+7_Plutonium.md,Plutonium,Plutonium,Dissolved,Pu3+,+3,,,Plutonium(III) ion
+7_Plutonium.md,Plutonium,Plutonium,Dissolved,Pu4+,+4,,,Plutonium(IV) ion
+7_Plutonium.md,Plutonium,Plutonium,Dissolved,PuO2+,+5,,,Plutonyl(V) ion
+7_Plutonium.md,Plutonium,Plutonium,Dissolved,PuO2(2+),+6,,,Plutonyl(VI) ion
+7_Thorium.md,Thorium,Thorium,Solid,Th,0,0.0,0.0,Thorium
+7_Thorium.md,Thorium,Thorium,Solid,ThO2,+4,,,Thorium dioxide
+7_Thorium.md,Thorium,Thorium,Dissolved,Th(4+),+4,,,Thorium ion
+7_Uranium.md,Uranium,Uranium,Solid,U,0,0.0,0.0,Uranium
+7_Uranium.md,Uranium,Uranium,Solid,U2O3,+3,,,Uranium(III) oxide
+7_Uranium.md,Uranium,Uranium,Solid,UO2,+4,,,Uranium dioxide
+7_Uranium.md,Uranium,Uranium,Solid,U3O8,+16/3 (mixed),,,Triuranium octoxide
+7_Uranium.md,Uranium,Uranium,Solid,UO3,+6,,,Uranium trioxide
+7_Uranium.md,Uranium,Uranium,Dissolved,U+++,+3,,,Uranous ion (trivalent)
+7_Uranium.md,Uranium,Uranium,Dissolved,U++++,+4,,,Uranic ion (tetravalent)
+7_Uranium.md,Uranium,Uranium,Dissolved,UOH+++,+4,,,Uranium hydroxide ion
+7_Uranium.md,Uranium,Uranium,Dissolved,UO2+,+5,,,Uranyl(V) ion
+7_Uranium.md,Uranium,Uranium,Dissolved,UO2++,+6,,,Uranyl(VI) ion
+8_Hafnium.md,Hafnium,Hafnium,Solid,Hf,0,0.0,0.0,"Hafnium, grey, hex."
+8_Hafnium.md,Hafnium,Hafnium,Solid,HfO2 hydr.,+4,,,Hafnium oxide HfO2·H2O or HfO(OH)2
+8_Hafnium.md,Hafnium,Hafnium,Solid,HfO2 anh.,+4,,,"Hafnium oxide, white, monocl., quad."
+8_Hafnium.md,Hafnium,Hafnium,Dissolved,Hf4+,+4,-156800.0,-656.0512,"Hafnic ion, colourless"
+8_Hafnium.md,Hafnium,Hafnium,Dissolved,HfO2+,+4,-215700.0,-902.4888,"Hafnyl ion, colourless"
+8_Titanium.md,Titanium,Titanium,Solid,Ti,0,0.0,0.0,"Titanium, silvery grey, hex."
+8_Titanium.md,Titanium,Titanium,Solid,TiO,+2,-116920.0,-489.1933,"Titanium monoxide, black"
+8_Titanium.md,Titanium,Titanium,Solid,Ti2O3 anh.,+3,-342310.0,-1432.225,"Titanium sesquioxide, violet, rhomb."
+8_Titanium.md,Titanium,Titanium,Solid,Ti2O3.3H2O,+3,-501940.0,-2100.117,"Hydrated titanium sesquioxide, equivalent to 2Ti(OH)3, violet-black (3)"
+8_Titanium.md,Titanium,Titanium,Solid,Ti3O5,+3.33,-553620.0,-2316.3461,Blue oxide
+8_Titanium.md,Titanium,Titanium,Solid,TiO2 anh.,+4,-212330.0,-888.3887,"Titanium dioxide or rutile, blue, rhomb."
+8_Titanium.md,Titanium,Titanium,Solid,TiO2.H2O,+4,-252990.0,-1058.5102,"Hydrated dioxide TiO2.H2O or metatitanic acid, white (3)"
+8_Titanium.md,Titanium,Titanium,Solid,TiO3 hydr. (TiO3.2H2O),+6,,,"Hydrated peroxide TiO3.2H2O, yellow"
+8_Titanium.md,Titanium,Titanium,Dissolved,Ti++,+2,-75100.0,-314.2184,"Hypotitanous ion, greenish brown"
+8_Titanium.md,Titanium,Titanium,Dissolved,Ti+++,+3,-83600.0,-349.7824,"Titanous ion, violet"
+8_Titanium.md,Titanium,Titanium,Dissolved,TiO++,+4,-138000.0,-577.392,"Titanyl ion, colourless"
+8_Titanium.md,Titanium,Titanium,Dissolved,HTiO3(-),+4,-228460.0,-955.8766,"Titanate ion, colourless"
+8_Titanium.md,Titanium,Titanium,Dissolved,TiO2(2+),+6,-111670.0,-467.2273,"Pertitanyl ion, orange"
+8_Zirconium.md,Zirconium,Zirconium,Solid,Zr,0,0.0,0.0,"Zirconium, grey-white, cubic"
+8_Zirconium.md,Zirconium,Zirconium,Solid,ZrO2.2H2O,+4,-370000.0,-1548.08,"Hydrated oxide, equivalent to Zr(OH)4, white, amorphous"
+8_Zirconium.md,Zirconium,Zirconium,Solid,ZrO2.H2O,+4,-311500.0,-1303.316,"Hydrated oxide, equivalent to ZrO(OH)2, white"
+8_Zirconium.md,Zirconium,Zirconium,Solid,ZrO2 anh.,+4,-247700.0,-1036.3768,"Anhydrous oxide ZrO2 or zirconia, white, monoclinic"
+8_Zirconium.md,Zirconium,Zirconium,Dissolved,Zr4+,+4,-112000.0,-468.608,"Zirconic ion, colourless"
+8_Zirconium.md,Zirconium,Zirconium,Dissolved,ZrO2+,+4,-201500.0,-843.076,"Zirconyl ion, colourless"
+8_Zirconium.md,Zirconium,Zirconium,Dissolved,HZrO3(-),+4,-287700.0,-1203.7368,"Zirconate ion, colourless"
+9_Niobium.md,Niobium,Niobium,Solid,Nb,0,0.0,0.0,"Niobium, steel grey, rhomb."
+9_Niobium.md,Niobium,Niobium,Solid,NbO,+2,-90500.0,-378.652,"Niobium monoxide, grey-black, cub."
+9_Niobium.md,Niobium,Niobium,Solid,NbO2,+4,-176000.0,-736.384,"Niobium dioxide, grey-black, quad."
+9_Niobium.md,Niobium,Niobium,Solid,Nb2O5,+5,-422000.0,-1765.648,"Niobium pentoxide, white"
+9_Tantalum.md,Tantalum,Tantalum,Solid,Ta,0,0.0,0.0,"Tantalum, silvery white, b.c.cub."
+9_Tantalum.md,Tantalum,Tantalum,Solid,Ta2O5,+5,-300000.0,-1255.2,"Tantalum pentoxide, white, orthorh."
+9_Vanadium.md,Vanadium,Vanadium,Solid,V,0,0.0,0.0,"Vanadium, light grey, b.c.cub."
+9_Vanadium.md,Vanadium,Vanadium,Solid,V2O2,+2,-89700.0,-375.3048,"Hypovanadous oxide, light grey, f.c.cub."
+9_Vanadium.md,Vanadium,Vanadium,Solid,V2O3,+3,-271000.0,-1133.864,"Vanadous oxide, black, rhomb."
+9_Vanadium.md,Vanadium,Vanadium,Solid,V2O4,+4,-318000.0,-1330.512,"Vanadic oxide, blue, quad."
+9_Vanadium.md,Vanadium,Vanadium,Solid,V2O5,+5,-344000.0,-1439.296,"Developed vanadium pentoxide, red, orthorh."
+9_Vanadium.md,Vanadium,Vanadium,Dissolved,V(2+),+2,-51200.0,-214.2208,"Hypovanadous ion, violet"
+9_Vanadium.md,Vanadium,Vanadium,Dissolved,V(3+),+3,-60080.0,-251.3747,"Vanadous ion, green"
+9_Vanadium.md,Vanadium,Vanadium,Dissolved,VOH(2+),+3,-112790.0,-471.9134,"Vanadous ion, green"
+9_Vanadium.md,Vanadium,Vanadium,Dissolved,VO(+),+3,-107990.0,-451.8302,"Vanadous ion, green"
+9_Vanadium.md,Vanadium,Vanadium,Dissolved,VO(2+),+4,-109000.0,-456.056,"Vanadyl ion, blue"
+9_Vanadium.md,Vanadium,Vanadium,Dissolved,HVO3(-),+4,-158380.0,-662.6619,? ion
+9_Vanadium.md,Vanadium,Vanadium,Dissolved,HV2O5(-),+4,-360650.0,-1508.9596,"Hypovanadate ion, red-brown"
+9_Vanadium.md,Vanadium,Vanadium,Dissolved,VO2(+),+5,-142550.0,-596.4292,"Vanadic ion, light yellow"
+9_Vanadium.md,Vanadium,Vanadium,Dissolved,H3V2O7(-),+5,-450918.0,-1886.6409,"Pyrovanadate ion, orange"
+9_Vanadium.md,Vanadium,Vanadium,Dissolved,H2VO4(-),+5,-248775.0,-1040.8746,"Orthovanadate or metavanadic ion VO3, colourless"
+9_Vanadium.md,Vanadium,Vanadium,Dissolved,HVO4(2-),+5,-235800.0,-986.5872,"Orthovanadate ion, colourless"
+9_Vanadium.md,Vanadium,Vanadium,Dissolved,VO4(3-),+5,-220125.0,-921.003,"Orthovanadate ion, colourless"
+9_Vanadium.md,Vanadium,Vanadium,Dissolved,VO4(-),+7,-203900.0,-853.1176,"Pervanadate ion, colourless"

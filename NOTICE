@@ -1,4 +1,4 @@
-SRD-46 Data and Results: software and third-party data notice
+SRD-46 Research Agents, Data, and Results: software and third-party data notice
 ==================================================
 
 Original project software and documentation are distributed under the MIT
@@ -39,10 +39,12 @@ https://data.nist.gov/od/ds/mds2-2154/SRD%2046%20README.txt.sha256
 Source-data provenance
 ----------------------
 
-Packaged research-database processing date: 2026-09-11.
-The retained database snapshot and its checksums are identified in
-docs/DATA.md and docs/validation/database_snapshot.json. Publication
-packaging preserves the database bytes and retains final scientific results.
+The packaged database paths, original sizes, and SHA-256 checksums are
+recorded in packaged_files.json. NIST_SRD46_core_db_storage/README.md
+describes the database contents. Dated source-processing notes and the
+original data terms are preserved in
+NIST_SRD46_core_db_storage/NIST_SRD46_database_parsing/_input/SRD46_SQL/SRD 46 README.md.
+Publication packaging preserves the database bytes and all archived run files.
 
 The project parses the source SQL/text extraction, applies documented
 chemical interpretation and correction rules, preserves identifiers and

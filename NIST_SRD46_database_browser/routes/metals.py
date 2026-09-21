@@ -2,8 +2,6 @@
 
 from flask import Blueprint, render_template, request
 
-from ._measurement_display import optional_text
-
 _PARENT_PACKAGE = (__package__ or "").rpartition(".")[0]
 
 if _PARENT_PACKAGE:
@@ -64,17 +62,15 @@ def metal_detail(metal_id):
     if metal is None:
         return "Metal not found", 404
     metal = dict(metal)
-    for key in ("SMILES", "InChi"):
-        metal[key] = optional_text(metal.get(key))
 
     stats = dict(db.execute(
         """SELECT COUNT(DISTINCT c.ligand_id)            AS n_ligands,
                   COUNT(DISTINCT c.beta_definition_id)   AS n_beta_defs,
                   COUNT(DISTINCT c.complex_system_id)    AS n_systems,
                   COUNT(s.stability_id)                  AS n_measurements,
-                  MIN(CASE WHEN s.constant_type = 'K' THEN s.constant_value END)                  AS logK_min,
-                  MAX(CASE WHEN s.constant_type = 'K' THEN s.constant_value END)                  AS logK_max,
-                  AVG(CASE WHEN s.constant_type = 'K' THEN s.constant_value END)                  AS logK_avg
+                  MIN(s.constant_value)                  AS logK_min,
+                  MAX(s.constant_value)                  AS logK_max,
+                  AVG(s.constant_value)                  AS logK_avg
            FROM   ligandmetal_card c
            LEFT JOIN ligandmetal_stability_measured s ON s.card_id = c.card_id
            WHERE  c.metal_id = ?""",
@@ -87,8 +83,8 @@ def metal_detail(metal_id):
                       COUNT(DISTINCT c.beta_definition_id)  AS n_beta_defs,
                       COUNT(DISTINCT c.complex_system_id) AS n_systems,
                       COUNT(s.stability_id)               AS n_entries,
-                      MIN(CASE WHEN s.constant_type = 'K' THEN s.constant_value END)               AS logK_min,
-                      MAX(CASE WHEN s.constant_type = 'K' THEN s.constant_value END)               AS logK_max
+                      MIN(s.constant_value)               AS logK_min,
+                      MAX(s.constant_value)               AS logK_max
                FROM ligandmetal_card c
                JOIN ligand_card l ON c.ligand_id = l.ligand_id
                LEFT JOIN ligandmetal_stability_measured s ON s.card_id = c.card_id

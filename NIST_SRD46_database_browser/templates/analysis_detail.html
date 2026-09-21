@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+{% block title %}{{ label }} — Analysis Run{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{{ url_for('analysis.analysis_freeform_index' if is_freeform else 'analysis.analysis_index') }}">
+        {{ 'Freeform analysis' if is_freeform else 'Analysis runs' }}</a>
+    </li>
+    <li class="breadcrumb-item active">{{ label }}</li>
+  </ol>
+</nav>
+
+<div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+  <h3 class="mb-0">{{ label }}</h3>
+  {% if layer %}<span class="badge bg-dark">{{ layer }}</span>{% endif %}
+  <span class="badge bg-{{ verdict_badge }}{% if verdict_badge == 'warning' %} text-dark{% endif %}">outcome: {{ verdict }}</span>
+  {% if outcome.limited %}<span class="badge bg-warning text-dark">{{ outcome.stop_label }}</span>{% endif %}
+  {% if manifest.elapsed_s %}<span class="text-muted small">{{ "%.0f"|format(manifest.elapsed_s) }}s · {{ manifest.iterations }} L0 iters · {{ l1_calls|length }} L1 call(s)</span>{% endif %}
+</div>
+
+{% if prompt %}
+<div class="card mb-3">
+  <div class="card-header py-2 small text-muted">Prompt</div>
+  <div class="card-body py-2">{{ prompt }}</div>
+</div>
+{% endif %}
+
+{% if verdict_notes %}
+<div class="alert alert-{{ verdict_badge if verdict_badge != 'success' else 'secondary' }} py-2">
+  <strong>Verdict notes:</strong>
+  <ul class="mb-0">{% for n in verdict_notes %}<li><code>{{ n }}</code></li>{% endfor %}</ul>
+</div>
+{% endif %}
+
+<!-- Final answer -->
+<div class="card mb-4">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <span><i class="bi bi-chat-left-text"></i> Final Answer (L0)</span>
+    {% if has_answer %}
+    <a class="btn btn-sm btn-outline-secondary" target="_blank"
+       href="{{ url_for('analysis.analysis_file', label=label, relpath='answer.md') }}">raw</a>
+    {% endif %}
+  </div>
+  <div class="card-body">
+    {% if answer_html %}{{ answer_html | safe }}{% else %}<em class="text-muted">No answer.md (run may be in progress or failed before composing).</em>{% endif %}
+  </div>
+</div>
+
+<!-- L1 calls -->
+<h4 class="mb-3"><i class="bi bi-diagram-2"></i> L1 Pipeline Calls</h4>
+{% if not l1_calls %}
+<div class="alert alert-warning">No <code>L1_call_*</code> directories yet.</div>
+{% endif %}
+
+<div class="row g-3 mb-4">
+{% for c in l1_calls %}
+<div class="col-lg-6">
+  <div class="card h-100">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <span class="fw-semibold">{{ c.name }}</span>
+      <span>
+        {% if c.ld_verdict %}<span class="badge bg-{{ c.ld_badge }}">LD: {{ c.ld_verdict }}</span>{% endif %}
+        {% for a in c.aux %}
+          <a class="btn btn-sm btn-outline-secondary" target="_blank"
+             href="{{ url_for('analysis.analysis_file', label=label, relpath=a.rel) }}">{{ a.name }}</a>
+        {% endfor %}
+      </span>
+    </div>
+    <div class="card-body l1-panel-body">
+      {% if c.purpose %}<p class="mb-1"><strong>Purpose:</strong> {{ c.purpose }}</p>{% endif %}
+      {% if c.tasks_text %}
+      <details class="mb-2"><summary class="small text-muted">tasks</summary>
+        <p class="small mb-0 mt-1 task-text">{{ c.tasks_text }}</p>
+      </details>
+      {% endif %}
+
+      {% if c.ld_hints %}
+      <div class="alert alert-danger py-2 small">
+        <strong>LD hints:</strong>
+        <ul class="mb-0">{% for h in c.ld_hints %}<li>{{ h }}</li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+
+      <!-- Final solver diagram only -->
+      {% if c.plots %}
+      <h6 class="text-muted mt-2">Final diagram{% if c.plots|length > 1 %}s{% endif %}</h6>
+      {% for p in c.plots %}
+      <div class="mb-3">
+        <a href="{{ url_for('analysis.analysis_file', label=label, relpath=p) }}" target="_blank">
+          <img src="{{ url_for('analysis.analysis_file', label=label, relpath=p) }}"
+               class="img-fluid border rounded" alt="{{ p }}" loading="lazy">
+        </a>
+        <div class="text-muted small text-truncate">{{ p.split('/')|last }}</div>
+      </div>
+      {% endfor %}
+      {% endif %}
+
+      <!-- L1 agent final response -->
+      {% if c.has_report %}
+      <h6 class="text-muted">L1 final response</h6>
+      {{ c.report_html | safe }}
+      {% else %}
+      <em class="text-muted">No L1 response recorded for this call.</em>
+      {% endif %}
+
+      <!-- CSV data links -->
+      {% if c.csvs %}
+      <details class="mt-2"><summary class="small text-muted">solver CSVs ({{ c.csvs|length }})</summary>
+        <ul class="small mb-0">
+          {% for f in c.csvs %}
+          <li><a target="_blank" href="{{ url_for('analysis.analysis_file', label=label, relpath=f) }}">{{ f.split('/')|last }}</a></li>
+          {% endfor %}
+        </ul>
+      </details>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+
+{% if show_debug and timeline %}
+<!-- Wall-time component timeline (Gantt) -->
+<div class="card mb-4">
+  <div class="card-header py-2 d-flex flex-wrap align-items-center gap-2">
+    <span><i class="bi bi-bar-chart-steps"></i> Agent wall-time timeline</span>
+    <span class="text-muted small">{{ timeline.total_label }} total</span>
+    {% if timeline.started_iso %}<span class="text-muted small">· started {{ timeline.started_iso }}</span>{% endif %}
+    <span class="text-muted small">· {{ timeline.iterations }} L0 iters · {{ timeline.n_l1 }} L1 call(s)</span>
+    {% if timeline.n_l1_failed %}<span class="badge bg-danger">{{ timeline.n_l1_failed }} L1 failed</span>{% endif %}
+    {% if timeline.parallel_batches %}<span class="badge bg-info text-dark">{{ timeline.parallel_batches }} parallel dispatch batch(es)</span>{% endif %}
+    {% if timeline.limited %}<span class="badge bg-warning text-dark">{{ timeline.limit_label }}</span>{% endif %}
+    {% if not timeline.complete %}<span class="badge bg-warning text-dark">incomplete run</span>{% endif %}
+  </div>
+  <div class="card-body">
+    <div class="gantt">
+      <!-- axis -->
+      <div class="gantt-axis">
+        <div class="gantt-axis-label"></div>
+        <div class="gantt-axis-track">
+          {% for a in timeline.axis %}
+          <span class="gantt-tick" style="left: {{ a.pct }}%;">
+            <span class="gantt-tick-line"></span>
+            <span class="gantt-tick-text">{{ a.label }}</span>
+          </span>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- rows -->
+      {% for r in timeline.rows %}
+      <div class="gantt-row depth-{{ r.depth }} kind-{{ r.kind }}">
+        <div class="gantt-axis-label" title="{{ r.title }}">
+          <span class="gantt-name">{{ r.label }}</span>
+          {% if r.parallel %}<span class="gantt-par" title="Dispatched in a parallel L0 batch">∥</span>{% endif %}
+        </div>
+        <div class="gantt-axis-track">
+          {% for a in timeline.axis %}<span class="gantt-grid" style="left: {{ a.pct }}%;"></span>{% endfor %}
+          <span class="gantt-bar status-{{ r.status }}{% if r.parallel %} is-parallel{% endif %}"
+                style="left: {{ r.start_pct }}%; width: {{ r.width_pct }}%;"
+                title="{{ r.title }} — {{ r.sublabel }}">
+            <span class="gantt-bar-text">{{ r.sublabel }}</span>
+          </span>
+          {% if r.stages %}
+          <span class="gantt-chips" style="left: {{ r.start_pct }}%;">
+            {% for s in r.stages %}<span class="gantt-chip chip-{{ s.status }}" title="{{ s.name }}: {{ s.status }}">{{ s.name }}</span>{% endfor %}
+          </span>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- legend -->
+    <div class="gantt-legend small text-muted mt-2">
+      <span><span class="gantt-swatch status-ok"></span> succeeded</span>
+      <span><span class="gantt-swatch status-fail"></span> failed</span>
+      <span><span class="gantt-swatch status-warn"></span> stopped / partial / incomplete</span>
+      <span><span class="gantt-swatch status-neutral"></span> orchestrator phase</span>
+      <span><span class="gantt-par">∥</span> parallel dispatch batch</span>
+      <span class="ms-2">Gaps between sub-bars = model reasoning time. Bars are positioned by real wall-clock timestamps.</span>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if show_debug %}
+<!-- Working memory + traces -->
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card mb-3">
+      <div class="card-header py-2"><i class="bi bi-hdd"></i> Working Memory</div>
+      <div class="card-body">
+        {% if working_memory %}
+        <pre style="white-space: pre-wrap; font-size: 0.8rem; max-height: 24rem; overflow:auto;">{{ working_memory_json }}</pre>
+        {% else %}<em class="text-muted">empty</em>{% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card mb-3">
+      <div class="card-header py-2"><i class="bi bi-file-earmark-text"></i> Traces &amp; Logs</div>
+      <ul class="list-group list-group-flush">
+        {% for t in traces %}
+        <li class="list-group-item py-2">
+          <a target="_blank" href="{{ url_for('analysis.analysis_file', label=label, relpath=t.rel) }}">
+            <i class="bi bi-link-45deg"></i> {{ t.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% if tool_summary %}
+    <div class="card mb-3">
+      <div class="card-header py-2"><i class="bi bi-tools"></i> L0 Tool Calls ({{ tool_summary|length }})</div>
+      <div class="table-responsive" style="max-height: 18rem; overflow:auto;">
+        <table class="table table-sm mb-0">
+          <thead><tr><th>#</th><th>tool</th><th class="text-end">iter</th><th class="text-end">s</th></tr></thead>
+          <tbody>
+          {% for tc in tool_summary %}
+            <tr><td>{{ loop.index }}</td><td><code>{{ tc.tool }}</code></td>
+                <td class="text-end">{{ tc.iteration }}</td>
+                <td class="text-end">{{ tc.elapsed_s }}</td></tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+{% endblock %}

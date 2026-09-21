@@ -1,0 +1,670 @@
+{
+  "uuid": "e6b065d5-f62d-4719-b981-a08f61ce39ed",
+  "name": "L1_9 max Copper speciation diagram with ammonia",
+  "summary": "",
+  "model": "claude-fable-5-1",
+  "created_at": "2026-09-17T05:07:28.498812Z",
+  "updated_at": "2026-09-17T06:40:18.354310Z",
+  "settings": {
+    "enabled_web_search": true,
+    "paprika_mode": "auto",
+    "enabled_monkeys_in_a_barrel": true,
+    "enabled_saffron": false,
+    "tool_search_mode": "auto",
+    "thinking_mode": "auto",
+    "effort_level": "max",
+    "preview_feature_uses_artifacts": true,
+    "enabled_turmeric": true
+  },
+  "is_starred": false,
+  "is_temporary": false,
+  "project_uuid": "01a0ae18-021d-77c0-862d-4884d4340b19",
+  "platform": "CLAUDE_AI",
+  "is_wiggle_enabled": true,
+  "effective_thinking_mode": "auto",
+  "current_leaf_message_uuid": "01a0adc3-3bea-74b9-aada-a33e81531d42",
+  "run": "effort-max_run1",
+  "chat_messages": [
+    {
+      "uuid": "01a0adc3-3bea-7d80-9872-8ce4f39280ed",
+      "text": "",
+      "content": [
+        {
+          "start_timestamp": "2026-09-17T05:07:29.124224Z",
+          "stop_timestamp": "2026-09-17T05:07:29.124224Z",
+          "type": "text",
+          "text": "Compute the speciation diagram for copper in 0.100 M total ammonia with 1.00e-3 M total Cu at Eh=+0.265 V versus SHE. Prefer hydroxide solids. Sweep pH 0-14 at 25 C and I=0.1 m.",
+          "citations": []
+        }
+      ],
+      "sender": "human",
+      "index": 0,
+      "created_at": "2026-09-17T05:07:29.124449Z",
+      "updated_at": "2026-09-17T05:07:29.124449Z",
+      "truncated": false,
+      "attachments": [],
+      "files": [],
+      "sync_sources": [],
+      "parent_message_uuid": "00000000-0000-4000-8000-000000000000"
+    },
+    {
+      "uuid": "01a0adc3-3bea-74b9-aada-a33e81531d42",
+      "text": "",
+      "content": [
+        {
+          "start_timestamp": "2026-09-17T05:07:29.119034Z",
+          "stop_timestamp": "2026-09-17T05:14:29.029012Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Building a copper speciation diagram for an ammonia system."
+            },
+            {
+              "summary": "Selecting which copper solids and species to include."
+            },
+            {
+              "summary": "Gathering ammonia complexation constants for copper species."
+            },
+            {
+              "summary": "Reconciling ionic strength conventions across constant databases."
+            },
+            {
+              "summary": "Compiling copper hydrolysis constants across reference sources."
+            },
+            {
+              "summary": "Assembling copper(I) redox potentials and hydrolysis constants."
+            },
+            {
+              "summary": "Deriving copper(I) hydroxide complex constants from thermodynamics."
+            },
+            {
+              "summary": "Cross-checking hydroxo-complex values against ammonia complex dominance."
+            },
+            {
+              "summary": "Working out copper's redox equilibrium ratios across pH."
+            },
+            {
+              "summary": "Comparing copper(I) and copper(II) ammine complex dominance."
+            },
+            {
+              "summary": "Solving mass balances for ammonia and copper simultaneously."
+            },
+            {
+              "summary": "Checking copper hydroxide precipitation against ammonia complex saturation."
+            },
+            {
+              "summary": "Testing copper(I) oxide precipitation across the pH range."
+            },
+            {
+              "summary": "Mapping the pH boundary where copper oxide starts forming."
+            },
+            {
+              "summary": "Correcting an arithmetic slip in the saturation boundary formula."
+            },
+            {
+              "summary": "Rederiving the redox equilibrium constant from scratch."
+            },
+            {
+              "summary": "Fixing the sign error in the Nernst slope direction."
+            },
+            {
+              "summary": "Mapping the boundary between copper oxide and hydroxide phases."
+            },
+            {
+              "summary": "Designing a solid-assemblage selection algorithm for equilibria."
+            },
+            {
+              "summary": "Reconciling conflicting copper-ammine constants across literature sources."
+            },
+            {
+              "summary": "Applying ionic-strength corrections to ammonia equilibrium constants."
+            },
+            {
+              "summary": "Compiling copper(I) ammine formation constants from redox data."
+            },
+            {
+              "summary": "Weighing competing copper(I) hydroxide complex value sources."
+            },
+            {
+              "summary": "Deriving solubility constants for copper oxide and hydroxide solids."
+            },
+            {
+              "summary": "Estimating copper hydroxide precipitation against total dissolved species."
+            },
+            {
+              "summary": "Testing copper hydroxide precipitation across a range of pH values."
+            },
+            {
+              "summary": "Mapping high-pH dissolution boundaries for copper hydroxide phases."
+            },
+            {
+              "summary": "Determining which copper solid dominates at each pH."
+            },
+            {
+              "summary": "Estimating dissolved fractions against copper oxide across pH."
+            },
+            {
+              "summary": "Designing logic to detect coexisting solid phases."
+            },
+            {
+              "summary": "Applying activity coefficients and checking water stability limits."
+            },
+            {
+              "summary": "Choosing between chart tools for the speciation plot."
+            },
+            {
+              "summary": "Deciding whether to include a data table alongside the chart."
+            },
+            {
+              "summary": "Deciding whether to include a spreadsheet export of the data."
+            },
+            {
+              "summary": "Comparing IUPAC and legacy copper hydroxide constant values."
+            },
+            {
+              "summary": "Coding the equilibrium calculations for the speciation diagram."
+            },
+            {
+              "summary": "Coding mass-balance equations for nitrogen and copper."
+            },
+            {
+              "summary": "Designing solid-phase selection and fraction-reporting logic."
+            },
+            {
+              "summary": "Finalizing constant sources and planning the summary table."
+            },
+            {
+              "summary": "Drafting the Python script for the speciation calculations."
+            },
+            {
+              "summary": "Coding saturation index checks for competing solids."
+            },
+            {
+              "summary": "Correcting a sign error in the copper metal saturation formula."
+            },
+            {
+              "summary": "Confirming copper metal stays unstable at this potential."
+            },
+            {
+              "summary": "Coding the species table and planning the plot layout."
+            },
+            {
+              "summary": "Encoding solid-phase equilibrium expressions for each candidate solid."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T05:14:29.029047Z",
+          "stop_timestamp": "2026-09-17T05:14:30.090586Z",
+          "type": "text",
+          "text": "I'll set this up as a full equilibrium calculation (both Cu and NH₃ mass balances, Davies activity corrections, solid-phase checks) and sweep pH numerically.",
+          "citations": []
+        },
+        {
+          "start_timestamp": "2026-09-17T05:14:30.090606Z",
+          "stop_timestamp": "2026-09-17T05:14:30.993583Z",
+          "type": "tool_use",
+          "id": "toolu_015DhNj3WcpfKJMSgktyF8D8",
+          "name": "view",
+          "input": {
+            "description": "Check the spreadsheet skill since I'll export a CSV of the speciation data",
+            "path": "/mnt/skills/public/xlsx/SKILL.md"
+          },
+          "message": "Check the spreadsheet skill since I'll export a CSV of the speciation data",
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "display_content": {
+            "type": "text",
+            "text": "Check the spreadsheet skill since I'll export a CSV of the speciation data"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:14:31.014909Z",
+          "stop_timestamp": "2026-09-17T05:14:31.014929Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_015DhNj3WcpfKJMSgktyF8D8",
+          "name": "view",
+          "content": [
+            {
+              "type": "text",
+              "text": "     1\t---\n     2\tname: xlsx\n     3\tdescription: \"Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \\\"the xlsx in my downloads\\\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.\"\n     4\tlicense: Proprietary. LICENSE.txt has complete terms\n     5\t---\n     6\t\n     7\t# XLSX creation, editing, and analysis\n     8\t\n     9\t| Task | Approach |\n    10\t|---|---|\n    11\t| **Create** or **edit** with formulas/formatting | `openpyxl` — see gotchas below |\n    12\t| **Bulk data** in or out | `pandas` (`read_excel`, `to_excel`) |\n    13\t| **Quick look** at a sheet | `markitdown file.xlsx` — `## SheetName` per sheet; reads `.xlsm` too. No cell coordinates, so don't plan edits from it |\n    14\t| **Read** a model (formulas *and* values) | two `load_workbook` passes — see gotchas |\n    15\t\n    16\t> `openpyxl`, `pandas`, and `markitdown` are preinstalled — do not run `pip install` first; write the script and import directly. Only if an import fails (or the `markitdown` command is missing): `pip install` the missing package.\n    17\t\n    18\t> Script paths below are relative to this skill's directory.\n    19\t\n    20\t## Requirements for every output\n    21\t\n    22\t- **Professional font** (Arial, Times New Roman) throughout, unless the user says otherwise.\n    23\t- **Zero formula errors.** Never ship while `recalc.py` reports `errors_found`. If you think an error predates you, prove it: load the *original* with `data_only=True` and look at that cell. An error you introduced looks exactly like one you inherited.\n    24\t- **Use formulas, never hardcoded results.** Write `sheet['B10'] = '=SUM(B2:B9)'`, not the Python-computed total. The sheet must recalculate when its inputs change.\n    25\t- **Follow the user's spec literally.** Exact tab names, exact column headers, and the formula they spelled out. A redesign that computes something else fails, however elegant.\n    26\t- **Document every assumption and hardcoded number** where the reader will see it — a cell comment, or an adjacent cell at a table's end. Cite a real source when one exists (`Source: Company 10-K, FY2024, Page 45, Revenue Note, [SEC EDGAR URL]`); when the number came from the user, say so plainly.\n    27\t- **A workbook *you create* for someone to fill in** needs a short legend naming which cells to edit, and one example row of realistic values showing the expected format. Never add such a row to a file you were asked to edit.\n    28\t- **Editing an existing file: match its conventions exactly.** They override every guideline here. Find its designated input cells first — a distinct font color, fill, or shading marks them — write only there, and leave every existing formula untouched.\n    29\t\n    30\t## Recalculate (mandatory whenever the file contains formulas)\n    31\t\n    32\topenpyxl writes formulas as strings with **no cached values**. Until you recalculate, every\n    33\tformula cell reads back as `None` to anything reading cached values — `pandas`,\n    34\t`load_workbook(data_only=True)`, and most previewers.\n    35\t\n    36\t```bash\n    37\tpython scripts/recalc.py output.xlsx [timeout_seconds]   # default 30\n    38\t```\n    39\t\n    40\tLibreOffice computes every formula, the file is **rewritten in place**, and you get JSON:\n    41\t`status` (`success` | `errors_found`), `total_formulas`, `total_errors`, and an\n    42\t`error_summary` naming up to 100 cells per error type (`locations_truncated` says how many it\n    43\twithheld — trust `total_errors`, not the length of the list). Fix what it names and run it\n    44\tagain. **JSON with an `error` key instead of a `status` means nothing was recalculated**, and\n    45\tonly that case exits non-zero — `errors_found` exits 0, so never treat a clean exit as a clean\n    46\tworkbook.\n    47\t\n    48\t**A green recalc proves your formulas *evaluate*, not that they are *right*.** An off-by-one\n    49\trange or a reference to the wrong row yields a clean, error-free file with wrong numbers.\n    50\tWrite 2–3 formulas first and check they pull the values you expect, before building out a grid.\n    51\t\n    52\t**A workbook that links to another file loses those links** if you re-save it with openpyxl and\n    53\tthen recalculate. Such a formula reads `='[1]Returns Analysis'!$B$2` — the `[1]` is an index\n    54\tinto the workbook's external-reference list, naming a *separate file on disk*, not a sheet.\n    55\tThat file is rarely present here, so the cell's cached value is the only thing holding its\n    56\tdata. openpyxl strips that value on save; LibreOffice then has to resolve the reference for\n    57\treal, fails, writes `#NAME?`, and deletes every link. `recalc.py` refuses to run in that state\n    58\t— copy those cells' values out of the original before you save over them (`--force` overrides,\n    59\tand accepts the loss).\n    60\t\n    61\t## Choosing formulas that survive verification\n    62\t\n    63\tLibreOffice implements fewer functions than Excel, and one it cannot evaluate becomes a\n    64\tliteral `#NAME?` baked into the file you deliver.\n    65\t\n    66\t- **Prefer Excel-2007-era functions** — `SUMIFS`, `INDEX`, `MATCH`, `IFERROR`, `SUMPRODUCT` — which need no prefix.\n    67\t- **Six post-2007 functions work, but only with an `_xlfn.` prefix**, because openpyxl writes your formula into the XML verbatim and Excel stores post-2007 names prefixed (its UI hides the prefix): `_xlfn.TEXTJOIN`, `_xlfn.CONCAT`, `_xlfn.IFS`, `_xlfn.SWITCH`, `_xlfn.MAXIFS`, `_xlfn.MINIFS`. Written bare, each yields `#NAME?`.\n    68\t- **Never use `XLOOKUP`, `XMATCH`, `SORT`, `FILTER`, `UNIQUE`, or `SEQUENCE`.** The runtime's LibreOffice cannot evaluate them under *any* prefix. Newer builds do evaluate them, but they are spilling array functions and an openpyxl-written file has no spill metadata, so only the top-left cell of the range gets a value — and `recalc.py` reports `total_errors: 0` on the truncated result. Use `INDEX`/`MATCH` for lookups, and sort, filter, and de-duplicate in Python before writing the cells.\n    69\t- A formula LibreOffice could not parse is written back **lowercased** — a quick tell beside a `#NAME?`.\n    70\t\n    71\t## openpyxl gotchas\n    72\t\n    73\t- **Reading a model takes two loads.** `data_only=True` yields cached values with the formulas gone; the default yields formula strings with no values. One pass cannot give you both.\n    74\t- **`data_only=True` is destructive if you save.** That workbook has no formulas left, so saving replaces every one with a literal — permanently.\n    75\t- **`data_only=True` on a file openpyxl just wrote returns `None` everywhere** — run `recalc.py` first. (A formula whose result is `\"\"` also reads back as `None`.)\n    76\t- **Merged cells: write the top-left anchor only.** Every other cell in the range is a `MergedCell` whose `.value` is read-only.\n    77\t- **`.xlsm` loses its macros unless you pass `keep_vba=True`** to `load_workbook`.\n    78\t- **A sheet name containing a space must be quoted** in a cross-sheet reference: `='Assumptions Inputs'!$B$5`. Unquoted, it evaluates to `#VALUE!`.\n    79\t\n    80\t## Financial models\n    81\t\n    82\tUnless the user says otherwise, or the existing file already does something else.\n    83\t\n    84\t**Color:** blue text (`0,0,255`) for hardcoded inputs and scenario levers · black for formulas ·\n    85\tgreen (`0,128,0`) for links to another sheet · red (`255,0,0`) for links to another file ·\n    86\tyellow fill (`255,255,0`) for key assumptions and cells the user should fill in.\n    87\t\n    88\t**Numbers:** currency `$#,##0`, with the unit named in the header (`Revenue ($mm)`) · zeros\n    89\trender as `-`, including in percentages (`$#,##0;($#,##0);-`) · negatives in parentheses ·\n    90\tpercentages `0.0%`, **stored as fractions** (`0.15` renders `15.0%`; storing `15` renders\n    91\t`1500.0%`) · valuation multiples `0.0x` · years as text (`\"2024\"`, never `2,024`).\n    92\t\n    93\t**Structure:** every assumption in its own labeled cell, referenced by the formulas that use it\n    94\t(`=B5*(1+$B$6)`, never `=B5*1.05`) · formulas consistent across every projection period, since a\n    95\tlone edited cell mid-row is the commonest silent error · guard denominators that can be zero.\n    96\t\n    97\t## Dependencies\n    98\t\n    99\t`openpyxl`, `pandas`, `markitdown` (pip, preinstalled — install only if an import fails or the command is missing) · LibreOffice (`soffice`, auto-configured for sandboxed environments via `scripts/office/soffice.py`)\n   100\t",
+              "uuid": "e5241881-381c-4522-bedb-d570e25b6342"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "md"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:14:34.295187Z",
+          "stop_timestamp": "2026-09-17T05:15:44.151818Z",
+          "type": "tool_use",
+          "id": "toolu_013h6Rv8EazSP5UxYELNGK7x",
+          "name": "create_file",
+          "input": {
+            "description": "Equilibrium speciation solver for Cu–NH3–H2O at fixed Eh, pH sweep",
+            "path": "/home/claude/cu_nh3_speciation.py",
+            "file_text": "#!/usr/bin/env python3\n\"\"\"\nCopper speciation vs pH in aqueous ammonia at fixed Eh.\n\nConditions: Cu_T = 1.00e-3 M, NH3_T = 0.100 M, Eh = +0.265 V (SHE),\n            25 C, I = 0.10 m (Davies), pH 0-14.\nSolids considered: Cu(OH)2(s) [hydroxide preferred over tenorite CuO],\n                   Cu2O(s) [cuprite; no well-defined Cu(I) hydroxide phase],\n                   Cu(s) metal.\n\nMethod: for each pH, solve the Cu and NH3 mass balances for free a(Cu2+)\nand a(NH3) with pe fixed by Eh; then test saturation indices, and if a\nsolid is supersaturated re-solve with that solid controlling a(Cu2+).\nAll log K are at I=0 / activity scale; Davies gives activity coefficients.\n\"\"\"\nimport numpy as np\nimport pandas as pd\nfrom scipy.optimize import brentq\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\n\n# ----------------------------------------------------------------- conditions\nCu_T = 1.00e-3          # mol/kg (M ~ m at 25 C)\nN_T = 0.100             # total ammonia (NH3 + NH4+ + complexed)\nEh = 0.265              # V vs SHE\nT = 298.15\nI = 0.10\npH_grid = np.round(np.arange(0.0, 14.0 + 1e-9, 0.02), 3)\n\nR, F = 8.314462618, 96485.33212\nNERNST = np.log(10) * R * T / F          # 0.05916 V\npe = Eh / NERNST\nA_DH = 0.5092                            # Davies A at 25 C\n\n\ndef log_gamma(z):\n    if z == 0:\n        return 0.0\n    sI = np.sqrt(I)\n    return -A_DH * z * z * (sI / (1.0 + sI) - 0.3 * I)\n\n\n# ------------------------------------------------------------- thermodynamics\n# Redox (Bard, Parsons & Jordan 1985): E0(Cu2+/Cu+)=0.159 V, E0(Cu+/Cu)=0.520 V\nlogK_Cu2_Cu1 = 0.159 / NERNST            # Cu2+ + e- = Cu+\nlogK_Cu1_Cu0 = 0.520 / NERNST            # Cu+ + e- = Cu(s)\n\n# Aqueous species, formed from components Cu2+, NH3, H+, e-:\n# a_i = 10^logK * a(Cu2+)^nCu * a(NH3)^nN * a(H+)^nH * a(e-)^ne\n# (name, logK, nCu, nN, nH, ne, charge, Cu oxidation state)\nSPECIES = [\n    # Cu(II) hydrolysis (IUPAC/Powell et al. 2007; Cu3(OH)4 from Baes & Mesmer)\n    (\"Cu2+\",          0.00,   1, 0,  0, 0, +2, 2),\n    (\"CuOH+\",        -7.95,   1, 0, -1, 0, +1, 2),\n    (\"Cu(OH)2(aq)\", -16.2,    1, 0, -2, 0,  0, 2),\n    (\"Cu(OH)3-\",    -26.6,    1, 0, -3, 0, -1, 2),\n    (\"Cu(OH)4^2-\",  -39.6,    1, 0, -4, 0, -2, 2),\n    (\"Cu2(OH)2^2+\", -10.6,    2, 0, -2, 0, +2, 2),\n    (\"Cu3(OH)4^2+\", -21.1,    3, 0, -4, 0, +2, 2),\n    # Cu(II) ammines (Smith & Martell / NIST 46)\n    (\"Cu(NH3)^2+\",    4.04,   1, 1,  0, 0, +2, 2),\n    (\"Cu(NH3)2^2+\",   7.47,   1, 2,  0, 0, +2, 2),\n    (\"Cu(NH3)3^2+\",  10.27,   1, 3,  0, 0, +2, 2),\n    (\"Cu(NH3)4^2+\",  11.75,   1, 4,  0, 0, +2, 2),\n    (\"Cu(NH3)5^2+\",  11.23,   1, 5,  0, 0, +2, 2),\n    # Cu(I)\n    (\"Cu+\",          logK_Cu2_Cu1,          1, 0,  0, 1, +1, 1),\n    (\"Cu(NH3)+\",     logK_Cu2_Cu1 + 5.93,   1, 1,  0, 1, +1, 1),\n    (\"Cu(NH3)2+\",    logK_Cu2_Cu1 + 10.86,  1, 2,  0, 1, +1, 1),\n    (\"Cu(OH)2-\",     logK_Cu2_Cu1 - 16.0,   1, 0, -2, 1, -1, 1),\n    # ammonia\n    (\"NH3\",           0.00,   0, 1,  0, 0,  0, 0),\n    (\"NH4+\",          9.245,  0, 1,  1, 0, +1, 0),\n]\nNAMES = [s[0] for s in SPECIES]\nlogK = np.array([s[1] for s in SPECIES], float)\nnCu = np.array([s[2] for s in SPECIES], float)\nnN = np.array([s[3] for s in SPECIES], float)\nnH = np.array([s[4] for s in SPECIES], float)\nne = np.array([s[5] for s in SPECIES], float)\nZ = np.array([s[6] for s in SPECIES], int)\nOX = np.array([s[7] for s in SPECIES], int)\nLG = np.array([log_gamma(z) for z in Z])\n\n# Solids (dissolution reactions, activity scale)\nlogKs_CuOH2 = 8.67      # Cu(OH)2(s) + 2H+ = Cu2+ + 2H2O   (tenorite would be ~7.6)\nlogK_Cu2O = -1.55       # Cu2O(s)    + 2H+ = 2Cu+ + H2O    (from NBS delta-Gf)\nlogK_Cu_met = -logK_Cu1_Cu0   # Cu(s) = Cu+ + e-\nSOLID_NAMES = [\"Cu(OH)2(s)\", \"Cu2O(s)\", \"Cu(s)\"]\n\n\ndef logCu2_from_logCu1(logCu1):\n    return logCu1 - logK_Cu2_Cu1 + pe\n\n\ndef fixed_logCu2(solid, logH):\n    if solid == \"Cu(OH)2(s)\":\n        return logKs_CuOH2 + 2.0 * logH\n    if solid == \"Cu2O(s)\":\n        return logCu2_from_logCu1(0.5 * (logK_Cu2O + 2.0 * logH))\n    if solid == \"Cu(s)\":\n        return logCu2_from_logCu1(logK_Cu_met + pe)\n    raise ValueError(solid)\n\n\ndef saturation_indices(logCu2, logH):\n    logCu1 = logCu2 + logK_Cu2_Cu1 - pe\n    return {\"Cu(OH)2(s)\": logCu2 - 2.0 * logH - logKs_CuOH2,\n            \"Cu2O(s)\": 2.0 * logCu1 - 2.0 * logH - logK_Cu2O,\n            \"Cu(s)\": logCu1 - pe - logK_Cu_met}\n\n\n# --------------------------------------------------------------------- solver\ndef conc(logCu2, logNH3, logH):\n    loga = logK + nCu * logCu2 + nN * logNH3 + nH * logH + ne * (-pe)\n    return 10.0 ** (loga - LG)          # molal concentrations\n\n\ndef solve_NH3(logCu2, logH):\n    f = lambda x: np.dot(nN, conc(logCu2, x, logH)) - N_T\n    return brentq(f, -45.0, 3.0, xtol=1e-13, rtol=1e-13, maxiter=300)\n\n\ndef dissolved(logCu2, logH):\n    x = solve_NH3(logCu2, logH)\n    c = conc(logCu2, x, logH)\n    return np.dot(nCu, c), x, c\n\n\ndef solve_point(pH):\n    logH = -pH\n    # 1) homogeneous trial\n    f = lambda y: dissolved(y, logH)[0] - Cu_T\n    y0 = brentq(f, -70.0, 5.0, xtol=1e-13, rtol=1e-13, maxiter=300)\n    si0 = saturation_indices(y0, logH)\n    if max(si0.values()) <= 1e-9:\n        _, x, c = dissolved(y0, logH)\n        return y0, x, c, None, 0.0, si0\n    # 2) try supersaturated solids, most supersaturated first\n    best = None\n    for name in sorted(si0, key=si0.get, reverse=True):\n        if si0[name] <= 0:\n            continue\n        y = fixed_logCu2(name, logH)\n        dis, x, c = dissolved(y, logH)\n        n_solid = Cu_T - dis                  # Cu-equivalents in solid\n        si = saturation_indices(y, logH)\n        others = max(v for k, v in si.items() if k != name)\n        if n_solid >= -1e-12 and others <= 1e-6:\n            return y, x, c, name, max(n_solid, 0.0), si\n        if n_solid >= 0 and (best is None or others < best[-1]):\n            best = (y, x, c, name, n_solid, si, others)\n    if best is not None:                      # coexistence point tolerance\n        return best[:6]\n    raise RuntimeError(f\"no consistent assemblage at pH {pH}\")\n\n\nrows = []\nfor pH in pH_grid:\n    y, x, c, solid, n_solid, si = solve_point(pH)\n    frac = nCu * c / Cu_T\n    row = {\"pH\": pH}\n    for nm, fr in zip(NAMES, frac):\n        if nm not in (\"NH3\", \"NH4+\"):\n            row[nm] = 100.0 * fr\n    for s in SOLID_NAMES:\n        row[s] = 100.0 * n_solid / Cu_T if solid == s else 0.0\n    row[\"Cu_dissolved_M\"] = np.dot(nCu, c)\n    row[\"Cu(II)_dissolved_M\"] = np.dot(nCu * (OX == 2), c)\n    row[\"Cu(I)_dissolved_M\"] = np.dot(nCu * (OX == 1), c)\n    row[\"NH3_free_M\"] = c[NAMES.index(\"NH3\")]\n    row[\"NH4+_M\"] = c[NAMES.index(\"NH4+\")]\n    row[\"log_a_Cu2+\"] = y\n    row[\"log_a_Cu+\"] = y + logK_Cu2_Cu1 - pe\n    row[\"log_a_NH3\"] = x\n    for s in SOLID_NAMES:\n        row[\"SI_\" + s] = si[s]\n    row[\"solid_present\"] = solid or \"none\"\n    # mass-balance closure\n    row[\"Cu_balance_err\"] = (np.dot(nCu, c) + n_solid - Cu_T) / Cu_T\n    row[\"N_balance_err\"] = (np.dot(nN, c) - N_T) / N_T\n    rows.append(row)\n\ndf = pd.DataFrame(rows)\ndf.to_csv(\"/home/claude/cu_nh3_speciation.csv\", index=False, float_format=\"%.6g\")\n\n# ------------------------------------------------------------- text summary\naq_cols = [nm for nm in NAMES if nm not in (\"NH3\", \"NH4+\")] + SOLID_NAMES\ndom = df[aq_cols].idxmax(axis=1)\nprint(f\"pe = {pe:.3f}   gamma(1) = {10**log_gamma(1):.3f}  gamma(2) = {10**log_gamma(2):.3f}\")\nprint(\"max |Cu balance err| =\", abs(df.Cu_balance_err).max(),\n      \" max |N balance err| =\", abs(df.N_balance_err).max())\nprint(\"\\nPredominant species windows:\")\nstart = df.pH.iloc[0]\ncur = dom.iloc[0]\nfor i in range(1, len(df)):\n    if dom.iloc[i] != cur:\n        print(f\"  pH {start:5.2f} - {df.pH.iloc[i-1]:5.2f}: {cur}\")\n        start, cur = df.pH.iloc[i], dom.iloc[i]\nprint(f\"  pH {start:5.2f} - {df.pH.iloc[-1]:5.2f}: {cur}\")\n\nprint(\"\\nSolid-phase windows:\")\nsp = df.solid_present\nstart, cur = df.pH.iloc[0], sp.iloc[0]\nfor i in range(1, len(df)):\n    if sp.iloc[i] != cur:\n        print(f\"  pH {start:5.2f} - {df.pH.iloc[i-1]:5.2f}: {cur}\")\n        start, cur = df.pH.iloc[i], sp.iloc[i]\nprint(f\"  pH {start:5.2f} - {df.pH.iloc[-1]:5.2f}: {cur}\")\n\nprint(\"\\nSpecies exceeding 1 % anywhere:\", [c for c in aq_cols if df[c].max() > 1.0])\nprint(\"\\nSnapshot table (% of total Cu):\")\nsnap = df[df.pH.isin([0, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])]\nshow = [c for c in aq_cols if df[c].max() > 1.0]\nprint(snap[[\"pH\"] + show + [\"Cu_dissolved_M\", \"NH3_free_M\"]].to_string(index=False,\n      float_format=lambda v: f\"{v:.3g}\"))\n\n# ----------------------------------------------------------------------- plot\nLABELS = {\n    \"Cu2+\": r\"Cu$^{2+}$\", \"CuOH+\": r\"CuOH$^{+}$\", \"Cu(OH)2(aq)\": r\"Cu(OH)$_2$(aq)\",\n    \"Cu(OH)3-\": r\"Cu(OH)$_3^{-}$\", \"Cu(OH)4^2-\": r\"Cu(OH)$_4^{2-}$\",\n    \"Cu2(OH)2^2+\": r\"Cu$_2$(OH)$_2^{2+}$\", \"Cu3(OH)4^2+\": r\"Cu$_3$(OH)$_4^{2+}$\",\n    \"Cu(NH3)^2+\": r\"Cu(NH$_3$)$^{2+}$\", \"Cu(NH3)2^2+\": r\"Cu(NH$_3$)$_2^{2+}$\",\n    \"Cu(NH3)3^2+\": r\"Cu(NH$_3$)$_3^{2+}$\", \"Cu(NH3)4^2+\": r\"Cu(NH$_3$)$_4^{2+}$\",\n    \"Cu(NH3)5^2+\": r\"Cu(NH$_3$)$_5^{2+}$\", \"Cu+\": r\"Cu$^{+}$\",\n    \"Cu(NH3)+\": r\"Cu(NH$_3$)$^{+}$\", \"Cu(NH3)2+\": r\"Cu(NH$_3$)$_2^{+}$\",\n    \"Cu(OH)2-\": r\"Cu(OH)$_2^{-}$\", \"Cu(OH)2(s)\": r\"Cu(OH)$_2$(s)\",\n    \"Cu2O(s)\": r\"Cu$_2$O(s)\", \"Cu(s)\": \"Cu(s)\",\n}\nCOLORS = {\n    \"Cu2+\": \"#1f77b4\", \"CuOH+\": \"#6baed6\", \"Cu(OH)2(aq)\": \"#2ca02c\",\n    \"Cu(OH)3-\": \"#98df8a\", \"Cu(OH)4^2-\": \"#006d2c\", \"Cu2(OH)2^2+\": \"#9ecae1\",\n    \"Cu3(OH)4^2+\": \"#c6dbef\", \"Cu(NH3)^2+\": \"#c7b3e6\", \"Cu(NH3)2^2+\": \"#a985d6\",\n    \"Cu(NH3)3^2+\": \"#8c5ac4\", \"Cu(NH3)4^2+\": \"#5e2ca5\", \"Cu(NH3)5^2+\": \"#d4bff0\",\n    \"Cu+\": \"#ff7f0e\", \"Cu(NH3)+\": \"#ffbb78\", \"Cu(NH3)2+\": \"#d62728\",\n    \"Cu(OH)2-\": \"#e377c2\", \"Cu(OH)2(s)\": \"#bdbdbd\", \"Cu2O(s)\": \"#8c564b\",\n}\n\nfig, (ax1, ax2) = plt.subplots(2, 1, figsize=(9.5, 10.5), sharex=True,\n                               gridspec_kw={\"height_ratios\": [1.15, 1]})\nfig.subplots_adjust(hspace=0.08, right=0.78, top=0.92)\n\nfor s, hatch in ((\"Cu2O(s)\", \"//\"), (\"Cu(OH)2(s)\", \"\\\\\\\\\")):\n    if df[s].max() > 0:\n        ax1.fill_between(df.pH, 0, df[s], color=COLORS[s], alpha=0.30,\n                         hatch=hatch, edgecolor=COLORS[s], linewidth=0,\n                         label=LABELS[s])\n        ax1.plot(df.pH, df[s], color=COLORS[s], lw=1.8)\n\naq_plot = [nm for nm in NAMES if nm not in (\"NH3\", \"NH4+\") and df[nm].max() > 0.5]\nfor nm in aq_plot:\n    ls = \"-\" if OX[NAMES.index(nm)] == 2 else \"--\"\n    ax1.plot(df.pH, df[nm], color=COLORS[nm], lw=2.0, ls=ls, label=LABELS[nm])\nax1.set_ylabel(\"% of total Cu\")\nax1.set_ylim(0, 100)\nax1.grid(alpha=0.3)\nax1.legend(loc=\"upper left\", bbox_to_anchor=(1.01, 1.0), fontsize=9, frameon=False,\n           title=\"solid Cu(II) ——  Cu(I) - - -\", title_fontsize=9)\nax1.set_title(\n    f\"Cu speciation in 0.100 M total NH$_3$, Cu$_T$ = 1.00×10$^{{-3}}$ M\\n\"\n    f\"Eh = +{Eh:.3f} V (SHE, pe = {pe:.2f}), 25 °C, I = 0.1 m (Davies); \"\n    f\"hydroxide solid Cu(OH)$_2$ preferred over CuO\", fontsize=11)\n\naq_log = [nm for nm in NAMES if nm not in (\"NH3\", \"NH4+\")]\nfor nm in aq_log:\n    cmol = df[nm].values / 100 * Cu_T / nCu[NAMES.index(nm)]\n    if np.log10(cmol.max() + 1e-300) < -9.5:\n        continue\n    ls = \"-\" if OX[NAMES.index(nm)] == 2 else \"--\"\n    ax2.plot(df.pH, np.log10(cmol + 1e-300), color=COLORS[nm], lw=1.7, ls=ls,\n             label=LABELS[nm])\nax2.plot(df.pH, np.log10(df.Cu_dissolved_M), \"k-\", lw=2.4, label=\"total dissolved Cu\")\nax2.plot(df.pH, np.log10(df.NH3_free_M), color=\"0.45\", lw=1.4, ls=\":\", label=r\"free NH$_3$\")\nax2.set_ylim(-9.5, -1.8)\nax2.set_xlim(0, 14)\nax2.set_xticks(range(0, 15))\nax2.set_xlabel(\"pH\")\nax2.set_ylabel(\"log$_{10}$ molality of dissolved species\")\nax2.grid(alpha=0.3)\nax2.legend(loc=\"upper left\", bbox_to_anchor=(1.01, 1.0), fontsize=8.5, frameon=False)\n\n# mark solid windows on lower panel\nfor s in (\"Cu2O(s)\", \"Cu(OH)2(s)\"):\n    mask = df[s] > 0\n    if mask.any():\n        ax2.axvspan(df.pH[mask].min(), df.pH[mask].max(), color=COLORS[s], alpha=0.12)\n        ax2.text(0.5 * (df.pH[mask].min() + df.pH[mask].max()), -2.15, LABELS[s] + \" present\",\n                 ha=\"center\", va=\"top\", fontsize=9, color=\"0.25\")\n\nfig.savefig(\"/home/claude/cu_nh3_speciation.png\", dpi=160, bbox_inches=\"tight\")\nprint(\"\\nwrote cu_nh3_speciation.png and cu_nh3_speciation.csv\")\n"
+          },
+          "message": "Equilibrium speciation solver for Cu–NH3–H2O at fixed Eh, pH sweep",
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"python\", \"code\": \"#!/usr/bin/env python3\\n\\\"\\\"\\\"\\nCopper speciation vs pH in aqueous ammonia at fixed Eh.\\n\\nConditions: Cu_T = 1.00e-3 M, NH3_T = 0.100 M, Eh = +0.265 V (SHE),\\n            25 C, I = 0.10 m (Davies), pH 0-14.\\nSolids considered: Cu(OH)2(s) [hydroxide preferred over tenorite CuO],\\n                   Cu2O(s) [cuprite; no well-defined Cu(I) hydroxide phase],\\n                   Cu(s) metal.\\n\\nMethod: for each pH, solve the Cu and NH3 mass balances for free a(Cu2+)\\nand a(NH3) with pe fixed by Eh; then test saturation indices, and if a\\nsolid is supersaturated re-solve with that solid controlling a(Cu2+).\\nAll log K are at I=0 / activity scale; Davies gives activity coefficients.\\n\\\"\\\"\\\"\\nimport numpy as np\\nimport pandas as pd\\nfrom scipy.optimize import brentq\\nimport matplotlib\\nmatplotlib.use(\\\"Agg\\\")\\nimport matplotlib.pyplot as plt\\n\\n# ----------------------------------------------------------------- conditions\\nCu_T = 1.00e-3          # mol/kg (M ~ m at 25 C)\\nN_T = 0.100             # total ammonia (NH3 + NH4+ + complexed)\\nEh = 0.265              # V vs SHE\\nT = 298.15\\nI = 0.10\\npH_grid = np.round(np.arange(0.0, 14.0 + 1e-9, 0.02), 3)\\n\\nR, F = 8.314462618, 96485.33212\\nNERNST = np.log(10) * R * T / F          # 0.05916 V\\npe = Eh / NERNST\\nA_DH = 0.5092                            # Davies A at 25 C\\n\\n\\ndef log_gamma(z):\\n    if z == 0:\\n        return 0.0\\n    sI = np.sqrt(I)\\n    return -A_DH * z * z * (sI / (1.0 + sI) - 0.3 * I)\\n\\n\\n# ------------------------------------------------------------- thermodynamics\\n# Redox (Bard, Parsons & Jordan 1985): E0(Cu2+/Cu+)=0.159 V, E0(Cu+/Cu)=0.520 V\\nlogK_Cu2_Cu1 = 0.159 / NERNST            # Cu2+ + e- = Cu+\\nlogK_Cu1_Cu0 = 0.520 / NERNST            # Cu+ + e- = Cu(s)\\n\\n# Aqueous species, formed from components Cu2+, NH3, H+, e-:\\n# a_i = 10^logK * a(Cu2+)^nCu * a(NH3)^nN * a(H+)^nH * a(e-)^ne\\n# (name, logK, nCu, nN, nH, ne, charge, Cu oxidation state)\\nSPECIES = [\\n    # Cu(II) hydrolysis (IUPAC/Powell et al. 2007; Cu3(OH)4 from Baes & Mesmer)\\n    (\\\"Cu2+\\\",          0.00,   1, 0,  0, 0, +2, 2),\\n    (\\\"CuOH+\\\",        -7.95,   1, 0, -1, 0, +1, 2),\\n    (\\\"Cu(OH)2(aq)\\\", -16.2,    1, 0, -2, 0,  0, 2),\\n    (\\\"Cu(OH)3-\\\",    -26.6,    1, 0, -3, 0, -1, 2),\\n    (\\\"Cu(OH)4^2-\\\",  -39.6,    1, 0, -4, 0, -2, 2),\\n    (\\\"Cu2(OH)2^2+\\\", -10.6,    2, 0, -2, 0, +2, 2),\\n    (\\\"Cu3(OH)4^2+\\\", -21.1,    3, 0, -4, 0, +2, 2),\\n    # Cu(II) ammines (Smith & Martell / NIST 46)\\n    (\\\"Cu(NH3)^2+\\\",    4.04,   1, 1,  0, 0, +2, 2),\\n    (\\\"Cu(NH3)2^2+\\\",   7.47,   1, 2,  0, 0, +2, 2),\\n    (\\\"Cu(NH3)3^2+\\\",  10.27,   1, 3,  0, 0, +2, 2),\\n    (\\\"Cu(NH3)4^2+\\\",  11.75,   1, 4,  0, 0, +2, 2),\\n    (\\\"Cu(NH3)5^2+\\\",  11.23,   1, 5,  0, 0, +2, 2),\\n    # Cu(I)\\n    (\\\"Cu+\\\",          logK_Cu2_Cu1,          1, 0,  0, 1, +1, 1),\\n    (\\\"Cu(NH3)+\\\",     logK_Cu2_Cu1 + 5.93,   1, 1,  0, 1, +1, 1),\\n    (\\\"Cu(NH3)2+\\\",    logK_Cu2_Cu1 + 10.86,  1, 2,  0, 1, +1, 1),\\n    (\\\"Cu(OH)2-\\\",     logK_Cu2_Cu1 - 16.0,   1, 0, -2, 1, -1, 1),\\n    # ammonia\\n    (\\\"NH3\\\",           0.00,   0, 1,  0, 0,  0, 0),\\n    (\\\"NH4+\\\",          9.245,  0, 1,  1, 0, +1, 0),\\n]\\nNAMES = [s[0] for s in SPECIES]\\nlogK = np.array([s[1] for s in SPECIES], float)\\nnCu = np.array([s[2] for s in SPECIES], float)\\nnN = np.array([s[3] for s in SPECIES], float)\\nnH = np.array([s[4] for s in SPECIES], float)\\nne = np.array([s[5] for s in SPECIES], float)\\nZ = np.array([s[6] for s in SPECIES], int)\\nOX = np.array([s[7] for s in SPECIES], int)\\nLG = np.array([log_gamma(z) for z in Z])\\n\\n# Solids (dissolution reactions, activity scale)\\nlogKs_CuOH2 = 8.67      # Cu(OH)2(s) + 2H+ = Cu2+ + 2H2O   (tenorite would be ~7.6)\\nlogK_Cu2O = -1.55       # Cu2O(s)    + 2H+ = 2Cu+ + H2O    (from NBS delta-Gf)\\nlogK_Cu_met = -logK_Cu1_Cu0   # Cu(s) = Cu+ + e-\\nSOLID_NAMES = [\\\"Cu(OH)2(s)\\\", \\\"Cu2O(s)\\\", \\\"Cu(s)\\\"]\\n\\n\\ndef logCu2_from_logCu1(logCu1):\\n    return logCu1 - logK_Cu2_Cu1 + pe\\n\\n\\ndef fixed_logCu2(solid, logH):\\n    if solid == \\\"Cu(OH)2(s)\\\":\\n        return logKs_CuOH2 + 2.0 * logH\\n    if solid == \\\"Cu2O(s)\\\":\\n        return logCu2_from_logCu1(0.5 * (logK_Cu2O + 2.0 * logH))\\n    if solid == \\\"Cu(s)\\\":\\n        return logCu2_from_logCu1(logK_Cu_met + pe)\\n    raise ValueError(solid)\\n\\n\\ndef saturation_indices(logCu2, logH):\\n    logCu1 = logCu2 + logK_Cu2_Cu1 - pe\\n    return {\\\"Cu(OH)2(s)\\\": logCu2 - 2.0 * logH - logKs_CuOH2,\\n            \\\"Cu2O(s)\\\": 2.0 * logCu1 - 2.0 * logH - logK_Cu2O,\\n            \\\"Cu(s)\\\": logCu1 - pe - logK_Cu_met}\\n\\n\\n# --------------------------------------------------------------------- solver\\ndef conc(logCu2, logNH3, logH):\\n    loga = logK + nCu * logCu2 + nN * logNH3 + nH * logH + ne * (-pe)\\n    return 10.0 ** (loga - LG)          # molal concentrations\\n\\n\\ndef solve_NH3(logCu2, logH):\\n    f = lambda x: np.dot(nN, conc(logCu2, x, logH)) - N_T\\n    return brentq(f, -45.0, 3.0, xtol=1e-13, rtol=1e-13, maxiter=300)\\n\\n\\ndef dissolved(logCu2, logH):\\n    x = solve_NH3(logCu2, logH)\\n    c = conc(logCu2, x, logH)\\n    return np.dot(nCu, c), x, c\\n\\n\\ndef solve_point(pH):\\n    logH = -pH\\n    # 1) homogeneous trial\\n    f = lambda y: dissolved(y, logH)[0] - Cu_T\\n    y0 = brentq(f, -70.0, 5.0, xtol=1e-13, rtol=1e-13, maxiter=300)\\n    si0 = saturation_indices(y0, logH)\\n    if max(si0.values()) <= 1e-9:\\n        _, x, c = dissolved(y0, logH)\\n        return y0, x, c, None, 0.0, si0\\n    # 2) try supersaturated solids, most supersaturated first\\n    best = None\\n    for name in sorted(si0, key=si0.get, reverse=True):\\n        if si0[name] <= 0:\\n            continue\\n        y = fixed_logCu2(name, logH)\\n        dis, x, c = dissolved(y, logH)\\n        n_solid = Cu_T - dis                  # Cu-equivalents in solid\\n        si = saturation_indices(y, logH)\\n        others = max(v for k, v in si.items() if k != name)\\n        if n_solid >= -1e-12 and others <= 1e-6:\\n            return y, x, c, name, max(n_solid, 0.0), si\\n        if n_solid >= 0 and (best is None or others < best[-1]):\\n            best = (y, x, c, name, n_solid, si, others)\\n    if best is not None:                      # coexistence point tolerance\\n        return best[:6]\\n    raise RuntimeError(f\\\"no consistent assemblage at pH {pH}\\\")\\n\\n\\nrows = []\\nfor pH in pH_grid:\\n    y, x, c, solid, n_solid, si = solve_point(pH)\\n    frac = nCu * c / Cu_T\\n    row = {\\\"pH\\\": pH}\\n    for nm, fr in zip(NAMES, frac):\\n        if nm not in (\\\"NH3\\\", \\\"NH4+\\\"):\\n            row[nm] = 100.0 * fr\\n    for s in SOLID_NAMES:\\n        row[s] = 100.0 * n_solid / Cu_T if solid == s else 0.0\\n    row[\\\"Cu_dissolved_M\\\"] = np.dot(nCu, c)\\n    row[\\\"Cu(II)_dissolved_M\\\"] = np.dot(nCu * (OX == 2), c)\\n    row[\\\"Cu(I)_dissolved_M\\\"] = np.dot(nCu * (OX == 1), c)\\n    row[\\\"NH3_free_M\\\"] = c[NAMES.index(\\\"NH3\\\")]\\n    row[\\\"NH4+_M\\\"] = c[NAMES.index(\\\"NH4+\\\")]\\n    row[\\\"log_a_Cu2+\\\"] = y\\n    row[\\\"log_a_Cu+\\\"] = y + logK_Cu2_Cu1 - pe\\n    row[\\\"log_a_NH3\\\"] = x\\n    for s in SOLID_NAMES:\\n        row[\\\"SI_\\\" + s] = si[s]\\n    row[\\\"solid_present\\\"] = solid or \\\"none\\\"\\n    # mass-balance closure\\n    row[\\\"Cu_balance_err\\\"] = (np.dot(nCu, c) + n_solid - Cu_T) / Cu_T\\n    row[\\\"N_balance_err\\\"] = (np.dot(nN, c) - N_T) / N_T\\n    rows.append(row)\\n\\ndf = pd.DataFrame(rows)\\ndf.to_csv(\\\"/home/claude/cu_nh3_speciation.csv\\\", index=False, float_format=\\\"%.6g\\\")\\n\\n# ------------------------------------------------------------- text summary\\naq_cols = [nm for nm in NAMES if nm not in (\\\"NH3\\\", \\\"NH4+\\\")] + SOLID_NAMES\\ndom = df[aq_cols].idxmax(axis=1)\\nprint(f\\\"pe = {pe:.3f}   gamma(1) = {10**log_gamma(1):.3f}  gamma(2) = {10**log_gamma(2):.3f}\\\")\\nprint(\\\"max |Cu balance err| =\\\", abs(df.Cu_balance_err).max(),\\n      \\\" max |N balance err| =\\\", abs(df.N_balance_err).max())\\nprint(\\\"\\\\nPredominant species windows:\\\")\\nstart = df.pH.iloc[0]\\ncur = dom.iloc[0]\\nfor i in range(1, len(df)):\\n    if dom.iloc[i] != cur:\\n        print(f\\\"  pH {start:5.2f} - {df.pH.iloc[i-1]:5.2f}: {cur}\\\")\\n        start, cur = df.pH.iloc[i], dom.iloc[i]\\nprint(f\\\"  pH {start:5.2f} - {df.pH.iloc[-1]:5.2f}: {cur}\\\")\\n\\nprint(\\\"\\\\nSolid-phase windows:\\\")\\nsp = df.solid_present\\nstart, cur = df.pH.iloc[0], sp.iloc[0]\\nfor i in range(1, len(df)):\\n    if sp.iloc[i] != cur:\\n        print(f\\\"  pH {start:5.2f} - {df.pH.iloc[i-1]:5.2f}: {cur}\\\")\\n        start, cur = df.pH.iloc[i], sp.iloc[i]\\nprint(f\\\"  pH {start:5.2f} - {df.pH.iloc[-1]:5.2f}: {cur}\\\")\\n\\nprint(\\\"\\\\nSpecies exceeding 1 % anywhere:\\\", [c for c in aq_cols if df[c].max() > 1.0])\\nprint(\\\"\\\\nSnapshot table (% of total Cu):\\\")\\nsnap = df[df.pH.isin([0, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])]\\nshow = [c for c in aq_cols if df[c].max() > 1.0]\\nprint(snap[[\\\"pH\\\"] + show + [\\\"Cu_dissolved_M\\\", \\\"NH3_free_M\\\"]].to_string(index=False,\\n      float_format=lambda v: f\\\"{v:.3g}\\\"))\\n\\n# ----------------------------------------------------------------------- plot\\nLABELS = {\\n    \\\"Cu2+\\\": r\\\"Cu$^{2+}$\\\", \\\"CuOH+\\\": r\\\"CuOH$^{+}$\\\", \\\"Cu(OH)2(aq)\\\": r\\\"Cu(OH)$_2$(aq)\\\",\\n    \\\"Cu(OH)3-\\\": r\\\"Cu(OH)$_3^{-}$\\\", \\\"Cu(OH)4^2-\\\": r\\\"Cu(OH)$_4^{2-}$\\\",\\n    \\\"Cu2(OH)2^2+\\\": r\\\"Cu$_2$(OH)$_2^{2+}$\\\", \\\"Cu3(OH)4^2+\\\": r\\\"Cu$_3$(OH)$_4^{2+}$\\\",\\n    \\\"Cu(NH3)^2+\\\": r\\\"Cu(NH$_3$)$^{2+}$\\\", \\\"Cu(NH3)2^2+\\\": r\\\"Cu(NH$_3$)$_2^{2+}$\\\",\\n    \\\"Cu(NH3)3^2+\\\": r\\\"Cu(NH$_3$)$_3^{2+}$\\\", \\\"Cu(NH3)4^2+\\\": r\\\"Cu(NH$_3$)$_4^{2+}$\\\",\\n    \\\"Cu(NH3)5^2+\\\": r\\\"Cu(NH$_3$)$_5^{2+}$\\\", \\\"Cu+\\\": r\\\"Cu$^{+}$\\\",\\n    \\\"Cu(NH3)+\\\": r\\\"Cu(NH$_3$)$^{+}$\\\", \\\"Cu(NH3)2+\\\": r\\\"Cu(NH$_3$)$_2^{+}$\\\",\\n    \\\"Cu(OH)2-\\\": r\\\"Cu(OH)$_2^{-}$\\\", \\\"Cu(OH)2(s)\\\": r\\\"Cu(OH)$_2$(s)\\\",\\n    \\\"Cu2O(s)\\\": r\\\"Cu$_2$O(s)\\\", \\\"Cu(s)\\\": \\\"Cu(s)\\\",\\n}\\nCOLORS = {\\n    \\\"Cu2+\\\": \\\"#1f77b4\\\", \\\"CuOH+\\\": \\\"#6baed6\\\", \\\"Cu(OH)2(aq)\\\": \\\"#2ca02c\\\",\\n    \\\"Cu(OH)3-\\\": \\\"#98df8a\\\", \\\"Cu(OH)4^2-\\\": \\\"#006d2c\\\", \\\"Cu2(OH)2^2+\\\": \\\"#9ecae1\\\",\\n    \\\"Cu3(OH)4^2+\\\": \\\"#c6dbef\\\", \\\"Cu(NH3)^2+\\\": \\\"#c7b3e6\\\", \\\"Cu(NH3)2^2+\\\": \\\"#a985d6\\\",\\n    \\\"Cu(NH3)3^2+\\\": \\\"#8c5ac4\\\", \\\"Cu(NH3)4^2+\\\": \\\"#5e2ca5\\\", \\\"Cu(NH3)5^2+\\\": \\\"#d4bff0\\\",\\n    \\\"Cu+\\\": \\\"#ff7f0e\\\", \\\"Cu(NH3)+\\\": \\\"#ffbb78\\\", \\\"Cu(NH3)2+\\\": \\\"#d62728\\\",\\n    \\\"Cu(OH)2-\\\": \\\"#e377c2\\\", \\\"Cu(OH)2(s)\\\": \\\"#bdbdbd\\\", \\\"Cu2O(s)\\\": \\\"#8c564b\\\",\\n}\\n\\nfig, (ax1, ax2) = plt.subplots(2, 1, figsize=(9.5, 10.5), sharex=True,\\n                               gridspec_kw={\\\"height_ratios\\\": [1.15, 1]})\\nfig.subplots_adjust(hspace=0.08, right=0.78, top=0.92)\\n\\nfor s, hatch in ((\\\"Cu2O(s)\\\", \\\"//\\\"), (\\\"Cu(OH)2(s)\\\", \\\"\\\\\\\\\\\\\\\\\\\")):\\n    if df[s].max() > 0:\\n        ax1.fill_between(df.pH, 0, df[s], color=COLORS[s], alpha=0.30,\\n                         hatch=hatch, edgecolor=COLORS[s], linewidth=0,\\n                         label=LABELS[s])\\n        ax1.plot(df.pH, df[s], color=COLORS[s], lw=1.8)\\n\\naq_plot = [nm for nm in NAMES if nm not in (\\\"NH3\\\", \\\"NH4+\\\") and df[nm].max() > 0.5]\\nfor nm in aq_plot:\\n    ls = \\\"-\\\" if OX[NAMES.index(nm)] == 2 else \\\"--\\\"\\n    ax1.plot(df.pH, df[nm], color=COLORS[nm], lw=2.0, ls=ls, label=LABELS[nm])\\nax1.set_ylabel(\\\"% of total Cu\\\")\\nax1.set_ylim(0, 100)\\nax1.grid(alpha=0.3)\\nax1.legend(loc=\\\"upper left\\\", bbox_to_anchor=(1.01, 1.0), fontsize=9, frameon=False,\\n           title=\\\"solid Cu(II) \\u2014\\u2014  Cu(I) - - -\\\", title_fontsize=9)\\nax1.set_title(\\n    f\\\"Cu speciation in 0.100 M total NH$_3$, Cu$_T$ = 1.00\\u00d710$^{{-3}}$ M\\\\n\\\"\\n    f\\\"Eh = +{Eh:.3f} V (SHE, pe = {pe:.2f}), 25 \\u00b0C, I = 0.1 m (Davies); \\\"\\n    f\\\"hydroxide solid Cu(OH)$_2$ preferred over CuO\\\", fontsize=11)\\n\\naq_log = [nm for nm in NAMES if nm not in (\\\"NH3\\\", \\\"NH4+\\\")]\\nfor nm in aq_log:\\n    cmol = df[nm].values / 100 * Cu_T / nCu[NAMES.index(nm)]\\n    if np.log10(cmol.max() + 1e-300) < -9.5:\\n        continue\\n    ls = \\\"-\\\" if OX[NAMES.index(nm)] == 2 else \\\"--\\\"\\n    ax2.plot(df.pH, np.log10(cmol + 1e-300), color=COLORS[nm], lw=1.7, ls=ls,\\n             label=LABELS[nm])\\nax2.plot(df.pH, np.log10(df.Cu_dissolved_M), \\\"k-\\\", lw=2.4, label=\\\"total dissolved Cu\\\")\\nax2.plot(df.pH, np.log10(df.NH3_free_M), color=\\\"0.45\\\", lw=1.4, ls=\\\":\\\", label=r\\\"free NH$_3$\\\")\\nax2.set_ylim(-9.5, -1.8)\\nax2.set_xlim(0, 14)\\nax2.set_xticks(range(0, 15))\\nax2.set_xlabel(\\\"pH\\\")\\nax2.set_ylabel(\\\"log$_{10}$ molality of dissolved species\\\")\\nax2.grid(alpha=0.3)\\nax2.legend(loc=\\\"upper left\\\", bbox_to_anchor=(1.01, 1.0), fontsize=8.5, frameon=False)\\n\\n# mark solid windows on lower panel\\nfor s in (\\\"Cu2O(s)\\\", \\\"Cu(OH)2(s)\\\"):\\n    mask = df[s] > 0\\n    if mask.any():\\n        ax2.axvspan(df.pH[mask].min(), df.pH[mask].max(), color=COLORS[s], alpha=0.12)\\n        ax2.text(0.5 * (df.pH[mask].min() + df.pH[mask].max()), -2.15, LABELS[s] + \\\" present\\\",\\n                 ha=\\\"center\\\", va=\\\"top\\\", fontsize=9, color=\\\"0.25\\\")\\n\\nfig.savefig(\\\"/home/claude/cu_nh3_speciation.png\\\", dpi=160, bbox_inches=\\\"tight\\\")\\nprint(\\\"\\\\nwrote cu_nh3_speciation.png and cu_nh3_speciation.csv\\\")\\n\", \"filename\": \"/home/claude/cu_nh3_speciation.py\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:15:44.428422Z",
+          "stop_timestamp": "2026-09-17T05:15:44.428444Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_013h6Rv8EazSP5UxYELNGK7x",
+          "name": "create_file",
+          "content": [
+            {
+              "type": "text",
+              "text": "File created successfully: /home/claude/cu_nh3_speciation.py",
+              "uuid": "0f96cf4a-f1a3-4d58-9f02-83b407ea7258"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "display_content": {
+            "type": "text",
+            "text": "File created successfully: /home/claude/cu_nh3_speciation.py"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:15:46.013016Z",
+          "stop_timestamp": "2026-09-17T05:15:46.799107Z",
+          "type": "tool_use",
+          "id": "toolu_01Wh2SmnSGSDUVYWY9jbjKqa",
+          "name": "bash_tool",
+          "input": {
+            "command": "cd /home/claude && time python3 cu_nh3_speciation.py",
+            "description": "Run the speciation sweep and print the summary"
+          },
+          "message": "Run the speciation sweep and print the summary",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"cd /home/claude && time python3 cu_nh3_speciation.py\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:15:47.029269Z",
+          "stop_timestamp": "2026-09-17T05:15:47.029300Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01Wh2SmnSGSDUVYWY9jbjKqa",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":127,\"stdout\":\"\",\"stderr\":\"/bin/sh: 1: time: not found\\n\"}",
+              "uuid": "06524d30-438f-42a5-9528-f87934b579f5"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"plaintext\", \"code\": \"/bin/sh: 1: time: not found\\n\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:15:47.938718Z",
+          "stop_timestamp": "2026-09-17T05:15:48.574152Z",
+          "type": "tool_use",
+          "id": "toolu_0178bhwzHmJs8e5KWgTmyGaW",
+          "name": "bash_tool",
+          "input": {
+            "command": "cd /home/claude && python3 cu_nh3_speciation.py",
+            "description": "Run the speciation sweep and print the summary"
+          },
+          "message": "Run the speciation sweep and print the summary",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"cd /home/claude && python3 cu_nh3_speciation.py\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:15:53.022878Z",
+          "stop_timestamp": "2026-09-17T05:15:53.022901Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_0178bhwzHmJs8e5KWgTmyGaW",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":0,\"stdout\":\"pe = 4.479   gamma(1) = 0.782  gamma(2) = 0.373\\nmax |Cu balance err| = 1.0677222994637248e-12  max |N balance err| = 5.713485240477212e-13\\n\\nPredominant species windows:\\n  pH  0.00 -  4.74: Cu2+\\n  pH  4.76 -  7.18: Cu2O(s)\\n  pH  7.20 -  9.00: Cu(NH3)2+\\n  pH  9.02 -  9.06: Cu(NH3)3^2+\\n  pH  9.08 -  9.88: Cu(NH3)4^2+\\n  pH  9.90 - 13.58: Cu(OH)2(s)\\n  pH 13.60 - 14.00: Cu(OH)4^2-\\n\\nSolid-phase windows:\\n  pH  0.00 -  4.44: none\\n  pH  4.46 -  7.48: Cu2O(s)\\n  pH  7.50 -  9.68: none\\n  pH  9.70 - 13.72: Cu(OH)2(s)\\n  pH 13.74 - 14.00: none\\n\\nSpecies exceeding 1 % anywhere: ['Cu2+', 'Cu(OH)3-', 'Cu(OH)4^2-', 'Cu(NH3)^2+', 'Cu(NH3)2^2+', 'Cu(NH3)3^2+', 'Cu(NH3)4^2+', 'Cu(NH3)5^2+', 'Cu(NH3)2+', 'Cu(OH)2(s)', 'Cu2O(s)']\\n\\nSnapshot table (% of total Cu):\\n pH     Cu2+  Cu(OH)3-  Cu(OH)4^2-  Cu(NH3)^2+  Cu(NH3)2^2+  Cu(NH3)3^2+  Cu(NH3)4^2+  Cu(NH3)5^2+  Cu(NH3)2+  Cu(OH)2(s)  Cu2O(s)  Cu_dissolved_M  NH3_free_M\\n  0     99.2  1.19e-25    2.49e-38    4.84e-05     5.79e-12     1.62e-19     2.18e-28     2.93e-39    1.1e-10           0        0           0.001    4.45e-11\\n  2     99.2  1.19e-19    2.49e-30     0.00484     5.79e-08     1.62e-13     2.18e-20     2.93e-29    1.1e-06           0        0           0.001    4.45e-09\\n  4     98.5  1.18e-13    2.47e-22        0.48     0.000574     1.61e-07     2.16e-12      2.9e-19     0.0109           0        0           0.001    4.45e-07\\n  5     27.9  3.34e-11       7e-19        1.36       0.0162     4.55e-05     6.11e-09      8.2e-15      0.307           0     69.4        0.000306    4.44e-06\\n  6     2.79  3.34e-09       7e-16        1.36        0.162      0.00454     6.09e-06     8.16e-11       3.07           0     91.8        8.23e-05    4.44e-05\\n  7    0.279  3.34e-07       7e-13        1.34         1.59        0.441      0.00585     7.77e-07       30.1           0     65.4        0.000346     0.00044\\n  8  0.00848  1.02e-05    2.13e-10       0.387         4.34         11.4         1.44      0.00181       82.2           0        0           0.001     0.00417\\n  9 6.79e-05  8.14e-05    1.71e-08      0.0222         1.79         33.7         30.4        0.274       33.8           0        0           0.001      0.0299\\n 10 1.25e-06    0.0015    3.15e-06      0.0011        0.238         12.1         29.3         0.71       4.51        53.2        0        0.000468      0.0803\\n 11 1.25e-08     0.015    0.000315    1.34e-05      0.00354        0.218        0.644        0.019     0.0669          99        0         9.7e-06      0.0978\\n 12 1.25e-10      0.15      0.0315    1.37e-07     3.68e-05      0.00232      0.00699     0.000211   0.000697        99.8        0        1.95e-06      0.0998\\n 13 1.25e-12       1.5        3.15    1.37e-09      3.7e-07     2.33e-05     7.04e-05     2.13e-06      7e-06        95.3        0        4.66e-05         0.1\\n 14  3.8e-15      4.56        95.4    4.17e-12     1.12e-09     7.07e-08     2.14e-07     6.45e-09   2.12e-08           0        0           0.001         0.1\\n\\nwrote cu_nh3_speciation.png and cu_nh3_speciation.csv\\n\",\"stderr\":\"\"}",
+              "uuid": "fe018c80-b705-4ade-bc9f-3ac884d848c9"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"returncode\":0,\"stdout\":\"pe = 4.479   gamma(1) = 0.782  gamma(2) = 0.373\\nmax |Cu balance err| = 1.0677222994637248e-12  max |N balance err| = 5.713485240477212e-13\\n\\nPredominant species windows:\\n  pH  0.00 -  4.74: Cu2+\\n  pH  4.76 -  7.18: Cu2O(s)\\n  pH  7.20 -  9.00: Cu(NH3)2+\\n  pH  9.02 -  9.06: Cu(NH3)3^2+\\n  pH  9.08 -  9.88: Cu(NH3)4^2+\\n  pH  9.90 - 13.58: Cu(OH)2(s)\\n  pH 13.60 - 14.00: Cu(OH)4^2-\\n\\nSolid-phase windows:\\n  pH  0.00 -  4.44: none\\n  pH  4.46 -  7.48: Cu2O(s)\\n  pH  7.50 -  9.68: none\\n  pH  9.70 - 13.72: Cu(OH)2(s)\\n  pH 13.74 - 14.00: none\\n\\nSpecies exceeding 1 % anywhere: ['Cu2+', 'Cu(OH)3-', 'Cu(OH)4^2-', 'Cu(NH3)^2+', 'Cu(NH3)2^2+', 'Cu(NH3)3^2+', 'Cu(NH3)4^2+', 'Cu(NH3)5^2+', 'Cu(NH3)2+', 'Cu(OH)2(s)', 'Cu2O(s)']\\n\\nSnapshot table (% of total Cu):\\n pH     Cu2+  Cu(OH)3-  Cu(OH)4^2-  Cu(NH3)^2+  Cu(NH3)2^2+  Cu(NH3)3^2+  Cu(NH3)4^2+  Cu(NH3)5^2+  Cu(NH3)2+  Cu(OH)2(s)  Cu2O(s)  Cu_dissolved_M  NH3_free_M\\n  0     99.2  1.19e-25    2.49e-38    4.84e-05     5.79e-12     1.62e-19     2.18e-28     2.93e-39    1.1e-10           0        0           0.001    4.45e-11\\n  2     99.2  1.19e-19    2.49e-30     0.00484     5.79e-08     1.62e-13     2.18e-20     2.93e-29    1.1e-06           0        0           0.001    4.45e-09\\n  4     98.5  1.18e-13    2.47e-22        0.48     0.000574     1.61e-07     2.16e-12      2.9e-19     0.0109           0        0           0.001    4.45e-07\\n  5     27.9  3.34e-11       7e-19        1.36       0.0162     4.55e-05     6.11e-09      8.2e-15      0.307           0     69.4        0.000306    4.44e-06\\n  6     2.79  3.34e-09       7e-16        1.36        0.162      0.00454     6.09e-06     8.16e-11       3.07           0     91.8        8.23e-05    4.44e-05\\n  7    0.279  3.34e-07       7e-13        1.34         1.59        0.441      0.00585     7.77e-07       30.1           0     65.4        0.000346     0.00044\\n  8  0.00848  1.02e-05    2.13e-10       0.387         4.34         11.4         1.44      0.00181       82.2           0        0           0.001     0.00417\\n  9 6.79e-05  8.14e-05    1.71e-08      0.0222         1.79         33.7         30.4        0.274       33.8           0        0           0.001      0.0299\\n 10 1.25e-06    0.0015    3.15e-06      0.0011        0.238         12.1         29.3         0.71       4.51        53.2        0        0.000468      0.0803\\n 11 1.25e-08     0.015    0.000315    1.34e-05      0.00354        0.218        0.644        0.019     0.0669          99        0         9.7e-06      0.0978\\n 12 1.25e-10      0.15      0.0315    1.37e-07     3.68e-05      0.00232      0.00699     0.000211   0.000697        99.8        0        1.95e-06      0.0998\\n 13 1.25e-12       1.5        3.15    1.37e-09      3.7e-07     2.33e-05     7.04e-05     2.13e-06      7e-06        95.3        0        4.66e-05         0.1\\n 14  3.8e-15      4.56        95.4    4.17e-12     1.12e-09     7.07e-08     2.14e-07     6.45e-09   2.12e-08           0        0           0.001         0.1\\n\\nwrote cu_nh3_speciation.png and cu_nh3_speciation.csv\\n\",\"stderr\":\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:15:55.082069Z",
+          "stop_timestamp": "2026-09-17T05:15:55.459277Z",
+          "type": "tool_use",
+          "id": "toolu_01KJJ9bVek9qBN4qseQGRxEm",
+          "name": "view",
+          "input": {
+            "description": "Inspect the rendered speciation diagram",
+            "path": "/home/claude/cu_nh3_speciation.png"
+          },
+          "message": "Inspect the rendered speciation diagram",
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "display_content": {
+            "type": "text",
+            "text": "Inspect the rendered speciation diagram"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:15:56.528989Z",
+          "stop_timestamp": "2026-09-17T05:15:56.529040Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01KJJ9bVek9qBN4qseQGRxEm",
+          "name": "view",
+          "content": [
+            {
+              "type": "image",
+              "file_uuid": "4f9a691e-d4fe-4840-85fb-98657ed9beec"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:15:58.518988Z",
+          "stop_timestamp": "2026-09-17T05:16:08.388303Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Polishing the legend labeling on a chemistry figure."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T05:16:08.388357Z",
+          "stop_timestamp": "2026-09-17T05:16:19.639803Z",
+          "type": "tool_use",
+          "id": "toolu_013gH5RLMvoPhQAaDZRHiJgF",
+          "name": "bash_tool",
+          "input": {
+            "command": "cd /home/claude && python3 - <<'EOF'\nimport re\ns = open('cu_nh3_speciation.py').read()\ns = s.replace('title=\"solid Cu(II) ——  Cu(I) - - -\", title_fontsize=9)',\n              'title=\"Cu(II): solid lines   Cu(I): dashed\", title_fontsize=9)')\ns = s.replace('ax2.set_ylim(-9.5, -1.8)', 'ax2.set_ylim(-9.5, -0.8)')\ns = s.replace(\"ax2.text(0.5 * (df.pH[mask].min() + df.pH[mask].max()), -2.15,\",\n              \"ax2.text(0.5 * (df.pH[mask].min() + df.pH[mask].max()), -1.0,\")\nopen('cu_nh3_speciation.py','w').write(s)\nEOF\npython3 cu_nh3_speciation.py > run_log.txt && tail -3 run_log.txt\npython3 - <<'EOF'\nimport pandas as pd, numpy as np\ndf = pd.read_csv('/home/claude/cu_nh3_speciation.csv')\nfor s in ['Cu2O(s)','Cu(OH)2(s)']:\n    m = df[s]>0\n    i = df.loc[m,'Cu_dissolved_M'].idxmin()\n    print(s, 'window', df.pH[m].min(), df.pH[m].max(), '| max %', round(df[s].max(),1), 'at pH', df.pH[df[s].idxmax()],\n          '| min dissolved', f\"{df.Cu_dissolved_M[i]:.2e}\", 'at pH', df.pH[i])\nd = df['Cu(I)_dissolved_M']/df['Cu_dissolved_M']\nprint('Cu(I) fraction of dissolved Cu: pH 7.6 ->', round(d[df.pH==7.6].iloc[0],3), '; pH 9 ->', round(d[df.pH==9].iloc[0],3), '; pH 10 ->', round(d[df.pH==10].iloc[0],3))\n# crossover pH where Cu(I) diss = Cu(II) diss above pH 8\nx = df[(df.pH>8)&(d<0.5)].pH.min(); print('Cu(I)=Cu(II) crossover near pH', x)\nfor nm in ['Cu(NH3)2+','Cu(NH3)4^2+','Cu(NH3)3^2+','Cu(NH3)2^2+','Cu(OH)3-']:\n    print(nm, 'peak', round(df[nm].max(),1), '% at pH', df.pH[df[nm].idxmax()])\nprint('pH 14: Cu(OH)4 2-', round(df['Cu(OH)4^2-'].iloc[-1],1), 'Cu(OH)3-', round(df['Cu(OH)3-'].iloc[-1],1))\nprint('Cu+ % at pH 0-4:', round(df['Cu+'][df.pH==2].iloc[0],2))\nprint('SI Cu(s) max:', df['SI_Cu(s)'].max().round(2))\nEOF",
+            "description": "Refine plot cosmetics, rerun, and extract key numbers for the write-up"
+          },
+          "message": "Refine plot cosmetics, rerun, and extract key numbers for the write-up",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"cd /home/claude && python3 - <<'EOF'\\nimport re\\ns = open('cu_nh3_speciation.py').read()\\ns = s.replace('title=\\\"solid Cu(II) \\u2014\\u2014  Cu(I) - - -\\\", title_fontsize=9)',\\n              'title=\\\"Cu(II): solid lines   Cu(I): dashed\\\", title_fontsize=9)')\\ns = s.replace('ax2.set_ylim(-9.5, -1.8)', 'ax2.set_ylim(-9.5, -0.8)')\\ns = s.replace(\\\"ax2.text(0.5 * (df.pH[mask].min() + df.pH[mask].max()), -2.15,\\\",\\n              \\\"ax2.text(0.5 * (df.pH[mask].min() + df.pH[mask].max()), -1.0,\\\")\\nopen('cu_nh3_speciation.py','w').write(s)\\nEOF\\npython3 cu_nh3_speciation.py > run_log.txt && tail -3 run_log.txt\\npython3 - <<'EOF'\\nimport pandas as pd, numpy as np\\ndf = pd.read_csv('/home/claude/cu_nh3_speciation.csv')\\nfor s in ['Cu2O(s)','Cu(OH)2(s)']:\\n    m = df[s]>0\\n    i = df.loc[m,'Cu_dissolved_M'].idxmin()\\n    print(s, 'window', df.pH[m].min(), df.pH[m].max(), '| max %', round(df[s].max(),1), 'at pH', df.pH[df[s].idxmax()],\\n          '| min dissolved', f\\\"{df.Cu_dissolved_M[i]:.2e}\\\", 'at pH', df.pH[i])\\nd = df['Cu(I)_dissolved_M']/df['Cu_dissolved_M']\\nprint('Cu(I) fraction of dissolved Cu: pH 7.6 ->', round(d[df.pH==7.6].iloc[0],3), '; pH 9 ->', round(d[df.pH==9].iloc[0],3), '; pH 10 ->', round(d[df.pH==10].iloc[0],3))\\n# crossover pH where Cu(I) diss = Cu(II) diss above pH 8\\nx = df[(df.pH>8)&(d<0.5)].pH.min(); print('Cu(I)=Cu(II) crossover near pH', x)\\nfor nm in ['Cu(NH3)2+','Cu(NH3)4^2+','Cu(NH3)3^2+','Cu(NH3)2^2+','Cu(OH)3-']:\\n    print(nm, 'peak', round(df[nm].max(),1), '% at pH', df.pH[df[nm].idxmax()])\\nprint('pH 14: Cu(OH)4 2-', round(df['Cu(OH)4^2-'].iloc[-1],1), 'Cu(OH)3-', round(df['Cu(OH)3-'].iloc[-1],1))\\nprint('Cu+ % at pH 0-4:', round(df['Cu+'][df.pH==2].iloc[0],2))\\nprint('SI Cu(s) max:', df['SI_Cu(s)'].max().round(2))\\nEOF\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:16:23.596980Z",
+          "stop_timestamp": "2026-09-17T05:16:23.597010Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_013gH5RLMvoPhQAaDZRHiJgF",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":0,\"stdout\":\" 14  3.8e-15      4.56        95.4    4.17e-12     1.12e-09     7.07e-08     2.14e-07     6.45e-09   2.12e-08           0        0           0.001         0.1\\n\\nwrote cu_nh3_speciation.png and cu_nh3_speciation.csv\\nCu2O(s) window 4.46 7.48 | max % 91.8 at pH 5.96 | min dissolved 8.21e-05 at pH 5.96\\nCu(OH)2(s) window 9.7 13.72 | max % 99.9 at pH 11.68 | min dissolved 1.27e-06 at pH 11.68\\nCu(I) fraction of dissolved Cu: pH 7.6 -> 0.89 ; pH 9 -> 0.338 ; pH 10 -> 0.096\\nCu(I)=Cu(II) crossover near pH 8.72\\nCu(NH3)2+ peak 88.9 % at pH 7.5\\nCu(NH3)4^2+ peak 56.6 % at pH 9.68\\nCu(NH3)3^2+ peak 33.7 % at pH 9.04\\nCu(NH3)2^2+ peak 4.7 % at pH 7.5\\nCu(OH)3- peak 8.0 % at pH 13.74\\npH 14: Cu(OH)4 2- 95.4 Cu(OH)3- 4.6\\nCu+ % at pH 0-4: 0.77\\nSI Cu(s) max: -0.91\\n\",\"stderr\":\"\"}",
+              "uuid": "75c77977-cd1c-47af-be26-abfdace82954"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"returncode\":0,\"stdout\":\" 14  3.8e-15      4.56        95.4    4.17e-12     1.12e-09     7.07e-08     2.14e-07     6.45e-09   2.12e-08           0        0           0.001         0.1\\n\\nwrote cu_nh3_speciation.png and cu_nh3_speciation.csv\\nCu2O(s) window 4.46 7.48 | max % 91.8 at pH 5.96 | min dissolved 8.21e-05 at pH 5.96\\nCu(OH)2(s) window 9.7 13.72 | max % 99.9 at pH 11.68 | min dissolved 1.27e-06 at pH 11.68\\nCu(I) fraction of dissolved Cu: pH 7.6 -> 0.89 ; pH 9 -> 0.338 ; pH 10 -> 0.096\\nCu(I)=Cu(II) crossover near pH 8.72\\nCu(NH3)2+ peak 88.9 % at pH 7.5\\nCu(NH3)4^2+ peak 56.6 % at pH 9.68\\nCu(NH3)3^2+ peak 33.7 % at pH 9.04\\nCu(NH3)2^2+ peak 4.7 % at pH 7.5\\nCu(OH)3- peak 8.0 % at pH 13.74\\npH 14: Cu(OH)4 2- 95.4 Cu(OH)3- 4.6\\nCu+ % at pH 0-4: 0.77\\nSI Cu(s) max: -0.91\\n\",\"stderr\":\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:16:24.359651Z",
+          "stop_timestamp": "2026-09-17T05:16:24.982678Z",
+          "type": "tool_use",
+          "id": "toolu_01KMAH39z4XvFkzcUmi6ArAs",
+          "name": "view",
+          "input": {
+            "description": "Check the refined figure",
+            "path": "/home/claude/cu_nh3_speciation.png"
+          },
+          "message": "Check the refined figure",
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "display_content": {
+            "type": "text",
+            "text": "Check the refined figure"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:16:25.623580Z",
+          "stop_timestamp": "2026-09-17T05:16:25.623604Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01KMAH39z4XvFkzcUmi6ArAs",
+          "name": "view",
+          "content": [
+            {
+              "type": "image",
+              "file_uuid": "a84797fa-f441-4279-9535-2b934fa18d2a"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:16:26.849874Z",
+          "stop_timestamp": "2026-09-17T05:16:29.569805Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Fixing overlapping labels in a chemistry diagram layout."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T05:16:29.569856Z",
+          "stop_timestamp": "2026-09-17T05:16:31.705288Z",
+          "type": "tool_use",
+          "id": "toolu_01G3hE5iM9Cohk4u7DAQqhDC",
+          "name": "bash_tool",
+          "input": {
+            "command": "cd /home/claude && sed -i 's/df.pH\\[mask\\].max()), -1.0,/df.pH[mask].max()), -1.55,/' cu_nh3_speciation.py && python3 cu_nh3_speciation.py > run_log.txt && mkdir -p /mnt/user-data/outputs && cp cu_nh3_speciation.png cu_nh3_speciation.csv cu_nh3_speciation.py /mnt/user-data/outputs/ && ls -la /mnt/user-data/outputs",
+            "description": "Fix label overlap, rerun, and copy deliverables to outputs"
+          },
+          "message": "Fix label overlap, rerun, and copy deliverables to outputs",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"cd /home/claude && sed -i 's/df.pH\\\\[mask\\\\].max()), -1.0,/df.pH[mask].max()), -1.55,/' cu_nh3_speciation.py && python3 cu_nh3_speciation.py > run_log.txt && mkdir -p /mnt/user-data/outputs && cp cu_nh3_speciation.png cu_nh3_speciation.csv cu_nh3_speciation.py /mnt/user-data/outputs/ && ls -la /mnt/user-data/outputs\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:16:35.400655Z",
+          "stop_timestamp": "2026-09-17T05:16:35.400705Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01G3hE5iM9Cohk4u7DAQqhDC",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":0,\"stdout\":\"total 628\\ndrwxr-xr-x 1 claude ubuntu      0 Sep 17 05:16 .\\ndrwxr-xr-x 5 root   root     4096 Sep 17 05:14 ..\\n-rw-r--r-- 1 claude ubuntu 225128 Sep 17 05:16 cu_nh3_speciation.csv\\n-rw-r--r-- 1 claude ubuntu 398621 Sep 17 05:16 cu_nh3_speciation.png\\n-rw-r--r-- 1 claude ubuntu  12230 Sep 17 05:16 cu_nh3_speciation.py\\n\",\"stderr\":\"\"}",
+              "uuid": "2f7ce38a-4c3c-40bd-97cf-5a261ee88cae"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"returncode\":0,\"stdout\":\"total 628\\ndrwxr-xr-x 1 claude ubuntu      0 Sep 17 05:16 .\\ndrwxr-xr-x 5 root   root     4096 Sep 17 05:14 ..\\n-rw-r--r-- 1 claude ubuntu 225128 Sep 17 05:16 cu_nh3_speciation.csv\\n-rw-r--r-- 1 claude ubuntu 398621 Sep 17 05:16 cu_nh3_speciation.png\\n-rw-r--r-- 1 claude ubuntu  12230 Sep 17 05:16 cu_nh3_speciation.py\\n\",\"stderr\":\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:16:36.859331Z",
+          "stop_timestamp": "2026-09-17T05:16:37.744590Z",
+          "type": "tool_use",
+          "id": "toolu_01P88Eu7DcYBqfNJeJyauBWo",
+          "name": "present_files",
+          "input": {
+            "filepaths": [
+              "/mnt/user-data/outputs/cu_nh3_speciation.png",
+              "/mnt/user-data/outputs/cu_nh3_speciation.csv",
+              "/mnt/user-data/outputs/cu_nh3_speciation.py"
+            ]
+          },
+          "message": "Presenting file(s)...",
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "display_content": {
+            "type": "table",
+            "table": [
+              [
+                "filepaths",
+                "['/mnt/user-data/outputs/cu_nh3_speciation.png', '/mnt/user-data/outputs/cu_nh3_speciation.csv', '/mnt/user-data/outputs/cu_nh3_speciation.py']"
+              ]
+            ]
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:16:37.819857Z",
+          "stop_timestamp": "2026-09-17T05:16:37.819881Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01P88Eu7DcYBqfNJeJyauBWo",
+          "name": "present_files",
+          "content": [
+            {
+              "type": "local_resource",
+              "file_path": "/mnt/user-data/outputs/cu_nh3_speciation.png",
+              "name": "cu nh3 speciation",
+              "mime_type": "image/png",
+              "artifact_publishable": false,
+              "uuid": "60277cc7-46c1-469f-b999-50adf80f9b6d"
+            },
+            {
+              "type": "local_resource",
+              "file_path": "/mnt/user-data/outputs/cu_nh3_speciation.csv",
+              "name": "cu nh3 speciation",
+              "mime_type": "text/csv",
+              "artifact_publishable": false,
+              "uuid": "80d64359-b3c4-41ec-bf1d-807751fec6a5"
+            },
+            {
+              "type": "local_resource",
+              "file_path": "/mnt/user-data/outputs/cu_nh3_speciation.py",
+              "name": "cu nh3 speciation",
+              "mime_type": "text/x-python",
+              "artifact_publishable": false,
+              "uuid": "fc54641a-559c-4f86-9412-6bd85fbc2f18"
+            },
+            {
+              "type": "text",
+              "text": "The file cards appear at the end of your reply if it ends with text, otherwise under this step; say they are below only if you finish the reply with text.",
+              "uuid": "03d05e5e-8c69-4267-9b9e-df98d8b89061"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "message": "Presented 3 files",
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:16:53.447339Z",
+          "stop_timestamp": "2026-09-17T05:16:57.705563Z",
+          "type": "text",
+          "text": "The diagram (top: % of total Cu; bottom: log molality of dissolved species) plus the full data grid (0.02 pH steps) and the solver script are attached. Mass balances close to 1e-12; Cu metal never becomes stable (SI ≤ −0.9 everywhere).\n\n**What the sweep shows at Eh = +0.265 V (pe = 4.48)**\n\n| pH range | Dominant form | Notes |\n|---|---|---|\n| 0 – 4.4 | Cu²⁺ (~99%) | ~0.8% Cu⁺; NH₃ is all NH₄⁺, so no complexation |\n| 4.5 – 7.5 | **Cu₂O(s)** | Peaks at 92% near pH 6.0; dissolved Cu minimum 8.2×10⁻⁵ M; the dissolved fraction is Cu²⁺ at low pH, then Cu(NH₃)₂⁺ |\n| 7.5 – 9.7 | All dissolved | Cu(NH₃)₂⁺ (Cu(I)) peaks at 89% at pH 7.5; Cu(I)/Cu(II) crossover at pH 8.7; then Cu(NH₃)₃²⁺ (34% at 9.0) → Cu(NH₃)₄²⁺ (57% at 9.7) |\n| 9.7 – 13.7 | **Cu(OH)₂(s)** | >99% at pH 11–12.5; dissolved Cu minimum 1.3×10⁻⁶ M at pH 11.7 |\n| 13.7 – 14 | Cu(OH)₄²⁻ | 95% at pH 14, with ~5% Cu(OH)₃⁻ |\n\nTwo features are non-obvious and worth calling out. First, Cu(I) is the dominant *dissolved* form between pH ~6 and 8.7 even though the free-ion ratio is Cu²⁺:Cu⁺ ≈ 60:1, because Cu(NH₃)₂⁺ (log β₂ = 10.86) outcompetes the Cu(II) ammines at the low free-NH₃ levels available below the NH₄⁺ pKₐ. Second, 0.1 M ammonia keeps Cu fully dissolved only in a narrow window (7.5–9.7); above that, Cu(OH)₂ wins over Cu(NH₃)₄²⁺ at 10⁻³ M Cu, and Cu(OH)₂ redissolves only near pH 13.7 as the hydroxo anions take over.\n\n**Constants used** (25 °C, I = 0, activity scale; Davies with A = 0.509 gives γ₁ = 0.78, γ₂ = 0.37 at I = 0.1 m): E°(Cu²⁺/Cu⁺) = 0.159 V, E°(Cu⁺/Cu) = 0.520 V; Cu(II) log β(NH₃)₁₋₅ = 4.04, 7.47, 10.27, 11.75, 11.23; Cu(I) log β₁,₂ = 5.93, 10.86; Cu(II) hydrolysis log *β = −7.95, −16.2, −26.6, −39.6 (mono), −10.6 (Cu₂(OH)₂²⁺), −21.1 (Cu₃(OH)₄²⁺); Cu(I) Cu(OH)₂⁻ log *β₂ ≈ −16.0; pKₐ(NH₄⁺) = 9.245; Cu(OH)₂(s) log *Kₛ₀ = 8.67 (tenorite would be ~7.6, i.e. ~1 log unit less soluble); Cu₂O(s) + 2H⁺ = 2Cu⁺ + H₂O log K = −1.55.\n\nCaveats: \"hydroxide preferred\" was applied to Cu(II) only — there is no well-characterized Cu(I) hydroxide phase, so cuprite is the Cu(I) solid. The Cu(I)–hydroxo constant is the least certain value in the set, but it never exceeds 10⁻⁹ M here. Mixed ammine–hydroxo Cu(II) complexes are not in standard compilations and were omitted. Ionic strength is held at 0.1 m throughout (physically inconsistent below pH ~1, where the acid alone exceeds that). The solid onsets (pH 4.5, 9.7) are sensitive to the ±0.1–0.2 log-unit uncertainties in the solubility products; all constants sit in one table at the top of the script if you want to substitute your own database.",
+          "citations": []
+        }
+      ],
+      "sender": "assistant",
+      "index": 1,
+      "created_at": "2026-09-17T05:16:58.873713Z",
+      "updated_at": "2026-09-17T05:16:58.873713Z",
+      "truncated": false,
+      "stop_reason": "end_turn",
+      "attachments": [],
+      "files": [],
+      "sync_sources": [],
+      "parent_message_uuid": "01a0adc3-3bea-7d80-9872-8ce4f39280ed"
+    }
+  ]
+}

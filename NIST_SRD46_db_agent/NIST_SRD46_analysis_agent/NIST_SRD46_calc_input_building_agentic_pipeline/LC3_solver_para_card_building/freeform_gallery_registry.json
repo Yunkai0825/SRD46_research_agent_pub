@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "required_stages": [
+    "initial_conditions",
+    "constraints",
+    "sweep_design"
+  ],
+  "entries": {
+    "concentration-ph-fixed-ratio-map": {
+      "title": "Concentration-pH field with a fixed total ratio",
+      "revision": 1,
+      "content_sha256": "e9848c40233ebe90a73795734deb61ce8fe3d2b6cd528ae65ab3e49897559a0f",
+      "solve_check": {
+        "validator_id": "concentration-ph-fixed-ratio-map",
+        "status": "passed",
+        "expected_shape": [2, 2]
+      }
+    },
+    "conserved-moles-dilution-path": {
+      "title": "Conserved-moles dilution path",
+      "revision": 1,
+      "content_sha256": "18699832ae3bbae34464e56aceafd993ec3e8040d7500400bc1ff6197ba3ceb8",
+      "solve_check": {
+        "validator_id": "conserved-moles-dilution-path",
+        "status": "passed",
+        "expected_shape": [2]
+      }
+    },
+    "fixed-ph-concentration-ratio-path": {
+      "title": "Fixed-pH concentration path with a coupled total ratio",
+      "revision": 1,
+      "content_sha256": "6e0c16a9b485df82a625fcf054844fad511b908960c0c11f88301b454476200b",
+      "solve_check": {
+        "validator_id": "fixed-ph-concentration-ratio-path",
+        "status": "passed",
+        "expected_shape": [2]
+      }
+    },
+    "multidimensional-ph-temperature-composition": {
+      "title": "Three-dimensional pH-temperature-composition field",
+      "revision": 1,
+      "content_sha256": "e6754d26267b8ff57bd840bc3412cc32ae669b469703022f8bfdbec43d481018",
+      "solve_check": {
+        "validator_id": "multidimensional-ph-temperature-composition",
+        "status": "blocked",
+        "expected_shape": [2, 2, 2],
+        "reason": "The strict input gate currently requires temperature to be a finite constant and rejects a temperature sweep axis."
+      }
+    },
+    "nernst-coupled-ph-path": {
+      "title": "Nernst-coupled pH path",
+      "revision": 1,
+      "content_sha256": "8707d935ac635648021a9bc775029ed2717154764a27b2e1e85bb2c4b80ef1eb",
+      "solve_check": {
+        "validator_id": "nernst-coupled-ph-path",
+        "status": "passed",
+        "expected_shape": [3]
+      }
+    },
+    "redox-excluded-parent-plus-state": {
+      "title": "Redox excluded with parent total plus one state subtotal",
+      "revision": 1,
+      "content_sha256": "1455bed8fd0c436c5b954581a00a586aa689ac2685674790c18584f88726ef71",
+      "solve_check": {
+        "validator_id": "redox-excluded-parent-plus-state",
+        "status": "passed",
+        "expected_shape": [3]
+      }
+    },
+    "redox-solved-state-target": {
+      "title": "Potential solved from one oxidation-state subtotal",
+      "revision": 1,
+      "content_sha256": "c93d3e9ab52495277de4c25c7314172b54586cc4c523db5135e0d9916c462978",
+      "solve_check": {
+        "validator_id": "redox-solved-state-target",
+        "status": "passed",
+        "expected_shape": [3]
+      }
+    },
+    "two-inventory-axis-map": {
+      "title": "Two-total inventory map at fixed pH and potential",
+      "revision": 1,
+      "content_sha256": "d47ae932892093508aea04c648fd1edd6aa346901eb53ed7334a45219b3a35ee",
+      "solve_check": {
+        "validator_id": "two-inventory-axis-map",
+        "status": "passed",
+        "expected_shape": [2, 2]
+      }
+    }
+  }
+}

@@ -1,6 +1,0 @@
-id,source_id,label,dominant_species_id,name,measure,boundary_ids_json,source_boundary_ids_json,flags_json
-DmsReg_2,0,0,Dms_1,Fe$+2.z+2,2.54,"[""DmsRegEq_2"", ""DmsRegEq_1""]","[0, 1]",[]
-DmsReg_3,1,1,Dms_2,Fe$+2.L1.z-1,1.69,"[""DmsRegEq_2"", ""DmsRegEq_3"", ""DmsRegEq_4""]","[0, 2, 3]",[]
-DmsReg_4,2,2,Dms_3,Fe$+2(2).H-1L1(2).z-4,0.24,"[""DmsRegEq_3"", ""DmsRegEq_5""]","[2, 4]",[]
-DmsReg_1,3,3,Dms_4,"[FeO(OH)(s,alpha)]",8.05,"[""DmsRegEq_4"", ""DmsRegEq_5"", ""DmsRegEq_6""]","[3, 4, 5]",[]
-DmsReg_5,4,4,Dms_5,Fe$+3(2).OH2.L1(2).z-2,1.83,"[""DmsRegEq_1"", ""DmsRegEq_6""]","[1, 5]",[]

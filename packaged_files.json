@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "path": "NIST_SRD46_core_db_storage/srd46_cards.db",
+      "archive": "NIST_SRD46_core_db_storage/srd46_cards.db.zip",
+      "size": 197775360,
+      "sha256": "1952c0deae39e2c930361a00452b924c6c70abdad246b12ba81a192d30b0a60a"
+    },
+    {
+      "path": "NIST_SRD46_core_db_storage/srd46_ligand_fingerprints.db",
+      "archive": "NIST_SRD46_core_db_storage/srd46_ligand_fingerprints.db.zip",
+      "size": 763731968,
+      "sha256": "83a7f3e82e15120d241cea5370d6429caa3dc23162ae16895f54437f78a883e8"
+    },
+    {
+      "path": "NIST_SRD46_core_db_storage/NIST_SRD46_database_parsing/_input/Qupkake_ligand_pKa_ML/qupkake_results.db",
+      "archive": "NIST_SRD46_core_db_storage/NIST_SRD46_database_parsing/_input/Qupkake_ligand_pKa_ML/qupkake_results.db.zip",
+      "size": 181850112,
+      "sha256": "069b9d75f0cf93e59c01780c5fb4df5df03883649b8d84f73937c57636726121"
+    }
+  ]
+}

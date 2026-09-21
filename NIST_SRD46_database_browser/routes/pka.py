@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json as _json
-import re
 from collections import OrderedDict, defaultdict
 from statistics import mean, median
 
@@ -170,29 +169,21 @@ def pka_search():
 # --- per-ligand pKa detail ----------------------------------------------------
 
 def _state_proton_count(state):
-    """Return the count only for a complete single-ligand HxL state label."""
-    match = re.fullmatch(r"(?:H(?P<count>[+-]?\d*))?L", str(state or "").strip())
-    if match is None:
+    """Best-effort proton count for HxL-style states ('L', 'HL', 'H2L', ...)."""
+    if not state:
         return None
-    count = match.group("count")
-    if count is None:
+    s = state.strip()
+    if s.startswith("L"):
         return 0
-    if count == "":
+    if not s.startswith("H"):
+        return None
+    body = s[1:].split("L", 1)[0]
+    if body == "":
         return 1
     try:
-        return int(count)
+        return int(body)
     except ValueError:
         return None
-
-
-def _display_transition(source_from, source_to):
-    """Orient known unequal proton counts without altering recorded transition fields."""
-    frm, to = str(source_from or "?").strip(), str(source_to or "?").strip()
-    from_count, to_count = _state_proton_count(frm), _state_proton_count(to)
-    known = from_count is not None and to_count is not None and from_count != to_count
-    if known and from_count < to_count:
-        frm, to = to, frm
-    return frm, to, "acid_to_base" if known else "source"
 
 
 @pka_bp.route("/ligand/<int:ligand_id>")
@@ -246,26 +237,24 @@ def ligand_pka_detail(ligand_id: int):
         ).fetchall():
             vlm_to_stability[int(vlm)] = int(sid) if sid is not None else None
 
-    # Group by display direction while keeping source fields, values and VLMs intact.
+    # Group by transition (from -> to).
     groups: "OrderedDict[tuple[str, str], dict]" = OrderedDict()
     for r in rows:
-        frm, to, direction = _display_transition(r.get("bracket_from_state"), r.get("bracket_to_state"))
-        key = (frm, to)
+        key = (r.get("bracket_from_state") or "?",
+               r.get("bracket_to_state") or "?")
         groups.setdefault(key, {
-            "from": frm,
-            "to": to,
-            "direction": direction,
+            "from": key[0],
+            "to": key[1],
             "entries": [],
             "vlm_links": [],
         })["entries"].append(r)
 
-    # Known acid-to-base groups form a descending proton ladder. Unknown/equal
-    # counts follow with their recorded direction, rather than an inferred order.
+    # Order groups: descending by proton count of the "from" state so the ladder
+    # reads from most-protonated -> most-deprotonated (HnL -> L).
     def _grp_sort_key(item):
-        (frm, to), group = item
-        if group["direction"] == "acid_to_base":
-            return (0, -_state_proton_count(frm), frm, to)
-        return (1, 0, frm, to)
+        (frm, _to), _ = item
+        pc = _state_proton_count(frm)
+        return (-(pc if pc is not None else -1), frm)
 
     groups = OrderedDict(sorted(groups.items(), key=_grp_sort_key))
 
@@ -289,7 +278,7 @@ def ligand_pka_detail(ligand_id: int):
                     "stability_id": vlm_to_stability.get(v),
                 })
         summary_rows.append({
-            "from": frm, "to": to, "direction": g["direction"],
+            "from": frm, "to": to,
             "count": g["count"],
             "pka_min": g["pka_min"], "pka_max": g["pka_max"],
             "pka_mean": g["pka_mean"], "pka_median": g["pka_median"],

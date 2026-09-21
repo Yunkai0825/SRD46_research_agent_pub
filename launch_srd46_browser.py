@@ -54,6 +54,7 @@ HEALTH_ROUTES = (
     "/", "/metals/", "/ligands/", "/stability/", "/pka/",
     "/equilibrium/", "/literature/", "/similarity/", "/results/",
     "/results/benchmark/", "/results/output/",
+    "/pourbaix/", "/agent/", "/agent/analysis/", "/agent/main/", "/analysis/", "/eval/",
 )
 
 
@@ -74,6 +75,8 @@ def _load_app(db_dir: Path | None = None):
         sys.path.insert(0, str(ROOT))
     # Launching the browser should not fill a clean source checkout with bytecode.
     sys.dont_write_bytecode = True
+    from workspace_setup import ensure_packaged_files
+    ensure_packaged_files()
     module = importlib.import_module("NIST_SRD46_database_browser.app")
     return module.app, module.dbmod
 
@@ -132,11 +135,11 @@ def _create_server(app, requested_port: int | None):
 def _database_problems(dbmod) -> list[str]:
     """Detect missing/corrupt databases and unmaterialized Git LFS pointers."""
     problems = []
-    for name, exists in dbmod.verify_all_paths().items():
+    for path in (dbmod.CARDS_DB, dbmod.EQUILIBRIUM_DB, dbmod.LITERATURE_DB, dbmod.FINGERPRINT_DB):
+        name, exists = path.name, path.is_file()
         if not exists:
             problems.append("Missing database: " + name)
             continue
-        path = dbmod.CARDS_DB.parent / name
         try:
             with path.open("rb") as reader:
                 header = reader.read(128)
@@ -144,7 +147,8 @@ def _database_problems(dbmod) -> list[str]:
             problems.append(f"Cannot read {name}: {exc}")
             continue
         if header.startswith(b"version https://git-lfs.github.com/spec/v1"):
-            problems.append(f"{name} is a Git LFS pointer. Run git lfs install and git lfs pull.")
+            problems.append(f"{name} is a Git LFS pointer, not a database. Obtain the original ZIP assets; "
+                            "move the pointer aside and run python workspace_setup.py.")
         elif not header.startswith(b"SQLite format 3\x00"):
             problems.append(f"{name} is not a SQLite database. Obtain the matching database snapshot.")
     return problems
@@ -181,9 +185,9 @@ def main(argv: list[str] | None = None) -> int:
               f'  "{sys.executable}" -m pip install -r "{ROOT / "requirements.txt"}"',
               file=sys.stderr)
         return 2
-    except FileNotFoundError as exc:
+    except (FileNotFoundError, RuntimeError) as exc:
         print(str(exc), file=sys.stderr)
-        print("See docs/INSTALLATION.md for database setup.", file=sys.stderr)
+        print("See README.md for database setup.", file=sys.stderr)
         return 2
     print(f"Database directory: {dbmod.CARDS_DB.parent}", flush=True)
     problems = _database_problems(dbmod)

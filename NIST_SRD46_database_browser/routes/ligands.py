@@ -7,11 +7,11 @@ _PARENT_PACKAGE = (__package__ or "").rpartition(".")[0]
 if _PARENT_PACKAGE:
     from .. import db as dbmod
     from ..request_dbs import get_cards
-    from ..search_utils import normalize_chem_query, ligand_search_terms
+    from ..search_utils import normalize_chem_query
 else:
     import db as dbmod
     from request_dbs import get_cards
-    from search_utils import normalize_chem_query, ligand_search_terms
+    from search_utils import normalize_chem_query
 
 ligands_bp = Blueprint("ligands", __name__, url_prefix="/ligands")
 
@@ -28,13 +28,8 @@ def ligands_list():
 
     clauses, params = [], []
     if q:
-        terms = ligand_search_terms(q)
-        clauses.append("(" + " OR ".join(
-            "(l.ligand_name_SRD LIKE ? OR l.formula LIKE ? "
-            "OR l.synonym_iupac_name LIKE ? OR l.synonym_common_name LIKE ?)"
-            for _ in terms
-        ) + ")")
-        params += [f"%{term}%" for term in terms for _ in range(4)]
+        clauses.append("(l.ligand_name_SRD LIKE ? OR l.formula LIKE ?)")
+        params += [f"%{q}%", f"%{q}%"]
     if cls:
         clauses.append("l.ligand_class_name = ?")
         params.append(cls)
@@ -100,7 +95,7 @@ def ligand_detail(ligand_id):
         db.execute(
             """SELECT * FROM ligand_pka_bracket
                WHERE ligand_id = ?
-               ORDER BY is_estimated, charge DESC, state_id""",
+               ORDER BY charge DESC""",
             (ligand_id,),
         )
     )
@@ -112,14 +107,14 @@ def ligand_detail(ligand_id):
                       COUNT(DISTINCT c.beta_definition_id)  AS n_beta_defs,
                       COUNT(DISTINCT c.complex_system_id) AS n_systems,
                       COUNT(s.stability_id)               AS n_entries,
-                      MIN(CASE WHEN s.constant_type = 'K' THEN s.constant_value END)               AS logK_min,
-                      MAX(CASE WHEN s.constant_type = 'K' THEN s.constant_value END)               AS logK_max
+                      MIN(s.constant_value)               AS logK_min,
+                      MAX(s.constant_value)               AS logK_max
                FROM ligandmetal_card c
                JOIN metal_card m ON c.metal_id = m.metal_id
                LEFT JOIN ligandmetal_stability_measured s ON s.card_id = c.card_id
                WHERE c.ligand_id = ?
                GROUP BY m.metal_id
-               ORDER BY n_entries DESC, m.metal_id""",
+               ORDER BY n_entries DESC LIMIT 50""",
             (ligand_id,),
         )
     )
@@ -129,9 +124,9 @@ def ligand_detail(ligand_id):
                   COUNT(DISTINCT c.beta_definition_id)   AS n_beta_defs,
                   COUNT(DISTINCT c.complex_system_id)    AS n_systems,
                   COUNT(s.stability_id)                  AS n_measurements,
-                  MIN(CASE WHEN s.constant_type = 'K' THEN s.constant_value END)                  AS logK_min,
-                  MAX(CASE WHEN s.constant_type = 'K' THEN s.constant_value END)                  AS logK_max,
-                  AVG(CASE WHEN s.constant_type = 'K' THEN s.constant_value END)                  AS logK_avg
+                  MIN(s.constant_value)                  AS logK_min,
+                  MAX(s.constant_value)                  AS logK_max,
+                  AVG(s.constant_value)                  AS logK_avg
            FROM   ligandmetal_card c
            LEFT JOIN ligandmetal_stability_measured s ON s.card_id = c.card_id
            WHERE  c.ligand_id = ?""",

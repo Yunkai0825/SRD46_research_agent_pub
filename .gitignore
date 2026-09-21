@@ -43,18 +43,9 @@ __obsolete*/
 _obsolete/
 
 # Runtime traces and private research implementation
-/SRD46_research_agent/
-*.log
-*_tool_calls.*
-*toolcalls*
-run_history.*
-working_memory.json
-run_stats.json
-run_monitor_status.json
-_checkpoints/
 anthropic_raw_capture.jsonl
 
-# SQLite sidecars; payloads themselves use Git LFS
+# SQLite sidecars
 *.db-wal
 *.db-shm
 *.db-journal
@@ -64,3 +55,17 @@ anthropic_raw_capture.jsonl
 *.sqlite3-wal
 *.sqlite3-shm
 *.sqlite3-journal
+
+# Exact local files restored from the lossless packages in packaged_files.json.
+/NIST_SRD46_core_db_storage/srd46_cards.db
+/NIST_SRD46_core_db_storage/srd46_ligand_fingerprints.db
+/NIST_SRD46_core_db_storage/NIST_SRD46_database_parsing/_input/Qupkake_ligand_pKa_ML/qupkake_results.db
+
+# Incomplete first-run restoration files after an interrupted process.
+*.restore-tmp
+
+# Generated outputs from legacy diagnostic runs (authored scripts stay publishable).
+/NIST_SRD46_db_agent/NIST_SRD46_analysis_agent/_DEBUG_script/edge_case_matrix/cases/
+/NIST_SRD46_db_agent/NIST_SRD46_analysis_agent/_DEBUG_script/edge_case_matrix/logs/
+/NIST_SRD46_db_agent/NIST_SRD46_analysis_agent/_DEBUG_script/edge_case_matrix/out/
+/NIST_SRD46_db_agent/NIST_SRD46_analysis_agent/_DEBUG_script/edge_case_matrix/results.jsonl

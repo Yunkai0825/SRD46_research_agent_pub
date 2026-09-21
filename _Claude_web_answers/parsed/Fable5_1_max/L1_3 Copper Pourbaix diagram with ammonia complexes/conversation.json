@@ -1,0 +1,841 @@
+{
+  "uuid": "6b25b09e-7059-4285-adff-89be267d42df",
+  "name": "L1_3 max Copper Pourbaix diagram with ammonia complexes",
+  "summary": "",
+  "model": "claude-fable-5-1",
+  "created_at": "2026-09-17T04:46:55.595232Z",
+  "updated_at": "2026-09-17T06:40:30.310390Z",
+  "settings": {
+    "enabled_web_search": true,
+    "paprika_mode": "auto",
+    "enabled_monkeys_in_a_barrel": true,
+    "enabled_saffron": false,
+    "tool_search_mode": "auto",
+    "thinking_mode": "auto",
+    "effort_level": "max",
+    "preview_feature_uses_artifacts": true,
+    "enabled_turmeric": true
+  },
+  "is_starred": false,
+  "is_temporary": false,
+  "project_uuid": "01a0ae18-021d-77c0-862d-4884d4340b19",
+  "platform": "CLAUDE_AI",
+  "is_wiggle_enabled": true,
+  "effective_thinking_mode": "auto",
+  "current_leaf_message_uuid": "01a0adb0-6beb-7c66-9e91-c0813d56a833",
+  "run": "effort-max_run1",
+  "chat_messages": [
+    {
+      "uuid": "01a0adb0-6beb-7bd4-bf13-4042c0dccce6",
+      "text": "",
+      "content": [
+        {
+          "start_timestamp": "2026-09-17T04:46:56.377408Z",
+          "stop_timestamp": "2026-09-17T04:46:56.377408Z",
+          "type": "text",
+          "text": "Build a 2-D Pourbaix diagram for copper in 0.1 M total ammonia, with 1 mM Cu, at 25 C and I=0.1 m. Prefer hydroxide solids. Identify the E-pH window where soluble Cu-ammine complexes dominate over Cu(OH)2(s) and metallic Cu.",
+          "citations": []
+        }
+      ],
+      "sender": "human",
+      "index": 0,
+      "created_at": "2026-09-17T04:46:56.377637Z",
+      "updated_at": "2026-09-17T04:46:56.377637Z",
+      "truncated": false,
+      "attachments": [],
+      "files": [],
+      "sync_sources": [],
+      "parent_message_uuid": "00000000-0000-4000-8000-000000000000"
+    },
+    {
+      "uuid": "01a0adb0-6beb-7c66-9e91-c0813d56a833",
+      "text": "",
+      "content": [
+        {
+          "start_timestamp": "2026-09-17T04:46:56.371954Z",
+          "stop_timestamp": "2026-09-17T04:56:55.963287Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Building a Pourbaix diagram for copper in ammonia solution."
+            },
+            {
+              "summary": "Choosing how to compute and render the diagram."
+            },
+            {
+              "summary": "Weighing skills and output format for the final figure."
+            },
+            {
+              "summary": "Cataloging copper and ammonia species and relevant solids."
+            },
+            {
+              "summary": "Working out which solid dominates at each condition."
+            },
+            {
+              "summary": "Gathering standard thermodynamic constants for the calculations."
+            },
+            {
+              "summary": "Reconciling redox potentials and hydrolysis constants for copper."
+            },
+            {
+              "summary": "Weighing minor copper species against solid formation thresholds."
+            },
+            {
+              "summary": "Cross-checking solubility constants across different reference sources."
+            },
+            {
+              "summary": "Comparing copper-ammonia stability constants across ionic strengths."
+            },
+            {
+              "summary": "Sorting stepwise formation constants at matching ionic strength."
+            },
+            {
+              "summary": "Settling on cumulative constants for copper-ammonia complexes."
+            },
+            {
+              "summary": "Estimating copper(I) hydrolysis constants from thermodynamic data."
+            },
+            {
+              "summary": "Checking whether a rare copper hydroxide species affects high-pH dissolution."
+            },
+            {
+              "summary": "Weighing whether hydroxide complexes outrank ammine species at high pH."
+            },
+            {
+              "summary": "Recomputing crossover pH between hydroxide and ammine dominance."
+            },
+            {
+              "summary": "Deciding whether a minor hydroxide species merits inclusion."
+            },
+            {
+              "summary": "Applying activity corrections and pinning down solid solubility constants."
+            },
+            {
+              "summary": "Cross-checking redox potentials against tabulated formation energies."
+            },
+            {
+              "summary": "Estimating dissolved copper against solid solubility limits."
+            },
+            {
+              "summary": "Mapping precipitation onset across the low-pH ammonia range."
+            },
+            {
+              "summary": "Pinpointing the pH where ammine complexes dissolve the solid."
+            },
+            {
+              "summary": "Testing whether the soluble ammine window truly exists."
+            },
+            {
+              "summary": "Applying activity corrections to test solubility window sensitivity."
+            },
+            {
+              "summary": "Comparing formation constants across different ionic media sources."
+            },
+            {
+              "summary": "Deriving copper(I) ammine potentials from formation constants."
+            },
+            {
+              "summary": "Recalculating the copper redox boundary at differing ammonia levels."
+            },
+            {
+              "summary": "Mapping the copper(I) ammine stability region across potentials."
+            },
+            {
+              "summary": "Mapping the pH boundary where ammine complexes overtake solid copper hydroxide."
+            },
+            {
+              "summary": "Weighing conflicting solubility predictions against real-world copper-ammonia behavior."
+            },
+            {
+              "summary": "Testing alternate solubility constants against real-world copper-ammonia solutions."
+            },
+            {
+              "summary": "Verifying stability constants and setting up activity coefficient code."
+            },
+            {
+              "summary": "Coding species tables and copper redox potential relations."
+            },
+            {
+              "summary": "Solving iteratively for dissolved copper and solid saturation thresholds."
+            },
+            {
+              "summary": "Planning gridding, plotting style, and region-labeling for the diagram."
+            },
+            {
+              "summary": "Deciding how to present the figure and supporting files."
+            },
+            {
+              "summary": "Reconciling copper redox potentials across differing reference conventions."
+            },
+            {
+              "summary": "Deriving copper(I) speciation code across the pH-potential grid."
+            },
+            {
+              "summary": "Sizing bisection bounds for the dissolved copper solver."
+            },
+            {
+              "summary": "Planning region labeling and boundary lines for the plot."
+            },
+            {
+              "summary": "Choosing color palettes and boundary styles for regions."
+            },
+            {
+              "summary": "Setting axis ranges, titles, and label placement strategy."
+            },
+            {
+              "summary": "Mapping crossover pH boundaries among copper(I) ammine species."
+            },
+            {
+              "summary": "Testing whether copper(I) ammine complexes resist disproportionation."
+            },
+            {
+              "summary": "Pinpointing the pH range where copper(I) resists disproportionation."
+            },
+            {
+              "summary": "Locating the copper oxide field boundaries at high pH."
+            },
+            {
+              "summary": "Confirming the wide copper(I) ammine stability window's boundaries."
+            },
+            {
+              "summary": "Weighing whether a rare high-pH hydroxide complex matters."
+            },
+            {
+              "summary": "Drafting the plotting code and boundary computations."
+            },
+            {
+              "summary": "Coding the ammonia speciation and grid-solving routine."
+            },
+            {
+              "summary": "Optimizing the bisection solver for faster grid convergence."
+            },
+            {
+              "summary": "Listing species properties and solid phases for the model."
+            },
+            {
+              "summary": "Determining solid stability boundaries and label placement strategy."
+            },
+            {
+              "summary": "Planning sensitivity cases and water-line annotations for the plot."
+            },
+            {
+              "summary": "Finalizing solver details and activity coefficient constants."
+            },
+            {
+              "summary": "Planning label placement and rotation for narrow regions."
+            },
+            {
+              "summary": "Assigning colors and constants for each species group."
+            },
+            {
+              "summary": "Compiling species table with charges and formation constants."
+            },
+            {
+              "summary": "Deriving standard redox potentials from copper formation energies."
+            },
+            {
+              "summary": "Iterating ammonia speciation and copper concentration to convergence."
+            },
+            {
+              "summary": "Determining which solid phase governs each grid point."
+            },
+            {
+              "summary": "Coding the diagram rendering and label-placement logic."
+            },
+            {
+              "summary": "Sanity-checking copper redox stability against real ammonia chemistry."
+            },
+            {
+              "summary": "Estimating dissolution near the highest pH boundary."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T04:56:55.963317Z",
+          "stop_timestamp": "2026-09-17T04:56:56.898789Z",
+          "type": "text",
+          "text": "I'll compute the full speciation numerically (Davies activity coefficients, ammonia mass balance, solubility-controlled solid fields) and render the diagram.",
+          "citations": []
+        },
+        {
+          "start_timestamp": "2026-09-17T04:56:56.898807Z",
+          "stop_timestamp": "2026-09-17T04:56:57.850146Z",
+          "type": "tool_use",
+          "id": "toolu_01MiXyWntJ1nk7RsTMRdKobm",
+          "name": "bash_tool",
+          "input": {
+            "command": "cd /home/claude && python3 -c \"import numpy, scipy, matplotlib; print(numpy.__version__, scipy.__version__, matplotlib.__version__)\"",
+            "description": "Check numeric/plotting libraries are available"
+          },
+          "message": "Check numeric/plotting libraries are available",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"cd /home/claude && python3 -c \\\"import numpy, scipy, matplotlib; print(numpy.__version__, scipy.__version__, matplotlib.__version__)\\\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T04:56:59.564758Z",
+          "stop_timestamp": "2026-09-17T04:56:59.564786Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01MiXyWntJ1nk7RsTMRdKobm",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":0,\"stdout\":\"2.4.4 1.17.1 3.10.8\\n\",\"stderr\":\"\"}",
+              "uuid": "4b2123b3-75f0-46db-b380-14e6de377c08"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"returncode\":0,\"stdout\":\"2.4.4 1.17.1 3.10.8\\n\",\"stderr\":\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T04:57:00.789984Z",
+          "stop_timestamp": "2026-09-17T04:58:18.118458Z",
+          "type": "tool_use",
+          "id": "toolu_01ADxj4XYcKskVFQ4LwFBDic",
+          "name": "create_file",
+          "input": {
+            "description": "Full Pourbaix/predominance solver for Cu–NH3–H2O: Davies activity model, NH3 mass balance, solubility-limited solid fields, plotting, window extraction and sensitivity cases",
+            "path": "/home/claude/pourbaix_cu_nh3.py",
+            "file_text": "#!/usr/bin/env python3\n\"\"\"\nE-pH (Pourbaix / predominance) diagram for copper in aqueous ammonia.\n\nConditions (editable in BASE below):\n  total Cu      = 1 mM\n  total ammonia = 0.1 M (NH3 + NH4+ + Cu-bound NH3)\n  T = 25 C, I = 0.1 m  (Davies equation, A = 0.509)\n  solids allowed: Cu(s), Cu2O(s), Cu(OH)2(s)   (CuO/tenorite suppressed -> \"hydroxide solids\")\n\nMethod\n  * Thermodynamic (I = 0) constants; activities -> concentrations with Davies gammas.\n  * At every (pH, E): solve for a(Cu2+) such that total dissolved Cu = 1 mM,\n    with a(Cu+) tied to a(Cu2+) by the Nernst equation; free NH3 from the\n    ammonia mass balance (iterated, so NH3 bound to Cu is accounted for).\n  * A solid is stable where the solution would be supersaturated at 1 mM;\n    if several solids are supersaturated the one with the lowest Cu chemical\n    potential wins.  Otherwise the aqueous species with the largest\n    Cu-equivalent concentration is the predominant species.\n  * Ammonia is treated as redox-inert (N2/NO3- lines omitted, as is usual).\n\"\"\"\nimport numpy as np\nimport matplotlib\nmatplotlib.use(\"Agg\")\nimport matplotlib.pyplot as plt\nfrom matplotlib.colors import ListedColormap, BoundaryNorm\nfrom matplotlib.lines import Line2D\nfrom scipy.ndimage import distance_transform_edt\n\nR, F, T = 8.314462618, 96485.33212, 298.15\nN = R * T * np.log(10) / F            # 0.05916 V per decade\nLN10RT = R * T * np.log(10) / 1000.0  # kJ/mol per log unit\n\n# ----------------------------------------------------------------------------\n# Thermodynamic data (25 C, I = 0)\n#   log K for:  nCu Cu^(ox+)  +  nNH3 NH3  +  nH H2O  =  species  +  nH H+\n# Sources: Cu(II) hydrolysis - Powell et al. (IUPAC, Pure Appl. Chem. 2007) / Baes & Mesmer;\n#          Cu(II)-NH3 - NIST 46 / Smith & Martell (I=0 set used in MINTEQ);\n#          Cu(I)-NH3 - Bjerrum;  dGf - NBS tables;  Cu(OH)2(s) - Baes & Mesmer.\n# ----------------------------------------------------------------------------\nBASE = dict(\n    Cu_tot=1e-3, NH3_tot=0.10, I=0.10, A_DH=0.509,\n    pKw=13.995, pKa_NH4=9.244,\n    dG_Cu2=65.49, dG_Cu1=49.98, dG_H2O=-237.13, dG_Cu2O=-146.0,   # kJ/mol\n    logKs_CuOH2=8.64,          # Cu(OH)2(s) + 2H+ = Cu2+ + 2H2O\n    logK={\n        'CuOH+': -7.95, 'Cu(OH)2aq': -16.2, 'Cu(OH)3-': -26.6, 'Cu(OH)4--': -39.7,\n        'Cu2(OH)2++': -10.4, 'Cu3(OH)4++': -21.1,\n        'CuNH3++': 4.04, 'Cu(NH3)2++': 7.47, 'Cu(NH3)3++': 10.27,\n        'Cu(NH3)4++': 11.75, 'Cu(NH3)5++': 11.23,\n        'CuNH3+': 5.93, 'Cu(NH3)2+': 10.86,\n    },\n)\n\n\ndef species_table(prm):\n    K = prm['logK']\n    #        key          mathtext label            z   logK             nH nN nCu ox\n    return [\n        ('Cu++',       r'Cu$^{2+}$',              2, 0.0,             0, 0, 1, 2),\n        ('CuOH+',      r'CuOH$^+$',               1, K['CuOH+'],      1, 0, 1, 2),\n        ('Cu(OH)2aq',  r'Cu(OH)$_2$(aq)',         0, K['Cu(OH)2aq'],  2, 0, 1, 2),\n        ('Cu(OH)3-',   r'Cu(OH)$_3^-$',          -1, K['Cu(OH)3-'],   3, 0, 1, 2),\n        ('Cu(OH)4--',  r'Cu(OH)$_4^{2-}$',       -2, K['Cu(OH)4--'],  4, 0, 1, 2),\n        ('Cu2(OH)2++', r'Cu$_2$(OH)$_2^{2+}$',    2, K['Cu2(OH)2++'], 2, 0, 2, 2),\n        ('Cu3(OH)4++', r'Cu$_3$(OH)$_4^{2+}$',    2, K['Cu3(OH)4++'], 4, 0, 3, 2),\n        ('CuNH3++',    r'Cu(NH$_3$)$^{2+}$',      2, K['CuNH3++'],    0, 1, 1, 2),\n        ('Cu(NH3)2++', r'Cu(NH$_3$)$_2^{2+}$',    2, K['Cu(NH3)2++'], 0, 2, 1, 2),\n        ('Cu(NH3)3++', r'Cu(NH$_3$)$_3^{2+}$',    2, K['Cu(NH3)3++'], 0, 3, 1, 2),\n        ('Cu(NH3)4++', r'Cu(NH$_3$)$_4^{2+}$',    2, K['Cu(NH3)4++'], 0, 4, 1, 2),\n        ('Cu(NH3)5++', r'Cu(NH$_3$)$_5^{2+}$',    2, K['Cu(NH3)5++'], 0, 5, 1, 2),\n        ('Cu+',        r'Cu$^+$',                 1, 0.0,             0, 0, 1, 1),\n        ('CuNH3+',     r'Cu(NH$_3$)$^+$',         1, K['CuNH3+'],     0, 1, 1, 1),\n        ('Cu(NH3)2+',  r'Cu(NH$_3$)$_2^+$',       1, K['Cu(NH3)2+'],  0, 2, 1, 1),\n    ]\n\n\nSOLIDS = [('Cu(s)', r'Cu(s)'), ('Cu2O(s)', r'Cu$_2$O(s)'), ('Cu(OH)2(s)', r'Cu(OH)$_2$(s)')]\n\n\ndef solve(prm, pH, E, n_outer=12, n_bis=60):\n    S = species_table(prm)\n    ns = len(S)\n    z, logK, nH, nN, nCu, ox = [np.array([s[i] for s in S], dtype=float) for i in (2, 3, 4, 5, 6, 7)]\n\n    sI = np.sqrt(prm['I'])\n    def lg(zz):  # Davies\n        return -prm['A_DH'] * zz * zz * (sI / (1 + sI) - 0.3 * prm['I'])\n    loggam = np.array([lg(zz) for zz in z])\n\n    E0_2_0 = prm['dG_Cu2'] * 1e3 / (2 * F)                   # Cu2+/Cu\n    E0_21 = (prm['dG_Cu2'] - prm['dG_Cu1']) * 1e3 / F        # Cu2+/Cu+\n    logKs_Cu2O = -(2 * prm['dG_Cu1'] + prm['dG_H2O'] - prm['dG_Cu2O']) / LN10RT  # Cu2O + 2H+ = 2Cu+ + H2O\n\n    P, EE = np.meshgrid(pH, E)\n    logr = (E0_21 - EE) / N                                  # log a(Cu+) - log a(Cu2+)\n    pKa_app = prm['pKa_NH4'] - lg(1)                         # apparent pKa on the a(H+) scale\n    fNH3 = 1.0 / (1.0 + 10 ** (pKa_app - P))                 # NH3 fraction of free ammonia\n    aNH3 = prm['NH3_tot'] * fNH3\n\n    for it in range(n_outer):\n        laN = np.log10(aNH3)\n        Fi = np.empty((ns,) + P.shape)\n        for i in range(ns):\n            Fi[i] = logK[i] + nN[i] * laN + nH[i] * P - loggam[i] + (nCu[i] * logr if ox[i] == 1 else 0.0)\n        S1 = np.sum(10 ** Fi[nCu == 1], axis=0)\n        S2 = np.sum(10 ** Fi[nCu == 2], axis=0)\n        S3 = np.sum(10 ** Fi[nCu == 3], axis=0)\n        lo = np.full(P.shape, -60.0)\n        hi = np.full(P.shape, 25.0)\n        for _ in range(n_bis):\n            mid = 0.5 * (lo + hi)\n            tot = S1 * 10 ** mid + 2 * S2 * 10 ** (2 * mid) + 3 * S3 * 10 ** (3 * mid)\n            over = tot > prm['Cu_tot']\n            hi = np.where(over, mid, hi)\n            lo = np.where(over, lo, mid)\n        logx = 0.5 * (lo + hi)\n        conc = 10 ** (Fi + nCu[:, None, None] * logx[None])\n        bound = np.sum(nN[:, None, None] * conc, axis=0)\n        aNH3_new = np.maximum(prm['NH3_tot'] - bound, 1e-15) * fNH3\n        delta = np.max(np.abs(np.log10(aNH3_new / aNH3)))\n        aNH3 = aNH3_new\n        if delta < 1e-7:\n            break\n\n    lx_sat = np.stack([2 * (EE - E0_2_0) / N,                 # Cu(s)\n                       logKs_Cu2O / 2 - P - logr,             # Cu2O(s)\n                       prm['logKs_CuOH2'] - 2 * P])           # Cu(OH)2(s)\n    stable = lx_sat < logx[None] - 1e-9\n    best = np.argmin(np.where(stable, lx_sat, np.inf), axis=0)\n    any_solid = stable.any(axis=0)\n    cu_eq = nCu[:, None, None] * conc\n    aq = np.argmax(cu_eq, axis=0)\n    L = np.where(any_solid, ns + best, aq)\n\n    return dict(S=S, L=L, conc=conc, logx=logx, aNH3=aNH3, P=P, EE=EE, pH=pH, E=E,\n                E0_2_0=E0_2_0, E0_21=E0_21, logKs_Cu2O=logKs_Cu2O)\n\n\n# ----------------------------------------------------------------------------\ndef window_report(res, label='', pts=(5.5, 6, 7, 8, 8.5, 9, 9.5, 10, 10.5, 11)):\n    S, L, pH, E = res['S'], res['L'], res['pH'], res['E']\n    out = {}\n    for name, ids in (('Cu(II)-ammine', [i for i, s in enumerate(S) if s[5] > 0 and s[7] == 2]),\n                      ('Cu(I)-ammine',  [i for i, s in enumerate(S) if s[5] > 0 and s[7] == 1])):\n        m = np.isin(L, ids)\n        cols = np.where(m.any(axis=0))[0]\n        if len(cols) == 0:\n            out[name] = None\n            print(f'{label} {name}: no region')\n            continue\n        out[name] = (pH[cols[0]], pH[cols[-1]])\n        print(f'{label} {name}: pH {pH[cols[0]]:.2f} .. {pH[cols[-1]]:.2f}')\n        for p in pts:\n            j = np.argmin(abs(pH - p))\n            rows = np.where(m[:, j])[0]\n            if len(rows):\n                print(f'    pH {p:5.2f}:  E = {E[rows[0]]:+.3f} .. {E[rows[-1]]:+.3f} V')\n    return out\n\n\n# ----------------------------------------------------------------------------\ndef plot(res, prm, path):\n    S = res['S']\n    ns = len(S)\n    pH, E, P, EE, L = res['pH'], res['E'], res['P'], res['EE'], res['L']\n    labels = [s[1] for s in S] + [sd[1] for sd in SOLIDS]\n    colors = ['#e4f2fb',   # Cu2+\n              '#dcefe4', '#cfe8d8', '#c1e0cc', '#b0d7bf',   # hydroxo\n              '#e6f0d0', '#e6f0d0',                          # polynuclear\n              '#dedbf5', '#cdc8f0', '#b9b1ea', '#a398e4', '#8f82de',   # Cu(II) ammines\n              '#fdf3cf', '#fbe6a6', '#f7d77e',                # Cu(I): Cu+, CuNH3+, Cu(NH3)2+\n              '#d3d3d3', '#e3ae95', '#8dbedc']               # Cu(s), Cu2O, Cu(OH)2\n    cmap = ListedColormap(colors)\n    norm = BoundaryNorm(np.arange(-0.5, len(colors) + 0.5), len(colors))\n\n    fig, ax = plt.subplots(figsize=(9.2, 7.2), dpi=200)\n    ax.pcolormesh(pH, E, L, cmap=cmap, norm=norm, shading='nearest', rasterized=True)\n    for k in np.unique(L):\n        ax.contour(P, EE, (L == k).astype(float), levels=[0.5], colors='k', linewidths=0.75)\n\n    # water stability limits\n    pl = np.array([pH[0], pH[-1]])\n    ax.plot(pl, 1.229 - N * pl, ls='--', color='0.25', lw=1.0)\n    ax.plot(pl, -N * pl, ls='--', color='0.25', lw=1.0)\n    ax.text(0.3, 1.229 - N * 0.3 + 0.03, r'O$_2$/H$_2$O', fontsize=8, color='0.25', rotation=-16)\n    ax.text(0.3, -N * 0.3 + 0.03, r'H$^+$/H$_2$', fontsize=8, color='0.25', rotation=-16)\n\n    # NH4+/NH3 apparent pKa\n    sI = np.sqrt(prm['I'])\n    pKa_app = prm['pKa_NH4'] + prm['A_DH'] * (sI / (1 + sI) - 0.3 * prm['I'])\n    ax.axvline(pKa_app, color='0.4', ls=':', lw=1.0)\n    ax.text(pKa_app + 0.08, E[-1] - 0.05, r'NH$_4^+$ | NH$_3$', fontsize=8, color='0.3', va='top')\n\n    # outline of the soluble Cu-ammine window\n    amm = np.isin(L, [i for i, s in enumerate(S) if s[5] > 0])\n    ax.contour(P, EE, amm.astype(float), levels=[0.5], colors='#b3001b', linewidths=2.2)\n\n    # ---------- region labels (largest inscribed circle, in inch units) ----------\n    fig.canvas.draw()\n    bb = ax.get_window_extent()\n    w_in, h_in = bb.width / fig.dpi, bb.height / fig.dpi\n    samp = ((E[1] - E[0]) / ((E[-1] - E[0]) / h_in), (pH[1] - pH[0]) / ((pH[-1] - pH[0]) / w_in))\n    placed = {}\n    for k in np.unique(L):\n        mask = L == k\n        dt = distance_transform_edt(mask, sampling=samp)\n        j, i = np.unravel_index(np.argmax(dt), dt.shape)\n        placed[k] = (pH[i], E[j], dt[j, i], mask.sum() * samp[0] * samp[1])\n    return fig, ax, placed, labels\n\n\ndef finish_plot(fig, ax, placed, labels, res, prm, path, manual=None):\n    manual = manual or {}\n    for k, (x, y, d, area) in placed.items():\n        if k in manual:\n            spec = manual[k]\n            if spec is None:\n                continue\n            ax.annotate(labels[k], xy=spec.get('xy', (x, y)), xytext=spec['xytext'],\n                        textcoords='data', fontsize=spec.get('fs', 8.5), ha=spec.get('ha', 'center'),\n                        va=spec.get('va', 'center'), rotation=spec.get('rot', 0),\n                        arrowprops=spec.get('arrow', None),\n                        bbox=dict(boxstyle='round,pad=0.15', fc='white', ec='none', alpha=0.75)\n                        if spec.get('box', False) else None)\n        else:\n            fs = 10.5 if d > 0.45 else 9.5 if d > 0.3 else 8 if d > 0.18 else 7\n            ax.text(x, y, labels[k], fontsize=fs, ha='center', va='center')\n\n    ax.set_xlim(res['pH'][0], res['pH'][-1])\n    ax.set_ylim(res['E'][0], res['E'][-1])\n    ax.set_xlabel('pH  (activity scale, 25 °C)', fontsize=11)\n    ax.set_ylabel('E  /  V vs SHE', fontsize=11)\n    ax.set_xticks(np.arange(0, 15, 1))\n    ax.set_yticks(np.arange(-1.0, 1.51, 0.25))\n    ax.tick_params(labelsize=9)\n    ax.set_title('Cu–NH$_3$–H$_2$O:  1 mM Cu$_{tot}$,  0.10 M NH$_3$(total),  25 °C,  I = 0.1 m (Davies)\\n'\n                 'solids: Cu(s), Cu$_2$O(s), Cu(OH)$_2$(s)  [CuO/tenorite suppressed]',\n                 fontsize=10.5)\n    handles = [Line2D([0], [0], color='#b3001b', lw=2.2, label='soluble Cu–ammine window'),\n               Line2D([0], [0], color='0.25', lw=1, ls='--', label='H$_2$O stability limits'),\n               Line2D([0], [0], color='0.4', lw=1, ls=':', label=\"NH$_4^+$/NH$_3$ apparent pK$_a$\")]\n    ax.legend(handles=handles, loc='lower left', fontsize=8, framealpha=0.9)\n    ax.text(0.985, 0.015,\n            'Boundaries: solid/aqueous at total dissolved Cu = 1 mM;\\n'\n            'aqueous/aqueous at equal Cu-equivalent concentration.\\n'\n            'NH$_3$ treated as redox-inert (N$_2$/NO$_3^-$ lines omitted).',\n            transform=ax.transAxes, fontsize=7, ha='right', va='bottom', color='0.25')\n    fig.tight_layout()\n    fig.savefig(path, dpi=200)\n    plt.close(fig)\n\n\n# ----------------------------------------------------------------------------\nif __name__ == '__main__':\n    import copy, sys\n    pH = np.arange(0.0, 14.0001, 0.02)\n    E = np.arange(-1.0, 1.5001, 0.005)\n    res = solve(BASE, pH, E)\n    print('E0(Cu2+/Cu)=%.4f  E0(Cu2+/Cu+)=%.4f  logK(Cu2O+2H+=2Cu++H2O)=%.3f'\n          % (res['E0_2_0'], res['E0_21'], res['logKs_Cu2O']))\n    win = window_report(res, 'BASE')\n\n    fig, ax, placed, labels = plot(res, BASE, 'tmp.png')\n    for k, v in placed.items():\n        print(f'region {k:2d} {labels[k]:28s}  label at pH={v[0]:.2f} E={v[1]:+.3f}  r_in={v[2]:.2f}  area_in2={v[3]:.2f}')\n    manual = {}\n    finish_plot(fig, ax, placed, labels, res, BASE, sys.argv[1] if len(sys.argv) > 1 else 'pourbaix_cu_nh3.png',\n                manual=manual)\n\n    # ------------------------------ sensitivity ------------------------------\n    print('\\n=== sensitivity of the Cu(II)-ammine window (coarse grid) ===')\n    pHc = np.arange(0.0, 14.0001, 0.05)\n    Ec = np.arange(-1.0, 1.5001, 0.01)\n    cases = {}\n    c = copy.deepcopy(BASE); cases['base (NIST/MINTEQ betas, log*Ks0 8.64, I=0.1)'] = c\n    c = copy.deepcopy(BASE); c['I'] = 0.0; cases['no activity corrections (I=0)'] = c\n    c = copy.deepcopy(BASE); c['logK'].update({'CuNH3++': 4.15, 'Cu(NH3)2++': 7.65, 'Cu(NH3)3++': 10.54,\n                                               'Cu(NH3)4++': 12.67, 'Cu(NH3)5++': 12.15}); cases['Bjerrum ammine betas (2 M NH4NO3): log b4 = 12.67'] = c\n    c = copy.deepcopy(BASE); c['logKs_CuOH2'] = 8.34; cases['log*Ks0(Cu(OH)2) = 8.34 (CRC Ksp 2.2e-20)'] = c\n    c = copy.deepcopy(BASE); c['logKs_CuOH2'] = 8.94; cases['log*Ks0(Cu(OH)2) = 8.94 (+0.3, fresh precipitate)'] = c\n    c = copy.deepcopy(BASE); c['NH3_tot'] = 0.5; cases['0.5 M total ammonia'] = c\n    c = copy.deepcopy(BASE); c['NH3_tot'] = 1.0; cases['1.0 M total ammonia'] = c\n    for name, prm in cases.items():\n        r = solve(prm, pHc, Ec)\n        window_report(r, name, pts=(9.0,))\n"
+          },
+          "message": "Full Pourbaix/predominance solver for Cu–NH3–H2O: Davies activity model, NH3 mass balance, solubility-limited solid fields, plotting, window extraction and sensitivity cases",
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"python\", \"code\": \"#!/usr/bin/env python3\\n\\\"\\\"\\\"\\nE-pH (Pourbaix / predominance) diagram for copper in aqueous ammonia.\\n\\nConditions (editable in BASE below):\\n  total Cu      = 1 mM\\n  total ammonia = 0.1 M (NH3 + NH4+ + Cu-bound NH3)\\n  T = 25 C, I = 0.1 m  (Davies equation, A = 0.509)\\n  solids allowed: Cu(s), Cu2O(s), Cu(OH)2(s)   (CuO/tenorite suppressed -> \\\"hydroxide solids\\\")\\n\\nMethod\\n  * Thermodynamic (I = 0) constants; activities -> concentrations with Davies gammas.\\n  * At every (pH, E): solve for a(Cu2+) such that total dissolved Cu = 1 mM,\\n    with a(Cu+) tied to a(Cu2+) by the Nernst equation; free NH3 from the\\n    ammonia mass balance (iterated, so NH3 bound to Cu is accounted for).\\n  * A solid is stable where the solution would be supersaturated at 1 mM;\\n    if several solids are supersaturated the one with the lowest Cu chemical\\n    potential wins.  Otherwise the aqueous species with the largest\\n    Cu-equivalent concentration is the predominant species.\\n  * Ammonia is treated as redox-inert (N2/NO3- lines omitted, as is usual).\\n\\\"\\\"\\\"\\nimport numpy as np\\nimport matplotlib\\nmatplotlib.use(\\\"Agg\\\")\\nimport matplotlib.pyplot as plt\\nfrom matplotlib.colors import ListedColormap, BoundaryNorm\\nfrom matplotlib.lines import Line2D\\nfrom scipy.ndimage import distance_transform_edt\\n\\nR, F, T = 8.314462618, 96485.33212, 298.15\\nN = R * T * np.log(10) / F            # 0.05916 V per decade\\nLN10RT = R * T * np.log(10) / 1000.0  # kJ/mol per log unit\\n\\n# ----------------------------------------------------------------------------\\n# Thermodynamic data (25 C, I = 0)\\n#   log K for:  nCu Cu^(ox+)  +  nNH3 NH3  +  nH H2O  =  species  +  nH H+\\n# Sources: Cu(II) hydrolysis - Powell et al. (IUPAC, Pure Appl. Chem. 2007) / Baes & Mesmer;\\n#          Cu(II)-NH3 - NIST 46 / Smith & Martell (I=0 set used in MINTEQ);\\n#          Cu(I)-NH3 - Bjerrum;  dGf - NBS tables;  Cu(OH)2(s) - Baes & Mesmer.\\n# ----------------------------------------------------------------------------\\nBASE = dict(\\n    Cu_tot=1e-3, NH3_tot=0.10, I=0.10, A_DH=0.509,\\n    pKw=13.995, pKa_NH4=9.244,\\n    dG_Cu2=65.49, dG_Cu1=49.98, dG_H2O=-237.13, dG_Cu2O=-146.0,   # kJ/mol\\n    logKs_CuOH2=8.64,          # Cu(OH)2(s) + 2H+ = Cu2+ + 2H2O\\n    logK={\\n        'CuOH+': -7.95, 'Cu(OH)2aq': -16.2, 'Cu(OH)3-': -26.6, 'Cu(OH)4--': -39.7,\\n        'Cu2(OH)2++': -10.4, 'Cu3(OH)4++': -21.1,\\n        'CuNH3++': 4.04, 'Cu(NH3)2++': 7.47, 'Cu(NH3)3++': 10.27,\\n        'Cu(NH3)4++': 11.75, 'Cu(NH3)5++': 11.23,\\n        'CuNH3+': 5.93, 'Cu(NH3)2+': 10.86,\\n    },\\n)\\n\\n\\ndef species_table(prm):\\n    K = prm['logK']\\n    #        key          mathtext label            z   logK             nH nN nCu ox\\n    return [\\n        ('Cu++',       r'Cu$^{2+}$',              2, 0.0,             0, 0, 1, 2),\\n        ('CuOH+',      r'CuOH$^+$',               1, K['CuOH+'],      1, 0, 1, 2),\\n        ('Cu(OH)2aq',  r'Cu(OH)$_2$(aq)',         0, K['Cu(OH)2aq'],  2, 0, 1, 2),\\n        ('Cu(OH)3-',   r'Cu(OH)$_3^-$',          -1, K['Cu(OH)3-'],   3, 0, 1, 2),\\n        ('Cu(OH)4--',  r'Cu(OH)$_4^{2-}$',       -2, K['Cu(OH)4--'],  4, 0, 1, 2),\\n        ('Cu2(OH)2++', r'Cu$_2$(OH)$_2^{2+}$',    2, K['Cu2(OH)2++'], 2, 0, 2, 2),\\n        ('Cu3(OH)4++', r'Cu$_3$(OH)$_4^{2+}$',    2, K['Cu3(OH)4++'], 4, 0, 3, 2),\\n        ('CuNH3++',    r'Cu(NH$_3$)$^{2+}$',      2, K['CuNH3++'],    0, 1, 1, 2),\\n        ('Cu(NH3)2++', r'Cu(NH$_3$)$_2^{2+}$',    2, K['Cu(NH3)2++'], 0, 2, 1, 2),\\n        ('Cu(NH3)3++', r'Cu(NH$_3$)$_3^{2+}$',    2, K['Cu(NH3)3++'], 0, 3, 1, 2),\\n        ('Cu(NH3)4++', r'Cu(NH$_3$)$_4^{2+}$',    2, K['Cu(NH3)4++'], 0, 4, 1, 2),\\n        ('Cu(NH3)5++', r'Cu(NH$_3$)$_5^{2+}$',    2, K['Cu(NH3)5++'], 0, 5, 1, 2),\\n        ('Cu+',        r'Cu$^+$',                 1, 0.0,             0, 0, 1, 1),\\n        ('CuNH3+',     r'Cu(NH$_3$)$^+$',         1, K['CuNH3+'],     0, 1, 1, 1),\\n        ('Cu(NH3)2+',  r'Cu(NH$_3$)$_2^+$',       1, K['Cu(NH3)2+'],  0, 2, 1, 1),\\n    ]\\n\\n\\nSOLIDS = [('Cu(s)', r'Cu(s)'), ('Cu2O(s)', r'Cu$_2$O(s)'), ('Cu(OH)2(s)', r'Cu(OH)$_2$(s)')]\\n\\n\\ndef solve(prm, pH, E, n_outer=12, n_bis=60):\\n    S = species_table(prm)\\n    ns = len(S)\\n    z, logK, nH, nN, nCu, ox = [np.array([s[i] for s in S], dtype=float) for i in (2, 3, 4, 5, 6, 7)]\\n\\n    sI = np.sqrt(prm['I'])\\n    def lg(zz):  # Davies\\n        return -prm['A_DH'] * zz * zz * (sI / (1 + sI) - 0.3 * prm['I'])\\n    loggam = np.array([lg(zz) for zz in z])\\n\\n    E0_2_0 = prm['dG_Cu2'] * 1e3 / (2 * F)                   # Cu2+/Cu\\n    E0_21 = (prm['dG_Cu2'] - prm['dG_Cu1']) * 1e3 / F        # Cu2+/Cu+\\n    logKs_Cu2O = -(2 * prm['dG_Cu1'] + prm['dG_H2O'] - prm['dG_Cu2O']) / LN10RT  # Cu2O + 2H+ = 2Cu+ + H2O\\n\\n    P, EE = np.meshgrid(pH, E)\\n    logr = (E0_21 - EE) / N                                  # log a(Cu+) - log a(Cu2+)\\n    pKa_app = prm['pKa_NH4'] - lg(1)                         # apparent pKa on the a(H+) scale\\n    fNH3 = 1.0 / (1.0 + 10 ** (pKa_app - P))                 # NH3 fraction of free ammonia\\n    aNH3 = prm['NH3_tot'] * fNH3\\n\\n    for it in range(n_outer):\\n        laN = np.log10(aNH3)\\n        Fi = np.empty((ns,) + P.shape)\\n        for i in range(ns):\\n            Fi[i] = logK[i] + nN[i] * laN + nH[i] * P - loggam[i] + (nCu[i] * logr if ox[i] == 1 else 0.0)\\n        S1 = np.sum(10 ** Fi[nCu == 1], axis=0)\\n        S2 = np.sum(10 ** Fi[nCu == 2], axis=0)\\n        S3 = np.sum(10 ** Fi[nCu == 3], axis=0)\\n        lo = np.full(P.shape, -60.0)\\n        hi = np.full(P.shape, 25.0)\\n        for _ in range(n_bis):\\n            mid = 0.5 * (lo + hi)\\n            tot = S1 * 10 ** mid + 2 * S2 * 10 ** (2 * mid) + 3 * S3 * 10 ** (3 * mid)\\n            over = tot > prm['Cu_tot']\\n            hi = np.where(over, mid, hi)\\n            lo = np.where(over, lo, mid)\\n        logx = 0.5 * (lo + hi)\\n        conc = 10 ** (Fi + nCu[:, None, None] * logx[None])\\n        bound = np.sum(nN[:, None, None] * conc, axis=0)\\n        aNH3_new = np.maximum(prm['NH3_tot'] - bound, 1e-15) * fNH3\\n        delta = np.max(np.abs(np.log10(aNH3_new / aNH3)))\\n        aNH3 = aNH3_new\\n        if delta < 1e-7:\\n            break\\n\\n    lx_sat = np.stack([2 * (EE - E0_2_0) / N,                 # Cu(s)\\n                       logKs_Cu2O / 2 - P - logr,             # Cu2O(s)\\n                       prm['logKs_CuOH2'] - 2 * P])           # Cu(OH)2(s)\\n    stable = lx_sat < logx[None] - 1e-9\\n    best = np.argmin(np.where(stable, lx_sat, np.inf), axis=0)\\n    any_solid = stable.any(axis=0)\\n    cu_eq = nCu[:, None, None] * conc\\n    aq = np.argmax(cu_eq, axis=0)\\n    L = np.where(any_solid, ns + best, aq)\\n\\n    return dict(S=S, L=L, conc=conc, logx=logx, aNH3=aNH3, P=P, EE=EE, pH=pH, E=E,\\n                E0_2_0=E0_2_0, E0_21=E0_21, logKs_Cu2O=logKs_Cu2O)\\n\\n\\n# ----------------------------------------------------------------------------\\ndef window_report(res, label='', pts=(5.5, 6, 7, 8, 8.5, 9, 9.5, 10, 10.5, 11)):\\n    S, L, pH, E = res['S'], res['L'], res['pH'], res['E']\\n    out = {}\\n    for name, ids in (('Cu(II)-ammine', [i for i, s in enumerate(S) if s[5] > 0 and s[7] == 2]),\\n                      ('Cu(I)-ammine',  [i for i, s in enumerate(S) if s[5] > 0 and s[7] == 1])):\\n        m = np.isin(L, ids)\\n        cols = np.where(m.any(axis=0))[0]\\n        if len(cols) == 0:\\n            out[name] = None\\n            print(f'{label} {name}: no region')\\n            continue\\n        out[name] = (pH[cols[0]], pH[cols[-1]])\\n        print(f'{label} {name}: pH {pH[cols[0]]:.2f} .. {pH[cols[-1]]:.2f}')\\n        for p in pts:\\n            j = np.argmin(abs(pH - p))\\n            rows = np.where(m[:, j])[0]\\n            if len(rows):\\n                print(f'    pH {p:5.2f}:  E = {E[rows[0]]:+.3f} .. {E[rows[-1]]:+.3f} V')\\n    return out\\n\\n\\n# ----------------------------------------------------------------------------\\ndef plot(res, prm, path):\\n    S = res['S']\\n    ns = len(S)\\n    pH, E, P, EE, L = res['pH'], res['E'], res['P'], res['EE'], res['L']\\n    labels = [s[1] for s in S] + [sd[1] for sd in SOLIDS]\\n    colors = ['#e4f2fb',   # Cu2+\\n              '#dcefe4', '#cfe8d8', '#c1e0cc', '#b0d7bf',   # hydroxo\\n              '#e6f0d0', '#e6f0d0',                          # polynuclear\\n              '#dedbf5', '#cdc8f0', '#b9b1ea', '#a398e4', '#8f82de',   # Cu(II) ammines\\n              '#fdf3cf', '#fbe6a6', '#f7d77e',                # Cu(I): Cu+, CuNH3+, Cu(NH3)2+\\n              '#d3d3d3', '#e3ae95', '#8dbedc']               # Cu(s), Cu2O, Cu(OH)2\\n    cmap = ListedColormap(colors)\\n    norm = BoundaryNorm(np.arange(-0.5, len(colors) + 0.5), len(colors))\\n\\n    fig, ax = plt.subplots(figsize=(9.2, 7.2), dpi=200)\\n    ax.pcolormesh(pH, E, L, cmap=cmap, norm=norm, shading='nearest', rasterized=True)\\n    for k in np.unique(L):\\n        ax.contour(P, EE, (L == k).astype(float), levels=[0.5], colors='k', linewidths=0.75)\\n\\n    # water stability limits\\n    pl = np.array([pH[0], pH[-1]])\\n    ax.plot(pl, 1.229 - N * pl, ls='--', color='0.25', lw=1.0)\\n    ax.plot(pl, -N * pl, ls='--', color='0.25', lw=1.0)\\n    ax.text(0.3, 1.229 - N * 0.3 + 0.03, r'O$_2$/H$_2$O', fontsize=8, color='0.25', rotation=-16)\\n    ax.text(0.3, -N * 0.3 + 0.03, r'H$^+$/H$_2$', fontsize=8, color='0.25', rotation=-16)\\n\\n    # NH4+/NH3 apparent pKa\\n    sI = np.sqrt(prm['I'])\\n    pKa_app = prm['pKa_NH4'] + prm['A_DH'] * (sI / (1 + sI) - 0.3 * prm['I'])\\n    ax.axvline(pKa_app, color='0.4', ls=':', lw=1.0)\\n    ax.text(pKa_app + 0.08, E[-1] - 0.05, r'NH$_4^+$ | NH$_3$', fontsize=8, color='0.3', va='top')\\n\\n    # outline of the soluble Cu-ammine window\\n    amm = np.isin(L, [i for i, s in enumerate(S) if s[5] > 0])\\n    ax.contour(P, EE, amm.astype(float), levels=[0.5], colors='#b3001b', linewidths=2.2)\\n\\n    # ---------- region labels (largest inscribed circle, in inch units) ----------\\n    fig.canvas.draw()\\n    bb = ax.get_window_extent()\\n    w_in, h_in = bb.width / fig.dpi, bb.height / fig.dpi\\n    samp = ((E[1] - E[0]) / ((E[-1] - E[0]) / h_in), (pH[1] - pH[0]) / ((pH[-1] - pH[0]) / w_in))\\n    placed = {}\\n    for k in np.unique(L):\\n        mask = L == k\\n        dt = distance_transform_edt(mask, sampling=samp)\\n        j, i = np.unravel_index(np.argmax(dt), dt.shape)\\n        placed[k] = (pH[i], E[j], dt[j, i], mask.sum() * samp[0] * samp[1])\\n    return fig, ax, placed, labels\\n\\n\\ndef finish_plot(fig, ax, placed, labels, res, prm, path, manual=None):\\n    manual = manual or {}\\n    for k, (x, y, d, area) in placed.items():\\n        if k in manual:\\n            spec = manual[k]\\n            if spec is None:\\n                continue\\n            ax.annotate(labels[k], xy=spec.get('xy', (x, y)), xytext=spec['xytext'],\\n                        textcoords='data', fontsize=spec.get('fs', 8.5), ha=spec.get('ha', 'center'),\\n                        va=spec.get('va', 'center'), rotation=spec.get('rot', 0),\\n                        arrowprops=spec.get('arrow', None),\\n                        bbox=dict(boxstyle='round,pad=0.15', fc='white', ec='none', alpha=0.75)\\n                        if spec.get('box', False) else None)\\n        else:\\n            fs = 10.5 if d > 0.45 else 9.5 if d > 0.3 else 8 if d > 0.18 else 7\\n            ax.text(x, y, labels[k], fontsize=fs, ha='center', va='center')\\n\\n    ax.set_xlim(res['pH'][0], res['pH'][-1])\\n    ax.set_ylim(res['E'][0], res['E'][-1])\\n    ax.set_xlabel('pH  (activity scale, 25 \\u00b0C)', fontsize=11)\\n    ax.set_ylabel('E  /  V vs SHE', fontsize=11)\\n    ax.set_xticks(np.arange(0, 15, 1))\\n    ax.set_yticks(np.arange(-1.0, 1.51, 0.25))\\n    ax.tick_params(labelsize=9)\\n    ax.set_title('Cu\\u2013NH$_3$\\u2013H$_2$O:  1 mM Cu$_{tot}$,  0.10 M NH$_3$(total),  25 \\u00b0C,  I = 0.1 m (Davies)\\\\n'\\n                 'solids: Cu(s), Cu$_2$O(s), Cu(OH)$_2$(s)  [CuO/tenorite suppressed]',\\n                 fontsize=10.5)\\n    handles = [Line2D([0], [0], color='#b3001b', lw=2.2, label='soluble Cu\\u2013ammine window'),\\n               Line2D([0], [0], color='0.25', lw=1, ls='--', label='H$_2$O stability limits'),\\n               Line2D([0], [0], color='0.4', lw=1, ls=':', label=\\\"NH$_4^+$/NH$_3$ apparent pK$_a$\\\")]\\n    ax.legend(handles=handles, loc='lower left', fontsize=8, framealpha=0.9)\\n    ax.text(0.985, 0.015,\\n            'Boundaries: solid/aqueous at total dissolved Cu = 1 mM;\\\\n'\\n            'aqueous/aqueous at equal Cu-equivalent concentration.\\\\n'\\n            'NH$_3$ treated as redox-inert (N$_2$/NO$_3^-$ lines omitted).',\\n            transform=ax.transAxes, fontsize=7, ha='right', va='bottom', color='0.25')\\n    fig.tight_layout()\\n    fig.savefig(path, dpi=200)\\n    plt.close(fig)\\n\\n\\n# ----------------------------------------------------------------------------\\nif __name__ == '__main__':\\n    import copy, sys\\n    pH = np.arange(0.0, 14.0001, 0.02)\\n    E = np.arange(-1.0, 1.5001, 0.005)\\n    res = solve(BASE, pH, E)\\n    print('E0(Cu2+/Cu)=%.4f  E0(Cu2+/Cu+)=%.4f  logK(Cu2O+2H+=2Cu++H2O)=%.3f'\\n          % (res['E0_2_0'], res['E0_21'], res['logKs_Cu2O']))\\n    win = window_report(res, 'BASE')\\n\\n    fig, ax, placed, labels = plot(res, BASE, 'tmp.png')\\n    for k, v in placed.items():\\n        print(f'region {k:2d} {labels[k]:28s}  label at pH={v[0]:.2f} E={v[1]:+.3f}  r_in={v[2]:.2f}  area_in2={v[3]:.2f}')\\n    manual = {}\\n    finish_plot(fig, ax, placed, labels, res, BASE, sys.argv[1] if len(sys.argv) > 1 else 'pourbaix_cu_nh3.png',\\n                manual=manual)\\n\\n    # ------------------------------ sensitivity ------------------------------\\n    print('\\\\n=== sensitivity of the Cu(II)-ammine window (coarse grid) ===')\\n    pHc = np.arange(0.0, 14.0001, 0.05)\\n    Ec = np.arange(-1.0, 1.5001, 0.01)\\n    cases = {}\\n    c = copy.deepcopy(BASE); cases['base (NIST/MINTEQ betas, log*Ks0 8.64, I=0.1)'] = c\\n    c = copy.deepcopy(BASE); c['I'] = 0.0; cases['no activity corrections (I=0)'] = c\\n    c = copy.deepcopy(BASE); c['logK'].update({'CuNH3++': 4.15, 'Cu(NH3)2++': 7.65, 'Cu(NH3)3++': 10.54,\\n                                               'Cu(NH3)4++': 12.67, 'Cu(NH3)5++': 12.15}); cases['Bjerrum ammine betas (2 M NH4NO3): log b4 = 12.67'] = c\\n    c = copy.deepcopy(BASE); c['logKs_CuOH2'] = 8.34; cases['log*Ks0(Cu(OH)2) = 8.34 (CRC Ksp 2.2e-20)'] = c\\n    c = copy.deepcopy(BASE); c['logKs_CuOH2'] = 8.94; cases['log*Ks0(Cu(OH)2) = 8.94 (+0.3, fresh precipitate)'] = c\\n    c = copy.deepcopy(BASE); c['NH3_tot'] = 0.5; cases['0.5 M total ammonia'] = c\\n    c = copy.deepcopy(BASE); c['NH3_tot'] = 1.0; cases['1.0 M total ammonia'] = c\\n    for name, prm in cases.items():\\n        r = solve(prm, pHc, Ec)\\n        window_report(r, name, pts=(9.0,))\\n\", \"filename\": \"/home/claude/pourbaix_cu_nh3.py\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T04:58:18.432630Z",
+          "stop_timestamp": "2026-09-17T04:58:18.432657Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01ADxj4XYcKskVFQ4LwFBDic",
+          "name": "create_file",
+          "content": [
+            {
+              "type": "text",
+              "text": "File created successfully: /home/claude/pourbaix_cu_nh3.py",
+              "uuid": "49da9c3a-8465-49ad-b291-b5945d564b42"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "display_content": {
+            "type": "text",
+            "text": "File created successfully: /home/claude/pourbaix_cu_nh3.py"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T04:58:19.798259Z",
+          "stop_timestamp": "2026-09-17T04:58:21.145790Z",
+          "type": "tool_use",
+          "id": "toolu_01NEbuuUMiBizXtfsYaHqvgZ",
+          "name": "bash_tool",
+          "input": {
+            "command": "cd /home/claude && time python3 pourbaix_cu_nh3.py pourbaix_cu_nh3.png 2>&1 | tail -80",
+            "description": "Run the solver, print window/sensitivity summaries, and draft the figure"
+          },
+          "message": "Run the solver, print window/sensitivity summaries, and draft the figure",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"cd /home/claude && time python3 pourbaix_cu_nh3.py pourbaix_cu_nh3.png 2>&1 | tail -80\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T04:58:21.446437Z",
+          "stop_timestamp": "2026-09-17T04:58:21.446463Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01NEbuuUMiBizXtfsYaHqvgZ",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":0,\"stdout\":\"/bin/sh: 1: time: not found\\n\",\"stderr\":\"\"}",
+              "uuid": "a4b2be01-350e-4423-a446-28b0591adad1"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"returncode\":0,\"stdout\":\"/bin/sh: 1: time: not found\\n\",\"stderr\":\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T04:58:22.133910Z",
+          "stop_timestamp": "2026-09-17T04:58:23.187357Z",
+          "type": "tool_use",
+          "id": "toolu_01VUp65Ho2GMCH7pBYupXEbs",
+          "name": "bash_tool",
+          "input": {
+            "command": "cd /home/claude && python3 pourbaix_cu_nh3.py pourbaix_cu_nh3.png 2>&1 | tail -90",
+            "description": "Run the solver, print window/sensitivity summaries, and draft the figure"
+          },
+          "message": "Run the solver, print window/sensitivity summaries, and draft the figure",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"cd /home/claude && python3 pourbaix_cu_nh3.py pourbaix_cu_nh3.png 2>&1 | tail -90\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T04:58:34.292301Z",
+          "stop_timestamp": "2026-09-17T04:58:34.292333Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01VUp65Ho2GMCH7pBYupXEbs",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":0,\"stdout\":\"E0(Cu2+/Cu)=0.3394  E0(Cu2+/Cu+)=0.1607  logK(Cu2O+2H+=2Cu++H2O)=-1.547\\nBASE Cu(II)-ammine: pH 8.58 .. 9.82\\n    pH  9.00:  E = +0.270 .. +1.500 V\\n    pH  9.50:  E = +0.240 .. +1.500 V\\nBASE Cu(I)-ammine: pH 7.48 .. 11.16\\n    pH  8.00:  E = -0.025 .. +0.275 V\\n    pH  8.50:  E = -0.080 .. +0.285 V\\n    pH  9.00:  E = -0.125 .. +0.265 V\\n    pH  9.50:  E = -0.160 .. +0.235 V\\n    pH 10.00:  E = -0.175 .. +0.195 V\\n    pH 10.50:  E = -0.185 .. +0.130 V\\n    pH 11.00:  E = -0.185 .. +0.075 V\\nregion  0 Cu$^{2+}$                     label at pH=0.00 E=+1.500  r_in=2.81  area_in2=8.68\\nregion  4 Cu(OH)$_4^{2-}$               label at pH=14.00 E=-0.070  r_in=0.11  area_in2=0.40\\nregion  9 Cu(NH$_3$)$_3^{2+}$           label at pH=8.94 E=+0.305  r_in=0.07  area_in2=0.26\\nregion 10 Cu(NH$_3$)$_4^{2+}$           label at pH=9.32 E=+0.310  r_in=0.13  area_in2=0.69\\nregion 14 Cu(NH$_3$)$_2^+$              label at pH=9.48 E=+0.040  r_in=0.43  area_in2=1.41\\nregion 15 Cu(s)                         label at pH=0.00 E=-1.000  r_in=2.75  area_in2=16.08\\nregion 16 Cu$_2$O(s)                    label at pH=13.52 E=-0.205  r_in=0.26  area_in2=1.48\\nregion 17 Cu(OH)$_2$(s)                 label at pH=11.66 E=+0.545  r_in=1.08  area_in2=10.66\\n\\n=== sensitivity of the Cu(II)-ammine window (coarse grid) ===\\nbase (NIST/MINTEQ betas, log*Ks0 8.64, I=0.1) Cu(II)-ammine: pH 8.60 .. 9.75\\n    pH  9.00:  E = +0.270 .. +1.500 V\\nbase (NIST/MINTEQ betas, log*Ks0 8.64, I=0.1) Cu(I)-ammine: pH 7.50 .. 11.15\\n    pH  9.00:  E = -0.120 .. +0.260 V\\nno activity corrections (I=0) Cu(II)-ammine: pH 8.90 .. 9.40\\n    pH  9.00:  E = +0.290 .. +0.290 V\\nno activity corrections (I=0) Cu(I)-ammine: pH 7.40 .. 11.05\\n    pH  9.00:  E = -0.130 .. +0.280 V\\nBjerrum ammine betas (2 M NH4NO3): log b4 = 12.67 Cu(II)-ammine: pH 8.15 .. 10.40\\n    pH  9.00:  E = +0.220 .. +1.500 V\\nBjerrum ammine betas (2 M NH4NO3): log b4 = 12.67 Cu(I)-ammine: pH 7.45 .. 11.15\\n    pH  9.00:  E = -0.120 .. +0.210 V\\nlog*Ks0(Cu(OH)2) = 8.34 (CRC Ksp 2.2e-20) Cu(II)-ammine: no region\\nlog*Ks0(Cu(OH)2) = 8.34 (CRC Ksp 2.2e-20) Cu(I)-ammine: pH 7.55 .. 11.15\\n    pH  9.00:  E = -0.120 .. +0.250 V\\nlog*Ks0(Cu(OH)2) = 8.94 (+0.3, fresh precipitate) Cu(II)-ammine: pH 6.35 .. 10.05\\n    pH  9.00:  E = +0.270 .. +1.500 V\\nlog*Ks0(Cu(OH)2) = 8.94 (+0.3, fresh precipitate) Cu(I)-ammine: pH 7.45 .. 11.15\\n    pH  9.00:  E = -0.120 .. +0.260 V\\n0.5 M total ammonia Cu(II)-ammine: pH 5.65 .. 11.45\\n    pH  9.00:  E = +0.190 .. +1.500 V\\n0.5 M total ammonia Cu(I)-ammine: pH 5.70 .. 12.55\\n    pH  9.00:  E = -0.210 .. +0.180 V\\n1.0 M total ammonia Cu(II)-ammine: pH 5.35 .. 12.05\\n    pH  9.00:  E = +0.150 .. +1.500 V\\n1.0 M total ammonia Cu(I)-ammine: pH 5.10 .. 13.20\\n    pH  9.00:  E = -0.240 .. +0.140 V\\n\",\"stderr\":\"\"}",
+              "uuid": "fcf4b2a3-79a5-47c1-b6af-667f6219ae15"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"returncode\":0,\"stdout\":\"E0(Cu2+/Cu)=0.3394  E0(Cu2+/Cu+)=0.1607  logK(Cu2O+2H+=2Cu++H2O)=-1.547\\nBASE Cu(II)-ammine: pH 8.58 .. 9.82\\n    pH  9.00:  E = +0.270 .. +1.500 V\\n    pH  9.50:  E = +0.240 .. +1.500 V\\nBASE Cu(I)-ammine: pH 7.48 .. 11.16\\n    pH  8.00:  E = -0.025 .. +0.275 V\\n    pH  8.50:  E = -0.080 .. +0.285 V\\n    pH  9.00:  E = -0.125 .. +0.265 V\\n    pH  9.50:  E = -0.160 .. +0.235 V\\n    pH 10.00:  E = -0.175 .. +0.195 V\\n    pH 10.50:  E = -0.185 .. +0.130 V\\n    pH 11.00:  E = -0.185 .. +0.075 V\\nregion  0 Cu$^{2+}$                     label at pH=0.00 E=+1.500  r_in=2.81  area_in2=8.68\\nregion  4 Cu(OH)$_4^{2-}$               label at pH=14.00 E=-0.070  r_in=0.11  area_in2=0.40\\nregion  9 Cu(NH$_3$)$_3^{2+}$           label at pH=8.94 E=+0.305  r_in=0.07  area_in2=0.26\\nregion 10 Cu(NH$_3$)$_4^{2+}$           label at pH=9.32 E=+0.310  r_in=0.13  area_in2=0.69\\nregion 14 Cu(NH$_3$)$_2^+$              label at pH=9.48 E=+0.040  r_in=0.43  area_in2=1.41\\nregion 15 Cu(s)                         label at pH=0.00 E=-1.000  r_in=2.75  area_in2=16.08\\nregion 16 Cu$_2$O(s)                    label at pH=13.52 E=-0.205  r_in=0.26  area_in2=1.48\\nregion 17 Cu(OH)$_2$(s)                 label at pH=11.66 E=+0.545  r_in=1.08  area_in2=10.66\\n\\n=== sensitivity of the Cu(II)-ammine window (coarse grid) ===\\nbase (NIST/MINTEQ betas, log*Ks0 8.64, I=0.1) Cu(II)-ammine: pH 8.60 .. 9.75\\n    pH  9.00:  E = +0.270 .. +1.500 V\\nbase (NIST/MINTEQ betas, log*Ks0 8.64, I=0.1) Cu(I)-ammine: pH 7.50 .. 11.15\\n    pH  9.00:  E = -0.120 .. +0.260 V\\nno activity corrections (I=0) Cu(II)-ammine: pH 8.90 .. 9.40\\n    pH  9.00:  E = +0.290 .. +0.290 V\\nno activity corrections (I=0) Cu(I)-ammine: pH 7.40 .. 11.05\\n    pH  9.00:  E = -0.130 .. +0.280 V\\nBjerrum ammine betas (2 M NH4NO3): log b4 = 12.67 Cu(II)-ammine: pH 8.15 .. 10.40\\n    pH  9.00:  E = +0.220 .. +1.500 V\\nBjerrum ammine betas (2 M NH4NO3): log b4 = 12.67 Cu(I)-ammine: pH 7.45 .. 11.15\\n    pH  9.00:  E = -0.120 .. +0.210 V\\nlog*Ks0(Cu(OH)2) = 8.34 (CRC Ksp 2.2e-20) Cu(II)-ammine: no region\\nlog*Ks0(Cu(OH)2) = 8.34 (CRC Ksp 2.2e-20) Cu(I)-ammine: pH 7.55 .. 11.15\\n    pH  9.00:  E = -0.120 .. +0.250 V\\nlog*Ks0(Cu(OH)2) = 8.94 (+0.3, fresh precipitate) Cu(II)-ammine: pH 6.35 .. 10.05\\n    pH  9.00:  E = +0.270 .. +1.500 V\\nlog*Ks0(Cu(OH)2) = 8.94 (+0.3, fresh precipitate) Cu(I)-ammine: pH 7.45 .. 11.15\\n    pH  9.00:  E = -0.120 .. +0.260 V\\n0.5 M total ammonia Cu(II)-ammine: pH 5.65 .. 11.45\\n    pH  9.00:  E = +0.190 .. +1.500 V\\n0.5 M total ammonia Cu(I)-ammine: pH 5.70 .. 12.55\\n    pH  9.00:  E = -0.210 .. +0.180 V\\n1.0 M total ammonia Cu(II)-ammine: pH 5.35 .. 12.05\\n    pH  9.00:  E = +0.150 .. +1.500 V\\n1.0 M total ammonia Cu(I)-ammine: pH 5.10 .. 13.20\\n    pH  9.00:  E = -0.240 .. +0.140 V\\n\",\"stderr\":\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T04:58:35.100337Z",
+          "stop_timestamp": "2026-09-17T04:58:46.497940Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Working out the pH ranges for copper-ammine equilibria."
+            },
+            {
+              "summary": "Reassessing where copper oxide phases dominate over ammine species."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T04:58:46.497986Z",
+          "stop_timestamp": "2026-09-17T04:58:47.195560Z",
+          "type": "tool_use",
+          "id": "toolu_014LHFRjTwdZfR2xX2Kzj325",
+          "name": "view",
+          "input": {
+            "description": "Inspect the draft diagram for layout and label placement",
+            "path": "/home/claude/pourbaix_cu_nh3.png"
+          },
+          "message": "Inspect the draft diagram for layout and label placement",
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "display_content": {
+            "type": "text",
+            "text": "Inspect the draft diagram for layout and label placement"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T04:58:47.817204Z",
+          "stop_timestamp": "2026-09-17T04:58:47.817231Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_014LHFRjTwdZfR2xX2Kzj325",
+          "name": "view",
+          "content": [
+            {
+              "type": "image",
+              "file_uuid": "7106cf9d-bcf6-4e05-9014-7e9feaeb76d5"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T04:58:48.458956Z",
+          "stop_timestamp": "2026-09-17T04:59:44.245245Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Constructing a Pourbaix diagram for a copper system."
+            },
+            {
+              "summary": "Untangling overlapping labels in the ammine complex regions."
+            },
+            {
+              "summary": "Repositioning region labels and fixing boundary-touching placements."
+            },
+            {
+              "summary": "Splitting split regions and verifying chemical boundary logic."
+            },
+            {
+              "summary": "Running sensitivity checks across ammonia and solubility assumptions."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T04:59:44.245358Z",
+          "stop_timestamp": "2026-09-17T04:59:44.245578Z",
+          "type": "text",
+          "text": "The core result is in. The figure needs label cleanup (rotated labels in the narrow Cu(II)-ammine notch, both Cu₂O lobes labelled, corner labels re-centred). Let me refine it.",
+          "citations": []
+        },
+        {
+          "start_timestamp": "2026-09-17T04:59:44.245582Z",
+          "stop_timestamp": "2026-09-17T04:59:57.784445Z",
+          "type": "tool_use",
+          "id": "toolu_017hNrsWZUyBmHcCcdovkaWi",
+          "name": "bash_tool",
+          "input": {
+            "command": "cd /home/claude && python3 - <<'EOF'\nimport re\nsrc = open('pourbaix_cu_nh3.py').read()\n\n# 1) distance transform: treat axes edges as boundaries and label every connected component\nold = \"\"\"    placed = {}\n    for k in np.unique(L):\n        mask = L == k\n        dt = distance_transform_edt(mask, sampling=samp)\n        j, i = np.unravel_index(np.argmax(dt), dt.shape)\n        placed[k] = (pH[i], E[j], dt[j, i], mask.sum() * samp[0] * samp[1])\n    return fig, ax, placed, labels\"\"\"\nnew = \"\"\"    placed = []   # (k, is_largest_component, x, y, r_in, area_in2)\n    for k in np.unique(L):\n        comp, ncomp = cc_label(L == k)\n        areas = [(comp == c).sum() for c in range(1, ncomp + 1)]\n        for c in range(1, ncomp + 1):\n            area = areas[c - 1] * samp[0] * samp[1]\n            if area < 0.06:\n                continue\n            mask = np.pad(comp == c, 1)               # edges count as boundaries\n            dt = distance_transform_edt(mask, sampling=samp)[1:-1, 1:-1]\n            j, i = np.unravel_index(np.argmax(dt), dt.shape)\n            placed.append((k, areas[c - 1] == max(areas), pH[i], E[j], dt[j, i], area))\n    return fig, ax, placed, labels\"\"\"\nassert old in src; src = src.replace(old, new)\n\nold = \"\"\"    for k, (x, y, d, area) in placed.items():\n        if k in manual:\"\"\"\nnew = \"\"\"    for k, largest, x, y, d, area in placed:\n        if k in manual and largest:\"\"\"\nassert old in src; src = src.replace(old, new)\n\nsrc = src.replace(\"from scipy.ndimage import distance_transform_edt\",\n                  \"from scipy.ndimage import distance_transform_edt, label as cc_label\")\n\n# 2) pKa label placed low, alongside the line\nold = \"\"\"    ax.text(pKa_app + 0.08, E[-1] - 0.05, r'NH$_4^+$ | NH$_3$', fontsize=8, color='0.3', va='top')\"\"\"\nnew = \"\"\"    ax.text(pKa_app - 0.1, -0.62, r'NH$_4^+$  |  NH$_3$  (pK$_a$\\\\' = %.2f)' % pKa_app, fontsize=7.5,\n            color='0.3', rotation=90, ha='right', va='center')\"\"\"\nassert old in src; src = src.replace(old, new)\n\n# 3) print + manual label overrides\nold = \"\"\"    for k, v in placed.items():\n        print(f'region {k:2d} {labels[k]:28s}  label at pH={v[0]:.2f} E={v[1]:+.3f}  r_in={v[2]:.2f}  area_in2={v[3]:.2f}')\n    manual = {}\"\"\"\nnew = \"\"\"    for k, largest, x, y, d, area in placed:\n        print(f'region {k:2d} {labels[k]:28s} largest={largest!s:5s} label at pH={x:.2f} E={y:+.3f}  r_in={d:.2f}  area_in2={area:.2f}')\n    manual = {\n        9:  dict(xytext=(8.80, 0.95), rot=90, fs=8.5),\n        10: dict(xytext=(9.60, 0.95), rot=90, fs=8.5),\n        4:  dict(xy=(13.90, 1.15), xytext=(12.45, 1.36), fs=8,\n                 arrow=dict(arrowstyle='-', lw=0.7, color='k'), box=True),\n    }\"\"\"\nassert old in src; src = src.replace(old, new)\nopen('pourbaix_cu_nh3.py', 'w').write(src)\nprint('patched')\nEOF\npython3 pourbaix_cu_nh3.py pourbaix_cu_nh3.png 2>&1 | grep -E \"^region|Cu\\(II\\)-ammine: pH 8\"",
+            "description": "Patch label placement (component-wise, edge-aware, manual overrides) and re-render"
+          },
+          "message": "Patch label placement (component-wise, edge-aware, manual overrides) and re-render",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"cd /home/claude && python3 - <<'EOF'\\nimport re\\nsrc = open('pourbaix_cu_nh3.py').read()\\n\\n# 1) distance transform: treat axes edges as boundaries and label every connected component\\nold = \\\"\\\"\\\"    placed = {}\\n    for k in np.unique(L):\\n        mask = L == k\\n        dt = distance_transform_edt(mask, sampling=samp)\\n        j, i = np.unravel_index(np.argmax(dt), dt.shape)\\n        placed[k] = (pH[i], E[j], dt[j, i], mask.sum() * samp[0] * samp[1])\\n    return fig, ax, placed, labels\\\"\\\"\\\"\\nnew = \\\"\\\"\\\"    placed = []   # (k, is_largest_component, x, y, r_in, area_in2)\\n    for k in np.unique(L):\\n        comp, ncomp = cc_label(L == k)\\n        areas = [(comp == c).sum() for c in range(1, ncomp + 1)]\\n        for c in range(1, ncomp + 1):\\n            area = areas[c - 1] * samp[0] * samp[1]\\n            if area < 0.06:\\n                continue\\n            mask = np.pad(comp == c, 1)               # edges count as boundaries\\n            dt = distance_transform_edt(mask, sampling=samp)[1:-1, 1:-1]\\n            j, i = np.unravel_index(np.argmax(dt), dt.shape)\\n            placed.append((k, areas[c - 1] == max(areas), pH[i], E[j], dt[j, i], area))\\n    return fig, ax, placed, labels\\\"\\\"\\\"\\nassert old in src; src = src.replace(old, new)\\n\\nold = \\\"\\\"\\\"    for k, (x, y, d, area) in placed.items():\\n        if k in manual:\\\"\\\"\\\"\\nnew = \\\"\\\"\\\"    for k, largest, x, y, d, area in placed:\\n        if k in manual and largest:\\\"\\\"\\\"\\nassert old in src; src = src.replace(old, new)\\n\\nsrc = src.replace(\\\"from scipy.ndimage import distance_transform_edt\\\",\\n                  \\\"from scipy.ndimage import distance_transform_edt, label as cc_label\\\")\\n\\n# 2) pKa label placed low, alongside the line\\nold = \\\"\\\"\\\"    ax.text(pKa_app + 0.08, E[-1] - 0.05, r'NH$_4^+$ | NH$_3$', fontsize=8, color='0.3', va='top')\\\"\\\"\\\"\\nnew = \\\"\\\"\\\"    ax.text(pKa_app - 0.1, -0.62, r'NH$_4^+$  |  NH$_3$  (pK$_a$\\\\\\\\' = %.2f)' % pKa_app, fontsize=7.5,\\n            color='0.3', rotation=90, ha='right', va='center')\\\"\\\"\\\"\\nassert old in src; src = src.replace(old, new)\\n\\n# 3) print + manual label overrides\\nold = \\\"\\\"\\\"    for k, v in placed.items():\\n        print(f'region {k:2d} {labels[k]:28s}  label at pH={v[0]:.2f} E={v[1]:+.3f}  r_in={v[2]:.2f}  area_in2={v[3]:.2f}')\\n    manual = {}\\\"\\\"\\\"\\nnew = \\\"\\\"\\\"    for k, largest, x, y, d, area in placed:\\n        print(f'region {k:2d} {labels[k]:28s} largest={largest!s:5s} label at pH={x:.2f} E={y:+.3f}  r_in={d:.2f}  area_in2={area:.2f}')\\n    manual = {\\n        9:  dict(xytext=(8.80, 0.95), rot=90, fs=8.5),\\n        10: dict(xytext=(9.60, 0.95), rot=90, fs=8.5),\\n        4:  dict(xy=(13.90, 1.15), xytext=(12.45, 1.36), fs=8,\\n                 arrow=dict(arrowstyle='-', lw=0.7, color='k'), box=True),\\n    }\\\"\\\"\\\"\\nassert old in src; src = src.replace(old, new)\\nopen('pourbaix_cu_nh3.py', 'w').write(src)\\nprint('patched')\\nEOF\\npython3 pourbaix_cu_nh3.py pourbaix_cu_nh3.png 2>&1 | grep -E \\\"^region|Cu\\\\(II\\\\)-ammine: pH 8\\\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:00:08.637774Z",
+          "stop_timestamp": "2026-09-17T05:00:08.637807Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_017hNrsWZUyBmHcCcdovkaWi",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":0,\"stdout\":\"patched\\nBASE Cu(II)-ammine: pH 8.58 .. 9.82\\nregion  0 Cu$^{2+}$                    largest=True  label at pH=2.76 E=+0.870  r_in=1.41  area_in2=8.68\\nregion  4 Cu(OH)$_4^{2-}$              largest=True  label at pH=13.90 E=-0.080  r_in=0.06  area_in2=0.40\\nregion  9 Cu(NH$_3$)$_3^{2+}$          largest=True  label at pH=8.94 E=+0.305  r_in=0.07  area_in2=0.26\\nregion 10 Cu(NH$_3$)$_4^{2+}$          largest=True  label at pH=9.32 E=+0.310  r_in=0.13  area_in2=0.69\\nregion 14 Cu(NH$_3$)$_2^+$             largest=True  label at pH=9.48 E=+0.040  r_in=0.43  area_in2=1.41\\nregion 15 Cu(s)                        largest=True  label at pH=2.68 E=-0.385  r_in=1.37  area_in2=16.08\\nregion 16 Cu$_2$O(s)                   largest=True  label at pH=13.44 E=-0.200  r_in=0.26  area_in2=0.78\\nregion 16 Cu$_2$O(s)                   largest=False label at pH=7.02 E=+0.180  r_in=0.26  area_in2=0.69\\nregion 17 Cu(OH)$_2$(s)                largest=True  label at pH=11.66 E=+0.545  r_in=1.08  area_in2=6.97\\nregion 17 Cu(OH)$_2$(s)                largest=False label at pH=7.52 E=+0.595  r_in=0.69  area_in2=3.69\\nbase (NIST/MINTEQ betas, log*Ks0 8.64, I=0.1) Cu(II)-ammine: pH 8.60 .. 9.75\\nno activity corrections (I=0) Cu(II)-ammine: pH 8.90 .. 9.40\\nBjerrum ammine betas (2 M NH4NO3): log b4 = 12.67 Cu(II)-ammine: pH 8.15 .. 10.40\\n\",\"stderr\":\"\"}",
+              "uuid": "c04a8efb-7ea8-4589-b754-6c13de63f72f"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"returncode\":0,\"stdout\":\"patched\\nBASE Cu(II)-ammine: pH 8.58 .. 9.82\\nregion  0 Cu$^{2+}$                    largest=True  label at pH=2.76 E=+0.870  r_in=1.41  area_in2=8.68\\nregion  4 Cu(OH)$_4^{2-}$              largest=True  label at pH=13.90 E=-0.080  r_in=0.06  area_in2=0.40\\nregion  9 Cu(NH$_3$)$_3^{2+}$          largest=True  label at pH=8.94 E=+0.305  r_in=0.07  area_in2=0.26\\nregion 10 Cu(NH$_3$)$_4^{2+}$          largest=True  label at pH=9.32 E=+0.310  r_in=0.13  area_in2=0.69\\nregion 14 Cu(NH$_3$)$_2^+$             largest=True  label at pH=9.48 E=+0.040  r_in=0.43  area_in2=1.41\\nregion 15 Cu(s)                        largest=True  label at pH=2.68 E=-0.385  r_in=1.37  area_in2=16.08\\nregion 16 Cu$_2$O(s)                   largest=True  label at pH=13.44 E=-0.200  r_in=0.26  area_in2=0.78\\nregion 16 Cu$_2$O(s)                   largest=False label at pH=7.02 E=+0.180  r_in=0.26  area_in2=0.69\\nregion 17 Cu(OH)$_2$(s)                largest=True  label at pH=11.66 E=+0.545  r_in=1.08  area_in2=6.97\\nregion 17 Cu(OH)$_2$(s)                largest=False label at pH=7.52 E=+0.595  r_in=0.69  area_in2=3.69\\nbase (NIST/MINTEQ betas, log*Ks0 8.64, I=0.1) Cu(II)-ammine: pH 8.60 .. 9.75\\nno activity corrections (I=0) Cu(II)-ammine: pH 8.90 .. 9.40\\nBjerrum ammine betas (2 M NH4NO3): log b4 = 12.67 Cu(II)-ammine: pH 8.15 .. 10.40\\n\",\"stderr\":\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:00:09.749364Z",
+          "stop_timestamp": "2026-09-17T05:00:10.438853Z",
+          "type": "tool_use",
+          "id": "toolu_01L5t8gP5LU8DSbcYjre4SFz",
+          "name": "view",
+          "input": {
+            "description": "Check the refined figure",
+            "path": "/home/claude/pourbaix_cu_nh3.png"
+          },
+          "message": "Check the refined figure",
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "display_content": {
+            "type": "text",
+            "text": "Check the refined figure"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:00:11.020190Z",
+          "stop_timestamp": "2026-09-17T05:00:11.020218Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01L5t8gP5LU8DSbcYjre4SFz",
+          "name": "view",
+          "content": [
+            {
+              "type": "image",
+              "file_uuid": "60761bc9-ed81-41a1-be56-6a4855524e95"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:00:11.937759Z",
+          "stop_timestamp": "2026-09-17T05:00:43.832865Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Adjusting a chart label's position to fix overlap."
+            },
+            {
+              "summary": "Rechecking region boundaries and verifying diagram consistency."
+            },
+            {
+              "summary": "Recalculating the copper-ammine boundary equilibrium by hand."
+            },
+            {
+              "summary": "Finding and fixing an arithmetic slip in the boundary math."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T05:00:43.832926Z",
+          "stop_timestamp": "2026-09-17T05:00:48.043109Z",
+          "type": "tool_use",
+          "id": "toolu_01J3HqbxvLzqpdwvhuMsxZR2",
+          "name": "bash_tool",
+          "input": {
+            "command": "cd /home/claude && python3 - <<'EOF'\nsrc = open('pourbaix_cu_nh3.py').read()\nold = \"\"\"    ax.text(pKa_app - 0.1, -0.62, r'NH$_4^+$  |  NH$_3$  (pK$_a$\\\\' = %.2f)' % pKa_app, fontsize=7.5,\n            color='0.3', rotation=90, ha='right', va='center')\"\"\"\nnew = \"\"\"    ax.text(pKa_app - 0.1, -0.46, r\"NH$_4^+$ | NH$_3$   pK$_a$' = %.2f\" % pKa_app, fontsize=7.5,\n            color='0.3', rotation=90, ha='right', va='center')\"\"\"\nassert old in src; src = src.replace(old, new)\nopen('pourbaix_cu_nh3.py', 'w').write(src)\nEOF\nmkdir -p /mnt/user-data/outputs && python3 pourbaix_cu_nh3.py /mnt/user-data/outputs/pourbaix_Cu_NH3_1mM_0p1M.png > run_log.txt 2>&1 && cp pourbaix_cu_nh3.py /mnt/user-data/outputs/ && tail -3 run_log.txt",
+            "description": "Final render to outputs and copy the solver script"
+          },
+          "message": "Final render to outputs and copy the solver script",
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"language\": \"bash\", \"code\": \"cd /home/claude && python3 - <<'EOF'\\nsrc = open('pourbaix_cu_nh3.py').read()\\nold = \\\"\\\"\\\"    ax.text(pKa_app - 0.1, -0.62, r'NH$_4^+$  |  NH$_3$  (pK$_a$\\\\\\\\' = %.2f)' % pKa_app, fontsize=7.5,\\n            color='0.3', rotation=90, ha='right', va='center')\\\"\\\"\\\"\\nnew = \\\"\\\"\\\"    ax.text(pKa_app - 0.1, -0.46, r\\\"NH$_4^+$ | NH$_3$   pK$_a$' = %.2f\\\" % pKa_app, fontsize=7.5,\\n            color='0.3', rotation=90, ha='right', va='center')\\\"\\\"\\\"\\nassert old in src; src = src.replace(old, new)\\nopen('pourbaix_cu_nh3.py', 'w').write(src)\\nEOF\\nmkdir -p /mnt/user-data/outputs && python3 pourbaix_cu_nh3.py /mnt/user-data/outputs/pourbaix_Cu_NH3_1mM_0p1M.png > run_log.txt 2>&1 && cp pourbaix_cu_nh3.py /mnt/user-data/outputs/ && tail -3 run_log.txt\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:00:58.978801Z",
+          "stop_timestamp": "2026-09-17T05:00:58.978832Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01J3HqbxvLzqpdwvhuMsxZR2",
+          "name": "bash_tool",
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"returncode\":0,\"stdout\":\"    pH  9.00:  E = +0.150 .. +1.500 V\\n1.0 M total ammonia Cu(I)-ammine: pH 5.10 .. 13.20\\n    pH  9.00:  E = -0.240 .. +0.140 V\\n\",\"stderr\":\"\"}",
+              "uuid": "037dcb57-78db-47af-92d7-7bcddc307daa"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "none"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "commandLinePrompt",
+          "display_content": {
+            "type": "json_block",
+            "json_block": "{\"returncode\":0,\"stdout\":\"    pH  9.00:  E = +0.150 .. +1.500 V\\n1.0 M total ammonia Cu(I)-ammine: pH 5.10 .. 13.20\\n    pH  9.00:  E = -0.240 .. +0.140 V\\n\",\"stderr\":\"\"}"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:01:00.571831Z",
+          "stop_timestamp": "2026-09-17T05:01:01.403358Z",
+          "type": "tool_use",
+          "id": "toolu_01CWiqcx6Guk1SbGTw5PqvSL",
+          "name": "view",
+          "input": {
+            "description": "Verify the final figure",
+            "path": "/mnt/user-data/outputs/pourbaix_Cu_NH3_1mM_0p1M.png"
+          },
+          "message": "Verify the final figure",
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "display_content": {
+            "type": "text",
+            "text": "Verify the final figure"
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:01:02.014488Z",
+          "stop_timestamp": "2026-09-17T05:01:02.014515Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01CWiqcx6Guk1SbGTw5PqvSL",
+          "name": "view",
+          "content": [
+            {
+              "type": "image",
+              "file_uuid": "dabfeff6-8c6a-471b-9e98-7cdc515df737"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "integration_name": "File Creation",
+          "icon_name": "bookText",
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:01:03.397235Z",
+          "stop_timestamp": "2026-09-17T05:01:57.119718Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Preparing the summary with diagram and key findings."
+            },
+            {
+              "summary": "Detailing pH-dependent windows and checking sensitivity of the boundaries."
+            },
+            {
+              "summary": "Assembling the tables and figure into a concise final answer."
+            },
+            {
+              "summary": "Testing how sensitive the narrow window is to constant choices."
+            },
+            {
+              "summary": "Finalizing the constants list and trimming the writeup."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T05:01:57.119805Z",
+          "stop_timestamp": "2026-09-17T05:02:00.677473Z",
+          "type": "text",
+          "text": "**Where soluble Cu–ammine complexes predominate** (red outline in the figure), 1 mM Cu, 0.1 M NH₃(total), 25 °C, I = 0.1 m:\n\n**1. Cu(I) — Cu(NH₃)₂⁺, the main window.** pH ≈ 7.5–11.2, between the Cu(s) line (≈ −0.19 V at pH ≥ 10) and the Cu(II) boundary (≈ +0.29 V at its highest):\n\n| pH | E lower (vs Cu(s)) | E upper | what lies above |\n|---|---|---|---|\n| 8.0 | −0.03 V | +0.28 V | Cu(OH)₂(s) |\n| 9.0 | −0.13 V | +0.27 V | Cu(NH₃)₃²⁺ |\n| 9.5 | −0.16 V | +0.24 V | Cu(NH₃)₄²⁺ |\n| 10.0 | −0.18 V | +0.20 V | Cu(OH)₂(s) |\n| 11.0 | −0.19 V | +0.08 V | Cu(OH)₂(s) |\n\nOutside pH 7.5–11.2, Cu₂O(s) takes over from the diammine. The lower line sits ~0.4 V above the H₂ line, so metallic Cu is unstable toward Cu(NH₃)₂⁺ in this pH range even in the absence of O₂.\n\n**2. Cu(II) — Cu(NH₃)₃²⁺ / Cu(NH₃)₄²⁺, a narrow notch only.** pH ≈ 8.6–9.8 (triammine 8.6–9.05, tetraammine 9.05–9.8), for E above ≈ +0.24 to +0.29 V (in practice capped by the O₂/H₂O line, ≈ +0.70 V at pH 9). Everywhere else in the Cu(II) field, 1 mM Cu precipitates as Cu(OH)₂(s).\n\n**Caveat — the Cu(II) notch is marginal.** Dissolved Cu(II) in equilibrium with Cu(OH)₂(s) peaks at only ~2 mM near pH 9.2, so the notch width hinges on log β₄ − log *Ks0, uncertain by ~±0.3 across the literature:\n\n| variant | Cu(II)-ammine window |\n|---|---|\n| base set (below) | pH 8.6–9.8 |\n| no activity corrections (I = 0) | 8.9–9.4 |\n| Bjerrum ammine constants (log β₄ = 12.67) | 8.2–10.4 |\n| log *Ks0(Cu(OH)₂) = 8.34 (CRC Ksp 2.2×10⁻²⁰) | none |\n| log *Ks0 = 8.94 (fresh precipitate) | 6.4–10.1 |\n| 0.5 M total NH₃ instead of 0.1 M | 5.7–11.5 (Cu(I) window: 5.7–12.6) |\n\nThe Cu(I) window is robust to all of these; log β₂ = 10.86 makes Cu(NH₃)₂⁺ beat Cu₂O comfortably.\n\n**Model and data.** Davies activity coefficients (A = 0.509); NH₄⁺ pKₐ 9.244 (apparent 9.35 on the a(H⁺) scale); ammonia mass balance includes Cu-bound NH₃; solid/aqueous boundaries at total dissolved Cu = 1 mM. Constants at I = 0: E°(Cu²⁺/Cu) 0.339 V, E°(Cu⁺/Cu) 0.518 V (NBS ΔfG°); Cu₂O + 2H⁺ log K = −1.55; Cu(OH)₂(s) log *Ks0 = 8.64; Cu(II) hydrolysis log *β₁₋₄ = −7.95, −16.2, −26.6, −39.7 (IUPAC 2007) plus Cu₂(OH)₂²⁺/Cu₃(OH)₄²⁺; Cu(II)–NH₃ log β₁₋₄ = 4.04, 7.47, 10.27, 11.75 (NIST 46 I = 0 set, β₅ = 11.2); Cu(I)–NH₃ log β₁,₂ = 5.93, 10.86. CuO suppressed as requested; Cu(I) hydroxo complexes omitted (they matter only above pH ≈ 13.8 at this concentration); NH₃ treated as redox-inert.",
+          "citations": []
+        },
+        {
+          "start_timestamp": "2026-09-17T05:02:00.677497Z",
+          "stop_timestamp": "2026-09-17T05:02:01.423768Z",
+          "type": "tool_use",
+          "id": "toolu_01AEfrB59cM7iwq3j1o4aKPU",
+          "name": "present_files",
+          "input": {
+            "filepaths": [
+              "/mnt/user-data/outputs/pourbaix_Cu_NH3_1mM_0p1M.png",
+              "/mnt/user-data/outputs/pourbaix_cu_nh3.py"
+            ]
+          },
+          "message": "Presenting file(s)...",
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "display_content": {
+            "type": "table",
+            "table": [
+              [
+                "filepaths",
+                "['/mnt/user-data/outputs/pourbaix_Cu_NH3_1mM_0p1M.png', '/mnt/user-data/outputs/pourbaix_cu_nh3.py']"
+              ]
+            ]
+          },
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:02:01.453525Z",
+          "stop_timestamp": "2026-09-17T05:02:01.453547Z",
+          "type": "tool_result",
+          "tool_use_id": "toolu_01AEfrB59cM7iwq3j1o4aKPU",
+          "name": "present_files",
+          "content": [
+            {
+              "type": "local_resource",
+              "file_path": "/mnt/user-data/outputs/pourbaix_Cu_NH3_1mM_0p1M.png",
+              "name": "pourbaix Cu NH3 1mM 0p1M",
+              "mime_type": "image/png",
+              "artifact_publishable": false,
+              "uuid": "5008328b-87ee-4a4a-9830-3bcc896bc6a3"
+            },
+            {
+              "type": "local_resource",
+              "file_path": "/mnt/user-data/outputs/pourbaix_cu_nh3.py",
+              "name": "pourbaix cu nh3",
+              "mime_type": "text/x-python",
+              "artifact_publishable": false,
+              "uuid": "9e240d1e-035a-4986-bf06-ce10aa053078"
+            },
+            {
+              "type": "text",
+              "text": "The file cards appear at the end of your reply if it ends with text, otherwise under this step; say they are below only if you finish the reply with text.",
+              "uuid": "133e9100-5b4c-4138-9f10-fd21fcbd1ea1"
+            }
+          ],
+          "is_error": false,
+          "meta": {
+            "output_format_category": "other"
+          },
+          "message": "Presented 2 files",
+          "integration_name": "File Creation",
+          "icon_name": "file",
+          "tool_origin": "first_party"
+        },
+        {
+          "start_timestamp": "2026-09-17T05:02:02.934056Z",
+          "stop_timestamp": "2026-09-17T05:02:02.945807Z",
+          "type": "text",
+          "text": "The script keeps every constant in one dictionary at the top, so you can swap in your preferred stability constants or change the ammonia concentration and re-run.",
+          "citations": []
+        }
+      ],
+      "sender": "assistant",
+      "index": 1,
+      "created_at": "2026-09-17T05:02:03.234107Z",
+      "updated_at": "2026-09-17T05:02:03.234107Z",
+      "truncated": false,
+      "stop_reason": "end_turn",
+      "attachments": [],
+      "files": [],
+      "sync_sources": [],
+      "parent_message_uuid": "01a0adb0-6beb-7bd4-bf13-4042c0dccce6"
+    }
+  ]
+}

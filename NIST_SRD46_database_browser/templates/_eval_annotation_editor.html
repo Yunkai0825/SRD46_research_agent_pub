@@ -1,0 +1,76 @@
+<div class="modal fade" id="annotationEditorModal" tabindex="-1" aria-labelledby="annotationEditorTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h5 class="modal-title" id="annotationEditorTitle">Claim Annotation Editor</h5>
+          <div class="small text-muted" id="annotationEditorContext"></div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger small py-2 d-none" id="annotationSelectionWarning"></div>
+        <div class="mb-3">
+          <label for="annotationParagraphSource" class="form-label fw-semibold small mb-1">Paragraph Source</label>
+          <textarea class="form-control form-control-sm annotation-paragraph-source" id="annotationParagraphSource" rows="8" readonly></textarea>
+          <div class="d-flex justify-content-between align-items-center mt-2 gap-2 flex-wrap">
+            <small class="text-muted" id="annotationSelectionMeta">Select the exact claim span inside this source text.</small>
+            <button class="btn btn-sm btn-outline-primary" id="captureAnnotationSelection" type="button">
+              <i class="bi bi-cursor-text"></i> Use Selection
+            </button>
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-8">
+            <label for="annotationClaimText" class="form-label fw-semibold small mb-1">Selected Claim Text</label>
+            <textarea class="form-control form-control-sm" id="annotationClaimText" rows="3" readonly></textarea>
+          </div>
+          <div class="col-md-4">
+            <label for="annotationClaimType" class="form-label fw-semibold small mb-1">Claim Type</label>
+            <select class="form-select form-select-sm" id="annotationClaimType">
+              {% for claim_type in claim_types %}
+              <option value="{{ claim_type }}">{{ claim_type }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="annotationSupportClass" class="form-label fw-semibold small mb-1">Support Class</label>
+            <select class="form-select form-select-sm" id="annotationSupportClass">
+              {% for support_class in support_classes %}
+              <option value="{{ support_class }}">{{ support_class }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-md-8">
+            <label for="annotationCanonicalIds" class="form-label fw-semibold small mb-1">Canonical IDs</label>
+            <textarea class="form-control form-control-sm" id="annotationCanonicalIds" rows="2" placeholder="One per line or comma-separated"></textarea>
+          </div>
+          <div class="col-12">
+            <label for="annotationEvidenceSnippet" class="form-label fw-semibold small mb-1">Evidence Snippet</label>
+            <textarea class="form-control form-control-sm" id="annotationEvidenceSnippet" rows="3" placeholder="Optional note explaining why this support label was chosen"></textarea>
+          </div>
+        </div>
+
+        <input type="hidden" id="annotationParagraphIndex">
+        <input type="hidden" id="annotationClaimIndex">
+        <input type="hidden" id="annotationClaimStart">
+        <input type="hidden" id="annotationClaimEnd">
+      </div>
+      <div class="modal-footer justify-content-between">
+        <small class="text-muted" id="annotationEditorModeLabel">New annotation</small>
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-outline-danger d-none" id="deleteAnnotationButton">
+            <i class="bi bi-trash"></i> Delete
+          </button>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="saveAnnotationButton">
+            <i class="bi bi-floppy"></i> Save Annotation
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script id="annotationDocData" type="application/json">{{ annotation_doc_data | tojson }}</script>

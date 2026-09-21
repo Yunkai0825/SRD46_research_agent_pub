@@ -1,0 +1,116 @@
+{
+  "uuid": "a74fc7a1-ae1a-4e1d-b8e8-4e74e12fc4c9",
+  "name": "L3_3 Cadmium complexation: chloride versus ammonia",
+  "summary": "",
+  "model": "claude-opus-4-7",
+  "created_at": "2026-09-17T02:00:12.787520Z",
+  "updated_at": "2026-09-17T02:17:22.792910Z",
+  "settings": {
+    "enabled_web_search": true,
+    "paprika_mode": "auto",
+    "enabled_monkeys_in_a_barrel": true,
+    "enabled_saffron": false,
+    "tool_search_mode": "auto",
+    "thinking_mode": "auto",
+    "effort_level": "high",
+    "preview_feature_uses_artifacts": true,
+    "enabled_turmeric": true
+  },
+  "is_starred": false,
+  "is_temporary": false,
+  "project_uuid": "01a0ac0d-20a5-72a5-9b44-bc3c8d3bfde9",
+  "platform": "CLAUDE_AI",
+  "is_wiggle_enabled": true,
+  "effective_thinking_mode": "auto",
+  "current_leaf_message_uuid": "01a0ad17-ca7b-7ed1-b54c-2968c84e3a12",
+  "run": "effort-high_run1",
+  "chat_messages": [
+    {
+      "uuid": "01a0ad17-ca7b-7920-9390-d6cb238520c6",
+      "text": "",
+      "content": [
+        {
+          "start_timestamp": "2026-09-17T02:00:15.119439Z",
+          "stop_timestamp": "2026-09-17T02:00:15.119439Z",
+          "type": "text",
+          "text": "Using hard–soft acid–base reasoning, hypothesise whether the soft acid Cd(II) is held more strongly by the soft base chloride or the borderline base ammonia near neutral pH. Then test it: compute Cd(II) speciation at 1 mM Cd with 0.1 M chloride and, separately, with 0.1 M ammonia, at pH 7, 25 C, I=0.1 m, and compare the free [Cd2+]. State whether the computation confirms or contradicts your HSAB prediction.",
+          "citations": []
+        }
+      ],
+      "sender": "human",
+      "index": 0,
+      "created_at": "2026-09-17T02:00:15.119656Z",
+      "updated_at": "2026-09-17T02:00:15.119656Z",
+      "truncated": false,
+      "attachments": [],
+      "files": [],
+      "sync_sources": [],
+      "parent_message_uuid": "00000000-0000-4000-8000-000000000000"
+    },
+    {
+      "uuid": "01a0ad17-ca7b-7ed1-b54c-2968c84e3a12",
+      "text": "",
+      "content": [
+        {
+          "start_timestamp": "2026-09-17T02:00:15.169872Z",
+          "stop_timestamp": "2026-09-17T02:01:43.463527Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Applying HSAB theory to predict cadmium ion behavior."
+            },
+            {
+              "summary": "Comparing chloride and ammonia softness classifications carefully."
+            },
+            {
+              "summary": "Calculating stability constants for chloride and ammonia complexes."
+            },
+            {
+              "summary": "Adjusting stability constants for ionic strength effects."
+            },
+            {
+              "summary": "Computing corrected complex fractions and free cadmium concentration."
+            },
+            {
+              "summary": "Gathering ammonia stability constants for cadmium complexes."
+            },
+            {
+              "summary": "Weighing pH effects on effective ammonia complexation strength."
+            },
+            {
+              "summary": "Comparing intrinsic ligand strength against pH-driven protonation effects."
+            },
+            {
+              "summary": "Structuring the explanation with prediction, math, and caveats."
+            },
+            {
+              "summary": "Reworking free cadmium fractions under each ligand scenario."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T02:01:43.463574Z",
+          "stop_timestamp": "2026-09-17T02:02:02.668925Z",
+          "type": "text",
+          "text": "**HSAB prediction.** Cd(II) is a soft (d¹⁰, polarizable) Lewis acid, sitting on the soft side of the borderline zone with Zn(II) above it and Hg(II) below. Chloride is a borderline base that leans soft (larger, more polarizable than F⁻ or O-donors), whereas ammonia — despite the modest polarizability of its lone pair — is usually placed on the hard side of borderline (donor atom N with a small, tightly held lone pair, comparable to H₂O/OH⁻). The \"soft prefers soft\" rule therefore predicts Cd(II)–Cl⁻ should be favored over Cd(II)–NH₃ at matched conditions.\n\n**Computation (25 °C, I = 0.1 m, pH 7, C_Cd = 1 mM).**\n\nStability constants I used (β values as cumulative; Cd–Cl corrected to I = 0.1 via Davies, Cd–NH₃ corrections cancel since all Cd(NH₃)ₙ²⁺ carry the same charge as Cd²⁺):\n\n- Cd–Cl (conc. basis, I = 0.1): log β₁,β₂,β₃,β₄ ≈ 1.55, 2.00, 1.66, 1.25\n- Cd–NH₃: log β₁,β₂,β₃,β₄ ≈ 2.60, 4.65, 5.90, 6.60\n- pKₐ(NH₄⁺) = 9.25; Cd²⁺ hydrolysis (log*K₁ ≈ –10.1) is negligible at pH 7.\n\n*Case A — 0.1 M chloride.* With only 1 mM Cd, essentially all Cl⁻ is free, so [Cl⁻] ≈ 0.1 M. The side-reaction coefficient is\n\nα_Cd(Cl) = 1 + 35.5(0.1) + 100(0.1)² + 45.7(0.1)³ + 17.8(0.1)⁴\n        = 1 + 3.55 + 1.00 + 0.046 + 0.002 ≈ 5.60\n\nso [Cd²⁺] ≈ 1 mM / 5.60 ≈ **1.8 × 10⁻⁴ M** (≈18 % of Cd_T is free; the rest is mainly CdCl⁺ and CdCl₂).\n\n*Case B — 0.1 M total ammonia.* At pH 7 only\n\n[NH₃]_free = 0.1 · 1/(1 + 10^(9.25–7)) ≈ 5.6 × 10⁻⁴ M.\n\nThen\n\nα_Cd(NH₃) = 1 + 398·(5.6e-4) + 4.47e4·(5.6e-4)² + 7.94e5·(5.6e-4)³ + 3.98e6·(5.6e-4)⁴\n         = 1 + 0.222 + 0.0139 + 1.4e-4 + 4e-7 ≈ 1.24\n\nso [Cd²⁺] ≈ 1 mM / 1.24 ≈ **8.1 × 10⁻⁴ M** (≈81 % free).\n\n**Verdict.** The chloride medium leaves ~4.5× less free Cd²⁺ than the ammonia medium at pH 7, i.e., Cd(II) is held more strongly by chloride under the stated conditions — the HSAB prediction is **confirmed**.\n\n**But the reason is not entirely HSAB.** If you compare the intrinsic constants at equal *free* ligand concentration, ammonia is by far the better donor to Cd(II) (log β₄ ≈ 6.6 vs ~1.25 for Cl⁻); at 0.1 M *free* NH₃ the free-Cd²⁺ level would collapse below 10⁻⁶ M. What tips the balance at pH 7 is protonation: only ~0.6 % of \"ammonia\" is actually NH₃, while chloride is fully deprotonated and available. Rerun the experiment near pH 9–10 and ammonia wins decisively. So HSAB gets the right answer here largely by accident of pH — proton competition, not orbital matching, does most of the work. This is a general lesson: raw stability constants can point one way while conditional (pH-, ionic-strength-, competing-ligand-dependent) speciation points the other, and the \"soft prefers soft\" heuristic really applies to the intrinsic constants, not the conditional free-metal outcome.",
+          "citations": []
+        }
+      ],
+      "sender": "assistant",
+      "index": 1,
+      "created_at": "2026-09-17T02:02:02.751820Z",
+      "updated_at": "2026-09-17T02:02:02.751820Z",
+      "truncated": false,
+      "stop_reason": "end_turn",
+      "attachments": [],
+      "files": [],
+      "sync_sources": [],
+      "parent_message_uuid": "01a0ad17-ca7b-7920-9390-d6cb238520c6"
+    }
+  ]
+}

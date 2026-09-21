@@ -1,0 +1,17 @@
+#!/bin/sh
+set -eu
+root=$(git rev-parse --show-toplevel)
+checker="$root/scripts/check_publication.py"
+if [ -x "$root/.venv/Scripts/python.exe" ]; then
+    exec "$root/.venv/Scripts/python.exe" "$checker" --pre-push
+elif [ -x "$root/.venv/bin/python" ]; then
+    exec "$root/.venv/bin/python" "$checker" --pre-push
+elif command -v python >/dev/null 2>&1; then
+    exec python "$checker" --pre-push
+elif command -v python3 >/dev/null 2>&1; then
+    exec python3 "$checker" --pre-push
+elif command -v py >/dev/null 2>&1; then
+    exec py -3 "$checker" --pre-push
+fi
+echo 'Python 3.11+ is required for the publication check.' >&2
+exit 1

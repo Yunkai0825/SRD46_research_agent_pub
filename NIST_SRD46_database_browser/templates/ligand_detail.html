@@ -75,24 +75,20 @@
   <h5><i class="bi bi-bar-chart-steps"></i> pK<sub>a</sub> Bracket (protonation forms)</h5>
   <div class="data-scroll">
     <table class="table table-sm data-table">
-      <thead><tr><th>Charge</th><th>Formula</th><th>H<sub>x</sub>L form</th><th>Bracket</th><th>SMILES</th><th>Source</th></tr></thead>
+      <thead><tr><th>Charge</th><th>Formula</th><th>H<sub>x</sub>L form</th><th>SMILES</th><th>Estimated?</th></tr></thead>
       <tbody>
       {% for b in brackets %}
         <tr>
-          <td><span class="charge-badge {{ 'positive' if b.charge and b.charge > 0 else 'negative' if b.charge and b.charge < 0 else '' }}">{{ b.charge if b.charge is not none else '—' }}</span></td>
+          <td><span class="charge-badge {{ 'positive' if b.charge and b.charge > 0 else 'negative' if b.charge and b.charge < 0 else '' }}">{{ b.charge }}</span></td>
           <td class="formula">{{ b.formula or '' }}</td>
           <td>{{ b.HxL_form or '' }}</td>
-          <td>{{ b.bracket_label or '' }}</td>
           <td class="smiles-box small">{{ b.SMILES or '' }}</td>
-          <td>{{ b.model_name or 'Estimated' if b.is_estimated else 'SRD-derived' }}</td>
+          <td>{{ '✓' if b.is_estimated else '' }}</td>
         </tr>
       {% endfor %}
       </tbody>
     </table>
   </div>
-  {% for note in brackets|selectattr('is_estimated')|map(attribute='notes')|reject('none')|unique %}
-  {% if note %}<p class="text-muted small mb-1">{{ note }}</p>{% endif %}
-  {% endfor %}
 </div>
 {% endif %}
 
@@ -121,7 +117,6 @@
 
 {# ── metals with stability data ── #}
 <h5><i class="bi bi-gem"></i> Metals with stability data ({{ metals|length }})</h5>
-<p class="text-muted small">Log K ranges include K-type records only; measurement counts also include thermodynamic and unspecified records.</p>
 <div class="data-scroll">
   <table class="table table-sm table-hover data-table">
     <thead><tr><th>#</th><th>Metal</th><th>Charge</th><th class="text-end">Beta defs</th><th class="text-end">Systems</th><th class="text-end">Entries</th><th class="text-end">log K min</th><th class="text-end">log K max</th><th></th></tr></thead>
@@ -137,7 +132,7 @@
         <td class="text-end">{{ '%.2f'|format(m.logK_min) if m.logK_min is not none else '—' }}</td>
         <td class="text-end">{{ '%.2f'|format(m.logK_max) if m.logK_max is not none else '—' }}</td>
         <td><a class="btn btn-sm btn-outline-primary" href="{{ url_for('stability.stability_search', metal_id=m.metal_id, ligand_id=lig.ligand_id) }}">
-          <i class="bi bi-clipboard-data"></i> Measurements</a></td>
+          <i class="bi bi-clipboard-data"></i> logK</a></td>
       </tr>
     {% endfor %}
     </tbody>

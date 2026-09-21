@@ -4,8 +4,6 @@ import json as _json
 
 from flask import Blueprint, abort, render_template, request
 
-from ._measurement_display import optional_text, plain_definition
-
 _PARENT_PACKAGE = (__package__ or "").rpartition(".")[0]
 
 if _PARENT_PACKAGE:
@@ -71,7 +69,7 @@ def stability_search():
                            l.ligand_id, l.ligand_name_SRD, l.formula AS ligand_formula,
                            s.stability_id, s.constant_type, s.constant_value,
                            s.temperature_c, s.ionic_strength_mol_l,
-                           s.equation_python, s.element_conserved
+                           s.equation_python
                     FROM ligandmetal_card c
                     JOIN metal_card m ON c.metal_id = m.metal_id
                     JOIN ligand_card l ON c.ligand_id = l.ligand_id
@@ -112,7 +110,7 @@ def vlm_detail(stability_id):
                c.ligand_InChi,
                s.stability_id,
                s.constant_type,
-               s.constant_value        AS measurement_value,
+               s.constant_value        AS log_K,
                s.temperature_c         AS temperature,
                s.ionic_strength_mol_l  AS ionic_strength,
                s.solvent_name          AS solvent,
@@ -122,7 +120,6 @@ def vlm_detail(stability_id):
                s.raw_definition,
                s.normalized_definition,
                s.reaction_type,
-               s.element_conserved,
                s.LHS_species_json,
                s.RHS_species_json,
                s.HxL_involved_json,
@@ -138,21 +135,6 @@ def vlm_detail(stability_id):
     if not rows:
         abort(404)
     vlm = rows[0]
-    vlm["source_convention_review"] = "parser:source_convention_review=1" in (vlm.get("notes") or "")
-    for key in ("metal_SMILES", "metal_InChi", "ligand_SMILES", "ligand_InChi", "ligand_class_name",
-                "solvent", "electrolyte", "uncertainty", "notes"):
-        vlm[key] = optional_text(vlm.get(key))
-    for key in ("beta_definition_name", "ligand_HxL_definition"):
-        vlm[key] = plain_definition(vlm.get(key))
-    kind = vlm.get("constant_type")
-    vlm["measurement_label"] = {"K": "log K / β", "H": "ΔH", "S": "ΔS"}.get(kind, "Value")
-    vlm["measurement_title"] = {"K": "Stability constant", "H": "Reaction enthalpy",
-                                "S": "Reaction entropy"}.get(kind, "Measurement")
-    # The SQL export identifies H/S but does not record which of SRD46's dual
-    # kcal/kJ or cal/J display units was exported. Preserve values without guessing units.
-    vlm["units_unrecorded"] = kind in ("H", "S")
-    equation = str(vlm.get("equation") or vlm.get("equation_str") or "").strip()
-    vlm["equation_unresolved"] = vlm.get("element_conserved") == 0 or equation in ("", "*")
 
     for key in ("LHS_species_json", "RHS_species_json", "HxL_involved_json", "equation_tree_json", "citations_json"):
         raw = vlm.get(key)
@@ -202,7 +184,8 @@ def vlm_detail(stability_id):
                    FROM   vlm_literature_sic sic
                    JOIN   literature_alt la ON la.literature_alt_id = sic.literature_alt_id
                    WHERE  sic.vlm_id = ?
-                   ORDER BY la.shortcut, la.literature_alt_id""",
+                   ORDER BY la.shortcut
+                   LIMIT  20""",
                 (vlm_id,),
             ))
         except Exception:
@@ -219,9 +202,9 @@ def vlm_detail(stability_id):
                       c.beta_definition_name,
                       MIN(s.stability_id)              AS first_stability_id,
                       COUNT(s.stability_id)            AS n_entries,
-                      MIN(CASE WHEN s.constant_type = 'K' THEN s.constant_value END)            AS logK_min,
-                      MAX(CASE WHEN s.constant_type = 'K' THEN s.constant_value END)            AS logK_max,
-                      AVG(CASE WHEN s.constant_type = 'K' THEN s.constant_value END)            AS logK_avg,
+                      MIN(s.constant_value)            AS logK_min,
+                      MAX(s.constant_value)            AS logK_max,
+                      AVG(s.constant_value)            AS logK_avg,
                       MIN(s.temperature_c)             AS T_min,
                       MAX(s.temperature_c)             AS T_max,
                       MIN(s.ionic_strength_mol_l)      AS I_min,
@@ -233,9 +216,6 @@ def vlm_detail(stability_id):
                ORDER BY n_entries DESC, c.beta_definition_name""",
             (vlm["metal_id"], vlm["ligand_id"]),
         ))
-
-    for system in system_catalog:
-        system["beta_definition_name"] = plain_definition(system.get("beta_definition_name"))
 
     return render_template(
         "vlm_detail.html",

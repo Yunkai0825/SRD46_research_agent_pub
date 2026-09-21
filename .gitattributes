@@ -1,5 +1,5 @@
-# Consistent source/document line endings.
-* text=auto eol=lf
+# Preserve original file bytes; never substitute Git LFS/filter pointers.
+* -text -filter
 
 # Preserve scientific files and source terms byte for byte.
 /_output/** -text
@@ -12,7 +12,9 @@ docs/licenses/NIST_SRD46_README.txt -text
 *.pdf binary
 *.opju binary
 
-# Large database and final scientific data payloads.
-*.db filter=lfs diff=lfs merge=lfs -text
-*.sqlite3 filter=lfs diff=lfs merge=lfs -text
-**/speciation_full_*.csv filter=lfs diff=lfs merge=lfs -text
+# Store all scientific payloads and numbered ZIP volumes as ordinary Git bytes.
+*.db binary -filter
+*.sqlite3 binary -filter
+*.zip binary -filter
+*.zip.* binary -filter
+**/speciation_full_*.csv -text -filter

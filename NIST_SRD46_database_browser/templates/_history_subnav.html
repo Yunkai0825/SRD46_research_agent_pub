@@ -1,0 +1,20 @@
+{# Shared header-button bar for the History section (Query / Analysis).
+   Included at the top of every history sub-page so past runs from the
+   different agents feel like one cohesive tab. Each sub-page has its own
+   inner Eval/Freeform sub-toggle. Active pill is derived from
+   request.endpoint. #}
+{% set ep = request.endpoint or '' %}
+<ul class="nav nav-pills history-subnav mb-3">
+  <li class="nav-item">
+    <a class="nav-link {{ 'active' if ep.startswith('evaluation.') else '' }}"
+       href="{{ url_for('evaluation.eval_index') }}">
+      <i class="bi bi-search"></i> Query runs
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{ 'active' if ep.startswith('analysis.') else '' }}"
+       href="{{ url_for('analysis.analysis_index') }}">
+      <i class="bi bi-graph-up"></i> Analysis runs
+    </a>
+  </li>
+</ul>

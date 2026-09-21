@@ -5,17 +5,18 @@ message: >-
   NIST SRD 46 dataset listed under references and the original scientific
   publications relevant to the reported constants.
 type: software
-title: SRD-46 Data and Results
+title: SRD-46 Research Agents, Data, and Results
 authors:
   - family-names: Sun
     given-names: Yunkai
     affiliation: Argonne National Laboratory, Lemont, IL, USA
 license: MIT
 abstract: >-
-  Core SQLite databases, Pourbaix species inventories, final scientific
-  results, and a local read-only browser for NIST SRD 46. Source identifiers,
-  references, review flags, and model estimates remain available in the
-  retained database snapshot.
+  Query and Analysis research agents, shared chemical database search tools,
+  SQLite databases, scientific calculation pipelines, and a local browser
+  for NIST SRD 46. The browser provides database exploration, live agent
+  pages, and saved benchmark/freeform results. Source identifiers, references,
+  review flags, and model estimates retain their provenance.
 references:
   - type: data
     title: >-

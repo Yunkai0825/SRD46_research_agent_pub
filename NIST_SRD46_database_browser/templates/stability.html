@@ -34,7 +34,7 @@
 </form>
 
 {% if has_search %}
-<p class="text-muted small">{{ "{:,}".format(total) }} results. H and S are reaction enthalpy and entropy; their units are not recorded in this export.</p>
+<p class="text-muted small">{{ "{:,}".format(total) }} results</p>
 
 {% if results %}
 <div class="data-scroll">
@@ -42,7 +42,7 @@
     <thead>
       <tr>
         <th>#</th><th>Metal</th><th>Ligand</th>
-        <th>Type</th><th>Value</th>
+        <th>Type</th><th>log K / β</th>
         <th>T (°C)</th><th>I (mol/L)</th>
         <th>Equation</th>
       </tr>
@@ -53,11 +53,11 @@
         <td class="row-num"><a href="{{ url_for('stability.vlm_detail', stability_id=r.stability_id) }}" title="View card">{{ (page - 1) * 50 + loop.index }}</a></td>
         <td><a href="{{ url_for('metals.metal_detail', metal_id=r.metal_id) }}">{{ r.metal_name_SRD }}</a></td>
         <td><a href="{{ url_for('ligands.ligand_detail', ligand_id=r.ligand_id) }}">{{ r.ligand_name_SRD }}</a></td>
-        <td>{{ {"K": "log K / β", "H": "ΔH", "S": "ΔS"}.get(r.constant_type, r.constant_type or "—") }}</td>
-        <td><a href="{{ url_for('stability.vlm_detail', stability_id=r.stability_id) }}"><strong>{{ r.constant_value if r.constant_value is not none else "—" }}</strong></a></td>
+        <td>{{ r.constant_type or '' }}</td>
+        <td><a href="{{ url_for('stability.vlm_detail', stability_id=r.stability_id) }}"><strong>{{ r.constant_value }}</strong></a></td>
         <td>{{ r.temperature_c if r.temperature_c is not none else '' }}</td>
         <td>{{ r.ionic_strength_mol_l if r.ionic_strength_mol_l is not none else '' }}</td>
-        <td class="text-mono small">{% if r.element_conserved == 0 or r.equation_python == "*" %}<span class="badge text-bg-warning">Unresolved equation</span>{% else %}{{ r.equation_python or "" }}{% endif %}</td>
+        <td class="text-mono small">{{ r.equation_python or '' }}</td>
       </tr>
     {% endfor %}
     </tbody>

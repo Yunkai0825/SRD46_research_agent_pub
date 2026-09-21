@@ -1,9 +1,0 @@
-{
-  "verdict": "fail",
-  "notes": [
-    "The overall answer was incomplete when the execution limit was reached."
-  ],
-  "request": "For a boiler-water antiscale screen at pH 8.5 (25 C, I=0.1 m), decide whether EDTA or citrate better holds Fe(III) soluble while wasting the least ligand on the hardness ions Ca(II), Mg(II) and Zn(II). For each of the four metals with each of the two ligands at 1 mM metal / 3 mM ligand, compute the metal-bound fraction at pH 8.5, then recommend the ligand giving the best Fe-over-hardness selectivity and quantify the margin in free-[M] terms.",
-  "reason": "timed_out",
-  "status": "timed_out"
-}

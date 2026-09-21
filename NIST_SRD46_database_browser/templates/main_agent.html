@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Main Agent — SRD-46{% endblock %}
+
+{% block content %}
+{% include "_agent_subnav.html" %}
+
+<div class="d-flex align-items-center mb-3">
+  <h3 class="mb-0"><i class="bi bi-diagram-3"></i> Main Agent</h3>
+  <span class="badge bg-secondary ms-2">stub</span>
+</div>
+
+<div class="alert alert-info">
+  <i class="bi bi-info-circle"></i>
+  This is a placeholder for the future <strong>top-level (L0) orchestrator</strong>
+  — a single entry point that will route a user request to the right
+  sub-agent (database <em>query</em> vs. thermodynamic <em>analysis</em>),
+  coordinate multi-step work across both, and synthesize a combined answer.
+  It is not wired up yet; use the sub-agents below directly in the meantime.
+</div>
+
+<div class="row g-3">
+  <div class="col-lg-6">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title"><i class="bi bi-search text-primary"></i> Query Agent</h5>
+        <p class="card-text text-muted">
+          Natural-language questions over the SRD-46 database — stability
+          constants, pK<sub>a</sub>, speciation networks, literature and more.
+          Streams a live trace and returns an evaluated answer.
+        </p>
+        <a href="{{ url_for('agent.agent_page') }}" class="btn btn-primary btn-sm mt-auto align-self-start">
+          <i class="bi bi-arrow-right-circle"></i> Open Query Agent
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title"><i class="bi bi-graph-up text-success"></i> Analysis Agent</h5>
+        <p class="card-text text-muted">
+          Multi-layer thermodynamic analysis — builds equilibrium cards, runs
+          the numeric solver across one or more L1 sub-agent calls, and
+          produces Pourbaix / speciation diagrams with a wall-time timeline.
+        </p>
+        <a href="{{ url_for('analysis_agent.analysis_agent_page') }}" class="btn btn-success btn-sm mt-auto align-self-start">
+          <i class="bi bi-arrow-right-circle"></i> Open Analysis Agent
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-3">
+  <div class="card-header py-2"><i class="bi bi-diagram-2"></i> Planned orchestration</div>
+  <div class="card-body">
+    <pre class="mb-0 small text-muted">
+Main Agent (L0 orchestrator)  ── stub
+   ├─ routes request → Query Agent      (database retrieval)
+   └─ routes request → Analysis Agent   (card build + solver + diagrams)
+        └─ L1 sub-agent calls (parallel-dispatched, see wall-time timeline)
+</pre>
+  </div>
+</div>
+{% endblock %}

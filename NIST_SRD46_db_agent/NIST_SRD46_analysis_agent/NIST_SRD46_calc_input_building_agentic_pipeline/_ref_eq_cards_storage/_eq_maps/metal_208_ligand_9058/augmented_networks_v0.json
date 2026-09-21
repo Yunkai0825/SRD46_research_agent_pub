@@ -1,0 +1,40 @@
+[
+  {
+    "eq_network": "ref_eq_net_22198",
+    "node_count": 4,
+    "temperature": 25.0,
+    "ionic_strength": 0.1,
+    "metal_id": 208,
+    "metal_name": "Zn^[2+]",
+    "ligand_id": 9058,
+    "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+    "ligand_canonical_HxL": "H3L",
+    "_notes": "collection_id=16270, Zn+citrate. logK=6.8, -2.9, 4.77, 2.97"
+  },
+  {
+    "eq_network": "ref_eq_net_ref_eq_net_27522",
+    "node_count": 11,
+    "temperature": 25.0,
+    "ionic_strength": 0.1,
+    "metal_id": 208,
+    "metal_name": "Zn^[2+]",
+    "ligand_id": 10076,
+    "ligand_SMILES": null,
+    "ligand_canonical_HxL": null,
+    "_notes": "auto-fetched hydroxide network (network_db_id=ref_eq_net_27522)",
+    "_auto_fetched": "hydroxide"
+  },
+  {
+    "eq_network": "ref_eq_net_ref_eq_net_22067",
+    "node_count": 3,
+    "temperature": 25.0,
+    "ionic_strength": 0.1,
+    "metal_id": 68,
+    "metal_name": "H+",
+    "ligand_id": 9058,
+    "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+    "ligand_canonical_HxL": "H3L",
+    "_notes": "auto-fetched pKa network (network_db_id=ref_eq_net_22067)",
+    "_auto_fetched": "pka"
+  }
+]

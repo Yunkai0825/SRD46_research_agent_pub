@@ -21,7 +21,6 @@
 </div>
 
 {# ── Statistics ── #}
-<p class="text-muted small">Measurement counts include all types; log K summaries use K measurements.</p>
 {% if stats and stats.n_measurements %}
 <div class="row g-3 mb-4">
   <div class="col-6 col-md-3 col-lg">
@@ -85,7 +84,7 @@
         <td class="text-end">{{ '%.2f'|format(l.logK_min) if l.logK_min is not none else '—' }}</td>
         <td class="text-end">{{ '%.2f'|format(l.logK_max) if l.logK_max is not none else '—' }}</td>
         <td><a class="btn btn-sm btn-outline-primary" href="{{ url_for('stability.stability_search', metal_id=metal.metal_id, ligand_id=l.ligand_id) }}">
-          <i class="bi bi-clipboard-data"></i> Measurements</a></td>
+          <i class="bi bi-clipboard-data"></i> logK</a></td>
       </tr>
     {% endfor %}
     </tbody>

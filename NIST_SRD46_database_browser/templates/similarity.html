@@ -3,7 +3,6 @@
 
 {% block content %}
 <h3 class="mb-3"><i class="bi bi-intersect"></i> Ligand Similarity</h3>
-<p class="text-muted small">Ranked by Morgan Tanimoto for the stored molecular structures. These scores compare 2D structural features; they do not predict metal affinity. Protonation affects scores, and this fingerprint does not distinguish stereoisomers.</p>
 
 <form class="row g-2 mb-3" method="get">
   <div class="col-md-4">
@@ -23,15 +22,6 @@
     {% if has_search %}<a class="btn btn-sm btn-outline-secondary" href="{{ url_for('sim.sim_search') }}">Clear</a>{% endif %}
   </div>
 </form>
-
-{% if message %}<div class="alert alert-info">{{ message }}</div>{% endif %}
-{% if candidates %}
-<ul>
-{% for candidate in candidates %}
-<li><a href="{{ url_for('sim.sim_search', ligand_id=candidate.ligand_id, top_k=top_k) }}">{{ candidate.ligand_name_SRD }} ({{ candidate.ligand_id }})</a></li>
-{% endfor %}
-</ul>
-{% endif %}
 
 {% if has_search %}
 {% if ligand_name %}
@@ -57,20 +47,18 @@
           <span class="sim-score">{{ "%.3f"|format(r.tanimoto_morgan) }}</span>
         </td>
         <td>
-          {% if r.tanimoto_maccs is not none %}
           <div class="sim-bar-bg">
             <div class="sim-bar-fill" style="width: {{ (r.tanimoto_maccs * 100)|round(1) }}%"></div>
           </div>
           <span class="sim-score">{{ "%.3f"|format(r.tanimoto_maccs) }}</span>
-          {% else %}
-          <span class="sim-score" title="MACCS similarity is undefined for fingerprints with no set features">N/A</span>
-          {% endif %}
         </td>
       </tr>
     {% endfor %}
     </tbody>
   </table>
 </div>
+{% else %}
+<div class="alert alert-info">No similarity data found for this ligand.</div>
 {% endif %}
 
 {% else %}

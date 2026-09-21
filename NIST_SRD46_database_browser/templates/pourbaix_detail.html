@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ element }} — Pourbaix Atlas{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('pourbaix.pourbaix_index') }}">Pourbaix Atlas</a></li>
+    <li class="breadcrumb-item active">{{ element }}</li>
+  </ol>
+</nav>
+
+<h3 class="mb-3">{{ element }} — Pourbaix Species</h3>
+
+{% if species %}
+<div class="data-scroll mb-4">
+  <table class="table table-sm table-hover data-table">
+    <thead>
+      <tr>
+        {% for key in species[0].keys() %}
+          <th>{{ key }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+    {% for s in species %}
+      <tr>
+        {% for key in s %}
+          <td>{{ s[key] }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="alert alert-info">No species data found for {{ element }}.</div>
+{% endif %}
+
+{% if md_text %}
+<div class="card p-3 mt-4">
+  <h5>Domain Knowledge</h5>
+  <pre style="white-space: pre-wrap; font-size: 0.85rem;">{{ md_text }}</pre>
+</div>
+{% endif %}
+{% endblock %}

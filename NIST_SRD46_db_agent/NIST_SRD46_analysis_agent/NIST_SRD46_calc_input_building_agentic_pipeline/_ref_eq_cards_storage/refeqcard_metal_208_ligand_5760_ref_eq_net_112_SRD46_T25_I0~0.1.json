@@ -1,0 +1,696 @@
+{
+  "components": {
+    "H+": {
+      "spec_id": "H",
+      "type": "metal",
+      "total": "auto",
+      "charge": 1,
+      "reference": {
+        "source": "NIST SRD-46",
+        "source_database_ID": "metal_68"
+      }
+    },
+    "OH-": {
+      "spec_id": "OH",
+      "type": "ligand",
+      "total": "auto",
+      "charge": -1,
+      "reference": {
+        "source": "NIST SRD-46",
+        "source_database_ID": "ligand_10076"
+      },
+      "ligand_canonical_HOL": {
+        "H": 0,
+        "O": 0,
+        "L": 1
+      }
+    },
+    "Zn2+": {
+      "spec_id": "M1",
+      "type": "metal",
+      "total": 0.001,
+      "charge": 2,
+      "reference": {
+        "source": "NIST SRD-46",
+        "source_database_ID": "metal_208",
+        "name": "Zn^[2+]",
+        "smiles": "[Zn+2]",
+        "inchi": "InChI=1S/Zn/q+2"
+      }
+    },
+    "Glycine": {
+      "spec_id": "L1",
+      "type": "ligand",
+      "total": 0.01,
+      "charge": -1,
+      "reference": {
+        "source": "NIST SRD-46",
+        "source_database_ID": "ligand_5760",
+        "name": "Aminoacetic acid (Glycine)",
+        "smiles": "NCC(=O)O",
+        "inchi": "InChI=1S/C2H5NO2/c3-1-2(4)5/h1,3H2,(H,4,5)",
+        "canonical_HOL_series": [
+          "H2L",
+          "HL",
+          "L"
+        ]
+      },
+      "ligand_canonical_HOL": {
+        "H": 1,
+        "O": 0,
+        "L": 1
+      },
+      "HOL": "HL"
+    }
+  },
+  "ionic_strength": 0.1,
+  "ionic_strength_mode": "fixed",
+  "equations": {
+    "metal_ligand_system_aqueous_only": [
+      {
+        "metal_ligand_system": {
+          "metal": [
+            [
+              "M1",
+              "Zn2+"
+            ]
+          ],
+          "ligand": [
+            [
+              "L1",
+              "Glycine"
+            ]
+          ],
+          "ligand_canonical_HOL": {
+            "H": 1,
+            "O": 0,
+            "L": 1
+          }
+        },
+        "selected_network_ids": [
+          112
+        ],
+        "equilibria": [
+          {
+            "equation_str": "[<L1>]^2 + [<M1>] <=> [<M1><L1>2]",
+            "log_K": 9.19,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.1,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_93936"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<L1>",
+                "power": 2,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<M1><L1>2",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          },
+          {
+            "equation_str": "[<L1>] + [<M1>] <=> [<M1><L1>]",
+            "log_K": 4.96,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.1,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_93924"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<L1>",
+                "power": 1,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<M1><L1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          },
+          {
+            "equation_str": "[<L1>]^3 + [<M1>] <=> [<M1><L1>3]",
+            "log_K": 11.6,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.1,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_93949"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<L1>",
+                "power": 3,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<M1><L1>3",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "metal_ligand_system": {
+          "metal": [
+            [
+              "M1",
+              "Zn2+"
+            ]
+          ],
+          "ligand": [
+            [
+              "OH",
+              "OH-"
+            ]
+          ],
+          "ligand_canonical_HOL": {
+            "H": 0,
+            "O": 0,
+            "L": 1
+          }
+        },
+        "selected_network_ids": [
+          27522
+        ],
+        "equilibria": [
+          {
+            "equation_str": "[<OH>] + [<M1>] <=> [<M1><OH>]",
+            "log_K": 4.7,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.1,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_170929"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<OH>",
+                "power": 1,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<M1><OH>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          },
+          {
+            "equation_str": "[<OH>]^2 + [<M1>] <=> [<M1><OH>2]",
+            "log_K": -10.2,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.0,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_170935"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<OH>",
+                "power": 2,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<M1><OH>2",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          },
+          {
+            "equation_str": "[<OH>]^3 + [<M1>] <=> [<M1><OH>3]",
+            "log_K": 13.9,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.0,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_170937"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<OH>",
+                "power": 3,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<M1><OH>3",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          },
+          {
+            "equation_str": "[<OH>]^4 + [<M1>] <=> [<M1><OH>4]",
+            "log_K": 15.5,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.0,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_170939"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<OH>",
+                "power": 4,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<M1><OH>4",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "metal_ligand_system": {
+          "metal": [
+            [
+              "H",
+              "H+"
+            ]
+          ],
+          "ligand": [
+            [
+              "L1",
+              "Glycine"
+            ]
+          ],
+          "ligand_canonical_HOL": {
+            "H": 1,
+            "O": 0,
+            "L": 1
+          }
+        },
+        "selected_network_ids": [
+          1
+        ],
+        "equilibria": [
+          {
+            "equation_str": "[<H><L1>] + [<H>] <=> [<H>2<L1>]",
+            "log_K": 2.33,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.1,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_93627"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<H><L1>",
+                "power": 1,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<H>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<H>2<L1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          },
+          {
+            "equation_str": "[<H>] + [<L1>] <=> [<H><L1>]",
+            "log_K": 9.57,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.1,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_93606"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<H>",
+                "power": 1,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<L1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<H><L1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "metal_ligand_system_dissociation_only": [
+      {
+        "metal_ligand_system": {
+          "metal": [
+            [
+              "M1",
+              "Zn2+"
+            ]
+          ],
+          "ligand": [
+            [
+              "OH",
+              "OH-"
+            ]
+          ],
+          "ligand_canonical_HOL": {
+            "H": 0,
+            "O": 0,
+            "L": 1
+          }
+        },
+        "selected_network_ids": [
+          27522
+        ],
+        "equilibria": [
+          {
+            "equation_str": "[<M1><OH>2(s,am)] <=> [<OH>]^2 + [<M1>]",
+            "log_K": -14.82,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.1,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_170944"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<M1><OH>2(s,am)",
+                "power": 1,
+                "phase": "solid"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<OH>",
+                "power": 2,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          },
+          {
+            "equation_str": "[<M1><OH>2(s,beta1)] <=> [<OH>]^2 + [<M1>]",
+            "log_K": -15.54,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.1,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_170948"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<M1><OH>2(s,beta1)",
+                "power": 1,
+                "phase": "solid"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<OH>",
+                "power": 2,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          },
+          {
+            "equation_str": "[<M1><OH>2(s,beta2)] <=> [<OH>]^2 + [<M1>]",
+            "log_K": -15.5,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.1,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_170950"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<M1><OH>2(s,beta2)",
+                "power": 1,
+                "phase": "solid"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<OH>",
+                "power": 2,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          },
+          {
+            "equation_str": "[<M1><OH>2(s,gamma)] <=> [<OH>]^2 + [<M1>]",
+            "log_K": -15.56,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.1,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_170952"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<M1><OH>2(s,gamma)",
+                "power": 1,
+                "phase": "solid"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<OH>",
+                "power": 2,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          },
+          {
+            "equation_str": "[<M1><OH>2(s,delta)] <=> [<OH>]^2 + [<M1>]",
+            "log_K": -15.45,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.1,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_170954"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<M1><OH>2(s,delta)",
+                "power": 1,
+                "phase": "solid"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<OH>",
+                "power": 2,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          },
+          {
+            "equation_str": "[<M1><OH>2(s,epsilon)] <=> [<OH>]^2 + [<M1>]",
+            "log_K": -15.77,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.1,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_170956"
+            },
+            "include_calculation": true,
+            "additional_notes": "",
+            "LHS": [
+              {
+                "species": "<M1><OH>2(s,epsilon)",
+                "power": 1,
+                "phase": "solid"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<OH>",
+                "power": 2,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              }
+            ]
+          },
+          {
+            "equation_str": "[H2O] + [<M1>O(s)] <=> [<M1>] + [O<H>]^2",
+            "log_K": -15.96,
+            "constant_type": "log(K)",
+            "data_source_temperature": 25.0,
+            "data_source_ionic_strength": 0.1,
+            "reference": {
+              "source": "NIST SRD-46",
+              "source_database_ID": "vlm_170958"
+            },
+            "include_calculation": true,
+            "additional_notes": "H2O (activity=1) omitted from LHS array",
+            "LHS": [
+              {
+                "species": "H2O",
+                "power": 1,
+                "phase": "aqueous"
+              },
+              {
+                "species": "<M1>O(s)",
+                "power": 1,
+                "phase": "solid"
+              }
+            ],
+            "RHS": [
+              {
+                "species": "<M1>",
+                "power": 1,
+                "phase": "aqueous"
+              },
+              {
+                "species": "O<H>",
+                "power": 2,
+                "phase": "aqueous"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "excluded_species": []
+}

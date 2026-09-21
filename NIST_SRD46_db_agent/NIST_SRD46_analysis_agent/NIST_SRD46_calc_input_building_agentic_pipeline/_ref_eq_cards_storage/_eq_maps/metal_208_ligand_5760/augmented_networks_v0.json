@@ -1,0 +1,40 @@
+[
+  {
+    "eq_network": "ref_eq_net_112",
+    "node_count": 3,
+    "temperature": 25.0,
+    "ionic_strength": 0.1,
+    "metal_id": 208,
+    "metal_name": "Zn^[2+]",
+    "ligand_id": 5760,
+    "ligand_SMILES": "NCC(=O)O",
+    "ligand_canonical_HxL": "HL",
+    "_notes": "collection_id=44, Zn+glycine. ML(logK=4.96), ML2(logK=9.19), ML3(logK=11.6)"
+  },
+  {
+    "eq_network": "ref_eq_net_ref_eq_net_27522",
+    "node_count": 11,
+    "temperature": 25.0,
+    "ionic_strength": 0.1,
+    "metal_id": 208,
+    "metal_name": "Zn^[2+]",
+    "ligand_id": 10076,
+    "ligand_SMILES": null,
+    "ligand_canonical_HxL": null,
+    "_notes": "auto-fetched hydroxide network (network_db_id=ref_eq_net_27522)",
+    "_auto_fetched": "hydroxide"
+  },
+  {
+    "eq_network": "ref_eq_net_ref_eq_net_1",
+    "node_count": 2,
+    "temperature": 25.0,
+    "ionic_strength": 0.1,
+    "metal_id": 68,
+    "metal_name": "H+",
+    "ligand_id": 5760,
+    "ligand_SMILES": "NCC(=O)O",
+    "ligand_canonical_HxL": "HL",
+    "_notes": "auto-fetched pKa network (network_db_id=ref_eq_net_1)",
+    "_auto_fetched": "pka"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "_notes": "Quick Nernst E vs pH for the Cu(II)/Cu(0) couple. No card chemistry required beyond the lookup table, but a card source is still parsed for context (T, I).",
+  "sweep_method": "nernst_simple",
+  "sweep_axes": [
+    {"name": "pH", "min": 0.0, "max": 14.0, "n_points": 71}
+  ],
+  "ionic_strength": {"mode": "fixed", "value": 0.1},
+  "temperature_C": 25.0,
+  "nernst_couple": {
+    "metal":      "Cu",
+    "oxidised":   "Cu2+",
+    "reduced":    "Cu",
+    "total_metal": 1.0e-3
+  },
+  "output_dir": null
+}

@@ -1,0 +1,333 @@
+{% extends "base.html" %}
+{% block title %}{{ question_id }} · {{ model }} · Batch {{ batch }} — Evaluation{% endblock %}
+
+{% block main_class %}container-fluid my-4 px-3 px-xl-4{% endblock %}
+
+{% block content %}
+<div class="eval-page">
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb" class="mb-2">
+  <ol class="breadcrumb small">
+    <li class="breadcrumb-item"><a href="{{ url_for('evaluation.eval_index') }}">Evaluation</a></li>
+    <li class="breadcrumb-item"><a href="{{ url_for('evaluation.eval_index', model=model) }}">{{ model }}</a></li>
+    <li class="breadcrumb-item active">{{ question_id }} · batch {{ batch }}</li>
+  </ol>
+</nav>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3 class="mb-0">{{ question_id }} <small class="text-muted">{{ model }} / batch {{ batch }}</small></h3>
+  <div>
+    {# ── Mode buttons ── #}
+    {% if mode == 'claims' %}
+      <span class="badge bg-success"><i class="bi bi-check2-circle"></i> Claims mode</span>
+      <a href="{{ url_for('evaluation.eval_run', model=model, question_id=question_id, batch=batch, mode='raw') }}"
+         class="btn btn-sm btn-outline-dark"><i class="bi bi-file-text"></i> Raw</a>
+      <a href="{{ url_for('evaluation.eval_run', model=model, question_id=question_id, batch=batch, mode='regex', argo=0) }}"
+         class="btn btn-sm btn-outline-info"><i class="bi bi-regex"></i> Regex</a>
+    {% elif mode == 'regex' %}
+      <span class="badge bg-info text-dark"><i class="bi bi-regex"></i> Regex mode</span>
+      <a href="{{ url_for('evaluation.eval_run', model=model, question_id=question_id, batch=batch, mode='raw') }}"
+         class="btn btn-sm btn-outline-dark"><i class="bi bi-file-text"></i> Raw</a>
+      <a href="{{ url_for('evaluation.eval_run', model=model, question_id=question_id, batch=batch, mode='claims') }}"
+         class="btn btn-sm btn-outline-success enrich-action"
+         data-loading-text="Running claim analysis..."><i class="bi bi-check2-circle"></i> Claims</a>
+    {% else %}
+      <span class="badge bg-secondary"><i class="bi bi-lightning-charge"></i> Raw view</span>
+      <a href="{{ url_for('evaluation.eval_run', model=model, question_id=question_id, batch=batch, mode='claims') }}"
+         class="btn btn-sm btn-outline-success enrich-action"
+        data-loading-text="{% if claim_cache_complete %}Loading cached claim analysis...{% elif claim_cache_state == 'partial' %}Loading partial claim analysis...{% else %}Running claim analysis...{% endif %}"><i class="bi bi-check2-circle"></i> {% if claim_cache_complete %}View Claim Analysis{% elif claim_cache_state == 'partial' %}View Partial Claim Analysis{% else %}Start Claim Analysis{% endif %}</a>
+      <a href="{{ url_for('evaluation.eval_run', model=model, question_id=question_id, batch=batch, mode='regex', argo=0) }}"
+         class="btn btn-sm btn-outline-info enrich-action"
+         data-loading-text="Running regex enrichment..."><i class="bi bi-regex"></i> Regex</a>
+    {% endif %}
+    {% if mode == 'claims' and annotation_doc_data %}
+    <button class="btn btn-sm btn-outline-warning" id="toggleAnnotationEditMode" type="button" data-edit-mode="off">
+      <i class="bi bi-pencil-square"></i> Enable Annotation Edit Mode
+    </button>
+    <div class="btn-group btn-group-sm" role="group" aria-label="Annotation history actions">
+      <button class="btn btn-sm btn-outline-secondary" id="undoAnnotationChange" type="button"
+              title="Undo the last saved annotation change"
+              {% if annotation_undo_depth == 0 %}disabled{% endif %}>
+        <i class="bi bi-arrow-counterclockwise"></i> Undo
+      </button>
+      <button class="btn btn-sm btn-outline-secondary" id="redoAnnotationChange" type="button"
+              title="Redo the last undone annotation change"
+              {% if annotation_redo_depth == 0 %}disabled{% endif %}>
+        <i class="bi bi-arrow-clockwise"></i> Redo
+      </button>
+    </div>
+    <button class="btn btn-sm btn-outline-danger" id="restorePristineAnnotations" type="button"
+            title="Remove the manual override and its undo/redo history"
+            {% if not annotation_manual_override and annotation_undo_depth == 0 and annotation_redo_depth == 0 %}disabled{% endif %}>
+      <i class="bi bi-stars"></i> Restore Pristine Results
+    </button>
+    {% endif %}
+    <button class="btn btn-sm btn-outline-secondary" id="toggleSidebar">
+      <i class="bi bi-layout-sidebar-reverse"></i> References
+    </button>
+    <div class="dropdown d-inline-block ms-1">
+      <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button"
+              id="layoutDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-layout-three-columns"></i> Panels
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="layoutDropdown">
+        {% for pname in available_panels %}
+        <li>
+          <a class="dropdown-item panel-toggle {% if pname in active_panels %}active{% endif %}"
+             href="#" data-panel="{{ pname }}">
+            <i class="bi bi-check2 me-1 {% if pname not in active_panels %}invisible{% endif %}"></i>
+            {{ pname | replace('_', ' ') | title }}
+          </a>
+        </li>
+        {% endfor %}
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#" id="applyPanelLayout">Apply</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{# ── Alert for raw mode ── #}
+{% if mode == 'raw' %}
+<div class="alert alert-light border small py-2 mb-3">
+  {% if claim_cache_state == 'manual' %}
+  A manual claim-annotation override is available for this run. Use <strong>View Claim Analysis</strong> to inspect or revise the browser-edited annotations.
+  {% elif claim_cache_complete %}
+  Cached claim analysis is available for this run. Use <strong>View Claim Analysis</strong> to inspect the saved annotations without rerunning enrichment.
+  {% elif claim_cache_state == 'partial' %}
+  A saved partial claim-analysis checkpoint is available for this run. Use <strong>View Partial Claim Analysis</strong> to inspect the current annotations without starting a new enrichment pass.
+  {% else %}
+  Fast raw view. Use <strong>Start Claim Analysis</strong> to run Argo claim classification + grounding.
+  {% endif %}
+</div>
+{% endif %}
+
+{% if claim_mode_message %}
+<div class="alert alert-warning border small py-2 mb-3">
+  {{ claim_mode_message }}
+</div>
+{% endif %}
+
+{% if mode == 'claims' and annotation_doc_data %}
+<div class="alert alert-warning border small py-2 mb-3 d-none" id="annotationEditBanner">
+  Annotation edit mode is on. Click a highlighted claim to edit it, or click inside a paragraph block to add a new annotation. Undo and redo apply to saved browser annotation changes. Restore Pristine Results removes the manual override and its history so only the generated annotations remain.
+</div>
+{% endif %}
+
+{# ── Claim summary badge ── #}
+{% if mode == 'claims' and total_claims > 0 %}
+<div class="row mb-3 align-items-center">
+  <div class="col-auto">
+    <span class="badge bg-success fs-6">{{ supported_claims }}/{{ total_claims }} claims grounded</span>
+  </div>
+  {% if unsupported_claims > 0 %}
+  <div class="col-auto">
+    <span class="badge bg-danger fs-6">{{ unsupported_claims }} unsupported</span>
+  </div>
+  {% endif %}
+  <div class="col-auto">
+    {% if annotation_manual_override %}
+    <span class="badge bg-warning text-dark">Manual annotation override</span>
+    {% else %}
+    <span class="badge bg-secondary">Generated annotations</span>
+    {% endif %}
+  </div>
+  {% if annotation_updated_at %}
+  <div class="col-auto">
+    <small class="text-muted">Updated {{ annotation_updated_at }}</small>
+  </div>
+  {% endif %}
+  <div class="col-auto">
+    <small class="text-muted">Click a highlighted claim to filter references, or enable edit mode to revise annotations.</small>
+  </div>
+</div>
+
+<div class="claim-support-tabs nav nav-tabs mb-3" id="claimSupportTabs" aria-label="Support class filters">
+  <button class="nav-link active claim-support-tab-all" type="button" data-support-filter="all">
+    All <span class="claim-support-tab-count">{{ total_claims }}</span>
+  </button>
+  <button class="nav-link claim-support-tab-direct" type="button" data-support-filter="direct">
+    Direct <span class="claim-support-tab-count">{{ support_counts['direct'] }}</span>
+  </button>
+  <button class="nav-link claim-support-tab-inferred" type="button" data-support-filter="inferred">
+    Inferred <span class="claim-support-tab-count">{{ support_counts['inferred'] }}</span>
+  </button>
+  <button class="nav-link claim-support-tab-domain_knowledge" type="button" data-support-filter="domain_knowledge">
+    Domain Knowledge <span class="claim-support-tab-count">{{ support_counts['domain_knowledge'] }}</span>
+  </button>
+  <button class="nav-link claim-support-tab-no_tool_data" type="button" data-support-filter="no_tool_data">
+    No Tool Data <span class="claim-support-tab-count">{{ support_counts['no_tool_data'] }}</span>
+  </button>
+  <button class="nav-link claim-support-tab-unsupported" type="button" data-support-filter="unsupported">
+    Unsupported <span class="claim-support-tab-count">{{ support_counts['unsupported'] }}</span>
+  </button>
+</div>
+{% endif %}
+
+{# ── Claim type legend ── #}
+{% if mode == 'claims' %}
+<div class="claim-legend mb-3">
+  <small class="text-muted me-2">Claim types:</small>
+  <span class="claim-legend-item claim-counting">counting</span>
+  <span class="claim-legend-item claim-comparison">comparison</span>
+  <span class="claim-legend-item claim-trend">trend</span>
+  <span class="claim-legend-item claim-listing">listing</span>
+  <span class="claim-legend-item claim-range">range</span>
+  <span class="claim-legend-item claim-exact_value">exact value</span>
+  <span class="claim-legend-item claim-property_attribution">property</span>
+  <span class="claim-legend-item claim-existence_absence">exist/absent</span>
+  <span class="claim-legend-item claim-calculation">calculation</span>
+  <span class="claim-legend-item claim-citation">citation</span>
+  <span class="claim-legend-item claim-filler">filler</span>
+</div>
+{% endif %}
+
+{% include "_eval_comments_bar.html" %}
+
+<!-- Main layout: panels + right side panels + sidebar -->
+<div class="eval-layout" id="evalLayout">
+  <div class="eval-panels" id="evalMainPanels">
+
+    {% if mode == 'claims' %}
+    {# ── Claims mode: single answer panel ── #}
+    <div class="eval-panel eval-panel-wide" id="panelAnswer">
+      <div class="eval-panel-header">
+        <i class="bi bi-chat-square-text"></i> Answer — Claim Analysis
+      </div>
+      <div class="eval-panel-body" id="claimSupportScope" data-support-filter="all">
+        {% if claim_html %}
+          {{ claim_html | safe }}
+        {% else %}
+          <p class="text-muted">Claim analysis returned no results.</p>
+        {% endif %}
+      </div>
+    </div>
+
+    {% else %}
+    {# ── Raw / Regex mode: result panel ── #}
+    <div class="eval-panel eval-panel-wide" id="panelResult">
+      <div class="eval-panel-header"><i class="bi bi-file-earmark-text"></i> Result</div>
+      <div class="eval-panel-body">
+        {% if rendered_html.get('result') %}
+          {{ rendered_html['result'] | safe }}
+        {% else %}
+          <p class="text-muted">No result file found.</p>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="eval-splitter" data-axis="x" data-resize-prev="evalMainPanels"
+       data-resize-next="evalSidePanels" title="Drag to resize columns"
+       role="separator" aria-orientation="vertical"></div>
+
+  {# ── Right-side configurable panels (preplan, plan, ref_ids, history) ── #}
+  {# Available for every local run. #}
+  
+  <div class="eval-side-panels" id="evalSidePanels">
+    {% for panel in side_panels %}
+    <div class="eval-side-panel" id="sidePanel_{{ panel.id }}">
+      <div class="eval-panel-header">
+        <i class="bi {{ panel.icon }}"></i> {{ panel.label }}
+      </div>
+      <div class="eval-panel-body">
+        {% if panel.html %}
+          {{ panel.html | safe }}
+        {% else %}
+          <p class="text-muted">{{ panel.empty_msg }}</p>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Reference sidebar -->
+
+  <div class="eval-splitter" data-axis="x" data-resize-prev="evalSidePanels"
+       data-resize-next="evalSidebar" title="Drag to resize columns"
+       role="separator" aria-orientation="vertical"></div>
+  
+  <div class="eval-sidebar" id="evalSidebar">
+    <h6 class="mb-2">
+      <i class="bi bi-card-list"></i> Reference Browser
+      {% if mode == 'claims' %}
+      <button class="btn btn-sm btn-link p-0 ms-2" id="showAllRefs" style="display:none;">
+        Show all
+      </button>
+      {% endif %}
+    </h6>
+    <div class="sidebar-body">
+    <div id="refFilterStatus" class="small text-muted mb-2" style="display:none;"></div>
+
+    {% for entity_type, refs in refs_by_type.items() %}
+    <div class="ref-group mb-2">
+      <button class="btn btn-sm btn-outline-secondary w-100 text-start ref-group-toggle"
+              data-bs-toggle="collapse" data-bs-target="#refGroup_{{ entity_type }}">
+        <i class="bi bi-chevron-right"></i>
+        <strong>{{ entity_type }}</strong>
+        <span class="badge bg-secondary">{{ refs|length }}</span>
+      </button>
+      <div class="collapse" id="refGroup_{{ entity_type }}">
+        {% for ref in refs %}
+        <div class="ref-card" data-prefixed-id="{{ ref.prefixed_id }}">
+          <div class="ref-card-header" onclick="loadRefCard('{{ ref.prefixed_id }}', this)">
+            <code>{{ ref.prefixed_id }}</code>
+            {% if ref.name %}<small class="text-muted ms-1">{{ ref.name }}</small>{% endif %}
+          </div>
+          <div class="ref-card-body" style="display:none;"></div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+
+    {% if not refs_by_type %}
+    <p class="text-muted small">No entity references found.</p>
+    {% endif %}
+    </div>{# /.sidebar-body #}
+  </div>
+</div>
+
+{# ── Full-width Tool Results panel (below main layout) ── #}
+{% if tool_eval_html %}
+<div class="eval-tool-results-panel mt-3" id="toolResultsPanel">
+  <div class="eval-panel-header d-flex justify-content-between align-items-center">
+    <span><i class="bi bi-tools"></i> Tool Results — Agent Database Output</span>
+    <button class="btn btn-sm btn-link text-white p-0" type="button"
+            data-bs-toggle="collapse" data-bs-target="#toolResultsBody">
+      <i class="bi bi-chevron-down"></i>
+    </button>
+  </div>
+  <div class="eval-tool-results-body collapse show" id="toolResultsBody">
+    {{ tool_eval_html | safe }}
+  </div>
+</div>
+{% endif %}
+
+<!-- Workflow diagram -->
+{% if mermaid_chart %}
+<div class="mt-4">
+  <h5><i class="bi bi-diagram-3"></i> Agent Workflow</h5>
+  <div class="eval-mermaid-container">
+    <pre class="mermaid">{{ mermaid_chart }}</pre>
+  </div>
+</div>
+{% endif %}
+
+{% if mode == 'claims' and annotation_doc_data %}
+{% include "_eval_annotation_editor.html" %}
+{% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<link href="{{ url_for('static', filename='eval.css') }}" rel="stylesheet">
+{% if mermaid_chart %}
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad: true, theme: 'default'});</script>
+{% endif %}
+<script src="{{ url_for('static', filename='eval.js') }}"></script>
+<script src="{{ url_for('static', filename='eval_comments.js') }}"></script>
+<script src="{{ url_for('static', filename='eval_annotations.js') }}"></script>
+{% endblock %}

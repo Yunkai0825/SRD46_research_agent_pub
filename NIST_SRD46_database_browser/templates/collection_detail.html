@@ -151,7 +151,7 @@
                               <td>{{ vlm_link(nd.vlm_id) }}</td>
                               <td>
                                 <span class="text-muted small">{{ nd.beta_definition_id }}</span><br>
-                                {{ nd.beta_definition_name }}
+                                {{ nd.beta_definition_name|safe }}
                               </td>
                               <td><code class="small">{{ nd.equation_python }}</code></td>
                               <td>{{ nd.constant_type }}</td>

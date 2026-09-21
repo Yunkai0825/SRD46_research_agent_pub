@@ -1,0 +1,618 @@
+{% extends "base.html" %}
+{% block title %}Agent — SRD-46{% endblock %}
+
+{% block main_class %}container-fluid my-3 px-3{% endblock %}
+
+{% block content %}
+{% include "_agent_subnav.html" %}
+<style>
+  .agent-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .agent-eval-frame-wrap {
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: #fff;
+  }
+  .agent-eval-frame-wrap .eval-frame-header {
+    background: #0d6efd;
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .agent-eval-frame-wrap iframe {
+    width: 100%;
+    height: 80vh;
+    border: 0;
+    display: block;
+  }
+  .agent-terminal {
+    background: #000;
+    color: #00ff7f;
+    font-family: "Cascadia Code", "Consolas", "Courier New", monospace;
+    font-size: 0.78rem;
+    line-height: 1.35;
+    padding: 0.75rem 1rem;
+    border-radius: 0.4rem;
+    height: 60vh;
+    min-height: 240px;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    border: 1px solid #333;
+    resize: vertical;
+  }
+  .agent-terminal .log-line { display: block; }
+  .agent-terminal .log-DEBUG { color: #8ab4f8; }
+  .agent-terminal .log-INFO  { color: #00ff7f; }
+  .agent-terminal .log-WARN, .agent-terminal .log-WARNING { color: #ffb84d; }
+  .agent-terminal .log-ERROR, .agent-terminal .log-CRITICAL { color: #ff6b6b; font-weight: 600; }
+  .agent-terminal .log-meta  { color: #888; }
+
+  /* Markdown rendering inside the simulated panels */
+  .rendered-md table {
+    width: 100%;
+    font-size: 0.82rem;
+    border-collapse: collapse;
+    margin: 0.5rem 0;
+  }
+  .rendered-md table th, .rendered-md table td {
+    border: 1px solid #dee2e6;
+    padding: 4px 8px;
+    vertical-align: top;
+  }
+  .rendered-md table th {
+    background: #f1f3f5;
+    font-weight: 600;
+  }
+  .rendered-md code {
+    background: #f1f3f5;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 0.85em;
+  }
+  .rendered-md h2, .rendered-md h3, .rendered-md h4 {
+    margin-top: 0.6rem;
+  }
+
+  /* Scrollable bodies for the long simulation panels */
+  .panel-scroll {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  .panel-scroll-md {
+    max-height: 45vh;
+    overflow-y: auto;
+  }
+
+  .agent-status-pill {
+    font-size: 0.78rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  .agent-status-starting  { background: #fff3cd; color: #664d03; }
+  .agent-status-running   { background: #cfe2ff; color: #084298; }
+  .agent-status-completed { background: #d1e7dd; color: #0f5132; }
+  .agent-status-error     { background: #f8d7da; color: #842029; }
+
+  /* When eval frame is shown, terminal is pushed below — already the layout. */
+  #termCard.terminal-running { border-color: #0d6efd; }
+</style>
+
+<h3 class="mb-3"><i class="bi bi-robot"></i> SRD-46 Query Agent</h3>
+
+{# ── Launch form ─────────────────────────────────────────────── #}
+<div class="card mb-3" id="launchCard">
+  <div class="card-header bg-dark text-light py-2">
+    <i class="bi bi-rocket-takeoff"></i> Launch Query
+  </div>
+  <div class="card-body">
+    <form id="agent-form">
+      <div class="mb-2">
+      <div class="mb-2">
+        <label class="form-label small mb-1" for="promptInput">Prompt</label>
+        <textarea class="form-control" id="promptInput" name="prompt" rows="3"
+                  placeholder="e.g. Compare the stability constants of Cu(II) with EDTA vs NTA at 25 °C, ionic strength 0.1 M."></textarea>
+      </div>
+
+      <div class="alert alert-warning py-2 px-3 small mb-2" role="alert">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        The agent uses your configured Argo API identity. Enter an ANL API
+        user below only to override that setting.
+      </div>
+
+      <div class="row g-2 align-items-end">
+        <div class="col-md-3 col-sm-6">
+          <label class="form-label small mb-1" for="apiUserInput">
+            ANL API user
+            <i class="bi bi-info-circle text-muted"
+               title="Your ANL username — sent as the 'user' field on every Argo request. Defaults to whatever ARGO_API_USER / argo_config.API_USER is set to on the server."></i>
+          </label>
+          <input type="text" class="form-control form-control-sm" id="apiUserInput" name="api_user"
+                 value="{{ default_api_user|default('') }}"
+                 placeholder="firstname.lastname"
+                 autocomplete="username" spellcheck="false">
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <label class="form-label small mb-1" for="modelSelect">Model</label>
+          <select class="form-select form-select-sm" id="modelSelect" name="model">
+            <option value="gpt54" selected>gpt54</option>
+            <option value="gpt5">gpt5</option>
+            <option value="claudeopus46">claudeopus46</option>
+          </select>
+        </div>
+        <div class="col-md-2 col-sm-3">
+          <label class="form-label small mb-1" for="maxTurns">Max turns</label>
+          <input type="number" class="form-control form-control-sm" id="maxTurns" name="max_turns"
+                 value="20" min="1" max="60">
+        </div>
+        <div class="col-md-2 col-sm-3">
+          <label class="form-label small mb-1" for="timeoutInput">Timeout (s)</label>
+          <input type="number" class="form-control form-control-sm" id="timeoutInput" name="timeout"
+                 value="600" min="60" max="3600">
+        </div>
+        <div class="col-md-2 col-sm-6">
+          {# Simulation is available through the launch API; this form starts real runs. #}
+          <div class="form-check mt-3">
+            <input class="form-check-input" type="checkbox" id="enableClaimCheck" name="enable_claim_validation">
+            <label class="form-check-label small" for="enableClaimCheck">
+              Enable claim post-validation
+              <span class="text-warning">(warning: expensive — typical run cost ~2–3× agent baseline, p90 ~3.5×)</span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-12 text-end">
+          <button class="btn btn-primary btn-sm" type="submit" id="submit-btn">
+            <i class="bi bi-send"></i> Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{# ── Run-status header ───────────────────────────────────────── #}
+<div id="runHeader" class="d-flex align-items-center gap-2 mb-2 d-none">
+  <span class="agent-status-pill agent-status-starting" id="statusPill">starting</span>
+  <span class="text-muted small" id="elapsedLabel">0.0s</span>
+  <span class="text-muted small" id="modeLabel"></span>
+  <span class="ms-auto small text-muted" id="qidLabel"></span>
+</div>
+
+<div class="agent-layout">
+
+  {# ── Eval-style panels (filled after completion) ────────── #}
+  <div id="evalFrameCard" class="agent-eval-frame-wrap d-none">
+    <div class="eval-frame-header">
+      <span><i class="bi bi-clipboard-check"></i>
+        Evaluation panels &nbsp;<small id="evalUrlLabel" class="text-light"></small>
+      </span>
+      <a href="#" id="evalOpenBtn" target="_blank" class="text-light text-decoration-none small">
+        <i class="bi bi-box-arrow-up-right"></i> Open in new tab
+      </a>
+    </div>
+    <iframe id="evalFrame" src="about:blank" title="Evaluation panels"></iframe>
+  </div>
+
+  {# ── Quick answer preview (used for simulated runs which have no eval frame) ── #}
+  <div id="answerPreviewCard" class="card d-none">
+    <div class="card-header py-2"><i class="bi bi-file-earmark-text"></i> Answer</div>
+    <div class="card-body rendered-md" id="answerPreviewBody">
+      <p class="text-muted">Waiting…</p>
+    </div>
+  </div>
+
+  {# ── Simulation-only panels (preplan / plan / tool results / history)
+         ── rendered between answer and terminal ── #}
+  
+  <div id="simPanelsRow" class="row g-3 d-none">
+    <div class="col-lg-6">
+      <div class="card h-100" id="preplanCard">
+        <div class="card-header py-2"><i class="bi bi-lightbulb"></i> Pre-Plan</div>
+        <div class="card-body rendered-md" id="preplanBody">
+          <p class="text-muted">No pre-plan.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card h-100" id="planCard">
+        <div class="card-header py-2"><i class="bi bi-map"></i> Plan</div>
+        <div class="card-body rendered-md" id="planBody">
+          <p class="text-muted">No plan.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="card" id="toolResultsCard">
+        <div class="card-header py-2"><i class="bi bi-tools"></i> Tool Results — Agent Database Output</div>
+        <div class="card-body rendered-md panel-scroll" id="toolResultsBody">
+          <p class="text-muted">No tool results.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="card" id="historyCard">
+        <div class="card-header py-2"><i class="bi bi-clock-history"></i> Tool-Call History</div>
+        <div class="card-body rendered-md panel-scroll-md" id="historyBody">
+          <p class="text-muted">No history.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  {# ── Terminal log (always visible during/after run; pushed below eval frame) ── #}
+  <div id="termCard" class="card d-none">
+    <div class="card-header py-2 d-flex align-items-center">
+      <i class="bi bi-terminal"></i>&nbsp;Live terminal&nbsp;
+      <span class="badge bg-secondary ms-2" id="logCount">0</span>
+      <button type="button" class="btn btn-sm btn-outline-secondary ms-auto" id="copyLogBtn">
+        <i class="bi bi-clipboard"></i> Copy
+      </button>
+      <button type="button" class="btn btn-sm btn-outline-secondary ms-1" id="autoScrollBtn"
+              data-on="1" title="Toggle auto-scroll">
+        <i class="bi bi-chevron-double-down"></i> Auto
+      </button>
+    </div>
+    <div class="agent-terminal" id="termBody"></div>
+  </div>
+
+  {# ── Agent flow diagram (mermaid) — shown after run completes ── #}
+  
+  <div id="flowCard" class="card d-none">
+    <div class="card-header py-2">
+      <i class="bi bi-diagram-3"></i>&nbsp;Agent flow
+    </div>
+    <div class="card-body">
+      <div id="flowDiagram"></div>
+    </div>
+  </div>
+  
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({ startOnLoad: false, theme: "default", securityLevel: "loose" });
+  // Expose for the classic-script block below to render on demand.
+  window.__mermaid = mermaid;
+</script>
+<script>
+(function() {
+  "use strict";
+
+  const form     = document.getElementById("agent-form");
+  const submitBtn= document.getElementById("submit-btn");
+
+  const runHeader= document.getElementById("runHeader");
+  const statusPill = document.getElementById("statusPill");
+  const elapsedLbl = document.getElementById("elapsedLabel");
+  const modeLbl    = document.getElementById("modeLabel");
+  const qidLbl     = document.getElementById("qidLabel");
+
+  const termCard = document.getElementById("termCard");
+  const termBody = document.getElementById("termBody");
+  const logCount = document.getElementById("logCount");
+  const copyLogBtn = document.getElementById("copyLogBtn");
+  const autoScrollBtn = document.getElementById("autoScrollBtn");
+
+  const evalFrameCard = document.getElementById("evalFrameCard");
+  const evalFrame     = document.getElementById("evalFrame");
+  const evalOpenBtn   = document.getElementById("evalOpenBtn");
+  const evalUrlLabel  = document.getElementById("evalUrlLabel");
+
+  const answerCard = document.getElementById("answerPreviewCard");
+  const answerBody = document.getElementById("answerPreviewBody");
+
+  const simPanelsRow   = document.getElementById("simPanelsRow");
+  const preplanBody    = document.getElementById("preplanBody");
+  const planBody       = document.getElementById("planBody");
+  const toolResultsBody= document.getElementById("toolResultsBody");
+  const historyBody    = document.getElementById("historyBody");
+
+  const flowCard       = document.getElementById("flowCard");
+  const flowDiagram    = document.getElementById("flowDiagram");
+
+  let activeES = null;
+  let logLineCount = 0;
+  let elapsedTimer = null;
+  let runStart = 0;
+
+  // Restore previously-used ANL username (per-browser).
+  try {
+    const apiUserEl = document.getElementById("apiUserInput");
+    if (apiUserEl && !apiUserEl.value) {
+      const saved = localStorage.getItem("srd46_api_user");
+      if (saved) apiUserEl.value = saved;
+    }
+  } catch (e) {}
+
+  function setStatus(s) {
+    statusPill.className = "agent-status-pill agent-status-" + s;
+    statusPill.textContent = s;
+  }
+
+  function appendLogLine(raw) {
+    // Detect level by simple substring match (matches our log-format)
+    let level = "INFO";
+    const m = raw.match(/\|\s*(DEBUG|INFO|WARN|WARNING|ERROR|CRITICAL)\s*\|/);
+    if (m) level = m[1];
+    const span = document.createElement("span");
+    span.className = "log-line log-" + level;
+    span.textContent = raw + "\n";
+    termBody.appendChild(span);
+    logLineCount += 1;
+    logCount.textContent = logLineCount.toString();
+    if (autoScrollBtn.dataset.on === "1") {
+      termBody.scrollTop = termBody.scrollHeight;
+    }
+  }
+
+  function formatElapsed(sec) {
+    if (sec < 60) return sec.toFixed(1) + "s";
+    const m = Math.floor(sec / 60);
+    const s = (sec % 60).toFixed(0);
+    return m + "m " + s + "s";
+  }
+
+  function startElapsedTimer() {
+    runStart = Date.now();
+    if (elapsedTimer) clearInterval(elapsedTimer);
+    elapsedTimer = setInterval(() => {
+      elapsedLbl.textContent = formatElapsed((Date.now() - runStart) / 1000);
+    }, 200);
+  }
+
+  function stopElapsedTimer() {
+    if (elapsedTimer) { clearInterval(elapsedTimer); elapsedTimer = null; }
+  }
+
+  function showEvalFrame(url) {
+    if (!url) return false;
+    if (window.__pfx__ && url.charAt(0) === "/" && url.indexOf("/srd46/") !== 0) {
+      url = window.__pfx__(url);
+    }
+    evalFrame.src = url;
+    evalOpenBtn.href = url;
+    evalUrlLabel.textContent = url;
+    evalFrameCard.classList.remove("d-none");
+    return true;
+  }
+
+  // Agent Markdown is untrusted; throwing here lands in the callers' plain-text fallback.
+  function mdToHtml(md) {
+    if (!window.DOMPurify) throw new Error("DOMPurify unavailable");
+    return DOMPurify.sanitize(marked.parse(md));
+  }
+
+  function showAnswerPreview(md) {
+    if (!md) {
+      answerCard.classList.add("d-none");
+      return;
+    }
+    try {
+      answerBody.innerHTML = mdToHtml(md);
+    } catch (e) {
+      answerBody.textContent = md;
+    }
+    answerCard.classList.remove("d-none");
+  }
+
+  function setPanelMd(el, md) {
+    if (!md) {
+      el.innerHTML = '<p class="text-muted">—</p>';
+      return false;
+    }
+    try {
+      el.innerHTML = mdToHtml(md);
+    } catch (e) {
+      el.textContent = md;
+    }
+    return true;
+  }
+
+  function showSimPanels(payload) {
+    // A page without simulation panels has nothing to update here.
+    if (!simPanelsRow) return;
+    const any = !!(payload.preplan_md || payload.plan_md ||
+                   payload.tool_results_md || payload.history_md);
+    if (!any) {
+      simPanelsRow.classList.add("d-none");
+      return;
+    }
+    setPanelMd(preplanBody,     payload.preplan_md || "");
+    setPanelMd(planBody,        payload.plan_md || "");
+    setPanelMd(toolResultsBody, payload.tool_results_md || "");
+    setPanelMd(historyBody,     payload.history_md || "");
+    simPanelsRow.classList.remove("d-none");
+  }
+
+  async function showFlowDiagram(mermaidSrc) {
+    if (!flowCard || !flowDiagram) return;
+    if (!mermaidSrc || !window.__mermaid) {
+      flowCard.classList.add("d-none");
+      flowDiagram.innerHTML = "";
+      return;
+    }
+    try {
+      const id = "flowSvg_" + Date.now();
+      const { svg } = await window.__mermaid.render(id, mermaidSrc);
+      flowDiagram.innerHTML = svg;
+      flowCard.classList.remove("d-none");
+    } catch (e) {
+      flowDiagram.textContent = "[mermaid render failed] " + e.message;
+      flowCard.classList.remove("d-none");
+    }
+  }
+
+  function resetUI() {
+    termBody.innerHTML = "";
+    logLineCount = 0;
+    logCount.textContent = "0";
+    evalFrameCard.classList.add("d-none");
+    evalFrame.src = "about:blank";
+    answerCard.classList.add("d-none");
+    answerBody.innerHTML = "";
+    if (simPanelsRow) {
+      simPanelsRow.classList.add("d-none");
+      if (preplanBody)     preplanBody.innerHTML = "";
+      if (planBody)        planBody.innerHTML = "";
+      if (toolResultsBody) toolResultsBody.innerHTML = "";
+      if (historyBody)     historyBody.innerHTML = "";
+    }
+    if (flowCard) {
+      flowCard.classList.add("d-none");
+      if (flowDiagram) flowDiagram.innerHTML = "";
+    }
+    qidLbl.textContent = "";
+    modeLbl.textContent = "";
+  }
+
+  copyLogBtn.addEventListener("click", () => {
+    const txt = termBody.textContent;
+    navigator.clipboard.writeText(txt).then(() => {
+      copyLogBtn.innerHTML = '<i class="bi bi-check2"></i> Copied';
+      setTimeout(() => {
+        copyLogBtn.innerHTML = '<i class="bi bi-clipboard"></i> Copy';
+      }, 1200);
+    });
+  });
+
+  autoScrollBtn.addEventListener("click", () => {
+    const on = autoScrollBtn.dataset.on === "1";
+    autoScrollBtn.dataset.on = on ? "0" : "1";
+    autoScrollBtn.classList.toggle("active", !on);
+  });
+
+  function attachStream(runId) {
+    if (activeES) { try { activeES.close(); } catch (e) {} }
+    const es = new EventSource("/agent/stream/" + encodeURIComponent(runId));
+    activeES = es;
+
+    es.addEventListener("status", (ev) => {
+      try {
+        const data = JSON.parse(ev.data);
+        setStatus(data.status);
+        modeLbl.textContent = data.simulate ? "(simulated)" : "(real run)";
+        if (data.qid) qidLbl.textContent = "qid: " + data.qid;
+      } catch (e) {}
+    });
+
+    es.addEventListener("log", (ev) => {
+      try {
+        const data = JSON.parse(ev.data);
+        (data.lines || []).forEach(appendLogLine);
+      } catch (e) {}
+    });
+
+    es.addEventListener("done", (ev) => {
+      stopElapsedTimer();
+      submitBtn.disabled = false;
+      try {
+        const data = JSON.parse(ev.data);
+        setStatus(data.status);
+        elapsedLbl.textContent = formatElapsed(data.elapsed || 0);
+        if (data.qid) qidLbl.textContent = "qid: " + data.qid;
+
+        if (data.status === "completed") {
+          const shown = showEvalFrame(data.eval_url);
+          if (!shown) {
+            // Simulation or eval URL absent — show preview + sim panels
+            showAnswerPreview(data.answer_preview);
+            showSimPanels(data);
+            showFlowDiagram(data.flow_mermaid || "");
+          } else {
+            // Real run: eval iframe contains all panels; hide local panels
+            answerCard.classList.add("d-none");
+            if (simPanelsRow) simPanelsRow.classList.add("d-none");
+            if (flowCard)     flowCard.classList.add("d-none");
+          }
+        } else if (data.status === "error") {
+          showAnswerPreview("**Run failed:** `" + (data.error || "unknown") + "`");
+        }
+      } catch (e) {}
+      es.close();
+      activeES = null;
+    });
+
+    es.addEventListener("error", (ev) => {
+      // Browser auto-reconnects on transient SSE errors; only act on close
+      if (es.readyState === EventSource.CLOSED) {
+        stopElapsedTimer();
+        submitBtn.disabled = false;
+      }
+    });
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const prompt = document.getElementById("promptInput").value.trim();
+    if (!prompt) {
+      alert("Please enter a prompt.");
+      return;
+    }
+    const apiUser = document.getElementById("apiUserInput").value.trim();
+    try { localStorage.setItem("srd46_api_user", apiUser); } catch (e) {}
+    const payload = {
+      prompt: prompt,
+      model: document.getElementById("modelSelect").value,
+      api_user: apiUser,
+      max_turns: parseInt(document.getElementById("maxTurns").value, 10) || null,
+      timeout: parseInt(document.getElementById("timeoutInput").value, 10) || null,
+      // Simulate run is hidden from the UI; always submit false. The backend
+      // still accepts the field so the feature can be re-enabled later.
+      simulate: false,
+      skip_claim_validation: !document.getElementById("enableClaimCheck").checked,
+    };
+
+    resetUI();
+    runHeader.classList.remove("d-none");
+    termCard.classList.remove("d-none");
+    setStatus("starting");
+    submitBtn.disabled = true;
+    startElapsedTimer();
+
+    let resp;
+    try {
+      resp = await fetch("/agent/launch", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload),
+      });
+    } catch (err) {
+      stopElapsedTimer();
+      submitBtn.disabled = false;
+      setStatus("error");
+      appendLogLine("[browser] launch failed: " + err);
+      return;
+    }
+    if (!resp.ok) {
+      stopElapsedTimer();
+      submitBtn.disabled = false;
+      setStatus("error");
+      const data = await resp.json().catch(() => ({error: resp.statusText}));
+      appendLogLine("[browser] launch rejected: " + (data.error || resp.statusText));
+      return;
+    }
+    const data = await resp.json();
+    appendLogLine("[browser] run_id=" + data.run_id +
+                  (data.simulate ? "  (simulation mode)" : "  (real run)"));
+    attachStream(data.run_id);
+  });
+})();
+</script>
+{% endblock %}

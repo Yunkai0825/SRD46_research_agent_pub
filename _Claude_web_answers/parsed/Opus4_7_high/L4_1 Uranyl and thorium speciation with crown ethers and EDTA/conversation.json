@@ -1,0 +1,101 @@
+{
+  "uuid": "2a1b756e-6a79-43e3-a7f5-b98f32630995",
+  "name": "L4_1 Uranyl and thorium speciation with crown ethers and EDTA",
+  "summary": "",
+  "model": "claude-opus-4-7",
+  "created_at": "2026-09-17T02:02:42.608222Z",
+  "updated_at": "2026-09-17T02:16:53.987892Z",
+  "settings": {
+    "enabled_web_search": true,
+    "paprika_mode": "auto",
+    "enabled_monkeys_in_a_barrel": true,
+    "enabled_saffron": false,
+    "tool_search_mode": "auto",
+    "thinking_mode": "auto",
+    "effort_level": "high",
+    "preview_feature_uses_artifacts": true,
+    "enabled_turmeric": true
+  },
+  "is_starred": false,
+  "is_temporary": false,
+  "project_uuid": "01a0ac0d-20a5-72a5-9b44-bc3c8d3bfde9",
+  "platform": "CLAUDE_AI",
+  "is_wiggle_enabled": true,
+  "effective_thinking_mode": "auto",
+  "current_leaf_message_uuid": "01a0ad1a-13be-7a2f-8fe2-6d9d0aa05e42",
+  "run": "effort-high_run1",
+  "chat_messages": [
+    {
+      "uuid": "01a0ad1a-13be-7fcd-a8fc-17e122a306f6",
+      "text": "",
+      "content": [
+        {
+          "start_timestamp": "2026-09-17T02:02:44.705810Z",
+          "stop_timestamp": "2026-09-17T02:02:44.705810Z",
+          "type": "text",
+          "text": "In a single solution containing 1 mM U(VI), 1 mM Th(IV), 5 mM 18-crown-6 and 5 mM EDTA at pH 5, 25 C and I=0.1 m, compute the joint speciation and show the dominant uranyl-crown and thorium-crown complexes alongside the EDTA species.",
+          "citations": []
+        }
+      ],
+      "sender": "human",
+      "index": 0,
+      "created_at": "2026-09-17T02:02:44.705981Z",
+      "updated_at": "2026-09-17T02:02:44.705981Z",
+      "truncated": false,
+      "attachments": [],
+      "files": [],
+      "sync_sources": [],
+      "parent_message_uuid": "00000000-0000-4000-8000-000000000000"
+    },
+    {
+      "uuid": "01a0ad1a-13be-7a2f-8fe2-6d9d0aa05e42",
+      "text": "",
+      "content": [
+        {
+          "start_timestamp": "2026-09-17T02:02:44.760965Z",
+          "stop_timestamp": "2026-09-17T02:03:36.412720Z",
+          "type": "thinking",
+          "thinking": "",
+          "summaries": [
+            {
+              "summary": "Working out competing metal-ligand complexation in solution."
+            },
+            {
+              "summary": "Comparing binding strengths across the different metal-ligand pairs."
+            },
+            {
+              "summary": "Estimating final speciation given excess EDTA over crown ether."
+            },
+            {
+              "summary": "Recalculating EDTA's protonation fractions at this pH."
+            },
+            {
+              "summary": "Double-checking stability constants before drafting the summary."
+            }
+          ],
+          "cut_off": false,
+          "truncated": false,
+          "hidden": false,
+          "thinking_hidden": true
+        },
+        {
+          "start_timestamp": "2026-09-17T02:03:36.412762Z",
+          "stop_timestamp": "2026-09-17T02:03:57.187083Z",
+          "type": "text",
+          "text": "At pH 5 with these concentrations, EDTA wins the competition decisively for both actinides, and 18-crown-6 is essentially a spectator. Here's why, and what the speciation looks like.\n\n**Why crown ether loses**\n\n18-crown-6 is a hard neutral O-donor macrocycle that binds cations that fit its ~2.6–3.2 Å cavity (K⁺ is the textbook match). In water, its complexes with hard, highly-charged actinide aquo ions are very weak — log K for UO₂²⁺·(18C6) and Th⁴⁺·(18C6) in aqueous solution is on the order of ≤1 (the equatorial coordination sphere of UO₂²⁺ and the tightly held hydration shell of Th⁴⁺ both disfavor macrocyclic wrapping in H₂O). EDTA, by contrast, is a hexadentate anionic chelator with log K₁ ≈ 13–14 for UO₂Y²⁻ and log K₁ ≈ 23 for ThY (NIST/Martell, 25 °C, I = 0.1). Even after accounting for EDTA protonation at pH 5 (αY⁴⁻ ≈ 3 × 10⁻⁷, so log αY ≈ −6.5), the conditional constants remain ~10⁶·⁵ for UO₂ and ~10¹⁶·⁵ for Th — many orders of magnitude larger than anything the crown can offer.\n\n**Dominant species (mole fractions of each total)**\n\nUranyl (C_U = 1 mM):\n- UO₂(EDTA)²⁻ (i.e., UO₂Y²⁻), with a minor UO₂(HY)⁻ contribution at pH 5 — together ≳ 99.9%\n- Free UO₂²⁺ and hydrolysis products (UO₂)₂(OH)₂²⁺ etc.: negligible (EDTA suppresses hydrolysis)\n- UO₂·(18C6) adducts: < 0.01%\n\nThorium (C_Th = 1 mM):\n- Th(EDTA) (ThY, neutral): ≳ 99.99%. A small Th(OH)Y⁻ mixed complex may appear but at pH 5 it is minor\n- Free Th⁴⁺ and Th(OH)ₙ: negligible\n- Th·(18C6): < 0.001%\n\nEDTA (C_EDTA = 5 mM), mass balance:\n- ~1 mM tied up as UO₂Y²⁻/UO₂(HY)⁻\n- ~1 mM tied up as ThY\n- ~3 mM free, distributed at pH 5 (pKa₅ ≈ 6.1, pKa₆ ≈ 10.2) as roughly 90–93% H₂Y²⁻ and 7–10% HY³⁻, with H₃Y⁻ and Y⁴⁻ traces\n\n18-crown-6 (C_L = 5 mM):\n- ~100% as free, uncomplexed 18C6 in solution (aside from any weak outer-sphere association with background Na⁺/K⁺ from I = 0.1 m adjustment, which was unspecified)\n\n**Bottom line**\n\nThe \"uranyl-crown\" and \"thorium-crown\" complexes you might expect are essentially absent in aqueous solution at pH 5; both actinides are quantitatively sequestered by EDTA. To see meaningful crown-ether coordination to UO₂²⁺ or Th⁴⁺ you would need to either (a) remove/mask EDTA (e.g., far lower pH where EDTA is fully protonated, or a competing metal that sequesters EDTA), or (b) move to a low-water medium (methanol, acetonitrile, or the solid state), where 18-crown-6·UO₂(H₂O)ₙ²⁺ and Th·crown adducts are well characterized.\n\nIf you want, I can run this through a proper equilibrium solver (e.g., a Newton–Raphson mass-action calculation with the NEA-TDB constants for hydrolysis and both EDTA and crown-ether equilibria) and give you the actual percentages and free-ligand activities to 3–4 sig figs — just say the word and I'll set it up.",
+          "citations": []
+        }
+      ],
+      "sender": "assistant",
+      "index": 1,
+      "created_at": "2026-09-17T02:03:57.258691Z",
+      "updated_at": "2026-09-17T02:03:57.258691Z",
+      "truncated": false,
+      "stop_reason": "end_turn",
+      "attachments": [],
+      "files": [],
+      "sync_sources": [],
+      "parent_message_uuid": "01a0ad1a-13be-7fcd-a8fc-17e122a306f6"
+    }
+  ]
+}
