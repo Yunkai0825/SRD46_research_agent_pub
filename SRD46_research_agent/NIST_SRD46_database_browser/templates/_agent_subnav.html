@@ -1,0 +1,16 @@
+{# Query and Analysis agent navigation. #}
+{% set ep = request.endpoint or '' %}
+<ul class="nav nav-pills agent-subnav mb-3">
+  <li class="nav-item">
+    <a class="nav-link {{ 'active' if ep == 'agent.agent_page' or ep == 'evaluation.freeform_index' else '' }}"
+       href="{{ url_for('agent.agent_page') }}">
+      <i class="bi bi-search"></i> Query Agent
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{ 'active' if ep.startswith('analysis_agent.') else '' }}"
+       href="{{ url_for('analysis_agent.analysis_agent_page') }}">
+      <i class="bi bi-graph-up"></i> Analysis Agent
+    </a>
+  </li>
+</ul>

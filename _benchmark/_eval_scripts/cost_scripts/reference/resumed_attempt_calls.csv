@@ -1,0 +1,221 @@
+set,id,run,attempt,layer,record,model,system_chars,prompt_chars,response_chars,http_status
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L0 orchestrator,calls,gpt55,9399,860,4002,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,1208,624,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_1 ID alignment,calls,gpt55,6030,1208,384,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_1 ID alignment,calls,gpt55,6030,3692,407,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_1 ID alignment,calls,gpt55,6030,4256,39,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,2399,98,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,2772,413,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,3720,615,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,3514,685,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,2576,14,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,5330,507,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,7880,716,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,2485,320,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,7760,838,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,6776,493,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,3815,365,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,10047,370,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,8200,182,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,10049,338,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,4439,70,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,11749,604,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,8855,720,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,13548,396,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,11227,280,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,15584,98,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,9328,175,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,11980,2088,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13002,15917,2187,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,12736,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,13177,456,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8214,3885,3966,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8214,4656,137,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,6070,2699,592,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,6070,2692,412,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,6070,2699,480,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,6070,2673,316,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,6070,2669,319,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,6070,2834,102,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,6070,2838,117,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,6070,2857,217,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,6070,3220,109,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,6070,3212,152,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,6070,2877,398,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,6070,3042,162,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 singleton dedup,calls,gpt55,4816,3712,3069,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 singleton dedup,calls,gpt55,4816,4298,162,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8573,34837,1288,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8573,35533,65,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_1 method picker,calls,gpt55,6256,2441,184,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_2 initial-condition designer,calls,gpt55,19478,8652,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_2 initial-condition designer,calls,gpt55,19478,9234,2083,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_3 constraint designer,calls,gpt55,19627,9487,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_3 constraint designer,calls,gpt55,19627,10067,1219,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_3 constraint designer,calls,gpt55,19627,10158,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_3 constraint designer,calls,gpt55,19627,10738,553,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_4 sweep designer,calls,gpt55,11109,1786,569,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_4 sweep designer,calls,gpt55,11109,2501,131,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,24056,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,24667,1190,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,26153,787,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,28404,779,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,30645,763,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,32870,5076,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,33635,4089,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,5659,377,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,7758,1006,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,10671,911,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,13217,723,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,15311,895,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,18038,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,18572,1532,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6740,18805,1849,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,1818,871,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,24661,739,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,26838,193,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,27503,4113,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,32088,4356,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,32710,31,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,5075,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,5587,435,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,7209,1075,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,10294,1067,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,13373,282,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,14712,168,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,15639,589,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6740,16181,2396,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,1202,672,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_1 ID alignment,calls,gpt55,6030,1202,301,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_1 ID alignment,calls,gpt55,6030,3499,342,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_1 ID alignment,calls,gpt55,6030,3997,44,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,2393,98,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,3104,561,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,5182,1371,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,2570,14,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,6843,566,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,9465,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,8350,347,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,11080,304,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,10005,1288,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,14180,1587,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,19180,62,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,14969,43,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,19715,367,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,11398,5,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8214,4398,3705,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8214,5203,3238,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8214,6070,2841,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8214,6833,3679,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8214,7719,2345,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8214,8482,2309,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8214,9361,2428,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8214,10175,2447,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8181,11194,1644,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5180,2641,316,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5180,3950,477,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5180,2659,345,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5180,2658,377,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5180,2654,356,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5180,2806,112,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5180,2823,160,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5180,2819,5,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5180,4115,125,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5180,2824,156,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 singleton dedup,calls,gpt55,3926,3248,1862,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 singleton dedup,calls,gpt55,3926,3924,272,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8573,46262,1195,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8573,46937,343,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_1 method picker,calls,gpt55,6256,2435,188,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_2 initial-condition designer,calls,gpt55,19478,7732,1916,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_3 constraint designer,calls,gpt55,19627,8734,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_3 constraint designer,calls,gpt55,19627,9314,1083,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_3 constraint designer,calls,gpt55,19627,9332,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_3 constraint designer,calls,gpt55,19627,9912,538,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_4 sweep designer,calls,gpt55,11109,1780,120,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_4 sweep designer,calls,gpt55,11109,3330,499,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_4 sweep designer,calls,gpt55,11109,4002,205,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,16908,653,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,18732,668,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,20637,3045,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,24154,3789,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,24787,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,25322,31,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,4500,396,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,6622,867,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,9242,738,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,11463,727,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,13673,710,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,16154,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,16688,835,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6740,16816,32,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,1202,785,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_1 ID alignment,calls,gpt55,6030,1202,381,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_1 ID alignment,calls,gpt55,6030,3743,452,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_1 ID alignment,calls,gpt55,6030,4352,79,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,2393,98,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,2471,280,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,2654,301,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,4501,1196,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,2570,5,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,4030,405,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,3753,395,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,3565,623,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,5747,409,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,8104,1245,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,4407,49,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,7621,330,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,6415,56,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,8210,14,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,11822,373,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC1_2 eq-map node validator,calls,gpt55,13035,12454,14,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8214,4398,3713,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8214,5212,75,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,2842,443,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,2844,500,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,2859,502,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,2947,378,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,2861,347,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,3333,111,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,3026,144,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,3372,109,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,3112,334,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,3380,101,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,2878,507,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,3182,629,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,3398,139,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,3749,262,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,3277,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,3691,1042,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 per-group dedup,calls,gpt55,5708,3818,161,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 singleton dedup,calls,gpt55,4454,3931,2960,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 singleton dedup,calls,gpt55,4454,4583,298,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8573,42156,1047,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC2_3 element-instruction supervisor,calls,gpt55,8573,43037,503,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_1 method picker,calls,gpt55,6256,2435,204,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_2 initial-condition designer,calls,gpt55,19478,8633,1616,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_3 constraint designer,calls,gpt55,19627,9453,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_3 constraint designer,calls,gpt55,19627,10033,1115,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_3 constraint designer,calls,gpt55,19627,10041,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_3 constraint designer,calls,gpt55,19627,10621,553,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_4 sweep designer,calls,gpt55,11109,1780,429,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LC3_4 sweep designer,calls,gpt55,11109,2386,307,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,25510,779,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,27752,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,28385,890,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,58246,3487,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,62205,4055,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,32798,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L1 pipeline sub-agent,calls,gpt55,24420,33333,40,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,4773,416,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,6836,1045,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,9892,895,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,12443,280,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,13850,747,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,16595,0,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6773,17129,810,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,6740,17270,29,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L0 orchestrator,calls,gpt55,9399,10012,92,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,5255,23185,871,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,L0 orchestrator,calls,gpt55,9399,10901,212,200
+gpt55,L1_8,L1_8_20261109,resumed_from_L1_8_20261108_rerun2,LD validator,calls,gpt55,5255,24392,907,200

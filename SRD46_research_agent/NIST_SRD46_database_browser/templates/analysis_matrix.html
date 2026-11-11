@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% from "_analysis_answer_macros.html" import chip, selection_bar, legend, scripts_config %}
+{% block title %}Eval answer matrix — Analysis Runs{% endblock %}
+{% block main_class %}container-fluid my-4 px-4{% endblock %}
+
+{% block content %}
+{% include "_history_subnav.html" %}
+{% set active = 'matrix' %}{% include "_analysis_tabs.html" %}
+
+<div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
+  <h3 class="mb-0"><i class="bi bi-grid-3x3"></i> Analysis Agent Runs &mdash; Eval answer matrix</h3>
+  <span class="text-muted small">
+    <span id="matrix-row-count">{{ rows|length }}</span> of {{ n_rows_total }} prompts ·
+    {{ n_answers }} answers in {{ sources|length }} of {{ all_sources|length }} columns ·
+    scanned {{ scanned_ago }} ago
+    <a href="{{ url_for('analysis.analysis_matrix', refresh=1, **query) }}" title="read the output folders again now">rescan</a>
+  </span>
+</div>
+<p class="text-muted small mb-2">
+  One row per catalog prompt, one column per answer source. Tick chips to compare 2–3 answers of one
+  prompt or to set one as the reference answer (★); click a chip's text to open it. Filters apply as
+  soon as they change; the text box filters rows while you type and searches run names on Enter.
+  Run times exclude solver execution; unavailable timing is left blank.
+</p>
+
+<form method="get" data-autosubmit class="matrix-filters d-flex flex-wrap align-items-center gap-2 mb-2">
+  <div class="btn-group btn-group-sm" role="group" aria-label="layer">
+    <input type="radio" class="btn-check" name="layer" id="layer-all" value="" autocomplete="off" {% if not filter_layer %}checked{% endif %}>
+    <label class="btn btn-outline-dark" for="layer-all">all layers</label>
+    {% for l in layers %}
+    <input type="radio" class="btn-check" name="layer" id="layer-{{ l }}" value="{{ l }}" autocomplete="off" {% if filter_layer == l %}checked{% endif %}>
+    <label class="btn btn-outline-dark" for="layer-{{ l }}">{{ l }}</label>
+    {% endfor %}
+  </div>
+  <div class="dropdown">
+    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+      Columns ({{ sources|length }}/{{ all_sources|length }})
+    </button>
+    <div class="dropdown-menu p-2 small" style="min-width: 20rem;">
+      {% for s in all_sources %}
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="col" value="{{ s.id }}" id="col-{{ loop.index }}" {% if s.id in selected_cols %}checked{% endif %}>
+        <label class="form-check-label" for="col-{{ loop.index }}">{{ s.name }} <span class="text-muted">({{ s.n }})</span></label>
+      </div>
+      {% endfor %}
+      <div class="mt-2 text-muted">untick all = show all</div>
+    </div>
+  </div>
+  <div class="form-check form-switch small mb-0">
+    <input class="form-check-input" type="checkbox" name="min2" value="1" id="min2" {% if min_two %}checked{% endif %}>
+    <label class="form-check-label" for="min2">only prompts with ≥ 2 answers</label>
+  </div>
+  <div class="form-check form-switch small mb-0">
+    <input class="form-check-input" type="checkbox" name="empty" value="1" id="empty" {% if show_empty %}checked{% endif %}>
+    <label class="form-check-label" for="empty">show empty columns</label>
+  </div>
+  <div class="form-check form-switch small mb-0">
+    <input class="form-check-input" type="checkbox" name="refonly" value="1" id="refonly" {% if ref_only %}checked{% endif %}>
+    <label class="form-check-label" for="refonly">only prompts without a reference</label>
+  </div>
+  <input type="search" id="matrix-live-filter" name="q" class="form-control form-control-sm" style="width: 17rem;"
+         placeholder="find prompt, words or run name" value="{{ filter_q }}" autocomplete="off">
+  <a href="{{ url_for('analysis.analysis_matrix') }}" class="btn btn-sm btn-outline-secondary">Reset</a>
+</form>
+
+{% if not rows %}
+<div class="alert alert-warning">No prompt matches these filters.</div>
+{% else %}
+<div class="matrix-wrap">
+  <table class="table table-sm table-hover align-middle matrix-table mb-1">
+    <thead>
+      <tr>
+        <th class="sticky-col">Prompt</th>
+        {% for s in sources %}
+        <th class="src-{{ s.kind }}" title="{{ s.id }}">{{ s.name }}<div class="fw-normal text-muted small">{{ counts[s.id] }}</div></th>
+        {% endfor %}
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for r in rows %}
+      <tr data-row-text="{{ r.search_text }}">
+        <td class="sticky-col">
+          {% if r.layer %}<span class="badge bg-dark">{{ r.layer }}</span>{% endif %} <strong>{{ r.pid }}</strong>
+          {% if r.extra %}<span class="badge bg-light text-dark border" title="not in TEST_PROMPTS.md">uncatalogued</span>{% endif %}
+          <div class="text-muted small text-truncate" style="max-width: 17rem;" title="{{ r.prompt }}">{{ r.title }}</div>
+        </td>
+        {% for s in sources %}
+        <td class="answer-cell">{% for a in r.cells.get(s.id, []) %}{{ chip(a) }}{% endfor %}</td>
+        {% endfor %}
+        <td class="text-nowrap">
+          {% if r.n >= 2 %}<button type="button" class="btn btn-sm btn-outline-primary py-0" data-row-compare title="compare the newest answer of up to three columns">compare…</button>{% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+{% if other %}
+<details class="mt-2">
+  <summary class="small text-muted">{{ other|length }} run{{ '' if other|length == 1 else 's' }} without a prompt id (not in the matrix)</summary>
+  <div class="mt-1">{% for a in other %}{{ chip(a, show_source=True) }}{% endfor %}</div>
+</details>
+{% endif %}
+
+{{ legend() }}
+{{ selection_bar() }}
+{% endblock %}
+
+{% block scripts %}
+{{ scripts_config('matrix') }}
+{% endblock %}

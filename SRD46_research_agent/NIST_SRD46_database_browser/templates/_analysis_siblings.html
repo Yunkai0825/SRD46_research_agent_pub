@@ -1,0 +1,46 @@
+{# "Other answers to this prompt" block of a detail page (framework run or web answer).
+   Context (from routes/analysis.py _answer_context): answer_id, pid, me, siblings,
+   reference, reference_answer, is_reference, label, matrix_url. #}
+{% from "_analysis_answer_macros.html" import chip, selection_bar %}
+{% if pid %}
+<div class="card mb-3 answer-siblings">
+  <div class="card-header py-2 d-flex flex-wrap align-items-center gap-2">
+    <span><i class="bi bi-collection"></i> Other answers to <strong>{{ pid }}</strong></span>
+    <span class="text-muted small">{{ siblings|length }} elsewhere</span>
+    {% if is_reference %}
+      <span class="badge bg-warning text-dark">★ this is the reference answer</span>
+      <button type="button" class="btn btn-sm btn-outline-secondary py-0" data-set-reference="" data-pid="{{ pid }}" title="clear the reference of {{ pid }}">clear</button>
+    {% else %}
+      <button type="button" class="btn btn-sm btn-warning py-0" data-set-reference="{{ answer_id }}" data-pid="{{ pid }}" data-label="{{ label }}">★ make this the reference</button>
+      {% if reference_answer %}
+        <span class="text-muted small">current: <a href="{{ reference_answer.url }}">{{ reference_answer.label }}</a></span>
+      {% elif reference and reference.answer %}
+        <span class="text-muted small" title="{{ reference.answer }}">current reference is missing on disk</span>
+      {% endif %}
+    {% endif %}
+    <a class="ms-auto small" data-matrix-link href="{{ matrix_url }}"><i class="bi bi-grid-3x3"></i> answer matrix</a>
+  </div>
+  {% if siblings %}
+  <div class="card-body py-2">
+    <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+      <select class="form-select form-select-sm w-auto" data-jump aria-label="open another answer">
+        <option value="">open another answer…</option>
+        {% for source, items in siblings|groupby('source_name') %}
+        <optgroup label="{{ source }}">
+          {% for a in items %}<option value="{{ a.url }}">{{ a.chip }} · {{ a.verdict }}{% if a.is_reference %} ★{% endif %}</option>{% endfor %}
+        </optgroup>
+        {% endfor %}
+      </select>
+      <span class="text-muted small">or tick this answer and 1–2 others to compare them:</span>
+    </div>
+    <div>
+      {% if me %}{{ chip(me, show_source=True) }}{% endif %}
+      {% for a in siblings %}{{ chip(a, show_source=True) }}{% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <div class="card-body py-2 text-muted small">No other answer to this prompt yet.</div>
+  {% endif %}
+</div>
+{{ selection_bar(hide_when_empty=True) }}
+{% endif %}

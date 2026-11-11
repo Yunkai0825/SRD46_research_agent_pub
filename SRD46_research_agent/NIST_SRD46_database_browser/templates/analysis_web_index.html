@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}Claude web — Analysis Runs{% endblock %}
+{% block main_class %}container-fluid my-4 px-4{% endblock %}
+
+{% block content %}
+{% include "_history_subnav.html" %}
+{% set active = 'web' %}{% include "_analysis_tabs.html" %}
+
+<div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2">
+  <h3 class="mb-0"><i class="bi bi-globe2"></i> Analysis Agent Runs &mdash; Claude web answers</h3>
+  <a class="small" data-matrix-link href="{{ matrix_url }}"><i class="bi bi-grid-3x3"></i> compare with the framework runs in the answer matrix</a>
+</div>
+<p class="text-muted small">
+  The same prompts answered in the Claude web app, without the framework. Open an answer to read it and to
+  inspect the pages it published, the files it produced and its working trace.
+</p>
+
+{% if not sections %}
+<div class="alert alert-light border">No Claude web answers are stored in this repository.</div>
+{% endif %}
+
+{% for section in sections %}
+{% set overview = section.overview %}
+<div class="matrix-wrap mb-2">
+  <table class="table table-sm table-hover matrix-table mb-0">
+    <thead>
+      <tr>
+        <th class="sticky-col">Prompt</th>
+        {% for config, name in overview.columns %}<th><span class="badge source-web">{{ name }}</span></th>{% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in overview.rows %}
+      <tr>
+        <td class="sticky-col"><strong>{{ row.pid }}</strong> <span class="text-muted">{{ row.title }}</span></td>
+        {% for config, name in overview.columns %}
+        {% set cell = row.cells.get(config) %}
+        <td class="answer-cell">
+          {% if cell %}
+          <a href="{{ cell.url }}" class="fw-semibold text-decoration-none">{% if cell.is_reference %}<span class="ref-star" title="reference answer of this prompt">★</span> {% endif %}{{ cell.time or 'open' }}</a>
+          {% if cell.incomplete %}<span class="badge bg-danger" title="{{ cell.stop }}">incomplete</span>{% endif %}
+          <div class="text-muted web-cell-facts">
+            {% if cell.tool_calls %}<span title="tool calls"><i class="bi bi-tools"></i> {{ cell.tool_calls }}</span>{% endif %}
+            {% if cell.figures %}<span title="figures beside the answer"><i class="bi bi-image"></i> {{ cell.figures }}</span>{% endif %}
+            {% if cell.pages %}<span title="published pages"><i class="bi bi-window"></i> {{ cell.pages }}</span>{% endif %}
+            {% if cell.files %}<span title="presented and sandbox files"><i class="bi bi-folder2-open"></i> {{ cell.files }}</span>{% endif %}
+          </div>
+          {% else %}<span class="text-muted">—</span>{% endif %}
+        </td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<p class="text-muted small mb-4">
+  {{ overview.n_answers }} answers to {{ overview.rows|length }} prompts in {{ overview.columns|length }} configurations.
+  Each cell gives time excluding solver execution, then tool calls, figures, published pages and stored files.
+  {% if section.archives %}Full runs are kept in {% for name in section.archives %}<code>{{ name }}</code>{% if not loop.last %}, {% endif %}{% endfor %}.{% endif %}
+</p>
+
+<div class="accordion mb-4" id="web-docs-{{ loop.index }}">
+  {% if section.timing_plots or section.timing_html %}
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#web-timing-{{ loop.index }}">
+        <i class="bi bi-bar-chart-steps me-2"></i> Framework versus Claude web: where the time goes
+      </button>
+    </h2>
+    <div id="web-timing-{{ loop.index }}" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        {% for name, url in section.timing_plots %}
+        <figure class="mb-4">
+          <a href="{{ url }}" target="_blank"><img class="img-fluid border" loading="lazy" src="{{ url }}" alt="{{ name }}"></a>
+          <figcaption class="text-muted small">{{ name }}</figcaption>
+        </figure>
+        {% endfor %}
+        {{ section.timing_html|safe }}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% if section.summary_html %}
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#web-summary-{{ loop.index }}">
+        <i class="bi bi-clipboard-data me-2"></i> Run statistics of the web answers
+      </button>
+    </h2>
+    <div id="web-summary-{{ loop.index }}" class="accordion-collapse collapse">
+      <div class="accordion-body web-summary-doc">{{ section.summary_html|safe }}</div>
+    </div>
+  </div>
+  {% endif %}
+  {% if section.tables %}
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#web-tables-{{ loop.index }}">
+        <i class="bi bi-table me-2"></i> Data tables ({{ section.tables|length }})
+      </button>
+    </h2>
+    <div id="web-tables-{{ loop.index }}" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        <ul class="list-unstyled mb-0 web-table-list">
+          {% for table in section.tables %}
+          <li><a href="{{ table.url }}" target="_blank"><i class="bi bi-table"></i> {{ table.name }}</a>
+            <span class="text-muted small">{{ 'run statistics' if table.area == 'summary' else 'timing comparison' }} · {{ table.size_text }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% if section.readme_html %}
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#web-readme-{{ loop.index }}">
+        <i class="bi bi-info-circle me-2"></i> How these answers are stored
+      </button>
+    </h2>
+    <div id="web-readme-{{ loop.index }}" class="accordion-collapse collapse">
+      <div class="accordion-body">{{ section.readme_html|safe }}</div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
+{% endblock %}

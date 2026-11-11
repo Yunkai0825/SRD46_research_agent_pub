@@ -1,0 +1,21 @@
+panel,species,metal,curve,colour,line,width (pt)
+a,Co2+,Co,free ion,#7F3C8D,solid,1.5
+a,[Co(Glyc)]+,Co,main complex,#7F3C8D,dashed,1.2
+a,Ni2+,Ni,free ion,#11A579,solid,1.5
+a,[Ni(Glyc)2],Ni,main complex,#11A579,dashed,1.2
+a,Cu2+,Cu,free ion,#E68310,solid,1.5
+a,[Cu(Glyc)2],Cu,main complex,#E68310,dashed,1.2
+a,Zn2+,Zn,free ion,#3969AC,solid,1.5
+a,[Zn(Glyc)]+,Zn,main complex,#3969AC,dashed,1.2
+a,CuO(s),Cu,solid phase,#E68310,"band, 55 % opaque",3.5
+a,Zn(OH)2 (alpha),Zn,solid phase,#3969AC,"band, 55 % opaque",3.5
+b,Co2+,Co,free ion,#7F3C8D,solid,1.5
+b,[Co(Ethy)]2+,Co,main complex,#7F3C8D,dashed,1.2
+b,Ni2+,Ni,free ion,#11A579,solid,1.5
+b,[Ni(Ethy)2]2+,Ni,main complex,#11A579,dashed,1.2
+b,Cu2+,Cu,free ion,#E68310,solid,1.5
+b,[Cu(Ethy)2]2+,Cu,main complex,#E68310,dashed,1.2
+b,Zn2+,Zn,free ion,#3969AC,solid,1.5
+b,[Zn(Ethy)]2+,Zn,main complex,#3969AC,dashed,1.2
+b,ZnO(s),Zn,solid phase,#3969AC,"band, 55 % opaque",3.5
+b,[Co(OH)2](s),Co,solid phase,#7F3C8D,"band, 55 % opaque",3.5

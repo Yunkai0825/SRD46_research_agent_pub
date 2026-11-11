@@ -1,0 +1,224 @@
+{
+  "sweep_method": "pourbaix_sweep",
+  "_meta": {
+    "dof": 3,
+    "stage": "LC3_3",
+    "notes": "Pourbaix pH-E map with an added a_w axis -> 3 DOF."
+  },
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Fe",
+          "element": "Fe",
+          "redox_states": [
+            "Fe$+3",
+            "Fe$+2"
+          ]
+        },
+        {
+          "name": "Cu",
+          "element": "Cu",
+          "redox_states": [
+            "Cu$+2",
+            "Cu$+1"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Glycine",
+          "db_id": "ligand_5760",
+          "internal_id": "L1",
+          "smiles": "NCC(=O)O"
+        },
+        {
+          "name": "Citric acid",
+          "db_id": "ligand_9058",
+          "internal_id": "L2",
+          "smiles": "O=C(O)CC(O)(CC(=O)O)C(=O)O"
+        }
+      ]
+    }
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "axis",
+    "ionic_strength_mode": "auto"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "assumed",
+        "note": "standard lab T"
+      },
+      {
+        "id": "Fe",
+        "handle": "s.total[\"Fe\"]",
+        "ref": "total",
+        "handle_id": "Fe",
+        "value": 0.001,
+        "basis": "known",
+        "note": "task: 1 mM Fe"
+      },
+      {
+        "id": "Cu",
+        "handle": "s.total[\"Cu\"]",
+        "ref": "total",
+        "handle_id": "Cu",
+        "value": 0.001,
+        "basis": "known",
+        "note": "task: 1 mM Cu"
+      },
+      {
+        "id": "L1",
+        "handle": "s.total[\"ligand_5760\"]",
+        "ref": "total",
+        "handle_id": "ligand_5760",
+        "value": 0.01,
+        "basis": "known",
+        "note": "task: 10 mM glycine"
+      },
+      {
+        "id": "L2",
+        "handle": "s.total[\"ligand_9058\"]",
+        "ref": "total",
+        "handle_id": "ligand_9058",
+        "value": 0.01,
+        "basis": "known",
+        "note": "task: 10 mM citric acid"
+      }
+    ],
+    "notes": "Pourbaix sweep scans pH, E_V, and water activity -- none pinned here. Totals from task; T at standard lab value; I left to solver (auto).",
+    "n_known": 4,
+    "n_assumed": 1
+  },
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "source_card": "l3_3_constraint_card.py",
+    "axes": [
+      "pH_axis",
+      "E_V_axis",
+      "a_w_axis"
+    ],
+    "dof": {
+      "K": 7,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "E",
+        "op": "==",
+        "lhs": {
+          "ref": "E_V"
+        },
+        "rhs": {
+          "axis": "E_V_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Fe",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Fe"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Cu",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Cu"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L1",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_5760"
+        },
+        "rhs": {
+          "const": 0.01
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L2",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_9058"
+        },
+        "rhs": {
+          "const": 0.01
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 0.0,
+      "max": 14.0,
+      "n_points": 25
+    },
+    {
+      "name": "E_V",
+      "min": -1.0,
+      "max": 1.5,
+      "n_points": 25
+    },
+    {
+      "name": "a_w",
+      "min": 0.7,
+      "max": 1.0,
+      "n_points": 4
+    }
+  ],
+  "grid_refine": {
+    "mode": "boundary",
+    "factor": 2,
+    "n_layers": 1
+  }
+}

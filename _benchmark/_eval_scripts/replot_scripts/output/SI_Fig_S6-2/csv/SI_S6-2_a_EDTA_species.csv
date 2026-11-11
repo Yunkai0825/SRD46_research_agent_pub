@@ -1,0 +1,12 @@
+species,kind,colour,line,"width (pt, in print)",name at pH,name at log10 c
+H5EDTA+,"dissolved, holds the ligand",#ff7f0e,dashed,0.971,,
+H4EDTA,"dissolved, holds the ligand",#bcbd22,dashed,0.971,,
+H3EDTA-,"dissolved, holds the ligand",#8c564b,dashed,0.971,,
+H2EDTA2-,"dissolved, holds the ligand",#c49c94,dashed,0.971,4.75,-2.063
+HEDTA3-,"dissolved, holds the ligand",#ffbb78,dashed,0.971,7.35,-2.709
+EDTA,"dissolved, holds the ligand",#f7b6d2,dashed,0.971,,
+[Fe(OH)4]-,dissolved,#bcbd22,solid,0.809,,
+[Fe(EDTA)H],"dissolved, holds the ligand",#dbdb8d,dashed,0.971,,
+[Fe(EDTA)]-,"dissolved, holds the ligand",#c7c7c7,dashed,0.971,5.55,-3.317
+[Fe(EDTA)(OH)]2-,"dissolved, holds the ligand",#e377c2,dashed,0.971,7.7,-2.023
+"[FeO(OH)(s,alpha)]",solid phase,#8b0000,solid,1.888,8.25,-1.332

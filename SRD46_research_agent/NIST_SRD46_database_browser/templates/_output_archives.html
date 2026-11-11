@@ -1,0 +1,9 @@
+<dialog id="output-archives-dialog" style="max-width:36rem;border:1px solid #adb5bd;border-radius:.5rem;padding:1.5rem">
+  <h2 class="h5">Archived outputs</h2>
+  <p id="output-archives-message" aria-live="polite"></p>
+  <div class="d-flex gap-2 justify-content-end">
+    <button type="button" class="btn btn-secondary" id="output-archives-keep">Read from ZIPs</button>
+    <button type="button" class="btn btn-primary" id="output-archives-unpack">Unpack missing files</button>
+  </div>
+</dialog>
+<script src="{{ url_for('static', filename='js/output_archives.js') }}" defer></script>

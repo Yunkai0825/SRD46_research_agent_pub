@@ -1,0 +1,89 @@
+{
+    "_notes": "Multi-metal multi-ligand: Fe3+, Fe2+, Cu2+ and Cu+ with Glycine and Citrate. 7 collection pairs.",
+    "equilibrium_networks": [
+        {
+            "eq_network": "ref_eq_net_86",
+            "node_count": 2,
+            "temperature": 25.0,
+            "ionic_strength": 0.1,
+            "metal_id": 41,
+            "metal_name": "Cu^[2+]",
+            "ligand_id": 5760,
+            "ligand_SMILES": "NCC(=O)O",
+            "ligand_canonical_HxL": "HL",
+            "_notes": "collection_id=33, Cu2++glycine. ML(logK=8.19), ML2(logK=15.1)"
+        },
+        {
+            "eq_network": "ref_eq_net_22180",
+            "node_count": 5,
+            "temperature": 25.0,
+            "ionic_strength": 0.1,
+            "metal_id": 41,
+            "metal_name": "Cu^[2+]",
+            "ligand_id": 9058,
+            "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+            "ligand_canonical_HxL": "H3L",
+            "_notes": "collection_id=16262, Cu2++citrate"
+        },
+        {
+            "eq_network": "ref_eq_net_100",
+            "node_count": 1,
+            "temperature": 25.0,
+            "ionic_strength": 0.1,
+            "metal_id": 42,
+            "metal_name": "Cu^[+]",
+            "ligand_id": 5760,
+            "ligand_SMILES": "NCC(=O)O",
+            "ligand_canonical_HxL": "HL",
+            "_notes": "collection_id=37, Cu++glycine. ML2(logK=10.1)"
+        },
+        {
+            "eq_network": "ref_eq_net_97",
+            "node_count": 2,
+            "temperature": 24.0,
+            "ionic_strength": 0.5,
+            "metal_id": 61,
+            "metal_name": "Fe^[3+]",
+            "ligand_id": 5760,
+            "ligand_SMILES": "NCC(=O)O",
+            "ligand_canonical_HxL": "HL",
+            "_notes": "collection_id=35, Fe3++glycine. T~24, I=0.5"
+        },
+        {
+            "eq_network": "ref_eq_net_22182",
+            "node_count": 4,
+            "temperature": 25.0,
+            "ionic_strength": 0.1,
+            "metal_id": 61,
+            "metal_name": "Fe^[3+]",
+            "ligand_id": 9058,
+            "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+            "ligand_canonical_HxL": "H3L",
+            "_notes": "collection_id=16263, Fe3++citrate. T=25, I=0.1"
+        },
+        {
+            "eq_network": "ref_eq_net_63",
+            "node_count": 2,
+            "temperature": 25.0,
+            "ionic_strength": 0.1,
+            "metal_id": 62,
+            "metal_name": "Fe^[2+]",
+            "ligand_id": 5760,
+            "ligand_SMILES": "NCC(=O)O",
+            "ligand_canonical_HxL": "HL",
+            "_notes": "collection_id=30, Fe2++glycine. T=25, I=0.1"
+        },
+        {
+            "eq_network": "ref_eq_net_22168",
+            "node_count": 2,
+            "temperature": 25.0,
+            "ionic_strength": 0.1,
+            "metal_id": 62,
+            "metal_name": "Fe^[2+]",
+            "ligand_id": 9058,
+            "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+            "ligand_canonical_HxL": "H3L",
+            "_notes": "collection_id=16259, Fe2++citrate. T=25, I=0.1"
+        }
+    ]
+}

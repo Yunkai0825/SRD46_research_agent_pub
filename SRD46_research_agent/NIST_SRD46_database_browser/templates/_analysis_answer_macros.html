@@ -1,0 +1,50 @@
+{# Shared pieces of the answer-selection pages (matrix, compare, detail, web answer).
+   An answer dict comes from routes/analysis.py (_run_answer / _web_answer):
+   id, label, pid, url, verdict, badge, elapsed_s, live, chip, source_name, is_reference. #}
+
+{% macro chip(a, show_source=False) -%}
+<span class="answer-chip chip-{{ a.badge }}{% if a.is_reference %} is-reference{% endif %}{% if a.live and a.live.state == 'running' %} live-running{% endif %}"
+      title="{{ a.label }} — {{ a.verdict }}{% if a.elapsed_s is not none %} · {{ '%.0f'|format(a.elapsed_s) }} s excluding solver{% endif %} · {{ a.get('timing_note', '') }}{% if a.live %} · {{ a.live.note }}{% endif %}{% if a.is_reference %} · reference answer{% endif %}">
+  <input type="checkbox" class="form-check-input answer-pick" data-id="{{ a.id }}" data-pid="{{ a.pid }}" data-label="{{ a.label }}" aria-label="select {{ a.label }}">
+  <span class="dot dot-{{ a.badge }}"></span>
+  <a href="{{ a.url }}" title="open {{ a.label }}">{% if show_source %}{{ a.source_name }} · {% endif %}{{ a.chip }}</a>
+  {% if a.elapsed_s is not none %}<small class="text-muted">{% if a.elapsed_s < 60 %}{{ a.elapsed_s|int }}s{% else %}{{ ((a.elapsed_s / 60)|round)|int }}m{% endif %}</small>{% endif %}
+  {% if a.is_reference %}<span class="ref-star" aria-label="reference answer">★</span>{% endif %}
+</span>
+{%- endmacro %}
+
+{% macro selection_bar(hide_when_empty=False) -%}
+<div id="answer-selection-bar" class="answer-selection-bar{% if hide_when_empty %} hide-when-empty{% endif %}">
+  <span class="sel-text text-muted small"></span>
+  <span class="sel-list d-flex flex-wrap gap-1"></span>
+  <span class="ms-auto d-flex gap-2">
+    <button type="button" class="btn btn-sm btn-primary sel-compare" disabled title="2–3 answers of one prompt"><i class="bi bi-layout-split"></i> Compare side by side</button>
+    <button type="button" class="btn btn-sm btn-warning sel-ref" disabled title="exactly one answer">★ Set as reference answer</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary sel-clear" disabled>Clear</button>
+  </span>
+</div>
+{%- endmacro %}
+
+{% macro legend() -%}
+<div class="answer-legend text-muted small mt-2">
+  <span><span class="dot dot-success"></span> pass / supported</span>
+  <span><span class="dot dot-warning"></span> partial · stopped at limit · no write for n min</span>
+  <span><span class="dot dot-danger"></span> fail / error</span>
+  <span><span class="dot dot-info"></span> running</span>
+  <span><span class="dot dot-secondary"></span> incomplete / unknown</span>
+  <span><span class="dot dot-web"></span> Claude-web answer (no verdict)</span>
+  <span><span class="ref-star">★</span> reference answer</span>
+  <span>chip text = run date (MMDD) or web run · <em>n</em>m = minutes</span>
+</div>
+{%- endmacro %}
+
+{% macro scripts_config(page) -%}
+<script>
+window.SRD46_ANSWERS = {
+  page: {{ page|tojson }},
+  compareUrl: {{ url_for('analysis.analysis_compare')|tojson }},
+  referenceUrl: {{ url_for('analysis.analysis_reference_list')|tojson }}
+};
+</script>
+<script src="{{ url_for('static', filename='analysis_answers.js') }}"></script>
+{%- endmacro %}

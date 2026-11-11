@@ -1,0 +1,11 @@
+{
+  "config": "Fable5_1_max",
+  "prompt_id": "L1_10",
+  "tool_use_id": "toolu_015Fv9iExkygtcMLByi8CB9w",
+  "dispatch_stop_utc": "2026-09-17T06:24:41.757428Z",
+  "last_progress_observed_by_utc": "2026-09-17T06:25:27.060613Z",
+  "confirmed_runtime_lower_bound_s": 44.1,
+  "process_absent_observed_by_utc": "2026-09-17T06:26:44.397491Z",
+  "dispatch_to_absence_upper_bound_s": 122.640063,
+  "caveat": "44.1 s is the internal elapsed at the last logged completed pH column. Dispatch/absence envelope includes startup and possibly idle waiting, not an exact runtime. The process was absent in ps output and no completed grid existed. No rerun performed."
+}

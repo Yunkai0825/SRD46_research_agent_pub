@@ -1,0 +1,35 @@
+[
+  {
+    "metal_id": "metal_62",
+    "ligand_id": "ligand_9058",
+    "temperature": 25.0,
+    "ionic_strength": 0.1,
+    "eq_network": "ref_eq_net_ref_eq_net_22168"
+  },
+  {
+    "eq_network": "ref_eq_net_ref_eq_net_27433",
+    "node_count": 5,
+    "temperature": 25.0,
+    "ionic_strength": 0.1,
+    "metal_id": 62,
+    "metal_name": "Fe^[2+]",
+    "ligand_id": 10076,
+    "ligand_SMILES": null,
+    "ligand_canonical_HxL": null,
+    "_notes": "auto-fetched hydroxide network (network_db_id=ref_eq_net_27433)",
+    "_auto_fetched": "hydroxide"
+  },
+  {
+    "eq_network": "ref_eq_net_ref_eq_net_22067",
+    "node_count": 3,
+    "temperature": 25.0,
+    "ionic_strength": 0.1,
+    "metal_id": 68,
+    "metal_name": "H+",
+    "ligand_id": 9058,
+    "ligand_SMILES": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+    "ligand_canonical_HxL": "H3L",
+    "_notes": "auto-fetched pKa network (network_db_id=ref_eq_net_22067)",
+    "_auto_fetched": "pka"
+  }
+]

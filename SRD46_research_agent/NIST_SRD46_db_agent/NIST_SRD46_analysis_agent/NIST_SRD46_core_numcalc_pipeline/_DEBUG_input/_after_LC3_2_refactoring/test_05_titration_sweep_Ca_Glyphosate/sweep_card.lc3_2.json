@@ -1,0 +1,80 @@
+{
+  "schema_version": "lc3_2.v1",
+  "source_card": "test_05.py",
+  "axes": [],
+  "dof": {
+    "K": 6,
+    "charge_balance_enforced": false
+  },
+  "lets": {},
+  "binds": [
+    {
+      "id": "pH",
+      "op": "==",
+      "lhs": {
+        "ref": "pH"
+      },
+      "rhs": {
+        "const": 7.0
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "E",
+      "op": "==",
+      "lhs": {
+        "ref": "E_V"
+      },
+      "rhs": {
+        "const": 0.0
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "T",
+      "op": "==",
+      "lhs": {
+        "ref": "temperature"
+      },
+      "rhs": {
+        "const": 298.15
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "I",
+      "op": "==",
+      "lhs": {
+        "ref": "ionic_strength"
+      },
+      "rhs": {
+        "const": 0.1
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "Ca",
+      "op": "==",
+      "lhs": {
+        "ref": "total",
+        "id": "Ca"
+      },
+      "rhs": {
+        "const": 0.001
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "L",
+      "op": "==",
+      "lhs": {
+        "ref": "total",
+        "id": "ligand_5937"
+      },
+      "rhs": {
+        "const": 0.01
+      },
+      "residual": "lhs - rhs"
+    }
+  ]
+}

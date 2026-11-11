@@ -1,0 +1,14 @@
+layer,calls,in_chars_per_token,out_chars_per_token,used_for_estimation
+L0 orchestrator,104,1.905,1.916,True
+L1 pipeline sub-agent,358,1.945,1.776,True
+LC1_1 ID alignment,293,2.259,1.842,True
+LC1_2 eq-map node validator,1314,2.275,2.188,True
+LC2_3 element-instruction supervisor,738,2.151,2.086,True
+LC2_3 per-group dedup,1330,2.37,1.958,True
+LC2_3 singleton dedup,453,2.157,1.776,True
+LC3_1 method picker,118,2.496,1.949,True
+LC3_2 initial-condition designer,149,2.366,1.892,True
+LC3_3 constraint designer,155,2.246,1.633,True
+LC3_4 sweep designer,118,2.614,2.024,True
+LD validator,312,1.941,1.968,True
+GLOBAL,5442,2.173,1.94,True

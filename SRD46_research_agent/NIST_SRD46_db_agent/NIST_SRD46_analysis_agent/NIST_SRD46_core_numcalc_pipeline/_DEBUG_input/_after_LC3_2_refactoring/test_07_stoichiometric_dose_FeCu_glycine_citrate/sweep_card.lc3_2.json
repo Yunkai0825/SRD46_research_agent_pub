@@ -1,0 +1,200 @@
+{
+  "schema_version": "lc3_2.v1",
+  "source_card": "test_07.py",
+  "axes": [
+    "pH_axis",
+    "E_V_axis"
+  ],
+  "dof": {
+    "K": 10,
+    "charge_balance_enforced": false
+  },
+  "lets": {},
+  "binds": [
+    {
+      "id": "pH",
+      "op": "==",
+      "lhs": {
+        "ref": "pH"
+      },
+      "rhs": {
+        "axis": "pH_axis"
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "E",
+      "op": "==",
+      "lhs": {
+        "ref": "E_V"
+      },
+      "rhs": {
+        "axis": "E_V_axis"
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "T",
+      "op": "==",
+      "lhs": {
+        "ref": "temperature"
+      },
+      "rhs": {
+        "const": 298.15
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "I",
+      "op": "==",
+      "lhs": {
+        "ref": "ionic_strength"
+      },
+      "rhs": {
+        "const": 0.1
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "Cu",
+      "op": "==",
+      "lhs": {
+        "ref": "total",
+        "id": "Cu"
+      },
+      "rhs": {
+        "const": 0.001
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "Cu2",
+      "op": "==",
+      "lhs": {
+        "ref": "total",
+        "id": "Cu$+2"
+      },
+      "rhs": {
+        "const": 0.0008
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "L1",
+      "op": "==",
+      "lhs": {
+        "ref": "total",
+        "id": "ligand_5760"
+      },
+      "rhs": {
+        "op": "*",
+        "args": [
+          {
+            "const": 0.0001
+          },
+          {
+            "op": "+",
+            "args": [
+              {
+                "const": 1.0
+              },
+              {
+                "op": "*",
+                "args": [
+                  {
+                    "const": 0.5
+                  },
+                  {
+                    "axis": "pH_axis"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "L2",
+      "op": "==",
+      "lhs": {
+        "ref": "total",
+        "id": "ligand_9058"
+      },
+      "rhs": {
+        "op": "*",
+        "args": [
+          {
+            "const": 0.5
+          },
+          {
+            "ref": "total",
+            "id": "ligand_5760"
+          }
+        ]
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "Fe2",
+      "op": "==",
+      "lhs": {
+        "ref": "total",
+        "id": "Fe$+2"
+      },
+      "rhs": {
+        "op": "*",
+        "args": [
+          {
+            "const": 2.1
+          },
+          {
+            "ref": "total",
+            "id": "ligand_5760"
+          }
+        ]
+      },
+      "residual": "lhs - rhs"
+    },
+    {
+      "id": "Fe",
+      "op": "==",
+      "lhs": {
+        "ref": "total",
+        "id": "Fe"
+      },
+      "rhs": {
+        "op": "+",
+        "args": [
+          {
+            "op": "*",
+            "args": [
+              {
+                "const": 4.1
+              },
+              {
+                "op": "+",
+                "args": [
+                  {
+                    "ref": "total",
+                    "id": "ligand_9058"
+                  },
+                  {
+                    "ref": "total",
+                    "id": "ligand_5760"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "ref": "total",
+            "id": "Cu$+2"
+          }
+        ]
+      },
+      "residual": "lhs - rhs"
+    }
+  ]
+}

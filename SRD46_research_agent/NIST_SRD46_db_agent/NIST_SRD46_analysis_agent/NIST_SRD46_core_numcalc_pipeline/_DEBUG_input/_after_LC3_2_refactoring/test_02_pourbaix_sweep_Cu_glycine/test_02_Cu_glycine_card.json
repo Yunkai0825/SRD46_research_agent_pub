@@ -1,0 +1,17 @@
+{
+    "_notes": "Simple case: Cu2+ + glycine, single network at T=25 I=0.1, 2 equilibria",
+    "equilibrium_networks": [
+        {
+            "eq_network": "ref_eq_net_86",
+            "node_count": 2,
+            "temperature": 25.0,
+            "ionic_strength": 0.1,
+            "metal_id": 41,
+            "metal_name": "Cu^[2+]",
+            "ligand_id": 5760,
+            "ligand_SMILES": "NCC(=O)O",
+            "ligand_canonical_HxL": "HL",
+            "_notes": "collection_id=33, map_id=86. ML(logK=8.19), ML2(logK=15.1)"
+        }
+    ]
+}

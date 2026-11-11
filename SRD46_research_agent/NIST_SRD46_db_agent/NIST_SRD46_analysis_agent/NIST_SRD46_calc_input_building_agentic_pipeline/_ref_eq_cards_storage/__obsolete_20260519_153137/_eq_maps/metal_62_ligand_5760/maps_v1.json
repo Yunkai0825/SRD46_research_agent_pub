@@ -1,0 +1,42 @@
+{
+  "pairs": [
+    {
+      "metal_id": 62,
+      "ligand_id": 5760,
+      "selected_network_ids": [
+        63
+      ],
+      "vlm_overrides": [
+        {
+          "beta_definition_id": 812,
+          "action": "median_K",
+          "metal_id": 62,
+          "ligand_id": 5760,
+          "include_vlm_ids": [
+            93748,
+            93750,
+            93751,
+            93752,
+            93753
+          ],
+          "rationale": "deterministic L3: 5 K-siblings cluster within \u00b10.5 of median=+4.240 (chosen logK=-4.130); using median over [93748, 93750, 93751, 93752, 93753].",
+          "node_key": "metal62_ligand5760_beta812_net63"
+        }
+      ]
+    },
+    {
+      "metal_id": 62,
+      "ligand_id": 10076,
+      "selected_network_ids": [
+        27433
+      ]
+    },
+    {
+      "metal_id": 68,
+      "ligand_id": 5760,
+      "selected_network_ids": [
+        1
+      ]
+    }
+  ]
+}

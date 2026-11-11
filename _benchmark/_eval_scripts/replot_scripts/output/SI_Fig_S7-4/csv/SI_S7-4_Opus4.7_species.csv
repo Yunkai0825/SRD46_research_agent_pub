@@ -1,0 +1,33 @@
+species,kind,colour,line,"width (pt, in print)",name at pH,name at log10 c
+H2Glycine+,"dissolved, holds the ligand",#e377c2,dashed,0.971,,
+HGlycine,"dissolved, holds the ligand",#ff7f0e,dashed,0.971,,
+Glycine,"dissolved, holds the ligand",#bcbd22,dashed,0.971,,
+HAmmonia+,"dissolved, holds the ligand",#8c564b,dashed,0.971,5.6,-0.65
+Ammonia,"dissolved, holds the ligand",#c49c94,dashed,0.971,10.65,-0.668
+Cu2+,dissolved,#ff7f0e,solid,0.809,2.6,-3.428
+[Cu(OH)]+,dissolved,#2ca02c,solid,0.809,,
+[Cu2(OH)2]2+,dissolved,#d62728,solid,0.809,,
+[Cu(OH)2],dissolved,#9467bd,solid,0.809,,
+HCuO2-,dissolved,#8c564b,solid,0.809,,
+CuO22-,dissolved,#e377c2,solid,0.809,,
+[Cu(Glyc)]+,"dissolved, holds the ligand",#dbdb8d,dashed,0.971,4.25,-1.654
+[Cu(Glyc)2],"dissolved, holds the ligand",#c7c7c7,dashed,0.971,6.4,-2.66
+[Cu(Ammo)4]2+,"dissolved, holds the ligand",#e377c2,dashed,0.971,,
+[Cu(Ammo)3]2+,"dissolved, holds the ligand",#ff7f0e,dashed,0.971,,
+[Cu(Ammo)2]2+,"dissolved, holds the ligand",#bcbd22,dashed,0.971,,
+[Cu(Ammo)]2+,"dissolved, holds the ligand",#8c564b,dashed,0.971,,
+Zn2+,dissolved,#bcbd22,solid,0.809,4.5,-2.652
+[Zn(OH)]+,dissolved,#1f77b4,solid,0.809,,
+[Zn(OH)2],dissolved,#ff7f0e,solid,0.809,,
+[Zn(OH)3]-,dissolved,#2ca02c,solid,0.809,,
+[Zn(OH)4]2-,dissolved,#d62728,solid,0.809,,
+[Zn(Glyc)]+,"dissolved, holds the ligand",#c49c94,dashed,0.971,7.25,-1.757
+[Zn(Glyc)2],"dissolved, holds the ligand",#ffbb78,dashed,0.971,,
+[Zn(Glyc)3]-,"dissolved, holds the ligand",#f7b6d2,dashed,0.971,,
+[Zn(Glyc)(OH)],"dissolved, holds the ligand",#dbdb8d,dashed,0.971,,
+[Zn(Ammo)4]2+,"dissolved, holds the ligand",#c7c7c7,dashed,0.971,,
+[Zn(Ammo)3]2+,"dissolved, holds the ligand",#e377c2,dashed,0.971,,
+[Zn(Ammo)2]2+,"dissolved, holds the ligand",#ff7f0e,dashed,0.971,,
+[Zn(Ammo)]2+,"dissolved, holds the ligand",#bcbd22,dashed,0.971,,
+[Cu(OH)2](s),solid phase,#006400,solid,1.888,,
+Zn(OH)2 (alpha),solid phase,#8b0000,solid,1.888,,

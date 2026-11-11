@@ -1,0 +1,134 @@
+{# Eval mode of a run's answer: the answer with its excerpts highlighted, beside the excerpt
+   rows in their stored order and the answer's core chemistry messages.  `eval_view` comes from
+   routes/_analysis_excerpts.py (the run's _eval/excerpts.json).  Scripted by static/analysis_eval.js;
+   where the excerpts may be edited (`eval_edit`), static/analysis_eval_edit.js adds the editor,
+   which writes every change to the run's _eval/excerpts.json. #}
+<link href="{{ url_for('static', filename='analysis_eval.css') }}" rel="stylesheet">
+{% set v = eval_view %}
+<div class="eval-summary">
+  {% if v.case %}<div><strong>{{ v.case }}</strong></div>{% endif %}
+  <div class="eval-stats">
+    {% if v.panel_rows %}
+    <span>{{ v.panel_rows }} panel rows{{ ':' if v.has_marks }}</span>
+    {% if v.has_marks %}
+    {% for mark, n in v.mark_counts.items() %}<span class="xm-pill xm-{{ {'✓':'ok','≈':'near','✗':'bad','○':'open'}[mark] }}">{{ mark }} {{ n }}</span>{% endfor %}
+    <span class="eval-sep">{{ v.reason_rows }} of {{ v.panel_rows }} rows carry a causal argument</span>
+    {% endif %}
+    {% endif %}
+    {% if v.core %}
+    <span class="eval-sep">{{ v.core|length }} core chemistry messages: {{ v.coverage_counts.covered }} covered, {{ v.coverage_counts.partial }} partly, {{ v.coverage_counts.none }} not excerpted</span>
+    {% endif %}
+    <span class="eval-sep">{{ v.excerpted_pct }} % of the answer's text is quoted</span>
+  </div>
+  {% if v.answer_changed %}<div class="alert alert-warning py-1 px-2 small mb-0 mt-2">answer.md changed since these excerpts were mapped; the highlights may be off.</div>{% endif %}
+  {% if v.missing_count %}<div class="alert alert-warning py-1 px-2 small mb-0 mt-2">{{ v.missing_count }} quoted segment{{ '' if v.missing_count == 1 else 's' }} not found in this answer; marked on the row.</div>{% endif %}
+</div>
+
+<div class="eval-controls" id="evalControls">
+  <label class="form-check form-switch form-check-inline mb-0">
+    <input class="form-check-input" type="checkbox" data-layer="e" checked><span class="form-check-label">Excerpts</span>
+  </label>
+  {% if v.core %}
+  <label class="form-check form-switch form-check-inline mb-0">
+    <input class="form-check-input" type="checkbox" data-layer="c" checked><span class="form-check-label">Core chemistry messages</span>
+  </label>
+  {% endif %}
+  {% if v.has_marks %}
+  <span class="eval-marks" role="group" aria-label="filter by mark">
+    {% for mark, cls, title in [('✓','ok','agrees'),('≈','near','agrees except the noted difference'),('✗','bad','contradicted by the solver'),('○','open','not checkable')] %}
+    <button type="button" class="xm-pill xm-{{ cls }} is-on" data-mark="{{ cls }}" aria-pressed="true" title="{{ title }}: click to hide">{{ mark }}</button>
+    {% endfor %}
+  </span>
+  {% endif %}
+</div>
+
+<p class="eval-legend">Filled: excerpted statement, in the colour of its mark. Dashed blue: the answer's chemistry passage behind a core message; on a partly covered message this is usually the part the panel leaves out.</p>
+
+<div class="eval-layout{{ ' is-editable' if eval_edit }}" id="evalLayout">
+  <div class="eval-answer" id="evalAnswer">{{ v.html | safe }}</div>
+  <aside class="eval-side">
+    <div class="eval-tabs" role="tablist">
+      <button type="button" class="eval-tab is-on" data-tab="rows" role="tab">Excerpts ({{ v.excerpts|length }})</button>
+      {% if v.core %}<button type="button" class="eval-tab" data-tab="core" role="tab">Core chemistry ({{ v.core|length }})</button>{% endif %}
+    </div>
+    <div class="eval-list" data-pane="rows">
+      {% if eval_edit %}
+      <div class="eval-edit-bar">
+        <button type="button" class="btn btn-sm btn-outline-primary" id="evalNew" disabled
+                title="select a passage of the answer first">+ New excerpt</button>
+        <span class="eval-edit-hint" id="evalSelectionHint">Select a passage of the answer to quote it.</span>
+      </div>
+      <form class="eval-editor" id="evalEditor" hidden>
+        <div class="ee-title"></div>
+        <div class="ee-label">Quoted parts</div>
+        <ol class="ee-parts"></ol>
+        <div class="ee-selection">
+          <span class="ee-selected"></span>
+          <span class="ee-part-actions">
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-act="add-part" disabled>Add selection as a part</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-act="replace-parts" disabled>Replace parts with selection</button>
+          </span>
+        </div>
+        <div class="ee-grid">
+          <label>Label<input class="form-control form-control-sm" name="fig"></label>
+          <label>Sub-label<input class="form-control form-control-sm" name="badge" placeholder="a, b"></label>
+          <label>Kind<input class="form-control form-control-sm" name="kind" list="evalKinds"></label>
+          <label>Mark<select class="form-select form-select-sm" name="mark">
+            <option value="">none</option>
+            <option value="✓">✓ agrees</option>
+            <option value="≈">≈ agrees except the noted difference</option>
+            <option value="✗">✗ contradicted by the solver</option>
+            <option value="○">○ not checkable</option>
+          </select></label>
+        </div>
+        <label>Statement<textarea class="form-control form-control-sm" name="statement" rows="2" placeholder="empty: the quoted parts, joined with …"></textarea></label>
+        <label>Comment<textarea class="form-control form-control-sm" name="note" rows="2"></textarea></label>
+        <label>Differs from the answer<input class="form-control form-control-sm" name="verbatim_diff"></label>
+        <div class="ee-help">**bold**, ^{sup} and _{sub} work in the statement and the comment.</div>
+        <div class="ee-error" role="alert" hidden></div>
+        <div class="ee-buttons">
+          <button type="submit" class="btn btn-sm btn-primary">Save</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" data-act="cancel">Cancel</button>
+          <button type="button" class="btn btn-sm btn-outline-danger ms-auto" data-act="delete">Delete</button>
+        </div>
+        <datalist id="evalKinds">{% for kind in v.kinds %}<option value="{{ kind }}">{% endfor %}</datalist>
+      </form>
+      <script type="application/json" id="evalEditData">{{ {"url": url_for('analysis.analysis_excerpt_edit', label=label), "version": eval_edit.version, "rows": v.editor_rows} | tojson }}</script>
+      {% endif %}
+      {% if not v.excerpts %}<p class="eval-empty">No excerpts stored for this run yet.</p>{% endif %}
+      {% for row in v.excerpts %}
+      <div class="xrow-wrap" data-mark="{{ row.cls }}">
+        <button type="button" class="xrow xrow-{{ row.cls }}" data-x="{{ row.id }}" data-mark="{{ row.cls }}">
+          <span class="xrow-head">
+            <span class="xm-chip xm-{{ row.cls }}">{{ row.chip }}</span>
+            <span class="xrow-fig">{{ row.fig }}{% if row.badge %} · {{ row.badge|join(', ') }}{% endif %}</span>
+            <span class="xrow-kind kind-{{ row.kind }}">{{ row.kind }}</span>
+            {% if row.mark %}<span class="xrow-mark xm-{{ row.cls }}">{{ row.mark }}</span>{% endif %}
+          </span>
+          <span class="xrow-text">{{ row.statement_html | safe }}</span>
+          {% if row.note_html %}<span class="xrow-note">{{ row.note_html | safe }}</span>{% endif %}
+          {% if row.verbatim_diff %}<span class="xrow-diff">differs from the answer: {{ row.verbatim_diff }}</span>{% endif %}
+          {% if row.missing %}<span class="xrow-missing">not found in the answer: {{ row.missing|join(' | ') }}</span>{% endif %}
+        </button>
+        {% if eval_edit %}<button type="button" class="xrow-edit" data-edit="{{ row.id }}" title="edit excerpt {{ row.chip }}" aria-label="edit excerpt {{ row.chip }}"><i class="bi bi-pencil"></i></button>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% if v.core %}
+    <div class="eval-list" data-pane="core" hidden>
+      {% for row in v.core %}
+      <button type="button" class="xrow xcore xcore-{{ row.coverage }}" data-x="{{ row.id }}">
+        <span class="xrow-head">
+          <span class="xcore-badge">{{ row.coverage_label }}</span>
+        </span>
+        <span class="xrow-text">{{ row.message }}</span>
+        {% if row.comment %}<span class="xrow-note">{{ row.comment }}</span>{% endif %}
+        {% if row.gap %}<span class="xcore-gap"><strong>Gap.</strong> {{ row.gap }}</span>{% endif %}
+        {% if row.missing %}<span class="xrow-missing">not found in the answer: {{ row.missing|join(' | ') }}</span>{% endif %}
+      </button>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if v.note %}<p class="eval-foot">{{ v.note }}</p>{% endif %}
+  </aside>
+</div>

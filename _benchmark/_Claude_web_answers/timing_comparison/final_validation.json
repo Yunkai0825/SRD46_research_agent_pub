@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "csv_only_redraw": "passed",
+  "framework_runs": 32,
+  "web_runs": 55,
+  "L1_bars": 45,
+  "L1_missing_slots": 10,
+  "all_prompt_bars": 64,
+  "max_stack_error_minutes": 6.7392988967185374e-09,
+  "negative_component_count": 0,
+  "web_excludes_between_turns": true,
+  "flags_reconciled": true,
+  "images": [
+    {
+      "file": "L1_framework_vs_web_stacked.png",
+      "width": 5700,
+      "height": 2580
+    },
+    {
+      "file": "all_prompts_framework_vs_opus_high_stacked.png",
+      "width": 6900,
+      "height": 2580
+    }
+  ]
+}

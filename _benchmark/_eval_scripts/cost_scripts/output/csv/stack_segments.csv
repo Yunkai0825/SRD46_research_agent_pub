@@ -1,0 +1,15 @@
+segment,colour,layers
+LC1_1 ID alignment,#6fd09a,LC1_1 ID alignment
+LC1_2 eq-map inspect,#37ad6b,LC1_2 eq-map node validator + LC1 source repair
+LC1_3 parser,#257448,LC1_3 speciation parser
+LC1_3 query agent,#184e31,LC1_3 query agent
+LC2_3 singleton dedup,#8db8f1,LC2_3 singleton dedup
+LC2_3 per-group dedup,#5e9aec,LC2_3 per-group dedup
+LC2_3 main dedup,#114a97,LC2_3 element-instruction supervisor
+LC3_1 calc method,#feb381,LC3_1 method picker
+LC3_2 initial condition,#fe944e,LC3_2 initial-condition designer
+LC3_3 constraint,#fb6501,LC3_3 constraint designer
+LC3_4 sweep,#a74301,LC3_4 sweep designer
+LD validator,#c597e6,LD validator
+L1 subagents,#b177de,L1 pipeline sub-agent + Context compression
+L0 orchestrator,#7d2db9,L0 orchestrator

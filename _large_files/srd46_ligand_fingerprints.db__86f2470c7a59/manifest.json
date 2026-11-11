@@ -1,0 +1,30 @@
+{
+  "format": "large-file-pack/1",
+  "part_limit": 95000000,
+  "parts": [
+    {
+      "file": "part_001.zip",
+      "length": 468713472,
+      "member": "srd46_ligand_fingerprints.db.part_001",
+      "offset": 0,
+      "sha256": "9bb40a7aa1ceddfd42e9c2f486ba4b013cf62f80d66d8800f1ed0779d9322429",
+      "zip_sha256": "90a576442adb2d7ac3bb5c05605c0b69a979d495afdb0971c6c42109eb68590c",
+      "zip_size": 92914454
+    },
+    {
+      "file": "part_002.zip",
+      "length": 294588416,
+      "member": "srd46_ligand_fingerprints.db.part_002",
+      "offset": 468713472,
+      "sha256": "4234e24b495b3938851d4cf0d66f32c796842d2065993fd784305db855fee1b1",
+      "zip_sha256": "d4648ee22aa73a1c93f54ceb0f12743abf9c100644fb4a3c164ec1b233ef3420",
+      "zip_size": 64616358
+    }
+  ],
+  "sha256": "86f2470c7a59a5feeeb1b8b1bb3cfca1e5f6c5f03c38f2affebf39baee8f3e21",
+  "size": 763301888,
+  "targets": [
+    "SRD46_research_agent/NIST_SRD46_core_db_storage/srd46_ligand_fingerprints.db"
+  ],
+  "threshold": 100000000
+}

@@ -1,0 +1,22 @@
+{# Eval answer matrix / Freeform / Claude web tabs of the analysis-runs section.
+   Set `active` to 'matrix', 'freeform', 'web' or '' before including. #}
+<ul class="nav nav-tabs mb-3">
+  <li class="nav-item">
+    <a class="nav-link {% if active == 'matrix' %}active{% endif %}" data-matrix-link
+       href="{{ url_for('analysis.analysis_matrix') }}" title="every answer of every prompt, side by side">
+      <i class="bi bi-grid-3x3"></i> Eval answer matrix
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {% if active == 'freeform' %}active{% endif %}"
+       href="{{ url_for('analysis.analysis_freeform_index') }}">
+      <i class="bi bi-chat-square-text"></i> Freeform runs
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {% if active == 'web' %}active{% endif %}"
+       href="{{ url_for('analysis.analysis_web_index') }}" title="the same prompts answered in the Claude web app: answers, published pages, files, working trace">
+      <i class="bi bi-globe2"></i> Claude web
+    </a>
+  </li>
+</ul>

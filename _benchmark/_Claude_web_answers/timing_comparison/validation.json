@@ -1,0 +1,22 @@
+{
+  "framework_runs": 32,
+  "web_runs": 55,
+  "l1_slots": 55,
+  "full_comparison_rows": 64,
+  "timing_basis": "Framework recorded elapsed minus numerical solver; web displayed-branch active response spans minus same-branch solver command execution, excluding gaps between turns",
+  "no_plot_anywhere": 20,
+  "no_solver_anywhere": 16,
+  "plot_only_in_history": 2,
+  "uncertain_runs": [
+    {
+      "config": "framework",
+      "prompt_id": "L1_1",
+      "kind": "reconstructed"
+    },
+    {
+      "config": "Fable5_1_max",
+      "prompt_id": "L1_10",
+      "kind": "upper_bound"
+    }
+  ]
+}

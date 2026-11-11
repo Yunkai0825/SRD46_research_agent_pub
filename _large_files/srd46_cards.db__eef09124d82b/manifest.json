@@ -1,0 +1,21 @@
+{
+  "format": "large-file-pack/1",
+  "part_limit": 95000000,
+  "parts": [
+    {
+      "file": "part_001.zip",
+      "length": 197636096,
+      "member": "srd46_cards.db.part_001",
+      "offset": 0,
+      "sha256": "eef09124d82bd471d737043c27a6ff5dfe6cfcd9ed4b01f23cf1bbca7b897290",
+      "zip_sha256": "59b64b5eee3a42f4f1e10c1f11ab175226afd231a3a8ef3ff5b90c603f7cbf0b",
+      "zip_size": 23146492
+    }
+  ],
+  "sha256": "eef09124d82bd471d737043c27a6ff5dfe6cfcd9ed4b01f23cf1bbca7b897290",
+  "size": 197636096,
+  "targets": [
+    "SRD46_research_agent/NIST_SRD46_core_db_storage/srd46_cards.db"
+  ],
+  "threshold": 100000000
+}

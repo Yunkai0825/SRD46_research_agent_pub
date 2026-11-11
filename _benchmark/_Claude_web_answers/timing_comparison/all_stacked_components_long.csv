@@ -1,0 +1,436 @@
+﻿prompt_id,config,series,component,component_label,minutes,seconds,bar_total_min,web_flags,recorded_status,upper_bound
+L1_1,framework,Our framework,fw_lc1,LC1: system / equation mapping,0.7255333333333333,43.532,13.495982458583335,,complete,False
+L1_1,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,5.73425,344.055,13.495982458583335,,complete,False
+L1_1,framework,Our framework,fw_lc3,LC3: solver configuration,1.0719166666666666,64.315,13.495982458583335,,complete,False
+L1_1,framework,Our framework,fw_ld,LD: validation,0.4,24.0,13.495982458583335,,complete,False
+L1_1,framework,Our framework,fw_other,"Orchestration, reporting / other",5.5642824585833335,333.856947515,13.495982458583335,,complete,False
+L1_2,framework,Our framework,fw_lc1,LC1: system / equation mapping,1.6134833333333334,96.809,17.011983333333333,,complete,False
+L1_2,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,9.310183333333333,558.611,17.011983333333333,,complete,False
+L1_2,framework,Our framework,fw_lc3,LC3: solver configuration,0.9614499999999999,57.687,17.011983333333333,,complete,False
+L1_2,framework,Our framework,fw_ld,LD: validation,0.4083333333333333,24.5,17.011983333333333,,complete,False
+L1_2,framework,Our framework,fw_other,"Orchestration, reporting / other",4.718533333333334,283.112,17.011983333333333,,complete,False
+L1_3,framework,Our framework,fw_lc1,LC1: system / equation mapping,1.1104666666666667,66.628,7.79785,,complete,False
+L1_3,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,2.1988,131.928,7.79785,,complete,False
+L1_3,framework,Our framework,fw_lc3,LC3: solver configuration,0.6789333333333333,40.736,7.79785,,complete,False
+L1_3,framework,Our framework,fw_ld,LD: validation,0.425,25.5,7.79785,,complete,False
+L1_3,framework,Our framework,fw_other,"Orchestration, reporting / other",3.38465,203.079,7.79785,,complete,False
+L1_4,framework,Our framework,fw_lc1,LC1: system / equation mapping,2.5516666666666667,153.1,18.278966666666665,,validation_incomplete,False
+L1_4,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,10.5445,632.67,18.278966666666665,,validation_incomplete,False
+L1_4,framework,Our framework,fw_lc3,LC3: solver configuration,1.5582166666666666,93.493,18.278966666666665,,validation_incomplete,False
+L1_4,framework,Our framework,fw_ld,LD: validation,0.7833333333333333,47.0,18.278966666666665,,validation_incomplete,False
+L1_4,framework,Our framework,fw_other,"Orchestration, reporting / other",2.84125,170.475,18.278966666666665,,validation_incomplete,False
+L1_5,framework,Our framework,fw_lc1,LC1: system / equation mapping,1.6455666666666666,98.734,19.617733333333334,,complete,False
+L1_5,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,10.790166666666666,647.41,19.617733333333334,,complete,False
+L1_5,framework,Our framework,fw_lc3,LC3: solver configuration,1.5720999999999998,94.326,19.617733333333334,,complete,False
+L1_5,framework,Our framework,fw_ld,LD: validation,0.9433333333333334,56.6,19.617733333333334,,complete,False
+L1_5,framework,Our framework,fw_other,"Orchestration, reporting / other",4.666566666666667,279.994,19.617733333333334,,complete,False
+L1_6,framework,Our framework,fw_lc1,LC1: system / equation mapping,1.8861833333333335,113.171,21.583583333333333,,complete,False
+L1_6,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,9.702733333333333,582.164,21.583583333333333,,complete,False
+L1_6,framework,Our framework,fw_lc3,LC3: solver configuration,1.4236833333333334,85.421,21.583583333333333,,complete,False
+L1_6,framework,Our framework,fw_ld,LD: validation,0.6950000000000001,41.7,21.583583333333333,,complete,False
+L1_6,framework,Our framework,fw_other,"Orchestration, reporting / other",7.875983333333334,472.559,21.583583333333333,,complete,False
+L1_7,framework,Our framework,fw_lc1,LC1: system / equation mapping,1.3527333333333333,81.164,15.753516666666666,,complete,False
+L1_7,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,8.48945,509.36699999999996,15.753516666666666,,complete,False
+L1_7,framework,Our framework,fw_lc3,LC3: solver configuration,1.3203,79.218,15.753516666666666,,complete,False
+L1_7,framework,Our framework,fw_ld,LD: validation,0.7066666666666667,42.4,15.753516666666666,,complete,False
+L1_7,framework,Our framework,fw_other,"Orchestration, reporting / other",3.8843666666666667,233.062,15.753516666666666,,complete,False
+L1_8,framework,Our framework,fw_lc1,LC1: system / equation mapping,2.7033666666666667,162.202,33.044983333333334,,complete,False
+L1_8,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,16.942866666666667,1016.572,33.044983333333334,,complete,False
+L1_8,framework,Our framework,fw_lc3,LC3: solver configuration,1.88595,113.157,33.044983333333334,,complete,False
+L1_8,framework,Our framework,fw_ld,LD: validation,1.0266666666666666,61.599999999999994,33.044983333333334,,complete,False
+L1_8,framework,Our framework,fw_other,"Orchestration, reporting / other",10.486133333333333,629.168,33.044983333333334,,complete,False
+L1_9,framework,Our framework,fw_lc1,LC1: system / equation mapping,1.1410333333333333,68.462,6.484933333333333,,complete,False
+L1_9,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,2.8685666666666667,172.114,6.484933333333333,,complete,False
+L1_9,framework,Our framework,fw_lc3,LC3: solver configuration,0.7034,42.204,6.484933333333333,,complete,False
+L1_9,framework,Our framework,fw_ld,LD: validation,0.39333333333333337,23.6,6.484933333333333,,complete,False
+L1_9,framework,Our framework,fw_other,"Orchestration, reporting / other",1.3785999999999998,82.716,6.484933333333333,,complete,False
+L1_10,framework,Our framework,fw_lc1,LC1: system / equation mapping,3.61795,217.077,14.064266666666667,,validation_incomplete,False
+L1_10,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,5.58,334.8,14.064266666666667,,validation_incomplete,False
+L1_10,framework,Our framework,fw_lc3,LC3: solver configuration,0.8891166666666667,53.347,14.064266666666667,,validation_incomplete,False
+L1_10,framework,Our framework,fw_ld,LD: validation,0.47333333333333333,28.4,14.064266666666667,,validation_incomplete,False
+L1_10,framework,Our framework,fw_other,"Orchestration, reporting / other",3.5038666666666667,210.232,14.064266666666667,,validation_incomplete,False
+L1_11,framework,Our framework,fw_lc1,LC1: system / equation mapping,2.0415833333333335,122.495,15.233116666666668,,complete,False
+L1_11,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,7.781616666666666,466.897,15.233116666666668,,complete,False
+L1_11,framework,Our framework,fw_lc3,LC3: solver configuration,0.7733333333333333,46.4,15.233116666666668,,complete,False
+L1_11,framework,Our framework,fw_ld,LD: validation,0.41833333333333333,25.1,15.233116666666668,,complete,False
+L1_11,framework,Our framework,fw_other,"Orchestration, reporting / other",4.21825,253.09500000000003,15.233116666666668,,complete,False
+L2_1,framework,Our framework,fw_lc1,LC1: system / equation mapping,3.815316666666667,228.919,43.39706666666667,,complete,False
+L2_1,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,29.479283333333335,1768.757,43.39706666666667,,complete,False
+L2_1,framework,Our framework,fw_lc3,LC3: solver configuration,3.0599333333333334,183.596,43.39706666666667,,complete,False
+L2_1,framework,Our framework,fw_ld,LD: validation,1.125,67.5,43.39706666666667,,complete,False
+L2_1,framework,Our framework,fw_other,"Orchestration, reporting / other",5.917533333333334,355.052,43.39706666666667,,complete,False
+L2_2,framework,Our framework,fw_lc1,LC1: system / equation mapping,4.921366666666667,295.282,45.01656666666667,,validation_incomplete,False
+L2_2,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,27.026400000000002,1621.584,45.01656666666667,,validation_incomplete,False
+L2_2,framework,Our framework,fw_lc3,LC3: solver configuration,4.849500000000001,290.97,45.01656666666667,,validation_incomplete,False
+L2_2,framework,Our framework,fw_ld,LD: validation,1.1266666666666665,67.6,45.01656666666667,,validation_incomplete,False
+L2_2,framework,Our framework,fw_other,"Orchestration, reporting / other",7.092633333333334,425.558,45.01656666666667,,validation_incomplete,False
+L2_3,framework,Our framework,fw_lc1,LC1: system / equation mapping,5.684083333333334,341.045,27.414316666666668,,execution_failed,False
+L2_3,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,13.105066666666666,786.304,27.414316666666668,,execution_failed,False
+L2_3,framework,Our framework,fw_lc3,LC3: solver configuration,1.7729333333333335,106.376,27.414316666666668,,execution_failed,False
+L2_3,framework,Our framework,fw_ld,LD: validation,1.025,61.49999999999999,27.414316666666668,,execution_failed,False
+L2_3,framework,Our framework,fw_other,"Orchestration, reporting / other",5.827233333333334,349.634,27.414316666666668,,execution_failed,False
+L2_4,framework,Our framework,fw_lc1,LC1: system / equation mapping,3.8434166666666667,230.605,41.16031666666667,,complete,False
+L2_4,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,26.483433333333334,1589.006,41.16031666666667,,complete,False
+L2_4,framework,Our framework,fw_lc3,LC3: solver configuration,3.08445,185.067,41.16031666666667,,complete,False
+L2_4,framework,Our framework,fw_ld,LD: validation,1.3716666666666666,82.3,41.16031666666667,,complete,False
+L2_4,framework,Our framework,fw_other,"Orchestration, reporting / other",6.377350000000001,382.641,41.16031666666667,,complete,False
+L2_5,framework,Our framework,fw_lc1,LC1: system / equation mapping,1.7945333333333333,107.672,22.844716666666667,,validation_incomplete,False
+L2_5,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,11.8163,708.978,22.844716666666667,,validation_incomplete,False
+L2_5,framework,Our framework,fw_lc3,LC3: solver configuration,3.0383166666666668,182.299,22.844716666666667,,validation_incomplete,False
+L2_5,framework,Our framework,fw_ld,LD: validation,1.1283333333333334,67.7,22.844716666666667,,validation_incomplete,False
+L2_5,framework,Our framework,fw_other,"Orchestration, reporting / other",5.067233333333333,304.034,22.844716666666667,,validation_incomplete,False
+L2_6,framework,Our framework,fw_lc1,LC1: system / equation mapping,5.671216666666667,340.273,73.97149999999999,,timed_out,False
+L2_6,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,43.76636666666666,2625.982,73.97149999999999,,timed_out,False
+L2_6,framework,Our framework,fw_lc3,LC3: solver configuration,6.4629,387.774,73.97149999999999,,timed_out,False
+L2_6,framework,Our framework,fw_ld,LD: validation,3.253333333333333,195.2,73.97149999999999,,timed_out,False
+L2_6,framework,Our framework,fw_other,"Orchestration, reporting / other",14.817683333333333,889.061,73.97149999999999,,timed_out,False
+L2_7,framework,Our framework,fw_lc1,LC1: system / equation mapping,7.49585,449.751,80.67871666666666,,timed_out,False
+L2_7,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,45.763799999999996,2745.828,80.67871666666666,,timed_out,False
+L2_7,framework,Our framework,fw_lc3,LC3: solver configuration,5.8109,348.654,80.67871666666666,,timed_out,False
+L2_7,framework,Our framework,fw_ld,LD: validation,3.9316666666666666,235.9,80.67871666666666,,timed_out,False
+L2_7,framework,Our framework,fw_other,"Orchestration, reporting / other",17.676499999999997,1060.59,80.67871666666666,,timed_out,False
+L2_8,framework,Our framework,fw_lc1,LC1: system / equation mapping,1.1516,69.096,10.735999999999999,,timed_out,False
+L2_8,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,6.264783333333333,375.887,10.735999999999999,,timed_out,False
+L2_8,framework,Our framework,fw_lc3,LC3: solver configuration,1.0615999999999999,63.69599999999999,10.735999999999999,,timed_out,False
+L2_8,framework,Our framework,fw_ld,LD: validation,0.2,12.0,10.735999999999999,,timed_out,False
+L2_8,framework,Our framework,fw_other,"Orchestration, reporting / other",2.0580166666666666,123.481,10.735999999999999,,timed_out,False
+L3_1,framework,Our framework,fw_lc1,LC1: system / equation mapping,3.3737166666666667,202.423,31.82675,,complete,False
+L3_1,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,16.770483333333335,1006.229,31.82675,,complete,False
+L3_1,framework,Our framework,fw_lc3,LC3: solver configuration,3.6553833333333334,219.323,31.82675,,complete,False
+L3_1,framework,Our framework,fw_ld,LD: validation,1.5933333333333333,95.6,31.82675,,complete,False
+L3_1,framework,Our framework,fw_other,"Orchestration, reporting / other",6.433833333333333,386.03,31.82675,,complete,False
+L3_2,framework,Our framework,fw_lc1,LC1: system / equation mapping,1.3210333333333333,79.262,17.282966666666667,,complete,False
+L3_2,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,10.165633333333334,609.938,17.282966666666667,,complete,False
+L3_2,framework,Our framework,fw_lc3,LC3: solver configuration,1.7519,105.114,17.282966666666667,,complete,False
+L3_2,framework,Our framework,fw_ld,LD: validation,0.7433333333333334,44.6,17.282966666666667,,complete,False
+L3_2,framework,Our framework,fw_other,"Orchestration, reporting / other",3.3010666666666664,198.064,17.282966666666667,,complete,False
+L3_3,framework,Our framework,fw_lc1,LC1: system / equation mapping,2.1780166666666667,130.681,18.4962,,complete,False
+L3_3,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,10.176116666666667,610.567,18.4962,,complete,False
+L3_3,framework,Our framework,fw_lc3,LC3: solver configuration,1.5429166666666667,92.575,18.4962,,complete,False
+L3_3,framework,Our framework,fw_ld,LD: validation,0.8066666666666666,48.4,18.4962,,complete,False
+L3_3,framework,Our framework,fw_other,"Orchestration, reporting / other",3.7924833333333337,227.549,18.4962,,complete,False
+L3_4,framework,Our framework,fw_lc1,LC1: system / equation mapping,1.9655333333333334,117.932,12.130633333333334,,complete,False
+L3_4,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,5.974366666666667,358.462,12.130633333333334,,complete,False
+L3_4,framework,Our framework,fw_lc3,LC3: solver configuration,1.1661499999999998,69.969,12.130633333333334,,complete,False
+L3_4,framework,Our framework,fw_ld,LD: validation,0.4766666666666667,28.6,12.130633333333334,,complete,False
+L3_4,framework,Our framework,fw_other,"Orchestration, reporting / other",2.5479166666666666,152.875,12.130633333333334,,complete,False
+L3_5,framework,Our framework,fw_lc1,LC1: system / equation mapping,3.7318,223.908,47.571016666666665,,timed_out,False
+L3_5,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,28.1739,1690.434,47.571016666666665,,timed_out,False
+L3_5,framework,Our framework,fw_lc3,LC3: solver configuration,3.8684166666666666,232.105,47.571016666666665,,timed_out,False
+L3_5,framework,Our framework,fw_ld,LD: validation,2.2816666666666667,136.9,47.571016666666665,,timed_out,False
+L3_5,framework,Our framework,fw_other,"Orchestration, reporting / other",9.515233333333333,570.914,47.571016666666665,,timed_out,False
+L3_6,framework,Our framework,fw_lc1,LC1: system / equation mapping,2.553933333333333,153.236,28.91248333333333,,validation_incomplete,False
+L3_6,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,17.74825,1064.895,28.91248333333333,,validation_incomplete,False
+L3_6,framework,Our framework,fw_lc3,LC3: solver configuration,2.6868666666666665,161.212,28.91248333333333,,validation_incomplete,False
+L3_6,framework,Our framework,fw_ld,LD: validation,1.1033333333333333,66.2,28.91248333333333,,validation_incomplete,False
+L3_6,framework,Our framework,fw_other,"Orchestration, reporting / other",4.8201,289.206,28.91248333333333,,validation_incomplete,False
+L4_1,framework,Our framework,fw_lc1,LC1: system / equation mapping,0.4731833333333333,28.391,1.8556666666666668,,execution_failed,False
+L4_1,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,0.0,0.0,1.8556666666666668,,execution_failed,False
+L4_1,framework,Our framework,fw_lc3,LC3: solver configuration,0.0,0.0,1.8556666666666668,,execution_failed,False
+L4_1,framework,Our framework,fw_ld,LD: validation,0.15666666666666668,9.4,1.8556666666666668,,execution_failed,False
+L4_1,framework,Our framework,fw_other,"Orchestration, reporting / other",1.2258166666666668,73.549,1.8556666666666668,,execution_failed,False
+L4_2,framework,Our framework,fw_lc1,LC1: system / equation mapping,2.2310333333333334,133.862,17.777966666666668,,complete,False
+L4_2,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,8.192116666666667,491.52700000000004,17.777966666666668,,complete,False
+L4_2,framework,Our framework,fw_lc3,LC3: solver configuration,1.44505,86.703,17.777966666666668,,complete,False
+L4_2,framework,Our framework,fw_ld,LD: validation,0.5583333333333333,33.5,17.777966666666668,,complete,False
+L4_2,framework,Our framework,fw_other,"Orchestration, reporting / other",5.3514333333333335,321.086,17.777966666666668,,complete,False
+L4_3,framework,Our framework,fw_lc1,LC1: system / equation mapping,0.9779666666666667,58.678,6.969883333333334,,complete,False
+L4_3,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,2.8418666666666668,170.512,6.969883333333334,,complete,False
+L4_3,framework,Our framework,fw_lc3,LC3: solver configuration,0.8164666666666667,48.988,6.969883333333334,,complete,False
+L4_3,framework,Our framework,fw_ld,LD: validation,0.38166666666666665,22.9,6.969883333333334,,complete,False
+L4_3,framework,Our framework,fw_other,"Orchestration, reporting / other",1.9519166666666665,117.115,6.969883333333334,,complete,False
+L4_4,framework,Our framework,fw_lc1,LC1: system / equation mapping,0.37553333333333333,22.532,2.0388333333333333,,execution_failed,False
+L4_4,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,0.0,0.0,2.0388333333333333,,execution_failed,False
+L4_4,framework,Our framework,fw_lc3,LC3: solver configuration,0.0,0.0,2.0388333333333333,,execution_failed,False
+L4_4,framework,Our framework,fw_ld,LD: validation,0.22333333333333333,13.4,2.0388333333333333,,execution_failed,False
+L4_4,framework,Our framework,fw_other,"Orchestration, reporting / other",1.4399666666666666,86.398,2.0388333333333333,,execution_failed,False
+L4_5,framework,Our framework,fw_lc1,LC1: system / equation mapping,0.8160666666666666,48.964,10.633466666666667,,complete,False
+L4_5,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,6.513816666666667,390.829,10.633466666666667,,complete,False
+L4_5,framework,Our framework,fw_lc3,LC3: solver configuration,0.9109,54.654,10.633466666666667,,complete,False
+L4_5,framework,Our framework,fw_ld,LD: validation,0.5766666666666667,34.6,10.633466666666667,,complete,False
+L4_5,framework,Our framework,fw_other,"Orchestration, reporting / other",1.8160166666666666,108.961,10.633466666666667,,complete,False
+L4_6,framework,Our framework,fw_lc1,LC1: system / equation mapping,0.0,0.0,0.36518333333333336,,execution_failed,False
+L4_6,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,0.0,0.0,0.36518333333333336,,execution_failed,False
+L4_6,framework,Our framework,fw_lc3,LC3: solver configuration,0.0,0.0,0.36518333333333336,,execution_failed,False
+L4_6,framework,Our framework,fw_ld,LD: validation,0.0,0.0,0.36518333333333336,,execution_failed,False
+L4_6,framework,Our framework,fw_other,"Orchestration, reporting / other",0.36518333333333336,21.911,0.36518333333333336,,execution_failed,False
+L4_7,framework,Our framework,fw_lc1,LC1: system / equation mapping,0.9224833333333333,55.349,9.73535,,validation_incomplete,False
+L4_7,framework,Our framework,fw_lc2,LC2: thermodynamic data assembly,5.018266666666666,301.096,9.73535,,validation_incomplete,False
+L4_7,framework,Our framework,fw_lc3,LC3: solver configuration,1.0671833333333334,64.031,9.73535,,validation_incomplete,False
+L4_7,framework,Our framework,fw_ld,LD: validation,0.5700000000000001,34.2,9.73535,,validation_incomplete,False
+L4_7,framework,Our framework,fw_other,"Orchestration, reporting / other",2.1574166666666668,129.445,9.73535,,validation_incomplete,False
+L1_1,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,3.6840920170148213,221.04552102088928,5.15248019695282,,recorded,False
+L1_1,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.7360322753588359,44.16193652153015,5.15248019695282,,recorded,False
+L1_1,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.4969428698221842,29.816572189331055,5.15248019695282,,recorded,False
+L1_1,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.05194780429204305,3.116868257522583,5.15248019695282,,recorded,False
+L1_1,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.1834652304649353,11.007913827896118,5.15248019695282,,recorded,False
+L1_1,Opus4_7_max,Opus 4.7 max,web_thinking,Thinking,9.684664233525593,581.0798540115356,11.525640328725178,,recorded,False
+L1_1,Opus4_7_max,Opus 4.7 max,web_code_tool_input,Code / tool-input generation,1.1443905631701152,68.66343379020691,11.525640328725178,,recorded,False
+L1_1,Opus4_7_max,Opus 4.7 max,web_answer_writing,Answer writing,0.3851128180821737,23.10676908493042,11.525640328725178,,recorded,False
+L1_1,Opus4_7_max,Opus 4.7 max,web_non_solver_tools,Non-solver tool execution,0.05058781305948893,3.035268783569336,11.525640328725178,,recorded,False
+L1_1,Opus4_7_max,Opus 4.7 max,web_other_overhead,Other within-turn overhead,0.2608849008878072,15.65309405326843,11.525640328725178,,recorded,False
+L1_1,Fable5_1_medium,Fable 5.1 medium,web_thinking,Thinking,1.2090941150983174,72.54564690589905,2.1605698307355246,,recorded,False
+L1_1,Fable5_1_medium,Fable 5.1 medium,web_code_tool_input,Code / tool-input generation,0.5882700165112813,35.29620099067688,2.1605698307355246,,recorded,False
+L1_1,Fable5_1_medium,Fable 5.1 medium,web_answer_writing,Answer writing,0.0384536345799764,2.307218074798584,2.1605698307355246,,recorded,False
+L1_1,Fable5_1_medium,Fable 5.1 medium,web_non_solver_tools,Non-solver tool execution,0.009899783134460449,0.593986988067627,2.1605698307355246,,recorded,False
+L1_1,Fable5_1_medium,Fable 5.1 medium,web_other_overhead,Other within-turn overhead,0.31485228141148885,18.89113688468933,2.1605698307355246,,recorded,False
+L1_1,Fable5_1_max,Fable 5.1 max,web_thinking,Thinking,13.345765221118928,800.7459132671356,18.29294627904892,,recorded,False
+L1_1,Fable5_1_max,Fable 5.1 max,web_code_tool_input,Code / tool-input generation,3.6421074628829957,218.52644777297974,18.29294627904892,,recorded,False
+L1_1,Fable5_1_max,Fable 5.1 max,web_answer_writing,Answer writing,0.11562354962031046,6.937412977218628,18.29294627904892,,recorded,False
+L1_1,Fable5_1_max,Fable 5.1 max,web_non_solver_tools,Non-solver tool execution,0.3904601891835531,23.427611351013184,18.29294627904892,,recorded,False
+L1_1,Fable5_1_max,Fable 5.1 max,web_other_overhead,Other within-turn overhead,0.7989898562431336,47.93939137458801,18.29294627904892,,recorded,False
+L1_2,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,4.573001333077749,274.3800799846649,8.409731189409893,,recorded,False
+L1_2,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,2.23482590119044,134.0895540714264,8.409731189409893,,recorded,False
+L1_2,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,1.036644184589386,62.19865107536315,8.409731189409893,,recorded,False
+L1_2,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.06531868775685629,3.919121265411377,8.409731189409893,,recorded,False
+L1_2,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.499941082795461,29.99646496772766,8.409731189409893,,recorded,False
+L1_2,Opus4_7_max,Opus 4.7 max,web_thinking,Thinking,5.847050400575002,350.8230240345001,16.699495840072633,,recorded,False
+L1_2,Opus4_7_max,Opus 4.7 max,web_code_tool_input,Code / tool-input generation,8.7417853474617,524.507120847702,16.699495840072633,,recorded,False
+L1_2,Opus4_7_max,Opus 4.7 max,web_answer_writing,Answer writing,0.42781552076339724,25.668931245803833,16.699495840072633,,recorded,False
+L1_2,Opus4_7_max,Opus 4.7 max,web_non_solver_tools,Non-solver tool execution,0.1803514003753662,10.821084022521973,16.699495840072633,,recorded,False
+L1_2,Opus4_7_max,Opus 4.7 max,web_other_overhead,Other within-turn overhead,1.5024931708971658,90.14959025382996,16.699495840072633,,recorded,False
+L1_3,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,6.165588935216268,369.9353361129761,8.899030752976735,,recorded,False
+L1_3,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,1.554952903588613,93.29717421531677,8.899030752976735,,recorded,False
+L1_3,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.6592460513114929,39.554763078689575,8.899030752976735,,recorded,False
+L1_3,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.07258408864339193,4.355045318603516,8.899030752976735,,recorded,False
+L1_3,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.4466587742169698,26.79952645301819,8.899030752976735,,recorded,False
+L1_3,Opus4_7_max,Opus 4.7 max,web_thinking,Thinking,35.74951560497284,2144.9709362983704,43.02416467269262,,recorded,False
+L1_3,Opus4_7_max,Opus 4.7 max,web_code_tool_input,Code / tool-input generation,6.371690567334493,382.3014340400696,43.02416467269262,,recorded,False
+L1_3,Opus4_7_max,Opus 4.7 max,web_answer_writing,Answer writing,0.45034516652425133,27.020709991455078,43.02416467269262,,recorded,False
+L1_3,Opus4_7_max,Opus 4.7 max,web_non_solver_tools,Non-solver tool execution,0.024806177616119383,1.488370656967163,43.02416467269262,,recorded,False
+L1_3,Opus4_7_max,Opus 4.7 max,web_other_overhead,Other within-turn overhead,0.4278071562449137,25.668429374694824,43.02416467269262,,recorded,False
+L1_3,Fable5_1_medium,Fable 5.1 medium,web_thinking,Thinking,1.4389278332392375,86.33566999435425,2.542326366901398,,recorded,False
+L1_3,Fable5_1_medium,Fable 5.1 medium,web_code_tool_input,Code / tool-input generation,0.7271045486132304,43.62627291679382,2.542326366901398,,recorded,False
+L1_3,Fable5_1_medium,Fable 5.1 medium,web_answer_writing,Answer writing,0.01584311326344808,0.9505867958068847,2.542326366901398,,recorded,False
+L1_3,Fable5_1_medium,Fable 5.1 medium,web_non_solver_tools,Non-solver tool execution,0.022916750113169352,1.3750050067901611,2.542326366901398,,recorded,False
+L1_3,Fable5_1_medium,Fable 5.1 medium,web_other_overhead,Other within-turn overhead,0.3375341216723124,20.252047300338745,2.542326366901398,,recorded,False
+L1_3,Fable5_1_max,Fable 5.1 max,web_thinking,Thinking,12.539880239963532,752.3928143978119,14.561331466833751,,recorded,False
+L1_3,Fable5_1_max,Fable 5.1 max,web_code_tool_input,Code / tool-input generation,1.6899116357167563,101.39469814300537,14.561331466833751,,recorded,False
+L1_3,Fable5_1_max,Fable 5.1 max,web_answer_writing,Answer writing,0.07508518298467,4.5051109790802,14.561331466833751,,recorded,False
+L1_3,Fable5_1_max,Fable 5.1 max,web_non_solver_tools,Non-solver tool execution,0.06955965757369995,4.173579454421997,14.561331466833751,,recorded,False
+L1_3,Fable5_1_max,Fable 5.1 max,web_other_overhead,Other within-turn overhead,0.18689475059509278,11.213685035705566,14.561331466833751,,recorded,False
+L1_4,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,0.6469651023546855,38.81790614128113,1.0930004159609477,P+S,recorded,False
+L1_4,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.0,0.0,1.0930004159609477,P+S,recorded,False
+L1_4,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.44603439966837566,26.76206398010254,1.0930004159609477,P+S,recorded,False
+L1_4,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.0,0.0,1.0930004159609477,P+S,recorded,False
+L1_4,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,9.139378865559896e-07,5.4836273193359375e-05,1.0930004159609477,P+S,recorded,False
+L1_4,Opus4_7_max,Opus 4.7 max,web_thinking,Thinking,10.14356969197591,608.6141815185547,11.41518671909968,,recorded,False
+L1_4,Opus4_7_max,Opus 4.7 max,web_code_tool_input,Code / tool-input generation,0.6641220291455586,39.84732174873352,11.41518671909968,,recorded,False
+L1_4,Opus4_7_max,Opus 4.7 max,web_answer_writing,Answer writing,0.22763705253601074,13.658223152160645,11.41518671909968,,recorded,False
+L1_4,Opus4_7_max,Opus 4.7 max,web_non_solver_tools,Non-solver tool execution,0.016484570503234864,0.9890742301940918,11.41518671909968,,recorded,False
+L1_4,Opus4_7_max,Opus 4.7 max,web_other_overhead,Other within-turn overhead,0.3633733749389648,21.80240249633789,11.41518671909968,,recorded,False
+L1_4,Fable5_1_medium,Fable 5.1 medium,web_thinking,Thinking,0.8809757153193156,52.858542919158936,1.1931219498316448,P+S,recorded,False
+L1_4,Fable5_1_medium,Fable 5.1 medium,web_code_tool_input,Code / tool-input generation,0.0,0.0,1.1931219498316448,P+S,recorded,False
+L1_4,Fable5_1_medium,Fable 5.1 medium,web_answer_writing,Answer writing,0.3121452331542969,18.728713989257812,1.1931219498316448,P+S,recorded,False
+L1_4,Fable5_1_medium,Fable 5.1 medium,web_non_solver_tools,Non-solver tool execution,0.0,0.0,1.1931219498316448,P+S,recorded,False
+L1_4,Fable5_1_medium,Fable 5.1 medium,web_other_overhead,Other within-turn overhead,1.0013580322265625e-06,6.008148193359375e-05,1.1931219498316448,P+S,recorded,False
+L1_4,Fable5_1_max,Fable 5.1 max,web_thinking,Thinking,9.844746013482412,590.6847608089447,11.658512119452158,,recorded,False
+L1_4,Fable5_1_max,Fable 5.1 max,web_code_tool_input,Code / tool-input generation,0.8889170010884603,53.33502006530762,11.658512119452158,,recorded,False
+L1_4,Fable5_1_max,Fable 5.1 max,web_answer_writing,Answer writing,0.1697690010070801,10.186140060424805,11.658512119452158,,recorded,False
+L1_4,Fable5_1_max,Fable 5.1 max,web_non_solver_tools,Non-solver tool execution,0.14261619249979654,8.556971549987793,11.658512119452158,,recorded,False
+L1_4,Fable5_1_max,Fable 5.1 max,web_other_overhead,Other within-turn overhead,0.61246391137441,36.7478346824646,11.658512119452158,,recorded,False
+L1_5,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,1.330612583955129,79.83675503730774,1.7560877998669944,S,recorded,False
+L1_5,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.05070615212122599,3.0423691272735596,1.7560877998669944,S,recorded,False
+L1_5,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.3219150344530741,19.31490206718445,1.7560877998669944,S,recorded,False
+L1_5,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.00038770039876302086,0.02326202392578125,1.7560877998669944,S,recorded,False
+L1_5,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.052466328938802084,3.147979736328125,1.7560877998669944,S,recorded,False
+L1_5,Opus4_7_max,Opus 4.7 max,web_thinking,Thinking,6.184586652119955,371.07519912719727,7.351708714167278,,recorded,False
+L1_5,Opus4_7_max,Opus 4.7 max,web_code_tool_input,Code / tool-input generation,0.5777740796407064,34.66644477844238,7.351708714167278,,recorded,False
+L1_5,Opus4_7_max,Opus 4.7 max,web_answer_writing,Answer writing,0.40599264701207477,24.359558820724487,7.351708714167278,,recorded,False
+L1_5,Opus4_7_max,Opus 4.7 max,web_non_solver_tools,Non-solver tool execution,0.006848069032033285,0.41088414192199707,7.351708714167278,,recorded,False
+L1_5,Opus4_7_max,Opus 4.7 max,web_other_overhead,Other within-turn overhead,0.17650726636250813,10.590435981750488,7.351708714167278,,recorded,False
+L1_6,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,7.430792359511058,445.84754157066345,12.510939927895864,,recorded,False
+L1_6,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,3.057215102513631,183.43290615081787,12.510939927895864,,recorded,False
+L1_6,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.5970752716064454,35.82451629638672,12.510939927895864,,recorded,False
+L1_6,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.13877911965052286,8.326747179031372,12.510939927895864,,recorded,False
+L1_6,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,1.287078074614207,77.22468447685242,12.510939927895864,,recorded,False
+L1_6,Opus4_7_max,Opus 4.7 max,web_thinking,Thinking,21.59330263932546,1295.5981583595276,25.58490153551102,,recorded,False
+L1_6,Opus4_7_max,Opus 4.7 max,web_code_tool_input,Code / tool-input generation,2.7990698417027793,167.94419050216675,25.58490153551102,,recorded,False
+L1_6,Opus4_7_max,Opus 4.7 max,web_answer_writing,Answer writing,0.5726386626561483,34.3583197593689,25.58490153551102,,recorded,False
+L1_6,Opus4_7_max,Opus 4.7 max,web_non_solver_tools,Non-solver tool execution,0.10312389930089315,6.187433958053589,25.58490153551102,,recorded,False
+L1_6,Opus4_7_max,Opus 4.7 max,web_other_overhead,Other within-turn overhead,0.5167664925257365,31.00598955154419,25.58490153551102,,recorded,False
+L1_7,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,1.6452666163444518,98.71599698066711,6.19675410191218,,recorded,False
+L1_7,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,3.398955527941386,203.93733167648315,6.19675410191218,,recorded,False
+L1_7,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.609896985689799,36.59381914138794,6.19675410191218,,recorded,False
+L1_7,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.10594314336776733,6.35658860206604,6.19675410191218,,recorded,False
+L1_7,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.4366918285687765,26.201509714126587,6.19675410191218,,recorded,False
+L1_7,Opus4_7_max,Opus 4.7 max,web_thinking,Thinking,7.078083701928457,424.6850221157074,10.79369749625524,,recorded,False
+L1_7,Opus4_7_max,Opus 4.7 max,web_code_tool_input,Code / tool-input generation,2.176531501611074,130.59189009666443,10.79369749625524,,recorded,False
+L1_7,Opus4_7_max,Opus 4.7 max,web_answer_writing,Answer writing,0.7099244793256124,42.59546875953674,10.79369749625524,,recorded,False
+L1_7,Opus4_7_max,Opus 4.7 max,web_non_solver_tools,Non-solver tool execution,0.11188594500223796,6.713156700134277,10.79369749625524,,recorded,False
+L1_7,Opus4_7_max,Opus 4.7 max,web_other_overhead,Other within-turn overhead,0.7172718683878581,43.036312103271484,10.79369749625524,,recorded,False
+L1_8,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,14.55636978149414,873.3821868896484,17.119230099519093,,recorded,False
+L1_8,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,1.3958292841911315,83.7497570514679,17.119230099519093,,recorded,False
+L1_8,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.7010445992151896,42.06267595291138,17.119230099519093,,recorded,False
+L1_8,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.08021802504857381,4.813081502914429,17.119230099519093,,recorded,False
+L1_8,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.3857684095700582,23.14610457420349,17.119230099519093,,recorded,False
+L1_8,Opus4_7_max,Opus 4.7 max,web_thinking,Thinking,22.003785749276478,1320.2271449565887,29.218051230907438,,recorded,False
+L1_8,Opus4_7_max,Opus 4.7 max,web_code_tool_input,Code / tool-input generation,4.2092403173446655,252.55441904067993,29.218051230907438,,recorded,False
+L1_8,Opus4_7_max,Opus 4.7 max,web_answer_writing,Answer writing,0.9403527816136678,56.42116689682007,29.218051230907438,,recorded,False
+L1_8,Opus4_7_max,Opus 4.7 max,web_non_solver_tools,Non-solver tool execution,0.15658175150553386,9.394905090332031,29.218051230907438,,recorded,False
+L1_8,Opus4_7_max,Opus 4.7 max,web_other_overhead,Other within-turn overhead,1.908090631167094,114.48543787002563,29.218051230907438,,recorded,False
+L1_9,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,5.005104164282481,300.30624985694885,7.372762950261434,,recorded,False
+L1_9,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,1.3352368513743083,80.1142110824585,7.372762950261434,,recorded,False
+L1_9,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.47422298590342205,28.453379154205322,7.372762950261434,,recorded,False
+L1_9,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.06157352924346924,3.6944117546081543,7.372762950261434,,recorded,False
+L1_9,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.4966254194577535,29.79752516746521,7.372762950261434,,recorded,False
+L1_9,Opus4_7_max,Opus 4.7 max,web_thinking,Thinking,15.197505176067352,911.8503105640411,18.434064416090646,,recorded,False
+L1_9,Opus4_7_max,Opus 4.7 max,web_code_tool_input,Code / tool-input generation,1.6503646969795227,99.02188181877136,18.434064416090646,,recorded,False
+L1_9,Opus4_7_max,Opus 4.7 max,web_answer_writing,Answer writing,0.6544953346252441,39.26972007751465,18.434064416090646,,recorded,False
+L1_9,Opus4_7_max,Opus 4.7 max,web_non_solver_tools,Non-solver tool execution,0.2175668199857076,13.054009199142456,18.434064416090646,,recorded,False
+L1_9,Opus4_7_max,Opus 4.7 max,web_other_overhead,Other within-turn overhead,0.7141323884328207,42.84794330596924,18.434064416090646,,recorded,False
+L1_9,Fable5_1_medium,Fable 5.1 medium,web_thinking,Thinking,2.407986064751943,144.47916388511658,3.477696986993154,,recorded,False
+L1_9,Fable5_1_medium,Fable 5.1 medium,web_code_tool_input,Code / tool-input generation,0.6455777843793233,38.7346670627594,3.477696986993154,,recorded,False
+L1_9,Fable5_1_medium,Fable 5.1 medium,web_answer_writing,Answer writing,0.03746138016382853,2.247682809829712,3.477696986993154,,recorded,False
+L1_9,Fable5_1_medium,Fable 5.1 medium,web_non_solver_tools,Non-solver tool execution,0.016713905334472656,1.0028343200683594,3.477696986993154,,recorded,False
+L1_9,Fable5_1_medium,Fable 5.1 medium,web_other_overhead,Other within-turn overhead,0.3699578523635864,22.197471141815186,3.477696986993154,,recorded,False
+L1_9,Fable5_1_max,Fable 5.1 max,web_thinking,Thinking,7.208320399125417,432.499223947525,9.274754313627879,,recorded,False
+L1_9,Fable5_1_max,Fable 5.1 max,web_code_tool_input,Code / tool-input generation,1.4575584173202514,87.45350503921509,9.274754313627879,,recorded,False
+L1_9,Fable5_1_max,Fable 5.1 max,web_answer_writing,Answer writing,0.08866271575291952,5.319762945175171,9.274754313627879,,recorded,False
+L1_9,Fable5_1_max,Fable 5.1 max,web_non_solver_tools,Non-solver tool execution,0.038570801417032875,2.3142480850219727,9.274754313627879,,recorded,False
+L1_9,Fable5_1_max,Fable 5.1 max,web_other_overhead,Other within-turn overhead,0.4816419800122579,28.898518800735474,9.274754313627879,,recorded,False
+L1_10,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,0.4566050171852112,27.39630103111267,1.3195860822995504,P+S,recorded,False
+L1_10,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.0,0.0,1.3195860822995504,P+S,recorded,False
+L1_10,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.8629803657531738,51.77882194519043,1.3195860822995504,P+S,recorded,False
+L1_10,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.0,0.0,1.3195860822995504,P+S,recorded,False
+L1_10,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,6.993611653645833e-07,4.1961669921875e-05,1.3195860822995504,P+S,recorded,False
+L1_10,Opus4_7_max,Opus 4.7 max,web_thinking,Thinking,7.627200178305308,457.6320106983185,13.814709401130676,,recorded,False
+L1_10,Opus4_7_max,Opus 4.7 max,web_code_tool_input,Code / tool-input generation,4.140182149410248,248.41092896461487,13.814709401130676,,recorded,False
+L1_10,Opus4_7_max,Opus 4.7 max,web_answer_writing,Answer writing,1.1429462989171346,68.57677793502808,13.814709401130676,,recorded,False
+L1_10,Opus4_7_max,Opus 4.7 max,web_non_solver_tools,Non-solver tool execution,0.09932751655578613,5.959650993347168,13.814709401130676,,recorded,False
+L1_10,Opus4_7_max,Opus 4.7 max,web_other_overhead,Other within-turn overhead,0.8050532579421997,48.30319547653198,13.814709401130676,,recorded,False
+L1_10,Fable5_1_medium,Fable 5.1 medium,web_thinking,Thinking,3.1986159006754558,191.91695404052734,5.622615146636963,,recorded,False
+L1_10,Fable5_1_medium,Fable 5.1 medium,web_code_tool_input,Code / tool-input generation,1.3879708846410115,83.2782530784607,5.622615146636963,,recorded,False
+L1_10,Fable5_1_medium,Fable 5.1 medium,web_answer_writing,Answer writing,0.5428747296333313,32.57248377799988,5.622615146636963,,recorded,False
+L1_10,Fable5_1_medium,Fable 5.1 medium,web_non_solver_tools,Non-solver tool execution,0.07373824914296469,4.424294948577881,5.622615146636963,,recorded,False
+L1_10,Fable5_1_medium,Fable 5.1 medium,web_other_overhead,Other within-turn overhead,0.41941538254419963,25.164922952651978,5.622615146636963,,recorded,False
+L1_10,Fable5_1_max,Fable 5.1 max,web_thinking,Thinking,20.472270043691,1228.33620262146,28.41469515164693,H,recorded,True
+L1_10,Fable5_1_max,Fable 5.1 max,web_code_tool_input,Code / tool-input generation,4.7830966035525,286.98579621315,28.41469515164693,H,recorded,True
+L1_10,Fable5_1_max,Fable 5.1 max,web_answer_writing,Answer writing,0.43342501719792687,26.00550103187561,28.41469515164693,H,recorded,True
+L1_10,Fable5_1_max,Fable 5.1 max,web_non_solver_tools,Non-solver tool execution,1.4433720231056213,86.60232138633728,28.41469515164693,H,recorded,True
+L1_10,Fable5_1_max,Fable 5.1 max,web_other_overhead,Other within-turn overhead,1.282531464099884,76.95188784599304,28.41469515164693,H,recorded,True
+L1_11,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,4.076401567459106,244.58409404754636,11.704997030893962,,recorded,False
+L1_11,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,5.919712936878204,355.18277621269226,11.704997030893962,,recorded,False
+L1_11,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.35151286522547404,21.090771913528442,11.704997030893962,,recorded,False
+L1_11,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.14582961797714233,8.74977707862854,11.704997030893962,,recorded,False
+L1_11,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,1.2115400433540344,72.69240260124207,11.704997030893962,,recorded,False
+L1_11,Opus4_7_max,Opus 4.7 max,web_thinking,Thinking,25.014165059725443,1500.8499035835266,44.15498127142588,,recorded,False
+L1_11,Opus4_7_max,Opus 4.7 max,web_code_tool_input,Code / tool-input generation,17.16117526690165,1029.6705160140991,44.15498127142588,,recorded,False
+L1_11,Opus4_7_max,Opus 4.7 max,web_answer_writing,Answer writing,0.42726960182189944,25.636176109313965,44.15498127142588,,recorded,False
+L1_11,Opus4_7_max,Opus 4.7 max,web_non_solver_tools,Non-solver tool execution,0.16182788213094076,9.709672927856445,44.15498127142588,,recorded,False
+L1_11,Opus4_7_max,Opus 4.7 max,web_other_overhead,Other within-turn overhead,1.3905434608459473,83.43260765075684,44.15498127142588,,recorded,False
+L1_11,Fable5_1_medium,Fable 5.1 medium,web_thinking,Thinking,1.994651448726654,119.67908692359924,4.1305869817733765,,recorded,False
+L1_11,Fable5_1_medium,Fable 5.1 medium,web_code_tool_input,Code / tool-input generation,1.1128971219062804,66.77382731437683,4.1305869817733765,,recorded,False
+L1_11,Fable5_1_medium,Fable 5.1 medium,web_answer_writing,Answer writing,0.5125350832939148,30.75210499763489,4.1305869817733765,,recorded,False
+L1_11,Fable5_1_medium,Fable 5.1 medium,web_non_solver_tools,Non-solver tool execution,0.12988959153493246,7.793375492095947,4.1305869817733765,,recorded,False
+L1_11,Fable5_1_medium,Fable 5.1 medium,web_other_overhead,Other within-turn overhead,0.3806137363115946,22.83682417869568,4.1305869817733765,,recorded,False
+L1_11,Fable5_1_max,Fable 5.1 max,web_thinking,Thinking,20.012988189856213,1200.7792913913727,28.172745696703593,,recorded,False
+L1_11,Fable5_1_max,Fable 5.1 max,web_code_tool_input,Code / tool-input generation,6.694120168685913,401.6472101211548,28.172745696703593,,recorded,False
+L1_11,Fable5_1_max,Fable 5.1 max,web_answer_writing,Answer writing,0.20000288486480713,12.000173091888428,28.172745696703593,,recorded,False
+L1_11,Fable5_1_max,Fable 5.1 max,web_non_solver_tools,Non-solver tool execution,0.35880167881647745,21.528100728988647,28.172745696703593,,recorded,False
+L1_11,Fable5_1_max,Fable 5.1 max,web_other_overhead,Other within-turn overhead,0.906832774480184,54.409966468811035,28.172745696703593,,recorded,False
+L2_1,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,1.9157899300257364,114.94739580154419,3.3205790638923642,P,recorded,False
+L2_1,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.6140123685201009,36.840742111206055,3.3205790638923642,P,recorded,False
+L2_1,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.5551983992258708,33.311903953552246,3.3205790638923642,P,recorded,False
+L2_1,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.038680883248647054,2.3208529949188232,3.3205790638923642,P,recorded,False
+L2_1,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.19689748287200928,11.813848972320557,3.3205790638923642,P,recorded,False
+L2_2,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,4.1974368015925085,251.8462080955505,6.961541752020517,,recorded,False
+L2_2,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,1.9632283806800843,117.79370284080505,6.961541752020517,,recorded,False
+L2_2,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.27346489429473875,16.407893657684326,6.961541752020517,,recorded,False
+L2_2,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.06391135454177857,3.8346812725067143,6.961541752020517,,recorded,False
+L2_2,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.46350032091140747,27.81001925468445,6.961541752020517,,recorded,False
+L2_3,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,3.2158660173416136,192.95196104049683,5.470987665653229,H,recorded,False
+L2_3,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,1.0560644785563151,63.363868713378906,5.470987665653229,H,recorded,False
+L2_3,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.5904647668202718,35.42788600921631,5.470987665653229,H,recorded,False
+L2_3,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.05607438882191976,3.3644633293151855,5.470987665653229,H,recorded,False
+L2_3,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.5525180141131083,33.1510808467865,5.470987665653229,H,recorded,False
+L2_4,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,2.9337705691655476,176.02623414993286,4.391900372505188,P,recorded,False
+L2_4,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.7754361152648925,46.526166915893555,4.391900372505188,P,recorded,False
+L2_4,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.5601303815841675,33.60782289505005,4.391900372505188,P,recorded,False
+L2_4,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,7.192293802897135e-07,4.315376281738281e-05,4.391900372505188,P,recorded,False
+L2_4,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.12256258726119995,7.353755235671997,4.391900372505188,P,recorded,False
+L2_5,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,1.9982120871543885,119.8927252292633,2.4615636507670087,P+S,recorded,False
+L2_5,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.0,0.0,2.4615636507670087,P+S,recorded,False
+L2_5,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.46335068146387737,27.80104088783264,2.4615636507670087,P+S,recorded,False
+L2_5,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.0,0.0,2.4615636507670087,P+S,recorded,False
+L2_5,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,8.821487426757813e-07,5.2928924560546875e-05,2.4615636507670087,P+S,recorded,False
+L2_6,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,1.1933382987976073,71.60029792785645,2.372881031036377,P,recorded,False
+L2_6,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.627561084429423,37.65366506576538,2.372881031036377,P,recorded,False
+L2_6,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.4331684152285258,25.990104913711548,2.372881031036377,P,recorded,False
+L2_6,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.023253512382507325,1.3952107429504395,2.372881031036377,P,recorded,False
+L2_6,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.0955597201983134,5.733583211898804,2.372881031036377,P,recorded,False
+L2_7,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,8.26341233253479,495.8047399520874,8.633398032188415,P+S,recorded,False
+L2_7,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.0,0.0,8.633398032188415,P+S,recorded,False
+L2_7,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.369984515508016,22.199070930480957,8.633398032188415,P+S,recorded,False
+L2_7,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.0,0.0,8.633398032188415,P+S,recorded,False
+L2_7,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,1.1841456095377604e-06,7.104873657226562e-05,8.633398032188415,P+S,recorded,False
+L2_8,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,2.3376387000083922,140.25832200050354,2.6826034506162006,P+S,recorded,False
+L2_8,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.0,0.0,2.6826034506162006,P+S,recorded,False
+L2_8,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.34496381680170696,20.697829008102417,2.6826034506162006,P+S,recorded,False
+L2_8,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.0,0.0,2.6826034506162006,P+S,recorded,False
+L2_8,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,9.338061014811198e-07,5.602836608886719e-05,2.6826034506162006,P+S,recorded,False
+L3_1,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,1.7296549797058105,103.77929878234863,2.0145448803901673,P+S,recorded,False
+L3_1,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.0,0.0,2.0145448803901673,P+S,recorded,False
+L3_1,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.284889014561971,17.09334087371826,2.0145448803901673,P+S,recorded,False
+L3_1,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.0,0.0,2.0145448803901673,P+S,recorded,False
+L3_1,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,8.861223856608073e-07,5.316734313964844e-05,2.0145448803901673,P+S,recorded,False
+L3_2,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,1.097359017531077,65.84154105186462,1.911742067337036,P,recorded,False
+L3_2,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.3826362172762553,22.958173036575317,1.911742067337036,P,recorded,False
+L3_2,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.3741758823394775,22.450552940368652,1.911742067337036,P,recorded,False
+L3_2,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,4.1325887044270835e-07,2.47955322265625e-05,1.911742067337036,P,recorded,False
+L3_2,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.0575705369313558,3.4542322158813477,1.911742067337036,P,recorded,False
+L3_3,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,1.4715609153111775,88.29365491867065,1.7916508833567302,P+S,recorded,False
+L3_3,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.0,0.0,1.7916508833567302,P+S,recorded,False
+L3_3,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.32008918523788454,19.20535111427307,1.7916508833567302,P+S,recorded,False
+L3_3,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.0,0.0,1.7916508833567302,P+S,recorded,False
+L3_3,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,7.828076680501302e-07,4.696846008300781e-05,1.7916508833567302,P+S,recorded,False
+L3_4,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,1.4831272641817728,88.98763585090637,1.9135841131210327,P+S,recorded,False
+L3_4,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.0,0.0,1.9135841131210327,P+S,recorded,False
+L3_4,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.43045559724171956,25.827335834503174,1.9135841131210327,P+S,recorded,False
+L3_4,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.0,0.0,1.9135841131210327,P+S,recorded,False
+L3_4,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,1.2516975402832031e-06,7.510185241699219e-05,1.9135841131210327,P+S,recorded,False
+L3_5,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,0.9155491868654887,54.93295121192932,1.635685634613037,P,recorded,False
+L3_5,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.37042103211085003,22.225261926651,1.635685634613037,P,recorded,False
+L3_5,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.31574968496958417,18.94498109817505,1.635685634613037,P,recorded,False
+L3_5,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,6.318092346191406e-07,3.790855407714844e-05,1.635685634613037,P,recorded,False
+L3_5,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.03396509885787964,2.0379059314727783,1.635685634613037,P,recorded,False
+L3_6,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,1.7428282499313354,104.56969499588013,2.096314799785614,P+S,recorded,False
+L3_6,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.0,0.0,2.096314799785614,P+S,recorded,False
+L3_6,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.353485631942749,21.20913791656494,2.096314799785614,P+S,recorded,False
+L3_6,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.0,0.0,2.096314799785614,P+S,recorded,False
+L3_6,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,9.179115295410156e-07,5.507469177246094e-05,2.096314799785614,P+S,recorded,False
+L4_1,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,0.8608625809351603,51.65175485610962,1.2071019649505614,P+S,recorded,False
+L4_1,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.0,0.0,1.2071019649505614,P+S,recorded,False
+L4_1,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.34623868465423585,20.77432107925415,1.2071019649505614,P+S,recorded,False
+L4_1,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.0,0.0,1.2071019649505614,P+S,recorded,False
+L4_1,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,6.993611653645833e-07,4.1961669921875e-05,1.2071019649505614,P+S,recorded,False
+L4_2,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,0.7236307859420776,43.41784715652466,1.9964475154876709,P+S,recorded,False
+L4_2,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.03206175168355306,1.9237051010131836,1.9964475154876709,P+S,recorded,False
+L4_2,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,1.0235997994740804,61.415987968444824,1.9964475154876709,P+S,recorded,False
+L4_2,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.05398693084716797,3.239215850830078,1.9964475154876709,P+S,recorded,False
+L4_2,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.16316824754079182,9.79009485244751,1.9964475154876709,P+S,recorded,False
+L4_3,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,0.7630427320798238,45.78256392478943,1.6065705855687458,,recorded,False
+L4_3,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.42798275550206505,25.6789653301239,1.6065705855687458,,recorded,False
+L4_3,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.2803218126296997,16.819308757781982,1.6065705855687458,,recorded,False
+L4_3,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.005751697222391764,0.34510183334350586,1.6065705855687458,,recorded,False
+L4_3,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.12947158813476561,7.768295288085937,1.6065705855687458,,recorded,False
+L4_4,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,0.6727149645487468,40.362897872924805,1.0770785490671795,P+S,recorded,False
+L4_4,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.0,0.0,1.0770785490671795,P+S,recorded,False
+L4_4,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.4043627858161926,24.261767148971558,1.0770785490671795,P+S,recorded,False
+L4_4,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.0,0.0,1.0770785490671795,P+S,recorded,False
+L4_4,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,7.987022399902344e-07,4.792213439941406e-05,1.0770785490671795,P+S,recorded,False
+L4_5,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,0.7765275677045186,46.59165406227112,1.6981675346692402,,recorded,False
+L4_5,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.5575118104616801,33.450708627700806,1.6981675346692402,,recorded,False
+L4_5,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.27563063700993856,16.537838220596313,1.6981675346692402,,recorded,False
+L4_5,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.003566920757293701,0.21401524543762207,1.6981675346692402,,recorded,False
+L4_5,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,0.08493059873580933,5.09583592414856,1.6981675346692402,,recorded,False
+L4_6,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,1.6903380155563354,101.42028093338013,2.1208948651949564,P+S,recorded,False
+L4_6,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.0,0.0,2.1208948651949564,P+S,recorded,False
+L4_6,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.4305561343828837,25.833368062973022,2.1208948651949564,P+S,recorded,False
+L4_6,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.0,0.0,2.1208948651949564,P+S,recorded,False
+L4_6,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,7.152557373046875e-07,4.291534423828125e-05,2.1208948651949564,P+S,recorded,False
+L4_7,Opus4_7_high,Opus 4.7 high,web_thinking,Thinking,1.589916185537974,95.39497113227844,1.8465113361676533,P+S,recorded,False
+L4_7,Opus4_7_high,Opus 4.7 high,web_code_tool_input,Code / tool-input generation,0.0,0.0,1.8465113361676533,P+S,recorded,False
+L4_7,Opus4_7_high,Opus 4.7 high,web_answer_writing,Answer writing,0.25659443537394205,15.395666122436523,1.8465113361676533,P+S,recorded,False
+L4_7,Opus4_7_high,Opus 4.7 high,web_non_solver_tools,Non-solver tool execution,0.0,0.0,1.8465113361676533,P+S,recorded,False
+L4_7,Opus4_7_high,Opus 4.7 high,web_other_overhead,Other within-turn overhead,7.152557373046875e-07,4.291534423828125e-05,1.8465113361676533,P+S,recorded,False

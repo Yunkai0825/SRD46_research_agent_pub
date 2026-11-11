@@ -1,20 +1,2 @@
-# Preserve original file bytes; never substitute Git LFS/filter pointers.
-* -text -filter
-
-# Preserve scientific files and source terms byte for byte.
-/_output/** -text
-/_benchmark/** -text
-docs/licenses/NIST_SRD46_README.txt -text
-
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.pdf binary
-*.opju binary
-
-# Store all scientific payloads and numbered ZIP volumes as ordinary Git bytes.
-*.db binary -filter
-*.sqlite3 binary -filter
-*.zip binary -filter
-*.zip.* binary -filter
-**/speciation_full_*.csv -text -filter
+# Preserve the verified file bytes on every platform.
+* -text

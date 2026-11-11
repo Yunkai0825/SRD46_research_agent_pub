@@ -1,0 +1,17 @@
+{
+    "_notes": "Simple case: Ca2+ + glyphosate, single network at T=25 I=0.1",
+    "equilibrium_networks": [
+        {
+            "eq_network": "ref_eq_net_1588",
+            "node_count": 7,
+            "temperature": 25.0,
+            "ionic_strength": 0.1,
+            "metal_id": "metal_25",
+            "metal_name": "Ca^[2+]",
+            "ligand_id": "ligand_5937",
+            "ligand_SMILES": "O=C(O)CNCP(=O)(O)O",
+            "ligand_canonical_HxL": "H3L",
+            "_notes": ""
+        }
+    ]
+}

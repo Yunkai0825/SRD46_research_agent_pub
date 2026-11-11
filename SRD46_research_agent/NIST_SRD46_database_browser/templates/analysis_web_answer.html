@@ -1,0 +1,290 @@
+{% extends "base.html" %}
+{% from "_analysis_answer_macros.html" import scripts_config %}
+{% block title %}{{ view.label }} — Claude-web answer{% endblock %}
+{% block main_class %}container-xxl my-4{% endblock %}
+
+{% macro kind_icon(kind) -%}
+{%- set icons = {'image': 'bi-image', 'html': 'bi-window', 'table': 'bi-table', 'markdown': 'bi-file-text',
+                 'json': 'bi-braces', 'code': 'bi-file-code', 'text': 'bi-file-text', 'pdf': 'bi-file-pdf',
+                 'binary': 'bi-file-binary'} -%}
+<i class="bi {{ icons.get(kind, 'bi-file') }}"></i>
+{%- endmacro %}
+
+{# One tool input or output of the trace: short ones in place, long ones folded. #}
+{% macro trace_field(field) -%}
+{% if field.long %}
+<details class="trace-field">
+  <summary><span class="trace-label">{{ field.label }}</span> <span class="text-muted">{{ field.lines }} line{{ '' if field.lines == 1 else 's' }}</span></summary>
+  <pre class="web-pre">{{ field.text }}</pre>
+</details>
+{% else %}
+<div class="trace-field"><span class="trace-label">{{ field.label }}</span><pre class="web-pre">{{ field.text }}</pre></div>
+{% endif %}
+{% if field.cut %}<div class="text-muted small">… {{ field.cut }} more characters in conversation.json</div>{% endif %}
+{%- endmacro %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ web_index_url }}">Claude web</a></li>
+    <li class="breadcrumb-item"><a data-matrix-link href="{{ url_for('analysis.analysis_matrix') }}">Answer matrix</a></li>
+    <li class="breadcrumb-item active">{{ view.label }}</li>
+  </ol>
+</nav>
+
+<div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+  <h3 class="mb-0">{{ view.pid }} <span class="text-muted fs-5">{{ view.web.title }}</span></h3>
+  {% if layer %}<span class="badge bg-dark">{{ layer }}</span>{% endif %}
+  <span class="badge source-web">{{ view.source_name }}</span>
+  <span class="badge bg-light text-dark border">web answer · no verdict</span>
+  {% if incomplete %}<span class="badge bg-danger" title="the run stopped before a final answer was complete">incomplete</span>{% endif %}
+  {% if is_reference %}<span class="badge bg-warning text-dark">★ reference answer</span>{% endif %}
+</div>
+<div class="text-muted small mb-2">
+  {{ view.web.model }} · effort {{ view.web.effort }} · {{ view.web.run }}
+  {% if not facts and view.elapsed_s is not none %} · {{ '%.0f'|format(view.elapsed_s) }} s excluding solver{% endif %}
+  {% if stop_reasons %} · stop: {{ stop_reasons }}{% elif view.web.stop_reason %} · stop: {{ view.web.stop_reason }}{% endif %}
+  {% if view.web.started %} · {{ view.web.started[:16].replace('T', ' ') }} UTC{% endif %}
+  {% if view.web.conversation %} · <a href="{{ view.web.conversation }}" target="_blank" rel="noopener">conversation on claude.ai</a>{% endif %}
+</div>
+
+{% if facts %}
+<div class="web-facts mb-3">
+  {% for fact in facts %}
+  <div class="web-fact" {% if fact.title %}title="{{ fact.title }}"{% endif %}>
+    <div class="web-fact-value">{{ fact.value }}</div>
+    <div class="web-fact-label">{{ fact.label }}</div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if prompt %}
+<div class="card mb-3">
+  <div class="card-header py-2 small text-muted">Prompt</div>
+  <div class="card-body py-2">{{ prompt }}</div>
+</div>
+{% endif %}
+
+{% include "_analysis_siblings.html" %}
+
+<ul class="nav nav-tabs mb-3" id="web-tabs">
+  <li class="nav-item">
+    <a class="nav-link {% if tab == 'answer' %}active{% endif %}" href="{{ tab_urls.answer }}"><i class="bi bi-chat-left-text"></i> Final answer</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {% if tab == 'reports' %}active{% endif %} {% if not pages %}text-muted{% endif %}" href="{{ tab_urls.reports }}"><i class="bi bi-window"></i> Reports <span class="badge bg-secondary">{{ pages|length }}</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {% if tab == 'files' %}active{% endif %}" href="{{ tab_urls.files }}"><i class="bi bi-folder2-open"></i> Files <span class="badge bg-secondary">{{ n_files }}</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {% if tab == 'trace' %}active{% endif %} {% if not has_trace %}text-muted{% endif %}" href="{{ tab_urls.trace }}"><i class="bi bi-list-nested"></i> Working trace</a>
+  </li>
+</ul>
+
+{% if tab == 'answer' %}
+{% if pages %}
+<div class="mb-3 small">
+  <i class="bi bi-window"></i> This answer came with {{ pages|length }} saved page{{ '' if pages|length == 1 else 's' }}:
+  {% for page in pages %}<a href="{{ tab_urls.reports }}" class="ms-1">{{ page.rel }}</a>{% if not loop.last %},{% endif %}{% endfor %}
+</div>
+{% endif %}
+<div class="card mb-4">
+  <div class="card-header"><i class="bi bi-chat-left-text"></i> Final answer (Claude web)</div>
+  <div class="card-body">
+    {% if view.answer_html %}{{ view.answer_html|safe }}{% else %}<em class="text-muted">empty final_answer.md</em>{% endif %}
+  </div>
+</div>
+
+{% elif tab == 'reports' %}
+{% if not pages %}
+<div class="alert alert-light border">This answer has no saved page. Its figures and other files are under <a href="{{ tab_urls.files }}">Files</a>.</div>
+{% endif %}
+{% for page in pages %}
+<div class="card mb-4">
+  <div class="card-header d-flex flex-wrap align-items-center gap-2">
+    <span><i class="bi bi-window"></i> <strong>{{ page.rel }}</strong> <span class="text-muted small">{{ page.size_text }}</span></span>
+    <ul class="nav nav-pills web-report-switch ms-auto" role="tablist">
+      <li class="nav-item"><button class="nav-link py-0 px-2 active" data-bs-toggle="pill" data-bs-target="#page-live-{{ loop.index }}" type="button">Live page</button></li>
+      {% if page.screenshot_url %}
+      <li class="nav-item"><button class="nav-link py-0 px-2" data-bs-toggle="pill" data-bs-target="#page-shot-{{ loop.index }}" type="button">Saved screenshot</button></li>
+      {% endif %}
+    </ul>
+    <a class="btn btn-sm btn-outline-secondary py-0" href="{{ page.url }}" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> open in a new tab</a>
+  </div>
+  <div class="card-body p-0 tab-content">
+    <div class="tab-pane show active" id="page-live-{{ loop.index }}">
+      {# the response of a saved page carries the sandbox policy itself (routes/analysis.py) #}
+      <iframe class="web-report-frame" loading="lazy" src="{{ page.url }}" title="{{ page.rel }}"></iframe>
+    </div>
+    {% if page.screenshot_url %}
+    <div class="tab-pane p-2" id="page-shot-{{ loop.index }}">
+      <a href="{{ page.screenshot_url }}" target="_blank"><img class="img-fluid border" loading="lazy" src="{{ page.screenshot_url }}" alt="screenshot of {{ page.rel }}"></a>
+    </div>
+    {% endif %}
+  </div>
+  <div class="card-footer small text-muted">
+    The page runs in a sandbox: its scripts work, but it cannot send requests. Fonts or libraries it loads from the internet need a connection{% if page.screenshot_url %}; the saved screenshot shows the page as it was rendered when the answer was collected{% endif %}.
+  </div>
+</div>
+{% endfor %}
+
+{% elif tab == 'files' %}
+<div class="row g-3 mb-4">
+  <div class="col-lg-4">
+    <div class="web-file-list">
+      {% for group in groups %}
+      <div class="web-file-group">
+        <div class="web-file-group-title" title="{{ group.note }}">{{ group.title }} <span class="text-muted fw-normal">{{ group.files|length }} · {{ group.bytes }}</span></div>
+        <div class="text-muted small px-2 pb-1">{{ group.note }}</div>
+        {% for entry in group.files %}
+        <a class="web-file {% if selected and selected.rel == entry.rel %}active{% endif %}" href="{{ entry.view_url }}" title="{{ entry.rel }}">
+          {{ kind_icon(entry.kind) }} <span class="web-file-name">{{ entry.name }}</span> <span class="web-file-size">{{ entry.size_text }}</span>
+        </a>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="p-3 text-muted">No file is stored with this answer.</div>
+      {% endfor %}
+    </div>
+    <div class="text-muted small mt-2">
+      {% if archive_name %}Read from <code>{{ archive_name }}</code>; nothing is unpacked to disk.{% else %}No archive holds this run: these are the files of its parsed folder.{% endif %}
+    </div>
+  </div>
+  <div class="col-lg-8">
+    {% if selected %}
+    <div class="card">
+      <div class="card-header d-flex flex-wrap align-items-center gap-2">
+        <span class="text-break">{{ kind_icon(selected.kind) }} <strong>{{ selected.rel }}</strong> <span class="text-muted small">{{ selected.size_text }}</span></span>
+        <span class="ms-auto d-flex gap-1">
+          {% if selected.kind != 'binary' %}<a class="btn btn-sm btn-outline-secondary py-0" href="{{ selected.raw_url }}" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> open</a>{% endif %}
+          <a class="btn btn-sm btn-outline-secondary py-0" href="{{ selected.download_url }}"><i class="bi bi-download"></i> download</a>
+        </span>
+      </div>
+      <div class="card-body {% if selected.kind in ('html', 'pdf') %}p-0{% endif %}">
+        {% if selected.kind == 'image' %}
+          <a href="{{ selected.raw_url }}" target="_blank"><img class="img-fluid" src="{{ selected.raw_url }}" alt="{{ selected.rel }}"></a>
+        {% elif selected.kind == 'html' %}
+          <iframe class="web-report-frame" src="{{ selected.raw_url }}" title="{{ selected.rel }}"></iframe>
+        {% elif selected.kind == 'pdf' %}
+          <iframe class="web-report-frame" src="{{ selected.raw_url }}" title="{{ selected.rel }}"></iframe>
+        {% elif selected.kind == 'table' %}
+          <div class="text-muted small mb-2">{{ selected.table.n_rows }} row{{ '' if selected.table.n_rows == 1 else 's' }}{% if selected.table.shown < selected.table.n_rows %}, first {{ selected.table.shown }} shown{% endif %}{% if selected.cut %} (of the part read){% endif %}</div>
+          <div class="web-table-wrap">
+            <table class="table table-sm table-striped web-table mb-0">
+              <thead><tr>{% for cell in selected.table.header %}<th>{{ cell }}</th>{% endfor %}</tr></thead>
+              <tbody>{% for row in selected.table.rows %}<tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+            </table>
+          </div>
+        {% elif selected.kind == 'markdown' %}
+          {{ selected.html|safe }}
+        {% elif selected.kind == 'binary' %}
+          <div class="text-muted">This file type has no preview here. Download it to open it with its own program.</div>
+        {% else %}
+          <pre class="web-pre web-pre-file">{{ selected.text }}</pre>
+        {% endif %}
+        {% if selected.cut %}<div class="text-muted small mt-2">Only the first part of this file is shown; download it for the rest.</div>{% endif %}
+      </div>
+    </div>
+    {% elif groups %}
+    <div class="alert alert-light border">That file is not stored with this answer. Pick one from the list.</div>
+    {% endif %}
+  </div>
+</div>
+
+{% elif tab == 'trace' %}
+{% if not trace %}
+<div class="alert alert-light border">No conversation record is stored with this answer.</div>
+{% else %}
+<div class="d-flex flex-wrap align-items-center gap-2 mb-2 small">
+  <span><strong>{{ trace.counts.tool }}</strong> tool call{{ '' if trace.counts.tool == 1 else 's' }}</span>
+  {% for name, n in trace.tools %}<span class="badge bg-light text-dark border">{{ name }} × {{ n }}</span>{% endfor %}
+  <span class="text-muted">· {{ trace.counts.thinking }} thinking step{{ '' if trace.counts.thinking == 1 else 's' }}</span>
+  {% if trace.counts.errors %}<span class="badge bg-danger">{{ trace.counts.errors }} failed call{{ '' if trace.counts.errors == 1 else 's' }}</span>{% endif %}
+  <span class="ms-auto">
+    <button type="button" class="btn btn-sm btn-outline-secondary py-0" data-trace-open="1">expand all</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary py-0" data-trace-open="0">collapse all</button>
+  </span>
+</div>
+<div class="text-muted small mb-3">
+  The steps of the branch the chat shows, in order. Times are from the start of the conversation.
+  The export holds a summary of each thinking step, not the thinking itself.
+  {% if trace.n_other_branches %}{{ trace.n_other_branches }} message{{ '' if trace.n_other_branches == 1 else 's' }} on other branches (regenerated or edited turns) are left out; they are in <code>conversation.json</code> under Files.{% endif %}
+</div>
+{% for message in trace.messages %}
+<div class="card mb-3 trace-message trace-{{ message.sender }}">
+  <div class="card-header py-1 d-flex flex-wrap gap-2 small">
+    <strong>{% if message.sender == 'human' %}<i class="bi bi-person"></i> Prompt{% else %}<i class="bi bi-stars"></i> Claude{% endif %}</strong>
+    <span class="text-muted">{{ message.created }}</span>
+    {% if message.compacted %}<span class="badge bg-light text-dark border" title="earlier turns were summarised by the chat before this message">after compaction</span>{% endif %}
+    {% if message.stop_reason and message.stop_reason != 'end_turn' %}<span class="badge bg-warning text-dark ms-auto">stopped: {{ message.stop_reason }}</span>{% endif %}
+  </div>
+  <div class="card-body py-2">
+    {% for step in message.steps %}
+    {% if step.kind == 'text' %}
+    <div class="trace-step trace-text">
+      {% if message.sender != 'human' %}<div class="trace-meta"><i class="bi bi-chat-left-text"></i> {{ step.at }}</div>{% endif %}
+      {{ step.html|safe }}
+    </div>
+    {% elif step.kind == 'thinking' %}
+    <div class="trace-step trace-thinking">
+      <div class="trace-meta"><i class="bi bi-lightbulb"></i> {{ step.at }} · thinking{% if step.took %} · {{ step.took }}{% endif %}</div>
+      {% if step.notes %}<ul class="mb-0">{% for note in step.notes %}<li>{{ note }}</li>{% endfor %}</ul>
+      {% elif step.text %}<pre class="web-pre">{{ step.text }}</pre>
+      {% else %}<span class="text-muted small">no summary stored</span>{% endif %}
+    </div>
+    {% else %}
+    <details class="trace-step trace-tool {% if step.is_error %}trace-error{% endif %}">
+      <summary>
+        <span class="trace-meta"><i class="bi bi-tools"></i> {{ step.at }}</span>
+        <span class="badge bg-secondary">{{ step.name }}</span>
+        <span class="trace-title">{{ step.title }}</span>
+        {% if step.took %}<span class="text-muted small">{{ step.took }}</span>{% endif %}
+        {% if step.is_error %}<span class="badge bg-danger">{% if step.returncode not in (none, 0) %}exit {{ step.returncode }}{% else %}error{% endif %}</span>{% endif %}
+        {% if not step.has_result %}<span class="badge bg-light text-dark border">no result stored</span>{% endif %}
+        {% if step.images %}<span class="text-muted small"><i class="bi bi-image"></i> {{ step.images|length }}</span>{% endif %}
+        {% if step.links %}<span class="text-muted small"><i class="bi bi-link-45deg"></i> {{ step.links|length }}</span>{% endif %}
+      </summary>
+      <div class="trace-body">
+        {% for field in step.fields %}{{ trace_field(field) }}{% endfor %}
+        {% for field in step.outputs %}{{ trace_field(field) }}{% endfor %}
+        {% if step.links %}
+        <div class="trace-field"><span class="trace-label">pages</span>
+          <ul class="mb-0 small">{% for link in step.links %}<li><a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.title }}</a>{% if link.site %} <span class="text-muted">{{ link.site }}</span>{% endif %}</li>{% endfor %}</ul>
+        </div>
+        {% endif %}
+        {% if step.handed %}
+        <div class="trace-field"><span class="trace-label">files handed over</span>
+          {% for handed in step.handed %}{% if handed.url %}<a class="badge bg-light text-dark border text-decoration-none" href="{{ handed.url }}">{{ handed.name }}</a>{% else %}<span class="badge bg-light text-muted border" title="not among the stored files">{{ handed.name }}</span>{% endif %} {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% if step.images %}
+      <div class="trace-images">
+        {% for image in step.images %}{% if image.url %}<a href="{{ image.url }}" target="_blank"><img loading="lazy" src="{{ image.url }}" alt="{{ image.rel }}"></a>{% else %}<span class="text-muted small">image not stored</span>{% endif %}{% endfor %}
+      </div>
+      {% endif %}
+    </details>
+    {% endif %}
+    {% else %}
+    <span class="text-muted small">empty message</span>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+{{ scripts_config('web') }}
+<script>
+document.querySelectorAll('[data-trace-open]').forEach(function (button) {
+  button.addEventListener('click', function () {
+    var open = button.getAttribute('data-trace-open') === '1';
+    document.querySelectorAll('details.trace-tool').forEach(function (d) { d.open = open; });
+  });
+});
+</script>
+{% endblock %}

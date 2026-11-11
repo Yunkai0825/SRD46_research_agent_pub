@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% from "_analysis_answer_macros.html" import scripts_config %}
+{% block title %}Compare answers — {{ pid or 'analysis' }}{% endblock %}
+{% block main_class %}container-fluid my-4 px-4{% endblock %}
+
+{% block content %}
+{% include "_history_subnav.html" %}
+{% set active = 'matrix' %}{% include "_analysis_tabs.html" %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a data-matrix-link href="{{ url_for('analysis.analysis_matrix') }}">Answer matrix</a></li>
+    <li class="breadcrumb-item active">compare {{ pid or 'answers' }}</li>
+  </ol>
+</nav>
+
+<div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+  <h3 class="mb-0"><i class="bi bi-layout-split"></i> Compare &mdash; {{ pid or 'answers' }}</h3>
+  {% if layer %}<span class="badge bg-dark">{{ layer }}</span>{% endif %}
+  <span class="text-muted small">{{ views|length }} answer{{ '' if views|length == 1 else 's' }}</span>
+  <div class="form-check form-switch ms-auto mb-0">
+    <input class="form-check-input" type="checkbox" id="full-toggle" {% if full %}checked{% endif %}>
+    <label class="form-check-label small" for="full-toggle">show full answers (no scroll boxes)</label>
+  </div>
+</div>
+
+{% if not same_prompt %}
+<div class="alert alert-warning py-2">The selected answers belong to different prompts; swapping columns and the reference choice are disabled here.</div>
+{% endif %}
+{% if missing %}
+<div class="alert alert-secondary py-2">Not found on disk: {{ missing|join(', ') }}</div>
+{% endif %}
+{% if prompt %}
+<div class="card mb-3">
+  <div class="card-header py-1 small text-muted">Prompt</div>
+  <div class="card-body py-2 small">{{ prompt }}</div>
+</div>
+{% endif %}
+
+<div class="row g-3 compare-row{% if full %} compare-full{% endif %}" id="compare-row">
+{% for v in views %}
+  {% set col = loop.index0 %}
+  <div class="col-lg-{{ 12 // views|length }}">
+    <div class="card h-100">
+      <div class="card-header py-2">
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <span class="badge source-{{ v.kind }}">{{ v.source_name }}</span>
+          <a href="{{ v.url }}" class="fw-semibold text-decoration-none">{{ v.label }}</a>
+          <span class="badge bg-{{ v.badge if v.badge != 'web' else 'light text-dark border' }}{% if v.badge in ('warning', 'info') %} text-dark{% endif %}">{{ v.verdict }}</span>
+          {% if v.elapsed_s is not none %}<span class="text-muted small" title="{{ v.get('timing_note', '') }}">{{ '%.0f'|format(v.elapsed_s) }} s excluding solver</span>{% endif %}
+          {% for c in v.l1 if c.ld_verdict %}<span class="badge bg-{{ c.ld_badge }}">{{ c.name }} LD {{ c.ld_verdict }}</span>{% endfor %}
+          {% if v.web %}<span class="text-muted small">{{ v.web.model }} · {{ v.web.effort }}{% if v.web.stop_reason %} · {{ v.web.stop_reason }}{% endif %}</span>{% endif %}
+        </div>
+        <div class="d-flex flex-wrap align-items-center gap-2 mt-1 small">
+          {% if same_prompt %}
+          <label class="form-check d-inline-flex align-items-center gap-1 mb-0" title="save this answer as the reference of {{ pid }}">
+            <input class="form-check-input mt-0" type="radio" name="reference" data-set-reference="{{ v.id }}" data-pid="{{ pid }}" data-label="{{ v.label }}" {% if reference.answer == v.id %}checked{% endif %}>
+            <span>★ reference</span>
+          </label>
+          <select class="form-select form-select-sm w-auto" data-jump aria-label="swap this column" title="swap this column for another answer of {{ pid }}">
+            <option value="">swap for…</option>
+            {% for o in options if o.id != v.id %}<option value="{{ swap_urls[col][o.id] }}">{{ o.source_name }} · {{ o.chip }} ({{ o.verdict }})</option>{% endfor %}
+          </select>
+          {% endif %}
+          {% for name, url in v.html_files %}<a href="{{ url }}" target="_blank" class="btn btn-sm btn-outline-secondary py-0" title="published page of this answer">{{ name }}</a>{% endfor %}
+          {% if v.web and v.web.conversation %}<a href="{{ v.web.conversation }}" target="_blank" rel="noopener" class="small">conversation</a>{% endif %}
+        </div>
+      </div>
+      <div class="card-body compare-pane">
+        {% if v.plots %}
+        <div class="compare-plots mb-2">
+          {% for p in v.plots %}<a href="{{ p }}" target="_blank"><img src="{{ p }}" class="img-fluid border rounded mb-1" loading="lazy" alt="diagram"></a>{% endfor %}
+        </div>
+        {% else %}
+        <div class="text-muted small mb-2">no diagram</div>
+        {% endif %}
+        {% if v.answer_html %}{{ v.answer_html|safe }}{% else %}<em class="text-muted">no answer text</em>{% endif %}
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ scripts_config('compare') }}
+{% endblock %}

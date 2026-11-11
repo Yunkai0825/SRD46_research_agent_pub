@@ -1,0 +1,30 @@
+# ── SRD-46 Database Subagent ─────────────────────────────────────
+# Python 3.11+
+#
+# Install all:   pip install -r requirements.txt
+# Install core:  pip install fastmcp mcp requests prompt_toolkit
+# ─────────────────────────────────────────────────────────────────
+
+# --- Core (MCP server + agent runtime) --------------------------
+fastmcp                # MCP client transport (stdio / SSE)
+mcp                    # Model Context Protocol server framework
+requests               # HTTP client for Argo LLM API
+prompt_toolkit         # Terminal chat multi-line input (optional; fallback to input())
+sqlglot>=23.0          # SQL parser/AST for safe WHERE-clause normalization
+langchain              # ArgoLLM / LLMEngine chat model wrapper (argo_client.py)
+langchain-core         # BaseChatModel, message types used by ArgoLLM
+
+# --- Chemistry (ligand similarity & name resolution) -------------
+rdkit                  # SMILES/InChI parsing, fingerprints, substructure search
+pubchempy              # Resolve common chemical names via PubChem API
+
+# --- Web browser UI (SRD46_browser/, optional) -------------------
+flask                  # Web framework for Browse / Search / Compete UI
+markdown               # Render Markdown in agent answer panels
+markupsafe             # HTML escaping (installed with Flask, explicitly used)
+
+# --- Evaluation plots (SRD46_query_output_eval_pipeline) ---------
+numpy                  # Numeric arrays for posteval_stats / tool_stats plots
+matplotlib             # Plot rendering for posteval_stats / tool_stats
+
+# --- Tests (DEBUG_test_scripts/) ---------------------------------

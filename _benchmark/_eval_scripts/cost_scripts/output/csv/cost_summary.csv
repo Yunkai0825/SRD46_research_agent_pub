@@ -1,0 +1,5 @@
+set,prompts,calls,calls_real_usage,input_Mtok,output_Mtok,cost_usd,cost_from_real_usage_usd,mean_per_prompt,max_prompt
+opus47,33,6740,4192,65.641,4.07,429.956,261.983,13.029,73.076
+opus55,11,1546,1485,25.097,1.834,137.076,133.721,12.461,33.356
+gpt55,11,1559,0,11.38,0.712,78.276,0,7.116,12.601
+gpt6sol,11,1351,1351,10.536,1.396,35.03,35.03,3.185,8.662

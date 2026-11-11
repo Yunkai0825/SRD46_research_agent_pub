@@ -1,0 +1,79 @@
+{
+  "files": [
+    {
+      "mode": "100644",
+      "name": "_run.log",
+      "sha256": "180f68f602d81772a78221ee1b8e1ebfa40a2305d4155cd9b9bb6ff9f4888352",
+      "size": 1663
+    },
+    {
+      "mode": "100644",
+      "name": "answer.md",
+      "sha256": "93a5689a7dc5902aa2d89956fec5fdecf9bcefd69b4dc1ee4288e0007b1e2781",
+      "size": 3063
+    },
+    {
+      "mode": "100644",
+      "name": "l0_tool_calls.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "mode": "100644",
+      "name": "l0_tool_calls.md",
+      "sha256": "bff94cd8493857854ef2798bc26651832d7bd0b897c5ebd64a75eecfab7a9934",
+      "size": 188
+    },
+    {
+      "mode": "100644",
+      "name": "manifest.json",
+      "sha256": "94a006d7dfd51104e5b3ceee51cedc4c7ccffe8700a89cf6eb089d89c4832c5d",
+      "size": 543
+    },
+    {
+      "mode": "100644",
+      "name": "run_history.jsonl",
+      "sha256": "ee64b65c3a40b75d95d01866301eb3f0261543bcef041119b3d79c090da5d51a",
+      "size": 385
+    },
+    {
+      "mode": "100644",
+      "name": "run_history.md",
+      "sha256": "f14ae438866d1f34491e2028a7a4fd5e89c3f626800ff30e29b3bbe05ce3858a",
+      "size": 420
+    },
+    {
+      "mode": "100644",
+      "name": "run_stats.json",
+      "sha256": "51b995c0ea0bef4362077c48eb43d8ff4024c0b7f36a96159e7804e83c2a3fe0",
+      "size": 63
+    },
+    {
+      "mode": "100644",
+      "name": "verdict.json",
+      "sha256": "c7893baedc799b26e95d00a10d4e5eee83d56af82f68931d0cc399bf3256d7c1",
+      "size": 619
+    }
+  ],
+  "format": "zip-images-compartment/1",
+  "key": "tree:75b1fed74aa2450446015ab3068d08c2a8e31477f20d38492c1b5303d9a28b9c",
+  "kind": "tree",
+  "packed_at": "2026-11-11T19:36:30Z",
+  "params": {
+    "chunk_raw": 94000000,
+    "level": 6,
+    "limit": 95000000,
+    "zlib": "1.3.2"
+  },
+  "parts": [
+    {
+      "entries": 9,
+      "file": "benchmark_Opus4.7_no_topo_cleanup_L4_6_20260609__75b1fed74aa2_001.zip",
+      "sha256": "087a9d7b249c9fdfc0c9f47babb8381c7268bcda26b88aa85727a30e017b9410",
+      "size": 4750
+    }
+  ],
+  "raw_bytes": 6944,
+  "slug": "benchmark_Opus4.7_no_topo_cleanup_L4_6_20260609",
+  "zip_bytes": 4750
+}

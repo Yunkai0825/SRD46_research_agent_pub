@@ -1,0 +1,250 @@
+{
+  "sweep_method": "pourbaix_sweep",
+  "_meta": {
+    "dof": 2,
+    "stage": "LC3_3",
+    "notes": "Standard 2-D pH-E predominance diagram; coupled dosing handled as constraints, not as additional axes."
+  },
+  "system_catalog": {
+    "chemical_system": {
+      "metals": [
+        {
+          "name": "Fe",
+          "element": "Fe",
+          "redox_states": [
+            "Fe$+3",
+            "Fe$+2"
+          ]
+        },
+        {
+          "name": "Cu",
+          "element": "Cu",
+          "redox_states": [
+            "Cu$+2",
+            "Cu$+1"
+          ]
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Glycine",
+          "db_id": "ligand_5760",
+          "internal_id": "L1",
+          "smiles": "NCC(=O)O"
+        },
+        {
+          "name": "Citric acid",
+          "db_id": "ligand_9058",
+          "internal_id": "L2",
+          "smiles": "O=C(O)CC(O)(CC(=O)O)C(=O)O"
+        }
+      ]
+    }
+  },
+  "constraint_settings": {
+    "activity_model": "davies",
+    "solids": "include",
+    "redox_mode": "axis",
+    "ionic_strength_mode": "auto"
+  },
+  "_initial_conditions": {
+    "inits": [
+      {
+        "id": "T",
+        "handle": "s.temperature",
+        "ref": "temperature",
+        "handle_id": null,
+        "value": 298.15,
+        "basis": "assumed",
+        "note": "standard lab T"
+      },
+      {
+        "id": "Cu",
+        "handle": "s.total[\"Cu\"]",
+        "ref": "total",
+        "handle_id": "Cu",
+        "value": 0.001,
+        "basis": "known",
+        "note": "total Cu fixed at 1 mM per task"
+      }
+    ],
+    "notes": "pH and E_V are the swept axes; Fe and ligand totals are coupled freeform expressions tied to pH and will be set by the constraint designer. Cu element total pinned at 1 mM (known); the Cu+2 = 0.8 mM stipulation is a sub-element constraint handled downstream so as not to double-pin the Cu component. T defaulted; I left to the solver (auto) for self-consistent speciation.",
+    "n_known": 1,
+    "n_assumed": 1
+  },
+  "constraint_spec": {
+    "schema_version": "lc3_2.v1",
+    "source_card": "l3_3_constraint_card.py",
+    "axes": [
+      "pH_axis",
+      "E_V_axis"
+    ],
+    "dof": {
+      "K": 7,
+      "charge_balance_enforced": false
+    },
+    "lets": {},
+    "binds": [
+      {
+        "id": "pH",
+        "op": "==",
+        "lhs": {
+          "ref": "pH"
+        },
+        "rhs": {
+          "axis": "pH_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "E",
+        "op": "==",
+        "lhs": {
+          "ref": "E_V"
+        },
+        "rhs": {
+          "axis": "E_V_axis"
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "T",
+        "op": "==",
+        "lhs": {
+          "ref": "temperature"
+        },
+        "rhs": {
+          "const": 298.15
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Cu",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Cu"
+        },
+        "rhs": {
+          "const": 0.001
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L1",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_5760"
+        },
+        "rhs": {
+          "op": "*",
+          "args": [
+            {
+              "const": 0.0001
+            },
+            {
+              "op": "+",
+              "args": [
+                {
+                  "const": 1.0
+                },
+                {
+                  "op": "*",
+                  "args": [
+                    {
+                      "const": 0.5
+                    },
+                    {
+                      "axis": "pH_axis"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "L2",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "ligand_9058"
+        },
+        "rhs": {
+          "op": "*",
+          "args": [
+            {
+              "const": 0.5
+            },
+            {
+              "ref": "total",
+              "id": "ligand_5760"
+            }
+          ]
+        },
+        "residual": "lhs - rhs"
+      },
+      {
+        "id": "Fe",
+        "op": "==",
+        "lhs": {
+          "ref": "total",
+          "id": "Fe"
+        },
+        "rhs": {
+          "op": "+",
+          "args": [
+            {
+              "op": "*",
+              "args": [
+                {
+                  "const": 4.1
+                },
+                {
+                  "op": "+",
+                  "args": [
+                    {
+                      "ref": "total",
+                      "id": "ligand_9058"
+                    },
+                    {
+                      "ref": "total",
+                      "id": "ligand_5760"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "ref": "total",
+              "id": "Cu"
+            }
+          ]
+        },
+        "residual": "lhs - rhs"
+      }
+    ]
+  },
+  "sweep_axes": [
+    {
+      "name": "pH",
+      "min": 2.0,
+      "max": 12.0,
+      "n_points": 6
+    },
+    {
+      "name": "E_V",
+      "min": -0.5,
+      "max": 1.5,
+      "n_points": 6
+    }
+  ],
+  "grid_refine": {
+    "mode": "boundary",
+    "factor": 2,
+    "n_layers": 1
+  }
+}

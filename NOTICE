@@ -39,12 +39,14 @@ https://data.nist.gov/od/ds/mds2-2154/SRD%2046%20README.txt.sha256
 Source-data provenance
 ----------------------
 
-The packaged database paths, original sizes, and SHA-256 checksums are
-recorded in packaged_files.json. NIST_SRD46_core_db_storage/README.md
-describes the database contents. Dated source-processing notes and the
-original data terms are preserved in
-NIST_SRD46_core_db_storage/NIST_SRD46_database_parsing/_input/SRD46_SQL/SRD 46 README.md.
-Publication packaging preserves the database bytes and all archived run files.
+The packed database paths, original sizes, and SHA-256 checksums are
+recorded in _large_files/*/manifest.json. The database contents and source
+provenance are described in
+SRD46_research_agent/NIST_SRD46_core_db_storage/README.md.
+The official source-data terms are preserved in docs/licenses/NIST_SRD46_README.txt.
+Database packaging preserves the original database bytes. Published run
+traces are anonymized inspection copies; scientific values are retained,
+but those copies are not byte-identical replay records.
 
 The project parses the source SQL/text extraction, applies documented
 chemical interpretation and correction rules, preserves identifiers and

@@ -1,0 +1,31 @@
+{
+  "directories": {
+    "": 1794271184377224000,
+    "L1_call_01": 1794271184158475300,
+    "L1_call_01/LD": 1794271184205345900
+  },
+  "format": "srd46-output-archive-v1",
+  "mtimes_ns": {
+    "L1_call_01/LD/agent_response.md": 1793294629312300900,
+    "L1_call_01/LD/ld_tool_calls.md": 1793294629312300900,
+    "L1_call_01/LD/verdict.json": 1793294629327925900,
+    "L1_call_01/agent_response.md": 1793294629312300900,
+    "L1_call_01/input.json": 1793294629312300900,
+    "L1_call_01/l1_analysis.json": 1793294629312300900,
+    "L1_call_01/l1_report.md": 1793294629312300900,
+    "L1_call_01/l1_tool_calls.md": 1793294629312300900,
+    "_run.log": 1793294629312300900,
+    "answer.md": 1793294629281051400,
+    "l0_tool_calls.jsonl": 1793294629281051400,
+    "l0_tool_calls.md": 1793294629281051400,
+    "manifest.json": 1793294629296678800,
+    "run_history.jsonl": 1793294629296678800,
+    "run_history.md": 1793294629296678800,
+    "run_stats.json": 1793294629296678800,
+    "verdict.json": 1793294629296678800,
+    "working_memory.json": 1793294629296678800
+  },
+  "record": "compartments/tree-2f65b7d65731ca7a1eecddc66119328afb157139944d684a10c675d094f5565c.json",
+  "solver_events": {},
+  "target": "_benchmark/Opus4.7_no_topo_cleanup/L4_5_20260609"
+}

@@ -1,0 +1,20 @@
+{# The one button at the right of the answer card header of the run page.
+   In eval view it reads "raw" and shows the plain answer; in the plain view it reads "eval" and
+   turns the eval view back on.  A run with excerpts opens in eval view (raw is ?mode=raw); a run
+   without them opens plain, and its eval view (?mode=eval) starts empty, ready for new excerpts.
+   Where eval view is not available (no excerpts and not editable here), the raw button opens
+   answer.md as text. #}
+{% if eval_available %}
+{% if eval_view %}
+<a class="btn btn-sm btn-outline-secondary"
+   href="{{ url_for('analysis.analysis_detail', label=label, mode='raw') if eval_has_file else url_for('analysis.analysis_detail', label=label) }}"
+   title="the plain answer, without the excerpt highlights">raw</a>
+{% else %}
+<a class="btn btn-sm btn-outline-secondary"
+   href="{{ url_for('analysis.analysis_detail', label=label) if eval_has_file else url_for('analysis.analysis_detail', label=label, mode='eval') }}"
+   title="{{ 'highlight the excerpted statements of this answer' if eval_has_file else 'select passages of this answer and store them as excerpts' }}">eval</a>
+{% endif %}
+{% elif has_answer %}
+<a class="btn btn-sm btn-outline-secondary" target="_blank"
+   href="{{ url_for('analysis.analysis_file', label=label, relpath='answer.md') }}">raw</a>
+{% endif %}

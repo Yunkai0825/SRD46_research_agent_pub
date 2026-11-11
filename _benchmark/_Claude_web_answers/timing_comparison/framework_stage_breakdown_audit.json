@@ -1,0 +1,2856 @@
+{
+  "basis": "Exclusive coarse parent-stage elapsed time; numerical solver elapsed has already been removed from authoritative run totals.",
+  "components": {
+    "fw_lc1": "LC1: system and equation mapping",
+    "fw_lc2": "LC2: thermodynamic data assembly",
+    "fw_lc3": "LC3: solver configuration",
+    "fw_ld": "LD: result validation",
+    "fw_other": "Other orchestration, reporting and unresolved time"
+  },
+  "exclusions": "No token/cost share allocations; no adding nested or parallel worker durations; no invented per-agent timestamps.",
+  "limitations": "LC1/2/3 parent elapsed includes their own orchestration and I/O. LD log timing is rounded to 0.1 s. Other is explicitly unresolved, not pure LLM time. Failed/absent stage timing remains in Other if no elapsed was recorded. L1_1 is a resumed-run reconstruction.",
+  "run_count": 32,
+  "row_count": 160,
+  "max_abs_reconciliation_error_s": 4.877165338257328e-10,
+  "runs": {
+    "L1_1": {
+      "values": {
+        "fw_lc1": 43.532,
+        "fw_lc2": 344.055,
+        "fw_lc3": 64.315,
+        "fw_ld": 24.0,
+        "fw_other": 333.8569475154878
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L1_1-L1_5.zip::L1_1_Ni_glycine_pourbaix_2D/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L1_1-L1_5.zip::L1_1_Ni_glycine_pourbaix_2D/L1_call_01/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L1_1-L1_5.zip::L1_1_Ni_glycine_pourbaix_2D/L1_call_01/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L1_1-L1_5.zip::L1_1_Ni_glycine_pourbaix_2D/_run.log:666"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L1_1"
+        ]
+      },
+      "details": [
+        {
+          "member": "L1_1_Ni_glycine_pourbaix_2D/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 43.532,
+          "status": "ok"
+        },
+        {
+          "member": "L1_1_Ni_glycine_pourbaix_2D/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 344.055,
+          "status": "ok"
+        },
+        {
+          "member": "L1_1_Ni_glycine_pourbaix_2D/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 64.315,
+          "status": "ok"
+        },
+        {
+          "member": "L1_1_Ni_glycine_pourbaix_2D/_run.log",
+          "line": 666,
+          "component": "fw_ld",
+          "seconds": 24.0,
+          "log": "19:19:39 [INFO] Analysis.LD: LD verdict=supported hints=3 (24.0s)"
+        }
+      ],
+      "total": 809.7589475154878
+    },
+    "L1_2": {
+      "values": {
+        "fw_lc1": 96.809,
+        "fw_lc2": 558.611,
+        "fw_lc3": 57.687,
+        "fw_ld": 24.5,
+        "fw_other": 283.11199999999997
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L1_1-L1_5.zip::L1_2_FeCu_citrate_chloride_joint/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L1_1-L1_5.zip::L1_2_FeCu_citrate_chloride_joint/L1_call_01/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L1_1-L1_5.zip::L1_2_FeCu_citrate_chloride_joint/L1_call_01/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L1_1-L1_5.zip::L1_2_FeCu_citrate_chloride_joint/_run.log:1069"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L1_2"
+        ]
+      },
+      "details": [
+        {
+          "member": "L1_2_FeCu_citrate_chloride_joint/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 96.809,
+          "status": "ok"
+        },
+        {
+          "member": "L1_2_FeCu_citrate_chloride_joint/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 558.611,
+          "status": "ok"
+        },
+        {
+          "member": "L1_2_FeCu_citrate_chloride_joint/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 57.687,
+          "status": "ok"
+        },
+        {
+          "member": "L1_2_FeCu_citrate_chloride_joint/_run.log",
+          "line": 1069,
+          "component": "fw_ld",
+          "seconds": 24.5,
+          "log": "19:47:03 [INFO] Analysis.LD: LD verdict=supported hints=5 (24.5s)"
+        }
+      ],
+      "total": 1020.7189999999999
+    },
+    "L1_3": {
+      "values": {
+        "fw_lc1": 66.628,
+        "fw_lc2": 131.928,
+        "fw_lc3": 40.736,
+        "fw_ld": 25.5,
+        "fw_other": 203.07900000000012
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L1_1-L1_5.zip::L1_3_Cu_ammonia_pourbaix_2D/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L1_1-L1_5.zip::L1_3_Cu_ammonia_pourbaix_2D/L1_call_01/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L1_1-L1_5.zip::L1_3_Cu_ammonia_pourbaix_2D/L1_call_01/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L1_1-L1_5.zip::L1_3_Cu_ammonia_pourbaix_2D/_run.log:541"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L1_3"
+        ]
+      },
+      "details": [
+        {
+          "member": "L1_3_Cu_ammonia_pourbaix_2D/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 66.628,
+          "status": "ok"
+        },
+        {
+          "member": "L1_3_Cu_ammonia_pourbaix_2D/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 131.928,
+          "status": "ok"
+        },
+        {
+          "member": "L1_3_Cu_ammonia_pourbaix_2D/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 40.736,
+          "status": "ok"
+        },
+        {
+          "member": "L1_3_Cu_ammonia_pourbaix_2D/_run.log",
+          "line": 541,
+          "component": "fw_ld",
+          "seconds": 25.5,
+          "log": "15:39:40 [INFO] Analysis.LD: LD verdict=supported hints=6 (25.5s)"
+        }
+      ],
+      "total": 467.8710000000001
+    },
+    "L1_4": {
+      "values": {
+        "fw_lc1": 153.1,
+        "fw_lc2": 632.6700000000001,
+        "fw_lc3": 93.493,
+        "fw_ld": 47.0,
+        "fw_other": 170.47500000000002
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L1_1-L1_5.zip::L1_4_Fe_EDTA_vs_citrate/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L1_1-L1_5.zip::L1_4_Fe_EDTA_vs_citrate/L1_call_02/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L1_1-L1_5.zip::L1_4_Fe_EDTA_vs_citrate/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L1_1-L1_5.zip::L1_4_Fe_EDTA_vs_citrate/L1_call_02/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L1_1-L1_5.zip::L1_4_Fe_EDTA_vs_citrate/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L1_1-L1_5.zip::L1_4_Fe_EDTA_vs_citrate/L1_call_02/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L1_1-L1_5.zip::L1_4_Fe_EDTA_vs_citrate/_run.log:496",
+          "_benchmark\\L1_1-L1_5.zip::L1_4_Fe_EDTA_vs_citrate/_run.log:1218"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L1_4"
+        ]
+      },
+      "details": [
+        {
+          "member": "L1_4_Fe_EDTA_vs_citrate/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 58.007,
+          "status": "ok"
+        },
+        {
+          "member": "L1_4_Fe_EDTA_vs_citrate/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 245.81,
+          "status": "ok"
+        },
+        {
+          "member": "L1_4_Fe_EDTA_vs_citrate/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 53.122,
+          "status": "ok"
+        },
+        {
+          "member": "L1_4_Fe_EDTA_vs_citrate/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 95.093,
+          "status": "ok"
+        },
+        {
+          "member": "L1_4_Fe_EDTA_vs_citrate/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 386.86,
+          "status": "ok"
+        },
+        {
+          "member": "L1_4_Fe_EDTA_vs_citrate/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 40.371,
+          "status": "ok"
+        },
+        {
+          "member": "L1_4_Fe_EDTA_vs_citrate/_run.log",
+          "line": 496,
+          "component": "fw_ld",
+          "seconds": 23.3,
+          "log": "15:48:24 [INFO] Analysis.LD: LD verdict=inconclusive hints=1 (23.3s)"
+        },
+        {
+          "member": "L1_4_Fe_EDTA_vs_citrate/_run.log",
+          "line": 1218,
+          "component": "fw_ld",
+          "seconds": 23.7,
+          "log": "15:58:45 [INFO] Analysis.LD: LD verdict=supported hints=0 (23.7s)"
+        }
+      ],
+      "total": 1096.738
+    },
+    "L1_5": {
+      "values": {
+        "fw_lc1": 98.73400000000001,
+        "fw_lc2": 647.4100000000001,
+        "fw_lc3": 94.326,
+        "fw_ld": 56.599999999999994,
+        "fw_other": 279.9939999999998
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L1_1-L1_5.zip::L1_5_Cu_EDTA_vs_NTA/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L1_1-L1_5.zip::L1_5_Cu_EDTA_vs_NTA/L1_call_02/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L1_1-L1_5.zip::L1_5_Cu_EDTA_vs_NTA/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L1_1-L1_5.zip::L1_5_Cu_EDTA_vs_NTA/L1_call_02/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L1_1-L1_5.zip::L1_5_Cu_EDTA_vs_NTA/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L1_1-L1_5.zip::L1_5_Cu_EDTA_vs_NTA/L1_call_02/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L1_1-L1_5.zip::L1_5_Cu_EDTA_vs_NTA/_run.log:430",
+          "_benchmark\\L1_1-L1_5.zip::L1_5_Cu_EDTA_vs_NTA/_run.log:478",
+          "_benchmark\\L1_1-L1_5.zip::L1_5_Cu_EDTA_vs_NTA/_run.log:902"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L1_5"
+        ]
+      },
+      "details": [
+        {
+          "member": "L1_5_Cu_EDTA_vs_NTA/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 49.682,
+          "status": "ok"
+        },
+        {
+          "member": "L1_5_Cu_EDTA_vs_NTA/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 291.968,
+          "status": "ok"
+        },
+        {
+          "member": "L1_5_Cu_EDTA_vs_NTA/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 44.802,
+          "status": "ok"
+        },
+        {
+          "member": "L1_5_Cu_EDTA_vs_NTA/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 49.052,
+          "status": "ok"
+        },
+        {
+          "member": "L1_5_Cu_EDTA_vs_NTA/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 355.442,
+          "status": "ok"
+        },
+        {
+          "member": "L1_5_Cu_EDTA_vs_NTA/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 49.524,
+          "status": "ok"
+        },
+        {
+          "member": "L1_5_Cu_EDTA_vs_NTA/_run.log",
+          "line": 430,
+          "component": "fw_ld",
+          "seconds": 15.8,
+          "log": "19:55:28 [INFO] Analysis.LD: LD verdict=contradicted hints=12 (15.8s)"
+        },
+        {
+          "member": "L1_5_Cu_EDTA_vs_NTA/_run.log",
+          "line": 478,
+          "component": "fw_ld",
+          "seconds": 20.5,
+          "log": "19:57:17 [INFO] Analysis.LD: LD verdict=supported hints=0 (20.5s)"
+        },
+        {
+          "member": "L1_5_Cu_EDTA_vs_NTA/_run.log",
+          "line": 902,
+          "component": "fw_ld",
+          "seconds": 20.3,
+          "log": "20:07:00 [INFO] Analysis.LD: LD verdict=supported hints=0 (20.3s)"
+        }
+      ],
+      "total": 1177.0639999999999
+    },
+    "L1_11": {
+      "values": {
+        "fw_lc1": 122.495,
+        "fw_lc2": 466.897,
+        "fw_lc3": 46.4,
+        "fw_ld": 25.1,
+        "fw_other": 253.09500000000094
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr.part001-of-003.outputs.zip::L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr.part001-of-003.outputs.zip::L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr/L1_call_01/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr.part001-of-003.outputs.zip::L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr/L1_call_01/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr.part001-of-003.outputs.zip::L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr/_run.log:1178"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L1_11"
+        ]
+      },
+      "details": [
+        {
+          "member": "L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 122.495,
+          "status": "ok"
+        },
+        {
+          "member": "L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 466.897,
+          "status": "ok"
+        },
+        {
+          "member": "L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 46.4,
+          "status": "ok"
+        },
+        {
+          "member": "L1_11_CuFe_cit_gly_Cl_NH3_pourbaix_hydr/_run.log",
+          "line": 1178,
+          "component": "fw_ld",
+          "seconds": 25.1,
+          "log": "03:26:09 [INFO] Analysis.LD: LD verdict=supported hints=6 (25.1s)"
+        }
+      ],
+      "total": 913.987000000001
+    },
+    "L1_6": {
+      "values": {
+        "fw_lc1": 113.17099999999999,
+        "fw_lc2": 582.164,
+        "fw_lc3": 85.42099999999999,
+        "fw_ld": 41.7,
+        "fw_other": 472.5590000000003
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L1_6-L1_7.zip::L1_6_Cu_vs_Ag_chloride_redox/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L1_6-L1_7.zip::L1_6_Cu_vs_Ag_chloride_redox/L1_call_02/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L1_6-L1_7.zip::L1_6_Cu_vs_Ag_chloride_redox/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L1_6-L1_7.zip::L1_6_Cu_vs_Ag_chloride_redox/L1_call_02/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L1_6-L1_7.zip::L1_6_Cu_vs_Ag_chloride_redox/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L1_6-L1_7.zip::L1_6_Cu_vs_Ag_chloride_redox/L1_call_02/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L1_6-L1_7.zip::L1_6_Cu_vs_Ag_chloride_redox/_run.log:700",
+          "_benchmark\\L1_6-L1_7.zip::L1_6_Cu_vs_Ag_chloride_redox/_run.log:1299"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L1_6"
+        ]
+      },
+      "details": [
+        {
+          "member": "L1_6_Cu_vs_Ag_chloride_redox/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 55.75,
+          "status": "ok"
+        },
+        {
+          "member": "L1_6_Cu_vs_Ag_chloride_redox/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 348.035,
+          "status": "ok"
+        },
+        {
+          "member": "L1_6_Cu_vs_Ag_chloride_redox/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 46.492,
+          "status": "ok"
+        },
+        {
+          "member": "L1_6_Cu_vs_Ag_chloride_redox/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 57.421,
+          "status": "ok"
+        },
+        {
+          "member": "L1_6_Cu_vs_Ag_chloride_redox/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 234.129,
+          "status": "ok"
+        },
+        {
+          "member": "L1_6_Cu_vs_Ag_chloride_redox/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 38.929,
+          "status": "ok"
+        },
+        {
+          "member": "L1_6_Cu_vs_Ag_chloride_redox/_run.log",
+          "line": 700,
+          "component": "fw_ld",
+          "seconds": 22.3,
+          "log": "01:27:23 [INFO] Analysis.LD: LD verdict=supported hints=0 (22.3s)"
+        },
+        {
+          "member": "L1_6_Cu_vs_Ag_chloride_redox/_run.log",
+          "line": 1299,
+          "component": "fw_ld",
+          "seconds": 19.4,
+          "log": "03:02:19 [INFO] Analysis.LD: LD verdict=supported hints=0 (19.4s)"
+        }
+      ],
+      "total": 1295.0150000000003
+    },
+    "L1_7": {
+      "values": {
+        "fw_lc1": 81.164,
+        "fw_lc2": 509.367,
+        "fw_lc3": 79.218,
+        "fw_ld": 42.4,
+        "fw_other": 233.062
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L1_6-L1_7.zip::L1_7_CuZn_glycine_ammonia_joint/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L1_6-L1_7.zip::L1_7_CuZn_glycine_ammonia_joint/L1_call_01/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L1_6-L1_7.zip::L1_7_CuZn_glycine_ammonia_joint/L1_call_01/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L1_6-L1_7.zip::L1_7_CuZn_glycine_ammonia_joint/_run.log:657",
+          "_benchmark\\L1_6-L1_7.zip::L1_7_CuZn_glycine_ammonia_joint/_run.log:712"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L1_7"
+        ]
+      },
+      "details": [
+        {
+          "member": "L1_7_CuZn_glycine_ammonia_joint/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 81.164,
+          "status": "ok"
+        },
+        {
+          "member": "L1_7_CuZn_glycine_ammonia_joint/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 509.367,
+          "status": "ok"
+        },
+        {
+          "member": "L1_7_CuZn_glycine_ammonia_joint/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 79.218,
+          "status": "ok"
+        },
+        {
+          "member": "L1_7_CuZn_glycine_ammonia_joint/_run.log",
+          "line": 657,
+          "component": "fw_ld",
+          "seconds": 14.4,
+          "log": "05:11:17 [INFO] Analysis.LD: LD verdict=contradicted hints=14 (14.4s)"
+        },
+        {
+          "member": "L1_7_CuZn_glycine_ammonia_joint/_run.log",
+          "line": 712,
+          "component": "fw_ld",
+          "seconds": 28.0,
+          "log": "05:13:35 [INFO] Analysis.LD: LD verdict=supported hints=0 (28.0s)"
+        }
+      ],
+      "total": 945.211
+    },
+    "L1_8": {
+      "values": {
+        "fw_lc1": 162.202,
+        "fw_lc2": 1016.5719999999999,
+        "fw_lc3": 113.157,
+        "fw_ld": 61.6,
+        "fw_other": 629.1679999999997
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L1_8-L1_10.zip::L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L1_8-L1_10.zip::L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_02/LC1/summary/LC1_summary.json",
+          "_benchmark\\L1_8-L1_10.zip::L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_03/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L1_8-L1_10.zip::L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L1_8-L1_10.zip::L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_02/LC2/summary/LC2_summary.json",
+          "_benchmark\\L1_8-L1_10.zip::L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_03/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L1_8-L1_10.zip::L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L1_8-L1_10.zip::L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_02/LC3/summary/LC3_summary.json",
+          "_benchmark\\L1_8-L1_10.zip::L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_03/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L1_8-L1_10.zip::L1_8_CuZnFe_chloride_pourbaix_triptych/_run.log:596",
+          "_benchmark\\L1_8-L1_10.zip::L1_8_CuZnFe_chloride_pourbaix_triptych/_run.log:1156",
+          "_benchmark\\L1_8-L1_10.zip::L1_8_CuZnFe_chloride_pourbaix_triptych/_run.log:1685"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L1_8"
+        ]
+      },
+      "details": [
+        {
+          "member": "L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 49.469,
+          "status": "ok"
+        },
+        {
+          "member": "L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 363.447,
+          "status": "ok"
+        },
+        {
+          "member": "L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 36.007,
+          "status": "ok"
+        },
+        {
+          "member": "L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 69.079,
+          "status": "ok"
+        },
+        {
+          "member": "L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 293.641,
+          "status": "ok"
+        },
+        {
+          "member": "L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 33.841,
+          "status": "ok"
+        },
+        {
+          "member": "L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_03/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 43.654,
+          "status": "ok"
+        },
+        {
+          "member": "L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_03/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 359.484,
+          "status": "ok"
+        },
+        {
+          "member": "L1_8_CuZnFe_chloride_pourbaix_triptych/L1_call_03/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 43.309,
+          "status": "ok"
+        },
+        {
+          "member": "L1_8_CuZnFe_chloride_pourbaix_triptych/_run.log",
+          "line": 596,
+          "component": "fw_ld",
+          "seconds": 20.1,
+          "log": "04:04:47 [INFO] Analysis.LD: LD verdict=supported hints=0 (20.1s)"
+        },
+        {
+          "member": "L1_8_CuZnFe_chloride_pourbaix_triptych/_run.log",
+          "line": 1156,
+          "component": "fw_ld",
+          "seconds": 19.9,
+          "log": "04:27:12 [INFO] Analysis.LD: LD verdict=supported hints=0 (19.9s)"
+        },
+        {
+          "member": "L1_8_CuZnFe_chloride_pourbaix_triptych/_run.log",
+          "line": 1685,
+          "component": "fw_ld",
+          "seconds": 21.6,
+          "log": "04:54:07 [INFO] Analysis.LD: LD verdict=supported hints=0 (21.6s)"
+        }
+      ],
+      "total": 1982.6989999999996
+    },
+    "L1_9": {
+      "values": {
+        "fw_lc1": 68.462,
+        "fw_lc2": 172.114,
+        "fw_lc3": 42.204,
+        "fw_ld": 23.6,
+        "fw_other": 82.71600000000001
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L1_8-L1_10.zip::L1_9_Cu_ammonia_speciation_E0265/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L1_8-L1_10.zip::L1_9_Cu_ammonia_speciation_E0265/L1_call_01/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L1_8-L1_10.zip::L1_9_Cu_ammonia_speciation_E0265/L1_call_01/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L1_8-L1_10.zip::L1_9_Cu_ammonia_speciation_E0265/_run.log:505"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L1_9"
+        ]
+      },
+      "details": [
+        {
+          "member": "L1_9_Cu_ammonia_speciation_E0265/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 68.462,
+          "status": "ok"
+        },
+        {
+          "member": "L1_9_Cu_ammonia_speciation_E0265/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 172.114,
+          "status": "ok"
+        },
+        {
+          "member": "L1_9_Cu_ammonia_speciation_E0265/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 42.204,
+          "status": "ok"
+        },
+        {
+          "member": "L1_9_Cu_ammonia_speciation_E0265/_run.log",
+          "line": 505,
+          "component": "fw_ld",
+          "seconds": 23.6,
+          "log": "16:06:05 [INFO] Analysis.LD: LD verdict=supported hints=0 (23.6s)"
+        }
+      ],
+      "total": 389.096
+    },
+    "L1_10": {
+      "values": {
+        "fw_lc1": 217.077,
+        "fw_lc2": 334.8,
+        "fw_lc3": 53.347,
+        "fw_ld": 28.4,
+        "fw_other": 210.23199999999997
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L1_8-L1_10.zip::L1_10_CuFe_cit_gly_Cl_NH3_pourbaix/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L1_8-L1_10.zip::L1_10_CuFe_cit_gly_Cl_NH3_pourbaix/L1_call_01/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L1_8-L1_10.zip::L1_10_CuFe_cit_gly_Cl_NH3_pourbaix/L1_call_01/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L1_8-L1_10.zip::L1_10_CuFe_cit_gly_Cl_NH3_pourbaix/_run.log:1251"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L1_10"
+        ]
+      },
+      "details": [
+        {
+          "member": "L1_10_CuFe_cit_gly_Cl_NH3_pourbaix/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 217.077,
+          "status": "ok"
+        },
+        {
+          "member": "L1_10_CuFe_cit_gly_Cl_NH3_pourbaix/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 334.8,
+          "status": "ok"
+        },
+        {
+          "member": "L1_10_CuFe_cit_gly_Cl_NH3_pourbaix/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 53.347,
+          "status": "ok"
+        },
+        {
+          "member": "L1_10_CuFe_cit_gly_Cl_NH3_pourbaix/_run.log",
+          "line": 1251,
+          "component": "fw_ld",
+          "seconds": 28.4,
+          "log": "19:50:59 [INFO] Analysis.LD: LD verdict=inconclusive hints=1 (28.4s)"
+        }
+      ],
+      "total": 843.856
+    },
+    "L2_1": {
+      "values": {
+        "fw_lc1": 228.91899999999998,
+        "fw_lc2": 1768.7569999999998,
+        "fw_lc3": 183.596,
+        "fw_ld": 67.5,
+        "fw_other": 355.0519999999997
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L2_1-L2_8.zip::L2_1_CuZnNi_chelator_survey/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_1_CuZnNi_chelator_survey/L1_call_02/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_1_CuZnNi_chelator_survey/L1_call_03/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L2_1-L2_8.zip::L2_1_CuZnNi_chelator_survey/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_1_CuZnNi_chelator_survey/L1_call_02/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_1_CuZnNi_chelator_survey/L1_call_03/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L2_1-L2_8.zip::L2_1_CuZnNi_chelator_survey/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_1_CuZnNi_chelator_survey/L1_call_02/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_1_CuZnNi_chelator_survey/L1_call_03/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L2_1-L2_8.zip::L2_1_CuZnNi_chelator_survey/_run.log:816",
+          "_benchmark\\L2_1-L2_8.zip::L2_1_CuZnNi_chelator_survey/_run.log:1478",
+          "_benchmark\\L2_1-L2_8.zip::L2_1_CuZnNi_chelator_survey/_run.log:2108"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L2_1"
+        ]
+      },
+      "details": [
+        {
+          "member": "L2_1_CuZnNi_chelator_survey/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 72.981,
+          "status": "ok"
+        },
+        {
+          "member": "L2_1_CuZnNi_chelator_survey/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 701.222,
+          "status": "ok"
+        },
+        {
+          "member": "L2_1_CuZnNi_chelator_survey/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 81.896,
+          "status": "ok"
+        },
+        {
+          "member": "L2_1_CuZnNi_chelator_survey/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 79.874,
+          "status": "ok"
+        },
+        {
+          "member": "L2_1_CuZnNi_chelator_survey/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 516.188,
+          "status": "ok"
+        },
+        {
+          "member": "L2_1_CuZnNi_chelator_survey/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 47.792,
+          "status": "ok"
+        },
+        {
+          "member": "L2_1_CuZnNi_chelator_survey/L1_call_03/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 76.064,
+          "status": "ok"
+        },
+        {
+          "member": "L2_1_CuZnNi_chelator_survey/L1_call_03/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 551.347,
+          "status": "ok"
+        },
+        {
+          "member": "L2_1_CuZnNi_chelator_survey/L1_call_03/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 53.908,
+          "status": "ok"
+        },
+        {
+          "member": "L2_1_CuZnNi_chelator_survey/_run.log",
+          "line": 816,
+          "component": "fw_ld",
+          "seconds": 24.4,
+          "log": "15:22:17 [INFO] Analysis.LD: LD verdict=supported hints=0 (24.4s)"
+        },
+        {
+          "member": "L2_1_CuZnNi_chelator_survey/_run.log",
+          "line": 1478,
+          "component": "fw_ld",
+          "seconds": 21.6,
+          "log": "15:35:07 [INFO] Analysis.LD: LD verdict=supported hints=0 (21.6s)"
+        },
+        {
+          "member": "L2_1_CuZnNi_chelator_survey/_run.log",
+          "line": 2108,
+          "component": "fw_ld",
+          "seconds": 21.5,
+          "log": "15:48:27 [INFO] Analysis.LD: LD verdict=supported hints=0 (21.5s)"
+        }
+      ],
+      "total": 2603.8239999999996
+    },
+    "L2_2": {
+      "values": {
+        "fw_lc1": 295.282,
+        "fw_lc2": 1621.5839999999998,
+        "fw_lc3": 290.96999999999997,
+        "fw_ld": 67.6,
+        "fw_other": 425.55800000000045
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L2_1-L2_8.zip::L2_2_FeCaMg_sequestrant_survey/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_2_FeCaMg_sequestrant_survey/L1_call_02/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_2_FeCaMg_sequestrant_survey/L1_call_03/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L2_1-L2_8.zip::L2_2_FeCaMg_sequestrant_survey/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_2_FeCaMg_sequestrant_survey/L1_call_02/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_2_FeCaMg_sequestrant_survey/L1_call_03/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L2_1-L2_8.zip::L2_2_FeCaMg_sequestrant_survey/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_2_FeCaMg_sequestrant_survey/L1_call_02/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_2_FeCaMg_sequestrant_survey/L1_call_03/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L2_1-L2_8.zip::L2_2_FeCaMg_sequestrant_survey/_run.log:692",
+          "_benchmark\\L2_1-L2_8.zip::L2_2_FeCaMg_sequestrant_survey/_run.log:1310",
+          "_benchmark\\L2_1-L2_8.zip::L2_2_FeCaMg_sequestrant_survey/_run.log:2081"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L2_2"
+        ]
+      },
+      "details": [
+        {
+          "member": "L2_2_FeCaMg_sequestrant_survey/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 101.649,
+          "status": "ok"
+        },
+        {
+          "member": "L2_2_FeCaMg_sequestrant_survey/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 480.357,
+          "status": "ok"
+        },
+        {
+          "member": "L2_2_FeCaMg_sequestrant_survey/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 144.017,
+          "status": "ok"
+        },
+        {
+          "member": "L2_2_FeCaMg_sequestrant_survey/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 90.587,
+          "status": "ok"
+        },
+        {
+          "member": "L2_2_FeCaMg_sequestrant_survey/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 519.932,
+          "status": "ok"
+        },
+        {
+          "member": "L2_2_FeCaMg_sequestrant_survey/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 71.671,
+          "status": "ok"
+        },
+        {
+          "member": "L2_2_FeCaMg_sequestrant_survey/L1_call_03/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 103.046,
+          "status": "ok"
+        },
+        {
+          "member": "L2_2_FeCaMg_sequestrant_survey/L1_call_03/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 621.295,
+          "status": "ok"
+        },
+        {
+          "member": "L2_2_FeCaMg_sequestrant_survey/L1_call_03/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 75.282,
+          "status": "ok"
+        },
+        {
+          "member": "L2_2_FeCaMg_sequestrant_survey/_run.log",
+          "line": 692,
+          "component": "fw_ld",
+          "seconds": 24.9,
+          "log": "16:04:46 [INFO] Analysis.LD: LD verdict=supported hints=0 (24.9s)"
+        },
+        {
+          "member": "L2_2_FeCaMg_sequestrant_survey/_run.log",
+          "line": 1310,
+          "component": "fw_ld",
+          "seconds": 16.7,
+          "log": "16:17:39 [INFO] Analysis.LD: LD verdict=inconclusive hints=12 (16.7s)"
+        },
+        {
+          "member": "L2_2_FeCaMg_sequestrant_survey/_run.log",
+          "line": 2081,
+          "component": "fw_ld",
+          "seconds": 26.0,
+          "log": "16:33:25 [INFO] Analysis.LD: LD verdict=supported hints=0 (26.0s)"
+        }
+      ],
+      "total": 2700.994
+    },
+    "L2_3": {
+      "values": {
+        "fw_lc1": 341.045,
+        "fw_lc2": 786.3040000000001,
+        "fw_lc3": 106.376,
+        "fw_ld": 61.5,
+        "fw_other": 349.6339999999998
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L2_1-L2_8.zip::L2_3_PbZnCa_chelation_survey/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_3_PbZnCa_chelation_survey/L1_call_02/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_3_PbZnCa_chelation_survey/L1_call_03/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L2_1-L2_8.zip::L2_3_PbZnCa_chelation_survey/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_3_PbZnCa_chelation_survey/L1_call_02/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_3_PbZnCa_chelation_survey/L1_call_03/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L2_1-L2_8.zip::L2_3_PbZnCa_chelation_survey/L1_call_02/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_3_PbZnCa_chelation_survey/L1_call_03/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L2_1-L2_8.zip::L2_3_PbZnCa_chelation_survey/_run.log:340",
+          "_benchmark\\L2_1-L2_8.zip::L2_3_PbZnCa_chelation_survey/_run.log:956",
+          "_benchmark\\L2_1-L2_8.zip::L2_3_PbZnCa_chelation_survey/_run.log:1531"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L2_3"
+        ]
+      },
+      "details": [
+        {
+          "member": "L2_3_PbZnCa_chelation_survey/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 113.949,
+          "status": "ok"
+        },
+        {
+          "member": "L2_3_PbZnCa_chelation_survey/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 1.557,
+          "status": "failed"
+        },
+        {
+          "member": "L2_3_PbZnCa_chelation_survey/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 115.272,
+          "status": "ok"
+        },
+        {
+          "member": "L2_3_PbZnCa_chelation_survey/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 387.564,
+          "status": "ok"
+        },
+        {
+          "member": "L2_3_PbZnCa_chelation_survey/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 49.914,
+          "status": "ok"
+        },
+        {
+          "member": "L2_3_PbZnCa_chelation_survey/L1_call_03/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 111.824,
+          "status": "ok"
+        },
+        {
+          "member": "L2_3_PbZnCa_chelation_survey/L1_call_03/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 397.183,
+          "status": "ok"
+        },
+        {
+          "member": "L2_3_PbZnCa_chelation_survey/L1_call_03/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 56.462,
+          "status": "ok"
+        },
+        {
+          "member": "L2_3_PbZnCa_chelation_survey/_run.log",
+          "line": 340,
+          "component": "fw_ld",
+          "seconds": 6.2,
+          "log": "16:37:14 [INFO] Analysis.LD: LD verdict=supported hints=0 (6.2s)"
+        },
+        {
+          "member": "L2_3_PbZnCa_chelation_survey/_run.log",
+          "line": 956,
+          "component": "fw_ld",
+          "seconds": 26.3,
+          "log": "16:49:24 [INFO] Analysis.LD: LD verdict=supported hints=0 (26.3s)"
+        },
+        {
+          "member": "L2_3_PbZnCa_chelation_survey/_run.log",
+          "line": 1531,
+          "component": "fw_ld",
+          "seconds": 29.0,
+          "log": "17:01:04 [INFO] Analysis.LD: LD verdict=supported hints=0 (29.0s)"
+        }
+      ],
+      "total": 1644.859
+    },
+    "L2_4": {
+      "values": {
+        "fw_lc1": 230.60500000000002,
+        "fw_lc2": 1589.0059999999999,
+        "fw_lc3": 185.067,
+        "fw_ld": 82.30000000000001,
+        "fw_other": 382.6410000000001
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L2_1-L2_8.zip::L2_4_CoNiCu_amino_acid_survey/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_4_CoNiCu_amino_acid_survey/L1_call_02/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_4_CoNiCu_amino_acid_survey/L1_call_03/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L2_1-L2_8.zip::L2_4_CoNiCu_amino_acid_survey/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_4_CoNiCu_amino_acid_survey/L1_call_02/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_4_CoNiCu_amino_acid_survey/L1_call_03/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L2_1-L2_8.zip::L2_4_CoNiCu_amino_acid_survey/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_4_CoNiCu_amino_acid_survey/L1_call_02/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_4_CoNiCu_amino_acid_survey/L1_call_03/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L2_1-L2_8.zip::L2_4_CoNiCu_amino_acid_survey/_run.log:606",
+          "_benchmark\\L2_1-L2_8.zip::L2_4_CoNiCu_amino_acid_survey/_run.log:1531",
+          "_benchmark\\L2_1-L2_8.zip::L2_4_CoNiCu_amino_acid_survey/_run.log:2222"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L2_4"
+        ]
+      },
+      "details": [
+        {
+          "member": "L2_4_CoNiCu_amino_acid_survey/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 64.561,
+          "status": "ok"
+        },
+        {
+          "member": "L2_4_CoNiCu_amino_acid_survey/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 305.895,
+          "status": "ok"
+        },
+        {
+          "member": "L2_4_CoNiCu_amino_acid_survey/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 53.163,
+          "status": "ok"
+        },
+        {
+          "member": "L2_4_CoNiCu_amino_acid_survey/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 90.005,
+          "status": "ok"
+        },
+        {
+          "member": "L2_4_CoNiCu_amino_acid_survey/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 686.817,
+          "status": "ok"
+        },
+        {
+          "member": "L2_4_CoNiCu_amino_acid_survey/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 69.884,
+          "status": "ok"
+        },
+        {
+          "member": "L2_4_CoNiCu_amino_acid_survey/L1_call_03/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 76.039,
+          "status": "ok"
+        },
+        {
+          "member": "L2_4_CoNiCu_amino_acid_survey/L1_call_03/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 596.294,
+          "status": "ok"
+        },
+        {
+          "member": "L2_4_CoNiCu_amino_acid_survey/L1_call_03/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 62.02,
+          "status": "ok"
+        },
+        {
+          "member": "L2_4_CoNiCu_amino_acid_survey/_run.log",
+          "line": 606,
+          "component": "fw_ld",
+          "seconds": 24.3,
+          "log": "17:12:40 [INFO] Analysis.LD: LD verdict=supported hints=0 (24.3s)"
+        },
+        {
+          "member": "L2_4_CoNiCu_amino_acid_survey/_run.log",
+          "line": 1531,
+          "component": "fw_ld",
+          "seconds": 31.9,
+          "log": "17:29:24 [INFO] Analysis.LD: LD verdict=supported hints=3 (31.9s)"
+        },
+        {
+          "member": "L2_4_CoNiCu_amino_acid_survey/_run.log",
+          "line": 2222,
+          "component": "fw_ld",
+          "seconds": 26.1,
+          "log": "17:44:03 [INFO] Analysis.LD: LD verdict=supported hints=0 (26.1s)"
+        }
+      ],
+      "total": 2469.619
+    },
+    "L2_5": {
+      "values": {
+        "fw_lc1": 107.672,
+        "fw_lc2": 708.978,
+        "fw_lc3": 182.299,
+        "fw_ld": 67.7,
+        "fw_other": 304.0340000000001
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L2_1-L2_8.zip::L2_5_Ni_antiscale_ligand_rank/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_5_Ni_antiscale_ligand_rank/L1_call_02/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_5_Ni_antiscale_ligand_rank/L1_call_03/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L2_1-L2_8.zip::L2_5_Ni_antiscale_ligand_rank/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_5_Ni_antiscale_ligand_rank/L1_call_02/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_5_Ni_antiscale_ligand_rank/L1_call_03/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L2_1-L2_8.zip::L2_5_Ni_antiscale_ligand_rank/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_5_Ni_antiscale_ligand_rank/L1_call_02/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_5_Ni_antiscale_ligand_rank/L1_call_03/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L2_1-L2_8.zip::L2_5_Ni_antiscale_ligand_rank/_run.log:328",
+          "_benchmark\\L2_1-L2_8.zip::L2_5_Ni_antiscale_ligand_rank/_run.log:707",
+          "_benchmark\\L2_1-L2_8.zip::L2_5_Ni_antiscale_ligand_rank/_run.log:1062"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L2_5"
+        ]
+      },
+      "details": [
+        {
+          "member": "L2_5_Ni_antiscale_ligand_rank/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 36.94,
+          "status": "ok"
+        },
+        {
+          "member": "L2_5_Ni_antiscale_ligand_rank/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 163.153,
+          "status": "ok"
+        },
+        {
+          "member": "L2_5_Ni_antiscale_ligand_rank/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 43.598,
+          "status": "ok"
+        },
+        {
+          "member": "L2_5_Ni_antiscale_ligand_rank/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 38.055,
+          "status": "ok"
+        },
+        {
+          "member": "L2_5_Ni_antiscale_ligand_rank/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 255.026,
+          "status": "ok"
+        },
+        {
+          "member": "L2_5_Ni_antiscale_ligand_rank/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 96.301,
+          "status": "ok"
+        },
+        {
+          "member": "L2_5_Ni_antiscale_ligand_rank/L1_call_03/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 32.677,
+          "status": "ok"
+        },
+        {
+          "member": "L2_5_Ni_antiscale_ligand_rank/L1_call_03/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 290.799,
+          "status": "ok"
+        },
+        {
+          "member": "L2_5_Ni_antiscale_ligand_rank/L1_call_03/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 42.4,
+          "status": "ok"
+        },
+        {
+          "member": "L2_5_Ni_antiscale_ligand_rank/_run.log",
+          "line": 328,
+          "component": "fw_ld",
+          "seconds": 23.3,
+          "log": "17:50:39 [INFO] Analysis.LD: LD verdict=supported hints=0 (23.3s)"
+        },
+        {
+          "member": "L2_5_Ni_antiscale_ligand_rank/_run.log",
+          "line": 707,
+          "component": "fw_ld",
+          "seconds": 19.3,
+          "log": "17:59:02 [INFO] Analysis.LD: LD verdict=inconclusive hints=1 (19.3s)"
+        },
+        {
+          "member": "L2_5_Ni_antiscale_ligand_rank/_run.log",
+          "line": 1062,
+          "component": "fw_ld",
+          "seconds": 25.1,
+          "log": "18:07:00 [INFO] Analysis.LD: LD verdict=supported hints=0 (25.1s)"
+        }
+      ],
+      "total": 1370.683
+    },
+    "L2_6": {
+      "values": {
+        "fw_lc1": 340.273,
+        "fw_lc2": 2625.9819999999995,
+        "fw_lc3": 387.77399999999994,
+        "fw_ld": 195.2,
+        "fw_other": 889.0610000000006
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_02/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_03/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_04/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_05/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_06/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_07/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_08/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_02/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_03/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_04/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_05/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_06/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_07/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_08/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_02/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_03/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_04/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_05/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_06/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_07/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/L1_call_08/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/_run.log:402",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/_run.log:799",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/_run.log:1177",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/_run.log:1544",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/_run.log:1927",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/_run.log:2364",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/_run.log:2841",
+          "_benchmark\\L2_1-L2_8.zip::L2_6_CuNiZn_chelator_matrix_3x3/_run.log:3278"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L2_6"
+        ]
+      },
+      "details": [
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 41.651,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 304.433,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 43.077,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 44.803,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 154.652,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 63.274,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_03/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 37.191,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_03/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 369.598,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_03/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 52.039,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_04/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 33.734,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_04/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 342.917,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_04/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 34.891,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_05/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 36.146,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_05/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 364.378,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_05/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 55.448,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_06/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 46.725,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_06/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 373.167,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_06/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 58.996,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_07/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 48.268,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_07/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 368.241,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_07/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 33.154,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_08/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 51.755,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_08/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 348.596,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/L1_call_08/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 46.895,
+          "status": "ok"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/_run.log",
+          "line": 402,
+          "component": "fw_ld",
+          "seconds": 19.8,
+          "log": "18:16:10 [INFO] Analysis.LD: LD verdict=inconclusive hints=1 (19.8s)"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/_run.log",
+          "line": 799,
+          "component": "fw_ld",
+          "seconds": 24.2,
+          "log": "18:23:31 [INFO] Analysis.LD: LD verdict=supported hints=0 (24.2s)"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/_run.log",
+          "line": 1177,
+          "component": "fw_ld",
+          "seconds": 22.5,
+          "log": "18:33:23 [INFO] Analysis.LD: LD verdict=supported hints=0 (22.5s)"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/_run.log",
+          "line": 1544,
+          "component": "fw_ld",
+          "seconds": 23.6,
+          "log": "18:42:19 [INFO] Analysis.LD: LD verdict=supported hints=0 (23.6s)"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/_run.log",
+          "line": 1927,
+          "component": "fw_ld",
+          "seconds": 27.7,
+          "log": "18:52:06 [INFO] Analysis.LD: LD verdict=supported hints=0 (27.7s)"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/_run.log",
+          "line": 2364,
+          "component": "fw_ld",
+          "seconds": 28.3,
+          "log": "19:01:59 [INFO] Analysis.LD: LD verdict=supported hints=0 (28.3s)"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/_run.log",
+          "line": 2841,
+          "component": "fw_ld",
+          "seconds": 21.4,
+          "log": "19:11:43 [INFO] Analysis.LD: LD verdict=supported hints=0 (21.4s)"
+        },
+        {
+          "member": "L2_6_CuNiZn_chelator_matrix_3x3/_run.log",
+          "line": 3278,
+          "component": "fw_ld",
+          "seconds": 27.7,
+          "log": "19:21:29 [INFO] Analysis.LD: LD verdict=supported hints=0 (27.7s)"
+        }
+      ],
+      "total": 4438.29
+    },
+    "L2_7": {
+      "values": {
+        "fw_lc1": 449.75100000000003,
+        "fw_lc2": 2745.828,
+        "fw_lc3": 348.654,
+        "fw_ld": 235.9,
+        "fw_other": 1060.5900000000001
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_02/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_03/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_04/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_05/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_06/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_07/LC1/summary/LC1_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_08/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_02/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_03/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_04/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_05/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_06/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_07/LC2/summary/LC2_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_08/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_02/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_03/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_04/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_05/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_06/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_07/LC3/summary/LC3_summary.json",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_08/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log:461",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log:1095",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log:1428",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log:1749",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log:2135",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log:2205",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log:2548",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log:2604",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log:3056",
+          "_benchmark\\L2_1-L2_8.zip::L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log:3450"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L2_7"
+        ]
+      },
+      "details": [
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 65.443,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 472.595,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 56.106,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 57.783,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 430.59,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 36.202,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_03/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 46.237,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_03/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 219.664,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_03/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 44.634,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_04/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 36.728,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_04/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 347.332,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_04/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 55.266,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_05/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 73.895,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_05/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 300.376,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_05/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 31.949,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_06/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 49.547,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_06/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 276.936,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_06/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 38.157,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_07/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 56.959,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_07/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 363.152,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_07/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 53.495,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_08/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 63.159,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_08/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 335.183,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/L1_call_08/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 32.845,
+          "status": "ok"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log",
+          "line": 461,
+          "component": "fw_ld",
+          "seconds": 22.5,
+          "log": "19:34:18 [INFO] Analysis.LD: LD verdict=supported hints=0 (22.5s)"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log",
+          "line": 1095,
+          "component": "fw_ld",
+          "seconds": 23.5,
+          "log": "19:45:34 [INFO] Analysis.LD: LD verdict=supported hints=0 (23.5s)"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log",
+          "line": 1428,
+          "component": "fw_ld",
+          "seconds": 29.3,
+          "log": "19:53:01 [INFO] Analysis.LD: LD verdict=supported hints=0 (29.3s)"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log",
+          "line": 1749,
+          "component": "fw_ld",
+          "seconds": 27.0,
+          "log": "20:02:37 [INFO] Analysis.LD: LD verdict=supported hints=0 (27.0s)"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log",
+          "line": 2135,
+          "component": "fw_ld",
+          "seconds": 14.2,
+          "log": "20:10:54 [INFO] Analysis.LD: LD verdict=contradicted hints=10 (14.2s)"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log",
+          "line": 2205,
+          "component": "fw_ld",
+          "seconds": 26.2,
+          "log": "20:13:03 [INFO] Analysis.LD: LD verdict=supported hints=0 (26.2s)"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log",
+          "line": 2548,
+          "component": "fw_ld",
+          "seconds": 16.9,
+          "log": "20:20:38 [INFO] Analysis.LD: LD verdict=contradicted hints=6 (16.9s)"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log",
+          "line": 2604,
+          "component": "fw_ld",
+          "seconds": 20.0,
+          "log": "20:22:30 [INFO] Analysis.LD: LD verdict=supported hints=0 (20.0s)"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log",
+          "line": 3056,
+          "component": "fw_ld",
+          "seconds": 18.3,
+          "log": "20:32:49 [INFO] Analysis.LD: LD verdict=supported hints=0 (18.3s)"
+        },
+        {
+          "member": "L2_7_FeCaMgZn_antiscale_EDTA_vs_citrate/_run.log",
+          "line": 3450,
+          "component": "fw_ld",
+          "seconds": 38.0,
+          "log": "20:42:53 [INFO] Analysis.LD: LD verdict=supported hints=7 (38.0s)"
+        }
+      ],
+      "total": 4840.723
+    },
+    "L2_8": {
+      "values": {
+        "fw_lc1": 69.096,
+        "fw_lc2": 375.887,
+        "fw_lc3": 63.696,
+        "fw_ld": 12.0,
+        "fw_other": 123.48100000000011
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L2_1-L2_8.zip::L2_8_CuZn_shared_limiting_EDTA/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L2_1-L2_8.zip::L2_8_CuZn_shared_limiting_EDTA/L1_call_01/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L2_1-L2_8.zip::L2_8_CuZn_shared_limiting_EDTA/L1_call_01/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L2_1-L2_8.zip::L2_8_CuZn_shared_limiting_EDTA/_run.log:536"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L2_8"
+        ]
+      },
+      "details": [
+        {
+          "member": "L2_8_CuZn_shared_limiting_EDTA/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 69.096,
+          "status": "ok"
+        },
+        {
+          "member": "L2_8_CuZn_shared_limiting_EDTA/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 375.887,
+          "status": "ok"
+        },
+        {
+          "member": "L2_8_CuZn_shared_limiting_EDTA/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 63.696,
+          "status": "ok"
+        },
+        {
+          "member": "L2_8_CuZn_shared_limiting_EDTA/_run.log",
+          "line": 536,
+          "component": "fw_ld",
+          "seconds": 12.0,
+          "log": "20:53:44 [INFO] Analysis.LD: LD verdict=inconclusive hints=10 (12.0s)"
+        }
+      ],
+      "total": 644.1600000000001
+    },
+    "L3_1": {
+      "values": {
+        "fw_lc1": 202.423,
+        "fw_lc2": 1006.229,
+        "fw_lc3": 219.32299999999998,
+        "fw_ld": 95.60000000000001,
+        "fw_other": 386.03
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/L1_call_02/LC1/summary/LC1_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/L1_call_03/LC1/summary/LC1_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/L1_call_04/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/L1_call_02/LC2/summary/LC2_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/L1_call_03/LC2/summary/LC2_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/L1_call_04/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/L1_call_02/LC3/summary/LC3_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/L1_call_03/LC3/summary/LC3_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/L1_call_04/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/_run.log:349",
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/_run.log:765",
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/_run.log:1128",
+          "_benchmark\\L3_1-L3_6.zip::L3_1_IrvingWilliams_glycine_test/_run.log:1479"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L3_1"
+        ]
+      },
+      "details": [
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 52.32,
+          "status": "ok"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 309.996,
+          "status": "ok"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 65.586,
+          "status": "ok"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 47.687,
+          "status": "ok"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 237.721,
+          "status": "ok"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 64.237,
+          "status": "ok"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/L1_call_03/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 48.579,
+          "status": "ok"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/L1_call_03/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 258.426,
+          "status": "ok"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/L1_call_03/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 37.577,
+          "status": "ok"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/L1_call_04/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 53.837,
+          "status": "ok"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/L1_call_04/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 200.086,
+          "status": "ok"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/L1_call_04/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 51.923,
+          "status": "ok"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/_run.log",
+          "line": 349,
+          "component": "fw_ld",
+          "seconds": 24.1,
+          "log": "21:03:32 [INFO] Analysis.LD: LD verdict=supported hints=0 (24.1s)"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/_run.log",
+          "line": 765,
+          "component": "fw_ld",
+          "seconds": 27.4,
+          "log": "21:11:17 [INFO] Analysis.LD: LD verdict=supported hints=0 (27.4s)"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/_run.log",
+          "line": 1128,
+          "component": "fw_ld",
+          "seconds": 20.9,
+          "log": "21:19:00 [INFO] Analysis.LD: LD verdict=supported hints=0 (20.9s)"
+        },
+        {
+          "member": "L3_1_IrvingWilliams_glycine_test/_run.log",
+          "line": 1479,
+          "component": "fw_ld",
+          "seconds": 23.2,
+          "log": "21:25:54 [INFO] Analysis.LD: LD verdict=supported hints=0 (23.2s)"
+        }
+      ],
+      "total": 1909.605
+    },
+    "L3_2": {
+      "values": {
+        "fw_lc1": 79.262,
+        "fw_lc2": 609.9380000000001,
+        "fw_lc3": 105.114,
+        "fw_ld": 44.6,
+        "fw_other": 198.06399999999996
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L3_1-L3_6.zip::L3_2_ChelateEffect_en_vs_ammonia/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_2_ChelateEffect_en_vs_ammonia/L1_call_02/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L3_1-L3_6.zip::L3_2_ChelateEffect_en_vs_ammonia/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_2_ChelateEffect_en_vs_ammonia/L1_call_02/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L3_1-L3_6.zip::L3_2_ChelateEffect_en_vs_ammonia/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_2_ChelateEffect_en_vs_ammonia/L1_call_02/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L3_1-L3_6.zip::L3_2_ChelateEffect_en_vs_ammonia/_run.log:383",
+          "_benchmark\\L3_1-L3_6.zip::L3_2_ChelateEffect_en_vs_ammonia/_run.log:732"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L3_2"
+        ]
+      },
+      "details": [
+        {
+          "member": "L3_2_ChelateEffect_en_vs_ammonia/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 36.749,
+          "status": "ok"
+        },
+        {
+          "member": "L3_2_ChelateEffect_en_vs_ammonia/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 318.333,
+          "status": "ok"
+        },
+        {
+          "member": "L3_2_ChelateEffect_en_vs_ammonia/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 60.651,
+          "status": "ok"
+        },
+        {
+          "member": "L3_2_ChelateEffect_en_vs_ammonia/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 42.513,
+          "status": "ok"
+        },
+        {
+          "member": "L3_2_ChelateEffect_en_vs_ammonia/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 291.605,
+          "status": "ok"
+        },
+        {
+          "member": "L3_2_ChelateEffect_en_vs_ammonia/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 44.463,
+          "status": "ok"
+        },
+        {
+          "member": "L3_2_ChelateEffect_en_vs_ammonia/_run.log",
+          "line": 383,
+          "component": "fw_ld",
+          "seconds": 21.5,
+          "log": "21:35:16 [INFO] Analysis.LD: LD verdict=supported hints=0 (21.5s)"
+        },
+        {
+          "member": "L3_2_ChelateEffect_en_vs_ammonia/_run.log",
+          "line": 732,
+          "component": "fw_ld",
+          "seconds": 23.1,
+          "log": "21:43:29 [INFO] Analysis.LD: LD verdict=supported hints=0 (23.1s)"
+        }
+      ],
+      "total": 1036.978
+    },
+    "L3_3": {
+      "values": {
+        "fw_lc1": 130.681,
+        "fw_lc2": 610.567,
+        "fw_lc3": 92.575,
+        "fw_ld": 48.400000000000006,
+        "fw_other": 227.54899999999986
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L3_1-L3_6.zip::L3_3_HSAB_Cd_chloride_vs_ammonia/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_3_HSAB_Cd_chloride_vs_ammonia/L1_call_02/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L3_1-L3_6.zip::L3_3_HSAB_Cd_chloride_vs_ammonia/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_3_HSAB_Cd_chloride_vs_ammonia/L1_call_02/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L3_1-L3_6.zip::L3_3_HSAB_Cd_chloride_vs_ammonia/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_3_HSAB_Cd_chloride_vs_ammonia/L1_call_02/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L3_1-L3_6.zip::L3_3_HSAB_Cd_chloride_vs_ammonia/_run.log:372",
+          "_benchmark\\L3_1-L3_6.zip::L3_3_HSAB_Cd_chloride_vs_ammonia/_run.log:766"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L3_3"
+        ]
+      },
+      "details": [
+        {
+          "member": "L3_3_HSAB_Cd_chloride_vs_ammonia/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 57.707,
+          "status": "ok"
+        },
+        {
+          "member": "L3_3_HSAB_Cd_chloride_vs_ammonia/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 296.782,
+          "status": "ok"
+        },
+        {
+          "member": "L3_3_HSAB_Cd_chloride_vs_ammonia/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 58.627,
+          "status": "ok"
+        },
+        {
+          "member": "L3_3_HSAB_Cd_chloride_vs_ammonia/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 72.974,
+          "status": "ok"
+        },
+        {
+          "member": "L3_3_HSAB_Cd_chloride_vs_ammonia/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 313.785,
+          "status": "ok"
+        },
+        {
+          "member": "L3_3_HSAB_Cd_chloride_vs_ammonia/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 33.948,
+          "status": "ok"
+        },
+        {
+          "member": "L3_3_HSAB_Cd_chloride_vs_ammonia/_run.log",
+          "line": 372,
+          "component": "fw_ld",
+          "seconds": 21.6,
+          "log": "21:52:45 [INFO] Analysis.LD: LD verdict=supported hints=0 (21.6s)"
+        },
+        {
+          "member": "L3_3_HSAB_Cd_chloride_vs_ammonia/_run.log",
+          "line": 766,
+          "component": "fw_ld",
+          "seconds": 26.8,
+          "log": "22:02:11 [INFO] Analysis.LD: LD verdict=supported hints=0 (26.8s)"
+        }
+      ],
+      "total": 1109.772
+    },
+    "L3_4": {
+      "values": {
+        "fw_lc1": 117.932,
+        "fw_lc2": 358.462,
+        "fw_lc3": 69.969,
+        "fw_ld": 28.6,
+        "fw_other": 152.8750000000001
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L3_1-L3_6.zip::L3_4_HSAB_CdZn_chloride_ammonia_competition/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L3_1-L3_6.zip::L3_4_HSAB_CdZn_chloride_ammonia_competition/L1_call_01/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L3_1-L3_6.zip::L3_4_HSAB_CdZn_chloride_ammonia_competition/L1_call_01/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L3_1-L3_6.zip::L3_4_HSAB_CdZn_chloride_ammonia_competition/_run.log:1155"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L3_4"
+        ]
+      },
+      "details": [
+        {
+          "member": "L3_4_HSAB_CdZn_chloride_ammonia_competition/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 117.932,
+          "status": "ok"
+        },
+        {
+          "member": "L3_4_HSAB_CdZn_chloride_ammonia_competition/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 358.462,
+          "status": "ok"
+        },
+        {
+          "member": "L3_4_HSAB_CdZn_chloride_ammonia_competition/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 69.969,
+          "status": "ok"
+        },
+        {
+          "member": "L3_4_HSAB_CdZn_chloride_ammonia_competition/_run.log",
+          "line": 1155,
+          "component": "fw_ld",
+          "seconds": 28.6,
+          "log": "22:14:14 [INFO] Analysis.LD: LD verdict=supported hints=0 (28.6s)"
+        }
+      ],
+      "total": 727.8380000000001
+    },
+    "L3_5": {
+      "values": {
+        "fw_lc1": 223.908,
+        "fw_lc2": 1690.434,
+        "fw_lc3": 232.105,
+        "fw_ld": 136.9,
+        "fw_other": 570.9140000000002
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_02/LC1/summary/LC1_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_03/LC1/summary/LC1_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_04/LC1/summary/LC1_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_05/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_02/LC2/summary/LC2_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_03/LC2/summary/LC2_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_04/LC2/summary/LC2_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_05/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_02/LC3/summary/LC3_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_03/LC3/summary/LC3_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_04/LC3/summary/LC3_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/L1_call_05/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/_run.log:398",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/_run.log:771",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/_run.log:1186",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/_run.log:1588",
+          "_benchmark\\L3_1-L3_6.zip::L3_5_IrvingWilliams_two_ligand_robustness/_run.log:2085"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L3_5"
+        ]
+      },
+      "details": [
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 34.39,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 382.261,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 58.964,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 29.376,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 354.471,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 40.821,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_03/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 56.412,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_03/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 232.35,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_03/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 52.851,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_04/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 60.88,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_04/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 325.869,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_04/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 32.822,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_05/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 42.85,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_05/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 395.483,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/L1_call_05/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 46.647,
+          "status": "ok"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/_run.log",
+          "line": 398,
+          "component": "fw_ld",
+          "seconds": 36.9,
+          "log": "22:24:58 [INFO] Analysis.LD: LD verdict=supported hints=0 (36.9s)"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/_run.log",
+          "line": 771,
+          "component": "fw_ld",
+          "seconds": 24.0,
+          "log": "22:34:33 [INFO] Analysis.LD: LD verdict=supported hints=0 (24.0s)"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/_run.log",
+          "line": 1186,
+          "component": "fw_ld",
+          "seconds": 21.8,
+          "log": "22:42:28 [INFO] Analysis.LD: LD verdict=supported hints=0 (21.8s)"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/_run.log",
+          "line": 1588,
+          "component": "fw_ld",
+          "seconds": 13.8,
+          "log": "22:50:59 [INFO] Analysis.LD: LD verdict=inconclusive hints=13 (13.8s)"
+        },
+        {
+          "member": "L3_5_IrvingWilliams_two_ligand_robustness/_run.log",
+          "line": 2085,
+          "component": "fw_ld",
+          "seconds": 40.4,
+          "log": "23:01:58 [INFO] Analysis.LD: LD verdict=supported hints=0 (40.4s)"
+        }
+      ],
+      "total": 2854.261
+    },
+    "L3_6": {
+      "values": {
+        "fw_lc1": 153.236,
+        "fw_lc2": 1064.895,
+        "fw_lc3": 161.212,
+        "fw_ld": 66.19999999999999,
+        "fw_other": 289.20600000000013
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L3_1-L3_6.zip::L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_01/LC1/summary/LC1_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_02/LC1/summary/LC1_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_03/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L3_1-L3_6.zip::L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_01/LC2/summary/LC2_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_02/LC2/summary/LC2_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_03/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L3_1-L3_6.zip::L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_01/LC3/summary/LC3_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_02/LC3/summary/LC3_summary.json",
+          "_benchmark\\L3_1-L3_6.zip::L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_03/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L3_1-L3_6.zip::L3_6_Chelate_denticity_trend_NH3_en_EDTA/_run.log:384",
+          "_benchmark\\L3_1-L3_6.zip::L3_6_Chelate_denticity_trend_NH3_en_EDTA/_run.log:807",
+          "_benchmark\\L3_1-L3_6.zip::L3_6_Chelate_denticity_trend_NH3_en_EDTA/_run.log:1210"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L3_6"
+        ]
+      },
+      "details": [
+        {
+          "member": "L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 44.291,
+          "status": "ok"
+        },
+        {
+          "member": "L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 339.689,
+          "status": "ok"
+        },
+        {
+          "member": "L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 48.399,
+          "status": "ok"
+        },
+        {
+          "member": "L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_02/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 49.458,
+          "status": "ok"
+        },
+        {
+          "member": "L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_02/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 367.652,
+          "status": "ok"
+        },
+        {
+          "member": "L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_02/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 54.73,
+          "status": "ok"
+        },
+        {
+          "member": "L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_03/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 59.487,
+          "status": "ok"
+        },
+        {
+          "member": "L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_03/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 357.554,
+          "status": "ok"
+        },
+        {
+          "member": "L3_6_Chelate_denticity_trend_NH3_en_EDTA/L1_call_03/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 58.083,
+          "status": "ok"
+        },
+        {
+          "member": "L3_6_Chelate_denticity_trend_NH3_en_EDTA/_run.log",
+          "line": 384,
+          "component": "fw_ld",
+          "seconds": 25.3,
+          "log": "23:11:51 [INFO] Analysis.LD: LD verdict=supported hints=0 (25.3s)"
+        },
+        {
+          "member": "L3_6_Chelate_denticity_trend_NH3_en_EDTA/_run.log",
+          "line": 807,
+          "component": "fw_ld",
+          "seconds": 19.0,
+          "log": "23:21:33 [INFO] Analysis.LD: LD verdict=supported hints=0 (19.0s)"
+        },
+        {
+          "member": "L3_6_Chelate_denticity_trend_NH3_en_EDTA/_run.log",
+          "line": 1210,
+          "component": "fw_ld",
+          "seconds": 21.9,
+          "log": "23:30:44 [INFO] Analysis.LD: LD verdict=inconclusive hints=12 (21.9s)"
+        }
+      ],
+      "total": 1734.749
+    },
+    "L4_1": {
+      "values": {
+        "fw_lc1": 28.391,
+        "fw_lc2": 0.0,
+        "fw_lc3": 0.0,
+        "fw_ld": 9.4,
+        "fw_other": 73.549
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_1_UTh_crown_EDTA_not_in_db/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_1_UTh_crown_EDTA_not_in_db/_run.log:122"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L4_1"
+        ]
+      },
+      "details": [
+        {
+          "member": "L4_1_UTh_crown_EDTA_not_in_db/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 28.391,
+          "status": "failed"
+        },
+        {
+          "member": "L4_1_UTh_crown_EDTA_not_in_db/_run.log",
+          "line": 122,
+          "component": "fw_ld",
+          "seconds": 9.4,
+          "log": "23:33:29 [INFO] Analysis.LD: LD verdict=supported hints=0 (9.4s)"
+        }
+      ],
+      "total": 111.34
+    },
+    "L4_3": {
+      "values": {
+        "fw_lc1": 58.678,
+        "fw_lc2": 170.512,
+        "fw_lc3": 48.988,
+        "fw_ld": 22.9,
+        "fw_other": 117.11500000000007
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_3_Acetic_acid_titration_curve/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_3_Acetic_acid_titration_curve/L1_call_01/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_3_Acetic_acid_titration_curve/L1_call_01/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_3_Acetic_acid_titration_curve/_run.log:319"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L4_3"
+        ]
+      },
+      "details": [
+        {
+          "member": "L4_3_Acetic_acid_titration_curve/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 58.678,
+          "status": "ok"
+        },
+        {
+          "member": "L4_3_Acetic_acid_titration_curve/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 170.512,
+          "status": "ok"
+        },
+        {
+          "member": "L4_3_Acetic_acid_titration_curve/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 48.988,
+          "status": "ok"
+        },
+        {
+          "member": "L4_3_Acetic_acid_titration_curve/_run.log",
+          "line": 319,
+          "component": "fw_ld",
+          "seconds": 22.9,
+          "log": "06:08:44 [INFO] Analysis.LD: LD verdict=supported hints=0 (22.9s)"
+        }
+      ],
+      "total": 418.19300000000004
+    },
+    "L4_4": {
+      "values": {
+        "fw_lc1": 22.532,
+        "fw_lc2": 0.0,
+        "fw_lc3": 0.0,
+        "fw_ld": 13.4,
+        "fw_other": 86.398
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_4_PuAm_aspirin_citrate_not_in_db/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_4_PuAm_aspirin_citrate_not_in_db/_run.log:87"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L4_4"
+        ]
+      },
+      "details": [
+        {
+          "member": "L4_4_PuAm_aspirin_citrate_not_in_db/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 22.532,
+          "status": "failed"
+        },
+        {
+          "member": "L4_4_PuAm_aspirin_citrate_not_in_db/_run.log",
+          "line": 87,
+          "component": "fw_ld",
+          "seconds": 13.4,
+          "log": "12:22:22 [INFO] Analysis.LD: LD verdict=supported hints=5 (13.4s)"
+        }
+      ],
+      "total": 122.33
+    },
+    "L4_5": {
+      "values": {
+        "fw_lc1": 48.964,
+        "fw_lc2": 390.829,
+        "fw_lc3": 54.654,
+        "fw_ld": 34.6,
+        "fw_other": 108.96100000000001
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_5_Cuprium_fake_metal/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_5_Cuprium_fake_metal/L1_call_01/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_5_Cuprium_fake_metal/L1_call_01/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_5_Cuprium_fake_metal/_run.log:418"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L4_5"
+        ]
+      },
+      "details": [
+        {
+          "member": "L4_5_Cuprium_fake_metal/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 48.964,
+          "status": "ok"
+        },
+        {
+          "member": "L4_5_Cuprium_fake_metal/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 390.829,
+          "status": "ok"
+        },
+        {
+          "member": "L4_5_Cuprium_fake_metal/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 54.654,
+          "status": "ok"
+        },
+        {
+          "member": "L4_5_Cuprium_fake_metal/_run.log",
+          "line": 418,
+          "component": "fw_ld",
+          "seconds": 34.6,
+          "log": "06:30:46 [INFO] Analysis.LD: LD verdict=supported hints=0 (34.6s)"
+        }
+      ],
+      "total": 638.008
+    },
+    "L4_6": {
+      "values": {
+        "fw_lc1": 0.0,
+        "fw_lc2": 0.0,
+        "fw_lc3": 0.0,
+        "fw_ld": 0.0,
+        "fw_other": 21.911
+      },
+      "sources": {
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L4_6"
+        ]
+      },
+      "details": [],
+      "total": 21.911
+    },
+    "L4_7": {
+      "values": {
+        "fw_lc1": 55.349,
+        "fw_lc2": 301.096,
+        "fw_lc3": 64.031,
+        "fw_ld": 34.2,
+        "fw_other": 129.445
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_7_Ni_glycine_ammonia_ternary/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_7_Ni_glycine_ammonia_ternary/L1_call_01/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_7_Ni_glycine_ammonia_ternary/L1_call_01/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L4_1+L4_3-L4_7.zip::L4_7_Ni_glycine_ammonia_ternary/_run.log:396"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L4_7"
+        ]
+      },
+      "details": [
+        {
+          "member": "L4_7_Ni_glycine_ammonia_ternary/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 55.349,
+          "status": "ok"
+        },
+        {
+          "member": "L4_7_Ni_glycine_ammonia_ternary/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 301.096,
+          "status": "ok"
+        },
+        {
+          "member": "L4_7_Ni_glycine_ammonia_ternary/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 64.031,
+          "status": "ok"
+        },
+        {
+          "member": "L4_7_Ni_glycine_ammonia_ternary/_run.log",
+          "line": 396,
+          "component": "fw_ld",
+          "seconds": 34.2,
+          "log": "06:41:01 [INFO] Analysis.LD: LD verdict=inconclusive hints=10 (34.2s)"
+        }
+      ],
+      "total": 584.121
+    },
+    "L4_2": {
+      "values": {
+        "fw_lc1": 133.862,
+        "fw_lc2": 491.527,
+        "fw_lc3": 86.703,
+        "fw_ld": 33.5,
+        "fw_other": 321.0859999999999
+      },
+      "sources": {
+        "fw_lc1": [
+          "_benchmark\\L4_2_FeCu_citrate_chloride_hot_out_of_envelope.part001-of-003.outputs.zip::L4_2_FeCu_citrate_chloride_hot_out_of_envelope/L1_call_01/LC1/summary/LC1_summary.json"
+        ],
+        "fw_lc2": [
+          "_benchmark\\L4_2_FeCu_citrate_chloride_hot_out_of_envelope.part001-of-003.outputs.zip::L4_2_FeCu_citrate_chloride_hot_out_of_envelope/L1_call_01/LC2/summary/LC2_summary.json"
+        ],
+        "fw_lc3": [
+          "_benchmark\\L4_2_FeCu_citrate_chloride_hot_out_of_envelope.part001-of-003.outputs.zip::L4_2_FeCu_citrate_chloride_hot_out_of_envelope/L1_call_01/LC3/summary/LC3_summary.json"
+        ],
+        "fw_ld": [
+          "_benchmark\\L4_2_FeCu_citrate_chloride_hot_out_of_envelope.part001-of-003.outputs.zip::L4_2_FeCu_citrate_chloride_hot_out_of_envelope/_run.log:960"
+        ],
+        "fw_other": [
+          "all_run_timings.csv::config=framework,prompt_id=L4_2"
+        ]
+      },
+      "details": [
+        {
+          "member": "L4_2_FeCu_citrate_chloride_hot_out_of_envelope/L1_call_01/LC1/summary/LC1_summary.json",
+          "component": "fw_lc1",
+          "seconds": 133.862,
+          "status": "ok"
+        },
+        {
+          "member": "L4_2_FeCu_citrate_chloride_hot_out_of_envelope/L1_call_01/LC2/summary/LC2_summary.json",
+          "component": "fw_lc2",
+          "seconds": 491.527,
+          "status": "ok"
+        },
+        {
+          "member": "L4_2_FeCu_citrate_chloride_hot_out_of_envelope/L1_call_01/LC3/summary/LC3_summary.json",
+          "component": "fw_lc3",
+          "seconds": 86.703,
+          "status": "ok"
+        },
+        {
+          "member": "L4_2_FeCu_citrate_chloride_hot_out_of_envelope/_run.log",
+          "line": 960,
+          "component": "fw_ld",
+          "seconds": 33.5,
+          "log": "06:01:11 [INFO] Analysis.LD: LD verdict=supported hints=0 (33.5s)"
+        }
+      ],
+      "total": 1066.6779999999999
+    }
+  }
+}

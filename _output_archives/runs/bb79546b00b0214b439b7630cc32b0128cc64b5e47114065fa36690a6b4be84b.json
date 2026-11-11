@@ -1,0 +1,20 @@
+{
+  "directories": {
+    "": 1794271184564719100
+  },
+  "format": "srd46-output-archive-v1",
+  "mtimes_ns": {
+    "_run.log": 1793294629359180300,
+    "answer.md": 1793294629343555400,
+    "l0_tool_calls.jsonl": 1793294629327925900,
+    "l0_tool_calls.md": 1793294629343555400,
+    "manifest.json": 1793294629343555400,
+    "run_history.jsonl": 1793294629343555400,
+    "run_history.md": 1793294629343555400,
+    "run_stats.json": 1793294629343555400,
+    "verdict.json": 1793294629359180300
+  },
+  "record": "compartments/tree-75b1fed74aa2450446015ab3068d08c2a8e31477f20d38492c1b5303d9a28b9c.json",
+  "solver_events": {},
+  "target": "_benchmark/Opus4.7_no_topo_cleanup/L4_6_20260609"
+}
